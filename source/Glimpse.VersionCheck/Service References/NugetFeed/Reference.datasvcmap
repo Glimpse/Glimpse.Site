@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="943fd852-3913-4071-85e2-3436f7b61dde" xmlns="urn:schemas-microsoft-com:xml-dataservicemap">
+  <MetadataSources>
+    <MetadataSource Address="https://nuget.org/api/v2" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.edmx" MetadataType="Edmx" ID="1ca04442-5da1-4bab-aa9d-c907cd4aab44" SourceId="1" SourceUrl="https://nuget.org/api/v2" />
+  </Metadata>
+  <Extensions />
+  <Parameters>
+    <Parameter Name="ClientAssemblyReference" Value="C:\Program Files (x86)\Microsoft WCF Data Services\5.0\bin\.NETFramework\Microsoft.Data.Services.Client.dll" />
+    <Parameter Name="SpatialAssemblyReference" Value="C:\Program Files (x86)\Microsoft WCF Data Services\5.0\bin\.NETFramework\System.Spatial.dll" />
+    <Parameter Name="ODataLibraryAssemblyReference" Value="C:\Program Files (x86)\Microsoft WCF Data Services\5.0\bin\.NETFramework\Microsoft.Data.OData.dll" />
+    <Parameter Name="UseDataServiceCollection" Value="true" />
+    <Parameter Name="Version" Value="3.0" />
+  </Parameters>
+</ReferenceGroup>

@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A0EFE764-BBDE-4815-81A5-25A1FB204DE7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Glimpse.VersionCheck</RootNamespace>
+    <AssemblyName>Glimpse.VersionCheck</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.0\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Data.Services.Client, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Spatial, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataAccess\ISqlFactory.cs" />
+    <Compile Include="DataAccess\SqlFactory.cs" />
+    <Compile Include="Extensions\DictionaryExtensions.cs" />
+    <Compile Include="Extensions\ObjectExtension.cs" />
+    <Compile Include="Provider\Models\MergedReleaseDetails.cs" />
+    <Compile Include="Provider\Models\MergedStatisticReleaseDetails.cs" />
+    <Compile Include="Services\Models\UpdateReleaseRepositoryResults.cs" />
+    <Compile Include="Services\Models\UpdateReleaseResults.cs" />
+    <Compile Include="Services\Models\UpdateReleaseResultsDetail.cs" />
+    <Compile Include="Services\UpdateReleaseService.cs" />
+    <Compile Include="Services\IUpdateReleaseService.cs" />
+    <Compile Include="Settings\Conifg\ConfigElementDataSource.cs" />
+    <Compile Include="Settings\Conifg\ConfigElementLogging.cs" />
+    <Compile Include="Settings\Conifg\ConfigElementServices.cs" />
+    <Compile Include="Settings\Conifg\ConfigProcessor.cs" />
+    <Compile Include="Settings\Conifg\ConfigProvider.cs" />
+    <Compile Include="Settings\Conifg\ConfigSectionGlimpse.cs" />
+    <Compile Include="Settings\Conifg\IConfigProcessor.cs" />
+    <Compile Include="Settings\Conifg\IConfigProvider.cs" />
+    <Compile Include="GlimpseSettings.cs" />
+    <Compile Include="Settings\ISettings.cs" />
+    <Compile Include="Provider\IReleaseFeedProvider.cs" />
+    <Compile Include="Provider\IReleasePersistencyProvider.cs" />
+    <Compile Include="Provider\NugetReleaseFeedProvider.cs" />
+    <Compile Include="Provider\Models\ReleaseFeedItem.cs" />
+    <Compile Include="Provider\Models\ReleasePersistencyItem.cs" />
+    <Compile Include="Provider\ReleasePersistencyProvider.cs" />
+    <Compile Include="Provider\Models\ReleasePersistencyStatisticsItem.cs" />
+    <Compile Include="Service References\NugetFeed\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.datasvcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Services\INewReleaseAvailableService.cs" />
+    <Compile Include="Provider\IReleaseQueryProvider.cs" />
+    <Compile Include="Services\IUpdateReleaseRepositoryService.cs" />
+    <Compile Include="Services\Models\LatestReleaseDetails.cs" />
+    <Compile Include="Services\Models\LatestReleaseDetailsSummaryInfo.cs" />
+    <Compile Include="Services\Models\LatestReleaseInfo.cs" />
+    <Compile Include="Services\Models\LatestReleaseVersionData.cs" />
+    <Compile Include="Services\NewReleaseAvailableService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Provider\Models\ReleaseQueryItem.cs" />
+    <Compile Include="Provider\CacheReleaseQueryProvider.cs" />
+    <Compile Include="DataAccess\SqlMapper.cs" />
+    <Compile Include="DataAccess\SqlMapperExtensions.cs" />
+    <Compile Include="Services\Models\ReleaseFeedOptions.cs" />
+    <Compile Include="Services\UpdateReleaseRepositoryService.cs" />
+    <Compile Include="Services\Models\VersionCheckDetails.cs" />
+    <Compile Include="Services\Models\VersionCheckDetailsItem.cs" />
+    <Compile Include="Settings\Logging\ISystemLogger.cs" />
+    <Compile Include="Settings\Logging\ISystemLoggerProvider.cs" />
+    <Compile Include="Settings\Logging\SystemLoggerLog4Net.cs" />
+    <Compile Include="Settings\Logging\SystemLoggerNull.cs" />
+    <Compile Include="Settings\Logging\SystemLoggerProvider.cs" />
+    <Compile Include="Settings\Logging\SystemLoggerProviderLog4Net.cs" />
+    <Compile Include="Settings\Logging\SystemLoggerProviderNull.cs" />
+    <Compile Include="Settings\Settings.cs" />
+    <Compile Include="Settings\SettingsExtensionOptions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="Service References\NugetFeed\service.edmx" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ServiceReferenceMetadataStorage Include="Service References\NugetFeed\">
+      <Type>datasvcmap</Type>
+    </ServiceReferenceMetadataStorage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NugetFeed\Reference.datasvcmap">
+      <Generator>DataServicesClientSingleFileGeneratorCore</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

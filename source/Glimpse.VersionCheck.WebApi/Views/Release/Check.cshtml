@@ -1,0 +1,96 @@
+﻿@using Glimpse.VersionCheck
+@model Glimpse.VersionCheck.LatestReleaseInfo
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";   
+}
+
+<h2>Release Notes</h2>
+<div style="color: green">
+    @if(Model.HasNewer) {
+        <span>New Release Avaiable</span>
+    } else {
+        <span>No Release Avaiable</span>
+    }
+</div>
+
+@foreach(var detail in Model.Details) {  
+    var lastRelease = detail.Value.Releases.LastItemOrDefault(); 
+     
+    <h3>@detail.Key @if (@lastRelease != null){ <img src="@lastRelease.IconUrl" height="50"/> }</h3> 
+    <text>@if (@lastRelease != null){ @lastRelease.Description }</text>
+    <table>
+        <tr>
+            <th>HasResult:</th>
+            <td>@detail.Value.HasResult</td>
+        </tr>
+        <tr>
+            <th>HasNewer:</th>
+            <td>@detail.Value.HasNewer</td> 
+        </tr>
+        <tr>
+            <th>Channel:</th>
+            <td>@detail.Value.Channel</td> 
+        </tr>
+        <tr>
+            <th>Version</th>
+            <td>@detail.Value.Version</td>
+        </tr>
+        <tr>
+            <th>Releases:</th>
+            <td>
+                @if (detail.Value.Releases != null) {
+                    <text>
+                    @foreach(var release in detail.Value.Releases) {
+                        <div style="float:left">
+                            <strong>@release.Key</strong> 
+                            <table border="1">
+                                <tr>
+                                    <th>IsAbsoluteLatestVersion</th>
+                                    <td>@release.Value.IsAbsoluteLatestVersion</td>
+                                </tr>
+                                <tr>
+                                    <th>IsLatestVersion</th>
+                                    <td>@release.Value.IsLatestVersion</td>
+                                </tr>
+                                <tr>
+                                    <th>IsPrerelease</th>
+                                    <td>@release.Value.IsPrerelease</td>
+                                </tr>
+                                <tr>
+                                    <th>ReleaseNotes</th>
+                                    <td>@release.Value.ReleaseNotes</td>
+                                </tr>
+                                <tr>
+                                    <th>Created</th>
+                                    <td>@release.Value.Created</td>
+                                </tr> 
+                            </table> 
+                        </div>
+                    }  
+                    </text> 
+                }
+            </td>
+        </tr>
+        <tr>
+            <th>Summary:</th>
+            <td>
+                @if (detail.Value.Summary != null) {
+                    <table border="1">
+                        <tr>
+                            <th>Channel</th>
+                            <th>Latest Version</th>
+                        </tr>
+                        @foreach(var release in detail.Value.Summary) {
+                            <tr>
+                                <th>@release.Key</th>
+                                <td>@release.Value.LatestVersion</td> 
+                            </tr>
+                        }  
+                    </table>
+                }  
+            </td>
+        </tr>
+    </table> 
+
+}
