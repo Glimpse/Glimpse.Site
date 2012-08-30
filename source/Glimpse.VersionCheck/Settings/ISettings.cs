@@ -30,6 +30,8 @@ namespace Glimpse.VersionCheck
 
         IUpdateReleaseService UpdateReleaseService { get; }
 
+        IReleaseService ReleaseService { get; } 
+
         void Initialize();
     }
 }

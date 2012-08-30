@@ -55,18 +55,29 @@ namespace Glimpse.VersionCheck
                 if (allNewReleases.Count > 0)
                 {
                     // Summary details
-                    var newestPreRelease = allNewReleases.LastOrDefault(x => x.IsPrerelease);
-                    var newestRelease = allNewReleases.LastOrDefault(x => !x.IsPrerelease);
+                    var preReleases = allNewReleases.Where(x => x.IsPrerelease).ToList();
+                    var nonPreRelease = allNewReleases.Where(x => !x.IsPrerelease).ToList();
+
+                    var newestPreRelease = preReleases.LastOrDefault();
+                    var newestNonPreRelease = nonPreRelease.LastOrDefault();
+                    var newestRelease = currentRelease.IsPrerelease && newestPreRelease != null ? newestPreRelease : newestNonPreRelease;
 
                     if (newestPreRelease != null)
-                        summary.Add("preRelease", new LatestReleaseDetailsSummaryInfo { LatestVersion = newestPreRelease.Version });
+                        summary.Add("preRelease", new LatestReleaseDetailsSummaryInfo { LatestVersion = newestPreRelease.Version, TotalNewerReleases = preReleases.Count });
+                    if (newestNonPreRelease != null)
+                        summary.Add("release", new LatestReleaseDetailsSummaryInfo { LatestVersion = newestNonPreRelease.Version, TotalNewerReleases = nonPreRelease.Count }); 
                     if (newestRelease != null)
-                        summary.Add("release", new LatestReleaseDetailsSummaryInfo { LatestVersion = newestRelease.Version });
+                    {
+                        details.ProductDescription = newestRelease.Description;
+                        details.ProductIconUrl = newestRelease.IconUrl;
+                    }
 
                     // Releases details
                     if (includeReleasesData)
                         details.Releases = allNewReleases.ToDictionary(x => x.Version, x => new LatestReleaseVersionData { Created = x.Created, IsLatestVersion = x.IsLatestVersion, IsAbsoluteLatestVersion = x.IsAbsoluteLatestVersion, IsPrerelease = x.IsPrerelease, ReleaseNotes = x.ReleaseNotes, Description = x.Description, IconUrl = x.IconUrl });
                 }
+
+                details.TotalNewerReleases = allNewReleases.Count;
 
                 if (summary.Count > 0)
                     details.Summary = summary;

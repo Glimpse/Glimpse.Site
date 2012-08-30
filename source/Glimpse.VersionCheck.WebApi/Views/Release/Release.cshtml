@@ -1,0 +1,14 @@
+﻿@model Glimpse.VersionCheck.ReleaseDetails
+
+@{
+    ViewBag.Title = "Release Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Release Notes</h2>
+
+@if (Model == null){
+    <div>
+        Sorry but this Release was not found.
+    </div>
+}

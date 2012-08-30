@@ -36,10 +36,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="log4net">
-      <HintPath>..\packages\log4net.2.0.0\lib\net40-full\log4net.dll</HintPath>
+      <HintPath>..\..\packages\log4net.2.0.0\lib\net40-full\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Data.OData, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Data.Services.Client, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\packages\Newtonsoft.Json.4.5.8\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -60,9 +63,12 @@
     <Compile Include="Extensions\ObjectExtension.cs" />
     <Compile Include="Provider\Models\MergedReleaseDetails.cs" />
     <Compile Include="Provider\Models\MergedStatisticReleaseDetails.cs" />
+    <Compile Include="Services\IReleaseService.cs" />
+    <Compile Include="Services\Models\ReleaseDetails.cs" />
     <Compile Include="Services\Models\UpdateReleaseRepositoryResults.cs" />
     <Compile Include="Services\Models\UpdateReleaseResults.cs" />
     <Compile Include="Services\Models\UpdateReleaseResultsDetail.cs" />
+    <Compile Include="Services\ReleaseService.cs" />
     <Compile Include="Services\UpdateReleaseService.cs" />
     <Compile Include="Services\IUpdateReleaseService.cs" />
     <Compile Include="Settings\Conifg\ConfigElementDataSource.cs" />

@@ -16,6 +16,12 @@ namespace Glimpse.VersionCheck
         public bool HasNewer { get; set; }
 
         public bool HasResult { get; set; }
+
+        public int TotalNewerReleases { get; set; }
+
+        public string ProductDescription { get; set; }
+
+        public string ProductIconUrl { get; set; }
     }
 
     public static class LatestReleaseVersionDataExtension

@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace Glimpse.VersionCheck
 {
-    public class LatestReleaseVersionData
+    public class ReleaseDetails
     {
         public DateTime Created { get; set; }
 
@@ -15,10 +15,8 @@ namespace Glimpse.VersionCheck
 
         public string ReleaseNotes { get; set; }
 
-        [JsonIgnore]
         public string IconUrl { get; set; }
 
-        [JsonIgnore]
         public string Description { get; set; }
     }
 }

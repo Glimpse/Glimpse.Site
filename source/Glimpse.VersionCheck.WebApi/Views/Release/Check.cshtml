@@ -1,96 +1,72 @@
 ﻿@using Glimpse.VersionCheck
 @model Glimpse.VersionCheck.LatestReleaseInfo
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Checking for Updates";
     Layout = "~/Views/Shared/_Layout.cshtml";   
 }
 
 <h2>Release Notes</h2>
-<div style="color: green">
-    @if(Model.HasNewer) {
-        <span>New Release Avaiable</span>
-    } else {
-        <span>No Release Avaiable</span>
+<div class="release-summary">
+    @{
+        var releasSummaryTitle = "No Release Avaiable";
+        var releasSummarySummary = "At the current time, it looks like you are fully up-to-date.";
+        var releasSummaryTitleClass = "";
+        if(Model.HasNewer) {
+            releasSummaryTitle = "New Release Avaiable";
+            releasSummarySummary = "The following is a summary of what you are currently missing out on.";
+            releasSummaryTitleClass = "has-newer";
+        }
     }
+    
+    <div class="release-summary-title @releasSummaryTitleClass">@releasSummaryTitle</div>
+    <div class="release-summary-desc">@releasSummarySummary</div>   
 </div>
 
 @foreach(var detail in Model.Details) {  
-    var lastRelease = detail.Value.Releases.LastItemOrDefault(); 
-     
-    <h3>@detail.Key @if (@lastRelease != null){ <img src="@lastRelease.IconUrl" height="50"/> }</h3> 
-    <text>@if (@lastRelease != null){ @lastRelease.Description }</text>
-    <table>
-        <tr>
-            <th>HasResult:</th>
-            <td>@detail.Value.HasResult</td>
-        </tr>
-        <tr>
-            <th>HasNewer:</th>
-            <td>@detail.Value.HasNewer</td> 
-        </tr>
-        <tr>
-            <th>Channel:</th>
-            <td>@detail.Value.Channel</td> 
-        </tr>
-        <tr>
-            <th>Version</th>
-            <td>@detail.Value.Version</td>
-        </tr>
-        <tr>
-            <th>Releases:</th>
-            <td>
-                @if (detail.Value.Releases != null) {
+    <div class="release-package">
+        <div class="release-package-title">
+            @if (!String.IsNullOrEmpty(detail.Value.ProductIconUrl)) { <img src="@detail.Value.ProductIconUrl" height="50"/> }
+            <h3>@detail.Key @if (!String.IsNullOrEmpty(detail.Value.ProductDescription)) { <a href="#">[ info ]</a> }</h3> 
+            <div class="release-package-description">@detail.Value.ProductDescription</div>
+        </div>
+        
+        @if (detail.Value.HasResult) {
+            <div class="release-package-details">
+                @if (detail.Value.HasNewer) {
                     <text>
-                    @foreach(var release in detail.Value.Releases) {
-                        <div style="float:left">
-                            <strong>@release.Key</strong> 
-                            <table border="1">
-                                <tr>
-                                    <th>IsAbsoluteLatestVersion</th>
-                                    <td>@release.Value.IsAbsoluteLatestVersion</td>
-                                </tr>
-                                <tr>
-                                    <th>IsLatestVersion</th>
-                                    <td>@release.Value.IsLatestVersion</td>
-                                </tr>
-                                <tr>
-                                    <th>IsPrerelease</th>
-                                    <td>@release.Value.IsPrerelease</td>
-                                </tr>
-                                <tr>
-                                    <th>ReleaseNotes</th>
-                                    <td>@release.Value.ReleaseNotes</td>
-                                </tr>
-                                <tr>
-                                    <th>Created</th>
-                                    <td>@release.Value.Created</td>
-                                </tr> 
-                            </table> 
+                        <div class="release-package-message release-package-old-found">
+                            <div class="release-package-message-title">Old version found</div>
+                            <span class="release-installed-version">Installed version: <strong>@detail.Value.Version</strong></span>
+                            <span class="release-latest-version">Latest version: <strong>@detail.Value.Summary[detail.Value.Channel].LatestVersion</strong></span>
                         </div>
-                    }  
-                    </text> 
+                        
+                        @if (detail.Value.Releases != null) {
+                            <div class="release-item-detail-holder">
+                            @foreach(var release in detail.Value.Releases) {
+                                <div class="release-item-detail">
+                                    <div class="release-item-detail-header">
+                                        <span class="release-item-detail-title">@release.Key</span>
+                                        <span class="release-item-detail-date">@release.Value.Created.ToString("dd MMM yyyy")</span> 
+                                    </div>
+                                    <div class="release-item-detail-notes">@release.Value.ReleaseNotes
+                                    </div>
+                                </div>
+                            }  
+                            </div> 
+                        }
+                    </text>
                 }
-            </td>
-        </tr>
-        <tr>
-            <th>Summary:</th>
-            <td>
-                @if (detail.Value.Summary != null) {
-                    <table border="1">
-                        <tr>
-                            <th>Channel</th>
-                            <th>Latest Version</th>
-                        </tr>
-                        @foreach(var release in detail.Value.Summary) {
-                            <tr>
-                                <th>@release.Key</th>
-                                <td>@release.Value.LatestVersion</td> 
-                            </tr>
-                        }  
-                    </table>
-                }  
-            </td>
-        </tr>
-    </table> 
-
+                else {
+                    <div class="release-package-message release-package-latest-found">
+                        <div class="release-package-message-title">Latest version found</div>
+                        <span class="release-installed-version">Installed version: <strong>@detail.Value.Version</strong></span>
+                        <span class="release-latest-version">Latest version: <strong>@detail.Value.Version</strong></span> 
+                    </div>
+                }
+            </div>
+        } 
+        else {
+            <div class="release-package-message release-package-not-found">No release was found for this package.</div>
+        }
+    </div>
 }

@@ -36,6 +36,8 @@ namespace Glimpse.VersionCheck
 
         public IUpdateReleaseService UpdateReleaseService { get; private set; }
 
+        public IReleaseService ReleaseService { get; private set; } 
+
         public void Initialize()
         {
             //Need to setup the logger first
@@ -57,6 +59,7 @@ namespace Glimpse.VersionCheck
             NewReleaseService = new NewReleaseAvailableService(queryProvider);
             UpdateReleaseRepositoryService = new UpdateReleaseRepositoryService(feedProvider, persistencyProvider);
             UpdateReleaseService = new UpdateReleaseService(this, UpdateReleaseRepositoryService, queryProvider);
+            ReleaseService = new ReleaseService(queryProvider);
 
             _logger.Info("Settings - Setup Finished");
 

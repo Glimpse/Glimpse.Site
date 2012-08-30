@@ -21,6 +21,15 @@ namespace Glimpse.VersionCheck.WebApi.Controllers
         }
 
         [AcceptVerbs(HttpVerbs.Get)]
+        public ActionResult Release(string package, string version, string stamp)
+        {
+            var service = GlimpseSettings.Settings.ReleaseService;
+            var result = service.GetReleaseInfo(package, version);
+
+            return View(result);
+        }
+
+        [AcceptVerbs(HttpVerbs.Get)]
         public ActionResult Test()
         {
             return View();

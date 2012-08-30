@@ -44,7 +44,8 @@
         <input type="button" class="action-service" data-destination="/api/release/check" data-type="json" value="Service"/>
     </div>
 
-    <h3>Output</h3> 
+    <h3>Output <span class="data-status"></span></h3> 
+    <div class="data-url url"></div> 
     <div class="data-result results"></div>
 </div>
 
@@ -77,6 +78,8 @@
             $('.data-close').live('click', function() {
                 $(this).closest('tr').remove();
             });
+             
+            $('.data-status').text('In Progress');
 
             $('.action-page, .action-service').click(function() {
                 var element = $(this),
@@ -89,6 +92,7 @@
                 if (detailsUrl)
                     url += detailsUrl;
 
+                
                 $.ajax({
                     url: url,
                     type: 'GET',
@@ -96,6 +100,13 @@
                     dataType: type,
                     data: data,
                     success: function (result) {
+                        $('.data-url').text(this.url);
+                        
+                        $('.data-status').text('Finished');
+                        setTimeout(function () {
+                            $('.data-status').text('');
+                        }, 3000);
+
                         if (type == 'json')
                             $('.data-result').html('<pre>' + jsl.format.formatJson(JSON.stringify(result)) + '</pre>');
                         else
