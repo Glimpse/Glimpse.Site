@@ -36,8 +36,8 @@ blockquote:first-letter { background: url(open-quote.gif) no-repeat left top; pa
 pre { border: 1px dashed #777; background-color: #EEE; padding: 1em; }
 
 
-.release-summary { text-align: center; }
-.release-summary .has-newer { color: green; }
+.is-success { color: green; }
+.release-summary { text-align: center; margin: 20px 0; }
 .release-summary-title { font-size: 200%; padding-bottom: 10px; }
 
 .release-package { padding: 20px 0 50px; }
@@ -49,11 +49,11 @@ pre { border: 1px dashed #777; background-color: #EEE; padding: 1em; }
 .release-package-old-found .release-package-message-title { color: salmon; }
 .release-package-latest-found .release-package-message-title { color: royalblue; }
 .release-package-message { text-align: center; margin-top: 20px; }
-.release-package-message-title { font-size: 140%; margin-bottom: 10px; }
+.release-package-message-title { font-size: 130%; margin-bottom: 10px; }
 .release-installed-version, .release-latest-version { font-size: 150%; font-family: "avante garde", "Century Gothic", Serif; }
 .release-installed-version { margin-right: 30px; }
 .release-latest-version { margin-left: 30px; }
 .release-item-detail-holder { padding: 20px 40px; }
 .release-item-detail { padding: 5px 0;}
 .release-item-detail-title { font-size: 140%; margin-right: 100px; }
-.release-item-detail-notes { padding: 10px 0 0 40px; }
+.release-item-detail-notes { margin: 5px 0 5px 30px; padding: 10px 20px; background-color: #eee; border-radius: 3px; background: #eeeeee; background: -moz-linear-gradient(top,  #eeeeee 0%, #F9F9F9 100%); background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eeeeee), color-stop(100%,#F9F9F9)); background: -webkit-linear-gradient(top,  #eeeeee 0%,#F9F9F9 100%); background: -o-linear-gradient(top,  #eeeeee 0%,#F9F9F9 100%); background: -ms-linear-gradient(top,  #eeeeee 0%,#F9F9F9 100%); background: linear-gradient(to bottom,  #eeeeee 0%,#F9F9F9 100%); }

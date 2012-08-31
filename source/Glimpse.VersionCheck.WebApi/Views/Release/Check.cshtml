@@ -1,11 +1,10 @@
-﻿@using Glimpse.VersionCheck
-@model Glimpse.VersionCheck.LatestReleaseInfo
+﻿@model Glimpse.VersionCheck.LatestReleaseInfo
 @{
-    ViewBag.Title = "Checking for Updates";
+    ViewBag.Title = "Update Check";
     Layout = "~/Views/Shared/_Layout.cshtml";   
 }
 
-<h2>Release Notes</h2>
+<h2>Update Check</h2>
 <div class="release-summary">
     @{
         var releasSummaryTitle = "No Release Avaiable";
@@ -14,7 +13,7 @@
         if(Model.HasNewer) {
             releasSummaryTitle = "New Release Avaiable";
             releasSummarySummary = "The following is a summary of what you are currently missing out on.";
-            releasSummaryTitleClass = "has-newer";
+            releasSummaryTitleClass = "is-success";
         }
     }
     
@@ -48,7 +47,9 @@
                                         <span class="release-item-detail-title">@release.Key</span>
                                         <span class="release-item-detail-date">@release.Value.Created.ToString("dd MMM yyyy")</span> 
                                     </div>
-                                    <div class="release-item-detail-notes">@release.Value.ReleaseNotes
+                                    <div class="release-item-detail-notes">
+                                        @if (!string.IsNullOrEmpty(@release.Value.ReleaseNotes)) { @release.Value.ReleaseNotes } 
+                                        else { <text>--</text> }
                                     </div>
                                 </div>
                             }  

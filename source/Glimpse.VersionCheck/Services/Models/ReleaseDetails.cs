@@ -18,5 +18,9 @@ namespace Glimpse.VersionCheck
         public string IconUrl { get; set; }
 
         public string Description { get; set; }
+
+        public string Version { get; set; }
+
+        public string Name { get; set; }
     }
 }
