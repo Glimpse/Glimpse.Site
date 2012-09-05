@@ -23,7 +23,7 @@ namespace Glimpse.VersionCheck
                 info.Details.Add(package.Name, detail);
                 if (detail.HasNewer)
                     info.HasNewer = true;
-            }
+            } 
 
             return info;
         }

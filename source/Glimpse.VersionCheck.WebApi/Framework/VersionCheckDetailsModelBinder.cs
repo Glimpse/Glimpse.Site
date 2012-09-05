@@ -8,6 +8,8 @@ namespace Glimpse.VersionCheck.WebApi.Framework
 {
     public class VersionCheckDetailsModelBinder : IModelBinder, System.Web.Http.ModelBinding.IModelBinder
     {
+        private IDictionary<string, int> _reservedKeys = new Dictionary<string, int>{{"stamp", 0}};
+
         public bool BindModel(HttpActionContext actionContext, System.Web.Http.ModelBinding.ModelBindingContext bindingContext)
         {
             var queryString = HttpUtility.ParseQueryString(actionContext.Request.RequestUri.Query);
@@ -26,17 +28,18 @@ namespace Glimpse.VersionCheck.WebApi.Framework
 
         private object BuildModel(NameValueCollection queryString)
         {
-            var names = PraseList(queryString["packages"]);
-            var versions = PraseList(queryString["versions"]);
             var stamp = queryString["stamp"];
 
             var model = new VersionCheckDetails();
             var items = new List<VersionCheckDetailsItem>();
 
-            if (names.Length == versions.Length)
+            if (queryString.AllKeys.Length > 1)
             {
-                for (var i = 0; i < names.Length; i++)
-                    items.Add(new VersionCheckDetailsItem { Name = names[i], Version = versions[i] });
+                foreach (var token in queryString.AllKeys)
+                {
+                    if (!_reservedKeys.ContainsKey(token))
+                        items.Add(new VersionCheckDetailsItem { Name = token, Version = queryString[token] });
+                }
             }
 
             model.Packages = items;

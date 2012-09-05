@@ -107,6 +107,7 @@
     <Compile Include="App_Start\BindingConfig.cs" />
     <Compile Include="App_Start\FormatterConfig.cs" />
     <Compile Include="DictionaryKeysAreNotPropertyNamesJsonConverter.cs" />
+    <Compile Include="Framework\HttpHeaderAttribute.cs" />
     <Compile Include="Framework\JsonpMediaTypeFormatter.cs" />
     <Compile Include="Controllers\ReleaseApiController.cs" />
     <Compile Include="Controllers\ReleaseController.cs" />

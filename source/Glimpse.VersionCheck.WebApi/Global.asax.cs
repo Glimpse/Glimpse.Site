@@ -1,12 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Http;
-using System.Web.Http.ModelBinding;
+﻿using System.Web.Http; 
 using System.Web.Mvc;
-using System.Web.Routing;
-using Glimpse.VersionCheck.WebApi.Controllers;
-using Newtonsoft.Json.Serialization;
+using System.Web.Routing; 
 
 namespace Glimpse.VersionCheck.WebApi
 {
@@ -23,10 +17,7 @@ namespace Glimpse.VersionCheck.WebApi
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BindingConfig.RegisterGlobalBindings(ModelBinders.Binders, GlobalConfiguration.Configuration);
-            FormatterConfig.RegisterRoutes(GlobalConfiguration.Configuration);
-
-            GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
-            GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings.Converters.Add(new DictionaryKeysAreNotPropertyNamesJsonConverter());
+            FormatterConfig.RegisterFormatters(GlobalConfiguration.Configuration); 
         }
     }
 }
