@@ -17,11 +17,23 @@ namespace Glimpse.VersionCheck.WebApi.Controllers
         {
             var service = GlimpseSettings.Settings.NewReleaseService;
             var result = service.GetLatestReleaseInfo(details, withDetails);
-             
-            var uri = Url.Request.RequestUri;
-            result.ViewLink = String.Format("{0}://{1}/release/check/details{2}", uri.Scheme, uri.Authority, uri.Query);
+
+            result.ViewLink = GenerateViewUri(Url.Request.RequestUri, result); 
 
             return result;
         } 
+
+        private string GenerateViewUri(Uri uri, LatestReleaseInfo result)
+        {
+            var queryString = "";
+            var spacer = "";
+            foreach (var item in result.Details)
+            {
+                queryString += string.Format("{0}{1}={2}", spacer, item.Key, item.Value.Version);
+                spacer = "&";
+            }
+
+            return  String.Format("{0}://{1}/release/check/details?{2}", uri.Scheme, uri.Authority, queryString);
+        }
     }
 }
