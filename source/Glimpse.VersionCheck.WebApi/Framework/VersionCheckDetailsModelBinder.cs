@@ -8,7 +8,7 @@ namespace Glimpse.VersionCheck.WebApi.Framework
 {
     public class VersionCheckDetailsModelBinder : IModelBinder, System.Web.Http.ModelBinding.IModelBinder
     {
-        private IDictionary<string, int> _reservedKeys = new Dictionary<string, int>{{"stamp", 0}};
+        private IDictionary<string, int> _reservedKeys = new Dictionary<string, int>{{"stamp", 0}, {"callback", 0}, {"_", 0}};
 
         public bool BindModel(HttpActionContext actionContext, System.Web.Http.ModelBinding.ModelBindingContext bindingContext)
         {
