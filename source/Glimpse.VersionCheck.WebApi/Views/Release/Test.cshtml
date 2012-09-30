@@ -66,12 +66,17 @@
             });
 
             var getData = function() {
-                var data = {
-                     packages: $('.data-name:not(:last)').map(function() { return $(this).val(); }).get().join(','), 
-                     versions: $('.data-version:not(:last)').map(function() { return $(this).val(); }).get().join(','), 
-                     stamp: ''
-                };
+                var names = $('.data-name'),
+                    versions = $('.data-version'),
+                    data = { stamp: '' };
                 
+                for (var i = 0; i < names.length; i++) {
+                    var nameVal = $(names[i]).val(),
+                        versionVal = $(versions[i]).val();
+                    if (nameVal && versionVal)
+                        data[nameVal] = versionVal;
+                }
+
                 return data;
             };
 
