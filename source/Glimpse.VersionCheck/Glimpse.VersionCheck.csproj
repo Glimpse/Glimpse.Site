@@ -133,7 +133,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\NugetFeed\service.edmx" />
   </ItemGroup>
   <ItemGroup />
