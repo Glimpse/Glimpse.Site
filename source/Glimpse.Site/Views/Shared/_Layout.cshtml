@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+    <div id="header">
+        <div id="header-content">
+            <div id="glimpse-logo">
+                <img src="~/Content/logo.png" alt="Glimpse logo" />
+            </div>
+            @this.RenderSection("heading", 
+                @<div id="heading-content">
+                    <h1>Glimpse</h1>
+                    <p>
+                        "What Firebug is for the client, Glimpse does for the 
+                        server... in other words, a client side Glimpse into 
+                        whats going on in your server."
+                    </p>
+                    <p>
+                        The diagnostics platform for the web.
+                    </p>                    
+                 </div>)
+        </div>
+        <div id="header-shadow"></div>
+    </div> 
+    <div id="container">
+        @RenderBody() 
+             
+        <h2>Resources</h2>
+        <div class="threeColumn column1">
+            <div class="innerColumn">
+                <img src="~/Content/googleGroupIcon.png" alt="google group" />
+                Get answers to questions and find out
+                what is next for glimpse on our 
+                <a href="https://groups.google.com/forum/?fromgroups#!forum/getglimpse-dev" target="_blank">community user group</a>
+            </div>
+        </div>
+        <div class="threeColumn column2">
+            <div class="innerColumn">
+                <img src="~/Content/emailIcon.png" alt="email options" />
+                We love hearing from you so please email us 
+                on  <a href="mailto:team@getglimpse.com">team@getglimpse.com</a> or use
+                our contact form
+            </div>
+        </div>
+        <div class="threeColumn column3">
+            <div class="innerColumn">
+                <img src="~/Content/twitterIcon.png" alt="twitter contacts" />
+                Get in touch with the team on twitter
+                using either <a href="http://www.twitter.com/anthony_vdh" target="_blank">@@anthony_vdh</a>
+                or <a href="http://www.twitter.com/nikmd23" target="_blank">@@nikmd23</a>
+            </div>
+        </div>
+        <hr class="clearer" />
+    </div>
+    @Scripts.Render("~/Script/javascript")
+    @RenderSection("scripts", false)
+</body>
+</html>
