@@ -6,11 +6,11 @@ using System.Web.Mvc;
 
 namespace Glimpse.Site.Controllers
 {
-    public class HomeController : Controller
-    {  
-        public ActionResult Index()
+    public partial class HomeController : Controller
+    {
+        public virtual ActionResult Index()
         {
-            return View("Index", "_Main");
+            return View(MVC.Home.Views.Index, MVC.Shared.Views._Main);
         } 
     }
 }
