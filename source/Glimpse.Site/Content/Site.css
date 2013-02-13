@@ -19,7 +19,7 @@ header .decal {
   margin: 9em auto 0 auto;
   white-space: nowrap;
 }
-header .decal img {
+header .decal a {
   margin-top: 1em;
 }
 header .g {
@@ -33,6 +33,21 @@ footer .g {
 }
 footer .bottom-backing img {
   margin: 0 0.5em;
+}
+.sprite {
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.sprite.sprite-root {
+  background-image: url(options-root.png);
+  height: 63px;
+  width: 63px;
+}
+.sprite.sprite-root-download {
+  background-position-x: -252px;
+}
+.sprite.sprite-root-github {
+  background-position-x: -315px;
 }
 @media only screen and (min-width: 1024px) and (max-width: 1799px) {
   header .decal {

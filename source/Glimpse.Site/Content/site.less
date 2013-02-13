@@ -21,7 +21,7 @@ header {
 		margin: 9em auto 0 auto;
 		white-space: nowrap;
 	}
-	.decal img {
+	.decal a {
 		margin-top: 1em;
 	} 
 	.g {
@@ -41,6 +41,18 @@ footer {
 	}
 }
 
+.sprite {
+	background-repeat: no-repeat;
+	display: inline-block;
+
+	&.sprite-root {
+		background-image: url(options-root.png);
+		height: 63px;
+		width: 63px;
+	}
+	&.sprite-root-download { background-position-x:-252px; }
+	&.sprite-root-github { background-position-x:-315px; }
+}
 
 @media only screen and (min-width: 1024px) and (max-width: 1799px) {
     header { 
