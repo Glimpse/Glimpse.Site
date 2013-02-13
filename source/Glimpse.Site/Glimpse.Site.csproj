@@ -125,8 +125,24 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Content\inuit.less" />
+    <Content Include="Content\download-icon.png" />
+    <Content Include="Content\github-icon.png" />
+    <Content Include="Content\inuit.css">
+      <DependentUpon>inuit.less</DependentUpon>
+    </Content>
+    <Content Include="Content\inuit.min.css">
+      <DependentUpon>inuit.less</DependentUpon>
+    </Content>
+    <Content Include="Content\logo.png" />
+    <Content Include="Content\site.css">
+      <DependentUpon>site.less</DependentUpon>
+    </Content>
+    <Content Include="Content\site.min.css">
+      <DependentUpon>site.less</DependentUpon>
+    </Content>
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
+    <Content Include="Content\_Site.css" />
     <Content Include="Scripts\site.google.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
@@ -140,6 +156,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Content\site.less" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -150,6 +167,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Main.cshtml">
+      <SubType>Code</SubType>
+    </Content>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

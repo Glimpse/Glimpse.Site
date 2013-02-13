@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+    <header class="gw">
+        <div class="header-inner">
+            <section>
+                <div class="g one-third hide--lap hide--palm decal">
+                    <div class="delta">Download</div>
+                    <div>1.0.0-rc2</div>
+                    <a href="#"><img width="63" height="63" src="~/Content/download-icon.png" /></a>
+                </div>
+                <div class="g one-third lap-one-whole palm-one-whole logo"> 
+                    <img src="~/Content/logo.png" alt="Glimpse - The Open Source diagnostics platform of the web"/> 
+                </div>
+                <div class="g one-third hide--lap hide--palm decal"> 
+                    <div class="delta">Source Code</div> 
+                    <div>GitHub</div>
+                    <a href="#"><img width="63" height="63" src="~/Content/github-icon.png" /></a>
+                </div>
+            </section>
+            <section class="g one-whole">
+                <h1>The Open Source diagnostics platform of the web</h1>
+            </section>
+            <section class="g one-whole hide--desk"> 
+                <div class="g one-half decal">
+                    <div class="delta">Download</div>
+                    <div>1.0.0-rc2</div>
+                    <a href="#"><img width="63" height="63" src="~/Content/download-icon.png" /></a>
+                </div>
+                <div class="g one-half decal"> 
+                    <div class="delta">Source Code</div> 
+                    <div>GitHub</div>
+                    <a href="#"><img width="63" height="63" src="~/Content/github-icon.png" /></a>
+                </div> 
+            </section>
+        </div>
+    </header>
+    <div class="body gw">
+        <div class="body-inner">
+            @RenderBody()
+        </div>
+    </div>
+    <footer class="gw">
+        <div class="footer-inner">
+            <section>
+                <div class="g one-third lap-one-whole palm-one-whole">
+                </div>
+                <div class="g one-third lap-one-whole palm-one-whole">
+                </div>
+                <div class="g one-third lap-one-whole palm-one-whole">
+                </div>
+            </section>
+            <section class="g one-whole bottom-backing">
+                Proudly backed by <img src="~/Content/logo-redgate.png" style="vertical-align:middle" /> <a href="#">and you!</a>
+            </section>
+        </div>
+    </footer>
+
+
+    @Scripts.Render("~/Script/javascript")
+    @RenderSection("scripts", false)
+</body>
+</html>

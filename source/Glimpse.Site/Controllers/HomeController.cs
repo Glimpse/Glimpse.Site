@@ -10,7 +10,7 @@ namespace Glimpse.Site.Controllers
     {  
         public ActionResult Index()
         {
-            return View();
+            return View("Index", "_Main");
         } 
     }
 }
