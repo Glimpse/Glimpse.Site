@@ -148,6 +148,7 @@
     <Content Include="Content\inuit.min.css">
       <DependentUpon>inuit.less</DependentUpon>
     </Content>
+    <Content Include="Content\logo-redgate.png" />
     <Content Include="Content\logo.png" />
     <Content Include="Content\site.css">
       <DependentUpon>site.less</DependentUpon>
