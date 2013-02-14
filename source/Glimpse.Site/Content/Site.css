@@ -31,6 +31,9 @@ header .hide--desk .decal {
 footer .g {
   text-align: center;
 }
+footer .bottom-backing {
+  padding-bottom: 2em;
+}
 footer .bottom-backing img {
   margin: 0 0.5em;
 }

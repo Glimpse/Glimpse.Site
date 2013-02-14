@@ -120,6 +120,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\CommunityController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Framework\WebPageBaseExtensions.cs" />
     <Compile Include="Global.asax.cs">
@@ -140,8 +141,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Content\inuit.less" />
-    <Content Include="Content\download-icon.png" />
-    <Content Include="Content\github-icon.png" />
     <Content Include="Content\inuit.css">
       <DependentUpon>inuit.less</DependentUpon>
     </Content>
@@ -150,6 +149,7 @@
     </Content>
     <Content Include="Content\logo-redgate.png" />
     <Content Include="Content\logo.png" />
+    <Content Include="Content\options-root.png" />
     <Content Include="Content\site.css">
       <DependentUpon>site.less</DependentUpon>
     </Content>
@@ -178,6 +178,7 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>T4MVC.cs</LastGenOutput>
     </Content>
+    <Content Include="Views\Community\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
