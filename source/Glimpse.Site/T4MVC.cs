@@ -24,6 +24,7 @@ using T4MVC;
 [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
 public static class MVC
 {
+    public static Glimpse.Site.Controllers.CommunityController Community = new Glimpse.Site.Controllers.T4MVC_CommunityController();
     public static Glimpse.Site.Controllers.HomeController Home = new Glimpse.Site.Controllers.T4MVC_HomeController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();
 }
@@ -80,13 +81,13 @@ namespace Links
         public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
         public static readonly string _Site_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/_Site.min.css") ? Url("_Site.min.css") : Url("_Site.css");
              
-        public static readonly string download_icon_png = Url("download-icon.png");
-        public static readonly string github_icon_png = Url("github-icon.png");
         public static readonly string inuit_less = Url("inuit.less");
         public static readonly string inuit_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/inuit.min.css") ? Url("inuit.min.css") : Url("inuit.css");
              
         public static readonly string inuit_min_css = Url("inuit.min.css");
+        public static readonly string logo_redgate_png = Url("logo-redgate.png");
         public static readonly string logo_png = Url("logo.png");
+        public static readonly string options_root_png = Url("options-root.png");
         public static readonly string site_less = Url("site.less");
         public static readonly string site_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/site.min.css") ? Url("site.min.css") : Url("site.css");
              

@@ -35,12 +35,12 @@ namespace T4MVC
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
+                public readonly string _Home = "_Home";
                 public readonly string _Layout = "_Layout";
-                public readonly string _Main = "_Main";
                 public readonly string Error = "Error";
             }
+            public readonly string _Home = "~/Views/Shared/_Home.cshtml";
             public readonly string _Layout = "~/Views/Shared/_Layout.cshtml";
-            public readonly string _Main = "~/Views/Shared/_Main.cshtml";
             public readonly string Error = "~/Views/Shared/Error.cshtml";
         }
     }

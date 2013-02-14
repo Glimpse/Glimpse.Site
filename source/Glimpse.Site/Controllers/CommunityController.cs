@@ -6,9 +6,9 @@ using System.Web.Mvc;
 
 namespace Glimpse.Site.Controllers
 {
-    public class CommunityController : Controller
-    { 
-        public ActionResult Index()
+    public partial class CommunityController : Controller
+    {
+        public virtual ActionResult Index()
         {
             return View();
         }

@@ -6,7 +6,7 @@
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
 </head>
-<body>
+<body class="home">
     <header class="gw">
         <div class="header-inner">
             <section>
@@ -15,7 +15,7 @@
                     <div>1.0.0-rc2</div>
                     <a href="#" class="sprite sprite-root sprite-root-download"></a>
                 </div>
-                <div class="g one-third lap-one-whole palm-one-whole logo"> 
+                <div class="g one-third lap-one-whole palm-one-whole logo-main"> 
                     <img src="~/Content/logo.png" alt="Glimpse - The Open Source diagnostics platform of the web"/> 
                 </div>
                 <div class="g one-third hide--lap hide--palm decal"> 
@@ -47,22 +47,12 @@
         </div>
     </div>
     <footer class="gw">
-        <div class="footer-inner">
-            <section>
-                <div class="g one-third lap-one-whole palm-one-whole">
-                </div>
-                <div class="g one-third lap-one-whole palm-one-whole">
-                </div>
-                <div class="g one-third lap-one-whole palm-one-whole">
-                </div>
-            </section>
+        <div class="footer-inner"> 
             <section class="g one-whole bottom-backing">
                 Proudly backed by <img src="~/Content/logo-redgate.png" style="vertical-align:middle" /> <a href="#">and you!</a>
             </section>
         </div>
-    </footer>
-
-
+    </footer> 
     @Scripts.Render("~/Script/javascript")
     @RenderSection("scripts", false)
 </body>
