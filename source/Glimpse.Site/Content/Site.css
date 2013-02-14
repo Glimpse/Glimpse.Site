@@ -37,11 +37,14 @@ footer .bottom-backing img {
 .body-inner .root-menu {
   text-align: center;
 }
-.body-inner .root-menu .stat-group {
-  margin: 0 auto;
-}
 .body-inner .root-menu .stat {
-  width: 180px;
+  width: 20%;
+  min-width: 170px;
+  max-width: 210px;
+  margin: 0 4% 2em;
+}
+.body-inner .root-menu a {
+  margin-top: 1em;
 }
 .sprite {
   background-repeat: no-repeat;
