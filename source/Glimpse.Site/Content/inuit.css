@@ -1089,6 +1089,9 @@ blockquote p:last-of-type {
  */
 pre {
   overflow: auto;
+  background-color: #f5f3f3;
+  border: 2px solid #e7e6e6;
+  padding: 10px;
 }
 pre mark {
   background: none;
@@ -1143,6 +1146,9 @@ pre mark {
   /* [3] */
 
   margin-left: 0;
+  background-color: #f5f3f3;
+  border: 2px solid #e7e6e6;
+  padding: 10px;
 }
 .line-numbers code {
   white-space: pre;

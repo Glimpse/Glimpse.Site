@@ -1,0 +1,44 @@
+﻿@section header {
+    <section>
+        <h1>Thanks for installing Glimpse</h1>
+        <div class="gamma">we hope you find glimpse useful and it provides a new layer of information about your web app.</div>
+    </section>
+}
+
+<section>
+    <div class="g one-whole"> 
+        <h2>Getting started</h2>
+    </div>
+    <div class="g one-half palm-one-whole"> 
+        <h3>The basics</h3> 
+        <p>You've successfully installed glimpse, so what now?</p>
+        <p>Simply run your application in the normal way and if glimpse doesn't automatically open at the bottom of your browser simply click on the logo that will be in the bottom right and that is all there is to it!</p>
+    </div>
+    <div class="g one-half palm-one-whole">
+        <h3>A little more</h3>
+        <p>Glimpse only kicks into life when it finds an http cookie 'glimpseState' with the value 'on' in the request from the browser. There are several ways to get this cookie:</p>
+        <p>Browse to <span class="lowlight">http://yoursite</span>/glimpse.axd and click on the 'Turn Glimpse On' button.</p>
+        <p>If your browser supports bookmarklets you can create one to turn Glimpse on. In Firefox just drag the button onto your bookmarks toolbar or choose 'bookmark this link' in the context menu. In IE9 select the button and choose 'Add to favorites' from the context menu.</p>
+        <p>You can manually set the cookie within your site by your own logic based on you own debug settings.</p>
+        <p class="lowlight">If you get a "Page not found" when browsing to "/glimpse.axd" check the troubleshooting section in the <a href="http://www.getglimpse.com/Questions" target="_blank">FAQs</a>.</p>
+    </div>
+    <div class="g one-whole"> 
+        <h2>Configuring Glimpse</h2>
+        <p>As you used NuGet to download glimpse everything has been taken care of to get you up and running with glimpse however there are some advanced setting that you may want to look at in your web.config file.</p>
+        <p>The minimum configuration you need to get Glimpse working is as follows.</p> 
+        <ol class=line-numbers>
+            <li><code>&lt;glimpse enabled="true" /&gt;</code></li> 
+        </ol>
+        <p>All settings for Glimpse are within a Glimpse node under &lt;configuration&gt; The Glimpse node itself can have optional attributes:</p>
+        <ol class=line-numbers>
+            <li><code>&lt;glimpse</code></li> 
+            <li><code>    enabled="false" </code></li> 
+            <li><code>    requestLimit="15" </code></li> 
+            <li><code>    loggingEnabled="false" </code></li> 
+            <li><code>    cacheEnabled="true" </code></li> 
+            <li><code>    ipForwardingEnabled="false" &gt;</code></li> 
+            <li><code>    ...</code></li> 
+            <li><code>&lt;/glimpse&gt;</code></li> 
+        </ol>
+    </div>
+</section>

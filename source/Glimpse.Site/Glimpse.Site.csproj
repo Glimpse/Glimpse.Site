@@ -125,6 +125,7 @@
     </Compile>
     <Compile Include="Controllers\CommunityController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\VersionController.cs" />
     <Compile Include="Framework\WebPageBaseExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -182,6 +183,8 @@
       <LastGenOutput>T4MVC.cs</LastGenOutput>
     </Content>
     <Content Include="Views\Community\Index.cshtml" />
+    <Content Include="Views\Version\Install.cshtml" />
+    <Content Include="Views\Version\Update.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
