@@ -1,0 +1,3 @@
+[submodule "source/Glimpse.Site/Views/Docs/Wiki"]
+	path = source/Glimpse.Site/Views/Docs/Wiki
+	url = git@github.com:Glimpse/Glimpse.wiki.git

@@ -1,0 +1,34 @@
+﻿@using Glimpse.Site.Extensions
+@model Glimpse.Site.Models.DocumentationViewModel
+
+@{
+    ViewBag.Title = Model.Title;
+}
+
+<nav style="float: left;">
+    <ul>
+        @foreach (var document in Model.NavigationDocuments)
+        {
+            if (!document.IsRendered)
+            {
+                <li><a href="/docs/@document.MarkdownSlug">@document.Title</a></li>
+            }
+            else
+            {
+                <li><strong>@document.Title</strong></li>
+            }
+        }
+    </ul>
+</nav>
+
+<a href="@Model.EditUri">Edit Me!</a>
+<div>
+    @Html.RenderMarkdown(Model.MarkdownFile)
+</div>
+
+@section header {
+    <section>
+        <h1>Documentation</h1>
+        <div class="gamma">find out more</div>
+    </section>
+}
