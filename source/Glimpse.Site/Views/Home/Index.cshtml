@@ -2,7 +2,7 @@
     <div class="stat-group">
         <dl class="stat">
             <dt class="stat__title gamma">Community</dt>
-            <dd class="stat__value">@Html.ActionLink(" ", MVC.Community.Index(), new { @class = "sprite sprite-root sprite-root-community" })</dd>
+            <dd class="stat__value"><a href="@Url.Action(MVC.Community.Index())" class="sprite sprite-root sprite-root-community"></a></dd>
             <dd class="stat__value hide--palm">who's involved &amp; how you can help</dd>
         </dl>
         <dl class="stat">
@@ -12,7 +12,7 @@
         </dl>
         <dl class="stat">
             <dt class="stat__title gamma">Extensions</dt>
-            <dd class="stat__value"><a href="#" class="sprite sprite-root sprite-root-plugins"></a></dd>
+            <dd class="stat__value"><a href="@Url.Action(MVC.Packages.Index())" class="sprite sprite-root sprite-root-plugins"></a></dd>
             <dd class="stat__value hide--palm">what else exists in the ecosystem</dd>
         </dl>
         <dl class="stat">

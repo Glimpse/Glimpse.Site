@@ -26,6 +26,8 @@ public static class MVC
 {
     public static Glimpse.Site.Controllers.CommunityController Community = new Glimpse.Site.Controllers.T4MVC_CommunityController();
     public static Glimpse.Site.Controllers.HomeController Home = new Glimpse.Site.Controllers.T4MVC_HomeController();
+    public static Glimpse.Site.Controllers.PackagesController Packages = new Glimpse.Site.Controllers.T4MVC_PackagesController();
+    public static Glimpse.Site.Controllers.VersionController Version = new Glimpse.Site.Controllers.T4MVC_VersionController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();
 }
 

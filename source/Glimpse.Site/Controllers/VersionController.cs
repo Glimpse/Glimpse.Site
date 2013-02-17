@@ -6,13 +6,13 @@ using System.Web.Mvc;
 
 namespace Glimpse.Site.Controllers
 {
-    public class VersionController : Controller
+    public partial class VersionController : Controller
     {
-        public ActionResult Install()
+        public virtual ActionResult Install()
         {
             return View();
         }
-        public ActionResult Update()
+        public virtual ActionResult Update()
         {
             return View();
         } 
