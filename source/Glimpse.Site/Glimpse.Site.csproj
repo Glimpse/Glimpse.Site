@@ -158,6 +158,8 @@
     <Content Include="Content\inuit.min.css">
       <DependentUpon>inuit.less</DependentUpon>
     </Content>
+    <Content Include="Content\logo-medium.png" />
+    <Content Include="Content\logo-nuget.png" />
     <Content Include="Content\logo-redgate.png" />
     <Content Include="Content\logo.png" />
     <Content Include="Content\options-root.png" />
@@ -167,8 +169,8 @@
     <Content Include="Content\site.min.css">
       <DependentUpon>site.less</DependentUpon>
     </Content>
+    <Content Include="Content\twitterIcon.png" />
     <Content Include="Global.asax" />
-    <Content Include="Content\_Site.css" />
     <Content Include="Scripts\site.google.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="T4MVC.tt.settings.xml" />
