@@ -1,0 +1,27 @@
+﻿@model IList<Glimpse.Package.ReleaseQueryItem>
+
+@section header {
+    <section>
+        <h1>Extensions</h1>
+        <div class="gamma">what else exists in the ecosystem</div>
+    </section>
+}
+
+<section>
+    <div class="g one-whole">
+        <h2>Our packages</h2>
+        <p>Glimpse has many different extensions and plugions that exist within its ecosystem. Below is a list of all the different plugins that you have to choose from on Nuget:</p>
+        <div class="stat-group stats-contributors">
+        @foreach(var item in Model)
+        {
+            <dl class="stat">
+                <dt class="stat__title gamma">@item.Name</dt> 
+                <dd class="stat__value">
+                    <img src="@item.IconUrl" width="50" height="50" />
+                </dd>
+                <dd class="stat__value hide--palm">@item.Version | @item.Created.ToShortDateString()</dd>
+            </dl>
+        } 
+        </div>
+    </div>
+</section>
