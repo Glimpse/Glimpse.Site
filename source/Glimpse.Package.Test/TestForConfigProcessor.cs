@@ -83,6 +83,7 @@ namespace Glimpse.Package.Test
             public INewReleaseAvailableService NewReleaseService { get; private set; }
             public IUpdateReleaseService UpdateReleaseService { get; private set; }
             public IReleaseService ReleaseService { get; private set; }
+            public IReleaseQueryProvider QueryProvider { get; private set; }
 
             public void Initialize()
             {

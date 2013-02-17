@@ -14,8 +14,10 @@ namespace Glimpse.Site.Extensions
         {
             var cacheKey = mdFile.FullName.ToLower();
 
+#if !DEBUG
             if (cache.ContainsKey(cacheKey))
                 return cache[cacheKey];
+#endif
 
             var markdown = string.Empty;
             using (var reader = mdFile.OpenText())
