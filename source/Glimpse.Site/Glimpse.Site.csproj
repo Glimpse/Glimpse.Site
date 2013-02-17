@@ -152,6 +152,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Content\inuit.less" />
+    <Content Include="Content\favicon.ico" />
+    <Content Include="Content\favicon.png" />
     <Content Include="Content\inuit.css">
       <DependentUpon>inuit.less</DependentUpon>
     </Content>
@@ -195,6 +197,7 @@
     <Content Include="Views\Version\Install.cshtml" />
     <Content Include="Views\Version\Update.cshtml" />
     <Content Include="Views\Packages\Index.cshtml" />
+    <Content Include="Views\Home\Support.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

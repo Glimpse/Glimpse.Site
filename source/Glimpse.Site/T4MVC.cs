@@ -81,12 +81,14 @@ namespace Links
         private const string URLPATH = "~/Content";
         public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
         public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
-        public static readonly string _Site_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/_Site.min.css") ? Url("_Site.min.css") : Url("_Site.css");
-             
+        public static readonly string favicon_ico = Url("favicon.ico");
+        public static readonly string favicon_png = Url("favicon.png");
         public static readonly string inuit_less = Url("inuit.less");
         public static readonly string inuit_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/inuit.min.css") ? Url("inuit.min.css") : Url("inuit.css");
              
         public static readonly string inuit_min_css = Url("inuit.min.css");
+        public static readonly string logo_medium_png = Url("logo-medium.png");
+        public static readonly string logo_nuget_png = Url("logo-nuget.png");
         public static readonly string logo_redgate_png = Url("logo-redgate.png");
         public static readonly string logo_png = Url("logo.png");
         public static readonly string options_root_png = Url("options-root.png");
@@ -94,6 +96,7 @@ namespace Links
         public static readonly string site_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/site.min.css") ? Url("site.min.css") : Url("site.css");
              
         public static readonly string site_min_css = Url("site.min.css");
+        public static readonly string twitterIcon_png = Url("twitterIcon.png");
     }
 
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]

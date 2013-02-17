@@ -61,12 +61,14 @@ namespace Glimpse.Site.Controllers
         public class ActionNamesClass
         {
             public readonly string Index = "Index";
+            public readonly string Support = "Support";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
             public const string Index = "Index";
+            public const string Support = "Support";
         }
 
 
@@ -81,8 +83,10 @@ namespace Glimpse.Site.Controllers
             public class _ViewNamesClass
             {
                 public readonly string Index = "Index";
+                public readonly string Support = "Support";
             }
             public readonly string Index = "~/Views/Home/Index.cshtml";
+            public readonly string Support = "~/Views/Home/Support.cshtml";
         }
     }
 
@@ -97,6 +101,15 @@ namespace Glimpse.Site.Controllers
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Index);
             IndexOverride(callInfo);
+            return callInfo;
+        }
+
+        partial void SupportOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        public override System.Web.Mvc.ActionResult Support()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Support);
+            SupportOverride(callInfo);
             return callInfo;
         }
 

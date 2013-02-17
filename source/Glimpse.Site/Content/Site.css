@@ -51,6 +51,15 @@ footer .bottom-backing img {
 .body-inner .stats-contributors {
   text-align: center;
 }
+.body-inner .stats-support {
+  text-align: center;
+  vertical-align: top;
+}
+.body-inner .stats-support .stat {
+  width: 30%;
+  min-width: 170px;
+  max-width: 360px;
+}
 .sprite {
   background-repeat: no-repeat;
   display: inline-block;
