@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Routing;
 
 namespace Glimpse.Site
@@ -14,9 +10,21 @@ namespace Glimpse.Site
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "Talk",
+                url: "Talk",
+                defaults: new { controller = "Home", action = "Talk" }
+            );
+
+            routes.MapRoute(
+                name: "Protocol",
+                url: "Protocol",
+                defaults: new { controller = "Home", action = "Protocol" }
+            );
+
+            routes.MapRoute(
                 name: "Documentation",
-                url: "docs/{mdSlug}",
-                defaults: new { controller = "Docs", action = "Index" }
+                url: "Help/{mdSlug}",
+                defaults: new { controller = "Docs", action = "Index", mdSlug = "" }
             );
 
             routes.MapRoute(

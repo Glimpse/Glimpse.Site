@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace Glimpse.Site.Controllers
 {
@@ -16,6 +12,20 @@ namespace Glimpse.Site.Controllers
         public virtual ActionResult Support()
         {
             return View();
-        } 
+        }
+
+        public ActionResult Protocol()
+        {
+            return Content("Fill me in! Protocol");
+
+            // TODO: Provide real content
+        }
+
+        public ActionResult Talk()
+        {
+            return Content("Fill me in! Talk");
+
+            // TODO: Provide real content
+        }
     }
 }
