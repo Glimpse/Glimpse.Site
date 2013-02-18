@@ -79,6 +79,7 @@
     <Compile Include="Provider\Models\MergedReleaseDetails.cs" />
     <Compile Include="Provider\Models\MergedStatisticReleaseDetails.cs" />
     <Compile Include="Services\IReleaseService.cs" />
+    <Compile Include="Services\IExistingReleaseQueryService.cs" />
     <Compile Include="Services\Models\ReleaseDetails.cs" />
     <Compile Include="Services\Models\UpdateReleaseRepositoryResults.cs" />
     <Compile Include="Services\Models\UpdateReleaseResults.cs" />
@@ -108,14 +109,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.datasvcmap</DependentUpon>
     </Compile>
-    <Compile Include="Services\INewReleaseAvailableService.cs" />
+    <Compile Include="Services\INewReleaseQueryService.cs" />
     <Compile Include="Provider\IReleaseQueryProvider.cs" />
     <Compile Include="Services\IUpdateReleaseRepositoryService.cs" />
     <Compile Include="Services\Models\LatestReleaseDetails.cs" />
     <Compile Include="Services\Models\LatestReleaseDetailsSummaryInfo.cs" />
     <Compile Include="Services\Models\LatestReleaseInfo.cs" />
     <Compile Include="Services\Models\LatestReleaseVersionData.cs" />
-    <Compile Include="Services\NewReleaseAvailableService.cs" />
+    <Compile Include="Services\NewReleaseQueryService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Provider\Models\ReleaseQueryItem.cs" />
     <Compile Include="Provider\CacheReleaseQueryProvider.cs" />

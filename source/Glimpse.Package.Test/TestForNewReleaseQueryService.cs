@@ -8,7 +8,7 @@ using Xunit;
 
 namespace Glimpse.Package.Test
 {
-    public class TestForNewReleaseAvailableService
+    public class TestForNewReleaseQueryService
     {
         public class UsingGetLatestReleaseInfo
         {
@@ -18,7 +18,7 @@ namespace Glimpse.Package.Test
                 var repository = new Mock<IReleaseQueryProvider>();
                 repository.Setup(x => x.SelectRelease("Test", "1.0")).Returns((ReleaseQueryItem)null).Verifiable();
 
-                var service = new NewReleaseAvailableService(repository.Object);
+                var service = new NewReleaseQueryService(repository.Object);
                 var result = service.GetLatestReleaseInfo("Test", "1.0");
 
                 Assert.False(result.HasResult);
@@ -38,7 +38,7 @@ namespace Glimpse.Package.Test
                 repository.Setup(x => x.SelectRelease("Test", "1.0")).Returns(release).Verifiable();
                 repository.Setup(x => x.FindReleasesAfter("Test", "1.0")).Returns(new List<ReleaseQueryItem>()).Verifiable();
 
-                var service = new NewReleaseAvailableService(repository.Object);
+                var service = new NewReleaseQueryService(repository.Object);
                 var result = service.GetLatestReleaseInfo("Test", "1.0");
 
                 Assert.True(result.HasResult);
@@ -61,7 +61,7 @@ namespace Glimpse.Package.Test
                 repository.Setup(x => x.SelectRelease("Test", "1.0")).Returns(release).Verifiable();
                 repository.Setup(x => x.FindReleasesAfter("Test", "1.0")).Returns(new List<ReleaseQueryItem> { release1, release2, release3 }).Verifiable();
 
-                var service = new NewReleaseAvailableService(repository.Object);
+                var service = new NewReleaseQueryService(repository.Object);
                 var result = service.GetLatestReleaseInfo("Test", "1.0");
 
                 Assert.True(result.HasResult);
@@ -87,7 +87,7 @@ namespace Glimpse.Package.Test
                 repository.Setup(x => x.SelectRelease("Test", "1.0")).Returns(release).Verifiable();
                 repository.Setup(x => x.FindReleasesAfter("Test", "1.0")).Returns(new List<ReleaseQueryItem> { release1, release2, release3 }).Verifiable();
 
-                var service = new NewReleaseAvailableService(repository.Object);
+                var service = new NewReleaseQueryService(repository.Object);
                 var result = service.GetLatestReleaseInfo("Test", "1.0");
 
                 Assert.True(result.HasResult);
@@ -113,7 +113,7 @@ namespace Glimpse.Package.Test
                 repository.Setup(x => x.SelectRelease("Test", "1.0")).Returns(release).Verifiable();
                 repository.Setup(x => x.FindReleasesAfter("Test", "1.0")).Returns(new List<ReleaseQueryItem> { release1, release2, release3 }).Verifiable();
 
-                var service = new NewReleaseAvailableService(repository.Object);
+                var service = new NewReleaseQueryService(repository.Object);
                 var result = service.GetLatestReleaseInfo("Test", "1.0");
 
                 Assert.True(result.HasResult);
@@ -140,7 +140,7 @@ namespace Glimpse.Package.Test
                 repository.Setup(x => x.SelectRelease("Test", "1.0")).Returns(release).Verifiable();
                 repository.Setup(x => x.FindReleasesAfter("Test", "1.0")).Returns(new List<ReleaseQueryItem> { release1, release2, release3 }).Verifiable();
 
-                var service = new NewReleaseAvailableService(repository.Object);
+                var service = new NewReleaseQueryService(repository.Object);
                 var result = service.GetLatestReleaseInfo("Test", "1.0");
 
                 Assert.True(result.HasResult);
@@ -166,7 +166,7 @@ namespace Glimpse.Package.Test
                 repository.Setup(x => x.SelectRelease("Test", "1.0")).Returns(release).Verifiable();
                 repository.Setup(x => x.FindReleasesAfter("Test", "1.0")).Returns(new List<ReleaseQueryItem> { release1, release2, release3 }).Verifiable();
 
-                var service = new NewReleaseAvailableService(repository.Object);
+                var service = new NewReleaseQueryService(repository.Object);
                 var result = service.GetLatestReleaseInfo("Test", "1.0");
 
                 Assert.True(result.HasResult);
@@ -188,7 +188,7 @@ namespace Glimpse.Package.Test
                 var repository = new Mock<IReleaseQueryProvider>();
                 repository.Setup(x => x.SelectRelease("Test", "1.0")).Returns((ReleaseQueryItem)null).Verifiable();
 
-                var service = new NewReleaseAvailableService(repository.Object);
+                var service = new NewReleaseQueryService(repository.Object);
                 var result = service.GetLatestReleaseInfo(input);
 
                 Assert.False(result.HasResult);
@@ -210,7 +210,7 @@ namespace Glimpse.Package.Test
                 repository.Setup(x => x.SelectRelease("Test", "1.0")).Returns((ReleaseQueryItem)null).Verifiable();
                 repository.Setup(x => x.SelectRelease("Other", "1.0")).Returns((ReleaseQueryItem)null).Verifiable();
 
-                var service = new NewReleaseAvailableService(repository.Object);
+                var service = new NewReleaseQueryService(repository.Object);
                 var result = service.GetLatestReleaseInfo(input);
 
                 Assert.Equal(2, result.Details.Count);
@@ -236,7 +236,7 @@ namespace Glimpse.Package.Test
                 repository.Setup(x => x.SelectRelease("Other", "1.0")).Returns((ReleaseQueryItem)null).Verifiable();
                 repository.Setup(x => x.FindReleasesAfter("Test", "1.0")).Returns(new List<ReleaseQueryItem> { release1 }).Verifiable();
 
-                var service = new NewReleaseAvailableService(repository.Object);
+                var service = new NewReleaseQueryService(repository.Object);
                 var result = service.GetLatestReleaseInfo(input);
 
                 Assert.Equal(2, result.Details.Count);

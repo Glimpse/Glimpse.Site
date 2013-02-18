@@ -20,15 +20,15 @@ using System.Web.Mvc.Ajax;
 using System.Web.Mvc.Html;
 using System.Web.Routing;
 using T4MVC;
-namespace Glimpse.Site.Controllers
+namespace Glimpse.Site.Areas.Version.Controllers
 {
-    public partial class VersionController
+    public partial class AdminController
     {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public VersionController() { }
+        public AdminController() { }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        protected VersionController(Dummy d) { }
+        protected AdminController(Dummy d) { }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         protected RedirectToRouteResult RedirectToAction(ActionResult result)
@@ -46,13 +46,13 @@ namespace Glimpse.Site.Controllers
 
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public VersionController Actions { get { return MVC.Version; } }
+        public AdminController Actions { get { return MVC.Version.Admin; } }
         [GeneratedCode("T4MVC", "2.0")]
-        public readonly string Area = "";
+        public readonly string Area = "Version";
         [GeneratedCode("T4MVC", "2.0")]
-        public readonly string Name = "Version";
+        public readonly string Name = "Admin";
         [GeneratedCode("T4MVC", "2.0")]
-        public const string NameConst = "Version";
+        public const string NameConst = "Admin";
 
         static readonly ActionNamesClass s_actions = new ActionNamesClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -60,15 +60,15 @@ namespace Glimpse.Site.Controllers
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNamesClass
         {
-            public readonly string Install = "Install";
-            public readonly string Update = "Update";
+            public readonly string Index = "Index";
+            public readonly string Process = "Process";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
-            public const string Install = "Install";
-            public const string Update = "Update";
+            public const string Index = "Index";
+            public const string Process = "Process";
         }
 
 
@@ -82,34 +82,34 @@ namespace Glimpse.Site.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
-                public readonly string Install = "Install";
-                public readonly string Update = "Update";
+                public readonly string Index = "Index";
+                public readonly string Process = "Process";
             }
-            public readonly string Install = "~/Views/Version/Install.cshtml";
-            public readonly string Update = "~/Views/Version/Update.cshtml";
+            public readonly string Index = "~/Areas/Version/Views/Admin/Index.cshtml";
+            public readonly string Process = "~/Areas/Version/Views/Admin/Process.cshtml";
         }
     }
 
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-    public partial class T4MVC_VersionController : Glimpse.Site.Controllers.VersionController
+    public partial class T4MVC_AdminController : Glimpse.Site.Areas.Version.Controllers.AdminController
     {
-        public T4MVC_VersionController() : base(Dummy.Instance) { }
+        public T4MVC_AdminController() : base(Dummy.Instance) { }
 
-        partial void InstallOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+        partial void IndexOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
 
-        public override System.Web.Mvc.ActionResult Install()
+        public override System.Web.Mvc.ActionResult Index()
         {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Install);
-            InstallOverride(callInfo);
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Index);
+            IndexOverride(callInfo);
             return callInfo;
         }
 
-        partial void UpdateOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+        partial void ProcessOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
 
-        public override System.Web.Mvc.ActionResult Update()
+        public override System.Web.Mvc.ActionResult Process()
         {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Update);
-            UpdateOverride(callInfo);
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Process);
+            ProcessOverride(callInfo);
             return callInfo;
         }
 

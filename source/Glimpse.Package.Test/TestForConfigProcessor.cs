@@ -80,7 +80,7 @@ namespace Glimpse.Package.Test
             public bool ServiceEnabled { get; set; }
             public int MinServiceTriggerInterval { get; set; } 
             public IUpdateReleaseRepositoryService UpdateReleaseRepositoryService { get; private set; }
-            public INewReleaseAvailableService NewReleaseService { get; private set; }
+            public INewReleaseQueryService NewReleaseService { get; private set; }
             public IUpdateReleaseService UpdateReleaseService { get; private set; }
             public IReleaseService ReleaseService { get; private set; }
             public IReleaseQueryProvider QueryProvider { get; private set; }

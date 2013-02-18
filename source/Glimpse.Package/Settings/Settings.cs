@@ -32,7 +32,7 @@ namespace Glimpse.Package
 
         public IUpdateReleaseRepositoryService UpdateReleaseRepositoryService { get; private set; }
 
-        public INewReleaseAvailableService NewReleaseService { get; private set; } 
+        public INewReleaseQueryService NewReleaseService { get; private set; } 
 
         public IUpdateReleaseService UpdateReleaseService { get; private set; }
 
@@ -59,7 +59,7 @@ namespace Glimpse.Package
  
             QueryProvider = new CacheReleaseQueryProvider();
 
-            NewReleaseService = new NewReleaseAvailableService(QueryProvider);
+            NewReleaseService = new NewReleaseQueryService(QueryProvider);
             UpdateReleaseRepositoryService = new UpdateReleaseRepositoryService(feedProvider, persistencyProvider);
             UpdateReleaseService = new UpdateReleaseService(this, UpdateReleaseRepositoryService, QueryProvider);
             ReleaseService = new ReleaseService(QueryProvider);

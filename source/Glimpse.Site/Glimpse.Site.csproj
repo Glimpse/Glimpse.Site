@@ -119,19 +119,40 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\BindingConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\FormatterConfig.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\Version\Controllers\AdminController.cs" />
+    <Compile Include="Areas\Version\Controllers\CheckController.cs" />
+    <Compile Include="Areas\Version\Controllers\InstallController.cs" />
+    <Compile Include="Areas\Version\VersionAreaRegistration.cs" />
     <Compile Include="CommunityController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\CheckApiController.cs">
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Controllers\CommunityController.cs" />
     <Compile Include="Controllers\DocsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Extensions\HtmlHelperExtensions.cs" />
     <Compile Include="Controllers\PackagesController.cs" />
-    <Compile Include="Controllers\VersionController.cs" />
+    <Compile Include="Controllers\VersionsController.cs" />
+    <Compile Include="Framework\DictionaryKeysAreNotPropertyNamesJsonConverter.cs" />
+    <Compile Include="Framework\HttpHeaderAttribute.cs" />
+    <Compile Include="Framework\JsonpMediaTypeFormatter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\JsonpResult.cs" />
+    <Compile Include="Framework\VersionCheckDetailsApiModelBinderProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\VersionCheckDetailsModelBinder.cs" />
     <Compile Include="Framework\WebPageBaseExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -152,11 +173,28 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
-    <Compile Include="VersionController.generated.cs">
+    <Compile Include="Version.AdminController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Version.CheckController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Version.InstallController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Version.SharedController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VersionsController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Version\Views\Web.config" />
+    <Content Include="Areas\Version\Views\Check\Index.cshtml" />
+    <Content Include="Areas\Version\Views\Check\Release.cshtml" />
+    <Content Include="Areas\Version\Views\Admin\Index.cshtml" />
+    <Content Include="Areas\Version\Views\Admin\Process.cshtml" />
     <None Include="Content\inuit.less" />
     <Content Include="Content\favicon.ico" />
     <Content Include="Content\favicon.png" />
@@ -179,6 +217,10 @@
     </Content>
     <Content Include="Content\twitterIcon.png" />
     <Content Include="Global.asax" />
+    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\json.format.js" />
     <Content Include="Scripts\site.google.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="T4MVC.tt.settings.xml" />
@@ -200,14 +242,17 @@
       <LastGenOutput>T4MVC.cs</LastGenOutput>
     </Content>
     <Content Include="Views\Community\Index.cshtml" />
-    <Content Include="Views\Version\Install.cshtml" />
-    <Content Include="Views\Version\Update.cshtml" />
+    <Content Include="Areas\Version\Views\Install\Index.cshtml" />
+    <Content Include="Areas\Version\Views\Install\Update.cshtml" />
     <Content Include="Views\Packages\Index.cshtml" />
     <Content Include="Views\Docs\Index.cshtml" />
     <Content Include="Views\Home\Support.cshtml" />
+    <Content Include="Scripts\jquery-1.9.1.min.map" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Version\Models\" />
+    <Folder Include="Areas\Version\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

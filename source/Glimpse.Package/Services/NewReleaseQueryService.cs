@@ -3,11 +3,11 @@ using System.Linq;
 
 namespace Glimpse.Package
 {
-    public class NewReleaseAvailableService : INewReleaseAvailableService
+    public class NewReleaseQueryService : INewReleaseQueryService
     {
         private readonly IReleaseQueryProvider _queryProvider;
 
-        public NewReleaseAvailableService(IReleaseQueryProvider queryProvider)
+        public NewReleaseQueryService(IReleaseQueryProvider queryProvider)
         {
             _queryProvider = queryProvider;
         }

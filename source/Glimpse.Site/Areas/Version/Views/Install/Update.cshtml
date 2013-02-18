@@ -1,0 +1,63 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";   
+}
+
+@section header {
+    <section>
+        <h1>You're up to date</h1>
+        <div class="gamma">Thanks for updating glimpse</div>
+    </section>
+}
+
+@*
+<h2>Release notes</h2>
+@foreach(var detail in Model.Details) {  
+    <div class="release-package">
+        <div class="release-package-title">
+            @if (!String.IsNullOrEmpty(detail.Value.ProductIconUrl)) { <img src="@detail.Value.ProductIconUrl" height="50"/> }
+            <h3>@detail.Key @if (!String.IsNullOrEmpty(detail.Value.ProductDescription)) { <a href="#">[ info ]</a> }</h3> 
+            <div class="release-package-description">@detail.Value.ProductDescription</div>
+        </div>
+        
+        @if (detail.Value.HasResult) {
+            <div class="release-package-details">
+                @if (detail.Value.HasNewer) {
+                    <text>
+                        <div class="release-package-message release-package-old-found">
+                            <div class="release-package-message-title">Old version found</div>
+                            <span class="release-installed-version">Installed version: <strong>@detail.Value.Version</strong></span>
+                            <span class="release-latest-version">Latest version: <strong>@detail.Value.Summary[detail.Value.Channel].LatestVersion</strong></span>
+                        </div>
+                        
+                        @if (detail.Value.Releases != null) {
+                            <div class="release-item-detail-holder">
+                            @foreach(var release in detail.Value.Releases) {
+                                <div class="release-item-detail">
+                                    <div class="release-item-detail-header">
+                                        <span class="release-item-detail-title">@release.Key</span>
+                                        <span class="release-item-detail-date">@release.Value.Created.ToString("dd MMM yyyy")</span> 
+                                    </div>
+                                    <div class="release-item-detail-notes">
+                                        @if (!string.IsNullOrEmpty(@release.Value.ReleaseNotes)) { @release.Value.ReleaseNotes } 
+                                        else { <text>--</text> }
+                                    </div>
+                                </div>
+                            }  
+                            </div> 
+                        }
+                    </text>
+                }
+                else {
+                    <div class="release-package-message release-package-latest-found">
+                        <div class="release-package-message-title">Latest version found</div>
+                        <span class="release-installed-version">Installed version: <strong>@detail.Value.Version</strong></span>
+                        <span class="release-latest-version">Latest version: <strong>@detail.Value.Version</strong></span> 
+                    </div>
+                }
+            </div>
+        } 
+        else {
+            <div class="release-package-message release-package-not-found">No release was found for this package.</div>
+        }
+    </div>
+}*@

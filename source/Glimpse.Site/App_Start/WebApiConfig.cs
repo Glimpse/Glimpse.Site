@@ -10,9 +10,21 @@ namespace Glimpse.Site
         public static void Register(HttpConfiguration config)
         {
             config.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
+                "Version_ApiCheckWithDetails",
+                "Api/Version/Check/Details/",
+                new { controller = "CheckApi", action = "Index", withDetails = true }
+            );
+
+            config.Routes.MapHttpRoute(
+                "Version_ApiCheck",
+                "Api/Version/Check",
+                new { controller = "CheckApi", action = "Index", withDetails = false }
+            );
+
+            config.Routes.MapHttpRoute(
+                "DefaultApi",
+                "api/{controller}/{id}",
+                new { id = RouteParameter.Optional }
             );
         }
     }

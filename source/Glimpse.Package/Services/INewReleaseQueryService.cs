@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace Glimpse.Package
 {
-    public interface INewReleaseAvailableService
+    public interface INewReleaseQueryService
     {
         LatestReleaseInfo GetLatestReleaseInfo(VersionCheckDetails request, bool includeReleasesData);
 

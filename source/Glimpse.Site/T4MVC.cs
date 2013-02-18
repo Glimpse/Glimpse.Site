@@ -24,15 +24,26 @@ using T4MVC;
 [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
 public static class MVC
 {
+    static readonly VersionClass s_Version = new VersionClass();
+    public static VersionClass Version { get { return s_Version; } }
     public static Glimpse.Site.Controllers.CommunityController Community = new Glimpse.Site.Controllers.T4MVC_CommunityController();
     public static Glimpse.Site.Controllers.HomeController Home = new Glimpse.Site.Controllers.T4MVC_HomeController();
     public static Glimpse.Site.Controllers.PackagesController Packages = new Glimpse.Site.Controllers.T4MVC_PackagesController();
-    public static Glimpse.Site.Controllers.VersionController Version = new Glimpse.Site.Controllers.T4MVC_VersionController();
+    public static Glimpse.Site.Controllers.VersionsController Versions = new Glimpse.Site.Controllers.T4MVC_VersionsController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();
 }
 
 namespace T4MVC
 {
+    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+    public class VersionClass
+    {
+        public readonly string Name = "Version";
+        public Glimpse.Site.Areas.Version.Controllers.AdminController Admin = new Glimpse.Site.Areas.Version.Controllers.T4MVC_AdminController();
+        public Glimpse.Site.Areas.Version.Controllers.CheckController Check = new Glimpse.Site.Areas.Version.Controllers.T4MVC_CheckController();
+        public Glimpse.Site.Areas.Version.Controllers.InstallController Install = new Glimpse.Site.Areas.Version.Controllers.T4MVC_InstallController();
+        public T4MVC.Version.SharedController Shared = new T4MVC.Version.SharedController();
+    }
 }
 
 namespace T4MVC
@@ -71,6 +82,14 @@ namespace Links
         public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
         public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
         public static readonly string _references_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/_references.min.js") ? Url("_references.min.js") : Url("_references.js");
+                      
+        public static readonly string jquery_1_9_1_intellisense_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery-1.9.1.intellisense.min.js") ? Url("jquery-1.9.1.intellisense.min.js") : Url("jquery-1.9.1.intellisense.js");
+                      
+        public static readonly string jquery_1_9_1_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery-1.9.1.min.js") ? Url("jquery-1.9.1.min.js") : Url("jquery-1.9.1.js");
+                      
+        public static readonly string jquery_1_9_1_min_js = Url("jquery-1.9.1.min.js");
+        public static readonly string jquery_1_9_1_min_map = Url("jquery-1.9.1.min.map");
+        public static readonly string json_format_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/json.format.min.js") ? Url("json.format.min.js") : Url("json.format.js");
                       
         public static readonly string site_google_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/site.google.min.js") ? Url("site.google.min.js") : Url("site.google.js");
                       

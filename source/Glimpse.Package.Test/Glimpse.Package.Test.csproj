@@ -64,7 +64,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="TestForConfigProcessor.cs" />
-    <Compile Include="TestForNewReleaseAvailableService.cs" />
+    <Compile Include="TestForNewReleaseQueryService.cs" />
     <Compile Include="TestForReleasePersistencyItem.cs" />
     <Compile Include="TestForReleaseRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

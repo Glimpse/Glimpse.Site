@@ -1323,9 +1323,6 @@ li > ol {
    </table>
  *
  */
-table {
-  width: 100%;
-}
 th,
 td {
   padding: 6px;
