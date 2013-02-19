@@ -82,6 +82,14 @@ footer .bottom-backing img {
 .body-inner .stats-sub-menu .stat__title {
   margin-bottom: 0.5em;
 }
+.body-inner .stats-next {
+  text-align: center;
+}
+.body-inner .stats-next .stat {
+  width: 30%;
+  min-width: 330px;
+  max-width: 360px;
+}
 .sprite {
   background-repeat: no-repeat;
   display: inline-block;

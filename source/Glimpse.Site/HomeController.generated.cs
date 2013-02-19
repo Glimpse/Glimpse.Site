@@ -88,9 +88,11 @@ namespace Glimpse.Site.Controllers
             {
                 public readonly string Index = "Index";
                 public readonly string Support = "Support";
+                public readonly string Talk = "Talk";
             }
             public readonly string Index = "~/Views/Home/Index.cshtml";
             public readonly string Support = "~/Views/Home/Support.cshtml";
+            public readonly string Talk = "~/Views/Home/Talk.cshtml";
         }
     }
 

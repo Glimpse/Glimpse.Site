@@ -103,6 +103,7 @@ namespace Links
         public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
         public static readonly string favicon_ico = Url("favicon.ico");
         public static readonly string favicon_png = Url("favicon.png");
+        public static readonly string first_install_minimized_png = Url("first-install-minimized.png");
         public static readonly string inuit_less = Url("inuit.less");
         public static readonly string inuit_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/inuit.min.css") ? Url("inuit.min.css") : Url("inuit.css");
              
