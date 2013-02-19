@@ -34,7 +34,7 @@ namespace Glimpse.Site.Framework
             var model = new VersionCheckDetails();
             var items = new List<VersionCheckDetailsItem>();
 
-            if (queryString.AllKeys.Length > 1)
+            if (queryString.AllKeys.Length > 0)
             {
                 foreach (var token in queryString.AllKeys)
                 {
