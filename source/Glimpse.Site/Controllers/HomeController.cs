@@ -16,16 +16,12 @@ namespace Glimpse.Site.Controllers
 
         public virtual ActionResult Protocol()
         {
-            return Content("Fill me in! Protocol");
-
-            // TODO: Provide real content
+            return View();
         }
 
         public virtual ActionResult Talk()
         {
-            return Content("Fill me in! Talk");
-
-            // TODO: Provide real content
+            return View();
         }
     }
 }

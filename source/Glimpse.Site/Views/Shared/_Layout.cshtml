@@ -15,11 +15,51 @@
     <header>
         <div class="header-inner"> 
             <a href="@Url.Action(MVC.Home.Index())" class="float--right logo-sub"></a>
+            <div class="float--right stats-sub-menu hide--lap hide--palm">
+                <div class="stat-group">
+                    <dl class="stat">
+                        <dt class="stat__title">Community</dt>
+                        <dd class="stat__value"><a href="@Url.Action(MVC.Community.Index())" class="sprite sprite-root sprite-root-community"></a></dd>
+                    </dl>
+                    <dl class="stat">
+                        <dt class="stat__title">Documentation</dt>
+                        <dd class="stat__value"><a href="/Help" class="sprite sprite-root sprite-root-documentation"></a></dd> 
+                    </dl>
+                    <dl class="stat">
+                        <dt class="stat__title">Extensions</dt>
+                        <dd class="stat__value"><a href="@Url.Action(MVC.Packages.Index())" class="sprite sprite-root sprite-root-plugins"></a></dd> 
+                    </dl>
+                    <dl class="stat">
+                        <dt class="stat__title">Support</dt>
+                        <dd class="stat__value"><a href="@Url.Action(MVC.Home.Support())" class="sprite sprite-root sprite-root-support"></a></dd> 
+                    </dl>
+                </div> 
+            </div>
             @RenderSection("header")
         </div>
     </header>
     <div class="body gw">
         <div class="body-inner">
+            <div class="g one-whole stats-sub-menu hide--desk">
+                <div class="stat-group">
+                    <dl class="stat">
+                        <dt class="stat__title hide--palm">Community</dt>
+                        <dd class="stat__value"><a href="@Url.Action(MVC.Community.Index())" class="sprite sprite-root sprite-root-community"></a></dd>
+                    </dl>
+                    <dl class="stat">
+                        <dt class="stat__title hide--palm">Documentation</dt>
+                        <dd class="stat__value"><a href="/Help" class="sprite sprite-root sprite-root-documentation"></a></dd> 
+                    </dl>
+                    <dl class="stat">
+                        <dt class="stat__title hide--palm">Extensions</dt>
+                        <dd class="stat__value"><a href="@Url.Action(MVC.Packages.Index())" class="sprite sprite-root sprite-root-plugins"></a></dd> 
+                    </dl>
+                    <dl class="stat">
+                        <dt class="stat__title hide--palm">Support</dt>
+                        <dd class="stat__value"><a href="@Url.Action(MVC.Home.Support())" class="sprite sprite-root sprite-root-support"></a></dd> 
+                    </dl>
+                </div> 
+            </div>
             @RenderBody()
         </div>
     </div>

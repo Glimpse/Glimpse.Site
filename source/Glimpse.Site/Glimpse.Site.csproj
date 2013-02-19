@@ -201,6 +201,7 @@
     <None Include="Content\inuit.less" />
     <Content Include="Content\favicon.ico" />
     <Content Include="Content\favicon.png" />
+    <Content Include="Content\first-install-minimized.png" />
     <Content Include="Content\inuit.css">
       <DependentUpon>inuit.less</DependentUpon>
     </Content>
@@ -251,6 +252,7 @@
     <Content Include="Views\Docs\Index.cshtml" />
     <Content Include="Views\Home\Support.cshtml" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <Content Include="Views\Home\Talk.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
