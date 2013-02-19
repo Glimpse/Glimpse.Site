@@ -27,6 +27,7 @@ public static class MVC
     static readonly VersionClass s_Version = new VersionClass();
     public static VersionClass Version { get { return s_Version; } }
     public static Glimpse.Site.Controllers.CommunityController Community = new Glimpse.Site.Controllers.T4MVC_CommunityController();
+    public static Glimpse.Site.Controllers.DocsController Docs = new Glimpse.Site.Controllers.T4MVC_DocsController();
     public static Glimpse.Site.Controllers.HomeController Home = new Glimpse.Site.Controllers.T4MVC_HomeController();
     public static Glimpse.Site.Controllers.PackagesController Packages = new Glimpse.Site.Controllers.T4MVC_PackagesController();
     public static Glimpse.Site.Controllers.VersionsController Versions = new Glimpse.Site.Controllers.T4MVC_VersionsController();

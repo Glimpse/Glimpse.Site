@@ -140,6 +140,9 @@
     <Compile Include="Controllers\CommunityController.cs" />
     <Compile Include="Controllers\DocsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="DocsController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="Extensions\HtmlHelperExtensions.cs" />
     <Compile Include="Controllers\PackagesController.cs" />
     <Compile Include="Controllers\VersionsController.cs" />

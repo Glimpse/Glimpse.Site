@@ -26,6 +26,8 @@ namespace Glimpse.Package
 
         IUpdateReleaseRepositoryService UpdateReleaseRepositoryService { get; }
 
+        IExistingReleaseQueryService ExistingReleaseService { get; }
+
         INewReleaseQueryService NewReleaseService { get; }
 
         IUpdateReleaseService UpdateReleaseService { get; }

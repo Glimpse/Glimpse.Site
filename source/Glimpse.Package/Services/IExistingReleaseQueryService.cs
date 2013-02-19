@@ -2,10 +2,10 @@ namespace Glimpse.Package
 {
     public interface IExistingReleaseQueryService
     {
-        //UpdateReleaseInfo GetReleaseInfo(VersionCheckDetails request, bool includeReleasesData);
+        ExistingReleaseInfo GetReleaseInfo(VersionCheckDetails request);
 
-        //UpdateReleaseDetails GetReleaseInfo(VersionCheckDetailsItem request, bool includeReleasesData);
+        ExistingReleaseDetails GetReleaseInfo(VersionCheckDetailsItem request);
 
-        //UpdateReleaseDetails GetReleaseInfo(string name, string version, bool includeReleasesData);
+        ExistingReleaseDetails GetReleaseInfo(string name, string version);
     }
 }

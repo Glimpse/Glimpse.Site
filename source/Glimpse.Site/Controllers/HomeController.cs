@@ -14,14 +14,14 @@ namespace Glimpse.Site.Controllers
             return View();
         }
 
-        public ActionResult Protocol()
+        public virtual ActionResult Protocol()
         {
             return Content("Fill me in! Protocol");
 
             // TODO: Provide real content
         }
 
-        public ActionResult Talk()
+        public virtual ActionResult Talk()
         {
             return Content("Fill me in! Talk");
 

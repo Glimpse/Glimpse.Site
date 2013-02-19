@@ -32,6 +32,8 @@ namespace Glimpse.Package
 
         public IUpdateReleaseRepositoryService UpdateReleaseRepositoryService { get; private set; }
 
+        public IExistingReleaseQueryService ExistingReleaseService { get; private set; }
+
         public INewReleaseQueryService NewReleaseService { get; private set; } 
 
         public IUpdateReleaseService UpdateReleaseService { get; private set; }
@@ -59,6 +61,7 @@ namespace Glimpse.Package
  
             QueryProvider = new CacheReleaseQueryProvider();
 
+            ExistingReleaseService = new ExistingReleaseQueryService(QueryProvider);
             NewReleaseService = new NewReleaseQueryService(QueryProvider);
             UpdateReleaseRepositoryService = new UpdateReleaseRepositoryService(feedProvider, persistencyProvider);
             UpdateReleaseService = new UpdateReleaseService(this, UpdateReleaseRepositoryService, QueryProvider);
@@ -73,7 +76,6 @@ namespace Glimpse.Package
 
             _logger.Info("Settings - Post Initialize");
         }
-
 
         private void LoadSettings()
         {

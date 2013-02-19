@@ -9,10 +9,13 @@ using Glimpse.Package;
 namespace Glimpse.Site.Areas.Version.Controllers
 {
     public partial class InstallController : Controller
-    { 
-        public virtual ActionResult Index()
+    {
+        public virtual ActionResult Index(VersionCheckDetails details)
         {
-            return View();
+            var service = PackageSettings.Settings.ExistingReleaseService;
+            var result = service.GetReleaseInfo(details);
+
+            return View(result);
         }
 
         public virtual ActionResult Update(VersionCheckDetails details, bool? withDetails)

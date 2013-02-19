@@ -3,39 +3,37 @@ using System.Linq;
 
 namespace Glimpse.Package
 {
-    public class NewReleaseQueryService : INewReleaseQueryService
+    public class ExistingReleaseQueryService : IExistingReleaseQueryService
     {
         private readonly IReleaseQueryProvider _queryProvider;
 
-        public NewReleaseQueryService(IReleaseQueryProvider queryProvider)
+        public ExistingReleaseQueryService(IReleaseQueryProvider queryProvider)
         {
             _queryProvider = queryProvider;
         }
 
-        public LatestReleaseInfo GetLatestReleaseInfo(VersionCheckDetails request, bool includeReleasesData = false)
+        public ExistingReleaseInfo GetReleaseInfo(VersionCheckDetails request)
         {
-            var info = new LatestReleaseInfo { Details = new Dictionary<string, LatestReleaseDetails>() };
+            var info = new ExistingReleaseInfo { Details = new Dictionary<string, ExistingReleaseDetails>() };
 
             foreach (var package in request.Packages)
             {
-                var detail = GetLatestReleaseInfo(package, includeReleasesData);
+                var detail = GetReleaseInfo(package);
 
                 info.Details.Add(package.Name, detail);
-                if (detail.HasNewer)
-                    info.HasNewer = true;
             } 
 
             return info;
         }
 
-        public LatestReleaseDetails GetLatestReleaseInfo(VersionCheckDetailsItem request, bool includeReleasesData = false)
+        public ExistingReleaseDetails GetReleaseInfo(VersionCheckDetailsItem request)
         {
-            return GetLatestReleaseInfo(request.Name, request.Version, includeReleasesData);
+            return GetReleaseInfo(request.Name, request.Version);
         }
 
-        public LatestReleaseDetails GetLatestReleaseInfo(string name, string version, bool includeReleasesData = false)
+        public ExistingReleaseDetails GetReleaseInfo(string name, string version)
         {
-            var details = new LatestReleaseDetails(); 
+            var details = new ExistingReleaseDetails(); 
 
             var currentRelease = _queryProvider.SelectRelease(name, version); 
             if (currentRelease != null)
@@ -60,21 +58,14 @@ namespace Glimpse.Package
 
                     var newestPreRelease = preReleases.LastOrDefault();
                     var newestNonPreRelease = nonPreRelease.LastOrDefault();
-                    var newestRelease = currentRelease.IsPrerelease && newestPreRelease != null ? newestPreRelease : newestNonPreRelease;
 
                     if (newestPreRelease != null)
                         summary.Add("preRelease", new LatestReleaseDetailsSummaryInfo { LatestVersion = newestPreRelease.Version, TotalNewerReleases = preReleases.Count });
                     if (newestNonPreRelease != null)
                         summary.Add("release", new LatestReleaseDetailsSummaryInfo { LatestVersion = newestNonPreRelease.Version, TotalNewerReleases = nonPreRelease.Count }); 
-                    if (newestRelease != null)
-                    {
-                        details.ProductDescription = newestRelease.Description;
-                        details.ProductIconUrl = newestRelease.IconUrl;
-                    }
-
+                    
                     // Releases details
-                    if (includeReleasesData)
-                        details.Releases = allNewReleases.ToDictionary(x => x.Version, x => new ReleaseVersionData { Created = x.Created, IsLatestVersion = x.IsLatestVersion, IsAbsoluteLatestVersion = x.IsAbsoluteLatestVersion, IsPrerelease = x.IsPrerelease, ReleaseNotes = x.ReleaseNotes, Description = x.Description, IconUrl = x.IconUrl });
+                    details.Release = new ReleaseVersionData { Created = currentRelease.Created, IsLatestVersion = currentRelease.IsLatestVersion, IsAbsoluteLatestVersion = currentRelease.IsAbsoluteLatestVersion, IsPrerelease = currentRelease.IsPrerelease, ReleaseNotes = currentRelease.ReleaseNotes, Description = currentRelease.Description, IconUrl = currentRelease.IconUrl };
                 }
 
                 details.TotalNewerReleases = allNewReleases.Count;

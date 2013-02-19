@@ -7,7 +7,7 @@ namespace Glimpse.Package
     {
         public IDictionary<string, LatestReleaseDetailsSummaryInfo> Summary { get; set; }
 
-        public IDictionary<string, LatestReleaseVersionData> Releases { get; set; }
+        public IDictionary<string, ReleaseVersionData> Releases { get; set; }
 
         public string Channel { get; set; }
 
@@ -26,7 +26,7 @@ namespace Glimpse.Package
 
     public static class LatestReleaseVersionDataExtension
     {
-        public static LatestReleaseVersionData LastItemOrDefault(this IDictionary<string, LatestReleaseVersionData> value)
+        public static ReleaseVersionData LastItemOrDefault(this IDictionary<string, ReleaseVersionData> value)
         {
             if (value == null || value.Count == 0)
                 return null;

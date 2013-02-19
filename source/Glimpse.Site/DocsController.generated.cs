@@ -22,13 +22,13 @@ using System.Web.Routing;
 using T4MVC;
 namespace Glimpse.Site.Controllers
 {
-    public partial class HomeController
+    public partial class DocsController
     {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public HomeController() { }
+        public DocsController() { }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        protected HomeController(Dummy d) { }
+        protected DocsController(Dummy d) { }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         protected RedirectToRouteResult RedirectToAction(ActionResult result)
@@ -44,15 +44,21 @@ namespace Glimpse.Site.Controllers
             return RedirectToRoutePermanent(callInfo.RouteValueDictionary);
         }
 
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult Index()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Index);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public HomeController Actions { get { return MVC.Home; } }
+        public DocsController Actions { get { return MVC.Docs; } }
         [GeneratedCode("T4MVC", "2.0")]
         public readonly string Area = "";
         [GeneratedCode("T4MVC", "2.0")]
-        public readonly string Name = "Home";
+        public readonly string Name = "Docs";
         [GeneratedCode("T4MVC", "2.0")]
-        public const string NameConst = "Home";
+        public const string NameConst = "Docs";
 
         static readonly ActionNamesClass s_actions = new ActionNamesClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -61,21 +67,24 @@ namespace Glimpse.Site.Controllers
         public class ActionNamesClass
         {
             public readonly string Index = "Index";
-            public readonly string Support = "Support";
-            public readonly string Protocol = "Protocol";
-            public readonly string Talk = "Talk";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
             public const string Index = "Index";
-            public const string Support = "Support";
-            public const string Protocol = "Protocol";
-            public const string Talk = "Talk";
         }
 
 
+        static readonly ActionParamsClass_Index s_params_Index = new ActionParamsClass_Index();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_Index IndexParams { get { return s_params_Index; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_Index
+        {
+            public readonly string mdSlug = "mdSlug";
+            public readonly string controller = "controller";
+        }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ViewsClass Views { get { return s_views; } }
@@ -87,51 +96,24 @@ namespace Glimpse.Site.Controllers
             public class _ViewNamesClass
             {
                 public readonly string Index = "Index";
-                public readonly string Support = "Support";
             }
-            public readonly string Index = "~/Views/Home/Index.cshtml";
-            public readonly string Support = "~/Views/Home/Support.cshtml";
+            public readonly string Index = "~/Views/Docs/Index.cshtml";
         }
     }
 
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-    public partial class T4MVC_HomeController : Glimpse.Site.Controllers.HomeController
+    public partial class T4MVC_DocsController : Glimpse.Site.Controllers.DocsController
     {
-        public T4MVC_HomeController() : base(Dummy.Instance) { }
+        public T4MVC_DocsController() : base(Dummy.Instance) { }
 
-        partial void IndexOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+        partial void IndexOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, string mdSlug, string controller);
 
-        public override System.Web.Mvc.ActionResult Index()
+        public override System.Web.Mvc.ActionResult Index(string mdSlug, string controller)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Index);
-            IndexOverride(callInfo);
-            return callInfo;
-        }
-
-        partial void SupportOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
-
-        public override System.Web.Mvc.ActionResult Support()
-        {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Support);
-            SupportOverride(callInfo);
-            return callInfo;
-        }
-
-        partial void ProtocolOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
-
-        public override System.Web.Mvc.ActionResult Protocol()
-        {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Protocol);
-            ProtocolOverride(callInfo);
-            return callInfo;
-        }
-
-        partial void TalkOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
-
-        public override System.Web.Mvc.ActionResult Talk()
-        {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Talk);
-            TalkOverride(callInfo);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "mdSlug", mdSlug);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "controller", controller);
+            IndexOverride(callInfo, mdSlug, controller);
             return callInfo;
         }
 

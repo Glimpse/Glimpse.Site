@@ -46,6 +46,12 @@ namespace Glimpse.Site.Areas.Version.Controllers
 
         [NonAction]
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult Index()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Index);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public virtual System.Web.Mvc.ActionResult Update()
         {
             return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Update);
@@ -78,6 +84,14 @@ namespace Glimpse.Site.Areas.Version.Controllers
         }
 
 
+        static readonly ActionParamsClass_Index s_params_Index = new ActionParamsClass_Index();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_Index IndexParams { get { return s_params_Index; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_Index
+        {
+            public readonly string details = "details";
+        }
         static readonly ActionParamsClass_Update s_params_Update = new ActionParamsClass_Update();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ActionParamsClass_Update UpdateParams { get { return s_params_Update; } }
@@ -110,12 +124,13 @@ namespace Glimpse.Site.Areas.Version.Controllers
     {
         public T4MVC_InstallController() : base(Dummy.Instance) { }
 
-        partial void IndexOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+        partial void IndexOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Glimpse.Package.VersionCheckDetails details);
 
-        public override System.Web.Mvc.ActionResult Index()
+        public override System.Web.Mvc.ActionResult Index(Glimpse.Package.VersionCheckDetails details)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Index);
-            IndexOverride(callInfo);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "details", details);
+            IndexOverride(callInfo, details);
             return callInfo;
         }
 

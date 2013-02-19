@@ -2,9 +2,9 @@
 
 namespace Glimpse.Site.Controllers
 {
-    public class DocsController : Controller
+    public partial class DocsController : Controller
     {
-        public ActionResult Index(string mdSlug, string controller = null)
+        public virtual ActionResult Index(string mdSlug, string controller = null)
         {
             //if (string.IsNullOrEmpty(mdSlug))
                 return Content("Help placeholder!");
