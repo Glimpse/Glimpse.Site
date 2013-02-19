@@ -90,6 +90,10 @@ footer .bottom-backing img {
   min-width: 330px;
   max-width: 360px;
 }
+.body-inner .glimpse-panel {
+  display: block;
+  margin-bottom: 3em;
+}
 .sprite {
   background-repeat: no-repeat;
   display: inline-block;

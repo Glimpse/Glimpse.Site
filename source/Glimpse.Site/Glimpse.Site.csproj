@@ -222,6 +222,8 @@
     <Content Include="Content\twitterIcon.png" />
     <Content Include="Global.asax" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\glimpse.js" />
+    <Content Include="Scripts\glimpse.protocol.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Scripts\json.format.js" />
@@ -253,6 +255,7 @@
     <Content Include="Views\Home\Support.cshtml" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
     <Content Include="Views\Home\Talk.cshtml" />
+    <Content Include="Views\Home\Protocol.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
