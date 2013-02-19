@@ -104,10 +104,10 @@ footer .bottom-backing img {
   width: 63px;
 }
 .sprite.sprite-root-download {
-  background-position-x: -252px;
+  background-position: -252px 0px;
 }
 .sprite.sprite-root-github {
-  background-position-x: -315px;
+  background-position: -315px 0px;
 }
 .sprite.sprite-root-community {
   background-position: 0 -63px;
