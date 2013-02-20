@@ -84,6 +84,10 @@ namespace Links
         public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
         public static readonly string _references_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/_references.min.js") ? Url("_references.min.js") : Url("_references.js");
                       
+        public static readonly string glimpse_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/glimpse.min.js") ? Url("glimpse.min.js") : Url("glimpse.js");
+                      
+        public static readonly string glimpse_protocol_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/glimpse.protocol.min.js") ? Url("glimpse.protocol.min.js") : Url("glimpse.protocol.js");
+                      
         public static readonly string jquery_1_9_1_intellisense_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery-1.9.1.intellisense.min.js") ? Url("jquery-1.9.1.intellisense.min.js") : Url("jquery-1.9.1.intellisense.js");
                       
         public static readonly string jquery_1_9_1_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery-1.9.1.min.js") ? Url("jquery-1.9.1.min.js") : Url("jquery-1.9.1.js");

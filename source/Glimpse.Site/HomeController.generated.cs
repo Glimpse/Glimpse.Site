@@ -87,10 +87,12 @@ namespace Glimpse.Site.Controllers
             public class _ViewNamesClass
             {
                 public readonly string Index = "Index";
+                public readonly string Protocol = "Protocol";
                 public readonly string Support = "Support";
                 public readonly string Talk = "Talk";
             }
             public readonly string Index = "~/Views/Home/Index.cshtml";
+            public readonly string Protocol = "~/Views/Home/Protocol.cshtml";
             public readonly string Support = "~/Views/Home/Support.cshtml";
             public readonly string Talk = "~/Views/Home/Talk.cshtml";
         }
