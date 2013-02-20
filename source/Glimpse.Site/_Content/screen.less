@@ -12,7 +12,7 @@
 	padding-top: 0;
 }
 
-header {
+header, .header {
     color: @lightcolor;
     background-color: @darkcolor; 
 
@@ -23,11 +23,11 @@ header {
 		margin-bottom: 0.35em;
 	}  
 	.logo-sub {
-		height: 143px;
+		height: 125px; 
 		width: 143px;
 		background-repeat: no-repeat; 
 		background-image: url(logo-medium.png);
-		background-position-y: -18px;
+		background-position: 0 -18px;
 	}
 	.stats-sub-menu { 
 		margin: 1em 3em;
@@ -41,7 +41,7 @@ header {
 	}
 }
 
-footer {
+footer, .footer {
 	.g {
 		text-align: center;
 	}
@@ -148,6 +148,12 @@ footer {
 	.header-inner {
 		padding-top:2em;
 	}
+}
+
+.layout {
+	width: 100%;
+	margin: 0;
+	padding: 0;
 }
 
 .is-success { color: green; }

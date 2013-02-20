@@ -24,8 +24,8 @@ namespace Glimpse.Site
             //            "~/Scripts/modernizr-*"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                "~/Content/inuit.css",
-                "~/Content/site.css"));
+                "~/_Content/inuit.css",
+                "~/_Content/screen.css"));
 
             bundles.Add(new ScriptBundle("~/Script/javascript").Include("~/Scripts/site.google.js"));
 

@@ -198,38 +198,92 @@
     <Content Include="Areas\Version\Views\Check\Release.cshtml" />
     <Content Include="Areas\Version\Views\Admin\Index.cshtml" />
     <Content Include="Areas\Version\Views\Admin\Process.cshtml" />
-    <None Include="Content\inuit.less" />
-    <Content Include="Content\Contributors\pic1.jpg" />
-    <Content Include="Content\Contributors\pic10.jpg" />
-    <Content Include="Content\Contributors\pic2.jpg" />
-    <Content Include="Content\Contributors\pic3.jpg" />
-    <Content Include="Content\Contributors\pic4.jpg" />
-    <Content Include="Content\Contributors\pic5.jpg" />
-    <Content Include="Content\Contributors\pic6.jpg" />
-    <Content Include="Content\Contributors\pic7.jpg" />
-    <Content Include="Content\Contributors\pic8.jpg" />
-    <Content Include="Content\Contributors\pic9.jpg" />
-    <Content Include="Content\favicon.ico" />
-    <Content Include="Content\favicon.png" />
-    <Content Include="Content\first-install-minimized.png" />
-    <Content Include="Content\inuit.css">
+    <None Include="_Content\inuit.less" />
+    <Content Include="Content\close-quote.gif" />
+    <Content Include="Content\cs_leftImg.png" />
+    <Content Include="Content\cs_rightImg.png" />
+    <Content Include="Content\favicon.gif" />
+    <Content Include="Content\github.gif" />
+    <Content Include="Content\glimpse100 - Copy.png" />
+    <Content Include="Content\glimpse100.png" />
+    <Content Include="Content\glimpse128.png" />
+    <Content Include="Content\glimpse150.png" />
+    <Content Include="Content\glimpse256.png" />
+    <Content Include="Content\glimpse32.png" />
+    <Content Include="Content\glimpse512.png" />
+    <Content Include="Content\glimpse64 - Copy.png" />
+    <Content Include="Content\glimpse64.png" />
+    <Content Include="Content\glimpseLogo.png" />
+    <Content Include="Content\glimpseLogoWhite.png" />
+    <Content Include="Content\glimpseMedium.png" />
+    <Content Include="Content\GlimpseStackAd.png" />
+    <Content Include="Content\Help\FilesPlugin.jpg" />
+    <Content Include="Content\Help\HelloWorldPlugin.jpg" />
+    <Content Include="Content\jquery.contentslider.css" />
+    <Content Include="Content\jquery.jscrollpane.css" />
+    <Content Include="Content\nugetlogo.png" />
+    <Content Include="Content\open-quote.gif" />
+    <Content Include="Content\Plugin\Ajax.jpg" />
+    <Content Include="Content\Plugin\Binding.jpg" />
+    <Content Include="Content\Plugin\Config.jpg" />
+    <Content Include="Content\Plugin\enviro.png" />
+    <Content Include="Content\Plugin\Environment.jpg" />
+    <Content Include="Content\Plugin\Execution.jpg" />
+    <Content Include="Content\Plugin\Metadata.jpg" />
+    <Content Include="Content\Plugin\Remote.jpg" />
+    <Content Include="Content\Plugin\Request.jpg" />
+    <Content Include="Content\Plugin\Routes.jpg" />
+    <Content Include="Content\Plugin\Server.jpg" />
+    <Content Include="Content\Plugin\Session.jpg" />
+    <Content Include="Content\Plugin\switchServers.png" />
+    <Content Include="Content\Plugin\Timeline.jpg" />
+    <Content Include="Content\Plugin\TimelineAlt.jpg" />
+    <Content Include="Content\Plugin\Trace.jpg" />
+    <Content Include="Content\Plugin\TraceIcons.png" />
+    <Content Include="Content\Plugin\View.jpg" />
+    <Content Include="Content\rss_icon.gif" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\Support\GlimpseCredits.jpg" />
+    <Content Include="Content\Support\GlimpseDetails.jpg" />
+    <Content Include="Content\Support\GlimpseOverview.jpg" />
+    <Content Include="Content\Support\GlimpsePlatform.jpg" />
+    <Content Include="Content\Support\GlimpseQuickStart.jpg" />
+    <Content Include="Content\Support\GlimpseSupport.jpg" />
+    <Content Include="Content\Support\GlimpseTalk.jpg" />
+    <Content Include="Content\Support\WhatIsGlimpse.jpg" />
+    <Content Include="Content\twitter.png" />
+    <Content Include="Content\uservoice-icon.png" />
+    <Content Include="_Content\Contributors\pic1.jpg" />
+    <Content Include="_Content\Contributors\pic10.jpg" />
+    <Content Include="_Content\Contributors\pic2.jpg" />
+    <Content Include="_Content\Contributors\pic3.jpg" />
+    <Content Include="_Content\Contributors\pic4.jpg" />
+    <Content Include="_Content\Contributors\pic5.jpg" />
+    <Content Include="_Content\Contributors\pic6.jpg" />
+    <Content Include="_Content\Contributors\pic7.jpg" />
+    <Content Include="_Content\Contributors\pic8.jpg" />
+    <Content Include="_Content\Contributors\pic9.jpg" />
+    <Content Include="_Content\favicon.ico" />
+    <Content Include="_Content\favicon.png" />
+    <Content Include="_Content\first-install-minimized.png" />
+    <Content Include="_Content\inuit.css">
       <DependentUpon>inuit.less</DependentUpon>
     </Content>
-    <Content Include="Content\inuit.min.css">
+    <Content Include="_Content\inuit.min.css">
       <DependentUpon>inuit.less</DependentUpon>
     </Content>
-    <Content Include="Content\logo-medium.png" />
-    <Content Include="Content\logo-nuget.png" />
-    <Content Include="Content\logo-redgate.png" />
-    <Content Include="Content\logo.png" />
-    <Content Include="Content\options-root.png" />
-    <Content Include="Content\site.css">
-      <DependentUpon>site.less</DependentUpon>
+    <Content Include="_Content\logo-medium.png" />
+    <Content Include="_Content\logo-nuget.png" />
+    <Content Include="_Content\logo-redgate.png" />
+    <Content Include="_Content\logo.png" />
+    <Content Include="_Content\options-root.png" />
+    <Content Include="_Content\screen.css">
+      <DependentUpon>screen.less</DependentUpon>
     </Content>
-    <Content Include="Content\site.min.css">
-      <DependentUpon>site.less</DependentUpon>
+    <Content Include="_Content\screen.min.css">
+      <DependentUpon>screen.less</DependentUpon>
     </Content>
-    <Content Include="Content\twitterIcon.png" />
+    <Content Include="_Content\twitterIcon.png" />
     <Content Include="Global.asax" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\glimpse.js" />
@@ -251,7 +305,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Content\site.less" />
+    <Content Include="_Content\screen.less" />
     <Content Include="T4MVC.tt.hooks.t4" />
     <Content Include="T4MVC.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
