@@ -2,7 +2,7 @@
     ViewBag.Title = "Glimpse - A client side look at whats going on in your server";
 }
 
-<section class="g one-whole stats-root-menu">
+@*<section class="g one-whole stats-root-menu">
     <div class="stat-group">
         <dl class="stat">
             <dt class="stat__title gamma">Community</dt>
@@ -25,33 +25,114 @@
             <dd class="stat__value hide--palm">need some help or found an issue for us?</dd>
         </dl>
     </div>
-</section>
+</section>*@
 <section>
     <div class="g one-half palm-one-whole">
-        <h2>About</h2>
-        <p>With the state of diagnostics on the web being where it is, we are left needing to perform a job that is much harder than it should be. Too often, the tools we are provided with only show us a part of the picture, leaving us to simply guess what might be happening behind the scenes.</p>
-        <p>Glimpse is an Open Source platform that aims to change the way we think about diagnostics and the frameworks we interact with. After releasing Glimpse at Mix11, Glimpse has become a tool that is used daily by tens of thousands of developers around the world. Learn how to use Glimpse to reveal what is happening within your ASP.NET MVC and WebForms sites. See what tools are included out of the box and see how you can easily extend it to suit your needs.</p>
+        <h2>What It Does</h2>
+        <p>Glimpse gathers and presents detailed, easy to digest, diagnostic information about the behavior and execution of your web application.</p>
+        <p>It is used in a similar manner to client side diagnostics and debugging tools (such as <a href="https://getfirebug.com/">FireBug</a>), but instead focuses on concepts such as server configuration, model binding, url routing, and execution profiling.</p>
         
         <h2>Getting Started</h2>
-        <p>Glimpse has to be added on a per-site basis, not once per server. It does not make any changes outside of your project or web site directory. It can be installed easily via Nuget or manually by referencing the relevant DLLs. To get up and running your simply need to:</p>
-        <ol>
-            <li>Install the Glimpse server components.</li>
-            <li>Enable Glimpse for your site on the server.</li>
-            <li>Turn on Glimpse in the browser by setting a cookie.</li>
-            <li>Click on the Glimpse logo in the bottom right hand corner of your page.</li>
-        </ol> 
+        <p>Installing Glimpse is incredibly easy. From within Visual Studio, simply open NuGet and search for "Glimpse". For ASP.NET WebForms applications, install <code>Glimpse.AspNet</code> and for ASP.NET MVC applications install <code>Glimpse.Mvc</code>.</p>
+        <p>When you're ready to start using Glimpse, simply browse to <code>http://your-application-url/Glimpse.axd</code> and click "Turn Glimpse On". From then on the Glimpse icon will appear in the bottom right corner of pages within your application.</p>
     </div>
     <div class="g one-half palm-one-whole">
-        <h2>What Does It Do</h2>
-        <p>Glimpse gathers detailed diagnostic information about the behavior and execution of your web application. While it has been built with .Net projects in mind, other platforms are also on the horizon. Glimpse works by collecting information on the server with each page request and, before the response is sent, formats that data and sends it as JSON to the client.</p>
-        <p>Aside from offering out-of-the-box debugging information, it also opens up opportunities to take advantage of diagnostics tools that have been historically neglected or under-utilized such as the Trace object.<br /><br /></p>
-
-        <h2>Installation</h2>
-        <p>Installing Glimpse is incredibly easy. It can be installed manually but by far the easiest way is to use Visual Studio's Nuget package manager. Simply open Nuget and search the online package site for "Glimpse". Depending on whether you're building an ASP.Net webforms or MVC site, pick the appropriate package and click the corresponding Install button. Nuget will download and install Glimpse in your solution.</p>
-        <p>When you're ready to start using Glimpse, simply browse to <code>http://your-application-url/Glimpse.axd</code> and click "Turn Glimpse On".</p>
+        <h2>Working Together</h2>
+        <p>Glimpse wouldn't be what it is today without the love and support of some awesome people from around the world. Thanks to everyone who has been involed in making this possible.</p>
+        
+        <div class="stat-group stats-contributors">
+            <dl class="stat">
+                <dd class="stat__value">
+                    <img height="100" src="https://secure.gravatar.com/avatar/6af12b64c2fe22af3b27848b8eedd992?s=420&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="100">
+                </dd> 
+                <dt class="stat__title"><a href="https://twitter.com/anthony_vdh">@@anthony_vdh</a></dt>
+            </dl>
+            <dl class="stat">
+                <dd class="stat__value">
+                    <img height="100" src="https://secure.gravatar.com/avatar/e07a27ec61977c7c686feaa799b1cf6e?s=420&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="100">
+                </dd> 
+                <dt class="stat__title"><a href="https://twitter.com/nikmd23">@@nikmd23</a></dt>
+            </dl>
+            <dl class="stat">
+                <dd class="stat__value">
+                    <img height="100" src="https://si0.twimg.com/profile_images/386478889/IMG_3854_ret_small.jpg" width="100">
+                </dd>
+                <dt class="stat__title"><a href="https://twitter.com/kristofferahl">@@kristofferahl</a></dt>
+            </dl>
+            <dl class="stat">
+                <dd class="stat__value">
+                    <img height="100" src="https://si0.twimg.com/profile_images/1521814256/IMGP1454.jpg" width="100">
+                </dd>
+                <dt class="stat__title"><a href="https://twitter.com/steven_lauwers">@@steven_lauwers</a></dt>
+            </dl>
+            <dl class="stat">
+                <dd class="stat__value">
+                    <img height="100" src="https://si0.twimg.com/profile_images/1276932059/23999_407957742754_718382754_4906687_6646867_n2.jpg" width="100">
+                </dd>
+                <dt class="stat__title"><a href="https://twitter.com/richvdh">@@richvdh</a></dt>
+            </dl>
+            <dl class="stat">
+                <dt class="stat__title">&nbsp;</dt>
+                <dd class="stat__value">
+                    <img height="100" src="https://secure.gravatar.com/avatar/a6f313320501b0ba79920012f061220f?s=420&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="100">
+                </dd>
+                <dd class="stat__value hide--palm"><a href="https://github.com/rho24">rho24</a></dd>
+            </dl>
+            <dl class="stat">
+                <dd class="stat__value">
+                    <img height="100" src="https://secure.gravatar.com/avatar/a5d515200029ed84f272882c5c0d0a95?s=420&d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="100">
+                </dd>
+                <dt class="stat__title"><a href="https://twitter.com/schotime">@@schotime</a></dt>
+            </dl>
+            <dl class="stat">
+                <dd class="stat__value">
+                    <img height="100" src="https://si0.twimg.com/profile_images/1810228150/400516_10150628083214414_509609413_11043629_671422251_n.jpg" width="100">
+                </dd>
+                <dt class="stat__title"><a href="https://twitter.com/headloose">@@headloose</a></dt>
+            </dl>
+            <dl class="stat">
+                <dd class="stat__value">
+                    <img height="100" src="https://twimg0-a.akamaihd.net/profile_images/1550517493/me2.jpg" width="100">
+                </dd>
+                <dt class="stat__title"><a href="https://twitter.com/ElizAyer">@@elizayer</a></dt>
+            </dl>
+            <dl class="stat">
+                <dd class="stat__value">
+                    <img height="100" src="https://twimg0-a.akamaihd.net/profile_images/2562679323/19d99952-f62e-4654-bd1b-444e7f2acd5c.png" width="100">
+                </dd>
+                <dt class="stat__title"><a href="https://twitter.com/maartenballiauw">@@maartenballiauw</a></dt>
+            </dl>
+        </div>
     </div>
 </section>
+
 <section>
+    <div class="g one-whole">
+        <div class="stat-group stats-support">
+            <dl class="stat">
+                <dt class="stat__title delta">Issues?</dt>  
+                <dd class="stat__value">
+                    If you have found an issue, let us know on our <a href="https://github.com/glimpse/glimpse/issues" target="_blank">issues list</a>.
+                </dd>
+            </dl>
+            <dl class="stat">
+                <dt class="stat__title delta">Developer List</dt>  
+                <dd class="stat__value">
+                    Get answers to questions and find out what is next for Glimpse on our <a href="https://groups.google.com/forum/?fromgroups#!forum/getglimpse-dev" target="_blank">community user group</a>.
+                </dd>
+            </dl>
+            <dl class="stat">
+                <dt class="stat__title delta">Twitter</dt>  
+                <dd class="stat__value">
+                    Feel free to get in touch with the us on Twitter: <a href="http://www.twitter.com/anthony_vdh" target="_blank">@@anthony_vdh</a> or <a href="http://www.twitter.com/nikmd23" target="_blank">@@nikmd23</a>.
+                </dd>
+            </dl>
+        </div>
+    </div>
+</section>
+
+
+@*<section>
     <div class="g one-whole">
         <h2>Where to next?</h2>
         <div class="stat-group stats-next">
@@ -64,7 +145,7 @@
             <dl class="stat">
                 <dt class="stat__title delta">Get in contact</dt>  
                 <dd class="stat__value">
-                    Feel free to reach out to us on the <a href="http://groups.google.com/group/getglimpse-dev">mailing list</a> or via twitter (<a href="https://twitter.com/anthony_vdh">@@anthony_vdh</a> &amp; <a href="https://twitter.com/nikmd23">@@nikmd23</a>).
+                    Reach out on the <a href="http://groups.google.com/group/getglimpse-dev">mailing list</a> or via Twitter (<a href="https://twitter.com/anthony_vdh">@@anthony_vdh</a> &amp; <a href="https://twitter.com/nikmd23">@@nikmd23</a>).
                 </dd>
             </dl> 
             <dl class="stat">
@@ -72,7 +153,7 @@
                 <dd class="stat__value">
                     Learn more about what makes Glimpse possible and <a href="@Url.Action(MVC.Home.Protocol())">how plugins get their structure</a>?
                 </dd>
-            </dl> 
+            </dl>
         </div>
     </div>
-</section>
+</section>*@
