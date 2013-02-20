@@ -51,7 +51,7 @@ namespace Glimpse.Package
 
         protected ConfigSectionGlimpse RetrieveConfig()
         {
-            return _configProvider.GetSection<ConfigSectionGlimpse>("glimpseCheck");
+            return _configProvider.GetSection<ConfigSectionGlimpse>("glimpsePackage");
         }
     }
 }
