@@ -62,13 +62,14 @@ namespace Glimpse.Package
                     if (newestPreRelease != null)
                         summary.Add("preRelease", new LatestReleaseDetailsSummaryInfo { LatestVersion = newestPreRelease.Version, TotalNewerReleases = preReleases.Count });
                     if (newestNonPreRelease != null)
-                        summary.Add("release", new LatestReleaseDetailsSummaryInfo { LatestVersion = newestNonPreRelease.Version, TotalNewerReleases = nonPreRelease.Count }); 
-                    
-                    // Releases details
-                    details.Release = new ReleaseVersionData { Created = currentRelease.Created, IsLatestVersion = currentRelease.IsLatestVersion, IsAbsoluteLatestVersion = currentRelease.IsAbsoluteLatestVersion, IsPrerelease = currentRelease.IsPrerelease, ReleaseNotes = currentRelease.ReleaseNotes, Description = currentRelease.Description, IconUrl = currentRelease.IconUrl };
+                        summary.Add("release", new LatestReleaseDetailsSummaryInfo { LatestVersion = newestNonPreRelease.Version, TotalNewerReleases = nonPreRelease.Count });
+
                 }
 
                 details.TotalNewerReleases = allNewReleases.Count;
+
+                // Releases details
+                details.Release = new ReleaseVersionData { Created = currentRelease.Created, IsLatestVersion = currentRelease.IsLatestVersion, IsAbsoluteLatestVersion = currentRelease.IsAbsoluteLatestVersion, IsPrerelease = currentRelease.IsPrerelease, ReleaseNotes = currentRelease.ReleaseNotes, Description = currentRelease.Description, IconUrl = currentRelease.IconUrl };
 
                 if (summary.Count > 0)
                     details.Summary = summary;

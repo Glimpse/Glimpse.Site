@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Linq;
@@ -40,7 +41,7 @@ namespace Glimpse.Package
                 connection.Open();
 
                 // Pull out the existing 
-                var currentRecords = connection.Query<ReleasePersistencyItem>(_selectReleases).ToDictionary(x => x.GetKey(), x => x);
+                var currentRecords = connection.Query<ReleasePersistencyItem>(_selectReleases).ToDictionary(x => x.GetKey(), x => x, StringComparer.OrdinalIgnoreCase);
 
                 summary.ExistingRecordsFound = currentRecords.Count;
 
@@ -115,7 +116,7 @@ namespace Glimpse.Package
         public IDictionary<string, ReleasePersistencyStatisticsItem> SelectLastestStatisticsReleases(DbConnection connection)
         { 
             var result = connection.Query<ReleasePersistencyStatisticsItem>(_selectLastestStatisticsReleases);
-            var index = result.ToDictionary(x => x.GetKey(), x => x);
+            var index = result.ToDictionary(x => x.GetKey(), x => x, StringComparer.OrdinalIgnoreCase);
                  
             return index; 
         }

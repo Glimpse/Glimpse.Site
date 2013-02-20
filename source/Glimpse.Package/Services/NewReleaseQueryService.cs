@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -74,7 +75,7 @@ namespace Glimpse.Package
 
                     // Releases details
                     if (includeReleasesData)
-                        details.Releases = allNewReleases.ToDictionary(x => x.Version, x => new ReleaseVersionData { Created = x.Created, IsLatestVersion = x.IsLatestVersion, IsAbsoluteLatestVersion = x.IsAbsoluteLatestVersion, IsPrerelease = x.IsPrerelease, ReleaseNotes = x.ReleaseNotes, Description = x.Description, IconUrl = x.IconUrl });
+                        details.Releases = allNewReleases.ToDictionary(x => x.Version, x => new ReleaseVersionData { Created = x.Created, IsLatestVersion = x.IsLatestVersion, IsAbsoluteLatestVersion = x.IsAbsoluteLatestVersion, IsPrerelease = x.IsPrerelease, ReleaseNotes = x.ReleaseNotes, Description = x.Description, IconUrl = x.IconUrl }, StringComparer.OrdinalIgnoreCase);
                 }
 
                 details.TotalNewerReleases = allNewReleases.Count;

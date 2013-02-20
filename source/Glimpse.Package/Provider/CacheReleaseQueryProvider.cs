@@ -35,7 +35,7 @@ namespace Glimpse.Package
         public ReleaseQueryItem SelectRelease(string packageName, string version)
         {
             var releases = SelectPackage(packageName);
-            return releases != null ? releases.FirstOrDefault(x => x.Version == version) : null;
+            return releases != null ? releases.FirstOrDefault(x => String.Compare(x.Version, version, StringComparison.OrdinalIgnoreCase) == 0) : null;
         }
 
         public IEnumerable<ReleaseQueryItem> FindReleasesAfter(string packageName, string version)
