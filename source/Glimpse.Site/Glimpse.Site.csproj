@@ -199,6 +199,16 @@
     <Content Include="Areas\Version\Views\Admin\Index.cshtml" />
     <Content Include="Areas\Version\Views\Admin\Process.cshtml" />
     <None Include="Content\inuit.less" />
+    <Content Include="Content\Contributors\pic1.jpg" />
+    <Content Include="Content\Contributors\pic10.jpg" />
+    <Content Include="Content\Contributors\pic2.jpg" />
+    <Content Include="Content\Contributors\pic3.jpg" />
+    <Content Include="Content\Contributors\pic4.jpg" />
+    <Content Include="Content\Contributors\pic5.jpg" />
+    <Content Include="Content\Contributors\pic6.jpg" />
+    <Content Include="Content\Contributors\pic7.jpg" />
+    <Content Include="Content\Contributors\pic8.jpg" />
+    <Content Include="Content\Contributors\pic9.jpg" />
     <Content Include="Content\favicon.ico" />
     <Content Include="Content\favicon.png" />
     <Content Include="Content\first-install-minimized.png" />
