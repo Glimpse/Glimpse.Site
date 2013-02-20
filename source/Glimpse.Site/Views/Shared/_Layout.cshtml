@@ -7,15 +7,15 @@
     <!--[if IE]><link rel="shortcut icon" href="path/to/favicon.ico"><![endif]--> 
     <meta name="msapplication-TileColor" content="#FFFFFF">
     <meta name="msapplication-TileImage" content="~/Content/favicon.png"> 
-    <meta name="viewport" content="width=device-width" />
+    
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
 </head>
 <body class="layout">
-    <header>
+    <div>
         <div class="header-inner"> 
-            <a href="@Url.Action(MVC.Home.Index())" class="float--right logo-sub"></a>
-            <div class="float--right stats-sub-menu hide--lap hide--palm">
+            <a href="http://www.getGlimpse.com" target="_blank" class="float--right logo-sub"></a>
+            @*<div class="float--right stats-sub-menu hide--lap hide--palm">
                 <div class="stat-group">
                     <dl class="stat">
                         <dt class="stat__title">Community</dt>
@@ -33,12 +33,12 @@
                         <dt class="stat__title">Support</dt>
                         <dd class="stat__value"><a href="@Url.Action(MVC.Home.Support())" class="sprite sprite-root sprite-root-support"></a></dd> 
                     </dl>
-                </div> 
-            </div>
+                </div>
+            </div>*@
             @RenderSection("header")
         </div>
-    </header>
-    <div class="body gw">
+    </div>
+    @*<div class="body gw">
         <div class="body-inner">
             <div class="g one-whole stats-sub-menu hide--desk">
                 <div class="stat-group">
@@ -60,16 +60,17 @@
                     </dl>
                 </div> 
             </div>
-            @RenderBody()
+            
         </div>
-    </div>
-    <footer class="gw">
+    </div>*@
+    @RenderBody()
+   @* <footer class="gw">
         <div class="footer-inner"> 
             <section class="g one-whole bottom-backing">
                 Proudly backed by <a href="http://www.red-gate.com/"><img src="~/Content/logo-redgate.png" style="vertical-align:middle" /></a> <a href="http://www.github.com/Glimpse/Glimpse/">and you!</a>
             </section>
         </div>
-    </footer>
+    </footer>*@
     @Scripts.Render("~/Script/javascript")
     @RenderSection("scripts", false)
 </body>

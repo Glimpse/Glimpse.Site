@@ -10,31 +10,31 @@
 .header-inner {
   padding-top: 0;
 }
-header {
+header, .header {
   color: #ffffff;
   background-color: #323d42;
 }
-header h1 {
+header h1, .header h1 {
   font-weight: normal;
   padding-top: 0.5em;
   line-height: 1;
   margin-bottom: 0.35em;
 }
-header .logo-sub {
+header .logo-sub, .header .logo-sub {
   height: 143px;
   width: 143px;
   background-repeat: no-repeat;
   background-image: url(logo-medium.png);
-  background-position-y: -18px;
+  background-position: 0, -18px;
 }
-header .stats-sub-menu {
+header .stats-sub-menu, .header .stats-sub-menu {
   margin: 1em 3em;
 }
-header .stats-sub-menu .stat {
+header .stats-sub-menu .stat, .header .stats-sub-menu .stat {
   text-align: center;
   margin-bottom: 0;
 }
-header .stats-sub-menu .stat__title {
+header .stats-sub-menu .stat__title, .header .stats-sub-menu .stat__title {
   margin-bottom: 0.5em;
 }
 footer .g {
@@ -213,4 +213,10 @@ footer .bottom-backing img {
   background: -o-linear-gradient(top, #eeeeee 0%, #f9f9f9 100%);
   background: -ms-linear-gradient(top, #eeeeee 0%, #f9f9f9 100%);
   background: linear-gradient(to bottom, #eeeeee 0%, #f9f9f9 100%);
+}
+
+.layout {
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
