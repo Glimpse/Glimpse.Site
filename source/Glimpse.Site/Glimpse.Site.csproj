@@ -253,6 +253,7 @@
     <Content Include="Content\Support\WhatIsGlimpse.jpg" />
     <Content Include="Content\twitter.png" />
     <Content Include="Content\uservoice-icon.png" />
+    <Content Include="sprite.png" />
     <Content Include="_Content\Contributors\pic1.jpg" />
     <Content Include="_Content\Contributors\pic10.jpg" />
     <Content Include="_Content\Contributors\pic2.jpg" />
