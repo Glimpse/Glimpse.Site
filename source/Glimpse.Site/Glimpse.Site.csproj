@@ -138,8 +138,11 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Controllers\CommunityController.cs" />
+    <Compile Include="Controllers\ProtocolController.cs" />
+    <Compile Include="Controllers\SupportController.cs" />
     <Compile Include="Controllers\DocsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TalkController.cs" />
     <Compile Include="DocsController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -168,12 +171,21 @@
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProtocolController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="SharedController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SupportController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="T4MVC.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TalkController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="Version.AdminController.generated.cs">
@@ -198,6 +210,9 @@
     <Content Include="Areas\Version\Views\Check\Release.cshtml" />
     <Content Include="Areas\Version\Views\Admin\Index.cshtml" />
     <Content Include="Areas\Version\Views\Admin\Process.cshtml" />
+    <Content Include="Views\Support\Index.cshtml" />
+    <Content Include="Views\Talk\Index.cshtml" />
+    <Content Include="Views\Protocol\Index.cshtml" />
     <None Include="_Content\inuit.less" />
     <Content Include="Content\close-quote.gif" />
     <Content Include="Content\cs_leftImg.png" />
@@ -317,10 +332,7 @@
     <Content Include="Areas\Version\Views\Install\Update.cshtml" />
     <Content Include="Views\Packages\Index.cshtml" />
     <Content Include="Views\Docs\Index.cshtml" />
-    <Content Include="Views\Home\Support.cshtml" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
-    <Content Include="Views\Home\Talk.cshtml" />
-    <Content Include="Views\Home\Protocol.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

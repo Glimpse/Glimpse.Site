@@ -22,13 +22,13 @@ using System.Web.Routing;
 using T4MVC;
 namespace Glimpse.Site.Controllers
 {
-    public partial class HomeController
+    public partial class SupportController
     {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public HomeController() { }
+        public SupportController() { }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        protected HomeController(Dummy d) { }
+        protected SupportController(Dummy d) { }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         protected RedirectToRouteResult RedirectToAction(ActionResult result)
@@ -46,13 +46,13 @@ namespace Glimpse.Site.Controllers
 
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public HomeController Actions { get { return MVC.Home; } }
+        public SupportController Actions { get { return MVC.Support; } }
         [GeneratedCode("T4MVC", "2.0")]
         public readonly string Area = "";
         [GeneratedCode("T4MVC", "2.0")]
-        public readonly string Name = "Home";
+        public readonly string Name = "Support";
         [GeneratedCode("T4MVC", "2.0")]
-        public const string NameConst = "Home";
+        public const string NameConst = "Support";
 
         static readonly ActionNamesClass s_actions = new ActionNamesClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -82,14 +82,14 @@ namespace Glimpse.Site.Controllers
             {
                 public readonly string Index = "Index";
             }
-            public readonly string Index = "~/Views/Home/Index.cshtml";
+            public readonly string Index = "~/Views/Support/Index.cshtml";
         }
     }
 
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-    public partial class T4MVC_HomeController : Glimpse.Site.Controllers.HomeController
+    public partial class T4MVC_SupportController : Glimpse.Site.Controllers.SupportController
     {
-        public T4MVC_HomeController() : base(Dummy.Instance) { }
+        public T4MVC_SupportController() : base(Dummy.Instance) { }
 
         partial void IndexOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
 
