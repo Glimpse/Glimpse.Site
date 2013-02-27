@@ -70,6 +70,9 @@ footer .bottom-backing img,
 .body-inner .stats-contributors {
   text-align: center;
 }
+.body-inner .stats-contributors .stat__title {
+  margin-bottom: 0.75em;
+}
 .body-inner .stats-support {
   text-align: center;
   vertical-align: top;
