@@ -11,17 +11,26 @@
 }
 
 <section>
+    <div class="g one-half">
+        <h2>Our Ecosystem</h2>
+        <p>Glimpse has many different extensions and plugions that exist within its ecosystem. he Glimpse team is providing general plugins for ASP.NET and ASP.NET MVC, however it may be beneficial to use additional plugins. Third parties that build frameworks or applications on top of ASP.NET may provide their own plugins to allow an insight in what is happening on the server.</p>
+        <p>Below is a list of all the different plugins that you have to choose from on Nuget.</p>
+    </div>
+    <div class="g one-half">
+        <h2>Creating Plugins</h2>
+        <p>One of the core tenents of Glimpse is that you should be able to simply and easily expose the data you would like to see. Tab's are the mechanism by which Glimpse refers to the tabs of data that are shown in the user interface.</p>
+        <p>When creating server side plugins, we make it increadably easy to return any object and have it show within the Glimpse UI. Once the Tab has been created, assuming Glimpse has already been added to the project, we will automatically find the Tab and add it to the UI that is rended.</p>
+    </div>
     <div class="g one-whole">
-        <h2>Our packages</h2>
-        <p>Glimpse has many different extensions and plugions that exist within its ecosystem. Below is a list of all the different plugins that you have to choose from on Nuget:</p>
+        <h2>Aviabale Packages</h2> 
         <div class="stat-group stats-contributors">
         @foreach(var item in Model)
         {
-            var image = string.IsNullOrEmpty(item.IconUrl) ? "/Content/logo-nuget.png" : item.IconUrl;
+            var image = string.IsNullOrEmpty(item.IconUrl) ? "/_Content/logo-nuget.png" : item.IconUrl;
             <dl class="stat">
                 <dt class="stat__title delta">@item.Name</dt> 
                 <dd class="stat__value">
-                    <a href="http://nuget.org/packages/@item.Name" target="_blank"><img src="@image" width="50" height="50" onerror="this.src = '/Content/logo-nuget.png';" /></a>
+                    <a href="http://nuget.org/packages/@item.Name" target="_blank"><img src="@image" width="50" height="50" onerror="this.src = '/_Content/logo-nuget.png';" /></a>
                 </dd>
                 <dd class="stat__value hide--palm">@item.Version | @item.Created.ToShortDateString()</dd>
             </dl>
