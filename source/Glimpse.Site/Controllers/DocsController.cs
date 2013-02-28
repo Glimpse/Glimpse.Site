@@ -1,4 +1,5 @@
 ﻿using System.Web.Mvc;
+using Glimpse.Site.Models;
 
 namespace Glimpse.Site.Controllers
 {
@@ -6,13 +7,10 @@ namespace Glimpse.Site.Controllers
     {
         public virtual ActionResult Index(string mdSlug, string controller = null)
         {
-            //if (string.IsNullOrEmpty(mdSlug))
-            //    return Content("Help placeholder!");
-            // TODO : Provide real content!
+            if (string.IsNullOrEmpty(mdSlug))
+                mdSlug = "Home";
 
-            //return View(new DocumentationViewModel(mdSlug, "Views/" + controller + "/Wiki/"));
-
-            return View();
+            return View(new DocumentationViewModel(mdSlug, "Views/" + controller + "/Wiki/"));
         }
     }
 }
