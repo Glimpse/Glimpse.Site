@@ -1,4 +1,4 @@
-﻿@model Glimpse.Package.CheckReleaseInfo
+﻿@model Glimpse.Package.ReleaseQueryInfo
 @{
     ViewBag.Title = "Update Check";
     Layout = "~/Views/Shared/_Layout.cshtml";   
@@ -32,27 +32,31 @@
             <div class="release-summary-desc">@releasSummarySummary</div>   
         </div>
 
-        @foreach(var detail in Model.Details) {  
+        @foreach(var detail in Model.Details)
+        {
+            var image = string.IsNullOrEmpty(detail.Value.PackageIconUrl) ? "/_Content/logo-nuget.png" : detail.Value.PackageIconUrl;
             <div class="release-package">
                 <div class="release-package-title">
-                    @if (!String.IsNullOrEmpty(detail.Value.ProductIconUrl)) { <img src="@detail.Value.ProductIconUrl" height="50"/> }
-                    <h3>@detail.Key</h3> 
-                    <div class="release-package-description">@detail.Value.ProductDescription</div>
+                    <img src="@image" height="50" onerror="this.src = '/_Content/logo-nuget.png';"/>
+                    <h3>@detail.Key</h3>  
                 </div>
         
-                @if (detail.Value.HasResult) {
+                @if (detail.Value.HasResult) 
+                {
                     <div class="release-package-details">
                         @if (detail.Value.HasNewer) {
                             <text>
                                 <div class="release-package-message release-package-old-found">
-                                    <div class="release-package-message-title">Old version found</div>
+                                    <div class="release-package-message-title">Sorry, it looks like you are currenly out of date</div>
                                     <span class="release-installed-version">Installed version: <strong>@detail.Value.Version</strong></span>
                                     <span class="release-latest-version">Latest version: <strong>@detail.Value.Summary[detail.Value.Channel].LatestVersion</strong></span>
                                 </div>
                         
-                                @if (detail.Value.Releases != null) {
+                                @if (detail.Value.AvailableReleases != null) 
+                                {
                                     <div class="release-item-detail-holder">
-                                        @foreach(var release in detail.Value.Releases) {
+                                        @foreach (var release in detail.Value.AvailableReleases)
+                                        {
                                             <div class="release-item-detail">
                                                 <div class="release-item-detail-header">
                                                     <span class="release-item-detail-title">@release.Key</span>
@@ -60,7 +64,7 @@
                                                 </div>
                                                 <div class="release-item-detail-notes">
                                                     @if (!string.IsNullOrEmpty(@release.Value.ReleaseNotes)) { @release.Value.ReleaseNotes } 
-                                                    else { <text>--</text> }
+                                                    else { <i>No notes avaiable for this release.</i> }
                                                 </div>
                                             </div>
                                         }  
@@ -70,7 +74,7 @@
                         }
                         else {
                             <div class="release-package-message release-package-latest-found">
-                                <div class="release-package-message-title">Latest version found</div>
+                                <div class="release-package-message-title">Congratulations, you are up to date</div>
                                 <span class="release-installed-version">Installed version: <strong>@detail.Value.Version</strong></span>
                                 <span class="release-latest-version">Latest version: <strong>@detail.Value.Version</strong></span> 
                             </div>

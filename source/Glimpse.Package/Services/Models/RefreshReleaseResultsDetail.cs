@@ -2,7 +2,7 @@ using System;
 
 namespace Glimpse.Package
 {
-    public class UpdateReleaseResultsDetail
+    public class RefreshReleaseResultsDetail
     { 
         public bool UpdateWasForced { get; set; }
 

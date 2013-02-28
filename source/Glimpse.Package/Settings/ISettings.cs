@@ -24,13 +24,11 @@ namespace Glimpse.Package
 
         int MinServiceTriggerInterval { get; set; }
 
-        IUpdateReleaseRepositoryService UpdateReleaseRepositoryService { get; }
+        IRefreshReleaseRepositoryService RefreshReleaseRepositoryService { get; }
 
-        IInstalledReleaseQueryService InstalledReleaseService { get; }
-
-        ICheckingForReleaseQueryService CheckingForReleaseService { get; }
-
-        IUpdateReleaseService UpdateReleaseService { get; }
+        IReleaseQueryService ReleaseQueryService { get; }
+         
+        IRefreshReleaseService RefreshReleaseService { get; }
 
         IReleaseService ReleaseService { get; }
 

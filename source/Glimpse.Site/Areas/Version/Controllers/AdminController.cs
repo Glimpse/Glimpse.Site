@@ -18,7 +18,7 @@ namespace Glimpse.Site.Areas.Version.Controllers
         [AcceptVerbs(HttpVerbs.Get)]
         public virtual ActionResult Process()
         {
-            var service = PackageSettings.Settings.UpdateReleaseService;
+            var service = PackageSettings.Settings.RefreshReleaseService;
             var results = service.Execute();
 
             return View(results);

@@ -213,6 +213,7 @@
     <Content Include="Views\Support\Index.cshtml" />
     <Content Include="Views\Talk\Index.cshtml" />
     <Content Include="Views\Protocol\Index.cshtml" />
+    <Content Include="Views\Shared\_Simple.cshtml" />
     <None Include="_Content\inuit.less" />
     <Content Include="Content\close-quote.gif" />
     <Content Include="Content\cs_leftImg.png" />

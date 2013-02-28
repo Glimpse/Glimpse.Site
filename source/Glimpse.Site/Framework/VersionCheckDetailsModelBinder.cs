@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Web;
@@ -39,7 +40,11 @@ namespace Glimpse.Site.Framework
                 foreach (var token in queryString.AllKeys)
                 {
                     if (!_reservedKeys.ContainsKey(token))
-                        items.Add(new VersionCheckDetailsItem { Name = token, Version = queryString[token] });
+                    {
+                        var item = new VersionCheckDetailsItem { Name = token };
+                        ParseVersion(item, queryString[token]);
+                        items.Add(item);
+                    }
                 }
             }
 
@@ -49,9 +54,18 @@ namespace Glimpse.Site.Framework
             return model;
         }
 
-        private string[] PraseList(string value)
+        private void ParseVersion(VersionCheckDetailsItem item, string version)
         {
-            return string.IsNullOrEmpty(value) ? new string[0] : value.Split(',');
-        }
+            item.Version = version;
+            item.VersionRange = version;
+            if (!string.IsNullOrEmpty(version) && version.Contains(".."))
+            {
+                var split = version.Split(new[] { ".." }, StringSplitOptions.None);
+                if (split.Length >= 1)
+                    item.Version = split[0];
+                if (split.Length >= 2)
+                    item.VersionRange = split[1];
+            }
+        } 
     }
 }

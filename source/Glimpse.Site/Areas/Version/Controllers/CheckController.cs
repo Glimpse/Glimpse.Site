@@ -7,13 +7,13 @@ namespace Glimpse.Site.Areas.Version.Controllers
     {
         public virtual ActionResult Index(VersionCheckDetails details, bool withDetails)
         {
-            var service = PackageSettings.Settings.CheckingForReleaseService;
-            var result = service.GetLatestReleaseInfo(details, withDetails);
+            var service = PackageSettings.Settings.ReleaseQueryService;
+            var result = service.GetReleaseInfo(details, true);
 
             // Indicates how much data we want to show
             ViewBag.WithDetails = withDetails;
 
-            return View(result);
+            return View(MVC.Version.Check.Views.Index, MVC.Shared.Views._Simple, result);
         }
 
         public virtual ActionResult Release(string package, string version, string stamp)

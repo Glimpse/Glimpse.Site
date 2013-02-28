@@ -79,10 +79,9 @@ namespace Glimpse.Package.Test
             public bool DisableAutoBuild { get; set; }
             public bool ServiceEnabled { get; set; }
             public int MinServiceTriggerInterval { get; set; } 
-            public IUpdateReleaseRepositoryService UpdateReleaseRepositoryService { get; private set; }
-            public IInstalledReleaseQueryService InstalledReleaseService { get; private set; }
-            public ICheckingForReleaseQueryService CheckingForReleaseService { get; private set; }
-            public IUpdateReleaseService UpdateReleaseService { get; private set; }
+            public IRefreshReleaseRepositoryService RefreshReleaseRepositoryService { get; private set; }
+            public IReleaseQueryService ReleaseQueryService { get; private set; }
+            public IRefreshReleaseService RefreshReleaseService { get; private set; }
             public IReleaseService ReleaseService { get; private set; }
             public IReleaseQueryProvider QueryProvider { get; private set; }
 

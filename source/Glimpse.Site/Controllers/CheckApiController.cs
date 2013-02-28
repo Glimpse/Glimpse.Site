@@ -11,17 +11,17 @@ namespace Glimpse.Site.Controllers
     public class CheckApiController : ApiController
     { 
         [HttpGet]
-        public CheckReleaseInfo Index([System.Web.Http.ModelBinding.ModelBinder(typeof(VersionCheckDetailsApiModelBinderProvider))] VersionCheckDetails details, bool withDetails)
+        public ReleaseQueryInfo Index([System.Web.Http.ModelBinding.ModelBinder(typeof(VersionCheckDetailsApiModelBinderProvider))] VersionCheckDetails details, bool withDetails)
         {
-            var service = PackageSettings.Settings.CheckingForReleaseService;
-            var result = service.GetLatestReleaseInfo(details, withDetails);
+            var service = PackageSettings.Settings.ReleaseQueryService;
+            var result = service.GetReleaseInfo(details, withDetails);
 
             result.ViewLink = GenerateViewUri(Url.Request.RequestUri, result);
 
             return result;
         } 
 
-        private string GenerateViewUri(Uri uri, CheckReleaseInfo result)
+        private string GenerateViewUri(Uri uri, ReleaseQueryInfo result)
         {
             var queryString = "";
             var spacer = "";

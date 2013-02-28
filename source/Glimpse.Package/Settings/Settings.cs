@@ -30,13 +30,11 @@ namespace Glimpse.Package
 
         public SettingsExtensionOptions Options { get; set; }
 
-        public IUpdateReleaseRepositoryService UpdateReleaseRepositoryService { get; private set; }
+        public IRefreshReleaseRepositoryService RefreshReleaseRepositoryService { get; private set; }
 
-        public IInstalledReleaseQueryService InstalledReleaseService { get; private set; }
+        public IReleaseQueryService ReleaseQueryService { get; private set; }
 
-        public ICheckingForReleaseQueryService CheckingForReleaseService { get; private set; } 
-
-        public IUpdateReleaseService UpdateReleaseService { get; private set; }
+        public IRefreshReleaseService RefreshReleaseService { get; private set; }
 
         public IReleaseService ReleaseService { get; private set; }
 
@@ -60,11 +58,9 @@ namespace Glimpse.Package
             var persistencyProvider = new ReleasePersistencyProvider(sqlFactory);
  
             QueryProvider = new CacheReleaseQueryProvider();
-
-            InstalledReleaseService = new InstalledReleaseQueryService(QueryProvider);
-            CheckingForReleaseService = new CheckingForReleaseQueryService(QueryProvider);
-            UpdateReleaseRepositoryService = new UpdateReleaseRepositoryService(feedProvider, persistencyProvider);
-            UpdateReleaseService = new UpdateReleaseService(this, UpdateReleaseRepositoryService, QueryProvider);
+            ReleaseQueryService = new ReleaseQueryService(QueryProvider); 
+            RefreshReleaseRepositoryService = new RefreshReleaseRepositoryService(feedProvider, persistencyProvider);
+            RefreshReleaseService = new RefreshReleaseService(this, RefreshReleaseRepositoryService, QueryProvider);
             ReleaseService = new ReleaseService(QueryProvider);
 
             _logger.Info("Settings - Setup Finished");
@@ -72,7 +68,7 @@ namespace Glimpse.Package
             //Run system setup
             _logger.Info("Settings - Pre Initialize");
              
-            UpdateReleaseService.Execute(true);
+            RefreshReleaseService.Execute(true);
 
             _logger.Info("Settings - Post Initialize");
         }

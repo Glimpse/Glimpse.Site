@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace Glimpse.Package
 {
-    public class UpdateReleaseRepositoryResults
+    public class RefreshReleaseRepositoryResults
     {
         public MergedReleaseDetails ReleaseDetails { get; set; }
 

@@ -18,13 +18,13 @@ namespace Glimpse.Package.Test
                 var repository = new Mock<IReleaseQueryProvider>();
                 repository.Setup(x => x.SelectRelease("Test", "1.0")).Returns((ReleaseQueryItem)null).Verifiable();
 
-                var service = new CheckingForReleaseQueryService(repository.Object);
-                var result = service.GetLatestReleaseInfo("Test", "1.0");
+                var service = new ReleaseQueryService(repository.Object);
+                var result = service.GetReleaseInfo("Test", "1.0", "1.0");
 
                 Assert.False(result.HasResult);
                 Assert.False(result.HasNewer);
                 Assert.Null(result.Summary);
-                Assert.Null(result.Releases);
+                Assert.Null(result.AvailableReleases);
 
                 repository.VerifyAll();
             }
@@ -38,13 +38,13 @@ namespace Glimpse.Package.Test
                 repository.Setup(x => x.SelectRelease("Test", "1.0")).Returns(release).Verifiable();
                 repository.Setup(x => x.FindReleasesAfter("Test", "1.0")).Returns(new List<ReleaseQueryItem>()).Verifiable();
 
-                var service = new CheckingForReleaseQueryService(repository.Object);
-                var result = service.GetLatestReleaseInfo("Test", "1.0");
+                var service = new ReleaseQueryService(repository.Object);
+                var result = service.GetReleaseInfo("Test", "1.0", "1.0");
 
                 Assert.True(result.HasResult);
                 Assert.False(result.HasNewer);
                 Assert.Null(result.Summary);
-                Assert.Null(result.Releases);
+                Assert.Null(result.AvailableReleases);
 
                 repository.VerifyAll();
             }
@@ -61,8 +61,8 @@ namespace Glimpse.Package.Test
                 repository.Setup(x => x.SelectRelease("Test", "1.0")).Returns(release).Verifiable();
                 repository.Setup(x => x.FindReleasesAfter("Test", "1.0")).Returns(new List<ReleaseQueryItem> { release1, release2, release3 }).Verifiable();
 
-                var service = new CheckingForReleaseQueryService(repository.Object);
-                var result = service.GetLatestReleaseInfo("Test", "1.0");
+                var service = new ReleaseQueryService(repository.Object);
+                var result = service.GetReleaseInfo("Test", "1.0", "1.0");
 
                 Assert.True(result.HasResult);
                 Assert.True(result.HasNewer);
@@ -70,7 +70,7 @@ namespace Glimpse.Package.Test
                 Assert.True(result.Summary.ContainsKey("release"));
                 Assert.Equal("1.3", result.Summary["release"].LatestVersion);
                 Assert.False(result.Summary.ContainsKey("preRelease"));
-                Assert.Null(result.Releases);
+                Assert.Null(result.AvailableReleases);
 
                 repository.VerifyAll();
             }
@@ -87,8 +87,8 @@ namespace Glimpse.Package.Test
                 repository.Setup(x => x.SelectRelease("Test", "1.0")).Returns(release).Verifiable();
                 repository.Setup(x => x.FindReleasesAfter("Test", "1.0")).Returns(new List<ReleaseQueryItem> { release1, release2, release3 }).Verifiable();
 
-                var service = new CheckingForReleaseQueryService(repository.Object);
-                var result = service.GetLatestReleaseInfo("Test", "1.0");
+                var service = new ReleaseQueryService(repository.Object);
+                var result = service.GetReleaseInfo("Test", "1.0", "1.0");
 
                 Assert.True(result.HasResult);
                 Assert.True(result.HasNewer);
@@ -96,7 +96,7 @@ namespace Glimpse.Package.Test
                 Assert.True(result.Summary.ContainsKey("preRelease"));
                 Assert.Equal("1.3", result.Summary["preRelease"].LatestVersion);
                 Assert.False(result.Summary.ContainsKey("release"));
-                Assert.Null(result.Releases);
+                Assert.Null(result.AvailableReleases);
 
                 repository.VerifyAll();
             }
@@ -113,8 +113,8 @@ namespace Glimpse.Package.Test
                 repository.Setup(x => x.SelectRelease("Test", "1.0")).Returns(release).Verifiable();
                 repository.Setup(x => x.FindReleasesAfter("Test", "1.0")).Returns(new List<ReleaseQueryItem> { release1, release2, release3 }).Verifiable();
 
-                var service = new CheckingForReleaseQueryService(repository.Object);
-                var result = service.GetLatestReleaseInfo("Test", "1.0");
+                var service = new ReleaseQueryService(repository.Object);
+                var result = service.GetReleaseInfo("Test", "1.0", "1.0");
 
                 Assert.True(result.HasResult);
                 Assert.True(result.HasNewer);
@@ -123,7 +123,7 @@ namespace Glimpse.Package.Test
                 Assert.Equal("1.3", result.Summary["preRelease"].LatestVersion);
                 Assert.True(result.Summary.ContainsKey("release"));
                 Assert.Equal("1.1", result.Summary["release"].LatestVersion);
-                Assert.Null(result.Releases);
+                Assert.Null(result.AvailableReleases);
 
                 repository.VerifyAll();
             }
@@ -140,8 +140,8 @@ namespace Glimpse.Package.Test
                 repository.Setup(x => x.SelectRelease("Test", "1.0")).Returns(release).Verifiable();
                 repository.Setup(x => x.FindReleasesAfter("Test", "1.0")).Returns(new List<ReleaseQueryItem> { release1, release2, release3 }).Verifiable();
 
-                var service = new CheckingForReleaseQueryService(repository.Object);
-                var result = service.GetLatestReleaseInfo("Test", "1.0");
+                var service = new ReleaseQueryService(repository.Object);
+                var result = service.GetReleaseInfo("Test", "1.0", "1.0");
 
                 Assert.True(result.HasResult);
                 Assert.False(result.HasNewer);
@@ -149,7 +149,7 @@ namespace Glimpse.Package.Test
                 Assert.True(result.Summary.ContainsKey("preRelease"));
                 Assert.Equal("1.3", result.Summary["preRelease"].LatestVersion);
                 Assert.False(result.Summary.ContainsKey("release"));
-                Assert.Null(result.Releases);
+                Assert.Null(result.AvailableReleases);
 
                 repository.VerifyAll();
             }
@@ -166,8 +166,8 @@ namespace Glimpse.Package.Test
                 repository.Setup(x => x.SelectRelease("Test", "1.0")).Returns(release).Verifiable();
                 repository.Setup(x => x.FindReleasesAfter("Test", "1.0")).Returns(new List<ReleaseQueryItem> { release1, release2, release3 }).Verifiable();
 
-                var service = new CheckingForReleaseQueryService(repository.Object);
-                var result = service.GetLatestReleaseInfo("Test", "1.0");
+                var service = new ReleaseQueryService(repository.Object);
+                var result = service.GetReleaseInfo("Test", "1.0", "1.0");
 
                 Assert.True(result.HasResult);
                 Assert.True(result.HasNewer);
@@ -175,7 +175,7 @@ namespace Glimpse.Package.Test
                 Assert.True(result.Summary.ContainsKey("release"));
                 Assert.Equal("1.3", result.Summary["release"].LatestVersion);
                 Assert.False(result.Summary.ContainsKey("preRelease"));
-                Assert.Null(result.Releases);
+                Assert.Null(result.AvailableReleases);
 
                 repository.VerifyAll();
             }
@@ -183,18 +183,18 @@ namespace Glimpse.Package.Test
             [Fact]
             public void ShouldBeAbleToUseObjectOverload()
             {
-                var input = new VersionCheckDetailsItem() {Name = "Test", Version = "1.0"};
+                var input = new VersionCheckDetailsItem() {Name = "Test", Version = "1.0", VersionRange = "1.0"};
 
                 var repository = new Mock<IReleaseQueryProvider>();
                 repository.Setup(x => x.SelectRelease("Test", "1.0")).Returns((ReleaseQueryItem)null).Verifiable();
 
-                var service = new CheckingForReleaseQueryService(repository.Object);
-                var result = service.GetLatestReleaseInfo(input);
+                var service = new ReleaseQueryService(repository.Object);
+                var result = service.GetReleaseInfo(input);
 
                 Assert.False(result.HasResult);
                 Assert.False(result.HasNewer);
                 Assert.Null(result.Summary);
-                Assert.Null(result.Releases);
+                Assert.Null(result.AvailableReleases);
 
                 repository.VerifyAll();
             }
@@ -202,16 +202,16 @@ namespace Glimpse.Package.Test
             [Fact]
             public void ShouldBeAbleToUseCollectiontOverload()
             {
-                var input1 = new VersionCheckDetailsItem() { Name = "Test", Version = "1.0" };
-                var input2 = new VersionCheckDetailsItem() { Name = "Other", Version = "1.0" };
+                var input1 = new VersionCheckDetailsItem() { Name = "Test", Version = "1.0", VersionRange = "1.0" };
+                var input2 = new VersionCheckDetailsItem() { Name = "Other", Version = "1.0", VersionRange = "1.0" };
                 var input = new VersionCheckDetails {Packages = new List<VersionCheckDetailsItem> {input1, input2}};
 
                 var repository = new Mock<IReleaseQueryProvider>();
                 repository.Setup(x => x.SelectRelease("Test", "1.0")).Returns((ReleaseQueryItem)null).Verifiable();
                 repository.Setup(x => x.SelectRelease("Other", "1.0")).Returns((ReleaseQueryItem)null).Verifiable();
 
-                var service = new CheckingForReleaseQueryService(repository.Object);
-                var result = service.GetLatestReleaseInfo(input);
+                var service = new ReleaseQueryService(repository.Object);
+                var result = service.GetReleaseInfo(input);
 
                 Assert.Equal(2, result.Details.Count);
                 Assert.True(result.Details.ContainsKey("Test"));
@@ -227,8 +227,8 @@ namespace Glimpse.Package.Test
                 var release = new ReleaseQueryItem { IsLatestVersion = false, Created = new DateTime(2012, 12, 12), Version = "1.0" };
                 var release1 = new ReleaseQueryItem { IsLatestVersion = true, Created = new DateTime(2012, 12, 13), Version = "1.1" };
 
-                var input1 = new VersionCheckDetailsItem() { Name = "Test", Version = "1.0" };
-                var input2 = new VersionCheckDetailsItem() { Name = "Other", Version = "1.0" };
+                var input1 = new VersionCheckDetailsItem() { Name = "Test", Version = "1.0", VersionRange = "1.0" };
+                var input2 = new VersionCheckDetailsItem() { Name = "Other", Version = "1.0", VersionRange = "1.0" };
                 var input = new VersionCheckDetails { Packages = new List<VersionCheckDetailsItem> { input1, input2 } };
 
                 var repository = new Mock<IReleaseQueryProvider>();
@@ -236,8 +236,8 @@ namespace Glimpse.Package.Test
                 repository.Setup(x => x.SelectRelease("Other", "1.0")).Returns((ReleaseQueryItem)null).Verifiable();
                 repository.Setup(x => x.FindReleasesAfter("Test", "1.0")).Returns(new List<ReleaseQueryItem> { release1 }).Verifiable();
 
-                var service = new CheckingForReleaseQueryService(repository.Object);
-                var result = service.GetLatestReleaseInfo(input);
+                var service = new ReleaseQueryService(repository.Object);
+                var result = service.GetReleaseInfo(input);
 
                 Assert.Equal(2, result.Details.Count);
                 Assert.True(result.Details.ContainsKey("Test"));
