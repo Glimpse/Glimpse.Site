@@ -3,20 +3,20 @@ using System.Linq;
 
 namespace Glimpse.Package
 {
-    public class UpdateReleaseRepositoryService : IUpdateReleaseRepositoryService
+    public class RefreshReleaseRepositoryService : IRefreshReleaseRepositoryService
     { 
         private readonly IReleaseFeedProvider _releaseFeedProvider;
         private readonly IReleasePersistencyProvider _releasePersistencyProvider;
 
-        public UpdateReleaseRepositoryService(IReleaseFeedProvider releaseFeedProvider, IReleasePersistencyProvider releasePersistencyProvider)
+        public RefreshReleaseRepositoryService(IReleaseFeedProvider releaseFeedProvider, IReleasePersistencyProvider releasePersistencyProvider)
         { 
             _releaseFeedProvider = releaseFeedProvider;
             _releasePersistencyProvider = releasePersistencyProvider;
         }
 
-        public UpdateReleaseRepositoryResults Execute()
+        public RefreshReleaseRepositoryResults Execute()
         {
-            var results = new UpdateReleaseRepositoryResults();
+            var results = new RefreshReleaseRepositoryResults();
 
             var feedReleases = _releaseFeedProvider.GetAllCurrentReleases();
 

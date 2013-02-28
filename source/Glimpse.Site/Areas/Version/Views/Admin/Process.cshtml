@@ -1,4 +1,4 @@
-﻿@model Glimpse.Package.UpdateReleaseResults
+﻿@model Glimpse.Package.RefreshReleaseResults
 
 @{
     ViewBag.Title = "Service Updater";
@@ -23,13 +23,13 @@
     }
 </div> 
 
-@if(Model.LastUpdate != null) {
+@if(Model.LastRefresh != null) {
     <div>
         <h3>Next Update Details</h3> 
         <table>
             <tr>
                 <th>Next Update Will Occur:</th>
-                <td>@Model.LastUpdate.NextUpdateCanOccur</td>
+                <td>@Model.LastRefresh.NextUpdateCanOccur</td>
             </tr>
         </table>
 
@@ -37,11 +37,11 @@
         <table>
             <tr>
                 <th>Time Occured:</th>
-                <td>@Model.LastUpdate.TimeOccured</td>
+                <td>@Model.LastRefresh.TimeOccured</td>
             </tr>
             <tr>
                 <th>Was Update Foced:</th>
-                <td>@Model.LastUpdate.UpdateWasForced</td>
+                <td>@Model.LastRefresh.UpdateWasForced</td>
             </tr>
             <tr>
                 <th>Release Details:</th>
@@ -54,10 +54,10 @@
                             <th>Records Updated</th>
                         </tr>
                         <tr>
-                            <td>@Model.LastUpdate.ReleaseDetails.ExistingRecordsFound</td>
-                            <td>@Model.LastUpdate.ReleaseDetails.RecordsAffected</td>
-                            <td>@Model.LastUpdate.ReleaseDetails.RecordsAdded</td>
-                            <td>@Model.LastUpdate.ReleaseDetails.RecordsUpdated</td>
+                            <td>@Model.LastRefresh.ReleaseDetails.ExistingRecordsFound</td>
+                            <td>@Model.LastRefresh.ReleaseDetails.RecordsAffected</td>
+                            <td>@Model.LastRefresh.ReleaseDetails.RecordsAdded</td>
+                            <td>@Model.LastRefresh.ReleaseDetails.RecordsUpdated</td>
                         </tr>
                     </table>
 
@@ -73,9 +73,9 @@
                             <th>Records Added</th> 
                         </tr>
                         <tr>
-                            <td>@Model.LastUpdate.StatisticReleaseDetails.ExistingRecordsFound</td>
-                            <td>@Model.LastUpdate.StatisticReleaseDetails.RecordsAffected</td>
-                            <td>@Model.LastUpdate.StatisticReleaseDetails.RecordsAdded</td> 
+                            <td>@Model.LastRefresh.StatisticReleaseDetails.ExistingRecordsFound</td>
+                            <td>@Model.LastRefresh.StatisticReleaseDetails.RecordsAffected</td>
+                            <td>@Model.LastRefresh.StatisticReleaseDetails.RecordsAdded</td> 
                         </tr>
                     </table> 
                 </td>

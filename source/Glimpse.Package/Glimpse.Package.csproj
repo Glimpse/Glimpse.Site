@@ -78,18 +78,18 @@
     <Compile Include="Extensions\ObjectExtension.cs" />
     <Compile Include="Provider\Models\MergedReleaseDetails.cs" />
     <Compile Include="Provider\Models\MergedStatisticReleaseDetails.cs" />
+    <Compile Include="Services\Models\ReleaseQueryDetails.cs" />
+    <Compile Include="Services\Models\ReleaseQueryInfo.cs" />
+    <Compile Include="Services\ReleaseQueryService.cs" />
     <Compile Include="Services\IReleaseService.cs" />
-    <Compile Include="Services\IExistingReleaseQueryService.cs" />
-    <Compile Include="Services\ExistingReleaseQueryService.cs" />
-    <Compile Include="Services\Models\ExistingReleaseDetails.cs" />
-    <Compile Include="Services\Models\ExistingReleaseInfo.cs" />
+    <Compile Include="Services\IReleaseQueryService.cs" />
     <Compile Include="Services\Models\ReleaseDetails.cs" />
-    <Compile Include="Services\Models\UpdateReleaseRepositoryResults.cs" />
-    <Compile Include="Services\Models\UpdateReleaseResults.cs" />
-    <Compile Include="Services\Models\UpdateReleaseResultsDetail.cs" />
+    <Compile Include="Services\Models\RefreshReleaseRepositoryResults.cs" />
+    <Compile Include="Services\Models\RefreshReleaseResults.cs" />
+    <Compile Include="Services\Models\RefreshReleaseResultsDetail.cs" />
     <Compile Include="Services\ReleaseService.cs" />
-    <Compile Include="Services\UpdateReleaseService.cs" />
-    <Compile Include="Services\IUpdateReleaseService.cs" />
+    <Compile Include="Services\RefreshReleaseService.cs" />
+    <Compile Include="Services\IRefreshReleaseService.cs" />
     <Compile Include="Settings\Conifg\ConfigElementDataSource.cs" />
     <Compile Include="Settings\Conifg\ConfigElementLogging.cs" />
     <Compile Include="Settings\Conifg\ConfigElementServices.cs" />
@@ -112,21 +112,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.datasvcmap</DependentUpon>
     </Compile>
-    <Compile Include="Services\INewReleaseQueryService.cs" />
     <Compile Include="Provider\IReleaseQueryProvider.cs" />
-    <Compile Include="Services\IUpdateReleaseRepositoryService.cs" />
-    <Compile Include="Services\Models\LatestReleaseDetails.cs" />
-    <Compile Include="Services\Models\LatestReleaseDetailsSummaryInfo.cs" />
-    <Compile Include="Services\Models\LatestReleaseInfo.cs" />
-    <Compile Include="Services\Models\ReleaseVersionData.cs" />
-    <Compile Include="Services\NewReleaseQueryService.cs" />
+    <Compile Include="Services\IRefreshReleaseRepositoryService.cs" />
+    <Compile Include="Services\Models\ReleaseQuerySummaryInfo.cs" />
+    <Compile Include="Services\Models\ReleaseQueryVersionData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Provider\Models\ReleaseQueryItem.cs" />
     <Compile Include="Provider\CacheReleaseQueryProvider.cs" />
     <Compile Include="DataAccess\SqlMapper.cs" />
     <Compile Include="DataAccess\SqlMapperExtensions.cs" />
     <Compile Include="Services\Models\ReleaseFeedOptions.cs" />
-    <Compile Include="Services\UpdateReleaseRepositoryService.cs" />
+    <Compile Include="Services\RefreshReleaseRepositoryService.cs" />
     <Compile Include="Services\Models\VersionCheckDetails.cs" />
     <Compile Include="Services\Models\VersionCheckDetailsItem.cs" />
     <Compile Include="Settings\Logging\ISystemLogger.cs" />

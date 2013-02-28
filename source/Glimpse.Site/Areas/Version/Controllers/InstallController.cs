@@ -12,21 +12,21 @@ namespace Glimpse.Site.Areas.Version.Controllers
     {
         public virtual ActionResult Index(VersionCheckDetails details)
         {
-            var service = PackageSettings.Settings.ExistingReleaseService;
-            var result = service.GetReleaseInfo(details);
+            var service = PackageSettings.Settings.ReleaseQueryService;
+            var result = service.GetReleaseInfo(details, false);
 
-            return View(result);
+            return View(MVC.Version.Install.Views.Index, MVC.Shared.Views._Simple, result);
         }
 
         public virtual ActionResult Update(VersionCheckDetails details, bool? withDetails)
         {
-            var service = PackageSettings.Settings.NewReleaseService;
-            var result = service.GetLatestReleaseInfo(details, withDetails ?? false);
+            var service = PackageSettings.Settings.ReleaseQueryService;
+            var result = service.GetReleaseInfo(details, true);
 
             // Indicates how much data we want to show
             ViewBag.WithDetails = withDetails;
 
-            return View(result);
+            return View(MVC.Version.Install.Views.Update, MVC.Shared.Views._Simple, result);
         }
     }
 }

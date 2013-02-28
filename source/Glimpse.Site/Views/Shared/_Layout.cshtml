@@ -4,18 +4,19 @@
     <meta charset="utf-8" /> 
     <link rel="apple-touch-icon" href="~/_Content/favicon.png">
     <link rel="icon" href="~/_Content/favicon.png">
-    <!--[if IE]><link rel="shortcut icon" href="path/to/favicon.ico"><![endif]--> 
+    <!--[if IE]><link rel="shortcut icon" href="~/_Content/favicon.ico"><![endif]--> 
     <meta name="msapplication-TileColor" content="#FFFFFF">
     <meta name="msapplication-TileImage" content="~/_Content/favicon.png"> 
-    
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>@ViewBag.Title</title>
     @Styles.Render("~/_Content/css")
 </head>
 <body class="layout">
-    <div>
+    <header>
         <div class="header-inner"> 
-            <a href="http://www.getGlimpse.com" target="_blank" class="float--right logo-sub"></a>
-            @*<div class="float--right stats-sub-menu hide--lap hide--palm">
+            <a href="@Url.Action(MVC.Home.Index())" class="float--right logo-sub"></a>
+            <div class="float--right stats-sub-menu hide--lap hide--palm">
                 <div class="stat-group">
                     <dl class="stat">
                         <dt class="stat__title">Community</dt>
@@ -31,14 +32,14 @@
                     </dl>
                     <dl class="stat">
                         <dt class="stat__title">Support</dt>
-                        <dd class="stat__value"><a href="@Url.Action(MVC.Home.Support())" class="sprite sprite-root sprite-root-support"></a></dd> 
+                        <dd class="stat__value"><a href="@Url.Action(MVC.Support.Index())" class="sprite sprite-root sprite-root-support"></a></dd> 
                     </dl>
-                </div>
-            </div>*@
+                </div> 
+            </div>
             @RenderSection("header")
         </div>
-    </div>
-    @*<div class="body gw">
+    </header>
+    <div class="body gw">
         <div class="body-inner">
             <div class="g one-whole stats-sub-menu hide--desk">
                 <div class="stat-group">
@@ -56,21 +57,20 @@
                     </dl>
                     <dl class="stat">
                         <dt class="stat__title hide--palm">Support</dt>
-                        <dd class="stat__value"><a href="@Url.Action(MVC.Home.Support())" class="sprite sprite-root sprite-root-support"></a></dd> 
+                        <dd class="stat__value"><a href="@Url.Action(MVC.Support.Index())" class="sprite sprite-root sprite-root-support"></a></dd> 
                     </dl>
                 </div> 
             </div>
-            
+            @RenderBody()
         </div>
-    </div>*@
-    @RenderBody()
-   @* <footer class="gw">
+    </div>
+    <footer class="gw">
         <div class="footer-inner"> 
             <section class="g one-whole bottom-backing">
-                Proudly backed by <a href="http://www.red-gate.com/"><img src="~/_Content/logo-redgate.png" style="vertical-align:middle" /></a> <a href="http://www.github.com/Glimpse/Glimpse/">and you!</a>
+                Proudly backed by <a href="http://www.red-gate.com/"><img src="~/_Content/logo-redgate.png" style="vertical-align:middle" /></a> <a href="#">and you!</a>
             </section>
         </div>
-    </footer>*@
+    </footer>
     @Scripts.Render("~/Script/javascript")
     @RenderSection("scripts", false)
 </body>

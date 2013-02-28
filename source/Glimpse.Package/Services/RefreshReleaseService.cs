@@ -5,31 +5,31 @@ using Dapper;
 
 namespace Glimpse.Package
 {
-    public class UpdateReleaseService : IUpdateReleaseService
+    public class RefreshReleaseService : IRefreshReleaseService
     { 
         private readonly ISettings _settings;
-        private readonly IUpdateReleaseRepositoryService _updateRepositoryService;
+        private readonly IRefreshReleaseRepositoryService _refreshRepositoryService;
         private readonly IReleaseQueryProvider _queryProvider;
         private readonly object _lock = new object();
         private DateTime _nextUpdate;
-        private UpdateReleaseResultsDetail _lastDetails;
+        private RefreshReleaseResultsDetail _lastDetails;
 
-        public UpdateReleaseService(ISettings settings, IUpdateReleaseRepositoryService updateeRepositoryService, IReleaseQueryProvider queryProvider)
+        public RefreshReleaseService(ISettings settings, IRefreshReleaseRepositoryService refreshReleaseRepositoryService, IReleaseQueryProvider queryProvider)
         {
             _settings = settings;
-            _updateRepositoryService = updateeRepositoryService;
+            _refreshRepositoryService = refreshReleaseRepositoryService;
             _queryProvider = queryProvider;
         }
 
-        public UpdateReleaseResults Execute()
+        public RefreshReleaseResults Execute()
         {
             return Execute(false);
         }
 
-        public UpdateReleaseResults Execute(bool force)
+        public RefreshReleaseResults Execute(bool force)
         {
-            var results = new UpdateReleaseResults();
-            results.LastUpdate = _lastDetails;
+            var results = new RefreshReleaseResults();
+            results.LastRefresh = _lastDetails;
 
             if (force || DateTime.Now > _nextUpdate)
             {
@@ -38,7 +38,7 @@ namespace Glimpse.Package
                     if (force || DateTime.Now > _nextUpdate)
                     {
                         // Trigger the repository to update the database
-                        var repositoryResults = _updateRepositoryService.Execute();
+                        var repositoryResults = _refreshRepositoryService.Execute();
 
                         // Transform the data into a format that the cache is expecting
                         var groupedResult = repositoryResults.Results.GroupBy(x => x.Name, StringComparer.OrdinalIgnoreCase).ToDictionary(g => g.Key, g => g.Select(x => new ReleaseQueryItem { Created = x.Created, IsAbsoluteLatestVersion = x.IsAbsoluteLatestVersion, IsLatestVersion = x.IsLatestVersion, IsPrerelease = x.IsPrerelease, Name = x.Name, ReleaseNotes = x.ReleaseNotes, Version = x.Version, Description = x.Description, IconUrl = x.IconUrl }), StringComparer.OrdinalIgnoreCase);
@@ -48,7 +48,7 @@ namespace Glimpse.Package
                         _nextUpdate = DateTime.Now.AddMilliseconds(_settings.MinServiceTriggerInterval);
 
                         // Copy over results
-                        var details = new UpdateReleaseResultsDetail();
+                        var details = new RefreshReleaseResultsDetail();
                         details.ReleaseDetails = repositoryResults.ReleaseDetails;
                         details.StatisticReleaseDetails = repositoryResults.StatisticReleaseDetails;
                         details.TimeOccured = DateTime.Now;
@@ -56,7 +56,7 @@ namespace Glimpse.Package
                         details.NextUpdateCanOccur = _nextUpdate;
 
                         results.UpdateOccured = true;
-                        results.LastUpdate = details;
+                        results.LastRefresh = details;
 
                         _lastDetails = details;
                     }
