@@ -6,19 +6,7 @@
 }
 
 <nav style="float: left;">
-    <ul>
-        @foreach (var document in Model.NavigationDocuments)
-        {
-            if (!document.IsRendered)
-            {
-                <li><a href="/docs/@document.MarkdownSlug">@document.Title</a></li>
-            }
-            else
-            {
-                <li><strong>@document.Title</strong></li>
-            }
-        }
-    </ul>
+    @Html.RenderMarkdown(new FileInfo(Path.Combine(Model.MarkdownFile.DirectoryName, "_SideBar.md")))
 </nav>
 
 <a href="@Model.EditUri">Edit Me!</a>
