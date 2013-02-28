@@ -2,9 +2,9 @@ using System.Collections.Generic;
 
 namespace Glimpse.Package
 {
-    public class ExistingReleaseDetails
+    public class InstalledReleaseDetails
     {
-        public IDictionary<string, LatestReleaseDetailsSummaryInfo> Summary { get; set; }
+        public IDictionary<string, ReleaseDetailsSummaryInfo> Summary { get; set; }
 
         public ReleaseVersionData Release { get; set; }
 

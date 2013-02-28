@@ -2,12 +2,12 @@ using System.Collections.Generic;
 
 namespace Glimpse.Package
 {
-    public class LatestReleaseInfo
+    public class CheckReleaseInfo
     {
         public bool HasNewer { get; set; }
 
         public string ViewLink { get; set; }
 
-        public IDictionary<string, LatestReleaseDetails> Details { get; set; }
+        public IDictionary<string, CheckReleaseDetails> Details { get; set; }
     }
 }

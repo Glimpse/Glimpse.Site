@@ -12,7 +12,7 @@ namespace Glimpse.Site.Areas.Version.Controllers
     {
         public virtual ActionResult Index(VersionCheckDetails details)
         {
-            var service = PackageSettings.Settings.ExistingReleaseService;
+            var service = PackageSettings.Settings.InstalledReleaseService;
             var result = service.GetReleaseInfo(details);
 
             return View(result);
@@ -20,7 +20,7 @@ namespace Glimpse.Site.Areas.Version.Controllers
 
         public virtual ActionResult Update(VersionCheckDetails details, bool? withDetails)
         {
-            var service = PackageSettings.Settings.NewReleaseService;
+            var service = PackageSettings.Settings.CheckingForReleaseService;
             var result = service.GetLatestReleaseInfo(details, withDetails ?? false);
 
             // Indicates how much data we want to show

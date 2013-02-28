@@ -3,18 +3,18 @@ using System.Linq;
 
 namespace Glimpse.Package
 {
-    public class ExistingReleaseQueryService : IExistingReleaseQueryService
+    public class InstalledReleaseQueryService : IInstalledReleaseQueryService
     {
         private readonly IReleaseQueryProvider _queryProvider;
 
-        public ExistingReleaseQueryService(IReleaseQueryProvider queryProvider)
+        public InstalledReleaseQueryService(IReleaseQueryProvider queryProvider)
         {
             _queryProvider = queryProvider;
         }
 
-        public ExistingReleaseInfo GetReleaseInfo(VersionCheckDetails request)
+        public InstalledReleaseInfo GetReleaseInfo(VersionCheckDetails request)
         {
-            var info = new ExistingReleaseInfo { Details = new Dictionary<string, ExistingReleaseDetails>() };
+            var info = new InstalledReleaseInfo { Details = new Dictionary<string, InstalledReleaseDetails>() };
 
             foreach (var package in request.Packages)
             {
@@ -26,19 +26,19 @@ namespace Glimpse.Package
             return info;
         }
 
-        public ExistingReleaseDetails GetReleaseInfo(VersionCheckDetailsItem request)
+        public InstalledReleaseDetails GetReleaseInfo(VersionCheckDetailsItem request)
         {
             return GetReleaseInfo(request.Name, request.Version);
         }
 
-        public ExistingReleaseDetails GetReleaseInfo(string name, string version)
+        public InstalledReleaseDetails GetReleaseInfo(string name, string version)
         {
-            var details = new ExistingReleaseDetails(); 
+            var details = new InstalledReleaseDetails(); 
 
             var currentRelease = _queryProvider.SelectRelease(name, version); 
             if (currentRelease != null)
             {
-                var summary = new Dictionary<string, LatestReleaseDetailsSummaryInfo>();
+                var summary = new Dictionary<string, ReleaseDetailsSummaryInfo>();
 
                 // We have a match
                 details.HasResult = true;
@@ -60,9 +60,9 @@ namespace Glimpse.Package
                     var newestNonPreRelease = nonPreRelease.LastOrDefault();
 
                     if (newestPreRelease != null)
-                        summary.Add("preRelease", new LatestReleaseDetailsSummaryInfo { LatestVersion = newestPreRelease.Version, TotalNewerReleases = preReleases.Count });
+                        summary.Add("preRelease", new ReleaseDetailsSummaryInfo { LatestVersion = newestPreRelease.Version, TotalNewerReleases = preReleases.Count });
                     if (newestNonPreRelease != null)
-                        summary.Add("release", new LatestReleaseDetailsSummaryInfo { LatestVersion = newestNonPreRelease.Version, TotalNewerReleases = nonPreRelease.Count });
+                        summary.Add("release", new ReleaseDetailsSummaryInfo { LatestVersion = newestNonPreRelease.Version, TotalNewerReleases = nonPreRelease.Count });
 
                 }
 

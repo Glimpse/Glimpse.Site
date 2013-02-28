@@ -1,6 +1,6 @@
 namespace Glimpse.Package
 {
-    public class LatestReleaseDetailsSummaryInfo
+    public class ReleaseDetailsSummaryInfo
     {
         public string LatestVersion { get; set; }
 

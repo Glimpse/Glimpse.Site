@@ -4,18 +4,18 @@ using System.Linq;
 
 namespace Glimpse.Package
 {
-    public class NewReleaseQueryService : INewReleaseQueryService
+    public class CheckingForReleaseQueryService : ICheckingForReleaseQueryService
     {
         private readonly IReleaseQueryProvider _queryProvider;
 
-        public NewReleaseQueryService(IReleaseQueryProvider queryProvider)
+        public CheckingForReleaseQueryService(IReleaseQueryProvider queryProvider)
         {
             _queryProvider = queryProvider;
         }
 
-        public LatestReleaseInfo GetLatestReleaseInfo(VersionCheckDetails request, bool includeReleasesData = false)
+        public CheckReleaseInfo GetLatestReleaseInfo(VersionCheckDetails request, bool includeReleasesData = false)
         {
-            var info = new LatestReleaseInfo { Details = new Dictionary<string, LatestReleaseDetails>() };
+            var info = new CheckReleaseInfo { Details = new Dictionary<string, CheckReleaseDetails>() };
 
             foreach (var package in request.Packages)
             {
@@ -29,19 +29,19 @@ namespace Glimpse.Package
             return info;
         }
 
-        public LatestReleaseDetails GetLatestReleaseInfo(VersionCheckDetailsItem request, bool includeReleasesData = false)
+        public CheckReleaseDetails GetLatestReleaseInfo(VersionCheckDetailsItem request, bool includeReleasesData = false)
         {
             return GetLatestReleaseInfo(request.Name, request.Version, includeReleasesData);
         }
 
-        public LatestReleaseDetails GetLatestReleaseInfo(string name, string version, bool includeReleasesData = false)
+        public CheckReleaseDetails GetLatestReleaseInfo(string name, string version, bool includeReleasesData = false)
         {
-            var details = new LatestReleaseDetails(); 
+            var details = new CheckReleaseDetails(); 
 
             var currentRelease = _queryProvider.SelectRelease(name, version); 
             if (currentRelease != null)
             {
-                var summary = new Dictionary<string, LatestReleaseDetailsSummaryInfo>();
+                var summary = new Dictionary<string, ReleaseDetailsSummaryInfo>();
 
                 // We have a match
                 details.HasResult = true;
@@ -64,9 +64,9 @@ namespace Glimpse.Package
                     var newestRelease = currentRelease.IsPrerelease && newestPreRelease != null ? newestPreRelease : newestNonPreRelease;
 
                     if (newestPreRelease != null)
-                        summary.Add("preRelease", new LatestReleaseDetailsSummaryInfo { LatestVersion = newestPreRelease.Version, TotalNewerReleases = preReleases.Count });
+                        summary.Add("preRelease", new ReleaseDetailsSummaryInfo { LatestVersion = newestPreRelease.Version, TotalNewerReleases = preReleases.Count });
                     if (newestNonPreRelease != null)
-                        summary.Add("release", new LatestReleaseDetailsSummaryInfo { LatestVersion = newestNonPreRelease.Version, TotalNewerReleases = nonPreRelease.Count }); 
+                        summary.Add("release", new ReleaseDetailsSummaryInfo { LatestVersion = newestNonPreRelease.Version, TotalNewerReleases = nonPreRelease.Count }); 
                     if (newestRelease != null)
                     {
                         details.ProductDescription = newestRelease.Description;

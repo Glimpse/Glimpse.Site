@@ -79,10 +79,10 @@
     <Compile Include="Provider\Models\MergedReleaseDetails.cs" />
     <Compile Include="Provider\Models\MergedStatisticReleaseDetails.cs" />
     <Compile Include="Services\IReleaseService.cs" />
-    <Compile Include="Services\IExistingReleaseQueryService.cs" />
-    <Compile Include="Services\ExistingReleaseQueryService.cs" />
-    <Compile Include="Services\Models\ExistingReleaseDetails.cs" />
-    <Compile Include="Services\Models\ExistingReleaseInfo.cs" />
+    <Compile Include="Services\IInstalledReleaseQueryService.cs" />
+    <Compile Include="Services\InstalledReleaseQueryService.cs" />
+    <Compile Include="Services\Models\InstalledReleaseDetails.cs" />
+    <Compile Include="Services\Models\InstalledReleaseInfo.cs" />
     <Compile Include="Services\Models\ReleaseDetails.cs" />
     <Compile Include="Services\Models\UpdateReleaseRepositoryResults.cs" />
     <Compile Include="Services\Models\UpdateReleaseResults.cs" />
@@ -112,14 +112,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.datasvcmap</DependentUpon>
     </Compile>
-    <Compile Include="Services\INewReleaseQueryService.cs" />
+    <Compile Include="Services\ICheckingForReleaseQueryService.cs" />
     <Compile Include="Provider\IReleaseQueryProvider.cs" />
     <Compile Include="Services\IUpdateReleaseRepositoryService.cs" />
-    <Compile Include="Services\Models\LatestReleaseDetails.cs" />
-    <Compile Include="Services\Models\LatestReleaseDetailsSummaryInfo.cs" />
-    <Compile Include="Services\Models\LatestReleaseInfo.cs" />
+    <Compile Include="Services\Models\CheckReleaseDetails.cs" />
+    <Compile Include="Services\Models\ReleaseDetailsSummaryInfo.cs" />
+    <Compile Include="Services\Models\CheckReleaseInfo.cs" />
     <Compile Include="Services\Models\ReleaseVersionData.cs" />
-    <Compile Include="Services\NewReleaseQueryService.cs" />
+    <Compile Include="Services\CheckingForReleaseQueryService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Provider\Models\ReleaseQueryItem.cs" />
     <Compile Include="Provider\CacheReleaseQueryProvider.cs" />

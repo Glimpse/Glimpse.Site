@@ -3,9 +3,9 @@ using System.Linq;
 
 namespace Glimpse.Package
 {
-    public class LatestReleaseDetails
+    public class CheckReleaseDetails
     {
-        public IDictionary<string, LatestReleaseDetailsSummaryInfo> Summary { get; set; }
+        public IDictionary<string, ReleaseDetailsSummaryInfo> Summary { get; set; }
 
         public IDictionary<string, ReleaseVersionData> Releases { get; set; }
 
@@ -24,7 +24,7 @@ namespace Glimpse.Package
         public string ProductIconUrl { get; set; }
     }
 
-    public static class LatestReleaseVersionDataExtension
+    public static class CheckReleaseVersionDataExtension
     {
         public static ReleaseVersionData LastItemOrDefault(this IDictionary<string, ReleaseVersionData> value)
         {

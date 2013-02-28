@@ -11,9 +11,9 @@ namespace Glimpse.Site.Controllers
     public class CheckApiController : ApiController
     { 
         [HttpGet]
-        public LatestReleaseInfo Index([System.Web.Http.ModelBinding.ModelBinder(typeof(VersionCheckDetailsApiModelBinderProvider))] VersionCheckDetails details, bool withDetails)
+        public CheckReleaseInfo Index([System.Web.Http.ModelBinding.ModelBinder(typeof(VersionCheckDetailsApiModelBinderProvider))] VersionCheckDetails details, bool withDetails)
         {
-            var service = PackageSettings.Settings.NewReleaseService;
+            var service = PackageSettings.Settings.CheckingForReleaseService;
             var result = service.GetLatestReleaseInfo(details, withDetails);
 
             result.ViewLink = GenerateViewUri(Url.Request.RequestUri, result);
@@ -21,7 +21,7 @@ namespace Glimpse.Site.Controllers
             return result;
         } 
 
-        private string GenerateViewUri(Uri uri, LatestReleaseInfo result)
+        private string GenerateViewUri(Uri uri, CheckReleaseInfo result)
         {
             var queryString = "";
             var spacer = "";
