@@ -51,6 +51,17 @@ namespace Glimpse.Package
             if (releaseCache == null)
                 throw new ArgumentNullException("releaseCache");
 
+            var keys = releaseCache.Keys.ToList();
+            for (var i = 0; i < keys.Count; i++)
+            {
+                var key = keys[i];
+                var value = releaseCache[key];
+                if (value != null)
+                {
+                    releaseCache[key] = value.OrderBy(x => x.Created);
+                }
+            }
+
             _releaseCache = releaseCache;
         }
     }
