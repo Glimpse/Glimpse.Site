@@ -1,30 +1,6 @@
-﻿@using Glimpse.Site.Extensions
-@model Glimpse.Site.Models.DocumentationViewModel
-
-@{
-    ViewBag.Title = Model.Title;
+﻿@{
+    ViewBag.Title = "Glimpse - Documentation";
 }
-
-<nav style="float: left;">
-    <ul>
-        @foreach (var document in Model.NavigationDocuments)
-        {
-            if (!document.IsRendered)
-            {
-                <li><a href="/docs/@document.MarkdownSlug">@document.Title</a></li>
-            }
-            else
-            {
-                <li><strong>@document.Title</strong></li>
-            }
-        }
-    </ul>
-</nav>
-
-<a href="@Model.EditUri">Edit Me!</a>
-<div>
-    @Html.RenderMarkdown(Model.MarkdownFile)
-</div>
 
 @section header {
     <section>
@@ -32,3 +8,10 @@
         <div class="gamma">find out more</div>
     </section>
 }
+
+<section>
+    <div class="g one-whole" style="text-align: center;">
+        <h2>Coming Soon</h2>
+        <p>We are working on bringing out GitHub wiki docs into the site. In the mean time you can access the docs <a href="https://github.com/glimpse/glimpse/wiki">directly</a>.</p>
+    </div>
+</section>
