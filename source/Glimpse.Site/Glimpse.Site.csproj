@@ -334,6 +334,7 @@
     <Content Include="Views\Packages\Index.cshtml" />
     <Content Include="Views\Docs\Index.cshtml" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <Content Include="Views\Docs\Wiki\**\*.*" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
