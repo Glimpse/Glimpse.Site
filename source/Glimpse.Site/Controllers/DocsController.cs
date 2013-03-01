@@ -8,9 +8,9 @@ namespace Glimpse.Site.Controllers
         public virtual ActionResult Index(string mdSlug, string controller = null)
         {
             if (string.IsNullOrEmpty(mdSlug))
-                mdSlug = "Home";
+                mdSlug = "Getting-Started";
 
-            return View(new DocumentationViewModel(mdSlug, "Views/" + controller + "/Wiki/"));
+            return View(new DocumentationViewModel(mdSlug, "Views/" + controller + "/Wiki/Content/"));
         }
     }
 }
