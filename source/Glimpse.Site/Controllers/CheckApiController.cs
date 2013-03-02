@@ -31,7 +31,7 @@ namespace Glimpse.Site.Controllers
                 spacer = "&";
             }
 
-            return  String.Format("{0}://{1}/release/check/details?{2}", uri.Scheme, uri.Authority, queryString);
+            return  String.Format("{0}://{1}/version/check?{2}", uri.Scheme, uri.Authority, queryString);
         }
     }
 }
