@@ -11,11 +11,16 @@ namespace Glimpse.Site.Areas.Version.Controllers
     public partial class InstallController : Controller
     {
         public virtual ActionResult Index(VersionCheckDetails details)
-        {
-            var service = PackageSettings.Settings.ReleaseQueryService;
-            var result = service.GetReleaseInfo(details, false);
+        { 
+            if (!HttpContext.Request.Url.Query.Contains(".."))
+            {
+                var service = PackageSettings.Settings.ReleaseQueryService;
+                var result = service.GetReleaseInfo(details, false);
 
-            return View(MVC.Version.Install.Views.Index, MVC.Shared.Views._Simple, result);
+                return View(MVC.Version.Install.Views.Index, MVC.Shared.Views._Simple, result);
+            }
+
+            return Update(details, null);
         }
 
         public virtual ActionResult Update(VersionCheckDetails details, bool? withDetails)
