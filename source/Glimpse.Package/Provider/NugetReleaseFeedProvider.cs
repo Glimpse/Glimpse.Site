@@ -12,7 +12,7 @@ namespace Glimpse.Package
         public IEnumerable<ReleaseFeedItem> GetAllCurrentReleases()
         {
             // TODO: Need to get this data from the db instead of being hardcoded
-            return GetAllCurrentReleases(new ReleaseFeedOptions { Depends = new List<string> { "Glimpse" }, Specific = new List<string> { "Glimpse.Mvc3" } });
+            return GetAllCurrentReleases(new ReleaseFeedOptions { Depends = new List<string> { "Glimpse", "Glimpse.AspNet", "Glimpse.Ado" }, Specific = new List<string> { } });
         }
 
         public IEnumerable<ReleaseFeedItem> GetAllCurrentReleases(ReleaseFeedOptions options)
