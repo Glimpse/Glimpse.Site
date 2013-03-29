@@ -5,8 +5,8 @@
     <dc:identifier>http://www.myget.org/F/glimpsegallery/</dc:identifier>
     <dc:owner>nikmd23, avanderhoorn</dc:owner>
     <dc:creator>nikmd23, avanderhoorn</dc:creator>
-    <dc:title>Glimpse Plugin Gallery</dc:title>
-    <dc:description>A NuGet package feed of plugins for Glimpse.</dc:description>
+    <dc:title>Glimpse Extensions Gallery</dc:title>
+    <dc:description>A NuGet package feed of extensions for Glimpse.</dc:description>
     <homePageLink>http://getGlimpse.com/Packages/</homePageLink>
     <apis>
       <api name="nuget-v2-packages" blogID="" preferred="true" apiLink="http://www.myget.org/F/glimpsegallery/" />
