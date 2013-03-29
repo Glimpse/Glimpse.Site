@@ -283,6 +283,7 @@
     <Content Include="_Content\favicon.ico" />
     <Content Include="_Content\favicon.png" />
     <Content Include="_Content\first-install-minimized.png" />
+    <Content Include="_Content\glimpseGallery.xml" />
     <Content Include="_Content\inuit.css">
       <DependentUpon>inuit.less</DependentUpon>
     </Content>
