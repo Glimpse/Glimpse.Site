@@ -283,6 +283,22 @@
     <Content Include="_Content\favicon.ico" />
     <Content Include="_Content\favicon.png" />
     <Content Include="_Content\first-install-minimized.png" />
+    <Content Include="_Content\img\emailIcon.png" />
+    <Content Include="_Content\img\glimpse-minimised.png" />
+    <Content Include="_Content\img\glimpseInBrowser.png" />
+    <Content Include="_Content\img\google.png" />
+    <Content Include="_Content\img\googleGroupIcon.png" />
+    <Content Include="_Content\img\ideas.png" />
+    <Content Include="_Content\img\kipTooltip.png" />
+    <Content Include="_Content\img\logo-nuget.png" />
+    <Content Include="_Content\img\logo.png" />
+    <Content Include="_Content\img\redgate.png" />
+    <Content Include="_Content\img\small-cross.png" />
+    <Content Include="_Content\img\small-tick.png" />
+    <Content Include="_Content\img\twitter.png" />
+    <Content Include="_Content\img\twitterIcon.png" />
+    <Content Include="_Content\img\updateTick.png" />
+    <Content Include="_Content\img\warning.png" />
     <Content Include="_Content\inuit.css">
       <DependentUpon>inuit.less</DependentUpon>
     </Content>
