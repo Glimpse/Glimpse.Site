@@ -12,23 +12,23 @@
     <title>@ViewBag.Title</title>
     @Styles.Render("~/_Content/css")
 </head>
-<body class="layout">
+<body>
     <div class="header">
         <div class="header-inner"> 
-            <a href="@Url.Action(MVC.Home.Index())" class="float--right logo-sub"></a> 
+            <a href="@Url.Action(MVC.Home.Index())" class="glimpse-logo"><img src="~/_Content/img/logo.png" alt="logo" /></a> 
             @RenderSection("header")
         </div>
+        <div id="header-shadow"></div>
     </div>
-    <div class="body gw">
-        <div class="body-inner"> 
+    <div class="content-container">
+        <div class="content"> 
             @RenderBody()
         </div>
+        <hr class="clearer" />
     </div>
-    <div class="footer gw">
+    <div class="footer">
         <div class="footer-inner"> 
-            <div class="g one-whole bottom-backing">
-                Proudly backed by <a href="http://www.red-gate.com/"><img src="~/_Content/logo-redgate.png" style="vertical-align:middle" /></a> <a href="#">and you!</a>
-            </div>
+                Proudly backed by <a href="http://www.red-gate.com/"><img src="~/_Content/img/redgate.png" id="redgate-logo" /></a> <a href="#">and you!</a>
         </div>
     </div>
     @Scripts.Render("~/Script/javascript")
