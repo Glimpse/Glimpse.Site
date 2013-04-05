@@ -34,10 +34,10 @@
 
         @foreach(var detail in Model.Details)
         {
-            var image = string.IsNullOrEmpty(detail.Value.PackageIconUrl) ? "/_Content/logo-nuget.png" : detail.Value.PackageIconUrl;
+            var image = string.IsNullOrEmpty(detail.Value.PackageIconUrl) ? "/Content/_v1/site-nuget-logo.png" : detail.Value.PackageIconUrl;
             <div class="release-package">
                 <div class="release-package-title">
-                    <img src="@image" height="50" onerror="this.src = '/_Content/logo-nuget.png';"/>
+                    <img src="@image" height="50" onerror="this.src = '/Content/_v1/site-nuget-logo.png';"/>
                     <h3>@detail.Key</h3>  
                 </div>
         

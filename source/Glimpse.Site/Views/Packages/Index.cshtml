@@ -26,11 +26,11 @@
         <div class="stat-group stats-contributors">
         @foreach(var item in Model)
         {
-            var image = string.IsNullOrEmpty(item.IconUrl) ? "/_Content/logo-nuget.png" : item.IconUrl;
+            var image = string.IsNullOrEmpty(item.IconUrl) ? "/Content/_v1/site-nuget-logo.png" : item.IconUrl;
             <dl class="stat">
                 <dt class="stat__title delta">@item.Name</dt> 
                 <dd class="stat__value">
-                    <a href="http://nuget.org/packages/@item.Name" target="_blank"><img src="@image" width="50" height="50" onerror="this.src = '/_Content/logo-nuget.png';" /></a>
+                    <a href="http://nuget.org/packages/@item.Name" target="_blank"><img src="@image" width="50" height="50" onerror="this.src = '/Content/_v1/site-nuget-logo.png';" /></a>
                 </dd>
                 <dd class="stat__value hide--palm">@item.Version | @item.Created.ToShortDateString()</dd>
             </dl>

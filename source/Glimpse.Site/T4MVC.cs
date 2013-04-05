@@ -108,6 +108,50 @@ namespace Links
         private const string URLPATH = "~/Content";
         public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
         public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public static class _v1 {
+            private const string URLPATH = "~/Content/_v1";
+            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+            public static readonly string app_config_favicon_png = Url("app-config-favicon.png");
+            public static readonly string app_config_logo_png = Url("app-config-logo.png");
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class Contributors {
+                private const string URLPATH = "~/Content/_v1/Contributors";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                public static readonly string pic1_jpg = Url("pic1.jpg");
+                public static readonly string pic10_jpg = Url("pic10.jpg");
+                public static readonly string pic2_jpg = Url("pic2.jpg");
+                public static readonly string pic3_jpg = Url("pic3.jpg");
+                public static readonly string pic4_jpg = Url("pic4.jpg");
+                public static readonly string pic5_jpg = Url("pic5.jpg");
+                public static readonly string pic6_jpg = Url("pic6.jpg");
+                public static readonly string pic7_jpg = Url("pic7.jpg");
+                public static readonly string pic8_jpg = Url("pic8.jpg");
+                public static readonly string pic9_jpg = Url("pic9.jpg");
+            }
+        
+            public static readonly string glimpseGallery_xml = Url("glimpseGallery.xml");
+            public static readonly string inuit_less = Url("inuit.less");
+            public static readonly string inuit_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/inuit.min.css") ? Url("inuit.min.css") : Url("inuit.css");
+                 
+            public static readonly string inuit_min_css = Url("inuit.min.css");
+            public static readonly string screen_less = Url("screen.less");
+            public static readonly string screen_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/screen.min.css") ? Url("screen.min.css") : Url("screen.css");
+                 
+            public static readonly string screen_min_css = Url("screen.min.css");
+            public static readonly string site_favicon_ico = Url("site-favicon.ico");
+            public static readonly string site_favicon_png = Url("site-favicon.png");
+            public static readonly string site_first_install_minimized_png = Url("site-first-install-minimized.png");
+            public static readonly string site_home_logo_png = Url("site-home-logo.png");
+            public static readonly string site_icon_png = Url("site-icon.png");
+            public static readonly string site_main_logo_medium_png = Url("site-main-logo-medium.png");
+            public static readonly string site_nuget_logo_png = Url("site-nuget-logo.png");
+            public static readonly string site_redgate_logo_png = Url("site-redgate-logo.png");
+            public static readonly string site_twitter_icon_png = Url("site-twitter-icon.png");
+        }
+    
         public static readonly string close_quote_gif = Url("close-quote.gif");
         public static readonly string cs_leftImg_png = Url("cs_leftImg.png");
         public static readonly string cs_rightImg_png = Url("cs_rightImg.png");

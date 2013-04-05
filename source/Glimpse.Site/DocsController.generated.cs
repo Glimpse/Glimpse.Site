@@ -98,6 +98,1733 @@ namespace Glimpse.Site.Controllers
                 public readonly string Index = "Index";
             }
             public readonly string Index = "~/Views/Docs/Index.cshtml";
+            static readonly _WikiClass s_Wiki = new _WikiClass();
+            public _WikiClass Wiki { get { return s_Wiki; } }
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public partial class _WikiClass
+            {
+                static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                public class _ViewNamesClass
+                {
+                    public readonly string Home = "Home";
+                }
+                public readonly string Home = "~/Views/Docs/Wiki/Home.md";
+                static readonly __gitClass s__git = new __gitClass();
+                public __gitClass _git { get { return s__git; } }
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public partial class __gitClass
+                {
+                    static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                    public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                    public class _ViewNamesClass
+                    {
+                        public readonly string config = "config";
+                        public readonly string description = "description";
+                        public readonly string FETCH_HEAD = "FETCH_HEAD";
+                        public readonly string HEAD = "HEAD";
+                        public readonly string index = "index";
+                        public readonly string packed_refs = "packed-refs";
+                    }
+                    public readonly string config = "~/Views/Docs/Wiki/.git/config";
+                    public readonly string description = "~/Views/Docs/Wiki/.git/description";
+                    public readonly string FETCH_HEAD = "~/Views/Docs/Wiki/.git/FETCH_HEAD";
+                    public readonly string HEAD = "~/Views/Docs/Wiki/.git/HEAD";
+                    public readonly string index = "~/Views/Docs/Wiki/.git/index";
+                    public readonly string packed_refs = "~/Views/Docs/Wiki/.git/packed-refs";
+                    static readonly _hooksClass s_hooks = new _hooksClass();
+                    public _hooksClass hooks { get { return s_hooks; } }
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public partial class _hooksClass
+                    {
+                        static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                        public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                        public class _ViewNamesClass
+                        {
+                            public readonly string applypatch_msg = "applypatch-msg";
+                            public readonly string commit_msg = "commit-msg";
+                            public readonly string post_commit = "post-commit";
+                            public readonly string post_receive = "post-receive";
+                            public readonly string post_update = "post-update";
+                            public readonly string pre_applypatch = "pre-applypatch";
+                            public readonly string pre_commit = "pre-commit";
+                            public readonly string pre_rebase = "pre-rebase";
+                            public readonly string prepare_commit_msg = "prepare-commit-msg";
+                            public readonly string update = "update";
+                        }
+                        public readonly string applypatch_msg = "~/Views/Docs/Wiki/.git/hooks/applypatch-msg.sample";
+                        public readonly string commit_msg = "~/Views/Docs/Wiki/.git/hooks/commit-msg.sample";
+                        public readonly string post_commit = "~/Views/Docs/Wiki/.git/hooks/post-commit.sample";
+                        public readonly string post_receive = "~/Views/Docs/Wiki/.git/hooks/post-receive.sample";
+                        public readonly string post_update = "~/Views/Docs/Wiki/.git/hooks/post-update.sample";
+                        public readonly string pre_applypatch = "~/Views/Docs/Wiki/.git/hooks/pre-applypatch.sample";
+                        public readonly string pre_commit = "~/Views/Docs/Wiki/.git/hooks/pre-commit.sample";
+                        public readonly string pre_rebase = "~/Views/Docs/Wiki/.git/hooks/pre-rebase.sample";
+                        public readonly string prepare_commit_msg = "~/Views/Docs/Wiki/.git/hooks/prepare-commit-msg.sample";
+                        public readonly string update = "~/Views/Docs/Wiki/.git/hooks/update.sample";
+                    }
+                    static readonly _infoClass s_info = new _infoClass();
+                    public _infoClass info { get { return s_info; } }
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public partial class _infoClass
+                    {
+                        static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                        public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                        public class _ViewNamesClass
+                        {
+                            public readonly string exclude = "exclude";
+                        }
+                        public readonly string exclude = "~/Views/Docs/Wiki/.git/info/exclude";
+                    }
+                    static readonly _logsClass s_logs = new _logsClass();
+                    public _logsClass logs { get { return s_logs; } }
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public partial class _logsClass
+                    {
+                        static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                        public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                        public class _ViewNamesClass
+                        {
+                            public readonly string HEAD = "HEAD";
+                        }
+                        public readonly string HEAD = "~/Views/Docs/Wiki/.git/logs/HEAD";
+                        static readonly _refsClass s_refs = new _refsClass();
+                        public _refsClass refs { get { return s_refs; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class _refsClass
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                            }
+                            static readonly _headsClass s_heads = new _headsClass();
+                            public _headsClass heads { get { return s_heads; } }
+                            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                            public partial class _headsClass
+                            {
+                                static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                                public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                                public class _ViewNamesClass
+                                {
+                                    public readonly string master = "master";
+                                }
+                                public readonly string master = "~/Views/Docs/Wiki/.git/logs/refs/heads/master";
+                            }
+                            static readonly _remotesClass s_remotes = new _remotesClass();
+                            public _remotesClass remotes { get { return s_remotes; } }
+                            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                            public partial class _remotesClass
+                            {
+                                static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                                public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                                public class _ViewNamesClass
+                                {
+                                }
+                                static readonly _originClass s_origin = new _originClass();
+                                public _originClass origin { get { return s_origin; } }
+                                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                                public partial class _originClass
+                                {
+                                    static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                                    public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                                    public class _ViewNamesClass
+                                    {
+                                        public readonly string master = "master";
+                                    }
+                                    public readonly string master = "~/Views/Docs/Wiki/.git/logs/refs/remotes/origin/master";
+                                }
+                            }
+                        }
+                    }
+                    static readonly _objectsClass s_objects = new _objectsClass();
+                    public _objectsClass objects { get { return s_objects; } }
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public partial class _objectsClass
+                    {
+                        static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                        public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                        public class _ViewNamesClass
+                        {
+                        }
+                        static readonly __00Class s__00 = new __00Class();
+                        public __00Class _00 { get { return s__00; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __00Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _9c3e6e12e8f028e52c968454278131339d0b08 = "9c3e6e12e8f028e52c968454278131339d0b08";
+                            }
+                            public readonly string _9c3e6e12e8f028e52c968454278131339d0b08 = "~/Views/Docs/Wiki/.git/objects/00/9c3e6e12e8f028e52c968454278131339d0b08";
+                        }
+                        static readonly __02Class s__02 = new __02Class();
+                        public __02Class _02 { get { return s__02; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __02Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string a3d3011e0aa10802b64d1d1c2d68c887f0cd38 = "a3d3011e0aa10802b64d1d1c2d68c887f0cd38";
+                            }
+                            public readonly string a3d3011e0aa10802b64d1d1c2d68c887f0cd38 = "~/Views/Docs/Wiki/.git/objects/02/a3d3011e0aa10802b64d1d1c2d68c887f0cd38";
+                        }
+                        static readonly __03Class s__03 = new __03Class();
+                        public __03Class _03 { get { return s__03; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __03Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _2506bc8516088bb0b147c730d395d4be66582d = "2506bc8516088bb0b147c730d395d4be66582d";
+                            }
+                            public readonly string _2506bc8516088bb0b147c730d395d4be66582d = "~/Views/Docs/Wiki/.git/objects/03/2506bc8516088bb0b147c730d395d4be66582d";
+                        }
+                        static readonly __04Class s__04 = new __04Class();
+                        public __04Class _04 { get { return s__04; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __04Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _45f0d501289da5f16059ca509ef57a80a7b118 = "45f0d501289da5f16059ca509ef57a80a7b118";
+                            }
+                            public readonly string _45f0d501289da5f16059ca509ef57a80a7b118 = "~/Views/Docs/Wiki/.git/objects/04/45f0d501289da5f16059ca509ef57a80a7b118";
+                        }
+                        static readonly __08Class s__08 = new __08Class();
+                        public __08Class _08 { get { return s__08; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __08Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _981cbd609c40ab99e5071a036655b48a56d128 = "981cbd609c40ab99e5071a036655b48a56d128";
+                            }
+                            public readonly string _981cbd609c40ab99e5071a036655b48a56d128 = "~/Views/Docs/Wiki/.git/objects/08/981cbd609c40ab99e5071a036655b48a56d128";
+                        }
+                        static readonly __09Class s__09 = new __09Class();
+                        public __09Class _09 { get { return s__09; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __09Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string c2df6f12b843d03b5c0b9a3d29a547be4fba81 = "c2df6f12b843d03b5c0b9a3d29a547be4fba81";
+                            }
+                            public readonly string c2df6f12b843d03b5c0b9a3d29a547be4fba81 = "~/Views/Docs/Wiki/.git/objects/09/c2df6f12b843d03b5c0b9a3d29a547be4fba81";
+                        }
+                        static readonly __0eClass s__0e = new __0eClass();
+                        public __0eClass _0e { get { return s__0e; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __0eClass
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string d7408ddd2e23e48b3607b6cc5a9e37aa30f389 = "d7408ddd2e23e48b3607b6cc5a9e37aa30f389";
+                            }
+                            public readonly string d7408ddd2e23e48b3607b6cc5a9e37aa30f389 = "~/Views/Docs/Wiki/.git/objects/0e/d7408ddd2e23e48b3607b6cc5a9e37aa30f389";
+                        }
+                        static readonly __0fClass s__0f = new __0fClass();
+                        public __0fClass _0f { get { return s__0f; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __0fClass
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string a64cdecd3a37629101fc82fddb921646df142f = "a64cdecd3a37629101fc82fddb921646df142f";
+                            }
+                            public readonly string a64cdecd3a37629101fc82fddb921646df142f = "~/Views/Docs/Wiki/.git/objects/0f/a64cdecd3a37629101fc82fddb921646df142f";
+                        }
+                        static readonly __11Class s__11 = new __11Class();
+                        public __11Class _11 { get { return s__11; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __11Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _061b7ae5c88d933820e3c8d66e6bdd940295e4 = "061b7ae5c88d933820e3c8d66e6bdd940295e4";
+                            }
+                            public readonly string _061b7ae5c88d933820e3c8d66e6bdd940295e4 = "~/Views/Docs/Wiki/.git/objects/11/061b7ae5c88d933820e3c8d66e6bdd940295e4";
+                        }
+                        static readonly __12Class s__12 = new __12Class();
+                        public __12Class _12 { get { return s__12; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __12Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _33cc21c2d8744f0c3b05dc644591210d98075a = "33cc21c2d8744f0c3b05dc644591210d98075a";
+                            }
+                            public readonly string _33cc21c2d8744f0c3b05dc644591210d98075a = "~/Views/Docs/Wiki/.git/objects/12/33cc21c2d8744f0c3b05dc644591210d98075a";
+                        }
+                        static readonly __13Class s__13 = new __13Class();
+                        public __13Class _13 { get { return s__13; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __13Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _06f7dc0ad0f528f120b30458dd7612fb167649 = "06f7dc0ad0f528f120b30458dd7612fb167649";
+                            }
+                            public readonly string _06f7dc0ad0f528f120b30458dd7612fb167649 = "~/Views/Docs/Wiki/.git/objects/13/06f7dc0ad0f528f120b30458dd7612fb167649";
+                        }
+                        static readonly __15Class s__15 = new __15Class();
+                        public __15Class _15 { get { return s__15; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __15Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string a768290963969ea7a57a89629212f46fb3f7be = "a768290963969ea7a57a89629212f46fb3f7be";
+                            }
+                            public readonly string a768290963969ea7a57a89629212f46fb3f7be = "~/Views/Docs/Wiki/.git/objects/15/a768290963969ea7a57a89629212f46fb3f7be";
+                        }
+                        static readonly __19Class s__19 = new __19Class();
+                        public __19Class _19 { get { return s__19; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __19Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _3847ecac1a67dfe550edfbe0472ff6ff940821 = "3847ecac1a67dfe550edfbe0472ff6ff940821";
+                            }
+                            public readonly string _3847ecac1a67dfe550edfbe0472ff6ff940821 = "~/Views/Docs/Wiki/.git/objects/19/3847ecac1a67dfe550edfbe0472ff6ff940821";
+                        }
+                        static readonly __1bClass s__1b = new __1bClass();
+                        public __1bClass _1b { get { return s__1b; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __1bClass
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _31b0c2c22a88824a8b06c75c49073469c62a36 = "31b0c2c22a88824a8b06c75c49073469c62a36";
+                            }
+                            public readonly string _31b0c2c22a88824a8b06c75c49073469c62a36 = "~/Views/Docs/Wiki/.git/objects/1b/31b0c2c22a88824a8b06c75c49073469c62a36";
+                        }
+                        static readonly __1fClass s__1f = new __1fClass();
+                        public __1fClass _1f { get { return s__1f; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __1fClass
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _400b0fcdf87b7d0dcecfe161661701c7019149 = "400b0fcdf87b7d0dcecfe161661701c7019149";
+                            }
+                            public readonly string _400b0fcdf87b7d0dcecfe161661701c7019149 = "~/Views/Docs/Wiki/.git/objects/1f/400b0fcdf87b7d0dcecfe161661701c7019149";
+                        }
+                        static readonly __23Class s__23 = new __23Class();
+                        public __23Class _23 { get { return s__23; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __23Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _163e50e36e29d5b13be123e9bc66693b474844 = "163e50e36e29d5b13be123e9bc66693b474844";
+                            }
+                            public readonly string _163e50e36e29d5b13be123e9bc66693b474844 = "~/Views/Docs/Wiki/.git/objects/23/163e50e36e29d5b13be123e9bc66693b474844";
+                        }
+                        static readonly __28Class s__28 = new __28Class();
+                        public __28Class _28 { get { return s__28; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __28Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _125bc35d0c2433c41fbcc130b1b740a0d66823 = "125bc35d0c2433c41fbcc130b1b740a0d66823";
+                                public readonly string a83c9fbed2b42707ccc817e445d10f3d5808fa = "a83c9fbed2b42707ccc817e445d10f3d5808fa";
+                            }
+                            public readonly string _125bc35d0c2433c41fbcc130b1b740a0d66823 = "~/Views/Docs/Wiki/.git/objects/28/125bc35d0c2433c41fbcc130b1b740a0d66823";
+                            public readonly string a83c9fbed2b42707ccc817e445d10f3d5808fa = "~/Views/Docs/Wiki/.git/objects/28/a83c9fbed2b42707ccc817e445d10f3d5808fa";
+                        }
+                        static readonly __29Class s__29 = new __29Class();
+                        public __29Class _29 { get { return s__29; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __29Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _93c8fac94f48e31c21c2b38b1213d88c0f54f0 = "93c8fac94f48e31c21c2b38b1213d88c0f54f0";
+                            }
+                            public readonly string _93c8fac94f48e31c21c2b38b1213d88c0f54f0 = "~/Views/Docs/Wiki/.git/objects/29/93c8fac94f48e31c21c2b38b1213d88c0f54f0";
+                        }
+                        static readonly __2aClass s__2a = new __2aClass();
+                        public __2aClass _2a { get { return s__2a; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __2aClass
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _4710420c1e3d8748acc7de717e0c5927126bbf = "4710420c1e3d8748acc7de717e0c5927126bbf";
+                            }
+                            public readonly string _4710420c1e3d8748acc7de717e0c5927126bbf = "~/Views/Docs/Wiki/.git/objects/2a/4710420c1e3d8748acc7de717e0c5927126bbf";
+                        }
+                        static readonly __2bClass s__2b = new __2bClass();
+                        public __2bClass _2b { get { return s__2b; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __2bClass
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _49e28943a66fa90dd7069f3a3925857983ecbd = "49e28943a66fa90dd7069f3a3925857983ecbd";
+                            }
+                            public readonly string _49e28943a66fa90dd7069f3a3925857983ecbd = "~/Views/Docs/Wiki/.git/objects/2b/49e28943a66fa90dd7069f3a3925857983ecbd";
+                        }
+                        static readonly __2fClass s__2f = new __2fClass();
+                        public __2fClass _2f { get { return s__2f; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __2fClass
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _460a6832f6057f15ae82a6ddf9dcbe321fe34a = "460a6832f6057f15ae82a6ddf9dcbe321fe34a";
+                            }
+                            public readonly string _460a6832f6057f15ae82a6ddf9dcbe321fe34a = "~/Views/Docs/Wiki/.git/objects/2f/460a6832f6057f15ae82a6ddf9dcbe321fe34a";
+                        }
+                        static readonly __32Class s__32 = new __32Class();
+                        public __32Class _32 { get { return s__32; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __32Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string bec784da131d0030c90f0d5584d9124eb84bf9 = "bec784da131d0030c90f0d5584d9124eb84bf9";
+                            }
+                            public readonly string bec784da131d0030c90f0d5584d9124eb84bf9 = "~/Views/Docs/Wiki/.git/objects/32/bec784da131d0030c90f0d5584d9124eb84bf9";
+                        }
+                        static readonly __33Class s__33 = new __33Class();
+                        public __33Class _33 { get { return s__33; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __33Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _663a036d78c0bdafc0f90a7af4377f54a42dbb = "663a036d78c0bdafc0f90a7af4377f54a42dbb";
+                            }
+                            public readonly string _663a036d78c0bdafc0f90a7af4377f54a42dbb = "~/Views/Docs/Wiki/.git/objects/33/663a036d78c0bdafc0f90a7af4377f54a42dbb";
+                        }
+                        static readonly __35Class s__35 = new __35Class();
+                        public __35Class _35 { get { return s__35; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __35Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _5b13bc34b6b7f085919796b7a6458383a6eecf = "5b13bc34b6b7f085919796b7a6458383a6eecf";
+                            }
+                            public readonly string _5b13bc34b6b7f085919796b7a6458383a6eecf = "~/Views/Docs/Wiki/.git/objects/35/5b13bc34b6b7f085919796b7a6458383a6eecf";
+                        }
+                        static readonly __37Class s__37 = new __37Class();
+                        public __37Class _37 { get { return s__37; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __37Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string b234f650df152bfeabc16b4b7db80f32c2090a = "b234f650df152bfeabc16b4b7db80f32c2090a";
+                            }
+                            public readonly string b234f650df152bfeabc16b4b7db80f32c2090a = "~/Views/Docs/Wiki/.git/objects/37/b234f650df152bfeabc16b4b7db80f32c2090a";
+                        }
+                        static readonly __38Class s__38 = new __38Class();
+                        public __38Class _38 { get { return s__38; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __38Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _0a219bb52c64487de349dd578ebbf33f43ebd4 = "0a219bb52c64487de349dd578ebbf33f43ebd4";
+                                public readonly string f77030e611049549471d90725b90ea02a3e439 = "f77030e611049549471d90725b90ea02a3e439";
+                            }
+                            public readonly string _0a219bb52c64487de349dd578ebbf33f43ebd4 = "~/Views/Docs/Wiki/.git/objects/38/0a219bb52c64487de349dd578ebbf33f43ebd4";
+                            public readonly string f77030e611049549471d90725b90ea02a3e439 = "~/Views/Docs/Wiki/.git/objects/38/f77030e611049549471d90725b90ea02a3e439";
+                        }
+                        static readonly __39Class s__39 = new __39Class();
+                        public __39Class _39 { get { return s__39; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __39Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _05d30dac99b931d00b25b6eedb54d54a3c4524 = "05d30dac99b931d00b25b6eedb54d54a3c4524";
+                                public readonly string b7ef2b8d410842fc84204f07140be906375d35 = "b7ef2b8d410842fc84204f07140be906375d35";
+                            }
+                            public readonly string _05d30dac99b931d00b25b6eedb54d54a3c4524 = "~/Views/Docs/Wiki/.git/objects/39/05d30dac99b931d00b25b6eedb54d54a3c4524";
+                            public readonly string b7ef2b8d410842fc84204f07140be906375d35 = "~/Views/Docs/Wiki/.git/objects/39/b7ef2b8d410842fc84204f07140be906375d35";
+                        }
+                        static readonly __3eClass s__3e = new __3eClass();
+                        public __3eClass _3e { get { return s__3e; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __3eClass
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _8aeb33f6bdfbcd4b06e2a512b9c75fe5b83355 = "8aeb33f6bdfbcd4b06e2a512b9c75fe5b83355";
+                            }
+                            public readonly string _8aeb33f6bdfbcd4b06e2a512b9c75fe5b83355 = "~/Views/Docs/Wiki/.git/objects/3e/8aeb33f6bdfbcd4b06e2a512b9c75fe5b83355";
+                        }
+                        static readonly __40Class s__40 = new __40Class();
+                        public __40Class _40 { get { return s__40; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __40Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _43c7fe20fd316d09274d5700f886e224ed2db3 = "43c7fe20fd316d09274d5700f886e224ed2db3";
+                            }
+                            public readonly string _43c7fe20fd316d09274d5700f886e224ed2db3 = "~/Views/Docs/Wiki/.git/objects/40/43c7fe20fd316d09274d5700f886e224ed2db3";
+                        }
+                        static readonly __42Class s__42 = new __42Class();
+                        public __42Class _42 { get { return s__42; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __42Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string b937a351ea6d28c892428ad07e6a03e6959682 = "b937a351ea6d28c892428ad07e6a03e6959682";
+                            }
+                            public readonly string b937a351ea6d28c892428ad07e6a03e6959682 = "~/Views/Docs/Wiki/.git/objects/42/b937a351ea6d28c892428ad07e6a03e6959682";
+                        }
+                        static readonly __46Class s__46 = new __46Class();
+                        public __46Class _46 { get { return s__46; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __46Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _60656572804c89594cbd3373ccbf8951aa7f35 = "60656572804c89594cbd3373ccbf8951aa7f35";
+                            }
+                            public readonly string _60656572804c89594cbd3373ccbf8951aa7f35 = "~/Views/Docs/Wiki/.git/objects/46/60656572804c89594cbd3373ccbf8951aa7f35";
+                        }
+                        static readonly __47Class s__47 = new __47Class();
+                        public __47Class _47 { get { return s__47; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __47Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _25b7e05cb11cb221702c49b3dd34b0b2962853 = "25b7e05cb11cb221702c49b3dd34b0b2962853";
+                            }
+                            public readonly string _25b7e05cb11cb221702c49b3dd34b0b2962853 = "~/Views/Docs/Wiki/.git/objects/47/25b7e05cb11cb221702c49b3dd34b0b2962853";
+                        }
+                        static readonly __4bClass s__4b = new __4bClass();
+                        public __4bClass _4b { get { return s__4b; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __4bClass
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _44dbae0e233024500084bf6d8391676bead2cb = "44dbae0e233024500084bf6d8391676bead2cb";
+                            }
+                            public readonly string _44dbae0e233024500084bf6d8391676bead2cb = "~/Views/Docs/Wiki/.git/objects/4b/44dbae0e233024500084bf6d8391676bead2cb";
+                        }
+                        static readonly __4cClass s__4c = new __4cClass();
+                        public __4cClass _4c { get { return s__4c; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __4cClass
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _011e84a4b92b4f1dd0d303694721763d60db88 = "011e84a4b92b4f1dd0d303694721763d60db88";
+                            }
+                            public readonly string _011e84a4b92b4f1dd0d303694721763d60db88 = "~/Views/Docs/Wiki/.git/objects/4c/011e84a4b92b4f1dd0d303694721763d60db88";
+                        }
+                        static readonly __4eClass s__4e = new __4eClass();
+                        public __4eClass _4e { get { return s__4e; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __4eClass
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _45cf9826c694ac74e09b54c30e594369026cb1 = "45cf9826c694ac74e09b54c30e594369026cb1";
+                            }
+                            public readonly string _45cf9826c694ac74e09b54c30e594369026cb1 = "~/Views/Docs/Wiki/.git/objects/4e/45cf9826c694ac74e09b54c30e594369026cb1";
+                        }
+                        static readonly __4fClass s__4f = new __4fClass();
+                        public __4fClass _4f { get { return s__4f; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __4fClass
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _1eaf2f179098e678a8da785d1e145b546546af = "1eaf2f179098e678a8da785d1e145b546546af";
+                            }
+                            public readonly string _1eaf2f179098e678a8da785d1e145b546546af = "~/Views/Docs/Wiki/.git/objects/4f/1eaf2f179098e678a8da785d1e145b546546af";
+                        }
+                        static readonly __54Class s__54 = new __54Class();
+                        public __54Class _54 { get { return s__54; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __54Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _2b4a7dd236a8a81c8966691b0258e54fb5dbca = "2b4a7dd236a8a81c8966691b0258e54fb5dbca";
+                            }
+                            public readonly string _2b4a7dd236a8a81c8966691b0258e54fb5dbca = "~/Views/Docs/Wiki/.git/objects/54/2b4a7dd236a8a81c8966691b0258e54fb5dbca";
+                        }
+                        static readonly __55Class s__55 = new __55Class();
+                        public __55Class _55 { get { return s__55; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __55Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string e411e5238137b7d78f068167944e6d8a91c7a2 = "e411e5238137b7d78f068167944e6d8a91c7a2";
+                            }
+                            public readonly string e411e5238137b7d78f068167944e6d8a91c7a2 = "~/Views/Docs/Wiki/.git/objects/55/e411e5238137b7d78f068167944e6d8a91c7a2";
+                        }
+                        static readonly __5aClass s__5a = new __5aClass();
+                        public __5aClass _5a { get { return s__5a; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __5aClass
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _24e00e4c1a50e3c79bec92e0b651321485e3aa = "24e00e4c1a50e3c79bec92e0b651321485e3aa";
+                            }
+                            public readonly string _24e00e4c1a50e3c79bec92e0b651321485e3aa = "~/Views/Docs/Wiki/.git/objects/5a/24e00e4c1a50e3c79bec92e0b651321485e3aa";
+                        }
+                        static readonly __5bClass s__5b = new __5bClass();
+                        public __5bClass _5b { get { return s__5b; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __5bClass
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _032e7a9b879a8d558ed60e19973231b49f3146 = "032e7a9b879a8d558ed60e19973231b49f3146";
+                            }
+                            public readonly string _032e7a9b879a8d558ed60e19973231b49f3146 = "~/Views/Docs/Wiki/.git/objects/5b/032e7a9b879a8d558ed60e19973231b49f3146";
+                        }
+                        static readonly __5cClass s__5c = new __5cClass();
+                        public __5cClass _5c { get { return s__5c; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __5cClass
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string f9fda20f77a85d5cdd0e801270ca0ddfd33fdd = "f9fda20f77a85d5cdd0e801270ca0ddfd33fdd";
+                            }
+                            public readonly string f9fda20f77a85d5cdd0e801270ca0ddfd33fdd = "~/Views/Docs/Wiki/.git/objects/5c/f9fda20f77a85d5cdd0e801270ca0ddfd33fdd";
+                        }
+                        static readonly __5dClass s__5d = new __5dClass();
+                        public __5dClass _5d { get { return s__5d; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __5dClass
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _74646a5bcab73580f5e3bce6f21b6a8521d963 = "74646a5bcab73580f5e3bce6f21b6a8521d963";
+                            }
+                            public readonly string _74646a5bcab73580f5e3bce6f21b6a8521d963 = "~/Views/Docs/Wiki/.git/objects/5d/74646a5bcab73580f5e3bce6f21b6a8521d963";
+                        }
+                        static readonly __63Class s__63 = new __63Class();
+                        public __63Class _63 { get { return s__63; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __63Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _3273622118a8d103b51995e67d987939e2c229 = "3273622118a8d103b51995e67d987939e2c229";
+                            }
+                            public readonly string _3273622118a8d103b51995e67d987939e2c229 = "~/Views/Docs/Wiki/.git/objects/63/3273622118a8d103b51995e67d987939e2c229";
+                        }
+                        static readonly __64Class s__64 = new __64Class();
+                        public __64Class _64 { get { return s__64; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __64Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _12e95bd90943ac80a48d3f7a8a094d685f3f78 = "12e95bd90943ac80a48d3f7a8a094d685f3f78";
+                            }
+                            public readonly string _12e95bd90943ac80a48d3f7a8a094d685f3f78 = "~/Views/Docs/Wiki/.git/objects/64/12e95bd90943ac80a48d3f7a8a094d685f3f78";
+                        }
+                        static readonly __68Class s__68 = new __68Class();
+                        public __68Class _68 { get { return s__68; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __68Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _4bdbf3a1a1243c9183a10146e0b389f030ff2d = "4bdbf3a1a1243c9183a10146e0b389f030ff2d";
+                            }
+                            public readonly string _4bdbf3a1a1243c9183a10146e0b389f030ff2d = "~/Views/Docs/Wiki/.git/objects/68/4bdbf3a1a1243c9183a10146e0b389f030ff2d";
+                        }
+                        static readonly __6bClass s__6b = new __6bClass();
+                        public __6bClass _6b { get { return s__6b; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __6bClass
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _7053f2687cfa2982a824848ffe9c91036fbefa = "7053f2687cfa2982a824848ffe9c91036fbefa";
+                            }
+                            public readonly string _7053f2687cfa2982a824848ffe9c91036fbefa = "~/Views/Docs/Wiki/.git/objects/6b/7053f2687cfa2982a824848ffe9c91036fbefa";
+                        }
+                        static readonly __6dClass s__6d = new __6dClass();
+                        public __6dClass _6d { get { return s__6d; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __6dClass
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _0a9beba9974af120c2e63380aa397685625391 = "0a9beba9974af120c2e63380aa397685625391";
+                                public readonly string ca91d1d06e2e8fb355cd93b28a45199c38920f = "ca91d1d06e2e8fb355cd93b28a45199c38920f";
+                            }
+                            public readonly string _0a9beba9974af120c2e63380aa397685625391 = "~/Views/Docs/Wiki/.git/objects/6d/0a9beba9974af120c2e63380aa397685625391";
+                            public readonly string ca91d1d06e2e8fb355cd93b28a45199c38920f = "~/Views/Docs/Wiki/.git/objects/6d/ca91d1d06e2e8fb355cd93b28a45199c38920f";
+                        }
+                        static readonly __6eClass s__6e = new __6eClass();
+                        public __6eClass _6e { get { return s__6e; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __6eClass
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _574256db99519deb33c66922bd0c9ac3982599 = "574256db99519deb33c66922bd0c9ac3982599";
+                                public readonly string bc6d5af1183dfaf0c6b824a340779b4bfe94fb = "bc6d5af1183dfaf0c6b824a340779b4bfe94fb";
+                            }
+                            public readonly string _574256db99519deb33c66922bd0c9ac3982599 = "~/Views/Docs/Wiki/.git/objects/6e/574256db99519deb33c66922bd0c9ac3982599";
+                            public readonly string bc6d5af1183dfaf0c6b824a340779b4bfe94fb = "~/Views/Docs/Wiki/.git/objects/6e/bc6d5af1183dfaf0c6b824a340779b4bfe94fb";
+                        }
+                        static readonly __6fClass s__6f = new __6fClass();
+                        public __6fClass _6f { get { return s__6f; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __6fClass
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _87fe367769b1f131a671a599f1a242e4e5c80c = "87fe367769b1f131a671a599f1a242e4e5c80c";
+                            }
+                            public readonly string _87fe367769b1f131a671a599f1a242e4e5c80c = "~/Views/Docs/Wiki/.git/objects/6f/87fe367769b1f131a671a599f1a242e4e5c80c";
+                        }
+                        static readonly __70Class s__70 = new __70Class();
+                        public __70Class _70 { get { return s__70; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __70Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string a49c8f8e06a94f4ed46e9b9bc1838cb4342e9c = "a49c8f8e06a94f4ed46e9b9bc1838cb4342e9c";
+                                public readonly string abf8fde9074f9c6f934153022eb62a892be9f1 = "abf8fde9074f9c6f934153022eb62a892be9f1";
+                            }
+                            public readonly string a49c8f8e06a94f4ed46e9b9bc1838cb4342e9c = "~/Views/Docs/Wiki/.git/objects/70/a49c8f8e06a94f4ed46e9b9bc1838cb4342e9c";
+                            public readonly string abf8fde9074f9c6f934153022eb62a892be9f1 = "~/Views/Docs/Wiki/.git/objects/70/abf8fde9074f9c6f934153022eb62a892be9f1";
+                        }
+                        static readonly __73Class s__73 = new __73Class();
+                        public __73Class _73 { get { return s__73; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __73Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _81f0ef29da6a43ad109560dc7df7ed53d000da = "81f0ef29da6a43ad109560dc7df7ed53d000da";
+                            }
+                            public readonly string _81f0ef29da6a43ad109560dc7df7ed53d000da = "~/Views/Docs/Wiki/.git/objects/73/81f0ef29da6a43ad109560dc7df7ed53d000da";
+                        }
+                        static readonly __78Class s__78 = new __78Class();
+                        public __78Class _78 { get { return s__78; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __78Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _7250c50f02e9b59e365b7f184f1f80aca4bf3b = "7250c50f02e9b59e365b7f184f1f80aca4bf3b";
+                            }
+                            public readonly string _7250c50f02e9b59e365b7f184f1f80aca4bf3b = "~/Views/Docs/Wiki/.git/objects/78/7250c50f02e9b59e365b7f184f1f80aca4bf3b";
+                        }
+                        static readonly __79Class s__79 = new __79Class();
+                        public __79Class _79 { get { return s__79; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __79Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _506f073d0b41bae4f7ee013cfbadf229f1a1f1 = "506f073d0b41bae4f7ee013cfbadf229f1a1f1";
+                                public readonly string _6309efca25465c3715a1ad8c280de563aebe6c = "6309efca25465c3715a1ad8c280de563aebe6c";
+                            }
+                            public readonly string _506f073d0b41bae4f7ee013cfbadf229f1a1f1 = "~/Views/Docs/Wiki/.git/objects/79/506f073d0b41bae4f7ee013cfbadf229f1a1f1";
+                            public readonly string _6309efca25465c3715a1ad8c280de563aebe6c = "~/Views/Docs/Wiki/.git/objects/79/6309efca25465c3715a1ad8c280de563aebe6c";
+                        }
+                        static readonly __7aClass s__7a = new __7aClass();
+                        public __7aClass _7a { get { return s__7a; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __7aClass
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _3ca1c952de808c19f41cb0bc38c9f76425248c = "3ca1c952de808c19f41cb0bc38c9f76425248c";
+                            }
+                            public readonly string _3ca1c952de808c19f41cb0bc38c9f76425248c = "~/Views/Docs/Wiki/.git/objects/7a/3ca1c952de808c19f41cb0bc38c9f76425248c";
+                        }
+                        static readonly __7bClass s__7b = new __7bClass();
+                        public __7bClass _7b { get { return s__7b; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __7bClass
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _22db214db4b566a07e38f03d7ea69f24339aa2 = "22db214db4b566a07e38f03d7ea69f24339aa2";
+                            }
+                            public readonly string _22db214db4b566a07e38f03d7ea69f24339aa2 = "~/Views/Docs/Wiki/.git/objects/7b/22db214db4b566a07e38f03d7ea69f24339aa2";
+                        }
+                        static readonly __7dClass s__7d = new __7dClass();
+                        public __7dClass _7d { get { return s__7d; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __7dClass
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string c0feb628355372fd8cc301d74f57f585c47f8b = "c0feb628355372fd8cc301d74f57f585c47f8b";
+                            }
+                            public readonly string c0feb628355372fd8cc301d74f57f585c47f8b = "~/Views/Docs/Wiki/.git/objects/7d/c0feb628355372fd8cc301d74f57f585c47f8b";
+                        }
+                        static readonly __83Class s__83 = new __83Class();
+                        public __83Class _83 { get { return s__83; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __83Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string e4ac1694cae6fe5ae007eb4873832df03f2506 = "e4ac1694cae6fe5ae007eb4873832df03f2506";
+                            }
+                            public readonly string e4ac1694cae6fe5ae007eb4873832df03f2506 = "~/Views/Docs/Wiki/.git/objects/83/e4ac1694cae6fe5ae007eb4873832df03f2506";
+                        }
+                        static readonly __84Class s__84 = new __84Class();
+                        public __84Class _84 { get { return s__84; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __84Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _8e74ae88b5a3aaee218f75ece3db7f47b0f4dc = "8e74ae88b5a3aaee218f75ece3db7f47b0f4dc";
+                            }
+                            public readonly string _8e74ae88b5a3aaee218f75ece3db7f47b0f4dc = "~/Views/Docs/Wiki/.git/objects/84/8e74ae88b5a3aaee218f75ece3db7f47b0f4dc";
+                        }
+                        static readonly __86Class s__86 = new __86Class();
+                        public __86Class _86 { get { return s__86; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __86Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string e0965938d86b853b5324d39b0973a6cca11b0c = "e0965938d86b853b5324d39b0973a6cca11b0c";
+                            }
+                            public readonly string e0965938d86b853b5324d39b0973a6cca11b0c = "~/Views/Docs/Wiki/.git/objects/86/e0965938d86b853b5324d39b0973a6cca11b0c";
+                        }
+                        static readonly __88Class s__88 = new __88Class();
+                        public __88Class _88 { get { return s__88; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __88Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _15d6c915b150b6233ce1d020e64a32979bee31 = "15d6c915b150b6233ce1d020e64a32979bee31";
+                            }
+                            public readonly string _15d6c915b150b6233ce1d020e64a32979bee31 = "~/Views/Docs/Wiki/.git/objects/88/15d6c915b150b6233ce1d020e64a32979bee31";
+                        }
+                        static readonly __8eClass s__8e = new __8eClass();
+                        public __8eClass _8e { get { return s__8e; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __8eClass
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _15995424a52ee8cdfec3f5dc6bdeaef3f4dcb7 = "15995424a52ee8cdfec3f5dc6bdeaef3f4dcb7";
+                            }
+                            public readonly string _15995424a52ee8cdfec3f5dc6bdeaef3f4dcb7 = "~/Views/Docs/Wiki/.git/objects/8e/15995424a52ee8cdfec3f5dc6bdeaef3f4dcb7";
+                        }
+                        static readonly __90Class s__90 = new __90Class();
+                        public __90Class _90 { get { return s__90; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __90Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _5444311249c06816ad3f276fd230b32779829b = "5444311249c06816ad3f276fd230b32779829b";
+                            }
+                            public readonly string _5444311249c06816ad3f276fd230b32779829b = "~/Views/Docs/Wiki/.git/objects/90/5444311249c06816ad3f276fd230b32779829b";
+                        }
+                        static readonly __92Class s__92 = new __92Class();
+                        public __92Class _92 { get { return s__92; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __92Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _7c5d0c1f01f8a9c65f9d02a5484b3bb6cc0df2 = "7c5d0c1f01f8a9c65f9d02a5484b3bb6cc0df2";
+                            }
+                            public readonly string _7c5d0c1f01f8a9c65f9d02a5484b3bb6cc0df2 = "~/Views/Docs/Wiki/.git/objects/92/7c5d0c1f01f8a9c65f9d02a5484b3bb6cc0df2";
+                        }
+                        static readonly __94Class s__94 = new __94Class();
+                        public __94Class _94 { get { return s__94; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __94Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _768a593a7d9e24fd0715c6d346f65ea00757e1 = "768a593a7d9e24fd0715c6d346f65ea00757e1";
+                                public readonly string aaf550e7f447467f09aa27d791468f50a554cb = "aaf550e7f447467f09aa27d791468f50a554cb";
+                            }
+                            public readonly string _768a593a7d9e24fd0715c6d346f65ea00757e1 = "~/Views/Docs/Wiki/.git/objects/94/768a593a7d9e24fd0715c6d346f65ea00757e1";
+                            public readonly string aaf550e7f447467f09aa27d791468f50a554cb = "~/Views/Docs/Wiki/.git/objects/94/aaf550e7f447467f09aa27d791468f50a554cb";
+                        }
+                        static readonly __95Class s__95 = new __95Class();
+                        public __95Class _95 { get { return s__95; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __95Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _78de383933c7306418d1b5cc8a2a4b7184b960 = "78de383933c7306418d1b5cc8a2a4b7184b960";
+                            }
+                            public readonly string _78de383933c7306418d1b5cc8a2a4b7184b960 = "~/Views/Docs/Wiki/.git/objects/95/78de383933c7306418d1b5cc8a2a4b7184b960";
+                        }
+                        static readonly __96Class s__96 = new __96Class();
+                        public __96Class _96 { get { return s__96; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __96Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _58de57ad48a90e92f325deeac5690353f29825 = "58de57ad48a90e92f325deeac5690353f29825";
+                            }
+                            public readonly string _58de57ad48a90e92f325deeac5690353f29825 = "~/Views/Docs/Wiki/.git/objects/96/58de57ad48a90e92f325deeac5690353f29825";
+                        }
+                        static readonly __99Class s__99 = new __99Class();
+                        public __99Class _99 { get { return s__99; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __99Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _7abf1e3ea8b2d01a601d207869395d47be3717 = "7abf1e3ea8b2d01a601d207869395d47be3717";
+                                public readonly string ee0e532db409b4755de8b59c98f019df602153 = "ee0e532db409b4755de8b59c98f019df602153";
+                            }
+                            public readonly string _7abf1e3ea8b2d01a601d207869395d47be3717 = "~/Views/Docs/Wiki/.git/objects/99/7abf1e3ea8b2d01a601d207869395d47be3717";
+                            public readonly string ee0e532db409b4755de8b59c98f019df602153 = "~/Views/Docs/Wiki/.git/objects/99/ee0e532db409b4755de8b59c98f019df602153";
+                        }
+                        static readonly __9bClass s__9b = new __9bClass();
+                        public __9bClass _9b { get { return s__9b; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __9bClass
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string e95e599ec4765c0c648b4e4fb25e9886a09c9b = "e95e599ec4765c0c648b4e4fb25e9886a09c9b";
+                            }
+                            public readonly string e95e599ec4765c0c648b4e4fb25e9886a09c9b = "~/Views/Docs/Wiki/.git/objects/9b/e95e599ec4765c0c648b4e4fb25e9886a09c9b";
+                        }
+                        static readonly __9cClass s__9c = new __9cClass();
+                        public __9cClass _9c { get { return s__9c; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __9cClass
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _38c74742ad4b79a8df272450280dbd2bd1e930 = "38c74742ad4b79a8df272450280dbd2bd1e930";
+                            }
+                            public readonly string _38c74742ad4b79a8df272450280dbd2bd1e930 = "~/Views/Docs/Wiki/.git/objects/9c/38c74742ad4b79a8df272450280dbd2bd1e930";
+                        }
+                        static readonly __9fClass s__9f = new __9fClass();
+                        public __9fClass _9f { get { return s__9f; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class __9fClass
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _6eb108496a2072a2b4a5d3b2d0591eb300597f = "6eb108496a2072a2b4a5d3b2d0591eb300597f";
+                                public readonly string _790db6cff1b68b1e9007d2e269b0af40945592 = "790db6cff1b68b1e9007d2e269b0af40945592";
+                            }
+                            public readonly string _6eb108496a2072a2b4a5d3b2d0591eb300597f = "~/Views/Docs/Wiki/.git/objects/9f/6eb108496a2072a2b4a5d3b2d0591eb300597f";
+                            public readonly string _790db6cff1b68b1e9007d2e269b0af40945592 = "~/Views/Docs/Wiki/.git/objects/9f/790db6cff1b68b1e9007d2e269b0af40945592";
+                        }
+                        static readonly _a0Class s_a0 = new _a0Class();
+                        public _a0Class a0 { get { return s_a0; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class _a0Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _4970cc0c295107aae7c4ec30c78c1f0742096a = "4970cc0c295107aae7c4ec30c78c1f0742096a";
+                            }
+                            public readonly string _4970cc0c295107aae7c4ec30c78c1f0742096a = "~/Views/Docs/Wiki/.git/objects/a0/4970cc0c295107aae7c4ec30c78c1f0742096a";
+                        }
+                        static readonly _a7Class s_a7 = new _a7Class();
+                        public _a7Class a7 { get { return s_a7; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class _a7Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string fe017c20299938fd1cf2c699c63dfddc40580e = "fe017c20299938fd1cf2c699c63dfddc40580e";
+                            }
+                            public readonly string fe017c20299938fd1cf2c699c63dfddc40580e = "~/Views/Docs/Wiki/.git/objects/a7/fe017c20299938fd1cf2c699c63dfddc40580e";
+                        }
+                        static readonly _a8Class s_a8 = new _a8Class();
+                        public _a8Class a8 { get { return s_a8; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class _a8Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _82d7cac2955c181de0644b9e1f5def0dba38aa = "82d7cac2955c181de0644b9e1f5def0dba38aa";
+                            }
+                            public readonly string _82d7cac2955c181de0644b9e1f5def0dba38aa = "~/Views/Docs/Wiki/.git/objects/a8/82d7cac2955c181de0644b9e1f5def0dba38aa";
+                        }
+                        static readonly _aeClass s_ae = new _aeClass();
+                        public _aeClass ae { get { return s_ae; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class _aeClass
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _0fe3535766f19b5ab71b47fb4500f4ca5c437a = "0fe3535766f19b5ab71b47fb4500f4ca5c437a";
+                            }
+                            public readonly string _0fe3535766f19b5ab71b47fb4500f4ca5c437a = "~/Views/Docs/Wiki/.git/objects/ae/0fe3535766f19b5ab71b47fb4500f4ca5c437a";
+                        }
+                        static readonly _b0Class s_b0 = new _b0Class();
+                        public _b0Class b0 { get { return s_b0; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class _b0Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string e99f4b1c172b2e6140cbb5f7f5ca4728dffa42 = "e99f4b1c172b2e6140cbb5f7f5ca4728dffa42";
+                            }
+                            public readonly string e99f4b1c172b2e6140cbb5f7f5ca4728dffa42 = "~/Views/Docs/Wiki/.git/objects/b0/e99f4b1c172b2e6140cbb5f7f5ca4728dffa42";
+                        }
+                        static readonly _b9Class s_b9 = new _b9Class();
+                        public _b9Class b9 { get { return s_b9; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class _b9Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string fbbd0ab2d2f07408984444eb57ae905a4e6fa0 = "fbbd0ab2d2f07408984444eb57ae905a4e6fa0";
+                            }
+                            public readonly string fbbd0ab2d2f07408984444eb57ae905a4e6fa0 = "~/Views/Docs/Wiki/.git/objects/b9/fbbd0ab2d2f07408984444eb57ae905a4e6fa0";
+                        }
+                        static readonly _beClass s_be = new _beClass();
+                        public _beClass be { get { return s_be; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class _beClass
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _8aa319f6d757bbcf0b84c5d4c247252bfad975 = "8aa319f6d757bbcf0b84c5d4c247252bfad975";
+                            }
+                            public readonly string _8aa319f6d757bbcf0b84c5d4c247252bfad975 = "~/Views/Docs/Wiki/.git/objects/be/8aa319f6d757bbcf0b84c5d4c247252bfad975";
+                        }
+                        static readonly _bfClass s_bf = new _bfClass();
+                        public _bfClass bf { get { return s_bf; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class _bfClass
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _29c39a5aebc21512964caa85949d9919d1f772 = "29c39a5aebc21512964caa85949d9919d1f772";
+                                public readonly string e8a10be7f1d5e0d567aae4c3261e27ed290aec = "e8a10be7f1d5e0d567aae4c3261e27ed290aec";
+                            }
+                            public readonly string _29c39a5aebc21512964caa85949d9919d1f772 = "~/Views/Docs/Wiki/.git/objects/bf/29c39a5aebc21512964caa85949d9919d1f772";
+                            public readonly string e8a10be7f1d5e0d567aae4c3261e27ed290aec = "~/Views/Docs/Wiki/.git/objects/bf/e8a10be7f1d5e0d567aae4c3261e27ed290aec";
+                        }
+                        static readonly _c0Class s_c0 = new _c0Class();
+                        public _c0Class c0 { get { return s_c0; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class _c0Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _8acd099162319dd2785d4146cabbd92cc87dfd = "8acd099162319dd2785d4146cabbd92cc87dfd";
+                            }
+                            public readonly string _8acd099162319dd2785d4146cabbd92cc87dfd = "~/Views/Docs/Wiki/.git/objects/c0/8acd099162319dd2785d4146cabbd92cc87dfd";
+                        }
+                        static readonly _c3Class s_c3 = new _c3Class();
+                        public _c3Class c3 { get { return s_c3; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class _c3Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _0c0a26f5fd9f89588c86382ad7719be1c6adb2 = "0c0a26f5fd9f89588c86382ad7719be1c6adb2";
+                            }
+                            public readonly string _0c0a26f5fd9f89588c86382ad7719be1c6adb2 = "~/Views/Docs/Wiki/.git/objects/c3/0c0a26f5fd9f89588c86382ad7719be1c6adb2";
+                        }
+                        static readonly _c5Class s_c5 = new _c5Class();
+                        public _c5Class c5 { get { return s_c5; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class _c5Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _00cdc155676e8e9861107a74dbf3c3338e371c = "00cdc155676e8e9861107a74dbf3c3338e371c";
+                            }
+                            public readonly string _00cdc155676e8e9861107a74dbf3c3338e371c = "~/Views/Docs/Wiki/.git/objects/c5/00cdc155676e8e9861107a74dbf3c3338e371c";
+                        }
+                        static readonly _c6Class s_c6 = new _c6Class();
+                        public _c6Class c6 { get { return s_c6; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class _c6Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _14b29017338e5fb8bdc80ef45ee66b6b91f419 = "14b29017338e5fb8bdc80ef45ee66b6b91f419";
+                            }
+                            public readonly string _14b29017338e5fb8bdc80ef45ee66b6b91f419 = "~/Views/Docs/Wiki/.git/objects/c6/14b29017338e5fb8bdc80ef45ee66b6b91f419";
+                        }
+                        static readonly _cbClass s_cb = new _cbClass();
+                        public _cbClass cb { get { return s_cb; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class _cbClass
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _6da11071db86f85573943ed1b0dc11185056bc = "6da11071db86f85573943ed1b0dc11185056bc";
+                                public readonly string _8be2a2089950c4c04ad0b7eea83e8114d90a3f = "8be2a2089950c4c04ad0b7eea83e8114d90a3f";
+                            }
+                            public readonly string _6da11071db86f85573943ed1b0dc11185056bc = "~/Views/Docs/Wiki/.git/objects/cb/6da11071db86f85573943ed1b0dc11185056bc";
+                            public readonly string _8be2a2089950c4c04ad0b7eea83e8114d90a3f = "~/Views/Docs/Wiki/.git/objects/cb/8be2a2089950c4c04ad0b7eea83e8114d90a3f";
+                        }
+                        static readonly _ceClass s_ce = new _ceClass();
+                        public _ceClass ce { get { return s_ce; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class _ceClass
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _7bec59ba83ebd02348e5e9f2effd9b0993ae7e = "7bec59ba83ebd02348e5e9f2effd9b0993ae7e";
+                                public readonly string cdcb5a731d4b5e08fbc3ab738a169b9efcc33d = "cdcb5a731d4b5e08fbc3ab738a169b9efcc33d";
+                            }
+                            public readonly string _7bec59ba83ebd02348e5e9f2effd9b0993ae7e = "~/Views/Docs/Wiki/.git/objects/ce/7bec59ba83ebd02348e5e9f2effd9b0993ae7e";
+                            public readonly string cdcb5a731d4b5e08fbc3ab738a169b9efcc33d = "~/Views/Docs/Wiki/.git/objects/ce/cdcb5a731d4b5e08fbc3ab738a169b9efcc33d";
+                        }
+                        static readonly _d0Class s_d0 = new _d0Class();
+                        public _d0Class d0 { get { return s_d0; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class _d0Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _57fab3e4f5cc12e0d48da7fb1471a656719bfb = "57fab3e4f5cc12e0d48da7fb1471a656719bfb";
+                                public readonly string cee7038d5f97ea9527eb26c218f9daf48ed313 = "cee7038d5f97ea9527eb26c218f9daf48ed313";
+                            }
+                            public readonly string _57fab3e4f5cc12e0d48da7fb1471a656719bfb = "~/Views/Docs/Wiki/.git/objects/d0/57fab3e4f5cc12e0d48da7fb1471a656719bfb";
+                            public readonly string cee7038d5f97ea9527eb26c218f9daf48ed313 = "~/Views/Docs/Wiki/.git/objects/d0/cee7038d5f97ea9527eb26c218f9daf48ed313";
+                        }
+                        static readonly _d4Class s_d4 = new _d4Class();
+                        public _d4Class d4 { get { return s_d4; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class _d4Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string ba963c00a33abc72c76c740378563b31eb0b3d = "ba963c00a33abc72c76c740378563b31eb0b3d";
+                            }
+                            public readonly string ba963c00a33abc72c76c740378563b31eb0b3d = "~/Views/Docs/Wiki/.git/objects/d4/ba963c00a33abc72c76c740378563b31eb0b3d";
+                        }
+                        static readonly _d7Class s_d7 = new _d7Class();
+                        public _d7Class d7 { get { return s_d7; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class _d7Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _80f5e78dc502bb3b57ecf671695b87bf392381 = "80f5e78dc502bb3b57ecf671695b87bf392381";
+                            }
+                            public readonly string _80f5e78dc502bb3b57ecf671695b87bf392381 = "~/Views/Docs/Wiki/.git/objects/d7/80f5e78dc502bb3b57ecf671695b87bf392381";
+                        }
+                        static readonly _ddClass s_dd = new _ddClass();
+                        public _ddClass dd { get { return s_dd; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class _ddClass
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string d564e70ae38fc20dfd6741560078d19cad9541 = "d564e70ae38fc20dfd6741560078d19cad9541";
+                            }
+                            public readonly string d564e70ae38fc20dfd6741560078d19cad9541 = "~/Views/Docs/Wiki/.git/objects/dd/d564e70ae38fc20dfd6741560078d19cad9541";
+                        }
+                        static readonly _e0Class s_e0 = new _e0Class();
+                        public _e0Class e0 { get { return s_e0; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class _e0Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _6adb4c505add24ad171360458060aae85d3555 = "6adb4c505add24ad171360458060aae85d3555";
+                            }
+                            public readonly string _6adb4c505add24ad171360458060aae85d3555 = "~/Views/Docs/Wiki/.git/objects/e0/6adb4c505add24ad171360458060aae85d3555";
+                        }
+                        static readonly _e2Class s_e2 = new _e2Class();
+                        public _e2Class e2 { get { return s_e2; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class _e2Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _832b5c8dd034e328cb2918b532a41a3452949e = "832b5c8dd034e328cb2918b532a41a3452949e";
+                            }
+                            public readonly string _832b5c8dd034e328cb2918b532a41a3452949e = "~/Views/Docs/Wiki/.git/objects/e2/832b5c8dd034e328cb2918b532a41a3452949e";
+                        }
+                        static readonly _e3Class s_e3 = new _e3Class();
+                        public _e3Class e3 { get { return s_e3; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class _e3Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string ad21df4219a11b60f129f11fd3453eea85f5ec = "ad21df4219a11b60f129f11fd3453eea85f5ec";
+                            }
+                            public readonly string ad21df4219a11b60f129f11fd3453eea85f5ec = "~/Views/Docs/Wiki/.git/objects/e3/ad21df4219a11b60f129f11fd3453eea85f5ec";
+                        }
+                        static readonly _e5Class s_e5 = new _e5Class();
+                        public _e5Class e5 { get { return s_e5; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class _e5Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _8a77709c790eadd24a47c1ec803465775d2c45 = "8a77709c790eadd24a47c1ec803465775d2c45";
+                            }
+                            public readonly string _8a77709c790eadd24a47c1ec803465775d2c45 = "~/Views/Docs/Wiki/.git/objects/e5/8a77709c790eadd24a47c1ec803465775d2c45";
+                        }
+                        static readonly _e8Class s_e8 = new _e8Class();
+                        public _e8Class e8 { get { return s_e8; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class _e8Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _739a8e3a9ca7396e3a6daca6c7fb0726bc0022 = "739a8e3a9ca7396e3a6daca6c7fb0726bc0022";
+                            }
+                            public readonly string _739a8e3a9ca7396e3a6daca6c7fb0726bc0022 = "~/Views/Docs/Wiki/.git/objects/e8/739a8e3a9ca7396e3a6daca6c7fb0726bc0022";
+                        }
+                        static readonly _eaClass s_ea = new _eaClass();
+                        public _eaClass ea { get { return s_ea; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class _eaClass
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _08594363f5ba6439c83494a40fa1a3f4840137 = "08594363f5ba6439c83494a40fa1a3f4840137";
+                            }
+                            public readonly string _08594363f5ba6439c83494a40fa1a3f4840137 = "~/Views/Docs/Wiki/.git/objects/ea/08594363f5ba6439c83494a40fa1a3f4840137";
+                        }
+                        static readonly _f0Class s_f0 = new _f0Class();
+                        public _f0Class f0 { get { return s_f0; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class _f0Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string a732dafc2f6a71fbdda02ce1b1449b96027975 = "a732dafc2f6a71fbdda02ce1b1449b96027975";
+                            }
+                            public readonly string a732dafc2f6a71fbdda02ce1b1449b96027975 = "~/Views/Docs/Wiki/.git/objects/f0/a732dafc2f6a71fbdda02ce1b1449b96027975";
+                        }
+                        static readonly _f1Class s_f1 = new _f1Class();
+                        public _f1Class f1 { get { return s_f1; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class _f1Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _90bd089ca359e118e4ff1c34157bd49028e1f1 = "90bd089ca359e118e4ff1c34157bd49028e1f1";
+                            }
+                            public readonly string _90bd089ca359e118e4ff1c34157bd49028e1f1 = "~/Views/Docs/Wiki/.git/objects/f1/90bd089ca359e118e4ff1c34157bd49028e1f1";
+                        }
+                        static readonly _f4Class s_f4 = new _f4Class();
+                        public _f4Class f4 { get { return s_f4; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class _f4Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string c257d58098c5964be093cb568734b16f717595 = "c257d58098c5964be093cb568734b16f717595";
+                            }
+                            public readonly string c257d58098c5964be093cb568734b16f717595 = "~/Views/Docs/Wiki/.git/objects/f4/c257d58098c5964be093cb568734b16f717595";
+                        }
+                        static readonly _f7Class s_f7 = new _f7Class();
+                        public _f7Class f7 { get { return s_f7; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class _f7Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _23b6949d1b4375921677ed2d0650a9fed35b67 = "23b6949d1b4375921677ed2d0650a9fed35b67";
+                                public readonly string d99cb18a618a21fd905b992df99befa5c235e3 = "d99cb18a618a21fd905b992df99befa5c235e3";
+                            }
+                            public readonly string _23b6949d1b4375921677ed2d0650a9fed35b67 = "~/Views/Docs/Wiki/.git/objects/f7/23b6949d1b4375921677ed2d0650a9fed35b67";
+                            public readonly string d99cb18a618a21fd905b992df99befa5c235e3 = "~/Views/Docs/Wiki/.git/objects/f7/d99cb18a618a21fd905b992df99befa5c235e3";
+                        }
+                        static readonly _f9Class s_f9 = new _f9Class();
+                        public _f9Class f9 { get { return s_f9; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class _f9Class
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _5bd6ed7c4640101ea51ea9edd2f4a6dc6a0591 = "5bd6ed7c4640101ea51ea9edd2f4a6dc6a0591";
+                                public readonly string d3ecba26614ed4a420606dc659a86a2391d229 = "d3ecba26614ed4a420606dc659a86a2391d229";
+                            }
+                            public readonly string _5bd6ed7c4640101ea51ea9edd2f4a6dc6a0591 = "~/Views/Docs/Wiki/.git/objects/f9/5bd6ed7c4640101ea51ea9edd2f4a6dc6a0591";
+                            public readonly string d3ecba26614ed4a420606dc659a86a2391d229 = "~/Views/Docs/Wiki/.git/objects/f9/d3ecba26614ed4a420606dc659a86a2391d229";
+                        }
+                        static readonly _faClass s_fa = new _faClass();
+                        public _faClass fa { get { return s_fa; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class _faClass
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _735c7a2baf2af34175c8a1d5559d28b2cc16b2 = "735c7a2baf2af34175c8a1d5559d28b2cc16b2";
+                            }
+                            public readonly string _735c7a2baf2af34175c8a1d5559d28b2cc16b2 = "~/Views/Docs/Wiki/.git/objects/fa/735c7a2baf2af34175c8a1d5559d28b2cc16b2";
+                        }
+                        static readonly _fbClass s_fb = new _fbClass();
+                        public _fbClass fb { get { return s_fb; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class _fbClass
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string _19792f4b6441c40748b3a61fdca3dc480ca810 = "19792f4b6441c40748b3a61fdca3dc480ca810";
+                                public readonly string _95f36a3bddca2fbdc208cbeb130363d4f0def6 = "95f36a3bddca2fbdc208cbeb130363d4f0def6";
+                                public readonly string c6d09c1749e334de8b30d398c5de12f46bc334 = "c6d09c1749e334de8b30d398c5de12f46bc334";
+                            }
+                            public readonly string _19792f4b6441c40748b3a61fdca3dc480ca810 = "~/Views/Docs/Wiki/.git/objects/fb/19792f4b6441c40748b3a61fdca3dc480ca810";
+                            public readonly string _95f36a3bddca2fbdc208cbeb130363d4f0def6 = "~/Views/Docs/Wiki/.git/objects/fb/95f36a3bddca2fbdc208cbeb130363d4f0def6";
+                            public readonly string c6d09c1749e334de8b30d398c5de12f46bc334 = "~/Views/Docs/Wiki/.git/objects/fb/c6d09c1749e334de8b30d398c5de12f46bc334";
+                        }
+                        static readonly _packClass s_pack = new _packClass();
+                        public _packClass pack { get { return s_pack; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class _packClass
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string pack_130296d1b06568d9c6bc6bd89201656e1dcdce74 = "pack-130296d1b06568d9c6bc6bd89201656e1dcdce74";
+                                public readonly string pack_130296d1b06568d9c6bc6bd89201656e1dcdce74_pack = "pack_130296d1b06568d9c6bc6bd89201656e1dcdce74_pack";
+                            }
+                            public readonly string pack_130296d1b06568d9c6bc6bd89201656e1dcdce74 = "~/Views/Docs/Wiki/.git/objects/pack/pack-130296d1b06568d9c6bc6bd89201656e1dcdce74.idx";
+                            public readonly string pack_130296d1b06568d9c6bc6bd89201656e1dcdce74_pack = "~/Views/Docs/Wiki/.git/objects/pack/pack-130296d1b06568d9c6bc6bd89201656e1dcdce74.pack";
+                        }
+                    }
+                    static readonly _refsClass s_refs = new _refsClass();
+                    public _refsClass refs { get { return s_refs; } }
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public partial class _refsClass
+                    {
+                        static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                        public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                        public class _ViewNamesClass
+                        {
+                        }
+                        static readonly _headsClass s_heads = new _headsClass();
+                        public _headsClass heads { get { return s_heads; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class _headsClass
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                                public readonly string master = "master";
+                            }
+                            public readonly string master = "~/Views/Docs/Wiki/.git/refs/heads/master";
+                        }
+                        static readonly _remotesClass s_remotes = new _remotesClass();
+                        public _remotesClass remotes { get { return s_remotes; } }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public partial class _remotesClass
+                        {
+                            static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                            public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                            public class _ViewNamesClass
+                            {
+                            }
+                            static readonly _originClass s_origin = new _originClass();
+                            public _originClass origin { get { return s_origin; } }
+                            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                            public partial class _originClass
+                            {
+                                static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                                public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                                public class _ViewNamesClass
+                                {
+                                    public readonly string HEAD = "HEAD";
+                                    public readonly string master = "master";
+                                }
+                                public readonly string HEAD = "~/Views/Docs/Wiki/.git/refs/remotes/origin/HEAD";
+                                public readonly string master = "~/Views/Docs/Wiki/.git/refs/remotes/origin/master";
+                            }
+                        }
+                    }
+                }
+                static readonly _ContentClass s_Content = new _ContentClass();
+                public _ContentClass Content { get { return s_Content; } }
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public partial class _ContentClass
+                {
+                    static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                    public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                    public class _ViewNamesClass
+                    {
+                        public readonly string _Sidebar = "_Sidebar";
+                        public readonly string About = "About";
+                        public readonly string Ajax_Tab = "Ajax-Tab";
+                        public readonly string boneyard = "boneyard";
+                        public readonly string Configuration_Tab = "Configuration-Tab";
+                        public readonly string Configuration = "Configuration";
+                        public readonly string Contributing = "Contributing";
+                        public readonly string Data_Endpoint = "Data-Endpoint";
+                        public readonly string Default_Tabs = "Default-Tabs";
+                        public readonly string Documentation_Outline = "Documentation-Outline";
+                        public readonly string Environment_Tab = "Environment-Tab";
+                        public readonly string Execution_Tab = "Execution-Tab";
+                        public readonly string Extending = "Extending";
+                        public readonly string First_Run = "First-Run";
+                        public readonly string Getting_Started = "Getting-Started";
+                        public readonly string History_Tab = "History-Tab";
+                        public readonly string Installation = "Installation";
+                        public readonly string Manual_install = "Manual-install";
+                        public readonly string Metadata_Tab = "Metadata-Tab";
+                        public readonly string Model_Binding_Tab = "Model-Binding-Tab";
+                        public readonly string More_plugin_examples = "More-plugin-examples";
+                        public readonly string Platform_specification = "Platform-specification";
+                        public readonly string Platform_structure = "Platform-structure";
+                        public readonly string Plugin_extensions = "Plugin-extensions";
+                        public readonly string Replacing_infrastructure = "Replacing-infrastructure";
+                        public readonly string Request_Tab = "Request-Tab";
+                        public readonly string Resource_Endpoints = "Resource-Endpoints";
+                        public readonly string Routes_Tab = "Routes-Tab";
+                        public readonly string Server_Tab = "Server-Tab";
+                        public readonly string Session_Tab = "Session-Tab";
+                        public readonly string Specification = "Specification";
+                        public readonly string Timeline_Tab = "Timeline-Tab";
+                        public readonly string Trace_Tab = "Trace-Tab";
+                        public readonly string Using_Glimpse = "Using-Glimpse";
+                        public readonly string Views_Tab = "Views-Tab";
+                    }
+                    public readonly string _Sidebar = "~/Views/Docs/Wiki/Content/_Sidebar.md";
+                    public readonly string About = "~/Views/Docs/Wiki/Content/About.md";
+                    public readonly string Ajax_Tab = "~/Views/Docs/Wiki/Content/Ajax-Tab.md";
+                    public readonly string boneyard = "~/Views/Docs/Wiki/Content/boneyard.md";
+                    public readonly string Configuration_Tab = "~/Views/Docs/Wiki/Content/Configuration-Tab.md";
+                    public readonly string Configuration = "~/Views/Docs/Wiki/Content/Configuration.md";
+                    public readonly string Contributing = "~/Views/Docs/Wiki/Content/Contributing.md";
+                    public readonly string Data_Endpoint = "~/Views/Docs/Wiki/Content/Data-Endpoint.md";
+                    public readonly string Default_Tabs = "~/Views/Docs/Wiki/Content/Default-Tabs.md";
+                    public readonly string Documentation_Outline = "~/Views/Docs/Wiki/Content/Documentation-Outline.md";
+                    public readonly string Environment_Tab = "~/Views/Docs/Wiki/Content/Environment-Tab.md";
+                    public readonly string Execution_Tab = "~/Views/Docs/Wiki/Content/Execution-Tab.md";
+                    public readonly string Extending = "~/Views/Docs/Wiki/Content/Extending.md";
+                    public readonly string First_Run = "~/Views/Docs/Wiki/Content/First-Run.md";
+                    public readonly string Getting_Started = "~/Views/Docs/Wiki/Content/Getting-Started.md";
+                    public readonly string History_Tab = "~/Views/Docs/Wiki/Content/History-Tab.md";
+                    public readonly string Installation = "~/Views/Docs/Wiki/Content/Installation.md";
+                    public readonly string Manual_install = "~/Views/Docs/Wiki/Content/Manual-install.md";
+                    public readonly string Metadata_Tab = "~/Views/Docs/Wiki/Content/Metadata-Tab.md";
+                    public readonly string Model_Binding_Tab = "~/Views/Docs/Wiki/Content/Model-Binding-Tab.md";
+                    public readonly string More_plugin_examples = "~/Views/Docs/Wiki/Content/More-plugin-examples.md";
+                    public readonly string Platform_specification = "~/Views/Docs/Wiki/Content/Platform-specification.md";
+                    public readonly string Platform_structure = "~/Views/Docs/Wiki/Content/Platform-structure.md";
+                    public readonly string Plugin_extensions = "~/Views/Docs/Wiki/Content/Plugin-extensions.md";
+                    public readonly string Replacing_infrastructure = "~/Views/Docs/Wiki/Content/Replacing-infrastructure.md";
+                    public readonly string Request_Tab = "~/Views/Docs/Wiki/Content/Request-Tab.md";
+                    public readonly string Resource_Endpoints = "~/Views/Docs/Wiki/Content/Resource-Endpoints.md";
+                    public readonly string Routes_Tab = "~/Views/Docs/Wiki/Content/Routes-Tab.md";
+                    public readonly string Server_Tab = "~/Views/Docs/Wiki/Content/Server-Tab.md";
+                    public readonly string Session_Tab = "~/Views/Docs/Wiki/Content/Session-Tab.md";
+                    public readonly string Specification = "~/Views/Docs/Wiki/Content/Specification.md";
+                    public readonly string Timeline_Tab = "~/Views/Docs/Wiki/Content/Timeline-Tab.md";
+                    public readonly string Trace_Tab = "~/Views/Docs/Wiki/Content/Trace-Tab.md";
+                    public readonly string Using_Glimpse = "~/Views/Docs/Wiki/Content/Using-Glimpse.md";
+                    public readonly string Views_Tab = "~/Views/Docs/Wiki/Content/Views-Tab.md";
+                }
+                static readonly _imagesClass s_images = new _imagesClass();
+                public _imagesClass images { get { return s_images; } }
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public partial class _imagesClass
+                {
+                    static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                    public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                    public class _ViewNamesClass
+                    {
+                        public readonly string ajaxTab = "ajaxTab";
+                        public readonly string closeGlimpse = "closeGlimpse";
+                        public readonly string configurationTab = "configurationTab";
+                        public readonly string environmentTab = "environmentTab";
+                        public readonly string executionTab = "executionTab";
+                        public readonly string Glimpse128 = "Glimpse128";
+                        public readonly string Glimpse256 = "Glimpse256";
+                        public readonly string Glimpse32 = "Glimpse32";
+                        public readonly string Glimpse512 = "Glimpse512";
+                        public readonly string Glimpse64 = "Glimpse64";
+                        public readonly string glimpseLogo = "glimpseLogo";
+                        public readonly string glimpseStatusBar = "glimpseStatusBar";
+                        public readonly string historyTab = "historyTab";
+                        public readonly string manageNuGetPackages = "manageNuGetPackages";
+                        public readonly string metadataTab = "metadataTab";
+                        public readonly string modelBindingTab = "modelBindingTab";
+                        public readonly string openGlimpse = "openGlimpse";
+                        public readonly string requestTab = "requestTab";
+                        public readonly string resizeGlimpse = "resizeGlimpse";
+                        public readonly string routesTab = "routesTab";
+                        public readonly string serverTab = "serverTab";
+                        public readonly string sessionTab = "sessionTab";
+                        public readonly string timelineTab = "timelineTab";
+                        public readonly string traceTab = "traceTab";
+                        public readonly string viewsTab = "viewsTab";
+                    }
+                    public readonly string ajaxTab = "~/Views/Docs/Wiki/images/ajaxTab.png";
+                    public readonly string closeGlimpse = "~/Views/Docs/Wiki/images/closeGlimpse.gif";
+                    public readonly string configurationTab = "~/Views/Docs/Wiki/images/configurationTab.png";
+                    public readonly string environmentTab = "~/Views/Docs/Wiki/images/environmentTab.png";
+                    public readonly string executionTab = "~/Views/Docs/Wiki/images/executionTab.png";
+                    public readonly string Glimpse128 = "~/Views/Docs/Wiki/images/Glimpse128.png";
+                    public readonly string Glimpse256 = "~/Views/Docs/Wiki/images/Glimpse256.png";
+                    public readonly string Glimpse32 = "~/Views/Docs/Wiki/images/Glimpse32.png";
+                    public readonly string Glimpse512 = "~/Views/Docs/Wiki/images/Glimpse512.png";
+                    public readonly string Glimpse64 = "~/Views/Docs/Wiki/images/Glimpse64.png";
+                    public readonly string glimpseLogo = "~/Views/Docs/Wiki/images/glimpseLogo.png";
+                    public readonly string glimpseStatusBar = "~/Views/Docs/Wiki/images/glimpseStatusBar.png";
+                    public readonly string historyTab = "~/Views/Docs/Wiki/images/historyTab.png";
+                    public readonly string manageNuGetPackages = "~/Views/Docs/Wiki/images/manageNuGetPackages.png";
+                    public readonly string metadataTab = "~/Views/Docs/Wiki/images/metadataTab.png";
+                    public readonly string modelBindingTab = "~/Views/Docs/Wiki/images/modelBindingTab.png";
+                    public readonly string openGlimpse = "~/Views/Docs/Wiki/images/openGlimpse.gif";
+                    public readonly string requestTab = "~/Views/Docs/Wiki/images/requestTab.png";
+                    public readonly string resizeGlimpse = "~/Views/Docs/Wiki/images/resizeGlimpse.gif";
+                    public readonly string routesTab = "~/Views/Docs/Wiki/images/routesTab.png";
+                    public readonly string serverTab = "~/Views/Docs/Wiki/images/serverTab.png";
+                    public readonly string sessionTab = "~/Views/Docs/Wiki/images/sessionTab.png";
+                    public readonly string timelineTab = "~/Views/Docs/Wiki/images/timelineTab.png";
+                    public readonly string traceTab = "~/Views/Docs/Wiki/images/traceTab.png";
+                    public readonly string viewsTab = "~/Views/Docs/Wiki/images/viewsTab.png";
+                }
+                static readonly _SandboxClass s_Sandbox = new _SandboxClass();
+                public _SandboxClass Sandbox { get { return s_Sandbox; } }
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public partial class _SandboxClass
+                {
+                    static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                    public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                    public class _ViewNamesClass
+                    {
+                        public readonly string _Footer = "_Footer";
+                        public readonly string _Header = "_Header";
+                        public readonly string _Sidebar = "_Sidebar";
+                        public readonly string Gollum = "Gollum";
+                    }
+                    public readonly string _Footer = "~/Views/Docs/Wiki/Sandbox/_Footer.md";
+                    public readonly string _Header = "~/Views/Docs/Wiki/Sandbox/_Header.md";
+                    public readonly string _Sidebar = "~/Views/Docs/Wiki/Sandbox/_Sidebar.md";
+                    public readonly string Gollum = "~/Views/Docs/Wiki/Sandbox/Gollum.md";
+                }
+            }
         }
     }
 
