@@ -5,15 +5,47 @@
     ViewBag.Title = Model.Title;
 }
 
-<div style="margin: auto; background-color: lightyellow; border: 1px solid goldenrod; color: goldenrod; margin-bottom: 10px; padding: 10px 0; text-align: center;">
+@section head{
+    <style>
+        .warning {
+            margin: auto;background-color: lightyellow;border: 1px solid goldenrod;color: goldenrod;margin-bottom: 10px;padding: 10px 0;text-align: center;
+        }
+
+        .sidebar {
+            float: left;margin-right: 20px;background-color: #EDEDED;border: 1px solid black;color: black;padding: 10px;width: 180px;
+        }
+
+        .maincontent {
+            margin-left: 200px;
+        }
+
+        .maincontent code, .maincontent tt, .maincontent pre {
+            background-color: #F8F8F8;
+            border: 1px solid #EAEAEA;
+            margin: 0 2px;
+            padding: 0 5px;
+        }
+
+        .maincontent pre {
+            margin: 0 0 10px 0;
+        }
+
+        .maincontent pre > code {
+            background-color: inherit;
+            border: none;
+        }
+    </style>
+}
+
+<div class="warning">
     <strong>NOTE:</strong> Glimpse documentation is currently being improved. If you'd like to help the effort, please <a href="@Model.EditUri">edit this page</a> or contribute to our <a href="https://github.com/Glimpse/Glimpse/wiki">GitHub Wiki</a>
 </div>
 
-<nav style="float: left; margin-right: 20px; background-color: #EDEDED; border: 1px solid black; color: black; padding: 10px;">
+<nav class="sidebar">
     @Html.RenderMarkdown(new FileInfo(Path.Combine(Model.MarkdownFile.DirectoryName, "_SideBar.md")))
 </nav>
 
-<div>
+<div class="maincontent">
     @Html.RenderMarkdown(Model.MarkdownFile)
 </div>
 
