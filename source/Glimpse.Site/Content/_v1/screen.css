@@ -234,3 +234,42 @@ footer .bottom-backing img,
 .release-item-detail-notes i {
   color: #bbb;
 }
+.wiki .warning {
+  margin: auto;
+  background-color: lightyellow;
+  border: 1px solid goldenrod;
+  color: goldenrod;
+  margin-bottom: 10px;
+  padding: 10px 0;
+  text-align: center;
+}
+.wiki .sidebar {
+  float: left;
+  margin-right: 20px;
+  background-color: #EDEDED;
+  border: 1px solid black;
+  color: black;
+  padding: 10px;
+  width: 180px;
+}
+.wiki .sidebar > ul {
+  margin: 0 0 0 30px;
+}
+.wiki .maincontent {
+  margin-left: 200px;
+}
+.wiki .maincontent code,
+.wiki .maincontent tt,
+.wiki .maincontent pre {
+  background-color: #F8F8F8;
+  border: 1px solid #EAEAEA;
+  margin: 0 2px;
+  padding: 0 5px;
+}
+.wiki .maincontent pre {
+  margin: 0 0 10px 0;
+}
+.wiki .maincontent pre > code {
+  background-color: inherit;
+  border: none;
+}
