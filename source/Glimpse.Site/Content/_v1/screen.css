@@ -1,14 +1,23 @@
-﻿.header-inner,
+﻿body {
+  background-color: #323d42;
+}
+.header-inner,
 .body-inner,
 .footer-inner {
   padding: 2em 2em 0 2em;
-  max-width: 1600px;
+  max-width: 1150px;
   margin-left: auto;
   margin-right: auto;
   min-height: 125px;
 }
 .header-inner {
   padding-top: 0;
+}
+a,
+a:active,
+a:visited {
+  color: #33a6ee;
+  text-decoration: underline;
 }
 header,
 .header {
@@ -43,6 +52,12 @@ header .stats-sub-menu .stat__title,
 .header .stats-sub-menu .stat__title {
   margin-bottom: 0.5em;
 }
+footer,
+.footer {
+  background-color: #323d42;
+  color: #ffffff;
+  padding-top: 3px;
+}
 footer .g,
 .footer .g {
   text-align: center;
@@ -55,13 +70,25 @@ footer .bottom-backing img,
 .footer .bottom-backing img {
   margin: 0 0.5em;
 }
+footer .footer-inner,
+.footer .footer-inner {
+  min-height: 90px;
+}
+footer .footer-outer,
+.footer .footer-outer {
+  border-top: 1px solid #ffffff;
+}
+.body {
+  background-color: #ffffff;
+  padding-bottom: 30px;
+}
 .body-inner .stats-root-menu {
   text-align: center;
 }
 .body-inner .stats-root-menu .stat {
   width: 20%;
   min-width: 170px;
-  max-width: 210px;
+  max-width: 180px;
   margin: 0 4% 2em;
 }
 .body-inner .stats-root-menu a {
@@ -72,6 +99,9 @@ footer .bottom-backing img,
 }
 .body-inner .stats-contributors .stat__title {
   margin-bottom: 0.75em;
+}
+.body-inner .stats-contributors .stat {
+  margin-left: 23px;
 }
 .body-inner .stats-support {
   text-align: center;
@@ -96,6 +126,7 @@ footer .bottom-backing img,
 }
 .body-inner .stats-next {
   text-align: center;
+  margin-top: 50px;
 }
 .body-inner .stats-next .stat {
   width: 30%;

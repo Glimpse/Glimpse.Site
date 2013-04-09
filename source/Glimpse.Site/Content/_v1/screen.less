@@ -1,15 +1,24 @@
 ﻿@darkcolor: #323D42;
 @lightcolor: #fff;
 
+body {
+	background-color: @darkcolor;
+}
+
 .header-inner, .body-inner, .footer-inner {	
 	padding: 2em 2em 0 2em;
-	max-width: 1600px;
+	max-width: 1150px;
 	margin-left: auto;
 	margin-right: auto;
 	min-height: 125px;	
 }
 .header-inner {
 	padding-top: 0;
+}
+
+a, a:active, a:visited {
+	color: #33a6ee;
+	text-decoration: underline;
 }
 
 header, .header {
@@ -42,6 +51,9 @@ header, .header {
 }
 
 footer, .footer {
+	background-color: @darkcolor;
+	color: @lightcolor; 
+	padding-top: 3px;
 	.g {
 		text-align: center;
 	}
@@ -51,6 +63,17 @@ footer, .footer {
 			margin: 0 0.5em;
 		}
 	}
+	.footer-inner {
+		min-height: 90px;
+	}
+	.footer-outer {
+		border-top:1px solid @lightcolor;
+	}
+}
+
+.body {
+	background-color: @lightcolor;
+	padding-bottom: 30px;
 }
 
 .body-inner {
@@ -59,7 +82,7 @@ footer, .footer {
 		.stat {
 			width: 20%; 
 			min-width: 170px;
-			max-width: 210px;
+			max-width: 180px;
 			margin: 0 4% 2em;
 		} 
 		a {
@@ -70,6 +93,9 @@ footer, .footer {
 		text-align: center;  
 		.stat__title {
 			margin-bottom: 0.75em;
+		}
+		.stat {
+			margin-left: 23px;
 		}
 	}
 	.stats-support {
@@ -95,6 +121,7 @@ footer, .footer {
 	}
 	.stats-next {
 		text-align: center;  
+		margin-top: 50px;
 		.stat {
 			width: 30%; 
 			min-width: 330px;
