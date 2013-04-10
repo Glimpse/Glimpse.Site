@@ -189,6 +189,9 @@ footer .footer-outer,
 .home .header-inner {
   padding-top: 2em;
 }
+.simple .stats-support {
+  margin-top: 40px;
+}
 .layout {
   width: 100%;
   margin: 0;
