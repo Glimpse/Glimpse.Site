@@ -19,7 +19,7 @@
     <div class="g one-half">
         <h2>Install Notes</h2>
     </div> 
-    <div class="g two-thirds push--one-sixth"> 
+    <div class="g g four-fifths push--one-tenth"> 
         @foreach (var detail in Model.Details)
         {
             var image = string.IsNullOrEmpty(detail.Value.PackageIconUrl) ? "/Content/_v1/site-nuget-logo.png" : detail.Value.PackageIconUrl;
@@ -55,7 +55,7 @@
                                     <span class="release-item-detail-date">@detail.Value.Release.Created.ToString("dd MMM yyyy")</span> 
                                 </div>
                                 <div class="release-item-detail-notes">
-                                    @if (!string.IsNullOrEmpty(@detail.Value.Release.ReleaseNotes)) { @detail.Value.Release.ReleaseNotes } 
+                                    @if (!string.IsNullOrEmpty(@detail.Value.Release.ReleaseNotes)) { @Html.Raw(HttpUtility.HtmlEncode(detail.Value.Release.ReleaseNotes).Replace("\n", "<br />")) }  
                                     else { <i>No notes avaiable for this release.</i> }
                                 </div>
                             </div> 
