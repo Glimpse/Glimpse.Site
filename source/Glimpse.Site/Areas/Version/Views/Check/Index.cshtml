@@ -15,7 +15,7 @@
     <div class="g one-whole">
         <h2>Update Check</h2>
     </div>
-    <div class="g two-thirds push--one-sixth">  
+    <div class="g four-fifths push--one-tenth">  
         <div class="release-summary">
             @{
                 var releasSummaryTitle = "No Release Avaiable";
@@ -63,7 +63,7 @@
                                                     <span class="release-item-detail-date">@release.Value.Created.ToString("dd MMM yyyy")</span> 
                                                 </div>
                                                 <div class="release-item-detail-notes">
-                                                    @if (!string.IsNullOrEmpty(@release.Value.ReleaseNotes)) { @release.Value.ReleaseNotes } 
+                                                    @if (!string.IsNullOrEmpty(@release.Value.ReleaseNotes)) { @Html.Raw(HttpUtility.HtmlEncode(release.Value.ReleaseNotes).Replace("\n", "<br />")) } 
                                                     else { <i>No notes avaiable for this release.</i> }
                                                 </div>
                                             </div>
