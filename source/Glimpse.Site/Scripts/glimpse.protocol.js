@@ -65,6 +65,7 @@
             scope.parent().before('<div>' + description + '</div>');
     };
 
+
     var data1 = {
             'Movie': 'Star Wars',
             'Genera/Theme': 'Science Fiction',
@@ -605,10 +606,12 @@
     var data26 = {
         'Movie': 'Star Wars',
         'Genera/Theme': [ 
+                ['Actor', 'Character'],
                 ['Carrie Fisher', 'Princess Leia Organa'], 
                 ['Alec Guinness', 'Ben Obi-Wan Kenobi']
             ], 
         'Actors/Cast': [ 
+                ['Actor', 'Character', 'Gender', 'Age'],
                 ['Mark Hamill', 'Luke Skywalker', 'Male', '21'],
                 ['James Earl Jones', 'Darth Vader', 'Male', '45']
             ],
@@ -634,6 +637,7 @@
         ['Actor', 'Character', 'Gender', 'Age', 'Children' ],
         ['Mark Hamill', 'Luke Skywalker', 'Male', '21', null ],
         ['James Earl Jones', 'Darth Vader', 'Male', '45', [ 
+                ['Actor', 'Character', 'Gender', 'Age'],
                 ['Mark Hamill', 'Luke Skywalker', 'Male', '21'],
                 ['James Earl Jones', 'Darth Vader', 'Male', '45'],
                 ['Harrison Ford', 'Han Solo', 'Male', '25'],
@@ -644,6 +648,7 @@
                 ['Kenny Baker', 'R2-D2', 'Droid', '150']
             ] ],
         ['Carrie Fisher', 'Princess Leia Organa', 'Female', '21', [ 
+                ['Actor', 'Character', 'Gender', 'Age'],
                 ['Mark Hamill', 'Luke Skywalker', 'Male', '21'],
                 ['James Earl Jones', 'Darth Vader', 'Male', '45']
             ]], 
@@ -651,7 +656,7 @@
     ];
     var metaData27 = { layout: [
         [ 
-            { data : 0, width : '30%', key : true }, { data : 1, width : '30%' }, { data : 2, width : '20%' }, { data : 3, width : '20%' }
+            { data : 0, width : '30%', key : true, title: 'ACTOR' }, { data : 1, width : '30%' }, { data : 2, width : '20%' }, { data : 3, width : '20%' }
         ],
         [
             { data : 4, minDisplay : true, span : 4, suppressHeader : true, forceFull: true, layout : [ [ { data : 0, width : '30%', key : true }, { data : 1, width : '30%' }, { data : 2, width : '20%' }, { data : 3, width : '20%' } ] ] }
@@ -659,6 +664,50 @@
     ]}; 
     processHeading($('.sample27'), 'Simulate parent/child layout');
     process($('.sample27'), data27, metaData27);
+    
+
+    var data28 = [ 
+        { 'Actor': 'Mark Hamill', 'Character': 'Luke Skywalker', 'Gender': 'Male', 'Age': '21' },
+        { 'Character': 'Darth Vader', 'Actor': 'James Earl Jones', 'Gender': 'Male', 'Age': '45', _metadata: { style: 'warn' } },
+        { 'Actor': 'Harrison Ford', 'Character': {
+                'Mark Hamill': 'Luke Skywalker',
+                'James Earl Jones': 'Darth Vader',
+                'Harrison Ford': 'Han Solo'
+            }, 'Gender': 'Male', 'Age': '25' },
+        { 'Actor': 'Carrie Fisher', 'Character': 'Princess Leia Organa', 'Gender': 'Female', 'Age': '21' },
+        { 'Actor': 'Peter Cushing', 'Character': [ 
+                { 'Actor': 'Mark Hamill', 'Character': 'Luke Skywalker', 'Gender': 'Male', 'Age': '21' },
+                { 'Actor': 'James Earl Jones', 'Character': 'Darth Vader', 'Gender': 'Male', 'Age': '45' },
+                { 'Actor': 'Harrison Ford', 'Character': 'Han Solo', 'Gender': 'Male', 'Age': '25' },
+                { 'Actor': 'Carrie Fisher', 'Character': 'Princess Leia Organa', 'Gender': 'Female', 'Age': '21' },
+                { 'Actor': 'Peter Cushing', 'Character': 'Grand Moff Tarkin', 'Gender': 'Female', 'Age': '69' },
+                { 'Actor': 'Alec Guinness', 'Character': 'Ben Obi-Wan Kenobi', 'Gender': 'Female', 'Age': '70' },
+                { 'Actor': 'Anthony Daniels', 'Character': 'C-3PO', 'Gender': 'Droid', 'Age': '101' },
+                { 'Actor': 'Kenny Baker', 'Character': 'R2-D2', 'Gender': 'Droid', 'Age': '150' }
+            ], 'Gender': 'Female', 'Age': '69' },
+        { 'Actor': 'Alec Guinness', 'Character': 'Ben Obi-Wan Kenobi', 'Gender': 'Female', 'Age': '70' },
+        { 'Actor': 'Anthony Daniels', 'Character': 'C-3PO', 'Gender': 'Droid', 'Age': '101' },
+        { 'Actor': 'Kenny Baker', 'Character': [
+                ['Actor', 'Character', 'Gender', 'Age'],
+                ['Mark Hamill', 'Luke Skywalker - Luke Skywalker was a legendary war hero and Jedi who helped defeat the Galactic Empire in the Galactic Civil War and helped found the New Republic, as well as the New Jedi Order.', 'Male', '21'],
+                ['James Earl Jones', 'Darth Vader', 'Male', '45'],
+            ], 'Gender': 'Droid', 'Age': '150' }
+    ];
+    processHeading($('.sample28'), 'Process array with ', '');
+    process($('.sample28'), data28); 
+    
+    //debugger; 
+    var data29 = [ 
+        { 'aaa': 'Mark Hamill', 'bbb': 'Luke Skywalker', 'ccc': 'Male', 'ddd': '21', 'eee': 'qwe', 'fff': 'Test' },
+        { 'bbb': 'Darth Vader', 'aaa': 'James Earl Jones', 'ccc': 'Male', 'ddd': '45', 'eee': 'asd', 'fff': 'Best' }
+    ];
+    var metaData29 = { layout: [
+        [ 
+            { data : 'aaa', width : '30%', key : true }, { data : 'bbb', title : 'Character', width : '30%' }, { data : '{{ccc}} _-_ {{ddd}}', title : 'Gender', width : '20%' }, { data : '{{eee}} _-_ {{fff}}', width : '20%' }
+        ]
+    ]}; 
+    processHeading($('.sample29'), 'Process array with ', '');
+    process($('.sample29'), data29, metaData29); 
 
     //Trigger new rendering
     var renderSample = function() {
