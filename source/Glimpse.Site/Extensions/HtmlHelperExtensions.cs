@@ -36,5 +36,10 @@ namespace Glimpse.Site.Extensions
         {
             return htmlHelper.Raw(new Markdown().Transform(markdown));
         }
+
+        public static IHtmlString HtmlEncode(this HtmlHelper htmlHelper, string text, bool preserveWhitespace)
+        {
+            return preserveWhitespace ? htmlHelper.Raw(HttpUtility.HtmlEncode(text).Replace("\n", "<br />").Replace("  ", "&nbsp;&nbsp;")) : htmlHelper.Raw(htmlHelper.Encode(text));
+        }
     }
 }

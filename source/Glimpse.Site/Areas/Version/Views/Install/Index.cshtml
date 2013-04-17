@@ -55,7 +55,7 @@
                                     <span class="release-item-detail-date">@detail.Value.Release.Created.ToString("dd MMM yyyy")</span> 
                                 </div>
                                 <div class="release-item-detail-notes">
-                                    @if (!string.IsNullOrEmpty(@detail.Value.Release.ReleaseNotes)) { @Html.Raw(HttpUtility.HtmlEncode(detail.Value.Release.ReleaseNotes).Replace("\n", "<br />")) }  
+                                    @if (!string.IsNullOrEmpty(@detail.Value.Release.ReleaseNotes)) { @Html.HtmlEncode(detail.Value.Release.ReleaseNotes, true) }  
                                     else { <i>No notes avaiable for this release.</i> }
                                 </div>
                             </div> 
