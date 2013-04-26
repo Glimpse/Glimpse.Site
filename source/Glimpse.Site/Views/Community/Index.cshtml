@@ -1,27 +1,32 @@
 ﻿@{
     ViewBag.Title = "Glimpse - Community - Who's involved & how you can help";
+    ViewBag.bodyClass = "community-page";
 }
 
 @section header {
-    <section>
-        <h1>Community</h1>
-        <div class="gamma">who's involved & how you can help</div>
-    </section>
+    <h1>Community</h1>
 }
-
-<section>
-    <div class="g one-half lap-one-whole palm-one-whole">
-        <h2>Working together</h2>
-        <p>Glimpse wouldn't be what it is today without the love and support of some awesome guys from around the world. Thanks to everyone who has been involved in making this possible.</p>
-        <p>If you would like to get involved there are plenty of things that you can do. Feel free to reach out to us on the <a href="http://groups.google.com/group/getglimpse-dev">mailing list</a> or via twitter (<a href="https://twitter.com/anthony_vdh">@@anthony_vdh</a> &amp; <a href="https://twitter.com/nikmd23">@@nikmd23</a>). Otherwise start with the below and go from there.</p>
-        
-        <h2>Helping out</h2> 
-        <p>Documentation is the one thing that helps separate good projects from the best projects. If you’re a first time OSS contributor, documentation is a great stepping stone to learn the process and get more involved, and if you’re an OSS veteran, you’ll no doubt understand the need to occasionally update docs. The Glimpse team are always grateful for anyone that wants to lend a hand.</p>
-        <p>In an effort to make documentation contribution as simple as possible, we are leveraging Glimpse’s <a href="https://github.com/Glimpse/Glimpse/wiki">GitHub Wiki</a>, which is just a standard Git repository under the covers, as the entry point for documentation. GitHub wiki’s provide us with an online WYSIWYG interface for adding and editing documentation, completely in browser, with the simple markdown syntax.</p>
-        <p>We need people to help with the Glimpse website, documenting the Glimpse APIs, "getting started" guides for new users, plugin or framework authors and so on.</p>
-        <p>Even if you know nothing now, we can support you and provide you with whatever information and guidance you need. </p>
+@section subnav {
+    &nbsp;
+}
+<div class="twoColumn column1">
+        <div class="innerColumn">
+            <h2>Working together</h2>
+            <p>Glimpse wouldn't be what it is today without the love and support of some awesome guys from around the world. Thanks to everyone who has been involved in making this possible.</p>
+            <p>If you would like to get involved there are plenty of things that you can do. Feel free to reach out to us on the <a href="http://groups.google.com/group/getglimpse-dev">mailing list</a> or via twitter (<a href="https://twitter.com/anthony_vdh">@@anthony_vdh</a> &amp; <a href="https://twitter.com/nikmd23">@@nikmd23</a>). Otherwise start with the below and go from there.</p>
+        </div>
     </div>
-    <div class="g one-half lap-one-whole palm-one-whole">
+    <div class="twoColumn column2">
+        <div class="innerColumn">
+            <h2>Helping out</h2> 
+            <p>Documentation is the one thing that helps separate good projects from the best projects. If you’re a first time OSS contributor, documentation is a great stepping stone to learn the process and get more involved, and if you’re an OSS veteran, you’ll no doubt understand the need to occasionally update docs. The Glimpse team are always grateful for anyone that wants to lend a hand.</p>
+            <p>In an effort to make documentation contribution as simple as possible, we are leveraging Glimpse’s <a href="https://github.com/Glimpse/Glimpse/wiki">GitHub Wiki</a>, which is just a standard Git repository under the covers, as the entry point for documentation. GitHub wiki’s provide us with an online WYSIWYG interface for adding and editing documentation, completely in browser, with the simple markdown syntax.</p>
+            <p>We need people to help with the Glimpse website, documenting the Glimpse APIs, "getting started" guides for new users, plugin or framework authors and so on.</p>
+            <p>Even if you know nothing now, we can support you and provide you with whatever information and guidance you need. </p>
+    
+        </div>
+    </div>
+    <div class="comm-page-contriubutors">
         <h2>Original Crew</h2>
         <div class="stat-group stats-contributors">
             <dl class="stat">
@@ -93,17 +98,14 @@
                 <dd class="stat__value hide--palm"><a href="https://twitter.com/headloose">@@headloose</a> | <a href="http://headloose.com/">blog</a></dd>
             </dl>
             <dl class="stat">
-                <dt class="stat__title delta">Pete Hotchkin</dt> 
+                <dt class="stat__title delta">Elizabeth Ayer</dt> 
                 <dd class="stat__value">
                     <img height="100" src="~/_Content/Contributors/pic9.jpg" width="100">
                 </dd> 
                 <dd class="stat__value hide--palm"><a href="https://twitter.com/elizayer">@@elizayer</a></dd>
             </dl>
         </div>
-    </div>
-    <div class="g one-whole">
         <h2>Special Thanks</h2>
-        <div class="stat-group stats-contributors">
             <dl class="stat">
                 <dt class="stat__title delta">Jeffrey Burn</dt> 
                 <dd class="stat__value hide--palm"><a href="https://twitter.com/jetburn">@@jetburn</a> | <a href="https://github.com/kristofferahl">github</a></dd>
@@ -132,6 +134,5 @@
                 <dt class="stat__title delta">Aaron Powell</dt> 
                 <dd class="stat__value hide--palm"><a href="https://twitter.com/slace">@@slace</a> | <a href="https://github.com/aaronpowell">github</a></dd>
             </dl>
+        <hr class="clearer" />
         </div>
-    </div>
-</section>

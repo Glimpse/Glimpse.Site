@@ -24,9 +24,14 @@ namespace Glimpse.Site
             //            "~/Scripts/modernizr-*"));
 
             bundles.Add(new StyleBundle("~/_Content/css").Include(
-                "~/_Content/screen.css"));
+                "~/_Content/website-assets/css/global.css", "~/_Content/website-assets/css/tipsy.css"));
 
-            bundles.Add(new ScriptBundle("~/Script/javascript").Include("~/Scripts/site.google.js"));
+            bundles.Add(new ScriptBundle("~/Script/javascript").Include("~/Scripts/site.google.js", 
+                "~/_Content/website-assets/scripts/jquery.scrollTo.js", 
+                "~/_Content/website-assets/scripts/jquery.tipsy.js", 
+                "~/_Content/website-assets/scripts/global-ck.js", 
+                "~/_Content/website-assets/scripts/home-ck.js"
+            ));
 
             //bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
             //            "~/Content/themes/base/jquery.ui.core.css",
