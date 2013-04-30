@@ -255,7 +255,7 @@
     <Content Include="_Content\website-assets\scripts\global.js" />
     <Content Include="_Content\website-assets\scripts\home-ck.js" />
     <Content Include="_Content\website-assets\scripts\home.js" />
-    <Content Include="_Content\website-assets\scripts\jquery-1.9.1.min.js" />
+    <Content Include="_Content\website-assets\scripts\jquery.scrollTo.js" />
     <Content Include="_Content\website-assets\scripts\jquery.scrollTo.min.js" />
     <Content Include="_Content\website-assets\scripts\jquery.tipsy.js" />
     <None Include="_Content\inuit.less" />
