@@ -23,8 +23,10 @@ namespace Glimpse.Site
             //bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
             //            "~/Scripts/modernizr-*"));
 
-            bundles.Add(new StyleBundle("~/_Content/css").Include(
-                "~/_Content/website-assets/css/global.css", "~/_Content/website-assets/css/tipsy.css"));
+            bundles.Add(new StyleBundle("~/_Content/css").Include( 
+                "~/_Content/website-assets/css/global.css", 
+                "~/_Content/website-assets/css/tipsy.css"    
+            ));
 
             bundles.Add(new ScriptBundle("~/Script/javascript").Include("~/Scripts/site.google.js", 
                 "~/_Content/website-assets/scripts/jquery.scrollTo.js", 

@@ -216,7 +216,6 @@
     <Content Include="Views\Shared\_Simple.cshtml" />
     <Content Include="_Content\website-assets\css\.gitignore" />
     <Content Include="_Content\website-assets\css\global.css" />
-    <Content Include="_Content\website-assets\css\global.min.css" />
     <Content Include="_Content\website-assets\css\tipsy.css" />
     <Content Include="_Content\website-assets\img\.gitignore" />
     <Content Include="_Content\website-assets\img\anthony.png" />
