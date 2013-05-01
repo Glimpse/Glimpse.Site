@@ -597,6 +597,9 @@ hr.clearer {
 .section-container#blog-section {
   padding: 40px 0 20px;
 }
+.section-container#blog-section h1 {
+  text-align: left;
+}
 .section-container#blog-section .extra-blog-info {
   text-align: center;
   font-size: 12px;
