@@ -27,7 +27,9 @@ namespace Glimpse.Site
                 "~/Content/_v1/inuit.css",
                 "~/Content/_v1/screen.css"));
 
-            bundles.Add(new ScriptBundle("~/Script/javascript").Include("~/Scripts/site.google.js"));
+            bundles.Add(new ScriptBundle("~/Script/javascript").Include(
+                "~/Scripts/site.google.js",
+                "~/Scripts/site.js"));
 
             //bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
             //            "~/Content/themes/base/jquery.ui.core.css",

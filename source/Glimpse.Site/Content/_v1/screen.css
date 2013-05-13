@@ -3,7 +3,8 @@
 }
 .header-inner,
 .body-inner,
-.footer-inner {
+.footer-inner,
+.content-inner {
   padding: 2em 2em 0 2em;
   max-width: 1150px;
   margin-left: auto;
@@ -124,18 +125,18 @@ footer .footer-outer,
 .body-inner .stats-sub-menu .stat__title {
   margin-bottom: 0.5em;
 }
-.body-inner .stats-next {
-  text-align: center;
-  margin-top: 50px;
-}
-.body-inner .stats-next .stat {
-  width: 30%;
-  min-width: 170px;
-  max-width: 360px;
-}
 .body-inner .glimpse-panel {
   display: block;
   margin-bottom: 3em;
+}
+.stats-next {
+  text-align: center;
+  margin-top: 50px;
+}
+.stats-next .stat {
+  width: 30%;
+  min-width: 170px;
+  max-width: 360px;
 }
 .image-highlight {
   padding-top: 75px;
@@ -174,6 +175,20 @@ footer .footer-outer,
 .sprite.sprite-root-support {
   background-position: -189px -63px;
 }
+.sprite.sprite-action {
+  background-image: url(site-icon-action.png);
+  height: 63px;
+  width: 63px;
+}
+.sprite.sprite-action-manager {
+  background-position: 0px 0px;
+}
+.sprite.sprite-action-find {
+  background-position: -71px 0px;
+}
+.sprite.sprite-action-running {
+  background-position: -143px 0px;
+}
 .hover-point-container {
   position: relative;
 }
@@ -209,6 +224,49 @@ footer .footer-outer,
   color: #ffffff;
   text-align: center;
   padding: 10px 20px;
+}
+.call-action {
+  background: #33a6ee;
+  color: #ffffff;
+  max-height: 0px;
+  overflow-y: hidden;
+  -webkit-transition: all 0.6s ease;
+  -moz-transition: all 0.6s ease;
+  -ms-transition: all 0.6s ease;
+  -o-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+}
+.call-action a,
+.call-action a:active,
+.call-action a:visited {
+  color: #ffffff;
+}
+.call-action.call-action-active {
+  max-height: 500px;
+}
+.call-action-trigger {
+  cursor: pointer;
+}
+.button {
+  background: #33a6ee;
+  color: #ffffff;
+  padding: 10px 20px;
+  margin: 20px auto 0;
+  text-align: center;
+  text-decoration: underline;
+  max-width: 200px;
+}
+.content-command {
+  background: #323d42;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px 20px;
+  font-family: courier new,serif;
+  margin: 0 auto;
+  max-width: 500px;
+}
+.content-sub-message {
+  text-align: center;
 }
 .home header .decal {
   height: 200px;

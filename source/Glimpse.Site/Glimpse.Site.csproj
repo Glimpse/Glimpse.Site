@@ -233,6 +233,7 @@
     <Content Include="Content\_v1\inuit.min.css">
       <DependentUpon>inuit.less</DependentUpon>
     </Content>
+    <Content Include="Content\_v1\site-icon-action.png" />
     <Content Include="Content\_v1\site-main-logo-medium.png" />
     <Content Include="Content\_v1\site-nuget-logo.png" />
     <Content Include="Content\_v1\site-redgate-logo.png" />
@@ -245,6 +246,7 @@
       <DependentUpon>screen.less</DependentUpon>
     </Content>
     <Content Include="Content\_v1\site-twitter-icon.png" />
+    <Content Include="Scripts\site.js" />
     <Content Include="Views\Support\Index.cshtml" />
     <Content Include="Views\Talk\Index.cshtml" />
     <Content Include="Views\Protocol\Index.cshtml" />

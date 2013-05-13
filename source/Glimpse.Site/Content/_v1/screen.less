@@ -6,7 +6,7 @@ body {
 	background-color: @darkcolor;
 }
 
-.header-inner, .body-inner, .footer-inner {	
+.header-inner, .body-inner, .footer-inner, .content-inner {	
 	padding: 2em 2em 0 2em;
 	max-width: 1150px;
 	margin-left: auto;
@@ -120,19 +120,20 @@ footer, .footer {
 			margin-bottom: 0.5em;
 		}
 	}
-	.stats-next {
-		text-align: center;  
-		margin-top: 50px;
-		.stat {
-			width: 30%; 
-			min-width: 170px;
-			max-width: 360px;
-		}
-	}
 
 	.glimpse-panel {
 		display: block;
 		margin-bottom: 3em;
+	}
+}
+
+.stats-next {
+	text-align: center;  
+	margin-top: 50px;
+	.stat {
+		width: 30%; 
+		min-width: 170px;
+		max-width: 360px;
 	}
 }
 
@@ -162,6 +163,15 @@ footer, .footer {
 	&.sprite-root-plugins { background-position:-126px -63px; }
 	&.sprite-root-documentation { background-position:-63px -63px; }
 	&.sprite-root-support { background-position:-189px -63px; }
+	
+	&.sprite-action {
+		background-image: url(site-icon-action.png);
+		height: 63px;
+		width: 63px;
+	}
+	&.sprite-action-manager { background-position:0px 0px; }
+	&.sprite-action-find { background-position:-71px 0px; }
+	&.sprite-action-running { background-position:-143px 0px; } 
 }
 
 .hover-point-container {
@@ -199,6 +209,52 @@ footer, .footer {
 		text-align: center;
 		padding: 10px 20px;
 	} 
+}
+
+.call-action {
+	background: @highlight;
+	color: @lightcolor; 
+	max-height: 0px;
+	overflow-y: hidden;
+	-webkit-transition: all 0.6s ease;
+	-moz-transition: all 0.6s ease;
+    -ms-transition: all 0.6s ease;
+    -o-transition: all 0.6s ease;
+	transition: all 0.6s ease;
+
+	a, a:active, a:visited {
+		color: @lightcolor;
+	} 
+
+	&.call-action-active {
+		max-height: 500px;
+	}
+}
+.call-action-trigger {
+	cursor: pointer;
+}
+
+.button {
+	background: @highlight;
+	color: @lightcolor; 
+	padding: 10px 20px;
+	margin:20px auto 0;
+	text-align: center;
+	text-decoration:underline;
+	max-width: 200px;
+}
+
+.content-command {
+	background: @darkcolor;
+	color: @lightcolor;
+	text-align: center;
+	padding: 10px 20px;
+	font-family: courier new,serif;
+	margin:0 auto;
+	max-width:500px;
+}
+.content-sub-message {
+	text-align: center;
 }
 
 .home {
