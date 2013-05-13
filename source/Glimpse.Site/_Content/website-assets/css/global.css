@@ -1098,6 +1098,13 @@ footer .twoColumn.column2 .innerColumn,
 #main-content p {
   width: 100%;
 }
+dl.stat {
+  margin-right: 20px;
+}
+dd.stat__value,
+dt.stat__title {
+  margin: 0;
+}
 @media all and (max-width: 890px) {
   #monitor {
     display: none;
