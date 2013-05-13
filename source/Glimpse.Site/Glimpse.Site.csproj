@@ -222,6 +222,8 @@
     <Content Include="Content\_v1\Contributors\pic9.jpg" />
     <Content Include="Content\_v1\app-config-logo.png" />
     <Content Include="Content\_v1\app-config-favicon.png" />
+    <Content Include="Content\_v1\site-console-execution.png" />
+    <Content Include="Content\_v1\site-console-zoom.png" />
     <Content Include="Content\_v1\site-favicon.ico" />
     <Content Include="Content\_v1\site-favicon.png" />
     <Content Include="Content\_v1\site-first-install-minimized.png" />

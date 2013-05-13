@@ -137,6 +137,15 @@ footer .footer-outer,
   display: block;
   margin-bottom: 3em;
 }
+.body-inner .image-highlight {
+  padding: 75px 0;
+  background: -moz-radial-gradient(center, ellipse cover, #c7c7c7 0%, #ffffff 70%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 70%, color-stop(0%, #c7c7c7), color-stop(100%, #ffffff));
+  background: -webkit-radial-gradient(center, ellipse cover, #c7c7c7 0%, #ffffff 70%);
+  background: -o-radial-gradient(center, ellipse cover, #c7c7c7 0%, #ffffff 70%);
+  background: -ms-radial-gradient(center, ellipse cover, #c7c7c7 0%, #ffffff 70%);
+  background: radial-gradient(ellipse at center, #c7c7c7 0%, #ffffff 70%);
+}
 .sprite {
   background-repeat: no-repeat;
   display: inline-block;
