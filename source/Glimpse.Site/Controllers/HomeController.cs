@@ -30,7 +30,7 @@ namespace Glimpse.Site.Controllers
                 {
                     id = xml.Attribute("id").Value, 
                     status = xml.Attribute("status").Value.ToLower(), 
-                    link = xml.Attribute("webUrl").Value,
+                    link = xml.Attribute("webUrl").Value + "&guest=1",
                     date = date.DateTime.ToShortDateString(),
                     time = date.DateTime.ToShortTimeString()
                 }, 
