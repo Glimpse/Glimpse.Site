@@ -6,21 +6,23 @@ var inlineVideoHTML = '<iframe id="video" src="http://channel9.msdn.com/Shows/We
 
 function getBuildStatus() {
     $.ajax({
-        url:'/tests/teamCity.json',
+        url:'/home/buildstatus',
         dataType:'json',
         success:function(data, status) {
             console.log(data.status);
-            if(status === 'success') {
+            if (status === 'success') {
                 buildStatus = data.status.toLowerCase() === "success" ? true : false;
                 //console.log($(data).find('build:first').attr('id'));
                 $('#build-tower').addClass(data.status.toLowerCase());
-                if(buildStatus) {
+                if (buildStatus) {
                     $("#build-status").empty().html("was successful");
                 } else {
                     $("#build-status").empty().html("failed");
                 }
-                $('#build-id').empty().html(data.id);
+                $('#build-id').empty().html("<a href='" + data.link + "'>" + data.id + "</a>");
                 $('#build-date').empty().html(data.date + ' at ' + data.time);
+            } else {
+                $("#build-info").hidden();
             }
         }
     });
