@@ -9,12 +9,12 @@ function getBuildStatus() {
         url:'/home/buildstatus',
         dataType:'json',
         success:function(data, status) {
-            console.log(data.status);
+            $('#build-info, #build-arrow').css('display', 'block');
             if (status === 'success') {
                 buildStatus = data.status.toLowerCase() === "success" ? true : false;
-                //console.log($(data).find('build:first').attr('id'));
                 $('#build-tower').addClass(data.status.toLowerCase());
                 if (buildStatus) {
+                    
                     $("#build-status").empty().html("was successful");
                 } else {
                     $("#build-status").empty().html("failed");
