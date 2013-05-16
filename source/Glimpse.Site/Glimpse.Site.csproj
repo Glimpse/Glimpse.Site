@@ -248,7 +248,6 @@
     <Content Include="_Content\website-assets\img\towers.png" />
     <Content Include="_Content\website-assets\img\vslogo-white.png" />
     <Content Include="_Content\website-assets\scripts\.gitignore" />
-    <Content Include="_Content\website-assets\scripts\filters.svg" />
     <Content Include="_Content\website-assets\scripts\global-ck.js" />
     <Content Include="_Content\website-assets\scripts\global.js" />
     <Content Include="_Content\website-assets\scripts\home-ck.js" />
