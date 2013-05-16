@@ -36,5 +36,16 @@ namespace Glimpse.Site.Controllers
                 }, 
                 JsonRequestBehavior.AllowGet);
         }
+
+        [OutputCache(Duration = 3600)] // Cache for 1 hour
+        public virtual async Task<ActionResult> GlimpseTweets()
+        {
+            var httpClient = new HttpClient();
+
+            // This leverages https://dev.twitter.com/docs/using-search
+            var response = await httpClient.GetStringAsync("http://search.twitter.com/search.json?q=from%3A%40nikmd23%20OR%20from%3A%40anthony_vdh%20%23glimpse");
+
+            return Content(response, "application/json");
+        }
     }
 }

@@ -29,10 +29,9 @@ function getBuildStatus() {
 }
 
 function getTweets() {
-    // UPDATE 10-17-2012: change in Twitter API!
-    $.getJSON("https://api.twitter.com/1/statuses/user_timeline.json?screen_name=headloose&count=3&callback=?",
+    $.getJSON("/home/glimpsetweets",
      function(data){
-      $.each(data, function(i,item){
+      $.each(data.results, function(i,item){
        ct = item.text;
       // include time tweeted - thanks to will
     	mytime = item.created_at;
@@ -40,7 +39,7 @@ function getTweets() {
     	var mydate = new Date(Date.parse(strtime)).toLocaleDateString();
     	var mytime = new Date(Date.parse(strtime)).toLocaleTimeString();
     	ct = ct.replace(/http:\/\/\S+/g,  '<a href="$&" target="_blank">$&</a>');
-        $("#tweets").append('<div class="tweet">'+ct + " <br /><small>(" + mydate + " @ " + mytime + ")</small></div>");
+        $("#tweets").append('<div class="tweet"><strong>'+item.from_user + ": </strong>"+ct + " <br /><small>(" + mydate + " @ " + mytime + ")</small></div>");
       });
      });
     
