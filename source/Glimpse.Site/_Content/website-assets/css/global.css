@@ -396,17 +396,25 @@ hr.clearer {
 .section-container#demo .hover-point:hover {
   text-decoration: none;
 }
-.section-container#demo #demo-hover-environs {
-  left: 40px;
-  top: 15px;
-}
 .section-container#demo #demo-hover-tabs {
-  left: 69%;
-  top: 40px;
+  left: 39%;
+  top: 7px;
+}
+.section-container#demo #demo-hover-autocustom {
+  left: 9%;
+  top: 10%;
+}
+.section-container#demo #demo-hover-tab-detail {
+  left: 55%;
+  top: 51%;
+}
+.section-container#demo #demo-hover-ajax {
+  right: 51px;
+  top: 30px;
 }
 .section-container#demo #demo-hover-power {
-  right: 40px;
-  top: 15px;
+  right: 85px;
+  top: 9px;
 }
 .section-container#why-glimpse {
   background: #f6f6f6;
