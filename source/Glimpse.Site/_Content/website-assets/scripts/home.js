@@ -30,8 +30,10 @@ function getBuildStatus() {
 
 function getTweets() {
     $.getJSON("/home/glimpsetweets",
-     function(data){
+     function(data) {
+     var limit = 3, count = 0;
       $.each(data.results, function(i,item){
+      count++;
        ct = item.text;
       // include time tweeted - thanks to will
     	mytime = item.created_at;
@@ -39,8 +41,11 @@ function getTweets() {
     	var mydate = new Date(Date.parse(strtime)).toLocaleDateString();
     	var mytime = new Date(Date.parse(strtime)).toLocaleTimeString();
     	ct = ct.replace(/http:\/\/\S+/g,  '<a href="$&" target="_blank">$&</a>');
-        $("#tweets").append('<div class="tweet"><strong>'+item.from_user + ": </strong>"+ct + " <br /><small>(" + mydate + " @ " + mytime + ")</small></div>");
+        $("#tweets").append('<div class="tweet"><a href="https://twitter.com/'+item.from_user + '">'+item.from_user + "</a>: "+ct + " <br /><small>(" + mydate + " @ " + mytime + ")</small></div>");
+        if(count === limit) return false;
       });
+     }).fail(function() {
+         $("#tweets").html('It looks like the fail whale has hit us. Head over to twitter and get in touch, we\'re <a href="https://twitter.com/nikmd23">@nikmd23</a> and <a href="https://twitter.com/anthony_vdh">@anthony_vdh</a>');
      });
     
 }
