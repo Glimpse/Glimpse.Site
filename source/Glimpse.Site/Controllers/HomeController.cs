@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Mvc;
@@ -46,6 +48,28 @@ namespace Glimpse.Site.Controllers
             var response = await httpClient.GetStringAsync("http://search.twitter.com/search.json?q=from%3A%40nikmd23%20OR%20from%3A%40anthony_vdh%20%23glimpse");
 
             return Content(response, "application/json");
+        }
+
+        [OutputCache(Duration = 3600)] // Cache for 1 hour
+        public async virtual Task<ActionResult> GlimpseBlogPosts()
+        {
+            var httpClient = new HttpClient();
+
+            var response = await httpClient.GetStringAsync("http://feeds.getglimpse.com/getglimpse");
+            var xml = XElement.Parse(response);
+            var result = new List<object>();
+
+            foreach (var item in xml.Descendants("item").Take(2))
+            {
+                result.Add(new
+                    {
+                        title = item.Element("title").Value,
+                        summary = item.Element("description").Value,
+                        link = item.Element("link").Value
+                    });
+            }
+
+            return Json(result, JsonRequestBehavior.AllowGet);
         }
     }
 }
