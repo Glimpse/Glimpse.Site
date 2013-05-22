@@ -210,6 +210,7 @@
     <Content Include="Areas\Version\Views\Check\Release.cshtml" />
     <Content Include="Areas\Version\Views\Admin\Index.cshtml" />
     <Content Include="Areas\Version\Views\Admin\Process.cshtml" />
+    <Content Include="Content\_v1\app-sprite.png" />
     <Content Include="Content\_v1\Contributors\pic1.jpg" />
     <Content Include="Content\_v1\Contributors\pic10.jpg" />
     <Content Include="Content\_v1\Contributors\pic2.jpg" />
@@ -247,6 +248,7 @@
     </Content>
     <Content Include="Content\_v1\site-twitter-icon.png" />
     <Content Include="Scripts\site.js" />
+    <Content Include="Content\_v1\app-sprite-new.png" />
     <Content Include="Views\Support\Index.cshtml" />
     <Content Include="Views\Talk\Index.cshtml" />
     <Content Include="Views\Protocol\Index.cshtml" />
