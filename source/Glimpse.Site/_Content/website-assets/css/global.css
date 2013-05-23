@@ -604,11 +604,16 @@ hr.clearer {
 }
 .section-container#blog-section .extra-blog-info {
   text-align: center;
+  margin-top: 20px;
   font-size: 12px;
 }
 .section-container#blog-section .extra-blog-info .button {
   margin-top: 10px;
   padding: 10px 15px;
+}
+.section-container#blog-section .blog-fail {
+  text-align: center;
+  color: #c6c6c6;
 }
 .section-container#footer-container {
   margin-top: 200px;

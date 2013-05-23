@@ -28,6 +28,22 @@ function getBuildStatus() {
     });
 }
 
+function getBlogPosts() {
+    //live address - /home/glimpseblogposts
+    $.getJSON("/home/glimpseblogposts", function(data) {
+      $.each(data, function(i,item){
+          console.log(item);
+          $('#blog-section .column'+(i+1)+' .innerColumn')
+              .empty()
+              .append('<h2>' + item.title + '</h2>')
+              .append('<p>' + item.summary + '</p>');
+      });
+     }).fail(function() {
+         $('#blog-section .twoColumn').remove()
+         $('#blog-section h1').after('<div class="blog-fail">Oops, it looks like we have some gremlins in the system and we can\'t contact the blog at the moment. Sorry about that.</div>');
+     });
+}
+
 function getTweets() {
     $.getJSON("/home/glimpsetweets",
      function(data) {
@@ -64,8 +80,7 @@ function loadInlineVideo() {
 
 $().ready(function () {
     //prep the page
-    getBuildStatus();
-    getTweets();
+    
     $('.hover-point').tipsy();
     
     $('.video-link').click(function(e) {
@@ -82,5 +97,9 @@ $().ready(function () {
         $('#install').stop().slideToggle();
         
     });
+    //call the external stuff last
+    getBuildStatus();
+    getTweets();
+    getBlogPosts()
 });
 
