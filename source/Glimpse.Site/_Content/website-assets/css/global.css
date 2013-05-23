@@ -729,6 +729,7 @@ hr.clearer {
 }
 .section-container#footer-container #tweets {
   margin-left: 42px;
+  padding-bottom: 20px;
 }
 .section-container#footer-container #tweets .tweet {
   margin-top: 10px;
