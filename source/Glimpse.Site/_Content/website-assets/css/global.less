@@ -738,7 +738,11 @@ section, footer, .section, .footer, #sub-nav {
         }
     }
 }
-
+#mobile-nav-padding {
+    height: 80px;
+    width: 1px;
+    display: none;
+}
 #mobile-menu-button {
     display:none;
     text-align: center;
@@ -906,7 +910,7 @@ section, footer, .section, .footer, #sub-nav {
             text-align: center;
         }
     }
-    #mobile-menu-button {
+    #mobile-menu-button, #mobile-nav-padding {
         display: block;
     }
     #nav-container {
@@ -1012,7 +1016,7 @@ section, footer, .section, .footer, #sub-nav {
                 position: absolute;
                 width: 29px;
                 height: 12px;
-                top: 50px;
+                top: 60px;
                 left: -20px;
                 background: transparent @sprite 0 -147px no-repeat;
                 .rotate(-12deg);
