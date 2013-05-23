@@ -951,6 +951,11 @@ footer .twoColumn.column2 .innerColumn,
 #sub-nav .twoColumn.column2 .innerColumn {
   padding-left: 20px;
 }
+#mobile-nav-padding {
+  height: 80px;
+  width: 1px;
+  display: none;
+}
 #mobile-menu-button {
   display: none;
   float: right;
@@ -1234,7 +1239,8 @@ dt.stat__title {
   .section-container#page-title section h1 {
     text-align: center;
   }
-  #mobile-menu-button {
+  #mobile-menu-button,
+  #mobile-nav-padding {
     display: block;
   }
   #nav-container nav a {
