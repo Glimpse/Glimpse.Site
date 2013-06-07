@@ -4,7 +4,7 @@
 }
 
 @section header {
-<h1><img src="/_Content/img/updatetick.png" alt="tick" id="updateTick" />You're up to date!</h1>
+<h1><img src="/Content/_v2/img/updatetick.png" alt="tick" id="updateTick" />You're up to date!</h1>
 <p>
     Thanks for updating glimpse, for the number lover inside, you've gone from v### to v###.
 The details of what has changed are below…
@@ -16,11 +16,11 @@ The details of what has changed are below…
     
 @foreach (var detail in Model.Details)
 {
-    var image = string.IsNullOrEmpty(detail.Value.PackageIconUrl) ? "/_Content/img/logo-nuget.png" : detail.Value.PackageIconUrl;
+    var image = string.IsNullOrEmpty(detail.Value.PackageIconUrl) ? "/Content/_v2/img/logo-nuget.png" : detail.Value.PackageIconUrl;
     var updated = detail.Value.HasResult && !detail.Value.HasNewer ? "latest" : (detail.Value.HasResult ? "old" : "not-found"); //latest = updated, old = still on old version, not-found = no package avail.
             
     <div class="release-package @updated">
-        <h3 class="release-package-title"><img src="@image" onerror="this.src = '/_Content/logo-nuget.png';"/>@detail.Key<span class="status-img">&nbsp;</span></h3>  
+        <h3 class="release-package-title"><img src="@image" onerror="this.src = '/Content/_v2/logo-nuget.png';"/>@detail.Key<span class="status-img">&nbsp;</span></h3>  
         <div class="release-package-details">
             <div class="release-package-message">
                 <div class="release-package-message-title">
@@ -53,21 +53,21 @@ The details of what has changed are below…
 
 <dl class="threeColumn column1">
     <div class="innerColumn">
-    <dt><img src="~/_Content/img/ideas.png" alt="Issues or Suggestions" /></dt>
+    <dt><img src="~/Content/_v2/ideas.png" alt="Issues or Suggestions" /></dt>
     <dd>If you have found an issue or have a idea, let us know on our <a href="https://github.com/glimpse/glimpse/issues" target="_blank">issues list</a>.
     </dd>
     </div>
 </dl>
 <dl class="threeColumn column2">
     <div class="innerColumn">
-    <dt><img src="~/_Content/img/google.png" alt="developer list" /></dt>
+    <dt><img src="~/Content/_v2/img/google.png" alt="developer list" /></dt>
     <dd>Get answers to questions and find out what is next for Glimpse on our <a href="https://groups.google.com/forum/?fromgroups#!forum/getglimpse-dev" target="_blank">community user group</a>.
     </dd>
     </div>
 </dl>
 <dl class="threeColumn column3">
     <div class="innerColumn">
-    <dt><img src="~/_Content/img/twitter.png" alt="twitter contacts" /></dt>
+    <dt><img src="~/Content/_v2/img/twitter.png" alt="twitter contacts" /></dt>
     <dd>Feel free to get in touch with the us on Twitter: <a href="http://www.twitter.com/anthony_vdh" target="_blank">@@anthony_vdh</a> or <a href="http://www.twitter.com/nikmd23" target="_blank">@@nikmd23</a>.
     </dd>
     </div>

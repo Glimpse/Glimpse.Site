@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'ArcitectsDaughter';
-  src: url('/_Content/website-assets/fonts/ArchitectsDaughter.ttf') format('truetype');
+  src: url('/Content/_v2/website-assets/fonts/ArchitectsDaughter.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -48,19 +48,19 @@ a.button {
   height: 15px;
 }
 .arrow.left {
-  background: transparent url("/_Content/website-assets/img/getglimpse-sprite.png") 0 -116px no-repeat;
+  background: transparent url("/Content/_v2/website-assets/img/getglimpse-sprite.png") 0 -116px no-repeat;
 }
 .arrow.right {
-  background: transparent url("/_Content/website-assets/img/getglimpse-sprite.png") 0 -147px no-repeat;
+  background: transparent url("/Content/_v2/website-assets/img/getglimpse-sprite.png") 0 -147px no-repeat;
 }
 .arrow.up {
-  background: transparent url("/_Content/website-assets/img/getglimpse-sprite.png") 0 -129px no-repeat;
+  background: transparent url("/Content/_v2/website-assets/img/getglimpse-sprite.png") 0 -129px no-repeat;
 }
 .arrow.down {
-  background: transparent url("/_Content/website-assets/img/getglimpse-sprite.png") 0 -96px no-repeat;
+  background: transparent url("/Content/_v2/website-assets/img/getglimpse-sprite.png") 0 -96px no-repeat;
 }
 .arrow.down-inverted {
-  background: transparent url("/_Content/website-assets/img/getglimpse-sprite.png") 0 -160px no-repeat;
+  background: transparent url("/Content/_v2/website-assets/img/getglimpse-sprite.png") 0 -160px no-repeat;
 }
 .centered {
   max-width: 980px;
@@ -116,7 +116,7 @@ hr.clearer {
 #nav-container nav a .icon {
   height: 27px;
   display: block;
-  background: transparent url("/_Content/website-assets/img/getglimpse-sprite.png") top left no-repeat;
+  background: transparent url("/Content/_v2/website-assets/img/getglimpse-sprite.png") top left no-repeat;
   margin: 0 auto 5px;
 }
 #nav-container nav:first-child {
@@ -171,7 +171,7 @@ hr.clearer {
   font-size: 12px;
 }
 .inner-monitor {
-  background: transparent url("/_Content/website-assets/img/in-monitor-screen.png") top left no-repeat;
+  background: transparent url("/Content/_v2/website-assets/img/in-monitor-screen.png") top left no-repeat;
   width: 443px;
   height: 285px;
   position: absolute;
@@ -182,7 +182,7 @@ hr.clearer {
   position: absolute;
   left: 160px;
   top: 125px;
-  background: transparent url("/_Content/website-assets/img/getglimpse-sprite.png") 0 -376px no-repeat;
+  background: transparent url("/Content/_v2/website-assets/img/getglimpse-sprite.png") 0 -376px no-repeat;
   padding-left: 20px;
 }
 .section-container {
@@ -190,7 +190,7 @@ hr.clearer {
 }
 .section-container#intro,
 .section-container#page-title {
-  background: transparent url("/_Content/website-assets/img/intro-bg.png") top left repeat;
+  background: transparent url("/Content/_v2/website-assets/img/intro-bg.png") top left repeat;
   border-bottom: 1px solid #FFF;
   box-shadow: 0 -2px 3px 0 rgba(0, 0, 0, 0.3) inset;
   height: 352px;
@@ -203,13 +203,13 @@ hr.clearer {
   top: 0px;
   height: 395px;
   width: 475px;
-  background: transparent url("/_Content/website-assets/img/monitor.png") top left no-repeat;
+  background: transparent url("/Content/_v2/website-assets/img/monitor.png") top left no-repeat;
   z-index: 1;
 }
 .section-container#intro #logo,
 .section-container#page-title #logo {
   display: block;
-  background: transparent url("/_Content/website-assets/img/getglimpse-sprite.png") 0 -27px no-repeat;
+  background: transparent url("/Content/_v2/website-assets/img/getglimpse-sprite.png") 0 -27px no-repeat;
   height: 70px;
   margin-bottom: 5px;
 }
@@ -314,17 +314,17 @@ hr.clearer {
 }
 .section-container#intro #osguy,
 .section-container#page-title #osguy {
-  background: transparent url("/_Content/website-assets/img/osguy.png") bottom left no-repeat;
+  background: transparent url("/Content/_v2/website-assets/img/osguy.png") bottom left no-repeat;
   left: 50px;
 }
 .section-container#intro #anthony,
 .section-container#page-title #anthony {
-  background: transparent url("/_Content/website-assets/img/anthony.png") bottom left no-repeat;
+  background: transparent url("/Content/_v2/website-assets/img/anthony.png") bottom left no-repeat;
   right: 123px;
 }
 .section-container#intro #nik,
 .section-container#page-title #nik {
-  background: transparent url("/_Content/website-assets/img/nik.png") bottom left no-repeat;
+  background: transparent url("/Content/_v2/website-assets/img/nik.png") bottom left no-repeat;
   right: 0;
 }
 .section-container#install {
@@ -370,7 +370,7 @@ hr.clearer {
 }
 .section-container#demo {
   text-align: center;
-  background: transparent url("/_Content/website-assets/img/demo-bg.png") top left repeat-x;
+  background: transparent url("/Content/_v2/website-assets/img/demo-bg.png") top left repeat-x;
   padding-top: 80px;
 }
 .section-container#demo .inner-monitor {
@@ -429,7 +429,7 @@ hr.clearer {
   width: 64px;
   height: 64px;
   float: left;
-  background: transparent url("/_Content/website-assets/img/getglimpse-sprite.png") 0 -177px no-repeat;
+  background: transparent url("/Content/_v2/website-assets/img/getglimpse-sprite.png") 0 -177px no-repeat;
 }
 .section-container#why-glimpse .large-icon.fit {
   background-position: -64px -177px;
@@ -550,7 +550,7 @@ hr.clearer {
 .section-container#contributors .person .details a .icon {
   display: inline-block;
   width: 22px;
-  background: transparent url("/_Content/website-assets/img/getglimpse-sprite.png") left top no-repeat;
+  background: transparent url("/Content/_v2/website-assets/img/getglimpse-sprite.png") left top no-repeat;
 }
 .section-container#contributors .person .details a .icon.small-twitter {
   background-position: 0 -289px;
@@ -631,14 +631,14 @@ hr.clearer {
   border-bottom: 1px solid #404c52;
 }
 .section-container#footer-container #mountains {
-  background: transparent url("/_Content/website-assets/img/mountains.png") bottom left no-repeat;
+  background: transparent url("/Content/_v2/website-assets/img/mountains.png") bottom left no-repeat;
   position: absolute;
   width: 307px;
   height: 156px;
   top: -188px;
 }
 .section-container#footer-container #towers {
-  background: transparent url("/_Content/website-assets/img/towers.png") top left no-repeat;
+  background: transparent url("/Content/_v2/website-assets/img/towers.png") top left no-repeat;
   position: absolute;
   width: 90px;
   height: 138px;
@@ -646,7 +646,7 @@ hr.clearer {
   right: 0;
 }
 .section-container#footer-container #build-tower {
-  background: transparent url("/_Content/website-assets/img/build-tower.png") top left no-repeat;
+  background: transparent url("/Content/_v2/website-assets/img/build-tower.png") top left no-repeat;
   position: absolute;
   width: 73px;
   height: 169px;
@@ -686,7 +686,7 @@ hr.clearer {
   height: 26px;
   top: 60px;
   left: -40px;
-  background: transparent url("/_Content/website-assets/img/getglimpse-sprite.png") 0 -400px no-repeat;
+  background: transparent url("/Content/_v2/website-assets/img/getglimpse-sprite.png") 0 -400px no-repeat;
   transform: rotate(-12deg);
   -ms-transform: rotate(-12deg);
   /* IE 9 */
@@ -713,7 +713,7 @@ hr.clearer {
   width: 32px;
   height: 32px;
   margin-right: 10px;
-  background: transparent url("/_Content/website-assets/img/getglimpse-sprite.png") 0 -241px no-repeat;
+  background: transparent url("/Content/_v2/website-assets/img/getglimpse-sprite.png") 0 -241px no-repeat;
 }
 .section-container#footer-container .icon.mail {
   background-position: 0 -241px;
@@ -974,7 +974,7 @@ footer .twoColumn.column2 .innerColumn,
   display: block;
 }
 #mobile-menu-button .icon {
-  background: transparent url("/_Content/website-assets/img/getglimpse-sprite.png") -208px 0 no-repeat;
+  background: transparent url("/Content/_v2/website-assets/img/getglimpse-sprite.png") -208px 0 no-repeat;
   width: 28px;
   height: 26px;
   margin: 0 auto;
@@ -994,7 +994,7 @@ footer .twoColumn.column2 .innerColumn,
   height: 285px;
   margin: 0 auto;
   display: block;
-  background: #000000 url('/_Content/website-assets/img/backup-loader.gif') center center no-repeat;
+  background: #000000 url('/Content/_v2/website-assets/img/backup-loader.gif') center center no-repeat;
 }
 #video-container {
   position: fixed;
@@ -1108,7 +1108,7 @@ footer .twoColumn.column2 .innerColumn,
   background-position: -160px -513px;
 }
 #main-content {
-  background: transparent url("/_Content/website-assets/img/demo-bg.png") 0 0 repeat-x;
+  background: transparent url("/Content/_v2/website-assets/img/demo-bg.png") 0 0 repeat-x;
   margin: 1px 0 0;
   text-align: left;
   padding: 30px 0;
@@ -1353,7 +1353,7 @@ dt.stat__title {
     height: 12px;
     top: 60px;
     left: -20px;
-    background: transparent url("/_Content/website-assets/img/getglimpse-sprite.png") 0 -147px no-repeat;
+    background: transparent url("/Content/_v2/website-assets/img/getglimpse-sprite.png") 0 -147px no-repeat;
     transform: rotate(-12deg);
     -ms-transform: rotate(-12deg);
     /* IE 9 */

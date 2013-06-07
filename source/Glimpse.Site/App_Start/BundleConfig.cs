@@ -23,16 +23,16 @@ namespace Glimpse.Site
             //bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
             //            "~/Scripts/modernizr-*"));
 
-            bundles.Add(new StyleBundle("~/_Content/css").Include( 
-                "~/_Content/website-assets/css/global.css", 
-                "~/_Content/website-assets/css/tipsy.css"    
+            bundles.Add(new StyleBundle("~/Content/css").Include( 
+                "~/Content/_v2/website-assets/css/global.css",
+                "~/Content/_v2//website-assets/css/tipsy.css"    
             ));
 
-            bundles.Add(new ScriptBundle("~/Script/javascript").Include("~/Scripts/site.google.js", 
-                "~/_Content/website-assets/scripts/jquery.scrollTo.js", 
-                "~/_Content/website-assets/scripts/jquery.tipsy.js", 
-                "~/_Content/website-assets/scripts/global-ck.js", 
-                "~/_Content/website-assets/scripts/home-ck.js"
+            bundles.Add(new ScriptBundle("~/Script/javascript").Include("~/Scripts/site.google.js",
+                "~/Content/_v2//website-assets/scripts/jquery.scrollTo.js",
+                "~/Content/_v2//website-assets/scripts/jquery.tipsy.js",
+                "~/Content/_v2//website-assets/scripts/global-ck.js",
+                "~/Content/_v2//website-assets/scripts/home-ck.js"
             ));
 
             //bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(

@@ -30,11 +30,11 @@
         <div class="plugins">
         @foreach(var item in Model)
         {
-            var image = string.IsNullOrEmpty(item.IconUrl) ? "/_Content/logo-nuget.png" : item.IconUrl;
+            var image = string.IsNullOrEmpty(item.IconUrl) ? "/Content/_v2/logo-nuget.png" : item.IconUrl;
             <dl class="stat">
                 <dt>@item.Name</dt> 
                 <dd>
-                    <a href="http://nuget.org/packages/@item.Name" target="_blank"><img src="@image" width="50" height="50" onerror="this.src = '/_Content/logo-nuget.png';" /></a>
+                    <a href="http://nuget.org/packages/@item.Name" target="_blank"><img src="@image" width="50" height="50" onerror="this.src = '/Content/_v2/logo-nuget.png';" /></a>
                 </dd>
                 <dd>@item.Version | @item.Created.ToShortDateString()</dd>
             </dl>
