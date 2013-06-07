@@ -1,27 +1,21 @@
 ﻿@using Glimpse.Site.Extensions
-@model Glimpse.Site.Models.DocumentationViewModel
+﻿@model Glimpse.Site.Models.DocumentationViewModel
+
 @{
     ViewBag.Title = Model.Title;
-} 
-
+    ViewBag.bodyClass = "docs-page";
+}
 @section header {
-    <section>
-        <h1>Documentation</h1>
-        <div class="gamma">find out more</div>
-    </section>
+    <h1>Documentation</h1>
+}
+@section subnav {
+    @Html.RenderMarkdown(new FileInfo(Path.Combine(Model.MarkdownFile.DirectoryName, "_SideBar.md")))
 }
 
-<section>
-    <div class="g one-whole wiki">
-        <div class="warning">
-            <strong>NOTE:</strong> Glimpse documentation is currently being improved. If you'd like to help the effort, please <a href="@Model.EditUri">edit this page</a> or contribute to our <a href="https://github.com/Glimpse/Glimpse/wiki">GitHub Wiki</a>
-        </div>
-        <nav class="sidebar">
-            @Html.RenderMarkdown(new FileInfo(Path.Combine(Model.MarkdownFile.DirectoryName, "_SideBar.md")))
-        </nav>
+<div style="margin: auto; background-color: lightyellow; border: 1px solid goldenrod; color: goldenrod; margin-bottom: 10px; padding: 10px 0; text-align: center;">
+    <strong>NOTE:</strong> Glimpse documentation is currently being improved. If you'd like to help the effort, please <a href="@Model.EditUri">edit this page</a> or contribute to our <a href="https://github.com/Glimpse/Glimpse/wiki">GitHub Wiki</a>
+</div>
 
-        <div class="maincontent">
-            @Html.RenderMarkdown(Model.MarkdownFile)
-        </div>
-    </div>
-</section>
+<div>
+    @Html.RenderMarkdown(Model.MarkdownFile)
+</div>

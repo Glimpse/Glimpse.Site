@@ -1,40 +1,47 @@
 ﻿@{
     ViewBag.Title = "Glimpse - Community - Who's involved & how you can help";
+    ViewBag.bodyClass = "community-page";
 }
 
 @section header {
-    <section>
-        <h1>Community</h1>
-        <div class="gamma">who's involved & how you can help</div>
-    </section>
+    <h1>Community</h1>
 }
-
-<section>
-    <div class="g one-half lap-one-whole palm-one-whole">
-        <h2>Working together</h2>
-        <p>Glimpse wouldn't be what it is today without the love and support of some awesome guys from around the world. Thanks to everyone who has been involved in making this possible.</p>
-        <p>If you would like to get involved there are plenty of things that you can do. Feel free to reach out to us on the <a href="http://groups.google.com/group/getglimpse-dev">mailing list</a> or via twitter (<a href="https://twitter.com/anthony_vdh">@@anthony_vdh</a> &amp; <a href="https://twitter.com/nikmd23">@@nikmd23</a>). Otherwise start with the below and go from there.</p>
-        
-        <h2>Helping out</h2> 
-        <p>Documentation is the one thing that helps separate good projects from the best projects. If you’re a first time OSS contributor, documentation is a great stepping stone to learn the process and get more involved, and if you’re an OSS veteran, you’ll no doubt understand the need to occasionally update docs. The Glimpse team are always grateful for anyone that wants to lend a hand.</p>
-        <p>In an effort to make documentation contribution as simple as possible, we are leveraging Glimpse’s <a href="https://github.com/Glimpse/Glimpse/wiki">GitHub Wiki</a>, which is just a standard Git repository under the covers, as the entry point for documentation. GitHub wiki’s provide us with an online WYSIWYG interface for adding and editing documentation, completely in browser, with the simple markdown syntax.</p>
-        <p>We need people to help with the Glimpse website, documenting the Glimpse APIs, "getting started" guides for new users, plugin or framework authors and so on.</p>
-        <p>Even if you know nothing now, we can support you and provide you with whatever information and guidance you need. </p>
+@section subnav {
+    &nbsp;
+}
+<div class="twoColumn column1">
+        <div class="innerColumn">
+            <h2>Working together</h2>
+            <p>Glimpse wouldn't be what it is today without the love and support of some awesome people from around the world. Thanks to everyone who has been involved in making this possible.</p>
+            <p>If you would like to get involved, there are plenty of things that you can do. There are issues that are good for first-timers ringfenced and tagged <a href="https://github.com/Glimpse/Glimpse/issues?labels=Jump+In&milestone=&page=1&sort=updated&state=open">Jump In</a> in GitHub. If you'd rather start off 
+            on something more self-contained, why not <a href="/Help/Extensibility">write an extension</a> for your favorite server- or client-side technology?</p>
+            <p>No matter what your interest, please feel free to reach out to us on the <a href="http://groups.google.com/group/getglimpse-dev">mailing list</a> or via twitter (<a href="https://twitter.com/anthony_vdh">@@anthony_vdh</a> &amp; <a href="https://twitter.com/nikmd23">@@nikmd23</a>).</p>
+        </div>
     </div>
-    <div class="g one-half lap-one-whole palm-one-whole">
+    <div class="twoColumn column2">
+        <div class="innerColumn">
+            <h2>Completing the story</h2> 
+            <p>Documentation is the one thing that helps separate good projects from the best projects. If you’re a first time OSS contributor, documentation is a great stepping stone to learn the process. If you’re an OSS veteran, you’ll understand the need for constant documentation updates. The Glimpse team is always grateful for any helping hands.</p>
+            <p>In an effort to make documentation contribution as simple as possible, we're using Glimpse’s <a href="https://github.com/Glimpse/Glimpse/wiki">GitHub Wiki</a>, a standard Git repository under the covers, as the entry point for documentation. GitHub Wikis provide us with an online WYSIWYG interface for adding and editing documentation, completely in browser, with the simple markdown syntax.</p>
+            <p>We need people to help with the Glimpse website, documenting the Glimpse APIs, "Getting Started" guides for new users, and so on. Even posting about Glimpse to your own blog is a useful contribution.</p>
+            <p>Whatever your experience level, we can support you and provide you with the guidance you need. </p>
+    
+        </div>
+    </div>
+    <div class="comm-page-contriubutors">
         <h2>Original Crew</h2>
         <div class="stat-group stats-contributors">
             <dl class="stat">
                 <dt class="stat__title delta">Anthony van der Hoorn</dt> 
                 <dd class="stat__value">
-                    <img height="100" src="~/Content/_v1/Contributors/pic1.jpg" width="100">
+                    <img height="100" src="~/_Content/Contributors/pic1.jpg" width="100">
                 </dd>  
                 <dd class="stat__value hide--palm"><a href="https://twitter.com/anthony_vdh">@@anthony_vdh</a> | <a href="https://github.com/avanderhoorn">github</a></dd>
             </dl>
             <dl class="stat">
                 <dt class="stat__title delta">Nik Molnar</dt> 
                 <dd class="stat__value">
-                    <img height="100" src="~/Content/_v1/Contributors/pic2.jpg" width="100">
+                    <img height="100" src="~/_Content/Contributors/pic2.jpg" width="100">
                 </dd>  
                 <dd class="stat__value hide--palm"><a href="https://twitter.com/nikmd23">@@nikmd23</a> | <a href="https://github.com/nikmd23">github</a></dd>
             </dl>
@@ -44,35 +51,28 @@
             <dl class="stat">
                 <dt class="stat__title delta">Kristoffer Ahl</dt> 
                 <dd class="stat__value">
-                    <img height="100" src="~/Content/_v1/Contributors/pic3.jpg" width="100">
+                    <img height="100" src="~/_Content/Contributors/pic3.jpg" width="100">
                 </dd> 
                 <dd class="stat__value hide--palm"><a href="https://twitter.com/kristofferahl">@@kristofferahl</a> | <a href="https://github.com/kristofferahl">github</a></dd>
             </dl>
             <dl class="stat">
                 <dt class="stat__title delta">Steven Lauwers</dt> 
                 <dd class="stat__value">
-                    <img height="100" src="~/Content/_v1/Contributors/pic4.jpg" width="100">
+                    <img height="100" src="~/_Content/Contributors/pic4.jpg" width="100">
                 </dd> 
                 <dd class="stat__value hide--palm"><a href="https://twitter.com/steven_lauwers">@@steven_lauwers</a> | <a href="https://github.com/stevenlauwers22">github</a></dd>
             </dl>
             <dl class="stat">
-                <dt class="stat__title delta">Elizabeth Ayer</dt> 
-                <dd class="stat__value">
-                    <img height="100" src="~/Content/_v1/Contributors/pic9.jpg" width="100">
-                </dd> 
-                <dd class="stat__value hide--palm"><a href="https://twitter.com/elizayer">@@elizayer</a></dd>
-            </dl>
-            <dl class="stat">
                 <dt class="stat__title delta">Richard van der Hoff</dt> 
                 <dd class="stat__value">
-                    <img height="100" src="~/Content/_v1/Contributors/pic5.jpg" width="100">
+                    <img height="100" src="~/_Content/Contributors/pic5.jpg" width="100">
                 </dd> 
                 <dd class="stat__value hide--palm"><a href="https://twitter.com/richvdh">@@richvdh</a> | <a href="https://github.com/richvdh">github</a></dd>
             </dl>
             <dl class="stat">
                 <dt class="stat__title delta">Richard Oliver</dt> 
                 <dd class="stat__value">
-                    <img height="100" src="~/Content/_v1/Contributors/pic6.jpg" width="100">
+                    <img height="100" src="~/_Content/Contributors/pic6.jpg" width="100">
                 </dd> 
                 <dd class="stat__value hide--palm"><a href="https://github.com/rho24">github</a></dd>
             </dl>
@@ -80,7 +80,7 @@
                 <dt class="stat__title delta">Adam Schroder</dt>
                 <dt class="stat__title"></dt>
                 <dd class="stat__value">
-                    <img height="100" src="~/Content/_v1/Contributors/pic7.jpg" width="100">
+                    <img height="100" src="~/_Content/Contributors/pic7.jpg" width="100">
                 </dd> 
                 <dd class="stat__value hide--palm"><a href="https://twitter.com/schotime">@@schotime</a> | <a href="https://github.com/schotime">github</a></dd>
             </dl>
@@ -88,22 +88,26 @@
                 <dt class="stat__title delta">Maarten Balliauw</dt>
                 <dt class="stat__title"></dt>
                 <dd class="stat__value">
-                    <div class="contributor-img"><img height="100" src="~/Content/_v1/Contributors/pic10.jpg" width="100"></div>
+                    <div class="contributor-img"><img height="100" src="~/_Content/Contributors/pic10.jpg" width="100"></div>
                 </dd> 
                 <dd class="stat__value hide--palm"><a href="https://twitter.com/maartenballiauw">@@maartenballiauw</a> | <a href="https://github.com/maartenba">github</a></dd>
             </dl>
             <dl class="stat">
                 <dt class="stat__title delta">&nbsp; &nbsp; Pete Hotchkin &nbsp; &nbsp;</dt> 
                 <dd class="stat__value">
-                    <img height="100" src="~/Content/_v1/Contributors/pic8.jpg" width="100">
+                    <img height="100" src="~/_Content/Contributors/pic8.jpg" width="100">
                 </dd> 
                 <dd class="stat__value hide--palm"><a href="https://twitter.com/headloose">@@headloose</a> | <a href="http://headloose.com/">blog</a></dd>
             </dl>
+            <dl class="stat">
+                <dt class="stat__title delta">Elizabeth Ayer</dt> 
+                <dd class="stat__value">
+                    <img height="100" src="~/_Content/Contributors/pic9.jpg" width="100">
+                </dd> 
+                <dd class="stat__value hide--palm"><a href="https://twitter.com/elizayer">@@elizayer</a></dd>
+            </dl>
         </div>
-    </div>
-    <div class="g one-whole">
         <h2>Special Thanks</h2>
-        <div class="stat-group stats-contributors">
             <dl class="stat">
                 <dt class="stat__title delta">Jeffrey Burn</dt> 
                 <dd class="stat__value hide--palm"><a href="https://twitter.com/jetburn">@@jetburn</a> | <a href="https://github.com/kristofferahl">github</a></dd>
@@ -132,6 +136,5 @@
                 <dt class="stat__title delta">Aaron Powell</dt> 
                 <dd class="stat__value hide--palm"><a href="https://twitter.com/slace">@@slace</a> | <a href="https://github.com/aaronpowell">github</a></dd>
             </dl>
+        <hr class="clearer" />
         </div>
-    </div>
-</section>

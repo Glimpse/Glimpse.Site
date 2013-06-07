@@ -18,21 +18,22 @@ namespace Glimpse.Site
             //            "~/Scripts/jquery.unobtrusive*",
             //            "~/Scripts/jquery.validate*"));
 
-            //// Use the development version of Modernizr to develop with and learn from. Then, when you're
+            ///// Use the development version of Modernizr to develop with and learn from. Then, when you're
             //// ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
             //bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
             //            "~/Scripts/modernizr-*"));
 
-            bundles.Add(new StyleBundle("~/Content/_v1/css").Include(
-                "~/Content/_v1/inuit.css",
-                "~/Content/_v1/screen.css"));
+            bundles.Add(new StyleBundle("~/_Content/css").Include( 
+                "~/_Content/website-assets/css/global.css", 
+                "~/_Content/website-assets/css/tipsy.css"    
+            ));
 
-            bundles.Add(new ScriptBundle("~/Script/google").Include(
-                "~/Scripts/site.google.js"));
-
-            bundles.Add(new ScriptBundle("~/Script/javascript").Include(
-                "~/Scripts/site.google.js",
-                "~/Scripts/site.js"));
+            bundles.Add(new ScriptBundle("~/Script/javascript").Include("~/Scripts/site.google.js", 
+                "~/_Content/website-assets/scripts/jquery.scrollTo.js", 
+                "~/_Content/website-assets/scripts/jquery.tipsy.js", 
+                "~/_Content/website-assets/scripts/global-ck.js", 
+                "~/_Content/website-assets/scripts/home-ck.js"
+            ));
 
             //bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
             //            "~/Content/themes/base/jquery.ui.core.css",

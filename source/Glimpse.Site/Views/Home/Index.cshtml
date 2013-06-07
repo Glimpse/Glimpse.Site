@@ -1,140 +1,304 @@
 ﻿@{
     ViewBag.Title = "Glimpse - the open source diagnostics platform of the web";
+    ViewBag.bodyClass = "home-page";
 }
 
-<div class="call-action">
-    <div class="content-inner">
-        <div class="content-command">PM> Install-Package Glimpse</div>
-        <div class="content-sub-message"><a href="http://nuget.org/packages/Glimpse">see Glimpse package on Nuget</a></div>
-        <div class="stat-group stats-next">
-            <dl class="stat">
-                <dt class="stat__title"><div class="sprite sprite-action sprite-action-manager"></div></dt>
-                <dt class="stat__title delta">1) &nbsp; Package Manager</dt>
-                <dd class="stat__value">Open up the NuGet Package Manager Console inside visual studio.
-                </dd>
-            </dl>
-            <dl class="stat">
-                <dt class="stat__title"><div class="sprite sprite-action sprite-action-find"></div></dt>
-                <dt class="stat__title delta">2) &nbsp; Find Glimpse</dt>
-                <dd class="stat__value">Type or paste the command above, then hit enter.
-                </dd>
-            </dl>
-            <dl class="stat">
-                <dt class="stat__title"><div class="sprite sprite-action sprite-action-running"></div></dt>
-                <dt class="stat__title delta">3) &nbsp; Get Running</dt>
-                <dd class="stat__value">Start your project and go to http://yourproject/glimpse.axd and click start.
-                </dd>
-            </dl>
-        </div>
+<div class="section-container" id="intro">
+        <section>
+        	<a href="/" id="logo"><span class="hidden">glimpse - home page</span></a>
+        	<div id="tag-line">server insight in browser</div>
+        	<div id="monitor">
+        	    <div class="inner-monitor">
+        	        <a href="#" class="video-link">Watch the tour</a>
+        	    </div>
+        	</div>
+        	<div id="the-team">
+        	    <div id="osguy-label"><span class="arrow down">&nbsp;</span>
+        	        You?<br /> <a href="http://www.github.com/glimpse/glimpse">We're open source</a>
+        	    </div>
+        	    <div id="anthony-label">
+        	        <span class="arrow down-inverted">&nbsp;</span>Anthony
+        	    </div>
+        	    <div id="nik-label">
+        	        Nik<span class="arrow left">&nbsp;</span>
+        	    </div>
+        	    <div class="team-member" id="osguy"></div>
+        	    <div class="team-member" id="anthony"></div>
+        	    <div class="team-member" id="nik"></div>
+        	</div>
+        </section>
     </div>
+<div class="section-container" id="demo">
+    <section>
+    	<h1>The server information you need&#133;where you want it</h1>
+    	<p>Glimpse shows execution timings, server configuration, request data and more, all in browser, with no changes to your application code. <br /> Just install the NuGet package, and you're good to go!</p>
+    	<div class="inner-monitor">
+    	    <a href="#" class="video-link">Watch the tour</a>
+    	</div>
+    	<div id="tool-demo">
+    	    <a class="hover-point" id="demo-hover-tabs" title="See activity for your current request in the tabs below.">&nbsp;</a>
+    	    <a class="hover-point" id="demo-hover-autocustom" title="Install add-on packages for additional framework-specific information.">&nbsp;</a>
+    	    <a class="hover-point" id="demo-hover-tab-detail" title="Select a tab of interest to see more details.">&nbsp;</a>
+    	    <a class="hover-point" id="demo-hover-ajax" title="Switch Glimpse context to other requests with Ajax and History.">&nbsp;</a>
+    	    <a class="hover-point" id="demo-hover-power" title="Minimize the Glimpse panel and reopen it when you want it.">&nbsp;</a>
+    	    <img src="/_Content/website-assets/img/glimpse-tool.png" alt="glimpse, the tool" width="100%" />
+    	</div>
+    	<a class="button" href="#">Try it for yourself &rarr;</a>
+    	<p class="sub-text">Glimpse currently supports ASP.NET MVC, ASP.NET Webforms. Additional extensions show data for Entity Framework, nHibernate, MiniProfiler and <a href="/Packages">more</a>.<br />
+    	Can't see your tech above? <a href="http://groups.google.com/forum/?fromgroups#!forum/getglimpse-dev">Talk to us</a> about suporting it!</p>
+    </section>
 </div>
-
-<div class="body-inner">
-    <section class="g one-whole stats-root-menu">
-        <div class="stat-group">
-            <dl class="stat">
-                <dt class="stat__title gamma">Community</dt>
-                <dd class="stat__value"><a href="@Url.Action(MVC.Community.Index())" class="sprite sprite-root sprite-root-community"></a></dd>
-                <dd class="stat__value hide--palm">who's involved &amp; how you can help</dd>
-            </dl>
-            <dl class="stat">
-                <dt class="stat__title gamma">Documentation</dt>
-                <dd class="stat__value"><a href="/Help/" class="sprite sprite-root sprite-root-documentation"></a></dd>
-                <dd class="stat__value hide--palm">how to get started &amp; all the details</dd>
-            </dl>
-            <dl class="stat">
-                <dt class="stat__title gamma">Extensions</dt>
-                <dd class="stat__value"><a href="@Url.Action(MVC.Packages.Index())" class="sprite sprite-root sprite-root-plugins"></a></dd>
-                <dd class="stat__value hide--palm">what else exists in the ecosystem</dd>
-            </dl>
-            <dl class="stat">
-                <dt class="stat__title gamma">Support</dt>
-                <dd class="stat__value"><a href="@Url.Action(MVC.Support.Index())" class="sprite sprite-root sprite-root-support"></a></dd>
-                <dd class="stat__value hide--palm">need some help or found an issue for us?</dd>
-            </dl>
-        </div>
-    </section>
+<div class="section-container" id="why-glimpse">
     <section>
-        <div class="g image-highlight one-whole">
-            <div class="hover-point-container">
-                <img src="~/Content/_v1/site-console-execution.png" />
-                <div class="hover-point" style="top: 3%; left: 40%;"></div>
-                <div class="hover-text" style="top: 25px; left: 275px; width:300px">All the tabs below describe the activity for your current request.</div>
-                <div class="hover-point" style="top: 3%; right: 10%;"></div>
-                <div class="hover-text" style="top: 25px; right: 10px; width:250px">At any time you can open or close Glimpse.</div>
-                <div class="hover-point" style="top: 11%; right: 6%;"></div>
-                <div class="hover-text" style="top: 49px; right: 10px; width:300px">Ajax &amp; History allow you to switch Glimpse to focus on other requests.</div>
-                <div class="hover-point" style="top: 11%; left: 9%;"></div>
-                <div class="hover-text" style="top: 49px; left: 0; width:350px">Depending on what packages you install Glimpse will show give you different tabs.</div>
-                <div class="hover-point" style="top: 57%; left: 38%;"></div>
-                <div class="hover-text" style="top: 175px; left: 260px; width:300px">At any time you can select a tab of interest to see more details.</div>
-            </div>
-            <div class="call-action-trigger button">Try it for yourself</div>
-        </div>     
-        <div class="g one-half palm-one-whole">
-            <h2>What It Does</h2> 
-            <p>Glimpse gathers and presents detailed diagnostic information about the behavior and execution of your web application.</p>
-            <p>It is used in a similar manner to client side diagnostics and debugging tools (such as <a href="https://getfirebug.com/">FireBug</a> or <a href="https://developers.google.com/chrome-developer-tools/docs/overview">Chrome Developer Tools</a>), but instead focuses on concepts such as server configuration, model binding, url routing, and execution profiling.</p>
-        </div>  
-        <div class="g one-half palm-one-whole">
-            <h2>Where it fits</h2>
-            <p>Too often, the tools we are provided with only show us a part of the picture, leaving us to simply guess what might be happening behind the scenes.</p>
-            <p>Glimpse is an Open Source platform that aims to change the way we think about diagnostics and the frameworks we interact with. After releasing Glimpse at Mix11, Glimpse has become a tool that is used daily by tens of thousands of developers around the world.</p>
-        </div> 
-        <div class="g image-highlight one-whole">
-            <img src="~/Content/_v1/site-console-zoom.png"/> 
-            <div class="text--center">Glimpse sits right in your browser.</div>
-        </div>     
-        <div class="g one-half palm-one-whole">
-            <h2>Getting Started</h2>
-            <p>Installing Glimpse is incredibly easy. From within Visual Studio, open NuGet and search for "Glimpse". For ASP.NET WebForms applications, install <code>Glimpse.AspNet</code> and for ASP.NET MVC applications install <code>Glimpse.Mvc3</code>.</p>
-            <p>When you're ready to start using Glimpse, simply browse to <code>http://your-application-url/Glimpse.axd</code> and click "Turn Glimpse On". From then on the Glimpse icon will appear in the bottom right corner of pages within your application, click the icon to see your glorious diagnostics.</p>
-        </div>     
-        <div class="g one-half palm-one-whole">
-            <h2>Free &amp; Open Source</h2>
-            <p>From the start, Glimpse has been Open Source and accepting contributions from the <a href="@Url.Action(MVC.Community.Index())">community</a>. Glimpse has only been made possible by these contributions and community involvement - thanks to everyone who has made this possible.</p>
-            <p>All this means that Glimpse is Free and you can download and modify the code as you like (we are <a href="http://opensource.org/licenses/apache2.0">Apache License 2.0</a>). If you want to get involved or contribute in any way, feel free to reach and get involved - we can help you get started!</p>
-        </div>
+    	<div class="threeColumn column1">
+    	    <div class="innerColumn">
+    	        <div class="large-icon">&nbsp;</div>
+    	        <h2>What it does</h2>
+    	        <p>Install the Glimpse package into your project, then use it like browser tools (such as <a href="https://developers.google.com/chrome-developer-tools/docs/overview">Chrome Developer Tools</a>, <a href="http://msdn.microsoft.com/en-us/library/ie/gg589512(v=vs.85).aspx>F12 Tools</a> or <a href="https://getfirebug.com/">FireBug</a>) in developing your web site. It shows your server configuration, model binding, URL routing, detailed execution times, and more.</p>
+    	    </div>
+    	</div>
+    	<div class="threeColumn column2">
+    	    <div class="innerColumn">
+    	        <div class="large-icon fit">&nbsp;</div>
+    	        <h2>Where it fits</h2>
+    	        <p>Glimpse has a bunch of server-side collectors which feed data to a collapsible panel at the bottom of your web page. With configurable security policies, you can safely use it to debug applications in production as well as development. 
+    	    </div>
+    	</div>
+    	<div class="threeColumn column3">
+    	    <div class="innerColumn">
+    	        <div class="large-icon open-source">&nbsp;</div>
+    	        <h2>Free &amp; open source</h2>
+    	        <p>Thanks to <a href="/Community">community</a> contributions, Glimpse is thriving and remains <b>free</b> for any purpose (<a href="http://opensource.org/licenses/apache2.0">Apache License 2.0</a>). Jump in and look: here's the <a href="http://github.com/glimpse/glimpse">code</a>!</p>
+    	    </div>
+    	</div>
+    	<hr class="clearer" />
     </section>
-
+</div>
+<div class="section-container" id="contributors">
     <section>
-        <div class="g one-whole palm-one-whole">
-            <div class="stat-group stats-next">
-                <dl class="stat">
-                    <dt class="stat__title delta">Talk &amp; Videos</dt>
-                    <dd class="stat__value">What are people saying about Glimpse, Feel free to <a href="@Url.Action(MVC.Talk.Index())">take a look</a>.
-                    </dd>
-                </dl>
-                <dl class="stat">
-                    <dt class="stat__title delta">Source Code</dt>
-                    <dd class="stat__value">All of our source code is freely available anytime on <a href="https://github.com/glimpse/glimpse">GitHub</a>.
-                    </dd>
-                </dl>
-                <dl class="stat">
-                    <dt class="stat__title delta">Glimpse protocol</dt>
-                    <dd class="stat__value">Learn more about what makes Glimpse possible and <a href="@Url.Action(MVC.Protocol.Index())">how plugins get their structure</a>?
-                    </dd>
-                </dl>
+    	<h1>The people who are helping us&#133; </h1>
+    	<div id="people">
+    	    <div class="person-container" id="contributor-1">
+        	    <div  class="person">
+        	        <div class="pic">
+        	            <img src="/_Content/website-assets/img/contributors/pic1.jpg" alt="Anthony" width="100%" />    
+        	        </div>
+        	        <div class="details-container">
+        	            <img src="/_Content/website-assets/img/contributors/pic1.jpg" alt="" width="100%" /> 
+        	            <div class="details">
+        	                <span class="label">Name:</span> <span class="value">Anthony</span>
+    	                    <a href="http://twitter.com/anthony_vdh" class="twitter-link"><span class="icon small-twitter"></span>
+    	                        @@anthony_vdh
+    	                    </a>
+    	                    <a href="http://github.com/avanderhoorn" class="github-link"><span class="icon small-github"></span>
+    	                        avanderhoorn
+    	                    </a>
+        	            </div>
+        	        </div>
+        	    </div>
+        	</div>
+        	<!--split between contributors-->
+        	<div class="person-container" id="contributor-2">
+        	    <div  class="person">
+        	        <div class="pic">
+        	            <img src="/_Content/website-assets/img/contributors/pic2.jpg" alt="Nik" width="100%" />    
+        	        </div>
+        	        <div class="details-container">
+        	            <img src="/_Content/website-assets/img/contributors/pic2.jpg" alt="Nik" width="100%" /> 
+        	            <div class="details">
+        	                <span class="label">Name:</span> <span class="value">Nik</span>
+        	                        
+        	                    <a href="http://twitter.com/anthony_vdh" class="twitter-link"><span class="icon small-twitter"></span>
+        	                        @@nikmd23
+        	                    </a>
+        	                    <a href="http://github.com/avanderhoorn" class="github-link"><span class="icon small-github"></span>
+        	                        nikmd23
+        	                    </a>      	                    
+        	            </div>
+        	        </div>
+        	    </div>
+        	</div>
+        	<!--split between contributors-->
+        	<div class="person-container" id="contributor-3">
+        	    <div  class="person">
+        	        <div class="pic">
+        	            <img src="/_Content/website-assets/img/contributors/pic3.jpg" alt="Kristoffer Ahl" width="100%" />    
+        	        </div>
+        	        <div class="details-container">
+        	            <img src="/_Content/website-assets/img/contributors/pic3.jpg" alt="Kristoffer Ahl" width="100%" /> 
+        	            <div class="details">
+        	                <span class="label">Name:</span> <span class="value">Kristoffer Ahl</span>
+        	                        
+        	                    <a href="http://twitter.com/kristofferahl" class="twitter-link"><span class="icon small-twitter"></span>
+        	                        @@kristofferahl
+        	                    </a>
+        	                    <a href="http://github.com/kristofferahl" class="github-link"><span class="icon small-github"></span>
+        	                        kristofferahl
+        	                    </a>
+        	                        
+        	            </div>
+        	        </div>
+        	    </div>
+        	</div>
+        	<!--split between contributors-->
+        	<div class="person-container" id="contributor-4">
+        	    <div  class="person">
+        	        <div class="pic">
+        	            <img src="/_Content/website-assets/img/contributors/pic4.jpg" alt="Steven Lauwers" width="100%" />    
+        	        </div>
+        	        <div class="details-container">
+        	            <img src="/_Content/website-assets/img/contributors/pic4.jpg" alt="Steven Lauwers" width="100%" /> 
+        	            <div class="details">
+        	                <span class="label">Name:</span> <span class="value">Steven Lauwers</span>
+        	                        
+        	                    <a href="http://twitter.com/anthony_vdh" class="twitter-link"><span class="icon small-twitter"></span>
+        	                        @@steven_lauwers
+        	                    </a>
+        	                    <a href="http://github.com/stevenlauwers22" class="github-link"><span class="icon small-github"></span>
+        	                        stevenlauwers22
+        	                    </a>
+        	                    
+        	            </div>
+        	        </div>
+        	    </div>
+        	</div>
+        	<!--split between contributors-->
+        	<div class="person-container" id="contributor-5">
+        	    <div  class="person">
+        	        <div class="pic">
+        	            <img src="/_Content/website-assets/img/contributors/pic5.jpg" alt="Richard van der Hoff" width="100%" />    
+        	        </div>
+        	        <div class="details-container">
+        	            <img src="/_Content/website-assets/img/contributors/pic5.jpg" alt="Richard van der Hoff" width="100%" /> 
+        	            <div class="details">
+        	                <span class="label">Name:</span> <span class="value">Richard van der Hoff</span>
+        	                <a href="http://twitter.com/richvdh" class="twitter-link"><span class="icon small-twitter"></span>
+        	                    @@richvdh
+        	                </a>
+        	                <a href="http://github.com/richvdh" class="github-link"><span class="icon small-github"></span>
+        	                    richvdh
+        	                </a>
+        	            </div>
+        	        </div>
+        	    </div>
+        	</div>
+        	<!--split between contributors-->
+        	<div class="person-container" id="contributor-6">
+        	    <div  class="person">
+        	        <div class="pic">
+        	            <img src="/_Content/website-assets/img/contributors/pic6.jpg" alt="Richard Oliver" width="100%" />    
+        	        </div>
+        	        <div class="details-container">
+        	            <img src="/_Content/website-assets/img/contributors/pic6.jpg" alt="Richard Oliver" width="100%" /> 
+        	            <div class="details">
+        	                <span class="label">Name:</span> <span class="value">Richard Oliver</span>
+        	                <a href="http://github.com/rho24" class="github-link"><span class="icon small-github"></span>
+        	                    rho24
+        	                </a>
+        	            </div>
+        	        </div>
+        	    </div>
+        	</div>
+        	<!--split between contributors-->
+        	<div class="person-container" id="contributor-7">
+        	    <div  class="person">
+        	        <div class="pic">
+        	            <img src="/_Content/website-assets/img/contributors/pic7.jpg" alt="Anthony" width="100%" />    
+        	        </div>
+        	        <div class="details-container">
+        	            <img src="/_Content/website-assets/img/contributors/pic7.jpg" alt="Anthony" width="100%" /> 
+        	            <div class="details">
+        	                <span class="label">Name:</span> <span class="value">Adam Schroder</span>
+        	                <a href="http://twitter.com/schotime" class="twitter-link"><span class="icon small-twitter"></span>
+        	                    @@schotime
+        	                </a>
+        	                <a href="http://github.com/schotime" class="github-link"><span class="icon small-github"></span>
+        	                    schotime
+        	                </a>
+        	            </div>
+        	        </div>
+        	    </div>
+        	</div>
+        	<!--split between contributors-->
+        	<div class="person-container" id="contributor-8">
+        	    <div  class="person">
+        	        <div class="pic">
+        	            <img src="/_Content/website-assets/img/contributors/pic8.jpg" alt="Pete Hotchkin" width="100%" />    
+        	        </div>
+        	        <div class="details-container">
+        	            <img src="/_Content/website-assets/img/contributors/pic8.jpg" alt="Pete Hotchkin" width="100%" /> 
+        	            <div class="details">
+        	                <span class="label">Name:</span> <span class="value">Pete Hotchkin</span>
+        	                <a href="http://twitter.com/headloose" class="twitter-link"><span class="icon small-twitter"></span>
+        	                    @@headloose
+        	                </a>
+        	            </div>
+        	        </div>
+        	    </div>
+        	</div>
+        	<!--split between contributors-->
+        	<div class="person-container" id="contributor-9">
+        	    <div  class="person">
+        	        <div class="pic">
+        	            <img src="/_Content/website-assets/img/contributors/pic9.jpg" alt="Elizabeth Ayer" width="100%" />    
+        	        </div>
+        	        <div class="details-container">
+        	            <img src="/_Content/website-assets/img/contributors/pic9.jpg" alt="Elizabeth Ayer" width="100%" /> 
+        	            <div class="details">
+        	                <span class="label">Name:</span> <span class="value">Elizabeth Ayer</span>
+        	                <a href="http://twitter.com/ElizAyer" class="twitter-link"><span class="icon small-twitter"></span>
+        	                    @@ElizAyer
+        	                </a>
+        	            </div>
+        	        </div>
+        	    </div>
+        	</div>
+        	<!--split between contributors-->
+        	<div class="person-container" id="contributor-10">
+        	    <div  class="person">
+        	        <div class="pic">
+        	            <img src="/_Content/website-assets/img/contributors/pic10.jpg" alt="Maarten Balliauw" width="100%" />    
+        	        </div>
+        	        <div class="details-container">
+        	            <img src="/_Content/website-assets/img/contributors/pic10.jpg" alt="Maarten Balliauw" width="100%" /> 
+        	            <div class="details">
+        	                <span class="label">Name:</span> <span class="value">Maarten Balliauw</span>
+        	                <a href="http://twitter.com/maartenballiauw" class="twitter-link"><span class="icon small-twitter"></span>
+        	                    @@maartenballiauw
+        	                </a>
+        	                <a href="https://github.com/maartenba" class="github-link"><span class="icon small-github"></span>
+        	                    maartenba
+        	                </a>
+        	                        
+        	            </div>
+        	        </div>
+        	    </div>
+        	</div>
+        	<!--split between contributors-->
+        	<div class="handwritten help-us">Help us out, and get your name in lights. Jump in and contribute on <a href="http://github.com/glimpse/glimpse">GitHub</a></div>        	        <!--split between contributors-->
+        	<hr class="clearer" />
+        	<div class="community-thankyou">Thanks to all of you who have helped along the way. Our community is great!</div>
+    	</div>
+    </section>
+</div>
+<div class="section-container" id="blog-section">
+    <section>
+    	<h1>That's what we're talking about&#133;</h1>
+    	<div class="twoColumn column1">
+            <div class="innerColumn">
+                <h2>Loading blog</h2>
             </div>
-        </div>
-        <div class="g one-whole palm-one-whole">
-            <div class="stat-group stats-support">
-                <dl class="stat">
-                    <dt class="stat__title delta">Issues or Suggestions</dt>
-                    <dd class="stat__value">If you have found an issue or have a idea, let us know on our <a href="https://github.com/glimpse/glimpse/issues" target="_blank">issues list</a>.
-                    </dd>
-                </dl>
-                <dl class="stat">
-                    <dt class="stat__title delta">Developer List</dt>
-                    <dd class="stat__value">Get answers to questions &amp; find out what is next for Glimpse on our <a href="https://groups.google.com/forum/?fromgroups#!forum/getglimpse-dev" target="_blank">user group</a>.
-                    </dd>
-                </dl>
-                <dl class="stat">
-                    <dt class="stat__title delta">Twitter</dt>
-                    <dd class="stat__value">Feel free to get in touch with the us on Twitter: <a href="http://www.twitter.com/anthony_vdh" target="_blank">@@anthony_vdh</a> or <a href="http://www.twitter.com/nikmd23" target="_blank">@@nikmd23</a>.
-                    </dd>
-                </dl>
-            </div>
-        </div>
+    	    
+    	</div>
+    	<div class="twoColumn column2">
+    	   <div class="innerColumn">
+    	   </div>
+    	</div>
+    	<hr class="clearer" />
+            <div class="extra-blog-info">
+    	            Please visit our blog for lots more....<br />
+    	            <a href="http://blog.getglimpse.com" class="button">Our blog &rarr;</a>
+    	     </div>
+    	</div>
     </section>
 </div>

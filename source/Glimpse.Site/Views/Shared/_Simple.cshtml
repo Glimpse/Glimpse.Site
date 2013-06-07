@@ -2,38 +2,36 @@
 <html>
 <head>
     <meta charset="utf-8" /> 
-    <link rel="apple-touch-icon" href="~/Content/_v1/site-favicon.png">
-    <link rel="icon" href="~/Content/_v1/site-favicon.png">
-    <!--[if IE]><link rel="shortcut icon" href="~/Content/_v1/site-favicon.ico"><![endif]--> 
+    <link rel="apple-touch-icon" href="~/_Content/favicon.png">
+    <link rel="icon" href="~/_Content/favicon.png">
+    <!--[if IE]><link rel="shortcut icon" href="~/_Content/favicon.ico"><![endif]--> 
     <meta name="msapplication-TileColor" content="#FFFFFF">
-    <meta name="msapplication-TileImage" content="~/Content/_v1/site-favicon.png"> 
+    <meta name="msapplication-TileImage" content="~/_Content/favicon.png"> 
     <meta name="viewport" content="width=device-width" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>@ViewBag.Title</title>
-    @Styles.Render("~/Content/_v1/css")
+    @Styles.Render("~/_Content/css")
 </head>
-<body class="layout simple">
+<body>
     <div class="header">
         <div class="header-inner"> 
-            <a href="@Url.Action(MVC.Home.Index())" class="float--right logo-sub"></a> 
+            <a href="@Url.Action(MVC.Home.Index())" class="glimpse-logo"><img src="~/_Content/img/logo.png" alt="logo" /></a> 
             @RenderSection("header")
         </div>
+        <div id="header-shadow"></div>
     </div>
-    <div class="body gw">
-        <div class="body-inner"> 
+    <div class="content-container">
+        <div class="content"> 
             @RenderBody()
         </div>
+        <hr class="clearer" />
     </div>
-    <div class="footer gw">
-        <div class="footer-outer">
-            <div class="footer-inner"> 
-                <div class="g one-whole bottom-backing">
-                    Proudly backed by <a href="http://www.red-gate.com/"><img src="~/Content/_v1/site-redgate-logo.png" style="vertical-align:middle" /></a> <a href="#">and you!</a>
-                </div>
-            </div>
+    <div class="footer">
+        <div class="footer-inner"> 
+                Proudly backed by <a href="http://www.red-gate.com/"><img src="~/_Content/img/redgate.png" id="redgate-logo" /></a> <a href="#">and you!</a>
         </div>
     </div>
-    @Scripts.Render("~/Script/google")
+    @Scripts.Render("~/Script/javascript")
     @RenderSection("scripts", false)
 </body>
 </html>

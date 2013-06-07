@@ -4,43 +4,93 @@
 }
 
 @section header {
-    <section>
-        <h1>You're up to date</h1>
-        <div class="gamma">Thanks for updating glimpse</div>
-    </section>
-}
+<h1><img src="/_Content/img/updatetick.png" alt="tick" id="updateTick" />You're up to date!</h1>
+<p>
+    Thanks for updating glimpse, for the number lover inside, you've gone from v### to v###.
+The details of what has changed are below…
 
-<div>
+</p>
+}
      
-    <div class="g one-half">
-        <h2>Update Notes</h2>
-    </div> 
-    <div class="g four-fifths push--one-tenth"> 
-        @foreach (var detail in Model.Details)
-        {
-            var image = string.IsNullOrEmpty(detail.Value.PackageIconUrl) ? "/Content/_v1/site-nuget-logo.png" : detail.Value.PackageIconUrl;
-            <div class="release-package">
-                <div class="release-package-title">
-                    <img src="@image" height="50" onerror="this.src = '/Content/_v1/site-nuget-logo.png';"/> 
-                    <h3>@detail.Key</h3>  
-                </div> 
-                @if (detail.Value.HasResult) 
+<h2>Update Notes</h2>
+    
+@foreach (var detail in Model.Details)
+{
+    var image = string.IsNullOrEmpty(detail.Value.PackageIconUrl) ? "/_Content/img/logo-nuget.png" : detail.Value.PackageIconUrl;
+    var updated = detail.Value.HasResult && !detail.Value.HasNewer ? "latest" : (detail.Value.HasResult ? "old" : "not-found"); //latest = updated, old = still on old version, not-found = no package avail.
+            
+    <div class="release-package @updated">
+        <h3 class="release-package-title"><img src="@image" onerror="this.src = '/_Content/logo-nuget.png';"/>@detail.Key<span class="status-img">&nbsp;</span></h3>  
+        <div class="release-package-details">
+            <div class="release-package-message">
+                <div class="release-package-message-title">
+                    @if(@updated == "latest") {
+                        <span>Congratulations, you are up to date</span>
+                    } else if (@updated == "old") {
+                        <span>Sorry, it looks you weren't updated to the latest version</span>
+                    } else {
+                        <span>No release was found for this package.</span>
+                    }
+                </div>@*end:.release-package-message-title*@
+                        
+                @if(@updated == "latest" || @updated == "old") {
+                    var latest = @updated == "old" ? @detail.Value.Summary[detail.Value.Channel].LatestVersion : @detail.Value.Version;
+                    <div class="release-installed-details">
+                        <span class="release-installed-version">Installed version: <strong>@detail.Value.Version</strong></span>
+                        <span class="release-latest-version">Latest version: <strong>@latest</strong></span>
+                    </div>
+                    <div class="release-item-detail-notes">
+                        @if (!string.IsNullOrEmpty(@detail.Value.Release.ReleaseNotes)) { @detail.Value.Release.ReleaseNotes } 
+                        else { <i>No notes avaiable for this release.</i> }
+                    </div>
+                }
+                        
+            </div>@*end:.release-package-message*@
+        </div>@*end:release-package-details*@
+    </div>@*end:release-package @updated*@
+}
+     
+
+<dl class="threeColumn column1">
+    <div class="innerColumn">
+    <dt><img src="~/_Content/img/ideas.png" alt="Issues or Suggestions" /></dt>
+    <dd>If you have found an issue or have a idea, let us know on our <a href="https://github.com/glimpse/glimpse/issues" target="_blank">issues list</a>.
+    </dd>
+    </div>
+</dl>
+<dl class="threeColumn column2">
+    <div class="innerColumn">
+    <dt><img src="~/_Content/img/google.png" alt="developer list" /></dt>
+    <dd>Get answers to questions and find out what is next for Glimpse on our <a href="https://groups.google.com/forum/?fromgroups#!forum/getglimpse-dev" target="_blank">community user group</a>.
+    </dd>
+    </div>
+</dl>
+<dl class="threeColumn column3">
+    <div class="innerColumn">
+    <dt><img src="~/_Content/img/twitter.png" alt="twitter contacts" /></dt>
+    <dd>Feel free to get in touch with the us on Twitter: <a href="http://www.twitter.com/anthony_vdh" target="_blank">@@anthony_vdh</a> or <a href="http://www.twitter.com/nikmd23" target="_blank">@@nikmd23</a>.
+    </dd>
+    </div>
+</dl>
+
+
+@*@if (detail.Value.HasResult) 
                 {
                     <div class="release-package-details">
                         @if (detail.Value.HasNewer) {
-                            <text>
-                                <div class="release-package-message release-package-old-found">
-                                    <div class="release-package-message-title">Sorry, it looks like you are currently out of date</div>
-                                    <span class="release-installed-version">Installed version: <strong>@detail.Value.Version</strong></span>
-                                    <span class="release-latest-version">Latest version: <strong>@detail.Value.Summary[detail.Value.Channel].LatestVersion</strong></span>
-                                </div>
-                            </text>
+                            <div class="release-package-message release-package-old-found">
+                                <div class="release-package-message-title">Sorry, it looks like you are currenly out of date</div>
+                                <span class="release-installed-version">Installed version: <strong>@detail.Value.Version</strong></span>
+                                <span class="release-latest-version">Latest version: <strong>@detail.Value.Summary[detail.Value.Channel].LatestVersion</strong></span>
+                                @detail.Value.Release.ReleaseNotes
+                            </div>
                         }
                         else {
                             <div class="release-package-message release-package-latest-found">
                                 <div class="release-package-message-title">Congratulations, you are up to date</div>
                                 <span class="release-installed-version">Installed version: <strong>@detail.Value.Version</strong></span>
-                                <span class="release-latest-version">Latest version: <strong>@detail.Value.Version</strong></span> 
+                                <span class="release-latest-version">Latest version: <strong>@detail.Value.Version</strong></span>
+                                @detail.Value.Release.ReleaseNotes 
                             </div>
                         }    
                         
@@ -55,7 +105,7 @@
                                             <span class="release-item-detail-date">@release.Value.Created.ToString("dd MMM yyyy")</span> 
                                         </div>
                                         <div class="release-item-detail-notes">
-                                            @if (!string.IsNullOrEmpty(@release.Value.ReleaseNotes)) { @Html.HtmlEncode(release.Value.ReleaseNotes, true) } 
+                                            @if (!string.IsNullOrEmpty(@release.Value.ReleaseNotes)) { @release.Value.ReleaseNotes } 
                                             else { <i>No notes avaiable for this release.</i> }
                                         </div>
                                     </div>
@@ -67,26 +117,5 @@
                 else {
                     <div class="release-package-message release-package-not-found">No release was found for this package.</div>
                 }
-            </div>
-        }
-    </div> 
-    <div class="g one-whole palm-one-whole">
-        <div class="stat-group stats-support">
-            <dl class="stat">
-                <dt class="stat__title delta">Issues or Suggestions</dt>
-                <dd class="stat__value">If you have found an issue or have a idea, let us know on our <a href="https://github.com/glimpse/glimpse/issues" target="_blank">issues list</a>.
-                </dd>
-            </dl>
-            <dl class="stat">
-                <dt class="stat__title delta">Developer List</dt>
-                <dd class="stat__value">Get answers to questions &amp; find out what is next for Glimpse on our <a href="https://groups.google.com/forum/?fromgroups#!forum/getglimpse-dev" target="_blank">user group</a>.
-                </dd>
-            </dl>
-            <dl class="stat">
-                <dt class="stat__title delta">Twitter</dt>
-                <dd class="stat__value">Feel free to get in touch with the us on Twitter: <a href="http://www.twitter.com/anthony_vdh" target="_blank">@@anthony_vdh</a> or <a href="http://www.twitter.com/nikmd23" target="_blank">@@nikmd23</a>.
-                </dd>
-            </dl>
-        </div>
-    </div>
-</div>
+
+*@

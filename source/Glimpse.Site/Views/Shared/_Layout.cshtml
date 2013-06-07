@@ -1,81 +1,122 @@
 ﻿<!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8" /> 
-    <link rel="apple-touch-icon" href="~/Content/_v1/site-favicon.png">
-    <link rel="icon" href="~/Content/_v1/site-favicon.png">
-    <!--[if IE]><link rel="shortcut icon" href="~/Content/_v1/site-favicon.ico"><![endif]--> 
-    <meta name="msapplication-TileColor" content="#FFFFFF">
-    <meta name="msapplication-TileImage" content="~/Content/_v1/site-favicon.png"> 
-    <meta name="viewport" content="width=device-width" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>@ViewBag.Title</title>
-    @Styles.Render("~/Content/_v1/css")
-    @RenderSection("head", false)
-    <link rel="nuget" type="application/rsd+xml" title="Glimpse Extensions Gallery" href="http://getGlimpse.com/Content/_v1/glimpseGallery.xml" />
-</head>
-<body class="layout">
-    <header>
-        <div class="header-inner"> 
-            <a href="@Url.Action(MVC.Home.Index())" class="float--right logo-sub"></a>
-            <div class="float--right stats-sub-menu hide--lap hide--palm">
-                <div class="stat-group">
-                    <dl class="stat">
-                        <dt class="stat__title">Community</dt>
-                        <dd class="stat__value"><a href="@Url.Action(MVC.Community.Index())" class="sprite sprite-root sprite-root-community"></a></dd>
-                    </dl>
-                    <dl class="stat">
-                        <dt class="stat__title">Documentation</dt>
-                        <dd class="stat__value"><a href="/Help/" class="sprite sprite-root sprite-root-documentation"></a></dd> 
-                    </dl>
-                    <dl class="stat">
-                        <dt class="stat__title">Extensions</dt>
-                        <dd class="stat__value"><a href="@Url.Action(MVC.Packages.Index())" class="sprite sprite-root sprite-root-plugins"></a></dd> 
-                    </dl>
-                    <dl class="stat">
-                        <dt class="stat__title">Support</dt>
-                        <dd class="stat__value"><a href="@Url.Action(MVC.Support.Index())" class="sprite sprite-root sprite-root-support"></a></dd> 
-                    </dl>
-                </div> 
+    <head>
+        <title>@ViewBag.Title</title>
+        <meta charset="utf-8" /> 
+        <link rel="apple-touch-icon" href="~/_Content/favicon.png">
+        <link rel="icon" href="~/_Content/favicon.png">
+        <!--[if IE]><link rel="shortcut icon" href="~/_Content/favicon.ico"><![endif]--> 
+        <meta name="msapplication-TileColor" content="#FFFFFF">
+        <meta name="msapplication-TileImage" content="~/_Content/favicon.png">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+        @Styles.Render("~/_Content/css")
+        @*<link media="screen" rel="stylesheet" type="text/css" href="assets/css/global.css" />
+        <link media="screen" rel="stylesheet" type="text/css" href="assets/css/tipsy.css" />
+        
+        <script src="<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>s" type="text/javascript"></script>
+        <script src="assets/scripts/home-ck.js" type="text/javascript"></script>
+        <script src="assets/scripts/global-ck.js" type="text/javascript"></script>
+        <script src="assets/scripts/jquery.scrollTo.min.js" type="text/javascript"></script>
+        <script src="assets/scripts/jquery.tipsy.js" type="text/javascript"></script>*@
+    </head>
+    <body class="@ViewBag.bodyClass">
+        <header>
+            
+            <div id="nav-container">
+                <a href="#" id="mobile-menu-button"><span class="icon"></span><span class="nav-label">menu</span></a>
+            	<nav>
+            	    <a href="@Url.Action(MVC.Home.Index())" class="home"><span class="icon"></span><span class="nav-label">Home</span></a>
+            	    <a href="/Help/Getting-started" class="getting-started"><span class="icon"></span>Getting Started</a>
+            	    <a href="@Url.Action(MVC.Community.Index())" class="community"><span class="icon"></span>Community</a>
+            	    <a href="@Url.Action(MVC.Support.Index())" class="support"><span class="icon"></span>Support</a>
+            	    <a href="/Help/" class="docs"><span class="icon"></span>Documentation</a>
+            	    <a href="@Url.Action(MVC.Packages.Index())" class="plugins"><span class="icon"></span>Extensions</a>
+            	    <a href="#" class="download"><span class="icon"></span>Install now<br /> <span class="sub-menu-title">It's only one command</span></a>
+            	</nav>
+            	<hr class="clearer" />
             </div>
-            @RenderSection("header")
+            
+        	<div id="nav-padder"></div>
+        	<div class="section-container" id="install">
+        	    <section>
+        	        <div id="install-steps">
+        	            <div class="threeColumn column1">
+        	                <div class="innerColumn">
+        	                <h2><img src="/_Content/website-assets/img/vslogo-white.png" /></h2>
+        	                1.Right click your solution in Visual Studio, and select "Manage NuGet Packages".
+        	                </div>
+        	            </div>
+        	            <div class="threeColumn column2">
+        	                <div class="innerColumn">
+        	                <h2><img src="/_Content/website-assets/img/enter-command.png" /></h2>
+            	                2.Use the NuGet manager to search and install the Glimpse extensions you want.
+        	                </div>
+        	            </div>
+        	            <div class="threeColumn column3">
+        	                <div class="innerColumn">
+        	                <h2><img src="/_Content/website-assets/img/play-project.png" /></h2>
+        	                3.Start your project, go to http://yourproject/glimpse.axd, click "Start".
+        	                </div>
+        	            </div>
+        	            <hr class="clearer" />
+                        <!--div id="install-command">
+        	                PM> Install-Package Glimpse
+        	            </div-->
+        	        </div>
+        	    </section>
+        	</div>
+        </header>
+        <div class="section-container" id="page-title">
+        	<section>
+        	    @RenderSection("header")
+        	</section>
         </div>
-    </header>
-    <div class="body gw">
-        <div class="body-inner">
-            <div class="g one-whole stats-sub-menu hide--desk">
-                <div class="stat-group">
-                    <dl class="stat">
-                        <dt class="stat__title hide--palm">Community</dt>
-                        <dd class="stat__value"><a href="@Url.Action(MVC.Community.Index())" class="sprite sprite-root sprite-root-community"></a></dd>
-                    </dl>
-                    <dl class="stat">
-                        <dt class="stat__title hide--palm">Documentation</dt>
-                        <dd class="stat__value"><a href="/Help" class="sprite sprite-root sprite-root-documentation"></a></dd> 
-                    </dl>
-                    <dl class="stat">
-                        <dt class="stat__title hide--palm">Extensions</dt>
-                        <dd class="stat__value"><a href="@Url.Action(MVC.Packages.Index())" class="sprite sprite-root sprite-root-plugins"></a></dd> 
-                    </dl>
-                    <dl class="stat">
-                        <dt class="stat__title hide--palm">Support</dt>
-                        <dd class="stat__value"><a href="@Url.Action(MVC.Support.Index())" class="sprite sprite-root sprite-root-support"></a></dd> 
-                    </dl>
-                </div> 
+        	
+        <div id="sub-nav-container" class="section-container">
+        	<div id="sub-nav">
+        	    @RenderSection("subnav")
+        	</div>
+        </div>
+        <div class="section-container" id="main-content">
+            <section>
+        	    @RenderBody()
+            </section>
+        </div>
+        <div class="section-container" id="footer-container">
+            <footer>
+                <div id="mountains"></div>
+                <div id="towers"></div>
+                <div id="build-tower">
+                    <div id="build-info" class="handwritten">
+                        The last build (#<span id="build-id"></span>) <span id="build-status">was successful</span> on <span id="build-date">21st April 2013 at 21:09</span>.
+                    </div>
+                    <div id="build-arrow">&nbsp;</div>
+                </div>
+                <div class="twoColumn column1">
+                    <div class="innerColumn">
+                        <span class="icon twitter">&nbsp;</span>Keep up with us <a href="https://twitter.com/search?q=from%3A%40nikmd23 OR from%3A%40anthony_vdh %23glimpse">#glimpse</a>:
+                        <div id="tweets"></div>
+                    </div><!--Class:innerColumn-->
+                </div><!--Class:twoColumn column1-->
+                <div class="twoColumn column2">
+                    <div class="innerColumn">
+                        <ul>
+                            <li class="contact"><span class="icon mail">&nbsp;</span>We love hearing from you, email us on <a href="mailto:team@getglimpse.com">team@@getglimpse.com</a>.</li>
+                            <li class="google"><span class="icon google">&nbsp;</span>We have a great active community. Get to know them on our <a href="http://groups.google.com/group/getglimpse-dev">google group</a>.</li>
+                            <li class="github"><span class="icon github">&nbsp;</span>Did we mention glimpse is open source? Take a look at the code on <a href="http://www.github.com/glimpse/glimpse">github</a>.</li>
+                        </ul>
+                    </div><!--Class:innerColumn-->
+                </div><!--Class:twoColumn column2-->
+            </footer>
+            <hr class="footer-split" />
+            <div class="redgate-footer"> 
+                    Proudly backed by <a href="http://www.red-gate.com/"><img src="/_Content/website-assets/img/redgate.png" id="redgate-logo"></a> <a href="http://www.github.com/glimpse/glimpse">and you!</a>
             </div>
-            @RenderBody()
+            
         </div>
-    </div>
-    <footer class="gw">
-        <div class="footer-outer">
-            <div class="footer-inner"> 
-                <section class="g one-whole bottom-backing">
-                    Proudly backed by <a href="http://www.red-gate.com/"><img src="~/Content/_v1/site-redgate-logo.png" style="vertical-align:middle" /></a> <a href="#">and you!</a>
-                </section>
-            </div>
-        </div>
-    </footer>
-    @Scripts.Render("~/Script/javascript")
-    @RenderSection("scripts", false)
-</body>
+        @Scripts.Render("~/Script/javascript")
+        @RenderSection("scripts", false)
+    </body>
 </html>
