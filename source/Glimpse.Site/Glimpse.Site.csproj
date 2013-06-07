@@ -214,53 +214,6 @@
     <Content Include="Views\Talk\Index.cshtml" />
     <Content Include="Views\Protocol\Index.cshtml" />
     <Content Include="Views\Shared\_Simple.cshtml" />
-    <Content Include="_Content\website-assets\css\.gitignore" />
-    <Content Include="_Content\website-assets\css\global.css">
-      <DependentUpon>global.less</DependentUpon>
-    </Content>
-    <Content Include="_Content\website-assets\css\global.min.css">
-      <DependentUpon>global.less</DependentUpon>
-    </Content>
-    <Content Include="_Content\website-assets\css\tipsy.css" />
-    <Content Include="_Content\website-assets\img\.gitignore" />
-    <Content Include="_Content\website-assets\img\anthony.png" />
-    <Content Include="_Content\website-assets\img\backup-loader.gif" />
-    <Content Include="_Content\website-assets\img\build-tower.png" />
-    <Content Include="_Content\website-assets\img\console-view-screenshot.png" />
-    <Content Include="_Content\website-assets\img\contributors\pic1.jpg" />
-    <Content Include="_Content\website-assets\img\contributors\pic10.jpg" />
-    <Content Include="_Content\website-assets\img\contributors\pic2.jpg" />
-    <Content Include="_Content\website-assets\img\contributors\pic3.jpg" />
-    <Content Include="_Content\website-assets\img\contributors\pic4.jpg" />
-    <Content Include="_Content\website-assets\img\contributors\pic5.jpg" />
-    <Content Include="_Content\website-assets\img\contributors\pic6.jpg" />
-    <Content Include="_Content\website-assets\img\contributors\pic7.jpg" />
-    <Content Include="_Content\website-assets\img\contributors\pic8.jpg" />
-    <Content Include="_Content\website-assets\img\contributors\pic9.jpg" />
-    <Content Include="_Content\website-assets\img\demo-bg.png" />
-    <Content Include="_Content\website-assets\img\enter-command.png" />
-    <Content Include="_Content\website-assets\img\getglimpse-sprite.png" />
-    <Content Include="_Content\website-assets\img\glimpse-tool.png" />
-    <Content Include="_Content\website-assets\img\in-monitor-screen.png" />
-    <Content Include="_Content\website-assets\img\intro-bg.png" />
-    <Content Include="_Content\website-assets\img\monitor.png" />
-    <Content Include="_Content\website-assets\img\mountains.png" />
-    <Content Include="_Content\website-assets\img\nik.png" />
-    <Content Include="_Content\website-assets\img\osguy.png" />
-    <Content Include="_Content\website-assets\img\package-manager-screenshot.png" />
-    <Content Include="_Content\website-assets\img\play-project.png" />
-    <Content Include="_Content\website-assets\img\redgate.png" />
-    <Content Include="_Content\website-assets\img\towers.png" />
-    <Content Include="_Content\website-assets\img\vslogo-white.png" />
-    <Content Include="_Content\website-assets\scripts\.gitignore" />
-    <Content Include="_Content\website-assets\scripts\global-ck.js" />
-    <Content Include="_Content\website-assets\scripts\global.js" />
-    <Content Include="_Content\website-assets\scripts\home-ck.js" />
-    <Content Include="_Content\website-assets\scripts\home.js" />
-    <Content Include="_Content\website-assets\scripts\jquery.scrollTo.js" />
-    <Content Include="_Content\website-assets\scripts\jquery.scrollTo.min.js" />
-    <Content Include="_Content\website-assets\scripts\jquery.tipsy.js" />
-    <None Include="_Content\inuit.less" />
     <Content Include="Content\close-quote.gif" />
     <Content Include="Content\cs_leftImg.png" />
     <Content Include="Content\cs_rightImg.png" />
@@ -316,53 +269,6 @@
     <Content Include="Content\twitter.png" />
     <Content Include="Content\uservoice-icon.png" />
     <Content Include="sprite.png" />
-    <Content Include="_Content\Contributors\pic1.jpg" />
-    <Content Include="_Content\Contributors\pic10.jpg" />
-    <Content Include="_Content\Contributors\pic2.jpg" />
-    <Content Include="_Content\Contributors\pic3.jpg" />
-    <Content Include="_Content\Contributors\pic4.jpg" />
-    <Content Include="_Content\Contributors\pic5.jpg" />
-    <Content Include="_Content\Contributors\pic6.jpg" />
-    <Content Include="_Content\Contributors\pic7.jpg" />
-    <Content Include="_Content\Contributors\pic8.jpg" />
-    <Content Include="_Content\Contributors\pic9.jpg" />
-    <Content Include="_Content\favicon.ico" />
-    <Content Include="_Content\favicon.png" />
-    <Content Include="_Content\first-install-minimized.png" />
-    <Content Include="_Content\img\emailIcon.png" />
-    <Content Include="_Content\img\glimpse-minimised.png" />
-    <Content Include="_Content\img\glimpseInBrowser.png" />
-    <Content Include="_Content\img\google.png" />
-    <Content Include="_Content\img\googleGroupIcon.png" />
-    <Content Include="_Content\img\ideas.png" />
-    <Content Include="_Content\img\kipTooltip.png" />
-    <Content Include="_Content\img\logo-nuget.png" />
-    <Content Include="_Content\img\logo.png" />
-    <Content Include="_Content\img\redgate.png" />
-    <Content Include="_Content\img\small-cross.png" />
-    <Content Include="_Content\img\small-tick.png" />
-    <Content Include="_Content\img\twitter.png" />
-    <Content Include="_Content\img\twitterIcon.png" />
-    <Content Include="_Content\img\updateTick.png" />
-    <Content Include="_Content\img\warning.png" />
-    <Content Include="_Content\inuit.css">
-      <DependentUpon>inuit.less</DependentUpon>
-    </Content>
-    <Content Include="_Content\inuit.min.css">
-      <DependentUpon>inuit.less</DependentUpon>
-    </Content>
-    <Content Include="_Content\logo-medium.png" />
-    <Content Include="_Content\logo-nuget.png" />
-    <Content Include="_Content\logo-redgate.png" />
-    <Content Include="_Content\logo.png" />
-    <Content Include="_Content\options-root.png" />
-    <Content Include="_Content\screen.css">
-      <DependentUpon>screen.less</DependentUpon>
-    </Content>
-    <Content Include="_Content\screen.min.css">
-      <DependentUpon>screen.less</DependentUpon>
-    </Content>
-    <Content Include="_Content\twitterIcon.png" />
     <Content Include="Global.asax" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\glimpse.js" />
@@ -384,7 +290,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="_Content\screen.less" />
     <Content Include="T4MVC.tt.hooks.t4" />
     <Content Include="T4MVC.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -397,9 +302,6 @@
     <Content Include="Views\Docs\Index.cshtml" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
     <Content Include="Views\Docs\Wiki\**\*.*" />
-    <Content Include="_Content\website-assets\css\global.less" />
-    <Content Include="_Content\website-assets\css\pages.less" />
-    <Content Include="_Content\website-assets\fonts\ArchitectsDaughter.ttf" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
