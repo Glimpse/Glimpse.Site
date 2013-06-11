@@ -29,6 +29,7 @@ namespace Glimpse.Site
             ));
 
             bundles.Add(new ScriptBundle("~/Script/javascript").Include("~/Scripts/site.google.js",
+                "~/Content/_v2//website-assets/scripts/jquery-1.9.1.js",
                 "~/Content/_v2//website-assets/scripts/jquery.scrollTo.js",
                 "~/Content/_v2//website-assets/scripts/jquery.tipsy.js",
                 "~/Content/_v2//website-assets/scripts/global-ck.js",

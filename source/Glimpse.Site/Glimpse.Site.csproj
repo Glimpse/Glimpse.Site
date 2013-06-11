@@ -292,6 +292,8 @@
     <Content Include="Content\_v2\website-assets\scripts\global.js" />
     <Content Include="Content\_v2\website-assets\scripts\home-ck.js" />
     <Content Include="Content\_v2\website-assets\scripts\home.js" />
+    <Content Include="Content\_v2\website-assets\scripts\jquery-1.9.1.js" />
+    <Content Include="Content\_v2\website-assets\scripts\jquery-1.9.1.min.js" />
     <Content Include="Content\_v2\website-assets\scripts\jquery.scrollTo.js" />
     <Content Include="Content\_v2\website-assets\scripts\jquery.scrollTo.min.js" />
     <Content Include="Content\_v2\website-assets\scripts\jquery.tipsy.js" />
