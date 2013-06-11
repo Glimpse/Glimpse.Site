@@ -1,6 +1,7 @@
 ﻿@model Glimpse.Package.ReleaseQueryInfo
 @{
-    ViewBag.Title = "Glimpse - Readme"; 
+    ViewBag.Title = "Glimpse - Readme";
+    ViewBag.pageCss = "/Content/_v2/website-assets/css/firstRun.css";
 }
 
 @section header {
@@ -20,7 +21,7 @@ The details of what has changed are below…
     var updated = detail.Value.HasResult && !detail.Value.HasNewer ? "latest" : (detail.Value.HasResult ? "old" : "not-found"); //latest = updated, old = still on old version, not-found = no package avail.
             
     <div class="release-package @updated">
-        <h3 class="release-package-title"><img src="@image" onerror="this.src = '/Content/_v2/logo-nuget.png';"/>@detail.Key<span class="status-img">&nbsp;</span></h3>  
+        <h3 class="release-package-title"><img height="64" style="float:left; padding-right:10px;" src="@image" onerror="this.src = '/Content/_v2/logo-nuget.png';"/>@detail.Key<span class="status-img">&nbsp;</span></h3>  
         <div class="release-package-details">
             <div class="release-package-message">
                 <div class="release-package-message-title">
@@ -72,50 +73,3 @@ The details of what has changed are below…
     </dd>
     </div>
 </dl>
-
-
-@*@if (detail.Value.HasResult) 
-                {
-                    <div class="release-package-details">
-                        @if (detail.Value.HasNewer) {
-                            <div class="release-package-message release-package-old-found">
-                                <div class="release-package-message-title">Sorry, it looks like you are currenly out of date</div>
-                                <span class="release-installed-version">Installed version: <strong>@detail.Value.Version</strong></span>
-                                <span class="release-latest-version">Latest version: <strong>@detail.Value.Summary[detail.Value.Channel].LatestVersion</strong></span>
-                                @detail.Value.Release.ReleaseNotes
-                            </div>
-                        }
-                        else {
-                            <div class="release-package-message release-package-latest-found">
-                                <div class="release-package-message-title">Congratulations, you are up to date</div>
-                                <span class="release-installed-version">Installed version: <strong>@detail.Value.Version</strong></span>
-                                <span class="release-latest-version">Latest version: <strong>@detail.Value.Version</strong></span>
-                                @detail.Value.Release.ReleaseNotes 
-                            </div>
-                        }    
-                        
-                        @if (detail.Value.RequestedReleases != null) 
-                        {
-                            <div class="release-item-detail-holder">
-                                @foreach (var release in detail.Value.RequestedReleases)
-                                {
-                                    <div class="release-item-detail">
-                                        <div class="release-item-detail-header">
-                                            <span class="release-item-detail-title">@release.Key</span>
-                                            <span class="release-item-detail-date">@release.Value.Created.ToString("dd MMM yyyy")</span> 
-                                        </div>
-                                        <div class="release-item-detail-notes">
-                                            @if (!string.IsNullOrEmpty(@release.Value.ReleaseNotes)) { @release.Value.ReleaseNotes } 
-                                            else { <i>No notes avaiable for this release.</i> }
-                                        </div>
-                                    </div>
-                                }  
-                            </div> 
-                        }
-                    </div>
-                } 
-                else {
-                    <div class="release-package-message release-package-not-found">No release was found for this package.</div>
-                }
-
-*@

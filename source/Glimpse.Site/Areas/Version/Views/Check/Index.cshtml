@@ -1,36 +1,65 @@
 ﻿@model Glimpse.Package.ReleaseQueryInfo
 @{
     ViewBag.Title = "Update Check";
-    Layout = "~/Views/Shared/_Layout.cshtml";   
+    Layout = "~/Views/Shared/_Simple.cshtml";
+    ViewBag.pageCss = "/Content/_v2/website-assets/css/firstRun.css";  
 }
 
 @section header {
-    <section>
         <h1>Glimpse update status</h1>
-        <div class="gamma">all the different packages you have installed</div>
-    </section>
+        <p>all the different packages you have installed</p>
 }
 
-<section>
-    <div class="g one-whole">
-        <h2>Update Check</h2>
-    </div>
-    <div class="g four-fifths push--one-tenth">  
-        <div class="release-summary">
-            @{
-                var releasSummaryTitle = "No Release Avaiable";
-                var releasSummarySummary = "At the current time, it looks like you are fully up-to-date.";
-                var releasSummaryTitleClass = "";
-                if(Model.HasNewer) {
-                    releasSummaryTitle = "New Release Avaiable";
-                    releasSummarySummary = "The following is a summary of what you are currently missing out on.";
-                    releasSummaryTitleClass = "is-success";
+
+@foreach (var detail in Model.Details)
+{
+    var image = string.IsNullOrEmpty(detail.Value.PackageIconUrl) ? "/Content/_v2/img/logo-nuget.png" : detail.Value.PackageIconUrl;
+    var updated = detail.Value.HasResult && !detail.Value.HasNewer ? "latest" : (detail.Value.HasResult ? "old" : "not-found"); //latest = updated, old = still on old version, not-found = no package avail.
+            
+    <div class="release-package @updated" style="margin-bottom:30px;">
+        <h3 class="release-package-title"><img height="64" style="float:left; padding-right:10px;" src="@image" onerror="this.src = '/Content/_v2/logo-nuget.png';"/>@detail.Key<span class="status-img">&nbsp;</span></h3>  
+        
+        <div class="release-package-details">
+            <div class="release-package-message">
+                @if(@updated == "latest" || @updated == "old") {
+                    var latest = @updated == "old" ? @detail.Value.Summary[detail.Value.Channel].LatestVersion : @detail.Value.Version;
+                    <span class="release-installed-version">Installed version: <strong>@detail.Value.Version</strong></span>
+        <span class="release-latest-version">Latest version: <strong>@latest</strong></span>
+                    <div class="release-installed-details">
+                        <h3 style="clear:both;">Release Notes</h3>
+                        @if (detail.Value.AvailableReleases != null) 
+                                {
+                                    <div class="release-item-detail-holder">
+                                        @foreach (var release in detail.Value.AvailableReleases)
+                                        {
+                                            <div class="release-item-detail">
+                                                <div class="release-item-detail-header" style="font-weight:bold;">
+                                                    <span class="release-item-detail-title">@release.Key</span>
+                                                    <span class="release-item-detail-date">@release.Value.Created.ToString("dd MMM yyyy")</span> 
+                                                </div>
+                                                <div class="release-item-detail-notes" style="margin-left:20px; margin-bottom:20px;">
+                                                    @if (!string.IsNullOrEmpty(@release.Value.ReleaseNotes)) { @Html.HtmlEncode(release.Value.ReleaseNotes, true) } 
+                                                    else { <i>No notes avaiable for this release.</i> }
+                                                </div>
+                                            </div>
+                                        }  
+                                    </div> 
+                                }
+                    </div>
+                    <div class="release-item-detail-notes">
+                        @if (!string.IsNullOrEmpty(@detail.Value.Release.ReleaseNotes)) { @detail.Value.Release.ReleaseNotes } 
+                        else { <i>No notes avaiable for this release.</i> }
+                    </div>
                 }
-            }
-    
-            <div class="release-summary-title @releasSummaryTitleClass">@releasSummaryTitle</div>
-            <div class="release-summary-desc">@releasSummarySummary</div>   
-        </div>
+                        
+            </div>@*end:.release-package-message*@
+        </div>@*end:release-package-details*@
+    </div>@*end:release-package @updated*@
+}
+
+
+@*
+<section>
 
         @foreach(var detail in Model.Details)
         {
@@ -88,3 +117,25 @@
         }
     </div>
 </section>
+*@
+<dl class="threeColumn column1">
+    <div class="innerColumn">
+    <dt><img src="~/Content/_v2/img/ideas.png" alt="Issues or Suggestions" /></dt>
+    <dd>If you have found an issue or have a idea, let us know on our <a href="https://github.com/glimpse/glimpse/issues" target="_blank">issues list</a>.
+    </dd>
+    </div>
+</dl>
+<dl class="threeColumn column2">
+    <div class="innerColumn">
+    <dt><img src="~/Content/_v2/img/google.png" alt="developer list" /></dt>
+    <dd>Get answers to questions and find out what is next for Glimpse on our <a href="https://groups.google.com/forum/?fromgroups#!forum/getglimpse-dev" target="_blank">community user group</a>.
+    </dd>
+    </div>
+</dl>
+<dl class="threeColumn column3">
+    <div class="innerColumn">
+    <dt><img src="~/Content/_v2/img/twitter.png" alt="twitter contacts" /></dt>
+    <dd>Feel free to get in touch with the us on Twitter: <a href="http://www.twitter.com/anthony_vdh" target="_blank">@@anthony_vdh</a> or <a href="http://www.twitter.com/nikmd23" target="_blank">@@nikmd23</a>.
+    </dd>
+    </div>
+</dl>
