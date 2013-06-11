@@ -32,7 +32,6 @@ function getBlogPosts() {
     //live address - /home/glimpseblogposts
     $.getJSON("/home/glimpseblogposts", function(data) {
       $.each(data, function(i,item){
-          console.log(item);
           $('#blog-section .column'+(i+1)+' .innerColumn')
               .empty()
               .append('<h2>' + item.title + '</h2>')
@@ -91,7 +90,6 @@ $().ready(function () {
     $('a.download, #demo>section>a.button').click(function (e) {
         e.preventDefault();
         if ($('#install').css('display') === 'none') {
-            console.log('clicked');
             $(window).scrollTo(0, 1500);
         }
         $('#install').stop().slideToggle();
@@ -100,6 +98,6 @@ $().ready(function () {
     //call the external stuff last
     getBuildStatus();
     getTweets();
-    getBlogPosts()
+    getBlogPosts();
 });
 
