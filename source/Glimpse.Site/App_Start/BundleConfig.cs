@@ -28,11 +28,12 @@ namespace Glimpse.Site
                 "~/Content/_v2//website-assets/css/tipsy.css"    
             ));
 
-            bundles.Add(new ScriptBundle("~/Script/javascript").Include("~/Scripts/site.google.js",
-                "~/Content/_v2//website-assets/scripts/jquery.scrollTo.js",
-                "~/Content/_v2//website-assets/scripts/jquery.tipsy.js",
-                "~/Content/_v2//website-assets/scripts/global.js",
-                "~/Content/_v2//website-assets/scripts/home.js"
+            bundles.Add(new ScriptBundle("~/Script/javascript").Include(
+                "~/Scripts/site.google.js",
+                //"~/Content/_v2/website-assets/scripts/jquery.scrollTo.js",
+                //"~/Content/_v2/website-assets/scripts/jquery.tipsy.js",
+                "~/Content/_v2/website-assets/scripts/global.js",
+                "~/Content/_v2/website-assets/scripts/home.js"
             ));
 
             //bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
