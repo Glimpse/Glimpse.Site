@@ -9,7 +9,7 @@ $().ready(function () {
             $(this).addClass('open');
         }
     });
-    if ($.browser.msie) {
+    if (navigator.appName.indexOf("Internet Explorer")!=-1) {
       $("body").addClass("ie");
     }
 });
