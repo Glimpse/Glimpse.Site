@@ -31,8 +31,8 @@ namespace Glimpse.Site
             bundles.Add(new ScriptBundle("~/Script/javascript").Include("~/Scripts/site.google.js",
                 "~/Content/_v2//website-assets/scripts/jquery.scrollTo.js",
                 "~/Content/_v2//website-assets/scripts/jquery.tipsy.js",
-                "~/Content/_v2//website-assets/scripts/global-ck.js",
-                "~/Content/_v2//website-assets/scripts/home-ck.js"
+                "~/Content/_v2//website-assets/scripts/global.js",
+                "~/Content/_v2//website-assets/scripts/home.js"
             ));
 
             //bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
