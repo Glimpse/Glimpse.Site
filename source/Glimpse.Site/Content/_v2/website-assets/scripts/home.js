@@ -32,6 +32,7 @@ function getBlogPosts() {
     //live address - /home/glimpseblogposts
     $.getJSON("/home/glimpseblogposts", function(data) {
       $.each(data, function(i,item){
+          //console.log(item);
           $('#blog-section .column'+(i+1)+' .innerColumn')
               .empty()
               .append('<h2>' + item.title + '</h2>')
@@ -51,7 +52,7 @@ function getTweets() {
       count++;
        ct = item.text;
       // include time tweeted - thanks to will
-    	mytime = item.created_at;
+        mytime = item.created_at;
     	var strtime = mytime.replace(/(\+\S+) (.*)/, '$2 $1')
     	var mydate = new Date(Date.parse(strtime)).toLocaleDateString();
     	var mytime = new Date(Date.parse(strtime)).toLocaleTimeString();
@@ -80,7 +81,10 @@ function loadInlineVideo() {
 $().ready(function () {
     //prep the page
     
-    $('.hover-point').tipsy();
+    $('.hover-point').each(function() {
+        //console.log($(this).attr('data-tipsy'));
+        $(this).tipsy({gravity:$(this).attr('data-tipsy')});
+    });
     
     $('.video-link').click(function(e) {
         e.preventDefault();
@@ -90,6 +94,7 @@ $().ready(function () {
     $('a.download, #demo>section>a.button').click(function (e) {
         e.preventDefault();
         if ($('#install').css('display') === 'none') {
+            //console.log('clicked');
             $(window).scrollTo(0, 1500);
         }
         $('#install').stop().slideToggle();
@@ -98,6 +103,6 @@ $().ready(function () {
     //call the external stuff last
     getBuildStatus();
     getTweets();
-    getBlogPosts();
+    getBlogPosts()
 });
 
