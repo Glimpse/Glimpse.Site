@@ -3,13 +3,14 @@
 @maxWidth:980px;
 @minWidth:200px;
 @linkBlue:#33a6ee;
-@imgFolder:"/Content/_v2/website-assets/img/";
+@imgFolder:"/_Content/website-assets/img/";
+//@imgFolder:"/assets/img/";//local testing url
 @sprite:url("@{imgFolder}getglimpse-sprite.png");
 
 //globals
 @font-face {
     font-family: 'ArcitectsDaughter';
-    src: url('/Content/_v2/website-assets/fonts/ArchitectsDaughter.ttf') format('truetype');    
+    src: url('/_Content/website-assets/fonts/ArchitectsDaughter.ttf') format('truetype');    
     font-weight: normal;
     font-style: normal;
 }
@@ -24,6 +25,7 @@ html, body {
     color: @darkColor;
     line-height: 1.4;
     font-size: 14px;
+    min-width: 640px;
 }
 
 .handwritten {
@@ -337,23 +339,23 @@ hr.clearer {
         }
         #demo-hover-tabs {
             left: 39%;
-            top: 7px;
+            top: 2%;
         }
         #demo-hover-autocustom {
-            left: 9%;
-            top: 10%;
+            left: 8.8%;
+            top: 11.8%;
         }
         #demo-hover-tab-detail {
             left: 55%;
-            top: 51%;
+            top: 53%;
         }
         #demo-hover-ajax {
-            right: 51px;
-            top: 30px;
+            right: 5.1%;
+            top: 12%;
         }
         #demo-hover-power {
-            right: 85px;
-            top: 9px;
+            right: 8.5%;
+            top: 3%;
         }
     }
     &#why-glimpse {
@@ -417,7 +419,7 @@ hr.clearer {
                 -webkit-backface-visibility: hidden;
                 -moz-backface-visibility: hidden;
                 backface-visibility: hidden;
-            	position: absolute;
+                position: absolute;
             	top: 0;
                 left: 0;
                 
@@ -615,7 +617,7 @@ hr.clearer {
                 position: absolute;
                 width: 29px;
                 height: 26px;
-                top: 60px;
+                top: 50px;
                 left: -40px;
                 background: transparent @sprite 0 -400px no-repeat;
                 .rotate(-12deg);
@@ -839,7 +841,7 @@ section, footer, .section, .footer, #sub-nav {
     #tool-demo {
         display: none;
     }
-    .section-container#demo .inner-monitor {display:block; margin:0 auto; position:relative; margin-bottom:30px; width:100%;}
+    .section-container#demo .inner-monitor {display:block; margin:0 auto; position:relative; margin-bottom:30px; width:442px;}
     #nav-container {
         position: relative;
         nav {
@@ -874,8 +876,10 @@ section, footer, .section, .footer, #sub-nav {
     }
 }
 
-@media  all and (max-width: 590px) { 
-    
+@media  all and (max-device-width: 590px) { 
+    html, body {
+        min-width: 0;
+    }
     #the-team {
         left: -70px;
         right: auto;
@@ -914,6 +918,7 @@ section, footer, .section, .footer, #sub-nav {
         display: block;
     }
     #nav-container {
+        min-width: 0;
         //height: auto;
         nav {
             a {
