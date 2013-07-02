@@ -77,6 +77,10 @@ p {
     width: 120px;
 }
 
+.glimpse-logo img {
+    border: none;
+}
+
 .warning {background-color:lightyellow; padding:10px; border:2px solid #cccc00; border-top:none;}
 
 
