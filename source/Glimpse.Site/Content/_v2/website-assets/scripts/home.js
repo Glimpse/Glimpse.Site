@@ -101,8 +101,11 @@ $().ready(function () {
         
     });
     //call the external stuff last
-    getBuildStatus();
-    getTweets();
-    getBlogPosts()
+    if ($('body').hasClass('inVS') == false) {
+        getBuildStatus();
+        getTweets();
+        getBlogPosts()
+    }
+    
 });
 

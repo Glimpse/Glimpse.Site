@@ -9,11 +9,12 @@
     <meta name="msapplication-TileImage" content="~/Content/_v2/favicon.png"> 
     <meta name="viewport" content="width=device-width" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     <link type="text/css" href="@ViewBag.pageCss" media="screen" rel="stylesheet" />
 </head>
-<body>
+<body class="inVS">
     <div class="header">
         <div class="header-inner"> 
             <a href="@Url.Action(MVC.Home.Index())" class="glimpse-logo"><img src="~/Content/_v2/img/logo.png" alt="logo" /></a> 

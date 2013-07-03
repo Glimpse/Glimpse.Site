@@ -7,48 +7,46 @@
 @section header {
 <h1><img src="/Content/_v2/img/updatetick.png" alt="tick" id="updateTick" />You're up to date!</h1>
 <p>
-    Thanks for updating glimpse, for the number lover inside, you've gone from v### to v###.
-The details of what has changed are below…
+    Thanks for updating your packages. To see what improvements have been made be sure to take a look below. 
 
 </p>
 }
      
-<h2>Update Notes</h2>
-    
 @foreach (var detail in Model.Details)
 {
     var image = string.IsNullOrEmpty(detail.Value.PackageIconUrl) ? "/Content/_v2/img/logo-nuget.png" : detail.Value.PackageIconUrl;
-    var updated = detail.Value.HasResult && !detail.Value.HasNewer ? "latest" : (detail.Value.HasResult ? "old" : "not-found"); //latest = updated, old = still on old version, not-found = no package avail.
+    var updated = detail.Value.HasResult && !detail.Value.HasNewer ? "good" : (detail.Value.HasResult ? "bad" : "bad"); //latest = updated, old = still on old version, not-found = no package avail.
+    <div class="package @updated">
+        <div class="side-status @updated"></div>
+        <div class="package-icon"><img height="54" src="@image" onerror="this.src = '/Content/_v2/logo-nuget.png';"/></div>
+        <div class="package-details">
+            <h3>@detail.Key</h3>
+            <p class="package-status">Installed version:<span class="installed-version @updated">@detail.Value.Version</span> Latest version: @detail.Value.Summary[detail.Value.Channel].LatestVersion</p>
+            @if (detail.Value.AvailableReleases != null) 
+                                {
+                                    <a href="#" class="notes-link">whats new</a>
+                                    <div class="release-notes">
+                                        @foreach (var release in detail.Value.AvailableReleases)
+                                        {
+                                            <div class="release-item-detail">
+                                                <div class="release-item-detail-header">
+                                                    <span class="release-item-detail-title">@release.Key</span>
+                                                    <span class="release-item-detail-date">@release.Value.Created.ToString("dd MMM yyyy")</span> 
+                                                </div>
+                                                <div class="release-item-detail-notes">
+                                                    @if (!string.IsNullOrEmpty(@release.Value.ReleaseNotes)) { @Html.HtmlEncode(release.Value.ReleaseNotes, true) } 
+                                                    else { <i>No notes avaiable for this release.</i> }
+                                                </div>
+                                            </div>
+                                        }  
+                                    </div> 
+                                }
             
-    <div class="release-package @updated">
-        <h3 class="release-package-title"><img height="64" style="float:left; padding-right:10px;" src="@image" onerror="this.src = '/Content/_v2/logo-nuget.png';"/>@detail.Key<span class="status-img">&nbsp;</span></h3>  
-        <div class="release-package-details">
-            <div class="release-package-message">
-                <div class="release-package-message-title">
-                    @if(@updated == "latest") {
-                        <span>Congratulations, you are up to date</span>
-                    } else if (@updated == "old") {
-                        <span>Sorry, it looks you weren't updated to the latest version</span>
-                    } else {
-                        <span>No release was found for this package.</span>
-                    }
-                </div>@*end:.release-package-message-title*@
-                        
-                @if(@updated == "latest" || @updated == "old") {
-                    var latest = @updated == "old" ? @detail.Value.Summary[detail.Value.Channel].LatestVersion : @detail.Value.Version;
-                    <div class="release-installed-details">
-                        <span class="release-installed-version">Installed version: <strong>@detail.Value.Version</strong></span>
-                        <span class="release-latest-version">Latest version: <strong>@latest</strong></span>
-                    </div>
-                    <div class="release-item-detail-notes">
-                        @if (!string.IsNullOrEmpty(@detail.Value.Release.ReleaseNotes)) { @detail.Value.Release.ReleaseNotes } 
-                        else { <i>No notes avaiable for this release.</i> }
-                    </div>
-                }
-                        
-            </div>@*end:.release-package-message*@
-        </div>@*end:release-package-details*@
-    </div>@*end:release-package @updated*@
+        
+        </div>
+        <hr class="clearer" />
+    </div>
+  
 }
      
 
