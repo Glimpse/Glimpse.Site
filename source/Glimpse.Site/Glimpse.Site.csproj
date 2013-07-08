@@ -294,6 +294,8 @@
     <Content Include="Content\_v2\website-assets\css\tipsy.css" />
     <Content Include="Content\_v2\website-assets\img\anthony.png" />
     <Content Include="Content\_v2\website-assets\img\backup-loader.gif" />
+    <Content Include="Content\_v2\website-assets\img\bad-update-repeater.png" />
+    <Content Include="Content\_v2\website-assets\img\bad-update.png" />
     <Content Include="Content\_v2\website-assets\img\build-tower.png" />
     <Content Include="Content\_v2\website-assets\img\console-view-screenshot.png" />
     <Content Include="Content\_v2\website-assets\img\contributors\pic1.jpg" />
@@ -310,9 +312,12 @@
     <Content Include="Content\_v2\website-assets\img\enter-command.png" />
     <Content Include="Content\_v2\website-assets\img\getglimpse-sprite.png" />
     <Content Include="Content\_v2\website-assets\img\glimpse-tool.png" />
+    <Content Include="Content\_v2\website-assets\img\good-update-repeater.png" />
+    <Content Include="Content\_v2\website-assets\img\good-update.png" />
     <Content Include="Content\_v2\website-assets\img\in-monitor-screen.png" />
     <Content Include="Content\_v2\website-assets\img\intro-bg.png" />
     <Content Include="Content\_v2\website-assets\img\monitor.png" />
+    <Content Include="Content\_v2\website-assets\img\more-arrow.png" />
     <Content Include="Content\_v2\website-assets\img\mountains.png" />
     <Content Include="Content\_v2\website-assets\img\nik.png" />
     <Content Include="Content\_v2\website-assets\img\osguy.png" />
