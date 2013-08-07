@@ -47,7 +47,7 @@ function getTweets() {
     $.getJSON("/home/glimpsetweets",
      function(data) {
      var limit = 3, count = 0;
-      $.each(data.results, function(i,item){
+      $.each(data.statuses, function(i,item){
       count++;
        ct = item.text;
       // include time tweeted - thanks to will
@@ -56,7 +56,7 @@ function getTweets() {
     	var mydate = new Date(Date.parse(strtime)).toLocaleDateString();
     	var mytime = new Date(Date.parse(strtime)).toLocaleTimeString();
     	ct = ct.replace(/http:\/\/\S+/g,  '<a href="$&" target="_blank">$&</a>');
-        $("#tweets").append('<div class="tweet"><a href="https://twitter.com/'+item.from_user + '">'+item.from_user + "</a>: "+ct + " <br /><small>(" + mydate + " @ " + mytime + ")</small></div>");
+        $("#tweets").append('<div class="tweet"><a href="https://twitter.com/'+item.user.screen_name + '">'+item.user.screen_name + "</a>: "+ct + " <br /><small>(" + mydate + " @ " + mytime + ")</small></div>");
         if(count === limit) return false;
       });
      }).fail(function() {
