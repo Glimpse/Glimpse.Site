@@ -67,7 +67,7 @@ namespace Glimpse.Site.Controllers
             dynamic json = JObject.Parse(jsonString);
             string accessToken = json.access_token;
 
-            var query = "from:@nikmd23 OR from:@anthony_vdh #glimpse";
+            var query = "from:@nikmd23 OR from:@anthony_vdh OR from:@CGijbels #glimpse";
             var searchRequest = new HttpRequestMessage(HttpMethod.Get, "https://api.twitter.com/1.1/search/tweets.json?q=" + HttpUtility.UrlEncode(query));
             searchRequest.Headers.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
             var searchResponse = await httpClient.SendAsync(searchRequest);
