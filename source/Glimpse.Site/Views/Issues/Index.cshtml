@@ -1,0 +1,34 @@
+﻿@model Glimpse.Site.Models.IssuesIndexViewModel
+@{
+    ViewBag.Title = "Glimpse Issues";
+    ViewBag.bodyClass = "plugins-page";
+}
+@section header {
+    <h1>Issues</h1>
+}
+@section subnav {
+    &nbsp;
+}
+
+@foreach (var packageCategory in Model.PackageCategories)
+{
+    <h1>@packageCategory.Name</h1>
+    
+     foreach (var package in packageCategory.Packages)
+     {
+        <h3><img src="~/Content/@package.StatusImage" width="15"/> @package.Name</h3>
+     }
+    <strong>Acknowledged and working on</strong>
+    @Html.Partial("_Issues", packageCategory.AcknowledgedIssues)
+
+     <hr class="clearer"/>
+    
+    <strong>Fixed and yet to be released</strong>
+    @Html.Partial("_Issues", packageCategory.CompletedIssues)
+   
+    
+    <hr class="clearer"/>
+    <span class="call-action"><em>Next Release:</em> @packageCategory.NextRelease</span>
+    <hr class="clearer"/>
+    
+}

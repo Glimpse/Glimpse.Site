@@ -138,6 +138,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Controllers\CommunityController.cs" />
+    <Compile Include="Controllers\IssuesController.cs" />
     <Compile Include="Controllers\ProtocolController.cs" />
     <Compile Include="Controllers\SupportController.cs" />
     <Compile Include="Controllers\DocsController.cs" />
@@ -167,6 +168,7 @@
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DocumentationViewModel.cs" />
+    <Compile Include="Models\IssuesIndexViewModel.cs" />
     <Compile Include="PackagesController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -434,6 +436,8 @@
     <Content Include="Views\Docs\Index.cshtml" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
     <Content Include="Views\Docs\Wiki\**\*.*" />
+    <Content Include="Views\Issues\Index.cshtml" />
+    <Content Include="Views\Issues\_Issues.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

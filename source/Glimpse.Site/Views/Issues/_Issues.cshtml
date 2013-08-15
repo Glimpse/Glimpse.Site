@@ -1,0 +1,11 @@
+﻿@model System.Collections.Generic.IEnumerable<Glimpse.Site.Models.IssueViewModel>
+
+ <table>
+        @foreach (var issue in Model)
+        {
+            <tr><td><a href="@issue.IssueLinkUrl">#@issue.IssueId</a></td> 
+                <td>@issue.Category</td>
+                <td>@issue.Description</td>
+            </tr>
+        }
+    </table>
