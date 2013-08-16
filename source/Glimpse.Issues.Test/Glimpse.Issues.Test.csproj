@@ -58,7 +58,9 @@
   <ItemGroup>
     <Compile Include="CacheIssueRepository.cs" />
     <Compile Include="CachePackageRepository.cs" />
+    <Compile Include="CacheProvider.cs" />
     <Compile Include="GithubCacheRepositoryTests.cs" />
+    <Compile Include="IIssueRepository.cs" />
     <Compile Include="WhenCallingPackageIssueService.cs" />
     <Compile Include="GithubIssue.cs" />
     <Compile Include="GlimpsePackage.cs" />
