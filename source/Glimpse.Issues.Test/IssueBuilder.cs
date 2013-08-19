@@ -9,9 +9,9 @@
             return _issue;
         }
 
-        public IssueBuilder WithTag(string tag)
+        public IssueBuilder WithLabel(string tag)
         {
-            _issue.Body = string.Format("Random content but tagged with {0} ", tag);
+            _issue.Labels.Add(new GithubLabel() {Name = tag});
             return this;
         }
 

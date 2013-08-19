@@ -8,7 +8,7 @@ namespace Glimpse.Issues.Test
     public class WhenCallingPackageIssueService
     {
         private Mock<IIssueRepository> _issueRepository;
-        private Mock<CachePackageRepository> _packageRepository;
+        private Mock<PackageRepository> _packageRepository;
         private PackageIssueProvider _issueService;
         private PackageBuilder _packageBuilder;
         private IssueBuilder _issueBuilder;
@@ -16,7 +16,7 @@ namespace Glimpse.Issues.Test
 
         public WhenCallingPackageIssueService()
         {
-            _packageRepository = new Mock<CachePackageRepository>();
+            _packageRepository = new Mock<PackageRepository>();
             _issueRepository = new Mock<IIssueRepository>();
             _issueService = new PackageIssueProvider(_packageRepository.Object, _issueRepository.Object);
             _issueBuilder = new IssueBuilder();
@@ -32,7 +32,7 @@ namespace Glimpse.Issues.Test
         {
             var issueId = Guid.NewGuid().ToString();
             var glimpeCoreOpenIssue = _issueBuilder
-                .WithTag("Glimpse Core")
+                .WithLabel("Glimpse Core")
                 .WithState("open")
                 .WithId(issueId)
                 .Build();
@@ -48,7 +48,7 @@ namespace Glimpse.Issues.Test
         {
             var issueId = Guid.NewGuid().ToString();
             var glimpeCoreOpenIssue = _issueBuilder
-                .WithTag("Glimpse Core")
+                .WithLabel("Glimpse Core")
                 .WithState("closed")
                 .WithMilestone("vnext")
                 .WithId(issueId)
@@ -73,23 +73,3 @@ namespace Glimpse.Issues.Test
     }
 }
 
-// Create an HttpClient instance
-//      HttpClient client = new HttpClient();
-
-//       Send a request asynchronously continue when complete
-//            client.BaseAddress = new Uri("https://api.github.com/");
-//            var response = client.GetAsync("repos/glimpse/glimpse/issues");
-
-            // Add an Accept header for JSON format.
-//      client.DefaultRequestHeaders.Accept.Add(
-//          new MediaTypeWithQualityHeaderValue("application/json"));
-
-            // Check that response was successful or throw exception
-
-            // Read response asynchronously as JsonValue and write out top facts for each country
-//      dynamic content = response.Result.Content.ReadAsAsync<IEnumerable<object>>();
-
-//            foreach (var c in content.Result)
-//            {
-//                var body = c.body;
-//            }

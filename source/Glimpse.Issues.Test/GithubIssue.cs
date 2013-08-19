@@ -5,6 +5,10 @@ namespace Glimpse.Issues.Test
 {
     public class GithubIssue
     {
+        public GithubIssue()
+        {
+            Labels = new List<GithubLabel>();
+        }
         public string Url { get; set; }
         public string Labels_Url { get; set; }
         public string Comments_Url { get; set; }
@@ -14,7 +18,7 @@ namespace Glimpse.Issues.Test
         public string Number { get; set; }
         public string Title { get; set; }
         public GithubUser User { get; set; }
-        public IEnumerable<GithubLabel> Labels { get; set; }
+        public IList<GithubLabel> Labels { get; set; }
         public string State { get; set; }
         public GithubUser Assignee { get; set; }
         public GithubMilestone Milestone { get; set; }
@@ -31,6 +35,24 @@ namespace Glimpse.Issues.Test
             {
                 return State == "open" ? GithubIssueStatus.Open : GithubIssueStatus.Closed;
             }
+        }
+
+        protected bool Equals(GithubIssue other)
+        {
+            return string.Equals(Id, other.Id);
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            if (ReferenceEquals(this, obj)) return true;
+            if (obj.GetType() != this.GetType()) return false;
+            return Equals((GithubIssue) obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return (Id != null ? Id.GetHashCode() : 0);
         }
     }
 

@@ -32,11 +32,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="JsonFx">
+      <HintPath>..\..\packages\JsonFx.2.0.1209.2802\lib\net40\JsonFx.dll</HintPath>
+    </Reference>
     <Reference Include="Moq">
       <HintPath>..\..\packages\Moq.4.0.10827\lib\NET40\Moq.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp">
+      <HintPath>..\..\packages\RestSharp.104.1\lib\net4\RestSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -57,9 +63,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CacheIssueRepository.cs" />
-    <Compile Include="CachePackageRepository.cs" />
+    <Compile Include="PackageRepository.cs" />
     <Compile Include="CacheProvider.cs" />
+    <Compile Include="CacheProviderTests.cs" />
     <Compile Include="GithubCacheRepositoryTests.cs" />
+    <Compile Include="GithubIssueQuery.cs" />
+    <Compile Include="GithubIssueService.cs" />
     <Compile Include="IIssueRepository.cs" />
     <Compile Include="WhenCallingPackageIssueService.cs" />
     <Compile Include="GithubIssue.cs" />
@@ -71,6 +80,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="packages.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Glimpse.Package\Glimpse.Package.csproj">
+      <Project>{A0EFE764-BBDE-4815-81A5-25A1FB204DE7}</Project>
+      <Name>Glimpse.Package</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />

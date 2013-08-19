@@ -1,0 +1,13 @@
+﻿[
+	{
+		"title" : "Glimpse.Core",
+		"tag":"#Glimpse.Core",
+		"status": "red",
+		"statusdescription": "issue with xml reader"
+	},
+	{
+		"title": "Glimpse.MVC4",
+		"tag": "#Glimpse.MCV",
+		"status": "green"
+	}
+]

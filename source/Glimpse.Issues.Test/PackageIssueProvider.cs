@@ -5,19 +5,19 @@ namespace Glimpse.Issues.Test
 {
     public class PackageIssueProvider
     {
-        private readonly CachePackageRepository _cachePackageRepository;
+        private readonly PackageRepository _packageRepository;
         private readonly IIssueRepository _cacheIssueRepository;
 
-        public PackageIssueProvider(CachePackageRepository cachePackageRepository, IIssueRepository cacheIssueRepository)
+        public PackageIssueProvider(PackageRepository packageRepository, IIssueRepository cacheIssueRepository)
         {
-            _cachePackageRepository = cachePackageRepository;
+            _packageRepository = packageRepository;
             _cacheIssueRepository = cacheIssueRepository;
         }
 
         public IEnumerable<GlimpsePackage> GetPackageIssues()
         {
             var issues = _cacheIssueRepository.GetAllIssues();
-            var packages = _cachePackageRepository.GetAllPackages().ToList();
+            var packages = _packageRepository.GetAllPackages().ToList();
             foreach (var issue in issues)
             {
                 AddIssueToAssociatedPackage(packages, issue);
@@ -27,9 +27,17 @@ namespace Glimpse.Issues.Test
 
         private void AddIssueToAssociatedPackage(IEnumerable<GlimpsePackage> packages, GithubIssue issue)
         {
-            foreach (var package in packages.Where(package => issue.Body.Contains(package.Tag)))
+            var labels = issue.Labels.Select(l => l.Name).ToList();
+            foreach (var package in packages)
             {
-                package.Issues.Add(issue);
+                foreach (var label in labels)
+                {
+                    if (package.Tag.Contains(label) || package.Category.Contains(label))
+                    {
+                        package.AddIssue(issue);
+                    }
+                }
+
             }
         }
     }
