@@ -257,6 +257,7 @@
     <Content Include="Content\_v2\favicon.ico" />
     <Content Include="Content\_v2\favicon.png" />
     <Content Include="Content\_v2\first-install-minimized.png" />
+    <Content Include="Content\_v2\glimpseGallery.xml" />
     <Content Include="Content\_v2\img\emailIcon.png" />
     <Content Include="Content\_v2\img\glimpse-minimised.png" />
     <Content Include="Content\_v2\img\glimpseInBrowser.png" />
