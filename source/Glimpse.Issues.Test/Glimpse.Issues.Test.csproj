@@ -62,20 +62,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CacheIssueRepository.cs" />
-    <Compile Include="PackageRepository.cs" />
-    <Compile Include="CacheProvider.cs" />
-    <Compile Include="CacheProviderTests.cs" />
-    <Compile Include="GithubCacheRepositoryTests.cs" />
-    <Compile Include="GithubIssueQuery.cs" />
-    <Compile Include="GithubIssueService.cs" />
-    <Compile Include="IIssueRepository.cs" />
-    <Compile Include="WhenCallingPackageIssueService.cs" />
-    <Compile Include="GithubIssue.cs" />
-    <Compile Include="GlimpsePackage.cs" />
-    <Compile Include="IssueBuilder.cs" />
+    <Compile Include="GithubIssueServiceTests.cs" />
     <Compile Include="PackageBuilder.cs" />
-    <Compile Include="PackageIssueProvider.cs" />
+    <Compile Include="WhenLoadingGlimpsePackagesFromRepository.cs" />
+    <Compile Include="WhenCallingPackageIssueService.cs" />
+    <Compile Include="IssueBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -85,6 +76,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Glimpse.Issues\Glimpse.Issues.csproj">
+      <Project>{5fe03002-28d6-4f7c-9c63-84bde2334070}</Project>
+      <Name>Glimpse.Issues</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Glimpse.Package\Glimpse.Package.csproj">
       <Project>{A0EFE764-BBDE-4815-81A5-25A1FB204DE7}</Project>
       <Name>Glimpse.Package</Name>

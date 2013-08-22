@@ -8,7 +8,7 @@ namespace Glimpse.Issues.Test
     public class WhenCallingPackageIssueService
     {
         private Mock<IIssueRepository> _issueRepository;
-        private Mock<PackageRepository> _packageRepository;
+        private Mock<IPackageRepository> _packageRepository;
         private PackageIssueProvider _issueService;
         private PackageBuilder _packageBuilder;
         private IssueBuilder _issueBuilder;
@@ -16,7 +16,7 @@ namespace Glimpse.Issues.Test
 
         public WhenCallingPackageIssueService()
         {
-            _packageRepository = new Mock<PackageRepository>();
+            _packageRepository = new Mock<IPackageRepository>();
             _issueRepository = new Mock<IIssueRepository>();
             _issueService = new PackageIssueProvider(_packageRepository.Object, _issueRepository.Object);
             _issueBuilder = new IssueBuilder();

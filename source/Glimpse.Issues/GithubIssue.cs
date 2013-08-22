@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Glimpse.Issues.Test
+namespace Glimpse.Issues
 {
     public class GithubIssue
     {

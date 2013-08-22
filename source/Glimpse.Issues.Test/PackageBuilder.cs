@@ -5,7 +5,7 @@
         private readonly GlimpsePackage _glimpsePackage = new GlimpsePackage();
         public PackageBuilder WithTag(string tag)
         {
-            _glimpsePackage.Tag = tag;
+            _glimpsePackage.Tags.Add(tag);
             return this;
         }
 
