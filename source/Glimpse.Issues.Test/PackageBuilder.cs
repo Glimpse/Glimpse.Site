@@ -13,5 +13,11 @@
         {
             return _glimpsePackage;
         }
+
+        public PackageBuilder WithCategory(string category)
+        {
+            _glimpsePackage.Category = category;
+            return this;
+        }
     }
 }

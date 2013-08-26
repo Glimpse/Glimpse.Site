@@ -62,8 +62,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GithubIssueServiceTests.cs" />
     <Compile Include="PackageBuilder.cs" />
+    <Compile Include="WhenConvertingToIssueViewModelIndex.cs" />
     <Compile Include="WhenLoadingGlimpsePackagesFromRepository.cs" />
     <Compile Include="WhenCallingPackageIssueService.cs" />
     <Compile Include="IssueBuilder.cs" />
@@ -83,6 +83,10 @@
     <ProjectReference Include="..\Glimpse.Package\Glimpse.Package.csproj">
       <Project>{A0EFE764-BBDE-4815-81A5-25A1FB204DE7}</Project>
       <Name>Glimpse.Package</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Glimpse.Site\Glimpse.Site.csproj">
+      <Project>{608b42eb-9163-4aa6-92fc-b40f05d7c27e}</Project>
+      <Name>Glimpse.Site</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
