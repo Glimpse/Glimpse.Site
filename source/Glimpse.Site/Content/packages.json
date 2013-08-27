@@ -2,16 +2,23 @@
 	{
 		"title" : "Glimpse.Core",
 		"tags":["Bug"],
-		"category": "Core"
+		"category": "Core",
+		"status": "green",
+		"statusdescription":""
 	},
 	{
 		"title": "Glimpse.MVC4",
 		"category": "MVC",
-		"tags": ["Improvement", "Jump In"]
+		"tags": ["Improvement", "Jump In"],
+		"status": "green",
+		"statusdescription":""
 	},
 	{
 		"title": "Glimpse.MVC3",
 		"category": "MVC",
-		"tags": ["Improvement", "in-progress"]
+		"tags": ["Improvement", "in-progress"],
+		"status": "green",
+		"statusdescription":""
+
 	},
 ]

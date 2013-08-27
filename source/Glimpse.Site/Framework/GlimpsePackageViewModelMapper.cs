@@ -14,10 +14,12 @@ namespace Glimpse.Site.Framework
             {
                 var packageCategory = GetOrCreatePackageCategoryViewModel(issuesView, glimpsePackage);
                 AddIssuesToViewModel(glimpsePackage, packageCategory);
-                var packageView = new PackageViewModel {Name = glimpsePackage.Title};
-                packageView.Status = glimpsePackage.Issues.Count(i => i.Status == GithubIssueStatus.Open && i.Labels.Count(l => l.Name == "Bug") > 0) > 0
-                    ? PackageStatus.Red
-                    : PackageStatus.Green;
+                var packageView = new PackageViewModel
+                                  {
+                                      Name = glimpsePackage.Title,
+                                      Status = glimpsePackage.Status,
+                                      StatusDescription = glimpsePackage.StatusDescription
+                                  };
                 packageCategory.Packages.Add(packageView);
             }
             return issuesView;

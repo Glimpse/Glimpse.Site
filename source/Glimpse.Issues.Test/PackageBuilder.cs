@@ -19,5 +19,17 @@
             _glimpsePackage.Category = category;
             return this;
         }
+
+        public PackageBuilder WithStatus(GlimpsePackageStatus status)
+        {
+            _glimpsePackage.Status = status;
+            return this;
+        }
+
+        public PackageBuilder WithStatusDescription(string statusDescription)
+        {
+            _glimpsePackage.StatusDescription = statusDescription;
+            return this;
+        }
     }
 }

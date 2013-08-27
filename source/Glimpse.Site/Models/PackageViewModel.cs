@@ -1,15 +1,17 @@
-﻿namespace Glimpse.Site.Models
+﻿using Glimpse.Issues;
+
+namespace Glimpse.Site.Models
 {
     public class PackageViewModel
     {
         public string Name { get; set; }
-        public PackageStatus Status { get; set; }
+        public GlimpsePackageStatus Status { get; set; }
 
         public string StatusImage
         {
             get
             {
-                return Status == PackageStatus.Red ? "redIcon.png" : "greenIcon.png";
+                return Status == GlimpsePackageStatus.Red ? "redIcon.png" : "greenIcon.png";
             }
         }
 

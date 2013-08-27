@@ -7,10 +7,8 @@ namespace Glimpse.Site.Controllers
     public class IssuesController : Controller
     {
         private readonly GlimpsePackageViewModelMapper _glimpsePackageViewModelMapper = new GlimpsePackageViewModelMapper();
-        //
-        // GET: /Issues/
 
-        [OutputCache(Duration = 30 * 60)]
+        [OutputCache(Duration = 30 * 60, VaryByCustom = "RefreshCacheCustom")]
         public ActionResult Index()
         {
             var jsonFile = Server.MapPath("~/Content/packages.json");

@@ -16,8 +16,4 @@ namespace Glimpse.Site.Models
         public List<PackageCategoryViewModel> PackageCategories { get; set; }
     }
 
-    public enum PackageStatus
-    {
-        Green, Red
-    }
 }

@@ -12,7 +12,6 @@ namespace Glimpse.Issues.Test
         private List<GlimpsePackage> _packages;
         private GlimpsePackage _package;
 
-        //When Loading
         public WhenLoadingGlimpsePackagesFromRepository()
         {
             string jsonFile = Path.Combine(Environment.CurrentDirectory, "packages.json");
@@ -35,6 +34,8 @@ namespace Glimpse.Issues.Test
             Assert.Equal("Glimpse.MVC4", _package.Title);
             Assert.Equal("MVC", _package.Category);
             Assert.Equal(new[]{"MVC","MVC4"}, _package.Tags);
+            Assert.Equal(GlimpsePackageStatus.Green, _package.Status);
+            Assert.Equal("status description.", _package.StatusDescription);
         }
     }
 }

@@ -28,25 +28,22 @@ namespace Glimpse.Issues.Test
         }
 
         [Fact]
-        public void GivenAnOpenBugIssue_ShouldChangeStatusOfPackageToRed()
+        public void ShouldMapGlimpsePackageToViewModel()
         {
+            var statusDescription = "status description";
             var package = new PackageBuilder()
                 .WithTag("Tag1")
                 .WithCategory("Category1")
+                .WithStatus(GlimpsePackageStatus.Red)
+                .WithStatusDescription(statusDescription)
                 .Build();
-            var issue = new IssueBuilder()
-                .WithId("1")
-                .WithLabel("Tag1")
-                .WithLabel("Bug")
-                .WithState("open")
-                .Build();
-            package.AddIssue(issue);
             var mapper = new GlimpsePackageViewModelMapper();
 
             var indexViewModel = mapper.ConvertToIndexViewModel(new[] {package});
 
             var packageViewModel = indexViewModel.PackageCategories[0].Packages[0];
-            Assert.Equal(PackageStatus.Red, packageViewModel.Status);
+            Assert.Equal(GlimpsePackageStatus.Red, packageViewModel.Status);
+            Assert.Equal(statusDescription, packageViewModel.StatusDescription);
         }
 
         [Fact]
