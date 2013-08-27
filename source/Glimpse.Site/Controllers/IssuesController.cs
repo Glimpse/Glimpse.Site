@@ -16,5 +16,12 @@ namespace Glimpse.Site.Controllers
             var issuesView = _glimpsePackageViewModelMapper.ConvertToIndexViewModel(packageIssueProvider.GetPackageIssues());
             return View(issuesView);
         }
+
+        public ActionResult InvalidateCacheForIndex()
+        {
+            string path = Url.Action("index");
+            Response.RemoveOutputCacheItem(path);
+            return RedirectToAction("Index");
+        }
     }
 }
