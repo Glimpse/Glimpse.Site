@@ -71,8 +71,11 @@ namespace Glimpse.Site.Framework
 
         private static void RemoveLastComma(IssueViewModel issueView)
         {
-            var lastComma = issueView.Category.Length - 1;
-            issueView.Category = issueView.Category.Substring(0, lastComma);
+            if (!string.IsNullOrEmpty(issueView.Category))
+            {
+                var lastComma = issueView.Category.Length - 1;
+                issueView.Category = issueView.Category.Substring(0, lastComma);
+            }
         }
     }
 }
