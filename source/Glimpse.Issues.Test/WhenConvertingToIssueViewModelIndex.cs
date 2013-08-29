@@ -7,6 +7,13 @@ namespace Glimpse.Issues.Test
 {
     public class WhenConvertingToIssueViewModelIndex
     {
+        private GlimpsePackageViewModelMapper _mapper;
+
+        public WhenConvertingToIssueViewModelIndex()
+        {
+           _mapper = new GlimpsePackageViewModelMapper();
+        }
+
         [Fact]
         public void GivenTwoPackagesWithSameCategory_ShouldAddThemUnderSameCategory()
         {
@@ -18,9 +25,8 @@ namespace Glimpse.Issues.Test
                 .WithTag("Tag2")
                 .WithCategory("Category1")
                 .Build();
-            var mapper = new GlimpsePackageViewModelMapper();
            
-            var indexViewModel = mapper.ConvertToIndexViewModel(new [] { package, package2});
+            var indexViewModel = _mapper.ConvertToIndexViewModel(new [] { package, package2});
 
             Assert.Equal(1, indexViewModel.PackageCategories.Count);
             Assert.Equal("Category1", indexViewModel.PackageCategories.First().Name);
@@ -37,13 +43,35 @@ namespace Glimpse.Issues.Test
                 .WithStatus(GlimpsePackageStatus.Red)
                 .WithStatusDescription(statusDescription)
                 .Build();
-            var mapper = new GlimpsePackageViewModelMapper();
 
-            var indexViewModel = mapper.ConvertToIndexViewModel(new[] {package});
+            var indexViewModel = _mapper.ConvertToIndexViewModel(new[] {package});
 
             var packageViewModel = indexViewModel.PackageCategories[0].Packages[0];
             Assert.Equal(GlimpsePackageStatus.Red, packageViewModel.Status);
             Assert.Equal(statusDescription, packageViewModel.StatusDescription);
+        }
+
+        [Fact]
+        public void ShouldRemoveTagsFromIssuesWithSameValueAsThePacakgeTags()
+        {
+            var packageTag = "MVC";
+            var package = new PackageBuilder()
+                .WithTag(packageTag)
+                .WithCategory("category")
+                .Build();
+            var issue = new IssueBuilder()
+                .WithLabel(packageTag)
+                .WithId("id1")
+                .WithState("open")
+                .WithLabel("Bug")
+                .Build();
+            package.AddIssue(issue);
+
+            var indexViewModel = _mapper.ConvertToIndexViewModel(new[]{package});
+
+            var issueCategory = indexViewModel.PackageCategories[0].AcknowledgedIssues[0].Category;
+
+            Assert.Equal("Bug", issueCategory);
         }
 
         [Fact]

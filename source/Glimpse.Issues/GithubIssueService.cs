@@ -18,7 +18,7 @@ namespace Glimpse.Issues
             var issues = new List<GithubIssue>();
             issues.AddRange(result.Content.ReadAsAsync<IEnumerable<GithubIssue>>().Result);
             var lastPageIndex = GetLastPageIndex(result);
-            for (++currentpageIndex; currentpageIndex <= lastPageIndex; currentpageIndex++)
+            for (currentpageIndex = 2; currentpageIndex <= lastPageIndex; currentpageIndex++)
             {
                 requestUri = BuildRequestUri(issueQuery, currentpageIndex);
                 result = client.GetAsync(requestUri).Result;

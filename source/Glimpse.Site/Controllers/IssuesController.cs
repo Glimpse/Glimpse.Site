@@ -8,7 +8,7 @@ namespace Glimpse.Site.Controllers
     {
         private readonly GlimpsePackageViewModelMapper _glimpsePackageViewModelMapper = new GlimpsePackageViewModelMapper();
 
-        [OutputCache(Duration = 30 * 60, VaryByCustom = "RefreshCacheCustom")]
+        [OutputCache(Duration = 30 * 60)]
         public ActionResult Index()
         {
             var jsonFile = Server.MapPath("~/Content/packages.json");

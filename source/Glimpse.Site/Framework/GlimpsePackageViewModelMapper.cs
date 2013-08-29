@@ -29,8 +29,8 @@ namespace Glimpse.Site.Framework
         {
             var openIssues = packageIssue.Issues.Where(p => p.Status == GithubIssueStatus.Open).ToList();
             var closedIssues = packageIssue.Issues.Where(p => p.Status == GithubIssueStatus.Closed).ToList();
-            AddToIssueViewModel(openIssues, packageCategory, packageCategory.AcknowledgedIssues);
-            AddToIssueViewModel(closedIssues, packageCategory,packageCategory.CompletedIssues);
+            AddToIssueViewModel(openIssues, packageIssue.Tags, packageCategory.AcknowledgedIssues);
+            AddToIssueViewModel(closedIssues, packageIssue.Tags,packageCategory.CompletedIssues);
         }
 
         private PackageCategoryViewModel GetOrCreatePackageCategoryViewModel(IssuesIndexViewModel issuesView, GlimpsePackage packageIssue)
@@ -44,25 +44,35 @@ namespace Glimpse.Site.Framework
             return packageCategory;
         }
 
-        private void AddToIssueViewModel(List<GithubIssue> openIssues, PackageCategoryViewModel packageCategory, List<IssueViewModel> issueViewModels)
+        private void AddToIssueViewModel(List<GithubIssue> openIssues, List<string> packageTags, List<IssueViewModel> issueViewModels)
         {
             foreach (var openIssue in openIssues)
             {
-                var issueView = ConvertToIssueViewModel(openIssue);
+                var issueView = ConvertToIssueViewModel(openIssue,packageTags);
                 if (issueViewModels.Count(p => p.IssueId == openIssue.Id) == 0)
                     issueViewModels.Add(issueView);
             }
         }
 
-        private IssueViewModel ConvertToIssueViewModel(GithubIssue openIssue)
+        private IssueViewModel ConvertToIssueViewModel(GithubIssue openIssue, List<string> packageTags)
         {
             var issueView = new IssueViewModel();
             issueView.IssueId = openIssue.Id;
             issueView.IssueLinkUrl = openIssue.Html_Url;
             foreach (var label in openIssue.Labels)
-                issueView.Category += label.Name + ",";
+            {
+                if(!packageTags.Contains(label.Name))
+                    issueView.Category += label.Name + ",";
+            }
+            RemoveLastComma(issueView);
             issueView.Description = openIssue.Title;
             return issueView;
+        }
+
+        private static void RemoveLastComma(IssueViewModel issueView)
+        {
+            var lastComma = issueView.Category.Length - 1;
+            issueView.Category = issueView.Category.Substring(0, lastComma);
         }
     }
 }
