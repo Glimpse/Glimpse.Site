@@ -1,52 +1,58 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Text.RegularExpressions;
 
 namespace Glimpse.Issues
 {
     public class GithubIssueService
     {
+        private readonly GithubIssueRequestBuilder _requestBuilder;
+        private readonly HttpResponseHelper _httpResponseHelper;
+
+        public GithubIssueService()
+        {
+            _httpResponseHelper = new HttpResponseHelper();
+            _requestBuilder = new GithubIssueRequestBuilder();
+        }
+
         public virtual IEnumerable<GithubIssue> GetIssues(GithubIssueQuery issueQuery)
         {
             var client = SetupHttpClient("https://api.github.com/", "application/json");
+            var issues = QueryGitHubHttpService(issueQuery, client);
+            return issues;
+        }
+
+        private IEnumerable<GithubIssue> QueryGitHubHttpService(GithubIssueQuery issueQuery, HttpClient client)
+        {
             int currentpageIndex = 1;
-            var requestUri =BuildRequestUri(issueQuery, currentpageIndex);
-            var result = client.GetAsync(requestUri).Result;
             var issues = new List<GithubIssue>();
-            issues.AddRange(result.Content.ReadAsAsync<IEnumerable<GithubIssue>>().Result);
-            var lastPageIndex = GetLastPageIndex(result);
+            var result = CreateGithubIssuesFromQuery(issueQuery, client, currentpageIndex, issues);
+            var lastPageIndex = _httpResponseHelper.GetLastPageIndex(result);
             for (currentpageIndex = 2; currentpageIndex <= lastPageIndex; currentpageIndex++)
             {
-                requestUri = BuildRequestUri(issueQuery, currentpageIndex);
-                result = client.GetAsync(requestUri).Result;
-                issues.AddRange(result.Content.ReadAsAsync<IEnumerable<GithubIssue>>().Result);
+                CreateGithubIssuesFromQuery(issueQuery, client, currentpageIndex, issues);
             }
             return issues;
         }
 
-        private int GetLastPageIndex(HttpResponseMessage result)
+        private HttpResponseMessage CreateGithubIssuesFromQuery(GithubIssueQuery issueQuery, HttpClient client,
+            int currentpageIndex, List<GithubIssue> issues)
         {
-            IEnumerable<string> linkHeader;
-            var pages = new Dictionary<string, string>();
-            if (result.Headers.TryGetValues("Link", out linkHeader))
-            {
-                var links = linkHeader.First().Split(',');
-                foreach (var link in links)
-                {
-                    var linkSections = link.Split(';');
-                    var urlSection = linkSections[0].Trim();
-                    var url = urlSection.Substring(1, urlSection.IndexOf(">") - 1);
-                    var rel = linkSections[1].Trim().Replace("rel=\"", "").Replace("\"", "");
-                    pages.Add(rel, url);
-                }
-                var matches = Regex.Match(pages["last"], "[?&]page=(\\d*)");
-                var lastPageIndex = Convert.ToInt32(matches.Groups[1].Value);
-                return lastPageIndex;
-            }
-            return 1;
+            var requestUri = _requestBuilder.BuildRequestUri(issueQuery, currentpageIndex);
+            var result = SendGetRequest(client, requestUri);
+            issues.AddRange(ConvertToGithubIssues(result));
+            return result;
+        }
+
+        private static HttpResponseMessage SendGetRequest(HttpClient client, string requestUri)
+        {
+            return client.GetAsync(requestUri).Result;
+        }
+
+        private static IEnumerable<GithubIssue> ConvertToGithubIssues(HttpResponseMessage result)
+        {
+            return result.Content.ReadAsAsync<IEnumerable<GithubIssue>>().Result;
         }
 
 
@@ -55,15 +61,6 @@ namespace Glimpse.Issues
             var client = new HttpClient {BaseAddress = new Uri(baseAddress)};
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(mediaType));
             return client;
-        }
-
-        private string BuildRequestUri(GithubIssueQuery issueQuery, int pageIndex)
-        {
-            var requestUri = "repos/glimpse/glimpse/issues?per_page=100&page=" + pageIndex;
-            requestUri += "&state=" + (issueQuery.State == GithubIssueStatus.Open ? "open" : "closed");
-            if (issueQuery.MilestoneNumber.HasValue)
-                requestUri += "&milestone=" + issueQuery.MilestoneNumber.Value;
-            return requestUri;
         }
     }
 }
