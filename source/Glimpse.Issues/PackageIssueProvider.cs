@@ -26,24 +26,18 @@ namespace Glimpse.Issues
             return packages;
         }
 
-
-        private void AddIssueToAssociatedPackage(List<GlimpsePackage> packages, GithubIssue issue)
+        private void AddIssueToAssociatedPackage(IEnumerable<GlimpsePackage> packages, GithubIssue issue)
         {
             var labels = issue.Labels.Select(l => l.Name).ToList();
 
-            foreach (var label in labels)
+            var glimpsePackageIssues = from label in labels 
+                                       from package in packages 
+                                       from tag in package.Tags
+                                       where tag.ToLower() == label.ToLower() 
+                                       select package;
+            foreach (var package in glimpsePackageIssues)
             {
-                foreach (var package in packages)
-                {
-                    foreach (var tag in package.Tags)
-                    {
-                        if (tag.ToLower() == label.ToLower())
-                        {
-                            package.AddIssue(issue);
-                        }
-                    }
-                }
-
+                package.AddIssue(issue);
             }
         }
     }
