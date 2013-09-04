@@ -243,6 +243,7 @@
     <Content Include="Content\_v1\site-redgate-logo.png" />
     <Content Include="Content\_v1\site-twitter-icon.png" />
     <Content Include="Content\_v1\_site-redgate-logo.png" />
+    <Content Include="Content\_v2\Contributors\chris.jpg" />
     <Content Include="Content\_v2\Contributors\pic1.jpg" />
     <Content Include="Content\_v2\Contributors\pic10.jpg" />
     <Content Include="Content\_v2\Contributors\pic2.jpg" />
@@ -256,6 +257,7 @@
     <Content Include="Content\_v2\favicon.ico" />
     <Content Include="Content\_v2\favicon.png" />
     <Content Include="Content\_v2\first-install-minimized.png" />
+    <Content Include="Content\_v2\glimpseGallery.xml" />
     <Content Include="Content\_v2\img\emailIcon.png" />
     <Content Include="Content\_v2\img\glimpse-minimised.png" />
     <Content Include="Content\_v2\img\glimpseInBrowser.png" />
@@ -298,6 +300,7 @@
     <Content Include="Content\_v2\website-assets\img\bad-update.png" />
     <Content Include="Content\_v2\website-assets\img\build-tower.png" />
     <Content Include="Content\_v2\website-assets\img\console-view-screenshot.png" />
+    <Content Include="Content\_v2\website-assets\img\contributors\chris.jpg" />
     <Content Include="Content\_v2\website-assets\img\contributors\pic1.jpg" />
     <Content Include="Content\_v2\website-assets\img\contributors\pic10.jpg" />
     <Content Include="Content\_v2\website-assets\img\contributors\pic2.jpg" />
