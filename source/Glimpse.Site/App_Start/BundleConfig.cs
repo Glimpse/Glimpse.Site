@@ -36,6 +36,10 @@ namespace Glimpse.Site
                 "~/Content/_v2/website-assets/scripts/home.js"
             ));
 
+            bundles.Add(new ScriptBundle("~/Script/simple").Include(
+                "~/Scripts/site.google.js"
+            ));
+
             //bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
             //            "~/Content/themes/base/jquery.ui.core.css",
             //            "~/Content/themes/base/jquery.ui.resizable.css",
