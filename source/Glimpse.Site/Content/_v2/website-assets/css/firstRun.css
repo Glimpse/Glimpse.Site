@@ -296,6 +296,9 @@ a.button {
 /********/
 
 /***new package styling***/
+.package-holder {
+    margin: 3em 0;
+}
 .package {
     border:1px solid #e5e5e5;
     width: 100%;
@@ -352,8 +355,14 @@ a.button {
 }
 .package-status {
     color: #788388;
+    text-align: center;
 }
-
+.package-status-verison {
+    font-size: 1.3em;
+}
+.package-status-message {
+    font-size: 1.1em;
+}
 .installed-version {
     display: inline-block;
     margin-right: 5px;
@@ -364,16 +373,20 @@ a.button {
 .installed-version.bad {
     color: #c66969;
 }
-.release-notes {
-    display: none;
-}
-.release-notes.open {
-    display: block;
-    padding-bottom: 20px;
-
+.release-notes { 
+    padding: 20px 0; 
 }
 .release-item-detail-header {
-    font-weight: bold;
-    margin: 15px 0 0;
+    margin: 17px 0 3px;
+    font-size: 1.1em;
 }
-
+.release-item-detail-title {
+    font-weight: bold;
+}
+.release-item-detail-date {
+    font-style: italic;
+}
+.release-notes-title {
+    font-weight: bold;
+    font-size: 1.3em;
+}
