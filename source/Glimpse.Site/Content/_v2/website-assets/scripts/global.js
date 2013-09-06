@@ -12,4 +12,10 @@ $().ready(function () {
     if (navigator.appName.indexOf("Internet Explorer")!=-1) {
       $("body").addClass("ie");
     }
+    $('.notes-link').click(function (e) {
+        e.preventDefault();
+        $(this).toggleClass('open').parent().find('.release-notes').toggleClass('open');
+
+    });
 });
+

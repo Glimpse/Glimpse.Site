@@ -5,54 +5,88 @@
 }
 
 @section header {
-<h1>Thanks for installing Glimpse!</h1>
-<p>
-    providing a previously hidden layer of information into your web app. 
-
-    To get the most out of the tool please keep reading...
-
-</p>
+    <h1><img src="/Content/_v2/img/updatetick.png" alt="tick" id="updateTick" />Thanks for installing Glimpse!</h1>
+    <p>providing a previously hidden layer of information into your web app. To get the most out of the tool please keep reading...</p>
 }
 
+<div class="package-holder">
+    @foreach (var detail in Model.Details) {
+        var image = string.IsNullOrEmpty(detail.Value.PackageIconUrl) ? "/Content/_v2/img/logo-nuget.png" : detail.Value.PackageIconUrl;
+        var updated = detail.Value.HasResult && !detail.Value.HasNewer ? "good" : (detail.Value.HasResult ? "bad" : "bad"); //latest = updated, old = still on old version, not-found = no package avail.
+        <div class="package @updated">
+            <div class="side-status @updated"></div>
+            <div class="package-icon"><img height="54" src="@image" onerror="this.src = '/Content/_v2/logo-nuget.png';"/></div>
+            <div class="package-details">
+                <h3>@detail.Key</h3>
+                <div class="package-status">
+                    @if (detail.Value.HasResult) {
+                        <text>
+                            <div class="package-status-verison">
+                                Installed version: <strong class="installed-version @updated">@detail.Value.Version</strong> 
+                                Latest version: <strong class="installed-version">@if (detail.Value.HasNewer) { @detail.Value.Summary[detail.Value.Channel].LatestVersion } else { @detail.Value.Version }</strong>
+                            </div>
+                            <div class="package-status-message">
+                                @if (!detail.Value.HasNewer) { <text>Congratulations, you are up to date :D</text> } 
+                                else { <text>Sorry, it looks like you are currently out of date :(</text> }
+                            </div>
+                        </text>
+                    } else {
+                        <div class="package-status-message">Could not find release.</div>
+                    }
+                </div>
+                @if (detail.Value.Release != null) { 
+                    <div class="release-notes"> 
+                        <div class="release-notes-title">This release contained</div>
+                        <div class="release-item-detail">
+                                <div class="release-item-detail-header">
+                                    <span class="release-item-detail-title">@detail.Value.Version</span> -
+                                    <span class="release-item-detail-date">@detail.Value.Release.Created.ToString("dd MMM yyyy")</span> 
+                                </div>
+                            <div class="release-item-detail-notes">
+                                @if (!string.IsNullOrEmpty(@detail.Value.Release.ReleaseNotes)) { @Html.HtmlEncode(detail.Value.Release.ReleaseNotes, true) } 
+                                else { <i>No notes avaiable for this release.</i> }
+                            </div>
+                        </div> 
+                    </div> 
+                }
+            </div>
+            <hr class="clearer" />
+        </div>
+    }
+</div>
 
-
-    <div class="warning">
-        <strong>NOTE:</strong> You must have installed <a href="https://nuget.org/packages/Glimpse.Mvc3/" target="_blank"><code>Glimpse.Mvc3</code></a>, <a href="https://nuget.org/packages/Glimpse.Mvc2/" target="_blank"><code>Glimpse.Mvc2</code></a> or <a href="https://nuget.org/packages/Glimpse.AspNet/" target="_blank"><code>Glimpse.AspNet</code></a> in order for your <code>web.config</code> file to be automatically configured.
-    </div>
 <h2>Getting started</h2>
-    <div class="twoColumn column1">
-        <div class="innerColumn">
+<div class="twoColumn column1">
+    <div class="innerColumn">
         <h3>The basics</h3>
-        
-            <p>You've successfully installed glimpse, so now what? Browse to <code><span class="lowlight">http://your-application-url</span>/Glimpse.axd</code> and click the "Turn Glimpse On" button.</p>
-        
-            <p>Then, simply run your application if Glimpse doesn't automatically open click on the logo that will be in the bottom right and that is all there is to it!
-            </p>
-            <p class="align-center">        
-                <img src="~/Content/_v2//img/glimpse-minimised.png" />
-            </p>
-        </div>
+        <p>You've successfully installed glimpse, so now what? Browse to <code><span class="lowlight">http://your-application-url</span>/Glimpse.axd</code> and click the "Turn Glimpse On" button.</p>
+        <p>Then, simply run your application if Glimpse doesn't automatically open click on the logo that will be in the bottom right and that is all there is to it!</p>
+        <p class="align-center">        
+            <img src="~/Content/_v2//img/glimpse-minimised.png" />
+        </p>
     </div>
-    <div class="twoColumn column2">
-        <div class="innerColumn">
-        <h3>A little bit more</h3>
-        
-            <p>
-                    If you prefer, you can create bookmarklets to turn Glimpse on and off: 
-                    <ul>
-                        <li>In Firefox just drag the button onto your bookmarks toolbar or choose 'Bookmark This Link' in the context menu when you right click the button.</li>
-                        <li>In Chrome just drag the button onto your bookmarks toolbar.</li>
-                        <li>In Internet Explorer 9 just drag the button onto your bookmarks toolbar or choose 'Add to favorites' in the context menu when you right click the button. Set the 'Create in' drop down to 'Favorites Bar'.</li>
-                    </ul>
-            </p>
-        </div>
+</div>
+<div class="twoColumn column2">
+    <div class="innerColumn">
+        <h3>A little bit more</h3> 
+        <p>
+            If you prefer, you can create bookmarklets to turn Glimpse on and off: 
+            <ul>
+                <li>In Firefox just drag the button onto your bookmarks toolbar or choose 'Bookmark This Link' in the context menu when you right click the button.</li>
+                <li>In Chrome just drag the button onto your bookmarks toolbar.</li>
+                <li>In Internet Explorer 9 just drag the button onto your bookmarks toolbar or choose 'Add to favorites' in the context menu when you right click the button. Set the 'Create in' drop down to 'Favorites Bar'.</li>
+            </ul>
+        </p>
     </div>
- <hr class="clearer" />
+</div>
+
+<hr class="clearer" />
+
 <h2 class="fixed-padding-2">Configuring Glimpse</h2>
-        <p>NuGet has taken care of everything you need to do to get you up and running with Glimpse, however there are some advanced setting that you may want to change in your <code>web.config</code> file.</p>
-        <p>Glimpse is configured via the <code>&lt;glimpse&gt;</code> element which which exists within the root <code>&lt;configuration&gt;</code> element. By default there is only one setting which turns Glimpse on:</p>
-        <pre>&lt;glimpse defaultRuntimePolicy="On" endpointBaseUri="~/Glimpse.axd"/&gt;</pre>
-        <p>You can turn off Glimpse by setting <code>defaultRuntimePolicy="Off"</code>. By default Glimpse is configured to only work for requests coming from the local machine, soften Glimpse to work remotly by ignoring the <code>LocalPolicy</code>:</p>
+<p>NuGet has taken care of everything you need to do to get you up and running with Glimpse, however there are some advanced setting that you may want to change in your <code>web.config</code> file.</p>
+<p>Glimpse is configured via the <code>&lt;glimpse&gt;</code> element which which exists within the root <code>&lt;configuration&gt;</code> element. By default there is only one setting which turns Glimpse on:</p>
+<pre>&lt;glimpse defaultRuntimePolicy="On" endpointBaseUri="~/Glimpse.axd"/&gt;</pre>
+<p>You can turn off Glimpse by setting <code>defaultRuntimePolicy="Off"</code>. By default Glimpse is configured to only work for requests coming from the local machine, soften Glimpse to work remotly by ignoring the <code>LocalPolicy</code>:</p>
 <pre>&lt;glimpse defaultRuntimePolicy="On" endpointBaseUri="~/Glimpse.axd"/&gt;
     &lt;runtimePolicies&gt;
         &lt;ignoredTypes&gt;
@@ -62,31 +96,30 @@
 &lt;/glimpse&gt;</pre>
 
 <div class="statement">
-                 <p>To find out more about this and all the other possible configuration options please visit our docs&#133;</p>
-                 <img id="kipTooltip" src="~/Content/_v2/img/kipTooltip.png" />
-                 <a href="http://www.getglimpse.com/Help" target="_blank" class="button">Documentation &rarr;</a>
-                 
-             </div><!--Class:statement-->
+    <p>To find out more about this and all the other possible configuration options please visit our docs&#133;</p>
+    <img id="kipTooltip" src="~/Content/_v2/img/kipTooltip.png" />
+    <a href="http://www.getglimpse.com/Help" target="_blank" class="button">Documentation &rarr;</a>
+</div> 
 
-            <dl class="threeColumn column1">
-                <div class="innerColumn">
-                <dt><img src="~/Content/_v2/img/ideas.png" alt="Issues or Suggestions" /></dt>
-                <dd>If you have found an issue or have a idea, let us know on our <a href="https://github.com/glimpse/glimpse/issues" target="_blank">issues list</a>.
-                </dd>
-                </div>
-            </dl>
-            <dl class="threeColumn column2">
-                <div class="innerColumn">
-                <dt><img src="~/Content/_v2/img/google.png" alt="developer list" /></dt>
-                <dd>Get answers to questions and find out what is next for Glimpse on our <a href="https://groups.google.com/forum/?fromgroups#!forum/getglimpse-dev" target="_blank">community user group</a>.
-                </dd>
-                </div>
-            </dl>
-            <dl class="threeColumn column3">
-                <div class="innerColumn">
-                <dt><img src="~/Content/_v2/twitterIcon.png" alt="twitter contacts" /></dt>
-                <dd>Feel free to get in touch with the us on Twitter: <a href="http://www.twitter.com/anthony_vdh" target="_blank">@@anthony_vdh</a> or <a href="http://www.twitter.com/nikmd23" target="_blank">@@nikmd23</a>.
-                </dd>
-                </div>
-            </dl>
+<dl class="threeColumn column1">
+    <div class="innerColumn">
+    <dt><img src="~/Content/_v2/img/ideas.png" alt="Issues or Suggestions" /></dt>
+    <dd>If you have found an issue or have a idea, let us know on our <a href="https://github.com/glimpse/glimpse/issues" target="_blank">issues list</a>.
+    </dd>
+    </div>
+</dl>
+<dl class="threeColumn column2">
+    <div class="innerColumn">
+    <dt><img src="~/Content/_v2/img/google.png" alt="developer list" /></dt>
+    <dd>Get answers to questions and find out what is next for Glimpse on our <a href="https://groups.google.com/forum/?fromgroups#!forum/getglimpse-dev" target="_blank">community user group</a>.
+    </dd>
+    </div>
+</dl>
+<dl class="threeColumn column3">
+    <div class="innerColumn">
+    <dt><img src="~/Content/_v2/twitterIcon.png" alt="twitter contacts" /></dt>
+    <dd>Feel free to get in touch with the us on Twitter: <a href="http://www.twitter.com/anthony_vdh" target="_blank">@@anthony_vdh</a> or <a href="http://www.twitter.com/nikmd23" target="_blank">@@nikmd23</a>.
+    </dd>
+    </div>
+</dl>
  
