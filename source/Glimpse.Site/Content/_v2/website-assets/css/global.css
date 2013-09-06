@@ -138,3 +138,5 @@ dd.stat__value,dt.stat__title{margin:0;}
 .ie .section-container#contributors .person .pic{-webkit-backface-visibility:visible;-ms-backface-visibility:visible;-moz-backface-visibility:visible;z-index:1;display:none;}
 .ie .section-container#contributors .person .details-container{z-index:10;-webkit-backface-visibility:visible;-moz-backface-visibility:visible;-ms-backface-visibility:visible;backface-visibility:visible;-webkit-transform:none;-webkit-transform-style:none;-ms-transform:none;-ms-transform-style:none;-moz-transform:none;-moz-transform-style:none;}
 .ie .section-container#contributors .person-container:hover .person{-webkit-transform:none;-moz-transform:none;-ms-transform:none;transform:none;}
+.inVS #footer-container { margin-top:0; padding-top:0; }
+.inVS dd { margin: 0; }
