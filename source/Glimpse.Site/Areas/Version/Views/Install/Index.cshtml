@@ -9,6 +9,13 @@
     <p>providing a previously hidden layer of information into your web app. To get the most out of the tool please keep reading...</p>
 }
 
+<form action="http://getglimpse.us7.list-manage.com/subscribe/post?u=1e0ad87b92a992ad5856dcac3&amp;id=e2c440d6cb" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+	<label for="mce-EMAIL">Stay up-to-date!</label>
+	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+	<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+</form> 
+
+<h2>Release Notes</h2>
 <div class="package-holder">
     @foreach (var detail in Model.Details) {
         var image = string.IsNullOrEmpty(detail.Value.PackageIconUrl) ? "/Content/_v2/img/logo-nuget.png" : detail.Value.PackageIconUrl;

@@ -46,6 +46,7 @@ p {
     max-width: 980px;
     padding: 0 10px;
     margin-bottom: 50px;
+    position: relative;
 }
 
 
@@ -389,4 +390,37 @@ a.button {
 .release-notes-title {
     font-weight: bold;
     font-size: 1.3em;
+}
+#mc-embedded-subscribe-form {
+    background-color: #323d42;
+    top: -48px;
+    position: absolute;
+    padding: 2em 2em 1em;
+    right: 0;
+    margin-right: 0.5em;
+}
+#mc-embedded-subscribe-form label {
+    font-size: 1.5em;
+    color: white;
+    display: block; 
+}
+#mc-embedded-subscribe-form .email {
+    border: 1px solid #999; 
+    width: 400px;
+    font-size: 1.1em;
+    padding: 0 0.5em;
+    height: 32px;
+}
+#mc-embedded-subscribe-form .button {
+    border: 0px;
+    color: #FFF;
+    text-decoration: none;
+    border-radius: 5px;
+    background: #33a6ee;
+    padding: 5px 25px;
+    box-shadow: 0 2px 2px 0px rgba(0,0,0,0.55);
+    margin-top: -4px;
+    vertical-align: middle;
+    font-size: 1.1em;
+    height: 34px;
 }
