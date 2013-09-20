@@ -276,6 +276,7 @@
     <Content Include="Content\_v2\img\warning.png" />
     <Content Include="Content\_v2\inuit.css" />
     <Content Include="Content\_v2\inuit.min.css" />
+    <Content Include="Content\_v2\logo-long.png" />
     <Content Include="Content\_v2\logo-medium.png" />
     <Content Include="Content\_v2\logo-nuget.png" />
     <Content Include="Content\_v2\logo-redgate.png" />
