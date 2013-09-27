@@ -1,4 +1,5 @@
-﻿@model Glimpse.Site.Models.IssuesIndexViewModel
+﻿@using Glimpse.Issues
+@model Glimpse.Site.Models.IssuesIndexViewModel
 @{
     ViewBag.Title = "Glimpse Issues";
     ViewBag.bodyClass = "plugins-page";
@@ -12,7 +13,7 @@
     <ul id="packages" class="nav nav-tabs">
 @foreach (var packageCategory in Model.PackageCategories)
 {
-  <li class="lead"><a href="#@packageCategory.Name" data-toggle="tab">@packageCategory.Name</a></li>
+  <li class="lead"><a style="color: @(packageCategory.Packages.Any(p => p.Status == GlimpsePackageStatus.Red) ? "red" : "green");" href="#@packageCategory.Name" data-toggle="tab">@packageCategory.Name</a></li>
 }
 </ul>
 
