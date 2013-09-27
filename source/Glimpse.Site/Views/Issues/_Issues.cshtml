@@ -59,7 +59,9 @@
     }
 </style>
 
- <table>
+@if (Model.Any())
+{
+    <table>
         @foreach (var issue in Model)
         {
             <tr><td><a href="@issue.IssueLinkUrl">#@issue.IssueId</a></td> 
@@ -68,3 +70,8 @@
             </tr>
         }
     </table>
+}
+else
+{
+    <p style="color:grey; font-size: 90%">@ViewData["emptyMessage"]</p>
+}

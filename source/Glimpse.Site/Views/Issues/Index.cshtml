@@ -16,16 +16,17 @@
     
      foreach (var package in packageCategory.Packages)
      {
-        <h3><img src="~/Content/@package.StatusImage" width="15"/> @package.Name</h3>
+        <span style="padding-right: 10px;"><img src="~/Content/@package.StatusImage" width="15"/> @package.Name</span>
      }
+      <hr class="clearer"/>
 
     <strong>Acknowledged and working on</strong>
-    @Html.Partial("_Issues", packageCategory.AcknowledgedIssues)
+    @Html.Partial("_Issues", packageCategory.AcknowledgedIssues, new ViewDataDictionary(this.ViewData) { { "emptyMessage", "No issues yet scheduled for release" } })
 
      <hr class="clearer"/>
     
     <strong>Fixed and yet to be released</strong>
-    @Html.Partial("_Issues", packageCategory.CompletedIssues)
+    @Html.Partial("_Issues", packageCategory.CompletedIssues, new ViewDataDictionary(this.ViewData) {{"emptyMessage","No issues yet fixed. We are working on some as we speak"}})
    
     <hr class="clearer"/>
     

@@ -52,7 +52,7 @@ namespace Glimpse.Issues.Test
         }
 
         [Fact]
-        public void ShouldRemoveTagsFromIssuesWithSameValueAsThePacakgeTags()
+        public void ShouldRemoveTagsFromIssuesThatBelongToPackages()
         {
             var packageTag = "MVC";
             var package = new PackageBuilder()
@@ -67,11 +67,25 @@ namespace Glimpse.Issues.Test
                 .Build();
             package.AddIssue(issue);
 
-            var indexViewModel = _mapper.ConvertToIndexViewModel(new[]{package});
+            var package2 = new PackageBuilder()
+                .WithTag("MVC2")
+                .WithCategory("category2")
+                .Build();
+            var issue2 = new IssueBuilder()
+                .WithLabel(packageTag)
+                .WithId("id2")
+                .WithState("open")
+                .WithLabel("Bug")
+                .Build();
+            package2.AddIssue(issue2);
+
+            var indexViewModel = _mapper.ConvertToIndexViewModel(new[]{package,package2});
 
             var issueCategory = indexViewModel.PackageCategories[0].AcknowledgedIssues[0].Category;
+            var issueCategory2 = indexViewModel.PackageCategories[1].AcknowledgedIssues[0].Category;
 
             Assert.Equal("Bug", issueCategory);
+            Assert.Equal("Bug", issueCategory2);
         }
 
         [Fact]
