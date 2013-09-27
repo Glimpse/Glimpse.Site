@@ -298,7 +298,7 @@ a.button {
 
 /***new package styling***/
 .package-holder {
-    margin: 3em 0;
+    margin: 1em 0;
 }
 .package {
     border:1px solid #e5e5e5;
@@ -423,4 +423,44 @@ a.button {
     vertical-align: middle;
     font-size: 1.1em;
     height: 34px;
+}
+.package-question {
+    margin:1em 0 2em 0
+}
+.package-question-suggestion {
+    width: 85%;
+    text-align: center;
+    margin: 0 auto;
+}
+.package-question-heading {
+    font-weight: bold;
+    margin: 0.5em 0;
+    font-size: 1.1em;
+}
+.package-question-command {
+    width: 80%;
+    margin: 0 auto;
+    background: #333;
+    padding: 10px;
+    color: white;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 2px 3px 0 #000 inset;
+    font-family: courier new,serif;
+}
+.package-question-option {
+    table-layout: fixed;
+    width: 100%;
+    display: table;
+    margin-bottom: 1em;
+}
+.package-question-option > div {
+    display: table-cell;
+    width: 100%;
+}
+.package-question-note {
+    font-size: 0.8em;
 }
