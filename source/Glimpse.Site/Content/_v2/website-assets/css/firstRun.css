@@ -428,7 +428,7 @@ a.button {
     margin:1em 0 2em 0
 }
 .package-question-suggestion {
-    width: 85%;
+    width: 90%;
     text-align: center;
     margin: 0 auto;
 }
@@ -463,4 +463,7 @@ a.button {
 }
 .package-question-note {
     font-size: 0.8em;
+}
+.package-question-more {
+    margin-bottom: 1em;
 }
