@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Glimpse.Issues;
 using Microsoft.Ajax.Utilities;
 
 namespace Glimpse.Site.Models
@@ -14,6 +15,7 @@ namespace Glimpse.Site.Models
         }
 
         public List<PackageCategoryViewModel> PackageCategories { get; set; }
+        public List<GithubUser> IssueReporters { get; set; } 
     }
 
 }
