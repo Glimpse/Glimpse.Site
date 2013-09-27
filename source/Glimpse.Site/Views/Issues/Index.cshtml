@@ -9,25 +9,37 @@
 @section subnav {
     &nbsp;
 }
-
+    <ul id="packages" class="nav nav-tabs">
 @foreach (var packageCategory in Model.PackageCategories)
 {
-    <h1>@packageCategory.Name</h1>
-    
-     foreach (var package in packageCategory.Packages)
-     {
-        <span style="padding-right: 10px;"><img src="~/Content/@package.StatusImage" width="15"/> @package.Name</span>
-     }
-      <hr class="clearer"/>
-
-    <strong>Acknowledged and working on</strong>
-    @Html.Partial("_Issues", packageCategory.AcknowledgedIssues, new ViewDataDictionary(this.ViewData) { { "emptyMessage", "No issues yet scheduled for release" } })
-
-     <hr class="clearer"/>
-    
-    <strong>Fixed and yet to be released</strong>
-    @Html.Partial("_Issues", packageCategory.CompletedIssues, new ViewDataDictionary(this.ViewData) {{"emptyMessage","No issues yet fixed. We are working on some as we speak"}})
-   
-    <hr class="clearer"/>
-    
+  <li class="lead"><a href="#@packageCategory.Name" data-toggle="tab">@packageCategory.Name</a></li>
 }
+</ul>
+
+<div class="tab-content">
+@foreach (var packageCategory in Model.PackageCategories)
+{
+    <div class="tab-pane fade" id="@packageCategory.Name">
+        <div class="alert">
+            @foreach (var package in packageCategory.Packages)
+            {
+                <span style="padding-right: 10px;"><img src="~/Content/@package.StatusImage" width="15"/> @package.Name</span>
+            }
+        </div>
+
+        <strong>Acknowledged and working on</strong>
+        @Html.Partial("_Issues", packageCategory.AcknowledgedIssues, new ViewDataDictionary(this.ViewData) {{"emptyMessage", "No issues yet scheduled for release"}})
+
+        <hr class="clearer"/>
+    
+        <strong>Fixed and yet to be released</strong>
+        @Html.Partial("_Issues", packageCategory.CompletedIssues, new ViewDataDictionary(this.ViewData) {{"emptyMessage", "No issues yet fixed. We are working on some as we speak"}})
+   
+        <hr class="clearer"/>
+    </div>
+}
+</div>
+
+<script>
+    $('#packages a:first').tab('show')
+</script>

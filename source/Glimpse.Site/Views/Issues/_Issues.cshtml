@@ -1,72 +1,20 @@
 ﻿@model System.Collections.Generic.IEnumerable<Glimpse.Site.Models.IssueViewModel>
-<style>
-    table {
-        font-size:0.9em;
-        background-color:#fff;
-        border-collapse: collapse;
-        width: 100%;
-    }
-    caption {
-        font-size: 25px;
-        color: #1ba6b2;
-        font-weight: bold;
-        text-align: left;
-        padding: 10px;
-        margin-bottom: 2px;
-    }
-    thead th {
-        border-right: 1px solid #fff;
-        color:#fff;
-        text-align:center;
-        padding:2px;
-        text-transform:uppercase;
-        height:25px;
-        background-color: #a3c159;
-        font-weight: normal;
-    }
-    tfoot {
-        color:#1ba6b2;
-        padding:2px;
-        text-transform:uppercase;
-        font-size:1.2em; 
-        font-weigth: bold;
-        margin-top:6px;
-        border-top: 6px solid #e9f7f6;
-    }
-    tbody tr {
-        background-color:#fff;
-        border-bottom: 1px solid #f0f0f0;
-    }
-    tbody td {
-        color:#414141;
-        padding:5px;
-        text-align:left;
-    }
-    tbody th {
-        text-align:left;
-        padding:2px;
-    }
-    tbody td a, tbody th a {
-        color:#6C8C37;
-        text-decoration:none;
-        font-weight:normal; 
-        display:block;
-        padding-left:15px;
-    }
-    tbody td a:hover, tbody th a:hover {
-        color:#009193;
-        text-decoration:none;
-    }
-</style>
 
 @if (Model.Any())
 {
-    <table>
+    <table class="table table-striped table-condensed">
+        <tr>
+            <th>Issue</th>
+            <th>Category</th>
+            <th>Description</th>
+            <th>Reported by</th>
+         </tr>
         @foreach (var issue in Model)
         {
             <tr><td><a href="@issue.IssueLinkUrl">#@issue.IssueId</a></td> 
                 <td>@issue.Category</td>
                 <td>@issue.Description</td>
+                <td><a href="@issue.User.Html_Url">@issue.User.Login</a></td>
             </tr>
         }
     </table>

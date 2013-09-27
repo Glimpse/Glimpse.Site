@@ -78,6 +78,7 @@ namespace Glimpse.Site.Framework
             }
             RemoveLastComma(issueView);
             issueView.Description = openIssue.Title;
+            issueView.User = openIssue.User;
             return issueView;
         }
 
