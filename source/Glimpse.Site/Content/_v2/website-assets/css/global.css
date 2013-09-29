@@ -37,7 +37,7 @@ hr.clearer{clear:both;height:0;background:none;border:none;}
 .section-container#intro #anthony,.section-container#page-title #anthony{background:transparent url("/Content/_v2/website-assets/img/anthony.png") bottom left no-repeat;right:123px;}
 .section-container#intro #nik,.section-container#page-title #nik{background:transparent url("/Content/_v2/website-assets/img/nik.png") bottom left no-repeat;right:0;}
 .section-container#install{display:none;background:#33a6ee;color:white;padding:40px 0 20px;box-shadow:0 -2px 3px 0 rgba(0, 0, 0, 0.3) inset;}
-.section-container#install #install-steps{font-size:14px;position:relative;z-index:1;}.section-container#install #install-steps .threeColumn{text-align:center!important;}
+.section-container#install #install-steps{font-size:14px;position:relative;z-index:1;margin-bottom: 1.5em;}.section-container#install #install-steps .threeColumn{text-align:center!important;}
 .section-container#install #background-arrows{position:absolute;max-width:980px;min-width:200px;margin:0 auto;padding:0 10px;top:0;max-width:566px;margin-left:180px;top:-19px;display:none;}
 .section-container#demo{text-align:center;background:transparent url("/Content/_v2/website-assets/img/demo-bg.png") top left repeat-x;padding-top:80px;}.section-container#demo .inner-monitor{display:none;}
 .section-container#demo #tool-demo{margin:20px 0;position:relative;}
@@ -142,7 +142,11 @@ dd.stat__value,dt.stat__title{margin:0;}
 .inVS dd { margin: 0; }
  
 .package-question {
-    margin:1em 0 4em 0
+    margin-bottom: 4em;
+} 
+.package-question h2 {
+    margin-bottom: 1em;
+    text-align: center;
 } 
 .package-question-heading {
     font-weight: bold;
