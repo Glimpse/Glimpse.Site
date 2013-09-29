@@ -451,16 +451,10 @@ a.button {
     box-shadow: 0 2px 3px 0 #000 inset;
     font-family: courier new,serif;
 }
-.package-question-option {
-    table-layout: fixed;
-    width: 100%;
-    display: table;
+.package-question-option { 
+    width: 100%; 
     margin-bottom: 1em;
-}
-.package-question-option > div {
-    display: table-cell;
-    width: 100%;
-}
+} 
 .package-question-note {
     font-size: 0.8em;
 }
