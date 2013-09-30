@@ -14,7 +14,7 @@ namespace Glimpse.Site.Controllers
         public ActionResult Index()
         {
             var jsonFile = Server.MapPath("~/Content/packages.json");
-            var packageIssueProvider = new PackageIssueProvider(new PackageRepository(jsonFile), new IssueRepository(new GithubIssueService()));
+            var packageIssueProvider = new PackageIssueProvider(new PackageRepository(jsonFile), new IssueRepository(new GithubIssueService(), new GithubMilestoneService()));
             var glimpsePackages = packageIssueProvider.GetPackageIssues();
             var glimpsePackageList = glimpsePackages.ToList();
             var issuesView = _glimpsePackageViewModelMapper.ConvertToIndexViewModel(glimpsePackageList);

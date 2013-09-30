@@ -54,6 +54,7 @@
     <Compile Include="GithubIssueQuery.cs" />
     <Compile Include="GithubIssueService.cs" />
     <Compile Include="GithubIssueRequestBuilder.cs" />
+    <Compile Include="GithubMilestoneService.cs" />
     <Compile Include="GlimpsePackage.cs" />
     <Compile Include="HttpResponseHelper.cs" />
     <Compile Include="IIssueRepository.cs" />

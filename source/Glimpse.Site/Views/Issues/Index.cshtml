@@ -41,7 +41,7 @@
     }
 </div>
 <hr class="clear"/>
-<h2>Thanks for reporting these:</h2>
+<h2>Thanks for reporting these issues:</h2>
 @foreach (var reporter in Model.IssueReporters)
 {
     <a href="@reporter.Html_Url" data-toggle="tooltip" title="@reporter.Login" id="@(reporter.Login)Avatar"><img width="40" src="@reporter.Avatar_Url" alt="@reporter.Login"/></a>
