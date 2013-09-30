@@ -27,6 +27,17 @@
                     <span style="padding-right: 10px;"><img src="~/Content/@package.StatusImage" width="15"/> @package.Name</span>
                 }
             </div>
+            
+            <div id="packageNotes">
+                @foreach (var package in packageCategory.Packages)
+                {
+                    if (!string.IsNullOrEmpty(package.StatusDescription))
+                    {
+                        <span> <strong>@package.Name:</strong> @package.StatusDescription</span><br/>
+                    }
+                } 
+            </div>
+            <hr class="clear"/>
 
             <strong>Acknowledged and working on</strong>
             @Html.Partial("_Issues", packageCategory.AcknowledgedIssues, new ViewDataDictionary(this.ViewData) {{"emptyMessage", "No issues yet scheduled for release"}})
