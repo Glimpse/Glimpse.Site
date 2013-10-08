@@ -47,7 +47,7 @@ hr.clearer{clear:both;height:0;background:none;border:none;}
 .section-container#demo #demo-hover-tab-detail{left:55%;top:53%;}
 .section-container#demo #demo-hover-ajax{right:5.1%;top:12%;}
 .section-container#demo #demo-hover-power{right:8.5%;top:3%;}
-.section-container#why-glimpse{background:#f6f6f6;padding:0px 0;margin:20px 0;border-top:1px solid #FFF;border-bottom:1px solid #FFF;box-shadow:0 0 3px 1px rgba(0, 0, 0, 0.2);z-index:1;}.section-container#why-glimpse .large-icon{width:64px;height:64px;float:left;background:transparent url("/Content/_v2/website-assets/img/getglimpse-sprite.png") 0 -177px no-repeat;}.section-container#why-glimpse .large-icon.fit{background-position:-64px -177px;}
+.section-container#why-glimpse{background:#f6f6f6;padding:20px 0;border-top:1px solid #FFF;border-bottom:1px solid #FFF;box-shadow:0 0 3px 1px rgba(0, 0, 0, 0.2);z-index:1;}.section-container#why-glimpse .large-icon{width:64px;height:64px;float:left;background:transparent url("/Content/_v2/website-assets/img/getglimpse-sprite.png") 0 -177px no-repeat;}.section-container#why-glimpse .large-icon.fit{background-position:-64px -177px;}
 .section-container#why-glimpse .large-icon.open-source{background-position:-128px -177px;}
 .section-container#why-glimpse h2{padding:20px 0 20px 80px;}
 .section-container#contributors{background:#323d42;padding:40px 0;text-align:left;color:#FFF;}.section-container#contributors h1{text-align:left;color:#fff;}
