@@ -2,7 +2,7 @@
 @model Glimpse.Site.Models.IssuesIndexViewModel
 @{
     ViewBag.Title = "Glimpse Issues";
-    ViewBag.bodyClass = "plugins-page";
+    ViewBag.bodyClass = "issues-page";
 }
 @section header {
     <h1>Issues</h1>
@@ -20,14 +20,13 @@
 <div class="tab-content">
     @foreach (var packageCategory in Model.PackageCategories)
     {
-        <div class="tab-pane fade" id="@packageCategory.Name">
-            <div class="alert">
-                @foreach (var package in packageCategory.Packages)
-                {
-                    <span style="padding-right: 10px;"><img src="~/Content/@package.StatusImage" width="15"/> @package.Name</span>
-                }
-            </div>
-            
+        <div class="tab-pane fade in active" id="@packageCategory.Name">
+                <div class="alert">
+                    @foreach (var package in packageCategory.Packages)
+                    {
+                        <span style="padding-right: 10px;"><img src="~/Content/@package.StatusImage" width="15"/> @package.Name</span>
+                    }
+                </div>
             <div id="packageNotes">
                 @foreach (var package in packageCategory.Packages)
                 {
@@ -38,7 +37,6 @@
                 } 
             </div>
             <hr class="clear"/>
-
             <strong>Acknowledged and working on</strong>
             @Html.Partial("_Issues", packageCategory.AcknowledgedIssues, new ViewDataDictionary(this.ViewData) {{"emptyMessage", "No issues yet scheduled for release"}})
 
@@ -52,7 +50,7 @@
     }
 </div>
 <hr class="clear"/>
-<h2>Thanks for reporting these issues:</h2>
+<h2>Thanks for reporting issues and contributing Pull Requests:</h2>
 @foreach (var reporter in Model.IssueReporters)
 {
     <a href="@reporter.Html_Url" data-toggle="tooltip" title="@reporter.Login" id="@(reporter.Login)Avatar"><img width="40" src="@reporter.Avatar_Url" alt="@reporter.Login"/></a>

@@ -26,7 +26,25 @@ namespace Glimpse.Site.Framework
                 };
                 packageCategory.Packages.Add(packageView);
             }
+            issuesView.IssueReporters = GetIssueContributors(_glimpsePackages);
             return issuesView;
+        }
+
+        private List<GithubUser> GetIssueContributors(IEnumerable<GlimpsePackage> glimpsePackageList)
+        {
+            var users = new Dictionary<string, GithubUser>();
+            foreach (var package in glimpsePackageList)
+            {
+                var packageReports = package.Issues.Select(i => i.User);
+                foreach (var packageReport in packageReports)
+                {
+                    if (!users.ContainsKey(packageReport.Id))
+                    {
+                        users.Add(packageReport.Id, packageReport);
+                    }
+                }
+            }
+            return users.Values.ToList();
         }
 
         private void SetupFields(IEnumerable<GlimpsePackage> glimpsePackages)
