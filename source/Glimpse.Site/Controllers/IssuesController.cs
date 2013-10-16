@@ -11,21 +11,19 @@ namespace Glimpse.Site.Controllers
     {
         private readonly GlimpsePackageViewModelMapper _glimpsePackageViewModelMapper = new GlimpsePackageViewModelMapper();
 
-//        [OutputCache(Duration = 30 * 60)]
+        [OutputCache(Duration = 30 * 60)]
         public ActionResult Index()
         {
             var jsonFile = Server.MapPath("~/Content/packages.json");
             var packageIssueProvider = new PackageIssueProvider(new PackageRepository(jsonFile), new IssueRepository(new GithubIssueService(), new GithubMilestoneService()));
             var glimpsePackages = packageIssueProvider.GetPackageIssues();
-            var glimpsePackageList = glimpsePackages.ToList();
-            var issuesView = _glimpsePackageViewModelMapper.ConvertToIndexViewModel(glimpsePackageList);
+            var issuesView = _glimpsePackageViewModelMapper.ConvertToIndexViewModel(glimpsePackages.ToList());
             return View(issuesView);
         }
 
         public ActionResult InvalidateCacheForIndex()
         {
-            string path = Url.Action("index");
-            Response.RemoveOutputCacheItem(path);
+            Response.RemoveOutputCacheItem(Url.Action("index"));
             return RedirectToAction("Index");
         }
     }

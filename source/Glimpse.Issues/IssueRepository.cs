@@ -16,12 +16,22 @@ namespace Glimpse.Issues
         public IEnumerable<GithubIssue> GetAllIssues()
         {
             var githubIssues = new List<GithubIssue>();
-            var vnextMilestone = _milestoneService.GetMilestone("vnext");
+            var closedIssues = GetClosedIssues();
             var openIssues = _githubIssueService.GetIssues(new GithubIssueQuery() { State = GithubIssueStatus.Open});
-            var closedIssues = _githubIssueService.GetIssues(new GithubIssueQuery() { State = GithubIssueStatus.Closed, MilestoneNumber = vnextMilestone.Number});
             githubIssues.AddRange(openIssues);
             githubIssues.AddRange(closedIssues);
             return githubIssues;
+        }
+
+        private IEnumerable<GithubIssue> GetClosedIssues()
+        {
+            var vnextMilestone = _milestoneService.GetMilestone("vnext");
+            var closedIssues = _githubIssueService.GetIssues(new GithubIssueQuery()
+                                                  {
+                                                      State = GithubIssueStatus.Closed,
+                                                      MilestoneNumber = vnextMilestone.Number
+                                                  });
+            return closedIssues;
         }
     }
 }
