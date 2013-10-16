@@ -37,12 +37,12 @@
                 } 
             </div>
             <hr class="clear"/>
-            <strong>Acknowledged and working on</strong>
+            <strong><em>Acknowledged and working on</em></strong>
             @Html.Partial("_Issues", packageCategory.AcknowledgedIssues, new ViewDataDictionary(this.ViewData) {{"emptyMessage", "No issues yet scheduled for release"}})
 
             <hr class="clearer"/>
     
-            <strong>Fixed and yet to be released</strong>
+            <strong><em>Fixed and yet to be released</em></strong>
             @Html.Partial("_Issues", packageCategory.CompletedIssues, new ViewDataDictionary(this.ViewData) {{"emptyMessage", "No issues yet fixed. We are working on some as we speak"}})
    
             <hr class="clearer"/>
