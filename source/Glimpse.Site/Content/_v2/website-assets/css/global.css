@@ -22,10 +22,8 @@ hr.clearer{clear:both;height:0;background:none;border:none;}
 #nav-container nav .support .icon{width:30px;background-position:-62px 0;}
 #nav-container nav .docs .icon{width:21px;background-position:-160px 0;}
 #nav-container nav .plugins .icon{width:36px;background-position:-92px 0;}
-#nav-container nav .issues .icon{ width: 33px;background-position: -208px 0;}
 #nav-container nav .home{padding-top:0;margin-top:0;padding-left:0;}#nav-container nav .home .icon{width:68px;height:60px;background-position:0 -315px;}
-#nav-container nav .download{background:#33a6ee;float:right;font-size:18px;color:#FFF;width:190px;text-align:left;line-height:16px;padding:11px 10px;}
-#nav-container nav .download .icon{width:32px;background-position:-128px 0;float:left;margin-right:5px;}
+#nav-container nav .download{background:#33a6ee;float:right;font-size:18px;color:#FFF;width:165px;text-align:left;line-height:16px;padding:11px 10px;}#nav-container nav .download .icon{width:32px;background-position:-128px 0;float:left;margin-right:5px;}
 #nav-container nav .download .sub-menu-title{font-size:12px;}
 .inner-monitor{background:transparent url("/Content/_v2/website-assets/img/in-monitor-screen.png") top left no-repeat;width:443px;height:285px;position:absolute;top:20px;left:16px;}.inner-monitor .video-link{position:absolute;left:160px;top:125px;background:transparent url("/Content/_v2/website-assets/img/getglimpse-sprite.png") 0 -376px no-repeat;padding-left:20px;}
 .section-container{position:relative;}.section-container#intro,.section-container#page-title{background:transparent url("/Content/_v2/website-assets/img/intro-bg.png") top left repeat;border-bottom:1px solid #FFF;box-shadow:0 -2px 3px 0 rgba(0, 0, 0, 0.3) inset;height:352px;padding-top:45px;}.section-container#intro #monitor,.section-container#page-title #monitor{position:absolute;right:10px;top:0px;height:395px;width:475px;background:transparent url("/Content/_v2/website-assets/img/monitor.png") top left no-repeat;z-index:1;}
@@ -130,9 +128,6 @@ section .twoColumn.column2 .innerColumn,footer .twoColumn.column2 .innerColumn,.
 .plugins-page #sub-nav-container{background:#9066bc;}
 .plugins-page #nav-container nav a.plugins{color:#FFF;}.plugins-page #nav-container nav a.plugins .icon{background-position:-92px -513px;}
 .plugins-page .plugins .stat{float:left;width:200px;text-align:center;}
-.issues-page #sub-nav-container{background:#919090;}
-/*.issues-page #nav-container nav a.plugins{color:#FFF;} .issues-page #nav-container nav a.plugins .icon{background-position:-92px -513px;}*/
-.issues-page .plugins .stat{float:left;width:200px;text-align:center;}
 .docs-page #sub-nav-container{background:#66bbbc;}
 .docs-page #nav-container nav a.docs{color:#FFF;}.docs-page #nav-container nav a.docs .icon{background-position:-160px -513px;}
 #main-content{background:transparent url("/Content/_v2/website-assets/img/demo-bg.png") 0 0 repeat-x;margin:1px 0 0;text-align:left;padding:30px 0;}#main-content h1{text-align:left;}
@@ -143,12 +138,3 @@ dd.stat__value,dt.stat__title{margin:0;}
 .ie .section-container#contributors .person .pic{-webkit-backface-visibility:visible;-ms-backface-visibility:visible;-moz-backface-visibility:visible;z-index:1;display:none;}
 .ie .section-container#contributors .person .details-container{z-index:10;-webkit-backface-visibility:visible;-moz-backface-visibility:visible;-ms-backface-visibility:visible;backface-visibility:visible;-webkit-transform:none;-webkit-transform-style:none;-ms-transform:none;-ms-transform-style:none;-moz-transform:none;-moz-transform-style:none;}
 .ie .section-container#contributors .person-container:hover .person{-webkit-transform:none;-moz-transform:none;-ms-transform:none;transform:none;}
-.tab-content {
-    border-left: 1px solid #ddd;
-    border-right: 1px solid #ddd;
-    padding: 10px;
-}
-
-.nav-tabs {
-    margin-bottom: 0;
-}
