@@ -7,18 +7,18 @@ using Glimpse.Site.Models;
 
 namespace Glimpse.Site.Controllers
 {
-    public class IssuesController : Controller
+    public class StatusController : Controller
     {
         private readonly GlimpsePackageViewModelMapper _glimpsePackageViewModelMapper = new GlimpsePackageViewModelMapper();
 
-        [OutputCache(Duration = 30 * 60)]
+//        [OutputCache(Duration = 30 * 60)]
         public ActionResult Index()
         {
             var jsonFile = Server.MapPath("~/Content/packages.json");
             var packageIssueProvider = new PackageIssueProvider(new PackageRepository(jsonFile), new IssueRepository(new GithubIssueService(), new GithubMilestoneService()));
             var glimpsePackages = packageIssueProvider.GetPackageIssues();
-            var issuesView = _glimpsePackageViewModelMapper.ConvertToIndexViewModel(glimpsePackages.ToList());
-            return View(issuesView);
+            var statusView = _glimpsePackageViewModelMapper.ConvertToIndexViewModel(glimpsePackages.ToList());
+            return View(statusView);
         }
 
         public ActionResult InvalidateCacheForIndex()

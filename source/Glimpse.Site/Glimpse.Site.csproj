@@ -138,7 +138,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Controllers\CommunityController.cs" />
-    <Compile Include="Controllers\IssuesController.cs" />
+    <Compile Include="Controllers\StatusController.cs" />
     <Compile Include="Controllers\ProtocolController.cs" />
     <Compile Include="Controllers\SupportController.cs" />
     <Compile Include="Controllers\DocsController.cs" />
@@ -295,6 +295,7 @@
     <Content Include="Content\_v2\screen.css" />
     <Content Include="Content\_v2\screen.min.css" />
     <Content Include="Content\_v2\twitterIcon.png" />
+    <Content Include="Content\_v2\website-assets\css\bootstrap.min.css" />
     <Content Include="Content\_v2\website-assets\css\firstRun.css" />
     <Content Include="Content\_v2\website-assets\css\global.css" />
     <Content Include="Content\_v2\website-assets\css\tipsy.css" />
@@ -332,6 +333,7 @@
     <Content Include="Content\_v2\website-assets\img\redgate.png" />
     <Content Include="Content\_v2\website-assets\img\towers.png" />
     <Content Include="Content\_v2\website-assets\img\vslogo-white.png" />
+    <Content Include="Content\_v2\website-assets\scripts\bootstrap.min.js" />
     <Content Include="Content\_v2\website-assets\scripts\global-ck.js" />
     <Content Include="Content\_v2\website-assets\scripts\global.js" />
     <Content Include="Content\_v2\website-assets\scripts\home-ck.js" />
@@ -443,8 +445,8 @@
     <Content Include="Views\Docs\Index.cshtml" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
     <Content Include="Views\Docs\Wiki\**\*.*" />
-    <Content Include="Views\Issues\Index.cshtml" />
-    <Content Include="Views\Issues\_Issues.cshtml" />
+    <Content Include="Views\Status\Index.cshtml" />
+    <Content Include="Views\Status\_Issues.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
