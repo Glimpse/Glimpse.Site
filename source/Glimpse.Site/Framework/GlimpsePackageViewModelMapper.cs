@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Glimpse.Issues;
 using Glimpse.Site.Models;
@@ -26,16 +27,29 @@ namespace Glimpse.Site.Framework
                 };
                 packageCategory.Packages.Add(packageView);
             }
-            issuesView.IssueReporters = GetIssueContributors(_glimpsePackages);
+            issuesView.IssueReporters = GetIssueReporters(_glimpsePackages);
+            var pullRequestContributors = new Dictionary<string, Tuple<GithubUser,List<GithubIssue>>>();
+            foreach (var package in _glimpsePackages)
+            {
+                var issues = package.Issues.Where(i => i.Html_Url.Contains("/pull/"));
+                foreach (var issue in issues)
+                {
+                    if (!pullRequestContributors.ContainsKey(issue.User.Id))
+                        pullRequestContributors.Add(issue.User.Id, new Tuple<GithubUser, List<GithubIssue>>(issue.User, new List<GithubIssue>()));
+                    if(pullRequestContributors[issue.User.Id].Item2.All(i => i.Id != issue.Id))
+                     pullRequestContributors[issue.User.Id].Item2.Add(issue);
+                }
+            }
+            issuesView.PullRequestContributors = pullRequestContributors.Values.ToList();
             return issuesView;
         }
 
-        private List<GithubUser> GetIssueContributors(IEnumerable<GlimpsePackage> glimpsePackageList)
+        private List<GithubUser> GetIssueReporters(IEnumerable<GlimpsePackage> glimpsePackageList)
         {
             var users = new Dictionary<string, GithubUser>();
             foreach (var package in glimpsePackageList)
             {
-                var packageReports = package.Issues.Select(i => i.User);
+                var packageReports = package.Issues.Where(i => i.Html_Url.Contains("/issues/")).Select(i => i.User);
                 foreach (var packageReport in packageReports)
                 {
                     if (!users.ContainsKey(packageReport.Id))
@@ -88,6 +102,7 @@ namespace Glimpse.Site.Framework
         {
             var issueView = new IssueViewModel();
             issueView.IssueId = openIssue.Id;
+            issueView.Number = openIssue.Number;
             issueView.IssueLinkUrl = openIssue.Html_Url;
             foreach (var label in openIssue.Labels)
             {

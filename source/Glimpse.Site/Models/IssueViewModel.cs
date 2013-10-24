@@ -9,5 +9,6 @@ namespace Glimpse.Site.Models
         public string Description { get; set; }
         public string Category { get; set; }
         public GithubUser User { get; set; }
+        public string Number { get; set; }
     }
 }

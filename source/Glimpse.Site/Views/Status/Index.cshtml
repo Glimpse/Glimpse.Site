@@ -1,7 +1,7 @@
 ﻿@using Glimpse.Issues
 @model Glimpse.Site.Models.IssuesIndexViewModel
 @{
-    ViewBag.Title = "Glimpse Issues";
+    ViewBag.Title = "Glimpse Status";
     ViewBag.bodyClass = "status-page";
 }
 @section header {
@@ -48,12 +48,40 @@
         </div>
     }
 </div>
-<hr class="clear"/>
-<h2>Thanks for reporting issues and contributing Pull Requests:</h2>
-@foreach (var reporter in Model.IssueReporters)
-{
-    <a href="@reporter.Html_Url" data-toggle="tooltip" title="@reporter.Login" id="@(reporter.Login)Avatar"><img width="40" src="@reporter.Avatar_Url" alt="@reporter.Login"/></a>
-}
+<hr class="clearer"/>
+<div id="contributors">
+    <div id="issue-contributors" style="float:left; width: 30%; margin:10px; display: block;">
+        <h2>Thank you for reporting Issues:</h2>
+        @foreach (var reporter in Model.IssueReporters)
+        {
+            <a href="@reporter.Html_Url" data-toggle="tooltip" title="@reporter.Login" id="@(reporter.Login)Avatar"><img width="40" src="@reporter.Avatar_Url" alt="@reporter.Login"/></a>
+        }
+    </div>
+    <div id="package-contributors" style="float:left; width: 65%; margin: 10px; display: block;">
+        <h2>Thank you for contributing Pull Requests:</h2>
+        <table class="table table-condensed">
+            <tr>
+                <th>Contributor</th>
+                <th>Details</th>
+            </tr>
+            @foreach (var reporter in Model.PullRequestContributors)
+            {
+                <tr>
+                    <td>
+                        <a href="@reporter.Item1.Html_Url" data-toggle="tooltip" title="@reporter.Item1.Login" id="@(reporter.Item1.Login)Avatar"><img width="40" src="@reporter.Item1.Avatar_Url" alt="@reporter.Item1.Login"/></a>
+                    </td>
+                    <td>
+                        @foreach (var pullRequest in reporter.Item2)
+                        {
+                            <a href="@pullRequest.Html_Url">#@pullRequest.Number</a> @(pullRequest.Title) <br />
+                        }
+                    </td>
+                </tr>
+            }
+        </table>
+        </div>
+</div>
+<hr class="clearer" />
 <script>
     $('#packages a:first').tab('show')
 </script>
