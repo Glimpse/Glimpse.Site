@@ -14,6 +14,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glimpse.Package", "source\G
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glimpse.Package.Test", "source\Glimpse.Package.Test\Glimpse.Package.Test.csproj", "{FF9651A3-06B5-421A-9EF7-9124CCBDA921}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glimpse.Issues.Test", "source\Glimpse.Issues.Test\Glimpse.Issues.Test.csproj", "{B8C4A194-D047-4776-9D28-D61F9E28E923}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glimpse.Issues", "source\Glimpse.Issues\Glimpse.Issues.csproj", "{5FE03002-28D6-4F7C-9C63-84BDE2334070}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +36,14 @@ Global
 		{FF9651A3-06B5-421A-9EF7-9124CCBDA921}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF9651A3-06B5-421A-9EF7-9124CCBDA921}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF9651A3-06B5-421A-9EF7-9124CCBDA921}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8C4A194-D047-4776-9D28-D61F9E28E923}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8C4A194-D047-4776-9D28-D61F9E28E923}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8C4A194-D047-4776-9D28-D61F9E28E923}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8C4A194-D047-4776-9D28-D61F9E28E923}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FE03002-28D6-4F7C-9C63-84BDE2334070}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FE03002-28D6-4F7C-9C63-84BDE2334070}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FE03002-28D6-4F7C-9C63-84BDE2334070}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FE03002-28D6-4F7C-9C63-84BDE2334070}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -138,6 +138,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Controllers\CommunityController.cs" />
+    <Compile Include="Controllers\StatusController.cs" />
     <Compile Include="Controllers\ProtocolController.cs" />
     <Compile Include="Controllers\SupportController.cs" />
     <Compile Include="Controllers\DocsController.cs" />
@@ -150,6 +151,7 @@
     <Compile Include="Controllers\PackagesController.cs" />
     <Compile Include="Controllers\VersionsController.cs" />
     <Compile Include="Framework\DictionaryKeysAreNotPropertyNamesJsonConverter.cs" />
+    <Compile Include="Framework\GlimpsePackageViewModelMapper.cs" />
     <Compile Include="Framework\HttpHeaderAttribute.cs" />
     <Compile Include="Framework\JsonpMediaTypeFormatter.cs">
       <SubType>Code</SubType>
@@ -167,6 +169,10 @@
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DocumentationViewModel.cs" />
+    <Compile Include="Models\IssuesIndexViewModel.cs" />
+    <Compile Include="Models\IssueViewModel.cs" />
+    <Compile Include="Models\PackageCategoryViewModel.cs" />
+    <Compile Include="Models\PackageViewModel.cs" />
     <Compile Include="PackagesController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -291,6 +297,7 @@
     <Content Include="Content\_v2\screen.css" />
     <Content Include="Content\_v2\screen.min.css" />
     <Content Include="Content\_v2\twitterIcon.png" />
+    <Content Include="Content\_v2\website-assets\css\bootstrap.min.css" />
     <Content Include="Content\_v2\website-assets\css\firstRun.css" />
     <Content Include="Content\_v2\website-assets\css\global.css" />
     <Content Include="Content\_v2\website-assets\css\tipsy.css" />
@@ -329,6 +336,7 @@
     <Content Include="Content\_v2\website-assets\img\redgate.png" />
     <Content Include="Content\_v2\website-assets\img\towers.png" />
     <Content Include="Content\_v2\website-assets\img\vslogo-white.png" />
+    <Content Include="Content\_v2\website-assets\scripts\bootstrap.min.js" />
     <Content Include="Content\_v2\website-assets\scripts\global-ck.js" />
     <Content Include="Content\_v2\website-assets\scripts\global.js" />
     <Content Include="Content\_v2\website-assets\scripts\home-ck.js" />
@@ -405,6 +413,9 @@
     <Content Include="Content\_v2\website-assets\fonts\ArchitectsDaughter.ttf" />
     <Content Include="Content\_v1\inuit.less" />
     <Content Include="Content\_v1\screen.less" />
+    <Content Include="Content\packages.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\glimpse.js" />
     <Content Include="Scripts\glimpse.protocol.js" />
@@ -437,6 +448,8 @@
     <Content Include="Views\Docs\Index.cshtml" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
     <Content Include="Views\Docs\Wiki\**\*.*" />
+    <Content Include="Views\Status\Index.cshtml" />
+    <Content Include="Views\Status\_Issues.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -458,6 +471,10 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Glimpse.Issues\Glimpse.Issues.csproj">
+      <Project>{5fe03002-28d6-4f7c-9c63-84bde2334070}</Project>
+      <Name>Glimpse.Issues</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Glimpse.Package\Glimpse.Package.csproj">
       <Project>{A0EFE764-BBDE-4815-81A5-25A1FB204DE7}</Project>
       <Name>Glimpse.Package</Name>

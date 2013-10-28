@@ -22,6 +22,7 @@ hr.clearer{clear:both;height:0;background:none;border:none;}
 #nav-container nav .support .icon{width:30px;background-position:-62px 0;}
 #nav-container nav .docs .icon{width:21px;background-position:-160px 0;}
 #nav-container nav .plugins .icon{width:36px;background-position:-92px 0;}
+#nav-container nav .status .icon{width:36px;background-position:-208px 0;margin-right: 14px;}
 #nav-container nav .home{padding-top:0;margin-top:0;padding-left:0;}#nav-container nav .home .icon{width:68px;height:60px;background-position:0 -315px;}
 #nav-container nav .download{background:#33a6ee;float:right;font-size:18px;color:#FFF;width:165px;text-align:left;line-height:16px;padding:11px 10px;}#nav-container nav .download .icon{width:32px;background-position:-128px 0;float:left;margin-right:5px;}
 #nav-container nav .download .sub-menu-title{font-size:12px;}
@@ -130,6 +131,8 @@ section .twoColumn.column2 .innerColumn,footer .twoColumn.column2 .innerColumn,.
 .plugins-page .plugins .stat{float:left;width:200px;text-align:center;}
 .docs-page #sub-nav-container{background:#66bbbc;}
 .docs-page #nav-container nav a.docs{color:#FFF;}.docs-page #nav-container nav a.docs .icon{background-position:-160px -513px;}
+.status-page #sub-nav-container{background:#848484;}
+.status-page #nav-container nav a.status{color:#FFF;}.status-page #nav-container nav a.status .icon{background-position:-208px 0;margin-right: 14px;}
 #main-content{background:transparent url("/Content/_v2/website-assets/img/demo-bg.png") 0 0 repeat-x;margin:1px 0 0;text-align:left;padding:30px 0;}#main-content h1{text-align:left;}
 #main-content p{width:100%;}
 dl.stat{margin-right:20px;}

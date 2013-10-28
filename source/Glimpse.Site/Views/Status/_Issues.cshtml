@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Glimpse.Site.Models.IssueViewModel>
+
+@if (Model.Any())
+{
+    <table class="table table-striped table-condensed">
+        <tr>
+            <th style="width: 10%;">Issue</th>
+            <th style="width:15%">Category</th>
+            <th style="width:60%;">Description</th>
+            <th style="width: 15%;">Reported by</th>
+         </tr>
+        @foreach (var issue in Model)
+        {
+            <tr><td><a href="@issue.IssueLinkUrl">#@issue.Number</a></td> 
+                <td>@issue.Category</td>
+                <td>@issue.Description</td>
+                <td><a href="@issue.User.Html_Url">@issue.User.Login</a></td>
+            </tr>
+        }
+    </table>
+}
+else
+{
+    <p style="color:grey; font-size: 90%">@ViewData["emptyMessage"]</p>
+}
