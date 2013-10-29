@@ -12,9 +12,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-        <link media="screen" rel="stylesheet" type="text/css" href="/Content/_v2/website-assets/css/bootstrap.min.css" />
-        <script src="/Content/_v2/website-assets/scripts/bootstrap.min.js"></script>
         @Styles.Render("~/Content/css")
+
         @*<link media="screen" rel="stylesheet" type="text/css" href="assets/css/global.css" />
         <link media="screen" rel="stylesheet" type="text/css" href="assets/css/tipsy.css" />
         
@@ -29,22 +28,27 @@
             
             <div id="nav-container">
                 <a href="#" id="mobile-menu-button"><span class="icon"></span><span class="nav-label">menu</span></a>
-                <nav>
-                    <a href="@Url.Action(MVC.Home.Index())" class="home"><span class="icon"></span><span class="nav-label">Home</span></a>
-                    <a href="/Help/Getting-started" class="getting-started"><span class="icon"></span>Getting Started</a>
-                    <a href="@Url.Action(MVC.Community.Index())" class="community"><span class="icon"></span>Community</a>
-                    <a href="@Url.Action(MVC.Support.Index())" class="support"><span class="icon"></span>Support</a>
-                    <a href="/Help/" class="docs"><span class="icon"></span>Documentation</a>
-                    <a href="@Url.Action(MVC.Packages.Index())" class="plugins"><span class="icon"></span>Extensions</a>
+                <div id="mobile-nav-padding"></div>
+            	<nav>
+            	    <!--a href="@Url.Action(MVC.Home.Index())" class="home"><span class="icon"></span><span class="nav-label">Home</span></a-->
+            	    <a href="/Help/Getting-started" class="getting-started"><span class="icon"></span>Getting Started</a>
+            	    <a href="@Url.Action(MVC.Community.Index())" class="community"><span class="icon"></span>Community</a>
+            	    <a href="@Url.Action(MVC.Support.Index())" class="support"><span class="icon"></span>Support</a>
+            	    <a href="/Help/" class="docs"><span class="icon"></span>Documentation</a>
+            	    <a href="@Url.Action(MVC.Packages.Index())" class="plugins"><span class="icon"></span>Extensions</a>
+<<<<<<< HEAD
                     <!-- <a href="@Url.Action("Index","Status")" class="status"><span class="icon"></span>Status</a> -->
-                    <a href="#" class="download"><span class="icon"></span>Install now<br /> <span class="sub-menu-title">It's only one command</span></a>
-                </nav>
-                <hr class="clearer" />
+            	    <a href="#" class="download"><span class="icon"></span>Install now<br /> <span class="sub-menu-title">It's only one command</span></a>
+=======
+            	    <a href="#" class="download"><span class="icon"></span>Install now<br /> <span class="sub-menu-title">It's really pretty easy</span></a>
+>>>>>>> master
+            	</nav>
+            	<hr class="clearer" />
             </div>
             
-            <div id="nav-padder"></div>
-            <div class="section-container" id="install">
-                <section> 
+        	<div id="nav-padder"></div>
+        	<div class="section-container" id="install">
+	            <section> 
 	                <div class="package-question">
 	                    <div class="package-question-suggestion">
                             <h2>Choose which packages to install</h2>
@@ -119,29 +123,11 @@
                         </div>
                     </div>
                     *@
-                    </section>
-            </div>
+	            </section>
+        	</div>
         </header>
-        
-        <div class="section-container" id="page-title">
-        	<section>
-        	    @RenderSection("header")
-        	</section>
-        </div>
-        
-        @if (IsSectionDefined("subnav"))
-        {
-            <div id="sub-nav-container" class="section-container">
-                <div id="sub-nav">
-                    @RenderSection("subnav")
-                </div>
-            </div>
-        }
-        <div class="section-container" id="main-content">
-            <section>
-        	    @RenderBody()
-            </section>
-        </div>
+
+        	@RenderBody()
         <div class="section-container" id="footer-container">
             <footer>
                 <div id="mountains"></div>

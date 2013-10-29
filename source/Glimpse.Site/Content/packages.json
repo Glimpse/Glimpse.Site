@@ -1,0 +1,83 @@
+﻿[
+    {
+        "title" : "Glimpse.Core",
+        "tags":["Glimpse.Core"],
+        "category": "Core",
+        "status": "green",
+        "statusdescription":""
+    },
+    {
+        "title" : "Glimpse.ASPNET",
+        "tags":["Glimpse.ASPNET"],
+        "category": "ASPNET",
+        "status": "green",
+        "statusdescription":""
+    },
+     {
+        "title" : "Glimpse.WebForms",
+        "tags":["Glimpse.WebForms"],
+        "category": "WebForms",
+        "status": "green",
+        "statusdescription":""
+    },
+    {
+        "title": "Glimpse.MVC5",
+        "category": "MVC",
+        "tags": ["Glimpse.MVC", "Glimpse.MVC5"],
+        "status": "green",
+        "statusdescription":""
+    },
+	    {
+        "title": "Glimpse.MVC4",
+        "category": "MVC",
+        "tags": ["Glimpse.MVC", "Glimpse.MVC4"],
+        "status": "green",
+        "statusdescription":""
+    },
+    {
+        "title": "Glimpse.MVC3",
+        "category": "MVC",
+        "tags": ["Glimpse.MVC", "Glimpse.MVC3"],
+        "status": "green",
+        "statusdescription":""
+
+    },
+    {
+        "title": "Glimpse.MVC2",
+        "category": "MVC",
+        "tags": ["Glimpse.MVC", "Glimpse.MVC2"],
+        "status": "green",
+        "statusdescription":""
+
+    },
+    {
+        "title" : "Glimpse.ADO",
+        "category": "ADO",
+        "tags":["Glimpse.ADO"],
+        "status": "green",
+        "statusdescription":""
+    },
+    {
+        "title": "Glimpse.EF43",
+        "category": "EF",
+        "tags": ["Glimpse.EF", "Glimpse.EF43"],
+        "status": "green",
+        "statusdescription":""
+    },
+    {
+        "title": "Glimpse.EF5",
+        "category": "EF",
+        "tags": ["Glimpse.EF", "Glimpse.EF5"],
+        "status": "green",
+        "statusdescription":""
+
+    },
+    {
+        "title": "Glimpse.EF6",
+        "category": "EF",
+        "tags": ["Glimpse.EF", "Glimpse.EF6"],
+        "status": "green",
+        "statusdescription":""
+
+    },
+]

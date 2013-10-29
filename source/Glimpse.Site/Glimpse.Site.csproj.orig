@@ -416,10 +416,13 @@
     <Content Include="Content\_v2\website-assets\fonts\ArchitectsDaughter.ttf" />
     <Content Include="Content\_v1\inuit.less" />
     <Content Include="Content\_v1\screen.less" />
+<<<<<<< HEAD
     <Content Include="Content\packages.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+=======
     <Content Include="Areas\Version\Views\Install\Thanks.cshtml" />
+>>>>>>> master
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\glimpse.js" />
     <Content Include="Scripts\glimpse.protocol.js" />

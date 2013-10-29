@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Http;
+﻿using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
-using System.Web.Routing; 
-using Glimpse.Package; 
+using System.Web.Routing;
+using Glimpse.Package;
 
 namespace Glimpse.Site
 {
@@ -24,9 +20,10 @@ namespace Glimpse.Site
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             BindingConfig.RegisterGlobalBindings(ModelBinders.Binders, GlobalConfiguration.Configuration);
-            FormatterConfig.RegisterFormatters(GlobalConfiguration.Configuration); 
+            FormatterConfig.RegisterFormatters(GlobalConfiguration.Configuration);
 
             PackageSettings.Settings.Initialize();
         }
     }
+
 }
