@@ -33,5 +33,10 @@ namespace Glimpse.Site.Areas.Version.Controllers
 
             return View(MVC.Version.Install.Views.Update, MVC.Shared.Views._Simple, result);
         }
+
+        public virtual ActionResult Thanks()
+        { 
+            return View();
+        }
     }
 }

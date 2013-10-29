@@ -89,6 +89,7 @@ $().ready(function () {
     $('.video-link').click(function(e) {
         e.preventDefault();
         loadInlineVideo();
+        _gaq.push(['_trackEvent', 'Video', 'Play', 'Glimpse Introduction']);
     });
     
     $('a.download, #demo>section>a.button').click(function (e) {
@@ -98,7 +99,7 @@ $().ready(function () {
             $(window).scrollTo(0, 1500);
         }
         $('#install').stop().slideToggle();
-        
+        _gaq.push(['_trackEvent', 'Download', 'Install', 'Call to action']);
     });
     //call the external stuff last
     if ($('body').hasClass('inVS') == false) {

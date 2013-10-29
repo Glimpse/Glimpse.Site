@@ -25,7 +25,7 @@ namespace Glimpse.Site
 
             bundles.Add(new StyleBundle("~/Content/css").Include( 
                 "~/Content/_v2/website-assets/css/global.css",
-                "~/Content/_v2//website-assets/css/tipsy.css"    
+                "~/Content/_v2//website-assets/css/tipsy.css"
             ));
 
             bundles.Add(new ScriptBundle("~/Script/javascript").Include(
@@ -34,6 +34,10 @@ namespace Glimpse.Site
                 "~/Content/_v2/website-assets/scripts/jquery.tipsy.js",
                 "~/Content/_v2/website-assets/scripts/global.js",
                 "~/Content/_v2/website-assets/scripts/home.js"
+            ));
+
+            bundles.Add(new ScriptBundle("~/Script/simple").Include(
+                "~/Scripts/site.google.js"
             ));
 
             bundles.Add(new ScriptBundle("~/Script/simple").Include(
