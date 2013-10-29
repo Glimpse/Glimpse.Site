@@ -368,6 +368,8 @@
     <Content Include="Content\glimpseLogoWhite.png" />
     <Content Include="Content\glimpseMedium.png" />
     <Content Include="Content\GlimpseStackAd.png" />
+    <Content Include="Content\greenIcon.png" />
+    <Content Include="Content\redIcon.png" />
     <Content Include="Content\Help\FilesPlugin.jpg" />
     <Content Include="Content\Help\HelloWorldPlugin.jpg" />
     <Content Include="Content\jquery.contentslider.css" />
