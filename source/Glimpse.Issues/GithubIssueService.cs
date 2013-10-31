@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Web.Hosting;
 
 namespace Glimpse.Issues
 {
@@ -47,7 +49,10 @@ namespace Glimpse.Issues
 
         private static HttpResponseMessage SendGetRequest(HttpClient client, string requestUri)
         {
-            return client.GetAsync(requestUri).Result;
+            HttpResponseMessage httpResponseMessage = client.GetAsync(requestUri).Result;
+            var path = HostingEnvironment.MapPath("/Content/api.txt");
+            File.AppendAllText(path, string.Format("{0:dd/MM/yyyy HH:mm:ss} - {1} - {2}\n", DateTime.UtcNow, requestUri, httpResponseMessage.Content.ReadAsStringAsync().Result));
+            return httpResponseMessage;
         }
 
         private static IEnumerable<GithubIssue> ConvertToGithubIssues(HttpResponseMessage result)
