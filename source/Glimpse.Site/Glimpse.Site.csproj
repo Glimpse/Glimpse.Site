@@ -138,6 +138,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Controllers\CommunityController.cs" />
+    <Compile Include="Controllers\HttpClientFactory.cs" />
     <Compile Include="Controllers\StatusController.cs" />
     <Compile Include="Controllers\ProtocolController.cs" />
     <Compile Include="Controllers\SupportController.cs" />
@@ -216,6 +217,7 @@
     <Content Include="Areas\Version\Views\Check\Release.cshtml" />
     <Content Include="Areas\Version\Views\Admin\Index.cshtml" />
     <Content Include="Areas\Version\Views\Admin\Process.cshtml" />
+    <Content Include="Content\api.txt" />
     <Content Include="Content\_v1\app-config-favicon.png" />
     <Content Include="Content\_v1\app-config-logo.png" />
     <Content Include="Content\_v1\app-sprite-new.png" />
@@ -454,6 +456,7 @@
     <Content Include="Views\Docs\Wiki\**\*.*" />
     <Content Include="Views\Status\Index.cshtml" />
     <Content Include="Views\Status\_Issues.cshtml" />
+    <Content Include="secrets.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
