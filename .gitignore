@@ -20,3 +20,4 @@ _ReSharper.*
 *.dotCover
 /Packages.dgml
 /packages
+secrets.config
