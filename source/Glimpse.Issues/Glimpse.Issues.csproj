@@ -50,25 +50,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BasicHttpClient.cs" />
-    <Compile Include="GithubIssue.cs" />
-    <Compile Include="GithubIssueQuery.cs" />
-    <Compile Include="GithubIssueService.cs" />
-    <Compile Include="GithubIssueRequestBuilder.cs" />
-    <Compile Include="GithubMilestoneService.cs" />
+    <Compile Include="Http\BasicHttpClient.cs" />
+    <Compile Include="GitHub\GithubIssue.cs" />
+    <Compile Include="GitHub\GithubIssueQuery.cs" />
+    <Compile Include="GitHub\GithubIssueService.cs" />
+    <Compile Include="GitHub\GithubIssueRequestBuilder.cs" />
+    <Compile Include="GitHub\GithubMilestoneService.cs" />
     <Compile Include="GlimpsePackage.cs" />
-    <Compile Include="HttpResponseHelper.cs" />
-    <Compile Include="IHttpClient.cs" />
-    <Compile Include="IIssueRepository.cs" />
-    <Compile Include="IPackageRepository.cs" />
-    <Compile Include="IssueRepository.cs" />
+    <Compile Include="Http\HttpResponseHelper.cs" />
+    <Compile Include="Http\IHttpClient.cs" />
+    <Compile Include="Repositories\IIssueRepository.cs" />
+    <Compile Include="Repositories\IPackageRepository.cs" />
+    <Compile Include="Repositories\IssueRepository.cs" />
     <Compile Include="PackageIssueProvider.cs" />
-    <Compile Include="PackageRepository.cs" />
+    <Compile Include="Repositories\PackageRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
