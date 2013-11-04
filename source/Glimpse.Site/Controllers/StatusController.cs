@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Configuration;
+using System.Linq;
 using System.Web.Mvc;
 using Glimpse.Issues;
 using Glimpse.Site.Framework;
@@ -27,8 +28,10 @@ namespace Glimpse.Site.Controllers
         private PackageIssueProvider CreatePackageIssueProvider()
         {
             var jsonFile = Server.MapPath("~/Content/packages.json");
-            var basicHttpClient = new BasicHttpClient("https://api.github.com/", "application/json");
-            return new PackageIssueProvider(new PackageRepository(jsonFile), new IssueRepository(new GithubIssueService(basicHttpClient), new GithubMilestoneService(basicHttpClient)));
+            string githubKey = ConfigurationManager.AppSettings.Get("GithubKey");
+            string githubSecret = ConfigurationManager.AppSettings.Get("GithubSecret");
+            var httpClient = new HttpClientFactory().CreateHttpClient(githubKey, githubSecret);
+            return new PackageIssueProvider(new PackageRepository(jsonFile), new IssueRepository(new GithubIssueService(httpClient), new GithubMilestoneService(httpClient)));
         }
     }
 }

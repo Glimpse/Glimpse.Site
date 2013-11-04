@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BasicHttpClient.cs" />
     <Compile Include="GithubIssue.cs" />
     <Compile Include="GithubIssueQuery.cs" />
     <Compile Include="GithubIssueService.cs" />
