@@ -1,26 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
-using System.Net.Http.Headers;
 
 namespace Glimpse.Issues
 {
     public class GithubMilestoneService
     {
-        public GithubMilestone GetMilestone(string milestoneName)
+        private readonly IHttpClient _httpClient;
+
+        public GithubMilestoneService(IHttpClient httpClient)
         {
-            var client = SetupHttpClient("https://api.github.com/", "application/json");
-            var result = client.GetAsync("repos/glimpse/glimpse/milestones").Result;
-            var milestones = result.Content.ReadAsAsync<IEnumerable<GithubMilestone>>().Result;
-            return milestones.FirstOrDefault(m => m.Title.ToLower() == milestoneName.ToLower());
+            _httpClient = httpClient;
         }
 
-        private HttpClient SetupHttpClient(string baseAddress, string mediaType)
+        public GithubMilestone GetMilestone(string milestoneName)
         {
-            var client = new HttpClient {BaseAddress = new Uri(baseAddress)};
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(mediaType));
-            return client;
+            var result = _httpClient.GetAsync("repos/glimpse/glimpse/milestones").Result;
+            var milestones = result.Content.ReadAsAsync<IEnumerable<GithubMilestone>>().Result;
+            return milestones.FirstOrDefault(m => m.Title.ToLower() == milestoneName.ToLower());
         }
     }
 }
