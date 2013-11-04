@@ -6,7 +6,7 @@ public class HttpClientFactory
     {
         const string baseAddress = "https://api.github.com/";
         const string mediaType = "application/json";
-        if((githubKey == null || githubSecret == null) && githubKey != githubSecret)
+        if(githubKey == null || githubSecret == null || githubKey == githubSecret)
             return new BasicHttpClient(baseAddress, mediaType);
         return new AuthenticatedHttpClient(baseAddress,mediaType,githubKey,githubSecret);
     }
