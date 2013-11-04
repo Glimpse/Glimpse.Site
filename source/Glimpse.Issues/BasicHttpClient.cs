@@ -38,7 +38,7 @@ namespace Glimpse.Issues
         }
         public Task<HttpResponseMessage> GetAsync(string uri)
         {
-            var uriBuilder = new UriBuilder(uri);
+            var uriBuilder = new UriBuilder(_httpClient.BaseAddress + uri);
             var query = uriBuilder.Uri.AddParameter("client_id", _clientId).AddParameter("client_secret", _clientSecret);
             return _httpClient.GetAsync(query);
         }
