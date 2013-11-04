@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Web.Hosting;
 
 namespace Glimpse.Issues
 {
@@ -14,8 +12,6 @@ namespace Glimpse.Issues
         {
             var client = SetupHttpClient("https://api.github.com/", "application/json");
             var result = client.GetAsync("repos/glimpse/glimpse/milestones").Result;
-            var path = HostingEnvironment.MapPath("/Content/api.txt");
-            File.AppendAllText(path, string.Format("{0:dd/MM/yyyy HH:mm:ss} - {1} - {2}\n", DateTime.UtcNow, "milestones", result.Content.ReadAsStringAsync().Result + result.Headers.GetValues("X-RateLimit-Limit").First() + result.Headers.GetValues("X-RateLimit-Remaining").First() + result.Headers.GetValues("X-RateLimit-Reset").First()));
             var milestones = result.Content.ReadAsAsync<IEnumerable<GithubMilestone>>().Result;
             return milestones.FirstOrDefault(m => m.Title.ToLower() == milestoneName.ToLower());
         }
