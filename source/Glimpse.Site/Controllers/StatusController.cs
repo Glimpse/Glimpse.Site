@@ -19,11 +19,6 @@ namespace Glimpse.Site.Controllers
             return View(statusView);
         }
 
-        public ActionResult KeysStatus()
-        {
-            return Content(ConfigurationManager.AppSettings.AllKeys.Aggregate("", (current, appsetting) => current + string.Format("{0}: {1} <br/>", appsetting, ConfigurationManager.AppSettings[appsetting])));
-        }
-
         public ActionResult InvalidateCacheForIndex()
         {
             Response.RemoveOutputCacheItem(Url.Action("index"));
