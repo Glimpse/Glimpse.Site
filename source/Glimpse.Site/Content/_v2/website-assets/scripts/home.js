@@ -2,7 +2,7 @@ var console;
 var buildStatus;
 
 /*var videoHTML = '<div id="video-cover"></div><div id="video-container"><section><div id="video-header"><a id="close-video-link" href="#">close</a></div><iframe id="video" src="http://channel9.msdn.com/Shows/Web+Camps+TV/The-Glimpse-Team-on-Channel-9/player?w=512&h=288" frameBorder="0" scrolling="no" ></iframe><div id="video-details">This is a video we recently filmed for channel 9 talking about the release of v1 and how to get stuck in with glimpse.</div></section></div>';*/
-var inlineVideoHTML = '<iframe id="video" src="http://channel9.msdn.com/Shows/Web+Camps+TV/The-Glimpse-Team-on-Channel-9/player?w=443&h=285" frameBorder="0" scrolling="no" ></iframe>';
+var inlineVideoHTML = '<iframe width="443" height="285" src="//www.youtube.com/embed/ybIxZ6TTm_E" frameborder="0" allowfullscreen></iframe>';
 
 function getBuildStatus() {
     $.ajax({
