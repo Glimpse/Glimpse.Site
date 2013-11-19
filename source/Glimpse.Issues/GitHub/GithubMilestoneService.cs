@@ -16,13 +16,22 @@ namespace Glimpse.Issues
 
         public GithubMilestone GetLatestMilestoneWithIssues()
         {
-            return (from g in GetAllMilestones()
+            var githubMilestones = GetAllMilestones();
+            var vnextMilestone = githubMilestones.FirstOrDefault(g => g.Title.ToLower() == "vnext");
+            if (MileStoneHasOpenOrClosedIssues(vnextMilestone))
+                return vnextMilestone;
+            return (from g in githubMilestones
                     where g.Open_Issues > 0 || g.Closed_Issues > 0
                     orderby g.Created_At descending
                     select g).First();
         }
 
-        private IEnumerable<GithubMilestone> GetAllMilestones()
+        private static bool MileStoneHasOpenOrClosedIssues(GithubMilestone vnextMilestone)
+        {
+            return vnextMilestone != null && vnextMilestone.Closed_Issues != 0 && vnextMilestone.Open_Issues != 0;
+        }
+
+        private List<GithubMilestone> GetAllMilestones()
         {
             var result = _httpClient.GetAsync("repos/glimpse/glimpse/milestones").Result;
             var githubMilestones = result.Content.ReadAsAsync<IEnumerable<GithubMilestone>>().Result.ToList();
