@@ -8,22 +8,33 @@ namespace Glimpse.Issues
     {
         private readonly IPackageRepository _packageRepository;
         private readonly IIssueRepository _issueRepository;
+        private readonly IGithubMilestoneService _githubMilestoneService;
 
-        public PackageIssueProvider(IPackageRepository packageRepository, IIssueRepository issueRepository)
+        public PackageIssueProvider(IPackageRepository packageRepository, IIssueRepository issueRepository, IGithubMilestoneService githubMilestoneService)
         {
             _packageRepository = packageRepository;
             _issueRepository = issueRepository;
+            _githubMilestoneService = githubMilestoneService;
         }
 
-        public IEnumerable<GlimpsePackage> GetPackageIssues()
+        public IEnumerable<GlimpsePackage> GetLatestPackageIssues()
         {
             var packages = _packageRepository.GetAllPackages().ToList();
-            var issues = _issueRepository.GetAllIssues();
+            var latestMilestoneWithIssues = GetLatestMilestoneWithIssues();
+            var issues = _issueRepository.GetAllIssuesFromMilestone(latestMilestoneWithIssues);
             foreach (var issue in issues)
             {
                 AddIssueToAssociatedPackage(packages, issue);
             }
             return packages;
+        }
+
+        private int GetLatestMilestoneWithIssues()
+        {
+            return (from g in _githubMilestoneService.GetMilestones()
+                   where g.Open_Issues > 0 || g.Closed_Issues > 0
+                   orderby g.Created_At descending 
+                   select g.Number).First();
         }
 
         private void AddIssueToAssociatedPackage(IEnumerable<GlimpsePackage> packages, GithubIssue issue)

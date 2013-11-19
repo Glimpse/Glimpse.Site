@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 
 namespace Glimpse.Issues
 {
-    public class GithubMilestoneService
+    public class GithubMilestoneService : IGithubMilestoneService
     {
         private readonly IHttpClient _httpClient;
 
@@ -13,11 +14,14 @@ namespace Glimpse.Issues
             _httpClient = httpClient;
         }
 
-        public GithubMilestone GetMilestone(string milestoneName)
+        public IEnumerable<GithubMilestone> GetMilestones()
         {
             var result = _httpClient.GetAsync("repos/glimpse/glimpse/milestones").Result;
-            var milestones = result.Content.ReadAsAsync<IEnumerable<GithubMilestone>>().Result;
-            return milestones.FirstOrDefault(m => m.Title.ToLower() == milestoneName.ToLower());
+            var githubMilestones = result.Content.ReadAsAsync<IEnumerable<GithubMilestone>>().Result.ToList();
+            result = _httpClient.GetAsync("repos/glimpse/glimpse/milestones?state=closed").Result;
+            var closedMilestones = result.Content.ReadAsAsync<IEnumerable<GithubMilestone>>().Result.ToList();
+            githubMilestones.AddRange(closedMilestones);
+            return githubMilestones;
         }
     }
 }

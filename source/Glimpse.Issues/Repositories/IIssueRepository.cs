@@ -4,6 +4,6 @@ namespace Glimpse.Issues
 {
     public interface IIssueRepository
     {
-        IEnumerable<GithubIssue> GetAllIssues();
+        IEnumerable<GithubIssue> GetAllIssuesFromMilestone(int milestoneNumber);
     }
 }
