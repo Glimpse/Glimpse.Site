@@ -10,8 +10,14 @@
 @section subnav {
     &nbsp;
 }
-<h1>Currently Working On</h1>
-
+@if (Model.CurrentMilestone.Title.ToLower().Equals("vnext"))
+{
+    <h1>Working on our next release</h1>
+}
+else
+{
+    <h1>We have just released @Model.CurrentMilestone.Title</h1>
+}
     <ul id="packages" class="nav nav-tabs">
 @foreach (var packageCategory in Model.PackageCategories)
 {

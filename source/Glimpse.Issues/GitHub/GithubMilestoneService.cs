@@ -14,7 +14,15 @@ namespace Glimpse.Issues
             _httpClient = httpClient;
         }
 
-        public IEnumerable<GithubMilestone> GetMilestones()
+        public GithubMilestone GetLatestMilestoneWithIssues()
+        {
+            return (from g in GetAllMilestones()
+                    where g.Open_Issues > 0 || g.Closed_Issues > 0
+                    orderby g.Created_At descending
+                    select g).First();
+        }
+
+        private IEnumerable<GithubMilestone> GetAllMilestones()
         {
             var result = _httpClient.GetAsync("repos/glimpse/glimpse/milestones").Result;
             var githubMilestones = result.Content.ReadAsAsync<IEnumerable<GithubMilestone>>().Result.ToList();

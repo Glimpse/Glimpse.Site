@@ -17,24 +17,15 @@ namespace Glimpse.Issues
             _githubMilestoneService = githubMilestoneService;
         }
 
-        public IEnumerable<GlimpsePackage> GetLatestPackageIssues()
+        public IEnumerable<GlimpsePackage> GetLatestPackageIssues(int milestoneNumber)
         {
             var packages = _packageRepository.GetAllPackages().ToList();
-            var latestMilestoneWithIssues = GetLatestMilestoneWithIssues();
-            var issues = _issueRepository.GetAllIssuesFromMilestone(latestMilestoneWithIssues);
+            var issues = _issueRepository.GetAllIssuesFromMilestone(milestoneNumber);
             foreach (var issue in issues)
             {
                 AddIssueToAssociatedPackage(packages, issue);
             }
             return packages;
-        }
-
-        private int GetLatestMilestoneWithIssues()
-        {
-            return (from g in _githubMilestoneService.GetMilestones()
-                   where g.Open_Issues > 0 || g.Closed_Issues > 0
-                   orderby g.Created_At descending 
-                   select g.Number).First();
         }
 
         private void AddIssueToAssociatedPackage(IEnumerable<GlimpsePackage> packages, GithubIssue issue)

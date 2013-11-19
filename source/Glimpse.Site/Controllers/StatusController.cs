@@ -9,13 +9,16 @@ namespace Glimpse.Site.Controllers
     public class StatusController : Controller
     {
         private readonly GlimpsePackageViewModelMapper _glimpsePackageViewModelMapper = new GlimpsePackageViewModelMapper();
+        private GithubMilestoneService _githubMilestoneService;
 
         [OutputCache(Duration = 30 * 60)]
         public ActionResult Index()
         {
             var packageIssueProvider = CreatePackageIssueProvider();
-            var glimpsePackages = packageIssueProvider.GetLatestPackageIssues();
+            var milestone = _githubMilestoneService.GetLatestMilestoneWithIssues();
+            var glimpsePackages = packageIssueProvider.GetLatestPackageIssues(milestone.Number);
             var statusView = _glimpsePackageViewModelMapper.ConvertToIndexViewModel(glimpsePackages.ToList());
+            statusView.CurrentMilestone = milestone;
             return View(statusView);
         }
 
@@ -31,8 +34,8 @@ namespace Glimpse.Site.Controllers
             string githubKey = ConfigurationManager.AppSettings.Get("GithubKey");
             string githubSecret = ConfigurationManager.AppSettings.Get("GithubSecret");
             var httpClient = new HttpClientFactory().CreateHttpClient(githubKey, githubSecret);
-            var githubMilestoneService = new GithubMilestoneService(httpClient);
-            return new PackageIssueProvider(new PackageRepository(jsonFile), new IssueRepository(new GithubIssueService(httpClient), githubMilestoneService), githubMilestoneService);
+            _githubMilestoneService = new GithubMilestoneService(httpClient);
+            return new PackageIssueProvider(new PackageRepository(jsonFile), new IssueRepository(new GithubIssueService(httpClient), _githubMilestoneService), _githubMilestoneService);
         }
     }
 }

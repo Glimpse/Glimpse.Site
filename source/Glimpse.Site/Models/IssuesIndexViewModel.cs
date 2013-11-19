@@ -17,6 +17,8 @@ namespace Glimpse.Site.Models
         public List<PackageCategoryViewModel> PackageCategories { get; set; }
         public List<GithubUser> IssueReporters { get; set; }
         public List<Tuple<GithubUser, List<GithubIssue>>> PullRequestContributors { get; set; }
+        public GithubMilestone CurrentMilestone { get; set; }
+
     }
 
 }

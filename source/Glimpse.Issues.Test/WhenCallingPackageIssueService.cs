@@ -31,42 +31,6 @@ namespace Glimpse.Issues.Test
         }
 
         [Fact]
-        public void ShouldUseLatestMilestoneWhichHasOpenOrClosedIssues()
-        {
-            var issueId = Guid.NewGuid().ToString();
-            var glimpsePreviousReleaseIssue = _issueBuilder
-                .WithLabel("Glimpse Core")
-                .WithState("open")
-                .WithId(issueId)
-                .Build();
-            StubGithubIssues(glimpsePreviousReleaseIssue);
-            int firstVersionMilestoneNumber = 1;
-            int secondVersionMilestoneNumber = 2;
-            _milestoneService.Setup(m => m.GetMilestones())
-                             .Returns(new[]
-                                          {
-                                              new GithubMilestone() {Number = VNextMilestoneNumber,Created_At = new DateTime(2013,4,2),Open_Issues = 0, Closed_Issues = 0, Title = "vnext"},
-                                               new GithubMilestone()
-                                                  {
-                                                      Number = firstVersionMilestoneNumber,
-                                                      Title = "1.7.0",
-                                                      Closed_Issues = 4,
-                                                      Created_At = new DateTime(2013, 1, 2)
-                                                  },
-                                              new GithubMilestone()
-                                                  {
-                                                      Number = secondVersionMilestoneNumber,
-                                                      Title = "1.8.0",
-                                                      Closed_Issues = 4,
-                                                      Created_At = new DateTime(2013, 3, 2)
-                                                  }
-                                          });
-            _issueService.GetLatestPackageIssues();
-
-            _issueRepository.Verify(i => i.GetAllIssuesFromMilestone(secondVersionMilestoneNumber));
-        }
-
-        [Fact]
         public void ShouldAddOpenTaggedIssueToTheCorrectPackage()
         {
             var issueId = Guid.NewGuid().ToString();
@@ -77,7 +41,7 @@ namespace Glimpse.Issues.Test
                 .Build();
             StubGithubIssues(glimpeCoreOpenIssue);
 
-            _issueService.GetLatestPackageIssues();
+            _issueService.GetLatestPackageIssues(VNextMilestoneNumber);
 
             Assert.True(_glimpseCorePackage.Issues.Contains(glimpeCoreOpenIssue));
         }
@@ -94,7 +58,7 @@ namespace Glimpse.Issues.Test
                 .Build();
             StubGithubIssues(glimpeCoreOpenIssue);
 
-            _issueService.GetLatestPackageIssues();
+            _issueService.GetLatestPackageIssues(VNextMilestoneNumber);
 
             Assert.True(_glimpseCorePackage.Issues.Contains(glimpeCoreOpenIssue));
         }
