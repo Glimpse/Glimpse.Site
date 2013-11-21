@@ -84,7 +84,7 @@ else
             @foreach (var reporter in Model.PullRequestContributors)
             {
                 <tr>
-                    <td>
+                    <td class="text-center">
                         <a href="@reporter.Item1.Html_Url" data-toggle="tooltip" title="@reporter.Item1.Login" id="@(reporter.Item1.Login)Avatar"><img width="40" src="@reporter.Item1.Avatar_Url" alt="@reporter.Item1.Login"/></a>
                     </td>
                     <td>
