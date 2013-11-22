@@ -17,7 +17,7 @@ namespace Glimpse.Issues
             _githubMilestoneService = githubMilestoneService;
         }
 
-        public IEnumerable<GlimpsePackage> GetLatestPackageIssues(int milestoneNumber)
+        public IEnumerable<GlimpsePackage> GetPackageIssues(int milestoneNumber)
         {
             var packages = _packageRepository.GetAllPackages().ToList();
             var issues = _issueRepository.GetAllIssuesFromMilestone(milestoneNumber);

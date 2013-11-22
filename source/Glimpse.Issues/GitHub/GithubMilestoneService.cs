@@ -8,27 +8,29 @@ namespace Glimpse.Issues
     public class GithubMilestoneService : IGithubMilestoneService
     {
         private readonly IHttpClient _httpClient;
+        private List<GithubMilestone> _githubMilestones;
+
+        protected List<GithubMilestone> GithubMilestones
+        {
+            get { return _githubMilestones ?? (_githubMilestones = GetAllMilestones()); }
+        }
 
         public GithubMilestoneService(IHttpClient httpClient)
         {
             _httpClient = httpClient;
         }
 
-        public GithubMilestone GetLatestMilestoneWithIssues()
+        public GithubMilestone GetMilestone(string title)
         {
-            var githubMilestones = GetAllMilestones();
-            var vnextMilestone = githubMilestones.FirstOrDefault(g => g.Title.ToLower() == "vnext");
-            if (MileStoneHasOpenOrClosedIssues(vnextMilestone))
-                return vnextMilestone;
-            return (from g in githubMilestones
-                    where g.Open_Issues > 0 || g.Closed_Issues > 0
-                    orderby g.Created_At descending
-                    select g).First();
+            return GithubMilestones.FirstOrDefault(g => g.Title.ToLower() == title.ToLower());
         }
 
-        private static bool MileStoneHasOpenOrClosedIssues(GithubMilestone vnextMilestone)
+        public GithubMilestone GetLatestMilestoneWithIssues(string state)
         {
-            return vnextMilestone != null && vnextMilestone.Closed_Issues != 0 && vnextMilestone.Open_Issues != 0;
+            return (from g in GithubMilestones
+                    where g.State == state && (g.Open_Issues > 0 || g.Closed_Issues > 0)
+                    orderby g.Created_At descending
+                    select g).First();
         }
 
         private List<GithubMilestone> GetAllMilestones()
@@ -39,6 +41,7 @@ namespace Glimpse.Issues
             var closedMilestones = result.Content.ReadAsAsync<IEnumerable<GithubMilestone>>().Result.ToList();
             githubMilestones.AddRange(closedMilestones);
             return githubMilestones;
+
         }
     }
 }

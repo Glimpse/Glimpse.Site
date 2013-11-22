@@ -1,8 +1,10 @@
-﻿using System.Configuration;
+﻿using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web.Mvc;
 using Glimpse.Issues;
 using Glimpse.Site.Framework;
+using Glimpse.Site.Models;
 
 namespace Glimpse.Site.Controllers
 {
@@ -14,11 +16,7 @@ namespace Glimpse.Site.Controllers
         [OutputCache(Duration = 30 * 60)]
         public ActionResult Index()
         {
-            var packageIssueProvider = CreatePackageIssueProvider();
-            var milestone = _githubMilestoneService.GetLatestMilestoneWithIssues();
-            var glimpsePackages = packageIssueProvider.GetLatestPackageIssues(milestone.Number);
-            var statusView = _glimpsePackageViewModelMapper.ConvertToIndexViewModel(glimpsePackages.ToList());
-            statusView.CurrentMilestone = milestone;
+            var statusView = SetupStatusDashboard();
             return View(statusView);
         }
 
@@ -26,6 +24,22 @@ namespace Glimpse.Site.Controllers
         {
             Response.RemoveOutputCacheItem(Url.Action("index"));
             return RedirectToAction("Index");
+        }
+
+        private IssuesIndexViewModel SetupStatusDashboard()
+        {
+            var packageIssueProvider = CreatePackageIssueProvider();
+            var milestone = _githubMilestoneService.GetMilestone("vnext");
+            var glimpsePackages = packageIssueProvider.GetPackageIssues(milestone.Number).ToList();
+            var numberOfIssues = glimpsePackages.Sum(g => g.Issues.Count);
+            if (numberOfIssues == 0)
+            {
+                milestone = _githubMilestoneService.GetLatestMilestoneWithIssues("closed");
+                glimpsePackages = packageIssueProvider.GetPackageIssues(milestone.Number).ToList();
+            }
+            var statusView = _glimpsePackageViewModelMapper.ConvertToIndexViewModel(glimpsePackages.ToList());
+            statusView.CurrentMilestone = milestone;
+            return statusView;
         }
 
         private PackageIssueProvider CreatePackageIssueProvider()

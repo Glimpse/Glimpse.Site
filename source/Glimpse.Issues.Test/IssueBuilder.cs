@@ -1,11 +1,14 @@
-﻿namespace Glimpse.Issues.Test
+﻿using System;
+
+namespace Glimpse.Issues.Test
 {
     public class IssueBuilder
     {
-        readonly GithubIssue _issue = new GithubIssue();
+        private readonly GithubIssue _issue = new GithubIssue();
 
         public GithubIssue Build()
         {
+            _issue.User = new GithubUser() {Id = Guid.NewGuid().ToString()};
             return _issue;
         }
 
@@ -24,6 +27,7 @@
         public IssueBuilder WithId(string issueId)
         {
             _issue.Id = issueId;
+            _issue.Html_Url = "/issues/" + issueId;
             return this;
         }
 

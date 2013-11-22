@@ -41,7 +41,7 @@ namespace Glimpse.Issues.Test
                 .Build();
             StubGithubIssues(glimpeCoreOpenIssue);
 
-            _issueService.GetLatestPackageIssues(VNextMilestoneNumber);
+            _issueService.GetPackageIssues(VNextMilestoneNumber);
 
             Assert.True(_glimpseCorePackage.Issues.Contains(glimpeCoreOpenIssue));
         }
@@ -58,7 +58,7 @@ namespace Glimpse.Issues.Test
                 .Build();
             StubGithubIssues(glimpeCoreOpenIssue);
 
-            _issueService.GetLatestPackageIssues(VNextMilestoneNumber);
+            _issueService.GetPackageIssues(VNextMilestoneNumber);
 
             Assert.True(_glimpseCorePackage.Issues.Contains(glimpeCoreOpenIssue));
         }

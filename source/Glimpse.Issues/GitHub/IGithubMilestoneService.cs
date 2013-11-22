@@ -4,6 +4,7 @@ namespace Glimpse.Issues
 {
     public interface IGithubMilestoneService
     {
-        GithubMilestone GetLatestMilestoneWithIssues();
+        GithubMilestone GetLatestMilestoneWithIssues(string state);
+        GithubMilestone GetMilestone(string title);
     }
 }
