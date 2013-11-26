@@ -36,6 +36,7 @@ namespace Glimpse.Issues
         private List<GithubMilestone> GetAllMilestones()
         {
             var result = _httpClient.GetAsync("repos/glimpse/glimpse/milestones").Result;
+            
             var githubMilestones = result.Content.ReadAsAsync<IEnumerable<GithubMilestone>>().Result.ToList();
             result = _httpClient.GetAsync("repos/glimpse/glimpse/milestones?state=closed").Result;
             var closedMilestones = result.Content.ReadAsAsync<IEnumerable<GithubMilestone>>().Result.ToList();
