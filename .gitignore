@@ -22,4 +22,4 @@ _ReSharper.*
 /packages
 secrets.config
 Glimpse.mdf
-Glimpse.ldf
+Glimpse_log.ldf
