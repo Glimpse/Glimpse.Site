@@ -465,8 +465,10 @@
     <Content Include="Views\Error\500.cshtml" />
     <Content Include="Views\Error\404.cshtml" />
     <Content Include="Views\Error\401.cshtml" />
+    <Content Include="Views\Home\_Contributors.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\" />
     <Folder Include="Areas\Version\Models\" />
     <Folder Include="Areas\Version\Views\Shared\" />
   </ItemGroup>
