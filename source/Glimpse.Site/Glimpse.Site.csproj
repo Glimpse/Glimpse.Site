@@ -212,6 +212,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Glimpse_ReadOnly.mdf" />
+    <Content Include="App_Data\Glimpse_ReadOnly_log.ldf">
+      <DependentUpon>Glimpse_ReadOnly.mdf</DependentUpon>
+    </Content>
     <Content Include="Areas\Version\Views\Web.config" />
     <Content Include="Areas\Version\Views\Check\Index.cshtml" />
     <Content Include="Areas\Version\Views\Check\Release.cshtml" />
@@ -457,7 +461,6 @@
     <Content Include="Views\Status\_Issues.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Areas\Version\Models\" />
     <Folder Include="Areas\Version\Views\Shared\" />
   </ItemGroup>
@@ -514,6 +517,14 @@
     </VisualStudio>
   </ProjectExtensions>
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>cd $(ProjectDir)App_Data\
+
+if not exist Glimpse.mdf (
+copy Glimpse_ReadOnly.mdf Glimpse.mdf
+attrib -r Glimpse.mdf
+)</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
