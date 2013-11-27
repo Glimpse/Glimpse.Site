@@ -21,3 +21,5 @@ _ReSharper.*
 /Packages.dgml
 /packages
 secrets.config
+Glimpse.mdf
+Glimpse_log.ldf
