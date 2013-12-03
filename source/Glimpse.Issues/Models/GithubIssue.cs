@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Glimpse.Issues
+namespace Glimpse.Infrastructure.GitHub
 {
     public class GithubIssue
     {

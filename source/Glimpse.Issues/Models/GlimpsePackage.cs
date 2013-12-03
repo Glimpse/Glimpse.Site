@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
+using Glimpse.Infrastructure.GitHub;
 
-namespace Glimpse.Issues
+namespace Glimpse.Infrastructure
 {
     public class GlimpsePackage
     {

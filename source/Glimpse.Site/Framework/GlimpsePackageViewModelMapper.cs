@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Glimpse.Issues;
+using Glimpse.Infrastructure;
+using Glimpse.Infrastructure.GitHub;
 using Glimpse.Site.Models;
 
 namespace Glimpse.Site.Framework

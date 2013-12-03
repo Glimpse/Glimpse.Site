@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.Remoting.Channels;
+using Glimpse.Infrastructure;
+using Glimpse.Infrastructure.Repositories;
 using Xunit;
 
 namespace Glimpse.Issues.Test

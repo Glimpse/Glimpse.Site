@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Web.Hosting;
+using Glimpse.Infrastructure.GitHub;
+using Glimpse.Infrastructure.Repositories;
 
-namespace Glimpse.Issues
+namespace Glimpse.Infrastructure
 {
     public class PackageIssueProvider
     {

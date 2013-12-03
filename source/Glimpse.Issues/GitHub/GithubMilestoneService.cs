@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using Glimpse.Infrastructure.Http;
 
-namespace Glimpse.Issues
+namespace Glimpse.Infrastructure.GitHub
 {
     public class GithubMilestoneService : IGithubMilestoneService
     {

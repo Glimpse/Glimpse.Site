@@ -1,4 +1,5 @@
 ﻿using System;
+using Glimpse.Infrastructure.GitHub;
 
 namespace Glimpse.Issues.Test
 {
