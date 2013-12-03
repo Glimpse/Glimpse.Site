@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.Web.Hosting;
 using Newtonsoft.Json;
 
-namespace Glimpse.Issues
+namespace Glimpse.Infrastructure.Repositories
 {
     public class PackageRepository : IPackageRepository
     {

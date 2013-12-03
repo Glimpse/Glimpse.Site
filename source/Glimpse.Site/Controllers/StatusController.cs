@@ -2,7 +2,9 @@
 using System.Configuration;
 using System.Linq;
 using System.Web.Mvc;
-using Glimpse.Issues;
+using Glimpse.Infrastructure;
+using Glimpse.Infrastructure.GitHub;
+using Glimpse.Infrastructure.Repositories;
 using Glimpse.Site.Framework;
 using Glimpse.Site.Models;
 

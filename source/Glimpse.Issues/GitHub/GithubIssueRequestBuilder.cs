@@ -1,4 +1,4 @@
-﻿namespace Glimpse.Issues
+﻿namespace Glimpse.Infrastructure.GitHub
 {
     public class GithubIssueRequestBuilder
     {

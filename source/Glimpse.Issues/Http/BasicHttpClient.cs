@@ -4,7 +4,7 @@ using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace Glimpse.Issues
+namespace Glimpse.Infrastructure.Http
 {
     public class BasicHttpClient : IHttpClient
     {

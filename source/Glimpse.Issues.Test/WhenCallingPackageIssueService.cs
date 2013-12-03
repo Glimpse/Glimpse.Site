@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Dynamic;
+using Glimpse.Infrastructure;
+using Glimpse.Infrastructure.GitHub;
+using Glimpse.Infrastructure.Repositories;
 using Moq;
 using Xunit;
 

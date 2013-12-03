@@ -1,4 +1,4 @@
-﻿using Glimpse.Issues;
+﻿using Glimpse.Infrastructure.GitHub;
 
 namespace Glimpse.Site.Models
 {

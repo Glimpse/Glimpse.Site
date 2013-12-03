@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace Glimpse.Issues
+﻿namespace Glimpse.Infrastructure.GitHub
 {
     public interface IGithubMilestoneService
     {

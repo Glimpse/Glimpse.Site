@@ -3,7 +3,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 
-namespace Glimpse.Issues
+namespace Glimpse.Infrastructure.Http
 {
     public class AuthenticatedHttpClient : IHttpClient
     {

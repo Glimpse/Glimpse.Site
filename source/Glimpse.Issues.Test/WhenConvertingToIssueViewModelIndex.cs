@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using Glimpse.Infrastructure;
 using Glimpse.Site.Framework;
 using Glimpse.Site.Models;
 using Xunit;

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Text.RegularExpressions;
 
-namespace Glimpse.Issues
+namespace Glimpse.Infrastructure.Http
 {
     public class HttpResponseHelper
     {

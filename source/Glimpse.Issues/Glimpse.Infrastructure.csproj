@@ -7,8 +7,8 @@
     <ProjectGuid>{5FE03002-28D6-4F7C-9C63-84BDE2334070}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Glimpse.Issues</RootNamespace>
-    <AssemblyName>Glimpse.Issues</AssemblyName>
+    <RootNamespace>Glimpse.Infrastructure</RootNamespace>
+    <AssemblyName>Glimpse.Infrastructure</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
@@ -53,18 +53,18 @@
     <Compile Include="GitHub\IGithubMilestoneService.cs" />
     <Compile Include="Http\AuthenticatedHttpClient.cs" />
     <Compile Include="Http\BasicHttpClient.cs" />
-    <Compile Include="GitHub\GithubIssue.cs" />
+    <Compile Include="Models\GithubIssue.cs" />
     <Compile Include="GitHub\GithubIssueQuery.cs" />
     <Compile Include="GitHub\GithubIssueService.cs" />
     <Compile Include="GitHub\GithubIssueRequestBuilder.cs" />
     <Compile Include="GitHub\GithubMilestoneService.cs" />
-    <Compile Include="GlimpsePackage.cs" />
+    <Compile Include="Models\GlimpsePackage.cs" />
     <Compile Include="Http\HttpResponseHelper.cs" />
     <Compile Include="Http\IHttpClient.cs" />
     <Compile Include="Repositories\IIssueRepository.cs" />
     <Compile Include="Repositories\IPackageRepository.cs" />
     <Compile Include="Repositories\IssueRepository.cs" />
-    <Compile Include="PackageIssueProvider.cs" />
+    <Compile Include="Services\PackageIssueProvider.cs" />
     <Compile Include="Repositories\PackageRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
