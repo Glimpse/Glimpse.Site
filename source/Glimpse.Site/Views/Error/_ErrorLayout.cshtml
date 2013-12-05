@@ -16,32 +16,60 @@
         <script src="/Content/_v2/website-assets/scripts/bootstrap.min.js"></script>
         @Styles.Render("~/Content/css")
         @*<link media="screen" rel="stylesheet" type="text/css" href="assets/css/global.css" />
-        <link media="screen" rel="stylesheet" type="text/css" href="assets/css/tipsy.css" />
-        
-        <script src="<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>s" type="text/javascript"></script>
-        <script src="assets/scripts/home-ck.js" type="text/javascript"></script>
-        <script src="assets/scripts/global-ck.js" type="text/javascript"></script>
-        <script src="assets/scripts/jquery.scrollTo.min.js" type="text/javascript"></script>
-        <script src="assets/scripts/jquery.tipsy.js" type="text/javascript"></script>*@
+        <link media="screen" rel="stylesheet" type="text/css" href="assets/css/tipsy.css" />*@
     </head>
     <body class="error-page">
-        <header>
-            
-        </header>
-        
         <div class="section-container" id="page-title">
         	<section>
-        	    @RenderSection("header")
+                <header>
+                    <h1>
+                        <a href="/" title="glimpse homepage">glimpse</a> 
+                        <span>@RenderSection("header")</span>
+                    </h1>
+                </header>
         	</section>
         </div>
         
-            
         <div class="section-container" id="main-content">
             <section>
         	    @RenderBody()
             </section>
         </div>
-        
+
+        <div class="section-container" id="footer-container">
+            <footer>
+                <div id="mountains"></div>
+                <div id="towers"></div>
+                <div id="build-tower">
+                    <div id="build-info" class="handwritten">
+                        The last build (#<span id="build-id"></span>) <span id="build-status">was successful</span> on <span id="build-date">21st April 2013 at 21:09</span>.
+                    </div>
+                    <div id="build-arrow">&nbsp;</div>
+                </div>
+                <div class="twoColumn column1">
+                    <div class="innerColumn">
+                        <span class="icon twitter">&nbsp;</span>Keep up with us <a href="https://twitter.com/search?q=from%3A%40nikmd23 OR from%3A%40anthony_vdh %23glimpse">#glimpse</a>:
+                        <div id="tweets"></div>
+                    </div><!--Class:innerColumn-->
+                </div><!--Class:twoColumn column1-->
+                <div class="twoColumn column2">
+                    <div class="innerColumn">
+                        <ul>
+                            <li class="contact"><span class="icon mail">&nbsp;</span>We love hearing from you, email us on <a href="mailto:team@getglimpse.com">team@@getglimpse.com</a>.</li>
+                            <li class="google"><span class="icon google">&nbsp;</span>We have a great active community. Get to know them on our <a href="http://groups.google.com/group/getglimpse-dev">google group</a>.</li>
+                            <li class="github"><span class="icon github">&nbsp;</span>Did we mention glimpse is open source? Take a look at the code on <a href="http://www.github.com/glimpse/glimpse">github</a>.</li>
+                        </ul>
+                    </div><!--Class:innerColumn-->
+                </div><!--Class:twoColumn column2-->
+            </footer>
+            <hr class="footer-split" />
+            <div class="redgate-footer"> 
+                    Proudly backed by <a href="http://www.red-gate.com/"><img src="/Content/_v2/website-assets/img/redgate.png" id="redgate-logo"></a> <a href="http://www.github.com/glimpse/glimpse">and you!</a>
+            </div>
+            
+        </div>
+        @Scripts.Render("~/Script/javascript")
+        @RenderSection("scripts", false)
     </body>
 </html>
 
