@@ -7,8 +7,8 @@
     <ProjectGuid>{B8C4A194-D047-4776-9D28-D61F9E28E923}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Glimpse.Issues.Test</RootNamespace>
-    <AssemblyName>Glimpse.Issues.Test</AssemblyName>
+    <RootNamespace>Glimpse.Infrastructure.Test</RootNamespace>
+    <AssemblyName>Glimpse.Infrastructure.Test</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
@@ -71,6 +71,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Contributors\testTeamMembers.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
     <None Include="packages.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
