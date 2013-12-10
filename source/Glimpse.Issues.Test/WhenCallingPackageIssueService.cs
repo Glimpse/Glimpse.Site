@@ -1,9 +1,10 @@
 ﻿using System;
-using System.Dynamic;
+using Glimpse.Infrastructure.GitHub;
+using Glimpse.Infrastructure.Repositories;
 using Moq;
 using Xunit;
 
-namespace Glimpse.Issues.Test
+namespace Glimpse.Infrastructure.Test
 {
     public class WhenCallingPackageIssueService
     {

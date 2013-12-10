@@ -1,9 +1,8 @@
 ﻿using System.Linq;
 using Glimpse.Site.Framework;
-using Glimpse.Site.Models;
 using Xunit;
 
-namespace Glimpse.Issues.Test
+namespace Glimpse.Infrastructure.Test
 {
     public class WhenConvertingToIssueViewModelIndex
     {

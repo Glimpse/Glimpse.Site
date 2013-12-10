@@ -1,4 +1,4 @@
-﻿namespace Glimpse.Issues.Test
+﻿namespace Glimpse.Infrastructure.Test
 {
     public class PackageBuilder
     {

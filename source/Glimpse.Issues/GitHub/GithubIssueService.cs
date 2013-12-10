@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Net.Http;
+using Glimpse.Infrastructure.Http;
 
-namespace Glimpse.Issues
+namespace Glimpse.Infrastructure.GitHub
 {
 
     public class GithubIssueService

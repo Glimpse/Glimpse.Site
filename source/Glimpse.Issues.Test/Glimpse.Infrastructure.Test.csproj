@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5FE03002-28D6-4F7C-9C63-84BDE2334070}</ProjectGuid>
+    <ProjectGuid>{B8C4A194-D047-4776-9D28-D61F9E28E923}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Glimpse.Issues</RootNamespace>
-    <AssemblyName>Glimpse.Issues</AssemblyName>
+    <RootNamespace>Glimpse.Infrastructure.Test</RootNamespace>
+    <AssemblyName>Glimpse.Infrastructure.Test</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
@@ -32,8 +32,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="JsonFx">
+      <HintPath>..\..\packages\JsonFx.2.0.1209.2802\lib\net40\JsonFx.dll</HintPath>
+    </Reference>
+    <Reference Include="Moq">
+      <HintPath>..\..\packages\Moq.4.0.10827\lib\NET40\Moq.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp">
+      <HintPath>..\..\packages\RestSharp.104.1\lib\net4\RestSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -42,36 +51,48 @@
       <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http.WebRequest" />
-    <Reference Include="System.Web" />
+    <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="xunit">
+      <HintPath>..\..\packages\xunit.1.9.1\lib\net20\xunit.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GitHub\IGithubMilestoneService.cs" />
-    <Compile Include="Http\AuthenticatedHttpClient.cs" />
-    <Compile Include="Http\BasicHttpClient.cs" />
-    <Compile Include="GitHub\GithubIssue.cs" />
-    <Compile Include="GitHub\GithubIssueQuery.cs" />
-    <Compile Include="GitHub\GithubIssueService.cs" />
-    <Compile Include="GitHub\GithubIssueRequestBuilder.cs" />
-    <Compile Include="GitHub\GithubMilestoneService.cs" />
-    <Compile Include="GlimpsePackage.cs" />
-    <Compile Include="Http\HttpResponseHelper.cs" />
-    <Compile Include="Http\IHttpClient.cs" />
-    <Compile Include="Repositories\IIssueRepository.cs" />
-    <Compile Include="Repositories\IPackageRepository.cs" />
-    <Compile Include="Repositories\IssueRepository.cs" />
-    <Compile Include="PackageIssueProvider.cs" />
-    <Compile Include="Repositories\PackageRepository.cs" />
+    <Compile Include="Contributors\ContributorServiceTests.cs" />
+    <Compile Include="PackageBuilder.cs" />
+    <Compile Include="WhenConvertingToIssueViewModelIndex.cs" />
+    <Compile Include="WhenLoadingGlimpsePackagesFromRepository.cs" />
+    <Compile Include="WhenCallingPackageIssueService.cs" />
+    <Compile Include="IssueBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Contributors\testTeamMembers.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
+    <None Include="packages.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Glimpse.Issues\Glimpse.Infrastructure.csproj">
+      <Project>{5fe03002-28d6-4f7c-9c63-84bde2334070}</Project>
+      <Name>Glimpse.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Glimpse.Package\Glimpse.Package.csproj">
+      <Project>{A0EFE764-BBDE-4815-81A5-25A1FB204DE7}</Project>
+      <Name>Glimpse.Package</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Glimpse.Site\Glimpse.Site.csproj">
+      <Project>{608b42eb-9163-4aa6-92fc-b40f05d7c27e}</Project>
+      <Name>Glimpse.Site</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

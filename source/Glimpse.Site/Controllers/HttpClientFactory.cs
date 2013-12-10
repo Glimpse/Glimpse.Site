@@ -1,4 +1,4 @@
-using Glimpse.Issues;
+using Glimpse.Infrastructure.Http;
 
 public class HttpClientFactory
 {

@@ -459,6 +459,7 @@
     <Content Include="Views\Docs\Wiki\**\*.*" />
     <Content Include="Views\Status\Index.cshtml" />
     <Content Include="Views\Status\_Issues.cshtml" />
+    <Content Include="Views\Home\_Contributors.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Version\Models\" />
@@ -479,9 +480,9 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Glimpse.Issues\Glimpse.Issues.csproj">
+    <ProjectReference Include="..\Glimpse.Issues\Glimpse.Infrastructure.csproj">
       <Project>{5fe03002-28d6-4f7c-9c63-84bde2334070}</Project>
-      <Name>Glimpse.Issues</Name>
+      <Name>Glimpse.Infrastructure</Name>
     </ProjectReference>
     <ProjectReference Include="..\Glimpse.Package\Glimpse.Package.csproj">
       <Project>{A0EFE764-BBDE-4815-81A5-25A1FB204DE7}</Project>

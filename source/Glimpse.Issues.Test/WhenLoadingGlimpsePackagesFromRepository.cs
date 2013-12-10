@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Runtime.Remoting.Channels;
+using Glimpse.Infrastructure.Repositories;
 using Xunit;
 
-namespace Glimpse.Issues.Test
+namespace Glimpse.Infrastructure.Test
 {
     public class WhenLoadingGlimpsePackagesFromRepository
     {
