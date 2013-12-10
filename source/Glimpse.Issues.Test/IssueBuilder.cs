@@ -1,7 +1,7 @@
 ﻿using System;
 using Glimpse.Infrastructure.GitHub;
 
-namespace Glimpse.Issues.Test
+namespace Glimpse.Infrastructure.Test
 {
     public class IssueBuilder
     {
