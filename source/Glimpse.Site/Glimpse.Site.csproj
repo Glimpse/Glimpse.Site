@@ -307,9 +307,6 @@
     <Content Include="Content\_v2\website-assets\css\bootstrap.min.css" />
     <Content Include="Content\_v2\website-assets\css\firstRun.css" />
     <Content Include="Content\_v2\website-assets\css\global.css" />
-    <Content Include="Content\_v2\website-assets\css\global.min.css">
-      <DependentUpon>global.less</DependentUpon>
-    </Content>
     <Content Include="Content\_v2\website-assets\css\tipsy.css" />
     <Content Include="Content\_v2\website-assets\img\anthony.png" />
     <Content Include="Content\_v2\website-assets\img\backup-loader.gif" />
