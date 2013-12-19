@@ -19,19 +19,35 @@
         <link media="screen" rel="stylesheet" type="text/css" href="assets/css/tipsy.css" />*@
     </head>
     <body class="error-page">
-        <div class="section-container" id="page-title">
+        <header>
+            <div id="nav-container">
+                <a href="#" id="mobile-menu-button"><span class="icon"></span><span class="nav-label">menu</span></a>
+                <nav>
+                    <a href="@Url.Action(MVC.Home.Index())" class="home"><span class="icon"></span><span class="nav-label">Home</span></a>
+                    <a href="/Help/Getting-started" class="getting-started"><span class="icon"></span>Getting Started</a>
+                    <a href="@Url.Action(MVC.Community.Index())" class="community"><span class="icon"></span>Community</a>
+                    <a href="@Url.Action(MVC.Support.Index())" class="support"><span class="icon"></span>Support</a>
+                    <a href="/Help/" class="docs"><span class="icon"></span>Documentation</a>
+                    <a href="@Url.Action(MVC.Packages.Index())" class="plugins"><span class="icon"></span>Extensions</a>
+                    <a href="@Url.Action("Index","Status")" class="status"><span class="icon"></span>Status</a>
+                </nav>
+                <hr class="clearer" />
+            </div>
+            <div id="nav-padder"></div>
+        </header>
+@*        <div class="section-container" id="page-title">
         	<section>
-                <header>
-                    <h1>
-                        <a href="/" title="glimpse homepage">glimpse</a> 
-                        <span>@RenderSection("header")</span>
-                    </h1>
-                </header>
+                <h1>
+                    @RenderSection("header")
+                </h1>
         	</section>
-        </div>
+        </div>*@
         
         <div class="section-container" id="main-content">
             <section>
+                <header id="page-title">
+                    <h1>@RenderSection("header")</h1>
+                </header>
         	    @RenderBody()
             </section>
         </div>
