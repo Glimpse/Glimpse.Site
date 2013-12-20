@@ -138,6 +138,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Controllers\CommunityController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HttpClientFactory.cs" />
     <Compile Include="Controllers\StatusController.cs" />
     <Compile Include="Controllers\ProtocolController.cs" />
@@ -459,6 +460,11 @@
     <Content Include="Views\Docs\Wiki\**\*.*" />
     <Content Include="Views\Status\Index.cshtml" />
     <Content Include="Views\Status\_Issues.cshtml" />
+    <Content Include="Views\Error\_ErrorLayout.cshtml" />
+    <Content Include="Views\Error\_ViewStart.cshtml" />
+    <Content Include="Views\Error\500.cshtml" />
+    <Content Include="Views\Error\404.cshtml" />
+    <Content Include="Views\Error\401.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Version\Models\" />
