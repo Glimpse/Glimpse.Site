@@ -1097,6 +1097,9 @@ footer .twoColumn.column2 .innerColumn,
 .docs-page #nav-container nav a.docs .icon {
   background-position: -160px -513px;
 }
+.status-page #sub-nav-container{background:#848484;}
+.status-page #nav-container nav a.status{color:#FFF;}
+.status-page #nav-container nav a.status .icon{background-position:-208px 0;margin-right: 14px;}
 #main-content {
   background: transparent url("/Content/_v2/website-assets/img/demo-bg.png") 0 0 repeat-x;
   margin: 1px 0 0;
