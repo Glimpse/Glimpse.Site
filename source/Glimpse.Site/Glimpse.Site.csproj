@@ -141,6 +141,7 @@
     <Compile Include="Controllers\HttpClientFactory.cs" />
     <Compile Include="Controllers\StatusController.cs" />
     <Compile Include="Controllers\ProtocolController.cs" />
+    <Compile Include="Controllers\StatusDashboardProvider.cs" />
     <Compile Include="Controllers\SupportController.cs" />
     <Compile Include="Controllers\DocsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
