@@ -1,12 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Web.Mvc;
-using Glimpse.Infrastructure;
-using Glimpse.Infrastructure.GitHub;
-using Glimpse.Infrastructure.Repositories;
-using Glimpse.Site.Framework;
-using Glimpse.Site.Models;
+﻿using System.Web.Mvc;
 
 namespace Glimpse.Site.Controllers
 {
