@@ -127,6 +127,7 @@
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\api\Controllers\ContributorsController.cs" />
     <Compile Include="Areas\Version\Controllers\AdminController.cs" />
     <Compile Include="Areas\Version\Controllers\CheckController.cs" />
     <Compile Include="Areas\Version\Controllers\InstallController.cs" />
@@ -427,6 +428,10 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Areas\Version\Views\Install\Thanks.cshtml" />
+    <Content Include="Areas\api\Views\Web.config" />
+    <Content Include="Content\glimpseTeam.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\glimpse.js" />
     <Content Include="Scripts\glimpse.protocol.js" />
@@ -472,6 +477,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\api\Models\" />
+    <Folder Include="Areas\api\Views\Shared\" />
     <Folder Include="Areas\Version\Models\" />
     <Folder Include="Areas\Version\Views\Shared\" />
   </ItemGroup>
