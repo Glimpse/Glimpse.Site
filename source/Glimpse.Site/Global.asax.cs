@@ -22,7 +22,7 @@ namespace Glimpse.Site
             BindingConfig.RegisterGlobalBindings(ModelBinders.Binders, GlobalConfiguration.Configuration);
             FormatterConfig.RegisterFormatters(GlobalConfiguration.Configuration);
 
-            PackageSettings.Settings.Initialize();
+//            PackageSettings.Settings.Initialize();
         }
     }
 
