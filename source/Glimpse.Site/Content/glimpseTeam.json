@@ -1,0 +1,14 @@
+﻿[
+	{
+		"Name": "Reviewer Name",
+		"TwitterName": "reviewer",
+		"GithubName": "reviewer",
+		"Category": "Reviewer"
+	},
+	{
+		"Name": "Committer Name",
+		"TwitterName": "committer",
+		"GithubName": "committer",
+		"Category": "Committer"
+	}
+]

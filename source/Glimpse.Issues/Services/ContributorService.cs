@@ -34,12 +34,12 @@ namespace Glimpse.Infrastructure.Services
         {
             return from c in glimpseGithubContributor
                    where !(from o in coreMembers
-                           select o.Name).Contains(c.Name)
+                           select o.Name).Contains(c.Login)
                    select new GlimpseContributor
                               {
                                   Category = "Contributor",
-                                  GithubUsername = c.Name,
-                                  Name = c.Name,
+                                  GithubUsername = c.Login,
+                                  Name = c.Login,
                                   TotalContributions = c.Contributions
                               };
         }
