@@ -15,14 +15,14 @@ namespace Glimpse.Site.Areas.api.Controllers
     public class ContributorsController : ApiController
     {
         // GET api/contributors
-        public IEnumerable<GlimpseContributor> Get()
+        public IEnumerable<GlimpseContributor> Get(string top = "")
         {
             string teamMemberJsonFile = HostingEnvironment.MapPath("~/Content/glimpseTeam.json");
             string githubKey = ConfigurationManager.AppSettings.Get("GithubKey");
             string githubSecret = ConfigurationManager.AppSettings.Get("GithubSecret");
             var httpClient = new HttpClientFactory().CreateHttpClient(githubKey, githubSecret);
             var contributorService = new ContributorService(new GlimpseTeamMemberRepository(teamMemberJsonFile),new GithubContributorService(httpClient));
-            return contributorService.GetContributors();
+            return contributorService.GetContributors().Take(string.IsNullOrEmpty(top) ? 11 : int.Parse(top));
         }
 
         // GET api/contributors/5
