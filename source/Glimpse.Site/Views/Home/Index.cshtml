@@ -100,3 +100,29 @@
     	</div>
     </section>
 </div>
+
+@section scripts {
+    <script id="contrib-tmpl" type="text/template">
+        {{#person}}
+            <li class="person-container vcard">
+                <div class="person">
+                    <div class="pic">
+                        <img src="{{avatarUrl}}" alt="{{name}}" width="100%" class="photo" />    
+                    </div>
+                    <div class="details-container">
+                        <img src="{{avatarUrl}}" alt="" width="100%" /> 
+                        <div class="details">
+                            <span class="label">Name:</span> <span class="value fn">{{name}}</span>
+                            <a href="http://twitter.com/{{twitterUsername}}" class="twitter-link url"><span class="icon small-twitter"></span>
+                                @@{{twitterUsername}}
+                            </a>
+                            <a href="http://github.com/{{githubUsername}}" class="github-link url"><span class="icon small-github"></span>
+                                {{githubUsername}}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        {{/person}}
+    </script>
+}

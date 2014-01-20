@@ -32,6 +32,7 @@ namespace Glimpse.Site
                 "~/Scripts/site.google.js",
                 "~/Content/_v2/website-assets/scripts/jquery.scrollTo.js",
                 "~/Content/_v2/website-assets/scripts/jquery.tipsy.js",
+                "~/Scripts/mustache.js",
                 "~/Content/_v2/website-assets/scripts/global.js",
                 "~/Content/_v2/website-assets/scripts/home.js"
             ));
