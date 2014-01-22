@@ -80,7 +80,6 @@ function loadInlineVideo() {
 
 function loadContributors() {
     $.getJSON('/api/contributors', function (data) {
-        console.log(data);
         var contributors = {
             "people": data
         };
