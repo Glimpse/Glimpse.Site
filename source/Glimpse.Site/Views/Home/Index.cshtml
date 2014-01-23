@@ -74,9 +74,8 @@
     	<hr class="clearer" />
     </section>
 </div>
-<div class="section-container" id="contributors">
+<div class="section-container loading" id="contributors">
     <section>
-    	@Html.Partial("_Contributors")
     </section>
 </div>
 <div class="section-container" id="blog-section">
@@ -103,28 +102,34 @@
 
 @section scripts {
     <script id="contrib-tmpl" type="text/template">
-        <ul>
-            {{#people}}
-                <li class="person-container vcard">
-                    <div class="person">
-                        <div class="pic">
-                            <img src="{{avatarUrl}}" alt="{{name}}" width="100%" class="photo" />    
-                        </div>
-                        <div class="details-container">
-                            <img src="{{avatarUrl}}" alt="" width="100%" /> 
-                            <div class="details">
-                                <span class="label">Name:</span> <span class="value fn">{{name}}</span>
-                                <a href="http://twitter.com/{{twitterUsername}}" class="twitter-link url"><span class="icon small-twitter"></span>
-                                    @@{{twitterUsername}}
-                                </a>
-                                <a href="http://github.com/{{githubUsername}}" class="github-link url"><span class="icon small-github"></span>
-                                    {{githubUsername}}
-                                </a>
+        <h1>The people who are helping us&#133; </h1>
+    	<div id="people">
+            <ul>
+                {{#people}}
+                    <li class="person-container vcard">
+                        <div class="person">
+                            <div class="pic">
+                                <img src="{{avatarUrl}}&s=150" alt="{{name}}" class="photo" />    
+                            </div>
+                            <div class="details-container">
+                                <img src="{{avatarUrl}}&s=150" alt="" /> 
+                                <div class="details">
+                                    <span class="label">Name:</span> <span class="value fn">{{name}}</span>
+                                    <a href="http://twitter.com/{{twitterUsername}}" class="twitter-link url"><span class="icon small-twitter"></span>
+                                        @@{{twitterUsername}}
+                                    </a>
+                                    <a href="http://github.com/{{githubUsername}}" class="github-link url"><span class="icon small-github"></span>
+                                        {{githubUsername}}
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </li>
-            {{/people}}
-        </ul>
+                    </li>
+                {{/people}}
+                <li class="handwritten help-us">Help us out, and get your name in lights. Jump in and contribute on <a href="http://github.com/glimpse/glimpse">GitHub</a></li>
+            </ul>
+        	<hr class="clearer" />
+        	<div class="community-thankyou">Thanks to all of you who have helped along the way. Our community is great!</div>
+    	</div>
     </script>
 }

@@ -384,15 +384,46 @@ hr.clearer {
         }
         
     }
+    &#contributors.loading {
+        background: @darkColor url(../img/GitHub-Mark-120px-plus.png) no-repeat 50% 50%;
+        -o-transition:background-image 2s;
+        -moz-transition:background-image 2s;
+        -webkit-transition:background-image 2s;
+        transition:background-image 2s;
+
+        section {
+            opacity:0;
+            -o-transition:opacity 2s;
+            -moz-transition:opacity 2s;
+            -webkit-transition:opacity 2s;
+            transition:opacity 2s;
+        }
+    }
     &#contributors {
-        background: @darkColor;
+        background: @darkColor url(../img/GitHub-Mark-120px-plus.png) no-repeat 50% 50%;
+        background-image:none;
+        color: #FFF;
+        min-height:415px;
         padding: 40px 0;
         text-align: left;
-        h1 {text-align:left; color:#fff;}
-        color: #FFF;
+
+        section {
+            opacity:1;
+        }
+
+        h1 {
+            color:#fff;
+            text-align:left; 
+        }
         
         #people {
             
+        }
+        ul {
+            list-style:none;
+            margin:0;
+            overflow:hidden;
+            padding:0;
         }
         .person-container {
             -webkit-perspective:1000;

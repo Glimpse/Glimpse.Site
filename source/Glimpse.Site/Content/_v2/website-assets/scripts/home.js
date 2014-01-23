@@ -83,10 +83,13 @@ function loadContributors() {
         var contributors = {
             "people": data
         };
-        var tmpl = $('#contrib-tmpl').html();
-        var output = Mustache.render(tmpl, contributors);
-        var targetElem = $('#people');
-        targetElem.html(output);
+        var tmpl = $('#contrib-tmpl').html(),
+            contribElem = $('#contributors');
+
+        contribElem
+            .removeClass('loading')
+            .find('section')
+            .html(Mustache.render(tmpl, contributors));
     });
 }
 
