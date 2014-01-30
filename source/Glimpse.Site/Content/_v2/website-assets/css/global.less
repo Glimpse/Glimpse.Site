@@ -384,28 +384,42 @@ hr.clearer {
         }
         
     }
-    &#contributors.loading {
-        background: @darkColor url(../img/GitHub-Mark-120px-plus.png) no-repeat 50% 50%;
-        -o-transition:background-image 2s;
-        -moz-transition:background-image 2s;
-        -webkit-transition:background-image 2s;
-        transition:background-image 2s;
+    &#contributors {
+        background: @darkColor;
+        min-height:415px;
+        padding: 40px 0;
+
+        img.waiting {
+            display:block;
+            height:120px;
+            left:50%;
+            margin:-60px auto 0 -60px;
+            position:absolute;
+            -o-transition: opacity 2s ease-in-out;
+            -moz-transition: opacity 2s ease-in-out;
+            -webkit-transition: opacity 2s ease-in-out;
+            transition: opacity 2s ease-in-out;
+            top:50%;
+            width:120px;
+        }
 
         section {
             opacity:0;
-            -o-transition:opacity 2s;
-            -moz-transition:opacity 2s;
-            -webkit-transition:opacity 2s;
-            transition:opacity 2s;
+            -o-transition:opacity 2s ease-in-out;
+            -moz-transition:opacity 2s ease-in-out;
+            -webkit-transition:opacity 2s ease-in-out;
+            transition:opacity 2s ease-in-out;
         }
     }
-    &#contributors {
-        background: @darkColor url(../img/GitHub-Mark-120px-plus.png) no-repeat 50% 50%;
+    &#contributors.loaded {
+        background-color: @darkColor;
         background-image:none;
         color: #FFF;
-        min-height:415px;
-        padding: 40px 0;
         text-align: left;
+
+        img.waiting {
+            opacity:0;
+        }
 
         section {
             opacity:1;
@@ -522,10 +536,11 @@ hr.clearer {
                     display: block;
                     padding: 5px 0;
                     .icon {
-                        display: inline-block;
+                        background: transparent @sprite left top no-repeat;
+                        float:left;
+                        margin-right:3px;
                         width: 22px;
                         
-                        background: transparent @sprite left top no-repeat;
                         
                         &.small-twitter {
                             background-position: 0 -289px;

@@ -74,7 +74,8 @@
     	<hr class="clearer" />
     </section>
 </div>
-<div class="section-container loading" id="contributors">
+<div class="section-container" id="contributors">
+    <img src="../../Content/_v2/website-assets/img/GitHub-Mark-120px-plus.png" alt="Loading GitHub contributors" class="waiting" />
     <section>
     </section>
 </div>
@@ -112,12 +113,14 @@
                                 <img src="{{avatarUrl}}&s=150" alt="{{name}}" class="photo" />    
                             </div>
                             <div class="details-container">
-                                <img src="{{avatarUrl}}&s=150" alt="" /> 
+                                <img src="{{avatarUrl}}&s=150" alt="" class="photo" /> 
                                 <div class="details">
                                     <span class="label">Name:</span> <span class="value fn">{{name}}</span>
-                                    <a href="http://twitter.com/{{twitterUsername}}" class="twitter-link url"><span class="icon small-twitter"></span>
-                                        @@{{twitterUsername}}
-                                    </a>
+                                    {{#twitterUsername}}
+                                        <a href="http://twitter.com/{{twitterUsername}}" class="twitter-link url"><span class="icon small-twitter"></span>
+                                            @@{{twitterUsername}}
+                                        </a>
+                                    {{/twitterUsername}}
                                     <a href="http://github.com/{{githubUsername}}" class="github-link url"><span class="icon small-github"></span>
                                         {{githubUsername}}
                                     </a>

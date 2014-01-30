@@ -80,16 +80,13 @@ function loadInlineVideo() {
 
 function loadContributors() {
     $.getJSON('/api/contributors', function (data) {
-        var contributors = {
-            "people": data
-        };
         var tmpl = $('#contrib-tmpl').html(),
             contribElem = $('#contributors');
 
         contribElem
-            .removeClass('loading')
+            .addClass('loaded')
             .find('section')
-            .html(Mustache.render(tmpl, contributors));
+            .html(Mustache.render(tmpl, { people: data }));
     });
 }
 

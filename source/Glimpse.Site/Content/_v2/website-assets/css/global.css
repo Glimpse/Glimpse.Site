@@ -445,42 +445,54 @@ hr.clearer {
 .section-container#why-glimpse h2 {
   padding: 20px 0 20px 80px;
 }
-.section-container#contributors.loading {
-  background: #323d42 url(../img/GitHub-Mark-120px-plus.png) no-repeat 50% 50%;
-  -o-transition: background-image 2s;
-  -moz-transition: background-image 2s;
-  -webkit-transition: background-image 2s;
-  transition: background-image 2s;
-}
-.section-container#contributors.loading section {
-  opacity: 0;
-  -o-transition: opacity 2s;
-  -moz-transition: opacity 2s;
-  -webkit-transition: opacity 2s;
-  transition: opacity 2s;
-}
 .section-container#contributors {
-  background: #323d42 url(../img/GitHub-Mark-120px-plus.png) no-repeat 50% 50%;
-  background-image: none;
-  color: #FFF;
+  background: #323d42;
   min-height: 415px;
   padding: 40px 0;
-  text-align: left;
+}
+.section-container#contributors img.waiting {
+  display: block;
+  height: 120px;
+  left: 50%;
+  margin: -60px auto 0 -60px;
+  position: absolute;
+  -o-transition: opacity 2s ease-in-out;
+  -moz-transition: opacity 2s ease-in-out;
+  -webkit-transition: opacity 2s ease-in-out;
+  transition: opacity 2s ease-in-out;
+  top: 50%;
+  width: 120px;
 }
 .section-container#contributors section {
+  opacity: 0;
+  -o-transition: opacity 2s ease-in-out;
+  -moz-transition: opacity 2s ease-in-out;
+  -webkit-transition: opacity 2s ease-in-out;
+  transition: opacity 2s ease-in-out;
+}
+.section-container#contributors.loaded {
+  background-color: #323d42;
+  background-image: none;
+  color: #FFF;
+  text-align: left;
+}
+.section-container#contributors.loaded img.waiting {
+  opacity: 0;
+}
+.section-container#contributors.loaded section {
   opacity: 1;
 }
-.section-container#contributors h1 {
+.section-container#contributors.loaded h1 {
   color: #fff;
   text-align: left;
 }
-.section-container#contributors ul {
+.section-container#contributors.loaded ul {
   list-style: none;
   margin: 0;
   overflow: hidden;
   padding: 0;
 }
-.section-container#contributors .person-container {
+.section-container#contributors.loaded .person-container {
   -webkit-perspective: 1000;
   -moz-perspective: 1000;
   perspective: 1000;
@@ -491,7 +503,7 @@ hr.clearer {
   margin: 5px;
   border-bottom: 5px solid #33a6ee;
 }
-.section-container#contributors .person {
+.section-container#contributors.loaded .person {
   position: relative;
   width: 150px;
   height: 150px;
@@ -504,9 +516,9 @@ hr.clearer {
   transition: 0.6s;
   transform-style: preserve-3d;
 }
-.section-container#contributors .person .pic,
-.section-container#contributors .person .details,
-.section-container#contributors .person details-container {
+.section-container#contributors.loaded .person .pic,
+.section-container#contributors.loaded .person .details,
+.section-container#contributors.loaded .person details-container {
   width: 150px;
   height: 150px;
   -webkit-backface-visibility: hidden;
@@ -516,14 +528,14 @@ hr.clearer {
   top: 0;
   left: 0;
 }
-.section-container#contributors .person img {
+.section-container#contributors.loaded .person img {
   filter: gray;
   /* IE6-9 */
 
   -webkit-filter: grayscale(100%);
   /* Chrome 19+, Safari 6+, Safari 6+ iOS */
 }
-.section-container#contributors .person .pic {
+.section-container#contributors.loaded .person .pic {
   -webkit-transform: rotateY(0deg);
   -webkit-transform-style: preserve-3d;
   -webkit-backface-visibility: hidden;
@@ -540,7 +552,7 @@ hr.clearer {
   transition: all 0.4s ease-in-out;
   z-index: 1;
 }
-.section-container#contributors .person .details-container {
+.section-container#contributors.loaded .person .details-container {
   background: #33a6ee;
   width: 150px;
   overflow: hidden;
@@ -559,7 +571,7 @@ hr.clearer {
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
 }
-.section-container#contributors .person .details {
+.section-container#contributors.loaded .person .details {
   position: absolute;
   top: 0;
   left: 0;
@@ -569,28 +581,29 @@ hr.clearer {
   height: 130px;
   font-size: 12px;
 }
-.section-container#contributors .person .details .label {
+.section-container#contributors.loaded .person .details .label {
   display: block;
   padding: 0 0 3px;
 }
-.section-container#contributors .person .details a {
+.section-container#contributors.loaded .person .details a {
   display: block;
   padding: 5px 0;
 }
-.section-container#contributors .person .details a .icon {
-  display: inline-block;
-  width: 22px;
+.section-container#contributors.loaded .person .details a .icon {
   background: transparent url("/Content/_v2/website-assets/img/getglimpse-sprite.png") left top no-repeat;
+  float: left;
+  margin-right: 3px;
+  width: 22px;
 }
-.section-container#contributors .person .details a .icon.small-twitter {
+.section-container#contributors.loaded .person .details a .icon.small-twitter {
   background-position: 0 -289px;
   height: 20px;
 }
-.section-container#contributors .person .details a .icon.small-github {
+.section-container#contributors.loaded .person .details a .icon.small-github {
   background-position: 0 -273px;
   height: 16px;
 }
-.section-container#contributors .person .details .value {
+.section-container#contributors.loaded .person .details .value {
   font-family: "ArcitectsDaughter", Arial, sans-serif;
   -webkit-font-smoothing: lig;
   text-rendering: optimizeLegibility;
@@ -600,7 +613,7 @@ hr.clearer {
   padding-bottom: 10px;
   display: block;
 }
-.section-container#contributors .person-container:hover .person {
+.section-container#contributors.loaded .person-container:hover .person {
   -webkit-transition: 0.6s;
   -webkit-transform-style: preserve-3d;
   -moz-transition: 0.6s;
@@ -615,14 +628,14 @@ hr.clearer {
   -ms-transform: rotateY(180deg);
   transform: rotateY(180deg);
 }
-.section-container#contributors .help-us {
+.section-container#contributors.loaded .help-us {
   float: left;
   width: 110px;
   height: 130px;
   font-size: 12px;
   padding: 20px 20px 0;
 }
-.section-container#contributors .community-thankyou {
+.section-container#contributors.loaded .community-thankyou {
   font-size: 12px;
   text-align: center;
 }
