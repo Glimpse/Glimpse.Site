@@ -355,6 +355,7 @@
     <Content Include="Content\_v2\website-assets\scripts\jquery.scrollTo.js" />
     <Content Include="Content\_v2\website-assets\scripts\jquery.scrollTo.min.js" />
     <Content Include="Content\_v2\website-assets\scripts\jquery.tipsy.js" />
+    <Content Include="Scripts\mustache.js" />
     <Content Include="Views\Support\Index.cshtml" />
     <Content Include="Views\Talk\Index.cshtml" />
     <Content Include="Views\Protocol\Index.cshtml" />
@@ -476,7 +477,6 @@
     <Content Include="Views\Home\_Contributors.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Areas\api\Models\" />
     <Folder Include="Areas\api\Views\Shared\" />
     <Folder Include="Areas\Version\Models\" />
