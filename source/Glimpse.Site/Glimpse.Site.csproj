@@ -481,7 +481,6 @@
     <Content Include="Views\Error\500.cshtml" />
     <Content Include="Views\Error\404.cshtml" />
     <Content Include="Views\Error\401.cshtml" />
-    <Content Include="Views\Home\_Contributors.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\api\Models\" />
