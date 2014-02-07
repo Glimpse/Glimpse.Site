@@ -3,7 +3,6 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using Glimpse.Package;
-using Glimpse.Site.Areas.api;
 
 namespace Glimpse.Site
 {
