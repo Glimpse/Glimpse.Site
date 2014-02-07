@@ -386,13 +386,58 @@ hr.clearer {
     }
     &#contributors {
         background: @darkColor;
+        min-height:415px;
         padding: 40px 0;
-        text-align: left;
-        h1 {text-align:left; color:#fff;}
+
+        img.waiting {
+            display:block;
+            height:120px;
+            left:50%;
+            margin:-60px auto 0 -60px;
+            position:absolute;
+            -o-transition: opacity 2s ease-in-out;
+            -moz-transition: opacity 2s ease-in-out;
+            -webkit-transition: opacity 2s ease-in-out;
+            transition: opacity 2s ease-in-out;
+            top:50%;
+            width:120px;
+        }
+
+        section {
+            opacity:0;
+            -o-transition:opacity 2s ease-in-out;
+            -moz-transition:opacity 2s ease-in-out;
+            -webkit-transition:opacity 2s ease-in-out;
+            transition:opacity 2s ease-in-out;
+        }
+    }
+    &#contributors.loaded {
+        background-color: @darkColor;
+        background-image:none;
         color: #FFF;
+        text-align: left;
+
+        img.waiting {
+            opacity:0;
+        }
+
+        section {
+            opacity:1;
+        }
+
+        h1 {
+            color:#fff;
+            text-align:left; 
+        }
         
         #people {
             
+        }
+        ul {
+            list-style:none;
+            margin:0;
+            overflow:hidden;
+            padding:0;
         }
         .person-container {
             -webkit-perspective:1000;
@@ -491,10 +536,11 @@ hr.clearer {
                     display: block;
                     padding: 5px 0;
                     .icon {
-                        display: inline-block;
+                        background: transparent @sprite left top no-repeat;
+                        float:left;
+                        margin-right:3px;
                         width: 22px;
                         
-                        background: transparent @sprite left top no-repeat;
                         
                         &.small-twitter {
                             background-position: 0 -289px;

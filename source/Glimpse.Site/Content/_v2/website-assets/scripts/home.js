@@ -78,8 +78,23 @@ function loadInlineVideo() {
     $('.inner-monitor').empty().append(inlineVideoHTML);
 }
 
+function loadContributors() {
+    $.getJSON('/api/contributors', function (data) {
+        var tmpl = $('#contrib-tmpl').html(),
+            contribElem = $('#contributors');
+
+        contribElem
+            .addClass('loaded')
+            .find('section')
+            .html(Mustache.render(tmpl, { people: data }));
+    });
+}
+
+
 $().ready(function () {
     //prep the page
+
+    loadContributors();
     
     $('.hover-point').each(function() {
         //console.log($(this).attr('data-tipsy'));

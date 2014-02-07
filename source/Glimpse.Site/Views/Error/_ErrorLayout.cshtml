@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8" /> 
+        <title>@ViewBag.Title</title>
+        <link rel="apple-touch-icon" href="~/Content/_v2/favicon.png">
+        <link rel="icon" href="~/Content/_v2/favicon.png">
+        <!--[if IE]><link rel="shortcut icon" href="~/Content/_v2/favicon.ico"><![endif]--> 
+        <meta name="msapplication-TileColor" content="#FFFFFF">
+        <meta name="msapplication-TileImage" content="~/Content/_v2/favicon.png">
+        <link rel="nuget" type="application/rsd+xml" title="Glimpse Plugin Gallery" href="http://getGlimpse.com/Content/_v2/glimpseGallery.xml" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+        <link media="screen" rel="stylesheet" type="text/css" href="/Content/_v2/website-assets/css/bootstrap.min.css" />
+        <script src="/Content/_v2/website-assets/scripts/bootstrap.min.js"></script>
+        @Styles.Render("~/Content/css")
+        @*<link media="screen" rel="stylesheet" type="text/css" href="assets/css/global.css" />
+        <link media="screen" rel="stylesheet" type="text/css" href="assets/css/tipsy.css" />*@
+    </head>
+    <body class="error-page">
+        <header>
+            <div id="nav-container">
+                <a href="#" id="mobile-menu-button"><span class="icon"></span><span class="nav-label">menu</span></a>
+                <nav>
+                    <a href="@Url.Action(MVC.Home.Index())" class="home"><span class="icon"></span><span class="nav-label">Home</span></a>
+                    <a href="/Help/Getting-started" class="getting-started"><span class="icon"></span>Getting Started</a>
+                    <a href="@Url.Action(MVC.Community.Index())" class="community"><span class="icon"></span>Community</a>
+                    <a href="@Url.Action(MVC.Support.Index())" class="support"><span class="icon"></span>Support</a>
+                    <a href="/Help/" class="docs"><span class="icon"></span>Documentation</a>
+                    <a href="@Url.Action(MVC.Packages.Index())" class="plugins"><span class="icon"></span>Extensions</a>
+                    <a href="@Url.Action("Index","Status")" class="status"><span class="icon"></span>Status</a>
+                </nav>
+                <hr class="clearer" />
+            </div>
+            <div id="nav-padder"></div>
+        </header>
+@*        <div class="section-container" id="page-title">
+        	<section>
+                <h1>
+                    @RenderSection("header")
+                </h1>
+        	</section>
+        </div>*@
+        
+        <div class="section-container" id="main-content">
+            <section>
+                <header id="page-title">
+                    <h1>@RenderSection("header")</h1>
+                </header>
+        	    @RenderBody()
+            </section>
+        </div>
+
+        <div class="section-container" id="footer-container">
+            <footer>
+                <div id="mountains"></div>
+                <div id="towers"></div>
+                <div id="build-tower">
+                    <div id="build-info" class="handwritten">
+                        The last build (#<span id="build-id"></span>) <span id="build-status">was successful</span> on <span id="build-date">21st April 2013 at 21:09</span>.
+                    </div>
+                    <div id="build-arrow">&nbsp;</div>
+                </div>
+                <div class="twoColumn column1">
+                    <div class="innerColumn">
+                        <span class="icon twitter">&nbsp;</span>Keep up with us <a href="https://twitter.com/search?q=from%3A%40nikmd23 OR from%3A%40anthony_vdh %23glimpse">#glimpse</a>:
+                        <div id="tweets"></div>
+                    </div><!--Class:innerColumn-->
+                </div><!--Class:twoColumn column1-->
+                <div class="twoColumn column2">
+                    <div class="innerColumn">
+                        <ul>
+                            <li class="contact"><span class="icon mail">&nbsp;</span>We love hearing from you, email us on <a href="mailto:team@getglimpse.com">team@@getglimpse.com</a>.</li>
+                            <li class="google"><span class="icon google">&nbsp;</span>We have a great active community. Get to know them on our <a href="http://groups.google.com/group/getglimpse-dev">google group</a>.</li>
+                            <li class="github"><span class="icon github">&nbsp;</span>Did we mention glimpse is open source? Take a look at the code on <a href="http://www.github.com/glimpse/glimpse">github</a>.</li>
+                        </ul>
+                    </div><!--Class:innerColumn-->
+                </div><!--Class:twoColumn column2-->
+            </footer>
+            <hr class="footer-split" />
+            <div class="redgate-footer"> 
+                    Proudly backed by <a href="http://www.red-gate.com/"><img src="/Content/_v2/website-assets/img/redgate.png" id="redgate-logo"></a> <a href="http://www.github.com/glimpse/glimpse">and you!</a>
+            </div>
+            
+        </div>
+        @Scripts.Render("~/Script/javascript")
+        @RenderSection("scripts", false)
+    </body>
+</html>
+
