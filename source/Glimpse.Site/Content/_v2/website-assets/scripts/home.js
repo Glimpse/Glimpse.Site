@@ -94,7 +94,10 @@ function loadContributors() {
 $().ready(function () {
     //prep the page
 
-    loadContributors();
+    var theBody = $('body');
+    if (theBody.hasClass('home-page')) {
+        loadContributors();
+    }
     
     $('.hover-point').each(function() {
         //console.log($(this).attr('data-tipsy'));
