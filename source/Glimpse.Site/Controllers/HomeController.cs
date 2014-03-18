@@ -6,11 +6,13 @@ using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using System.Xml.Linq;
 using Newtonsoft.Json.Linq;
+using PerfMatters.Flush;
 
 namespace Glimpse.Site.Controllers
 {
@@ -18,6 +20,9 @@ namespace Glimpse.Site.Controllers
     {
         public virtual ActionResult Index()
         {
+            ViewBag.bodyClass = "home-page";
+            this.FlushHead("Glimpse - the open source diagnostics platform of the web");
+
             return View(MVC.Home.Views.Index, MVC.Shared.Views._Home);
         }
 

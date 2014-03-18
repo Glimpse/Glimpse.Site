@@ -52,6 +52,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="PerfMatters.Flush, Version=0.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\PerfMatters.Flush.0.2.0-alpha\lib\net45\PerfMatters.Flush.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
@@ -482,6 +486,7 @@
     <Content Include="Views\Error\500.cshtml" />
     <Content Include="Views\Error\404.cshtml" />
     <Content Include="Views\Error\401.cshtml" />
+    <Content Include="Views\Shared\_Head.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\api\Models\" />
