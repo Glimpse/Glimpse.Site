@@ -8,10 +8,11 @@
             <th style="width:15%">Category</th>
             <th style="width:60%;">Description</th>
             <th style="width: 15%;">User</th>
-         </tr>
+        </tr>
         @foreach (var issue in Model)
         {
-            <tr><td><a href="@issue.IssueLinkUrl">#@issue.Number</a></td> 
+            <tr>
+                <td><a href="@issue.IssueLinkUrl">#@issue.Number</a></td>
                 <td>@issue.Category</td>
                 <td>@issue.Description</td>
                 <td><a href="@issue.User.Html_Url">@issue.User.Login</a></td>

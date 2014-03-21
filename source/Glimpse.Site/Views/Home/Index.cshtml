@@ -1,137 +1,301 @@
 ﻿@{
-    ViewBag.Title = "Glimpse - the open source diagnostics platform of the web";
-    ViewBag.bodyClass = "home-page";
+    ViewBag.Title = "Glimpse";
+    ViewBag.PageStyle = "page_home";
 }
-
-<div class="section-container" id="intro">
-        <section>
-        	<a href="/" id="logo"><span class="hidden">glimpse - home page</span></a>
-        	<div id="tag-line">server insight in browser</div>
-        	<div id="monitor">
-        	    <div class="inner-monitor">
-        	        <a href="#" class="video-link">Watch the tour</a>
-        	    </div>
-        	</div>
-        	<div id="the-team">
-        	    <div id="osguy-label"><span class="arrow down">&nbsp;</span>
-        	        You?<br /> <a href="http://www.github.com/glimpse/glimpse">We're open source</a>
-        	    </div>
-        	    <div id="anthony-label">
-        	        <span class="arrow down-inverted">&nbsp;</span>Anthony
-        	    </div>
-        	    <div id="nik-label">
-        	        Nik<span class="arrow left">&nbsp;</span>
-        	    </div>
-        	    <div class="team-member" id="osguy"></div>
-        	    <div class="team-member" id="anthony"></div>
-        	    <div class="team-member" id="nik"></div>
-        	</div>
-        </section>
-    </div>
-<div class="section-container" id="demo">
-    <section>
-    	<h1>The server information you need&#133;where you want it</h1>
-    	<p>Glimpse shows execution timings, server configuration, request data and more, all in browser, with no changes to your application code. <br /> Just install the NuGet package, and you're good to go!</p>
-    	<div class="inner-monitor">
-    	    <a href="#" class="video-link">Watch the tour</a>
-    	</div>
-    	<div id="tool-demo">
-    	    <a class="hover-point" id="demo-hover-tabs" title="See activity for your current request in the tabs below.">&nbsp;</a>
-    	    <a class="hover-point" id="demo-hover-autocustom" title="Install add-on packages for additional framework-specific information.">&nbsp;</a>
-    	    <a class="hover-point" id="demo-hover-tab-detail" title="Select a tab of interest to see more details.">&nbsp;</a>
-    	    <a class="hover-point" id="demo-hover-ajax" title="Switch Glimpse context to other requests with Ajax and History.">&nbsp;</a>
-    	    <a class="hover-point" id="demo-hover-power" title="Minimize the Glimpse panel and reopen it when you want it.">&nbsp;</a>
-    	    <img src="/Content/_v2/website-assets/img/glimpse-tool.png" alt="glimpse, the tool" width="100%" />
-    	</div>
-    	<a class="button" href="#">Try it for yourself &rarr;</a>
-    	<p class="sub-text">Glimpse currently supports ASP.NET MVC, ASP.NET Webforms. Additional extensions show data for Entity Framework, nHibernate, MiniProfiler and <a href="/Packages">more</a>.<br />
-    	Can't see your tech above? <a href="http://groups.google.com/forum/?fromgroups#!forum/getglimpse-dev">Talk to us</a> about supporting it!</p>
-    </section>
-</div>
-<div class="section-container" id="why-glimpse">
-    <section>
-    	<div class="threeColumn column1">
-    	    <div class="innerColumn">
-    	        <div class="large-icon">&nbsp;</div>
-    	        <h2>What it does</h2>
-    	        <p>Install the Glimpse package into your project, then use it like browser tools (such as <a href="https://developers.google.com/chrome-developer-tools/docs/overview">Chrome Developer Tools</a>, <a href="http://msdn.microsoft.com/en-us/library/ie/gg589512(v=vs.85).aspx>F12 Tools</a> or <a href="https://getfirebug.com/">FireBug</a>) in developing your web site. It shows your server configuration, model binding, URL routing, detailed execution times, and more.</p>
-    	    </div>
-    	</div>
-    	<div class="threeColumn column2">
-    	    <div class="innerColumn">
-    	        <div class="large-icon fit">&nbsp;</div>
-    	        <h2>Where it fits</h2>
-    	        <p>Glimpse has a bunch of server-side collectors which feed data to a collapsible panel at the bottom of your web page. With configurable security policies, you can safely use it to debug applications in production as well as development. 
-    	    </div>
-    	</div>
-    	<div class="threeColumn column3">
-    	    <div class="innerColumn">
-    	        <div class="large-icon open-source">&nbsp;</div>
-    	        <h2>Free &amp; open source</h2>
-    	        <p>Thanks to <a href="/Community">community</a> contributions, Glimpse is thriving and remains <b>free</b> for any purpose (<a href="http://opensource.org/licenses/apache2.0">Apache License 2.0</a>). Jump in and look: here's the <a href="http://github.com/glimpse/glimpse">code</a>!</p>
-    	    </div>
-    	</div>
-    	<hr class="clearer" />
-    </section>
-</div>
-<div class="section-container" id="contributors">
-    <img src="/Content/_v2/website-assets/img/GitHub-Mark-120px-plus.png" alt="Loading GitHub contributors" class="waiting" />
-    <section>
-    </section>
-</div>
-<div class="section-container" id="blog-section">
-    <section>
-    	<h1>That's what we're talking about&#133;</h1>
-    	<div class="twoColumn column1">
-            <div class="innerColumn">
-                <h2>Loading blog</h2>
+<div class="important-container">
+    <div class="jumbotron text-center">
+        <div class="container">
+            <h1>Diaganostics platform of the web</h1>
+            <p class="lead">
+                Providing immediate diagnostics &amp; insights to the figuretips of hundreds of thousands of developers daily
+            </p>
+            <div class="row">
+                <div class="col-sm-3 col-sm-offset-1">
+                    <a href="?" class="action_link btn btn-primary btn-lg"><span class="glyphicon glyphicon-play-circle"></span>Watch it in action</a>
+                </div>
+                <div class="col-sm-4">
+                    <a href="?" class="action_link btn btn-default btn-lg"><span class="glyphicon glyphicon-play-circle"></span>Play with it</a>
+                </div>
+                <div class="col-sm-3">
+                    <a href="?" class="action_link action_link-install btn btn-default btn-lg"><span class="glyphicon glyphicon-download"></span>Install it today!</a>
+                </div>
             </div>
-    	    
-    	</div>
-    	<div class="twoColumn column2">
-    	   <div class="innerColumn">
-    	   </div>
-    	</div>
-    	<hr class="clearer" />
-            <div class="extra-blog-info">
-    	            Please visit our blog for lots more....<br />
-    	            <a href="http://blog.getglimpse.com" class="button">Our blog &rarr;</a>
-    	     </div>
-    </section>
-</div>
+            <small>Glimpse is free, <a href="">open source</a> and built by the community</small>
+        </div>
+    </div>
 
-@section scripts {
-    <script id="contrib-tmpl" type="text/template">
-        <h1>The people who are helping us&#133; </h1>
-    	<div id="people">
-            <ul>
-                {{#people}}
-                    <li class="person-container vcard">
-                        <div class="person">
-                            <div class="pic">
-                                <img width=150 height=150 src="{{avatarUrl}}" alt="{{name}}" class="photo" />    
-                            </div>
-                            <div class="details-container">
-                                <img width=150 height=150 src="{{avatarUrl}}" alt="" class="photo" /> 
-                                <div class="details">
-                                    <span class="label">Name:</span> <span class="value fn">{{name}}</span>
-                                    {{#twitterUsername}}
-                                        <a href="http://twitter.com/{{twitterUsername}}" class="twitter-link url"><span class="icon small-twitter"></span>
-                                            @@{{twitterUsername}}
-                                        </a>
-                                    {{/twitterUsername}}
-                                    <a href="http://github.com/{{githubUsername}}" class="github-link url"><span class="icon small-github"></span>
-                                        {{githubUsername}}
-                                    </a>
-                                </div>
-                            </div>
+    <div class="container carousel-container">
+        <div class="carousel-screenshot-shots" style="border-bottom: 2px solid #ccc; overflow: hidden; width: 100%; position: relative; max-height: 403px">
+            <img src="~/Content/screenshot_main.jpg" class="img-responsive" />
+            <div style="position:absolute; bottom: 0; right: 0; width: 100%">
+                <img src="~/Content/screenshot_bar.gif" class="img-responsive" />
+                <img src="~/Content/screenshot_popup.gif" class="img-responsive target target-1" style="position: absolute;" />
+                <img src="~/Content/screenshot_panel.gif" class="img-responsive target target-2" style="position: absolute;" />
+            </div>
+        </div>
+        <div id="carousel-screenshot" class="carousel slide carousel-inverted carousel-summary">
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-screenshot" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-screenshot" data-slide-to="1"></li>
+                <li data-target="#carousel-screenshot" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="item active">
+                    <div class="carousel-subject"></div>
+                    <div class="carousel-caption">
+                        <h3>Heads-up display</h3>
+                        <p>Key metrics displayed at the bottom of every page</p>
+                    </div>
+                </div>
+                <div class="item" data-target="target-1">
+                    <div class="carousel-subject"></div>
+                    <div class="carousel-caption">
+                        <h3>Detailed outline</h3>
+                        <p>Contexualized drilldowns provide deeper insights</p>
+                    </div>
+                </div>
+                <div class="item" data-target="target-2">
+                    <div class="carousel-subject"></div>
+                    <div class="carousel-caption">
+                        <h3>Complete narrative</h3>
+                        <p>Full diagnostics available when needed</p>
+                    </div>
+                </div>
+            </div>
+            <a class="left carousel-control" href="#carousel-screenshot" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right carousel-control" href="#carousel-screenshot" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+        </div>
+    </div>
+
+    <div class="container does-container" style="margin-top: 70px; margin-bottom: 100px; "> 
+        <div class="row text-center">
+            <div class="col-md-8 col-md-offset-2">
+                <h2>What Glimpse Does</h2>
+                <p>Once installed, Glimpse watches each requests as it happens. It does this by hooking into the various extension points and hooks within your system.</p>
+            </div>
+        </div>
+        <div class="row" style="position: relative; margin-top: 50px; margin-bottom: 125px;">
+            <img src="~/Content/screenshot-wing-timeline.png" class="does_timeline_img float_img float_md_img" />
+            <div class="col-md-4 col-md-offset-7">
+                <h3>View Request Execution</h3>
+                <p>Once installed, Glimpse watches each requests as it happens. It does this by hooking into the various extension points and hooks within your system.</p>
+            </div>
+        </div>
+        <div class="row" style="position: relative; margin-bottom: 100px; ">
+            <img src="~/Content/screenshot-wing-data.png" class="does_data_img float_img float_md_img" />
+            <div class="col-md-4  col-md-offset-1">
+                <h3>Transparent Data Access</h3>
+                <p>Once the hooks are in place, Glimpse can collect the event data as it occurs. From that point, we store the most important data you care about.</p>
+            </div>
+        </div>
+        <div class="row does-container-items">
+            <div class="col-md-6 media">
+                <div class="screenshot-preview-does screenshot-preview pull-left"></div>
+                <div class="media-body">
+                    <h3 class="media-heading">View Profiling & Resolution</h3>
+                    <p>Once installed, Glimpse watches each requests as it happens. It does this by hooking into the various extension points and hooks within your system.</p>
+                </div>
+            </div>
+            <div class="col-md-6 media">
+                <div class="screenshot-preview-does screenshot-preview pull-left" style="background-position: -150px 0"></div>
+                <div class="media-body">
+                    <h3>Confirm Route Setup & Resolution</h3>
+                    <p>Once the hooks are in place, Glimpse can collect the event data as it occurs. From that point, we store the most important data you care about.</p>
+                </div>
+            </div>
+            <div class="col-md-6 media">
+                <div class="screenshot-preview-does screenshot-preview pull-left" style="background-position: 0 -150px"></div>
+                <div class="media-body">
+                    <h3 class="media-heading">Compare Environment & Site Config</h3>
+                    <p>Once installed, Glimpse watches each requests as it happens. It does this by hooking into the various extension points and hooks within your system.</p>
+                </div>
+            </div>
+            <div class="col-md-6 media">
+                <div class="screenshot-preview-does screenshot-preview pull-left" style="background-position: -150px -150px"></div>
+                <div class="media-body">
+                    <h3 class="media-heading">Inspect Historical & Ajax Request</h3>
+                    <p>Once the hooks are in place, Glimpse can collect the event data as it occurs. From that point, we store the most important data you care about.</p>
+                </div>
+            </div>
+            <div class="col-md-6 media">
+                <div class="screenshot-preview-does screenshot-preview pull-left" style="background-position: 0 -300px"></div>
+                <div class="media-body">
+                    <h3 class="media-heading">WebForms ViewState & Control Tree Insights</h3>
+                    <p>Once installed, Glimpse watches each requests as it happens. It does this by hooking into the various extension points and hooks within your system.</p>
+                </div>
+            </div>
+            <div class="col-md-6 media">
+                <div class="screenshot-preview-does screenshot-preview pull-left" style="background-position: -150px -300px"></div>
+                <div class="media-body">
+                    <h3 class="media-heading">Request by Request Trace View</h3>
+                    <p>Once the hooks are in place, Glimpse can collect the event data as it occurs. From that point, we store the most important data you care about.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="is-container">
+        <div class="container text-center" style="margin-top: 70px;">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <h2>What Glimpse Is</h2>
+                    <p>Once installed, Glimpse watches each requests as it happens. It does this by hooking into the various extension points and hooks within your system.</p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row" style="position: relative; overflow: hidden; margin-top: 25px;">
+                <img src="~/Content/screenshot-hud.png" class="img-responsive" />
+                <img src="~/Content/screenshot-hud-http.gif" class="img-responsive target" data-target="1" style="position: absolute;" />
+                <img src="~/Content/screenshot-hud-server.gif" class="img-responsive target" data-target="2" style="position: absolute;" />
+                <img src="~/Content/screenshot-hud-ajax.gif" class="img-responsive target" data-target="3" style="position: absolute;" />
+            </div>
+        </div>
+        <div style="background-color: #F1F1F2;">
+            <div class="container is-container-items" style="margin-bottom: 50px; padding-top: 50px; padding-bottom: 75px;">
+                <div class="row">
+                    <div class="col-md-4 media">
+                        <span class="glyphicon glyphicon-save pull-left"></span>
+                        <div class="media-body">
+                            <h4 class="media-heading">Install - Easy as Nuget</h4>
+                            <p>Once installed, Glimpse watches each requests as it happens. It does this by hooking into the various extension points and hooks within your system.</p>
                         </div>
-                    </li>
-                {{/people}}
-                <li class="handwritten help-us">Help us out, and get your name in lights. Jump in and contribute on <a href="http://github.com/glimpse/glimpse">GitHub</a></li>
-            </ul>
-        	<hr class="clearer" />
-        	<div class="community-thankyou">Thanks to all of you who have helped along the way. Our community is great!</div>
-    	</div>
-    </script>
-}
+                    </div>
+                    <div class="col-md-4 media">
+                        <span class="glyphicon glyphicon-list-alt pull-left"></span>
+                        <div class="media-body">
+                            <h4 class="media-heading">History - Any Request</h4>
+                            <p>Once the hooks are in place, Glimpse can collect the event data as it occurs. From that point, we store the most important data you care about.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 media">
+                        <span class="glyphicon glyphicon-cloud pull-left"></span>
+                        <div class="media-body">
+                            <h4 class="media-heading">Web Native - Built with HTML/JS</h4>
+                            <p>Once installed, Glimpse watches each requests as it happens. It does this by hooking into the various extension points and hooks within your system.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 media">
+                        <span class="glyphicon glyphicon-lock pull-left"></span>
+                        <div class="media-body">
+                            <h4 class="media-heading">Secure - Hardened by Default</h4>
+                            <p>Once the hooks are in place, Glimpse can collect the event data as it occurs. From that point, we store the most important data you care about.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 media">
+                        <span class="glyphicon glyphicon-flash pull-left"></span>
+                        <div class="media-body">
+                            <h4 class="media-heading">Performant - Lightweight & Fast</h4>
+                            <p>Once installed, Glimpse watches each requests as it happens. It does this by hooking into the various extension points and hooks within your system.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 media">
+                        <span class="glyphicon glyphicon-hdd pull-left"></span>
+                        <div class="media-body">
+                            <h4 class="media-heading">Perspective - Unique Server View</h4>
+                            <p>Once the hooks are in place, Glimpse can collect the event data as it occurs. From that point, we store the most important data you care about.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="community_container">
+        <div class="container">
+            <div class="row" style="position: relative">
+                <div class="col-md-6 community_content">
+                    <h2>Free &amp; open source</h2>
+                    <p>
+                        Thanks to <a href="/Community">community</a> contributions, Glimpse is thriving and growing. Glimpse is free and available under the <a href="http://opensource.org/licenses/apache2.0">Apache 2.0</a> license. The source code is
+                        availible, so feel free to <a href="http://github.com/glimpse/glimpse">jump in and contribute</a>!
+                    </p>
+                    <h3>Getting involved</h3>
+                    <p>
+                        Glimpse wouldn't be what it is today without the love and support of some awesome people from around the world.
+                        These contributions have ranged from simple bug fixes to fully fledged features, and from as far afield as South
+                        Africa and South East Asia.
+                    </p>
+                    <p>
+                        If you would like to get involved, there are plenty of things that you can do. There are issues that are good
+                        for first-timers ringfenced and tagged <a href="https://github.com/Glimpse/Glimpse/issues?labels=Jump+In&amp;milestone=&amp;page=1&amp;sort=updated&amp;state=open">Jump In</a>
+                        in GitHub. If you'd rather start off on something more self-contained, why not <a href="/Help/Extensibility">write an extension</a>?
+                    </p>
+                </div>
+                <div class="col-md-6 community_content_padding hidden-xs">
+                </div>
+                <div class="community_guys handwritten hidden-xs">
+                    <div class="community_osguy_label">
+                        <div class="arrow arrow-down"></div>
+                        You?<br> <a href="http://www.github.com/glimpse/glimpse">We're open source</a>
+                    </div>
+                    <div class="community_anthony_label">
+                        <div class="arrow arrow-down-inverted"></div>Anthony
+                    </div>
+                    <div class="community_nik_label">
+                        Nik<div class="arrow arrow-left"></div>
+                    </div>
+                    <img src="~/Content/founders.png" />
+                </div>
+            </div>
+        </div>
+        <div class="community_listing_outer">
+            <div class="community_listing">
+                <div>
+                    <img src="~/Content/Contributors/pic11.jpg" />
+                </div><div>
+                    <img src="~/Content/Contributors/pic9.jpg" />
+                </div><div>
+                    <img src="~/Content/Contributors/pic7.jpg" />
+                </div><div>
+                    <img src="~/Content/Contributors/pic5.jpg" />
+                </div><div>
+                    <img src="~/Content/Contributors/pic3.jpg" />
+                </div><div>
+                    <img src="~/Content/Contributors/pic1.jpg" />
+                    <div class="community_background"></div>
+                    <ul class="list-unstyled">
+                        <li class="handwritten">Anthony</li>
+                        <li><a href="?"><span class="sicon sicon-twitter"></span>@@anthony_vdh</a></li>
+                        <li><a href="?"><span class="sicon sicon-github"></span>avanderhoorn</a></li>
+                    </ul>
+                </div><div>
+                    <img src="~/Content/Contributors/pic2.jpg" />
+                    <div class="community_background"></div>
+                    <ul class="list-unstyled">
+                        <li class="handwritten">Nik</li>
+                        <li><a href="?"><span class="sicon sicon-twitter"></span>@@nikmd23</a></li>
+                        <li><a href="?"><span class="sicon sicon-github"></span>nikmd23</a></li>
+                    </ul>
+                </div><div>
+                    <img src="~/Content/Contributors/pic4.jpg" />
+                </div><div>
+                    <img src="~/Content/Contributors/pic6.jpg" />
+                </div><div>
+                    <img src="~/Content/Contributors/pic8.jpg" />
+                </div><div>
+                    <img src="~/Content/Contributors/pic10.jpg" />
+                </div><div>
+                    <img src="~/Content/Contributors/pic12.jpg" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="blog_container container">
+        <div class="row">
+            <h2 class="col-md-12">Latest news</h2>
+        </div>
+        <div class="row blog_content"></div>
+        <div class="row">
+            <div class="col-md-12 text-center"><a href="http://blog.getglimpse.com" class="btn btn-primary btn-large">Read more &raquo;</a></div>
+        </div>
+    </div>
+</div>

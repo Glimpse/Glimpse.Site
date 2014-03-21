@@ -13,6 +13,7 @@ using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Hosting;
 using System.Web.Mvc;
@@ -35,12 +36,10 @@ namespace T4MVC
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
-                public readonly string _Home = "_Home";
                 public readonly string _Layout = "_Layout";
                 public readonly string _Simple = "_Simple";
                 public readonly string Error = "Error";
             }
-            public readonly string _Home = "~/Views/Shared/_Home.cshtml";
             public readonly string _Layout = "~/Views/Shared/_Layout.cshtml";
             public readonly string _Simple = "~/Views/Shared/_Simple.cshtml";
             public readonly string Error = "~/Views/Shared/Error.cshtml";

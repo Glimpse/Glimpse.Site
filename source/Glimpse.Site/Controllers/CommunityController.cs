@@ -12,5 +12,5 @@ namespace Glimpse.Site.Controllers
         {
             return View();
         }
-    }
+	}
 }

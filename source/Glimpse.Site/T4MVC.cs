@@ -13,6 +13,7 @@ using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Hosting;
 using System.Web.Mvc;
@@ -22,23 +23,30 @@ using System.Web.Routing;
 using T4MVC;
 
 [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-public static class MVC
+public static partial class MVC
 {
+    static readonly apiClass s_api = new apiClass();
+    public static apiClass api { get { return s_api; } }
     static readonly VersionClass s_Version = new VersionClass();
     public static VersionClass Version { get { return s_Version; } }
     public static Glimpse.Site.Controllers.CommunityController Community = new Glimpse.Site.Controllers.T4MVC_CommunityController();
-    public static Glimpse.Site.Controllers.DocsController Docs = new Glimpse.Site.Controllers.T4MVC_DocsController();
+    public static Glimpse.Site.Controllers.ErrorController Error = new Glimpse.Site.Controllers.T4MVC_ErrorController();
+    public static Glimpse.Site.Controllers.ExtensionsController Extensions = new Glimpse.Site.Controllers.T4MVC_ExtensionsController();
+    public static Glimpse.Site.Controllers.GettingStartedController GettingStarted = new Glimpse.Site.Controllers.T4MVC_GettingStartedController();
+    public static Glimpse.Site.Controllers.HelpController Help = new Glimpse.Site.Controllers.T4MVC_HelpController();
     public static Glimpse.Site.Controllers.HomeController Home = new Glimpse.Site.Controllers.T4MVC_HomeController();
-    public static Glimpse.Site.Controllers.PackagesController Packages = new Glimpse.Site.Controllers.T4MVC_PackagesController();
-    public static Glimpse.Site.Controllers.ProtocolController Protocol = new Glimpse.Site.Controllers.T4MVC_ProtocolController();
-    public static Glimpse.Site.Controllers.SupportController Support = new Glimpse.Site.Controllers.T4MVC_SupportController();
-    public static Glimpse.Site.Controllers.TalkController Talk = new Glimpse.Site.Controllers.T4MVC_TalkController();
-    public static Glimpse.Site.Controllers.VersionsController Versions = new Glimpse.Site.Controllers.T4MVC_VersionsController();
+    public static Glimpse.Site.Controllers.InstallController Install = new Glimpse.Site.Controllers.T4MVC_InstallController();
+    public static Glimpse.Site.Controllers.StatusController Status = new Glimpse.Site.Controllers.T4MVC_StatusController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();
 }
 
 namespace T4MVC
 {
+    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+    public class apiClass
+    {
+        public readonly string Name = "api";
+    }
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
     public class VersionClass
     {
@@ -61,7 +69,7 @@ namespace T4MVC
 }
 
 [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-public class T4MVC_System_Web_Mvc_ActionResult : System.Web.Mvc.ActionResult, IT4MVCActionResult
+internal partial class T4MVC_System_Web_Mvc_ActionResult : System.Web.Mvc.ActionResult, IT4MVCActionResult
 {
     public T4MVC_System_Web_Mvc_ActionResult(string area, string controller, string action, string protocol = null): base()
     {
@@ -86,21 +94,13 @@ namespace Links
         public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
         public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
         public static readonly string _references_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/_references.min.js") ? Url("_references.min.js") : Url("_references.js");
-                      
-        public static readonly string glimpse_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/glimpse.min.js") ? Url("glimpse.min.js") : Url("glimpse.js");
-                      
-        public static readonly string glimpse_protocol_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/glimpse.protocol.min.js") ? Url("glimpse.protocol.min.js") : Url("glimpse.protocol.js");
-                      
-        public static readonly string jquery_1_9_1_intellisense_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery-1.9.1.intellisense.min.js") ? Url("jquery-1.9.1.intellisense.min.js") : Url("jquery-1.9.1.intellisense.js");
-                      
-        public static readonly string jquery_1_9_1_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery-1.9.1.min.js") ? Url("jquery-1.9.1.min.js") : Url("jquery-1.9.1.js");
-                      
-        public static readonly string jquery_1_9_1_min_js = Url("jquery-1.9.1.min.js");
-        public static readonly string jquery_1_9_1_min_map = Url("jquery-1.9.1.min.map");
-        public static readonly string json_format_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/json.format.min.js") ? Url("json.format.min.js") : Url("json.format.js");
-                      
-        public static readonly string site_google_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/site.google.min.js") ? Url("site.google.min.js") : Url("site.google.js");
-                      
+        public static readonly string bootstrap_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bootstrap.min.js") ? Url("bootstrap.min.js") : Url("bootstrap.js");
+        public static readonly string bootstrap_min_js = Url("bootstrap.min.js");
+        public static readonly string jquery_2_1_0_intellisense_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery-2.1.0.intellisense.min.js") ? Url("jquery-2.1.0.intellisense.min.js") : Url("jquery-2.1.0.intellisense.js");
+        public static readonly string jquery_2_1_0_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery-2.1.0.min.js") ? Url("jquery-2.1.0.min.js") : Url("jquery-2.1.0.js");
+        public static readonly string jquery_2_1_0_min_js = Url("jquery-2.1.0.min.js");
+        public static readonly string jquery_2_1_0_min_map = Url("jquery-2.1.0.min.map");
+        public static readonly string site_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/site.min.js") ? Url("site.min.js") : Url("site.js");
     }
 
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -108,128 +108,76 @@ namespace Links
         private const string URLPATH = "~/Content";
         public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
         public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public static class _v1 {
-            private const string URLPATH = "~/Content/_v1";
-            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
-            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
-            public static readonly string app_config_favicon_png = Url("app-config-favicon.png");
-            public static readonly string app_config_logo_png = Url("app-config-logo.png");
-            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-            public static class Contributors {
-                private const string URLPATH = "~/Content/_v1/Contributors";
-                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
-                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
-                public static readonly string pic1_jpg = Url("pic1.jpg");
-                public static readonly string pic10_jpg = Url("pic10.jpg");
-                public static readonly string pic2_jpg = Url("pic2.jpg");
-                public static readonly string pic3_jpg = Url("pic3.jpg");
-                public static readonly string pic4_jpg = Url("pic4.jpg");
-                public static readonly string pic5_jpg = Url("pic5.jpg");
-                public static readonly string pic6_jpg = Url("pic6.jpg");
-                public static readonly string pic7_jpg = Url("pic7.jpg");
-                public static readonly string pic8_jpg = Url("pic8.jpg");
-                public static readonly string pic9_jpg = Url("pic9.jpg");
-            }
-        
-            public static readonly string glimpseGallery_xml = Url("glimpseGallery.xml");
-            public static readonly string inuit_less = Url("inuit.less");
-            public static readonly string inuit_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/inuit.min.css") ? Url("inuit.min.css") : Url("inuit.css");
-                 
-            public static readonly string inuit_min_css = Url("inuit.min.css");
-            public static readonly string screen_less = Url("screen.less");
-            public static readonly string screen_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/screen.min.css") ? Url("screen.min.css") : Url("screen.css");
-                 
-            public static readonly string screen_min_css = Url("screen.min.css");
-            public static readonly string site_favicon_ico = Url("site-favicon.ico");
-            public static readonly string site_favicon_png = Url("site-favicon.png");
-            public static readonly string site_first_install_minimized_png = Url("site-first-install-minimized.png");
-            public static readonly string site_home_logo_png = Url("site-home-logo.png");
-            public static readonly string site_icon_png = Url("site-icon.png");
-            public static readonly string site_main_logo_medium_png = Url("site-main-logo-medium.png");
-            public static readonly string site_nuget_logo_png = Url("site-nuget-logo.png");
-            public static readonly string site_redgate_logo_png = Url("site-redgate-logo.png");
-            public static readonly string site_twitter_icon_png = Url("site-twitter-icon.png");
-        }
-    
-        public static readonly string close_quote_gif = Url("close-quote.gif");
-        public static readonly string cs_leftImg_png = Url("cs_leftImg.png");
-        public static readonly string cs_rightImg_png = Url("cs_rightImg.png");
-        public static readonly string favicon_gif = Url("favicon.gif");
-        public static readonly string github_gif = Url("github.gif");
-        public static readonly string glimpse100___Copy_png = Url("glimpse100 - Copy.png");
-        public static readonly string glimpse100_png = Url("glimpse100.png");
-        public static readonly string glimpse128_png = Url("glimpse128.png");
-        public static readonly string glimpse150_png = Url("glimpse150.png");
-        public static readonly string glimpse256_png = Url("glimpse256.png");
-        public static readonly string glimpse32_png = Url("glimpse32.png");
-        public static readonly string glimpse512_png = Url("glimpse512.png");
-        public static readonly string glimpse64___Copy_png = Url("glimpse64 - Copy.png");
-        public static readonly string glimpse64_png = Url("glimpse64.png");
-        public static readonly string glimpseLogo_png = Url("glimpseLogo.png");
-        public static readonly string glimpseLogoWhite_png = Url("glimpseLogoWhite.png");
-        public static readonly string glimpseMedium_png = Url("glimpseMedium.png");
-        public static readonly string GlimpseStackAd_png = Url("GlimpseStackAd.png");
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public static class Help {
-            private const string URLPATH = "~/Content/Help";
-            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
-            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
-            public static readonly string FilesPlugin_jpg = Url("FilesPlugin.jpg");
-            public static readonly string HelloWorldPlugin_jpg = Url("HelloWorldPlugin.jpg");
-        }
-    
-        public static readonly string jquery_contentslider_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.contentslider.min.css") ? Url("jquery.contentslider.min.css") : Url("jquery.contentslider.css");
+        public static readonly string bootstrap_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bootstrap.min.css") ? Url("bootstrap.min.css") : Url("bootstrap.css");
              
-        public static readonly string jquery_jscrollpane_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.jscrollpane.min.css") ? Url("jquery.jscrollpane.min.css") : Url("jquery.jscrollpane.css");
-             
-        public static readonly string nugetlogo_png = Url("nugetlogo.png");
-        public static readonly string open_quote_gif = Url("open-quote.gif");
+        public static readonly string bootstrap_css_map = Url("bootstrap.css.map");
+        public static readonly string bootstrap_min_css = Url("bootstrap.min.css");
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public static class Plugin {
-            private const string URLPATH = "~/Content/Plugin";
+        public static class Contributors {
+            private const string URLPATH = "~/Content/Contributors";
             public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
             public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
-            public static readonly string Ajax_jpg = Url("Ajax.jpg");
-            public static readonly string Binding_jpg = Url("Binding.jpg");
-            public static readonly string Config_jpg = Url("Config.jpg");
-            public static readonly string enviro_png = Url("enviro.png");
-            public static readonly string Environment_jpg = Url("Environment.jpg");
-            public static readonly string Execution_jpg = Url("Execution.jpg");
-            public static readonly string Metadata_jpg = Url("Metadata.jpg");
-            public static readonly string Remote_jpg = Url("Remote.jpg");
-            public static readonly string Request_jpg = Url("Request.jpg");
-            public static readonly string Routes_jpg = Url("Routes.jpg");
-            public static readonly string Server_jpg = Url("Server.jpg");
-            public static readonly string Session_jpg = Url("Session.jpg");
-            public static readonly string switchServers_png = Url("switchServers.png");
-            public static readonly string Timeline_jpg = Url("Timeline.jpg");
-            public static readonly string TimelineAlt_jpg = Url("TimelineAlt.jpg");
-            public static readonly string Trace_jpg = Url("Trace.jpg");
-            public static readonly string TraceIcons_png = Url("TraceIcons.png");
-            public static readonly string View_jpg = Url("View.jpg");
+            public static readonly string pic1_jpg = Url("pic1.jpg");
+            public static readonly string pic10_jpg = Url("pic10.jpg");
+            public static readonly string pic11_jpg = Url("pic11.jpg");
+            public static readonly string pic12_jpg = Url("pic12.jpg");
+            public static readonly string pic2_jpg = Url("pic2.jpg");
+            public static readonly string pic3_jpg = Url("pic3.jpg");
+            public static readonly string pic4_jpg = Url("pic4.jpg");
+            public static readonly string pic5_jpg = Url("pic5.jpg");
+            public static readonly string pic6_jpg = Url("pic6.jpg");
+            public static readonly string pic7_jpg = Url("pic7.jpg");
+            public static readonly string pic8_jpg = Url("pic8.jpg");
+            public static readonly string pic9_jpg = Url("pic9.jpg");
         }
     
-        public static readonly string rss_icon_gif = Url("rss_icon.gif");
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public static class Fonts {
+            private const string URLPATH = "~/Content/Fonts";
+            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+            public static readonly string ArchitectsDaughter_ttf = Url("ArchitectsDaughter.ttf");
+            public static readonly string glyphicons_halflings_regular_eot = Url("glyphicons-halflings-regular.eot");
+            public static readonly string glyphicons_halflings_regular_svg = Url("glyphicons-halflings-regular.svg");
+            public static readonly string glyphicons_halflings_regular_ttf = Url("glyphicons-halflings-regular.ttf");
+            public static readonly string glyphicons_halflings_regular_woff = Url("glyphicons-halflings-regular.woff");
+        }
+    
+        public static readonly string footer_mountains_png = Url("footer-mountains.png");
+        public static readonly string footer_tower_build_png = Url("footer-tower-build.png");
+        public static readonly string footer_tower_png = Url("footer-tower.png");
+        public static readonly string founders_png = Url("founders.png");
+        public static readonly string glimpseTeam_json = Url("glimpseTeam.json");
+        public static readonly string home_feature_guy_jpg = Url("home-feature-guy.jpg");
+        public static readonly string home_plugins_jpg = Url("home-plugins.jpg");
+        public static readonly string how_filter_png = Url("how-filter.png");
+        public static readonly string how_request_png = Url("how-request.png");
+        public static readonly string how_view_png = Url("how-view.png");
+        public static readonly string logo_long_white_png = Url("logo-long-white.png");
+        public static readonly string packages_json = Url("packages.json");
+        public static readonly string pager_sprite_png = Url("pager-sprite.png");
+        public static readonly string screenshot_hud_ajax_gif = Url("screenshot-hud-ajax.gif");
+        public static readonly string screenshot_hud_http_gif = Url("screenshot-hud-http.gif");
+        public static readonly string screenshot_hud_server_gif = Url("screenshot-hud-server.gif");
+        public static readonly string screenshot_hud_gif = Url("screenshot-hud.gif");
+        public static readonly string screenshot_hud_png = Url("screenshot-hud.png");
+        public static readonly string screenshot_preview_gif = Url("screenshot-preview.gif");
+        public static readonly string screenshot_wing_data_gif = Url("screenshot-wing-data.gif");
+        public static readonly string screenshot_wing_data_png = Url("screenshot-wing-data.png");
+        public static readonly string screenshot_wing_timeline_gif = Url("screenshot-wing-timeline.gif");
+        public static readonly string screenshot_wing_timeline_png = Url("screenshot-wing-timeline.png");
+        public static readonly string screenshot_jpg = Url("screenshot.jpg");
+        public static readonly string screenshot_bar_gif = Url("screenshot_bar.gif");
+        public static readonly string screenshot_main_jpg = Url("screenshot_main.jpg");
+        public static readonly string screenshot_panel_gif = Url("screenshot_panel.gif");
+        public static readonly string screenshot_popup_gif = Url("screenshot_popup.gif");
         public static readonly string Site_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Site.min.css") ? Url("Site.min.css") : Url("Site.css");
              
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public static class Support {
-            private const string URLPATH = "~/Content/Support";
-            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
-            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
-            public static readonly string GlimpseCredits_jpg = Url("GlimpseCredits.jpg");
-            public static readonly string GlimpseDetails_jpg = Url("GlimpseDetails.jpg");
-            public static readonly string GlimpseOverview_jpg = Url("GlimpseOverview.jpg");
-            public static readonly string GlimpsePlatform_jpg = Url("GlimpsePlatform.jpg");
-            public static readonly string GlimpseQuickStart_jpg = Url("GlimpseQuickStart.jpg");
-            public static readonly string GlimpseSupport_jpg = Url("GlimpseSupport.jpg");
-            public static readonly string GlimpseTalk_jpg = Url("GlimpseTalk.jpg");
-            public static readonly string WhatIsGlimpse_jpg = Url("WhatIsGlimpse.jpg");
-        }
-    
-        public static readonly string twitter_png = Url("twitter.png");
-        public static readonly string uservoice_icon_png = Url("uservoice-icon.png");
+        public static readonly string whats_new_1_jpg = Url("whats-new-1.jpg");
+        public static readonly string whats_new_2_jpg = Url("whats-new-2.jpg");
+        public static readonly string whats_new_3_jpg = Url("whats-new-3.jpg");
+        public static readonly string whats_new_4_jpg = Url("whats-new-4.jpg");
+        public static readonly string whats_new_5_jpg = Url("whats-new-5.jpg");
     }
 
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]

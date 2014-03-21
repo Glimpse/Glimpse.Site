@@ -6,13 +6,11 @@ using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using System.Xml.Linq;
 using Newtonsoft.Json.Linq;
-using PerfMatters.Flush;
 
 namespace Glimpse.Site.Controllers
 {
@@ -20,37 +18,16 @@ namespace Glimpse.Site.Controllers
     {
         public virtual ActionResult Index()
         {
-            ViewBag.bodyClass = "home-page";
-            this.FlushHead("Glimpse - the open source diagnostics platform of the web");
-
-            return View(MVC.Home.Views.Index, MVC.Shared.Views._Home);
+            return View();
         }
 
-        [OutputCache(Duration = 3600)] // Cache for 1 hour
-        public async virtual Task<ActionResult> BuildStatus()
+        public virtual ActionResult GettingStarted(string task)
         {
-            var httpClient = new HttpClient();
-
-            var response = await httpClient.GetStringAsync("http://teamcity.codebetter.com/app/rest/builds/buildType:%28id:bt428%29?guest=1");
-            var xml = XElement.Parse(response);
-
-            DateTimeOffset date;
-            DateTimeOffset.TryParseExact(xml.Element("startDate").Value, "yyyyMMddTHHmmsszz00", CultureInfo.InvariantCulture, DateTimeStyles.None, out date);
-
-            return Json(
-                new
-                {
-                    id = xml.Attribute("id").Value, 
-                    status = xml.Attribute("status").Value.ToLower(), 
-                    link = xml.Attribute("webUrl").Value + "&guest=1",
-                    date = date.DateTime.ToShortDateString(),
-                    time = date.DateTime.ToShortTimeString()
-                }, 
-                JsonRequestBehavior.AllowGet);
-        }
+            return View(task);
+        } 
 
         [OutputCache(Duration = 3600)] // Cache for 1 hour
-        public virtual async Task<ActionResult> GlimpseTweets()
+        public virtual async Task<ActionResult> TweetsLatest()
         {
             var key = ConfigurationManager.AppSettings["TwitterKey"];
             var secret = ConfigurationManager.AppSettings["TwitterSecret"];
@@ -83,7 +60,31 @@ namespace Glimpse.Site.Controllers
         }
 
         [OutputCache(Duration = 3600)] // Cache for 1 hour
-        public async virtual Task<ActionResult> GlimpseBlogPosts()
+        public async virtual Task<ActionResult> BuildLatest()
+        {
+            var httpClient = new HttpClient();
+
+            var response = await httpClient.GetStringAsync("http://teamcity.codebetter.com/app/rest/builds/buildType:%28id:bt428%29?guest=1");
+            var xml = XElement.Parse(response);
+
+            DateTimeOffset date;
+            DateTimeOffset.TryParseExact(xml.Element("startDate").Value, "yyyyMMddTHHmmsszz00", CultureInfo.InvariantCulture, DateTimeStyles.None, out date);
+
+            return Json(
+                new
+                {
+                    id = xml.Attribute("id").Value,
+                    number = xml.Attribute("number").Value,
+                    status = xml.Attribute("status").Value.ToLower(),
+                    link = xml.Attribute("webUrl").Value + "&guest=1",
+                    date = date.DateTime.ToShortDateString(),
+                    time = date.DateTime.ToShortTimeString()
+                },
+                JsonRequestBehavior.AllowGet);
+        }
+
+        [OutputCache(Duration = 3600)] // Cache for 1 hour
+        public async virtual Task<ActionResult> BlogLatest()
         {
             var httpClient = new HttpClient();
 
@@ -94,11 +95,11 @@ namespace Glimpse.Site.Controllers
             foreach (var item in xml.Descendants("item").Take(2))
             {
                 result.Add(new
-                    {
-                        title = item.Element("title").Value,
-                        summary = item.Element("description").Value,
-                        link = item.Element("link").Value
-                    });
+                {
+                    title = item.Element("title").Value,
+                    summary = item.Element("description").Value,
+                    link = item.Element("link").Value
+                });
             }
 
             return Json(result, JsonRequestBehavior.AllowGet);

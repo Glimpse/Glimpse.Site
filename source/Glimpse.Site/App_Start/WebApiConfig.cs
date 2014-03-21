@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web.Http;
+using System.Web.Http; 
 
 namespace Glimpse.Site
 {
@@ -9,6 +9,8 @@ namespace Glimpse.Site
     {
         public static void Register(HttpConfiguration config)
         {
+            config.MapHttpAttributeRoutes();
+
             config.Routes.MapHttpRoute(
                 "Version_ApiCheckWithDetails",
                 "Api/Version/Check/Details/",

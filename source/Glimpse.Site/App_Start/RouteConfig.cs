@@ -1,4 +1,4 @@
-﻿using System.Web.Http;
+﻿using System;
 using System.Web.Mvc;
 using System.Web.Routing;
 
@@ -9,17 +9,24 @@ namespace Glimpse.Site
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-             
+
+
             routes.MapRoute(
                 name: "Documentation",
                 url: "Help/{mdSlug}",
-                defaults: new { controller = "Docs", action = "Index", mdSlug = "" }
+                defaults: new { controller = "Help", action = "Index", mdSlug = "" }
             );
 
             routes.MapRoute(
-                "Default",
-                "{controller}/{action}/{id}",
-                new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                name: "GettingStarted",
+                url: "getting-started",
+                defaults: new { controller = "GettingStarted", action = "Index" }
+            );
+
+            routes.MapRoute(
+                name: "Default",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

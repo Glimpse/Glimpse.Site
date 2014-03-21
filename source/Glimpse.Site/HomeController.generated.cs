@@ -13,6 +13,7 @@ using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Hosting;
 using System.Web.Mvc;
@@ -38,12 +39,30 @@ namespace Glimpse.Site.Controllers
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        protected RedirectToRouteResult RedirectToAction(Task<ActionResult> taskResult)
+        {
+            return RedirectToAction(taskResult.Result);
+        }
+
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         protected RedirectToRouteResult RedirectToActionPermanent(ActionResult result)
         {
             var callInfo = result.GetT4MVCResult();
             return RedirectToRoutePermanent(callInfo.RouteValueDictionary);
         }
 
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        protected RedirectToRouteResult RedirectToActionPermanent(Task<ActionResult> taskResult)
+        {
+            return RedirectToActionPermanent(taskResult.Result);
+        }
+
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult GettingStarted()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.GettingStarted);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public HomeController Actions { get { return MVC.Home; } }
@@ -61,15 +80,31 @@ namespace Glimpse.Site.Controllers
         public class ActionNamesClass
         {
             public readonly string Index = "Index";
+            public readonly string GettingStarted = "GettingStarted";
+            public readonly string TweetsLatest = "TweetsLatest";
+            public readonly string BuildLatest = "BuildLatest";
+            public readonly string BlogLatest = "BlogLatest";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
             public const string Index = "Index";
+            public const string GettingStarted = "GettingStarted";
+            public const string TweetsLatest = "TweetsLatest";
+            public const string BuildLatest = "BuildLatest";
+            public const string BlogLatest = "BlogLatest";
         }
 
 
+        static readonly ActionParamsClass_GettingStarted s_params_GettingStarted = new ActionParamsClass_GettingStarted();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_GettingStarted GettingStartedParams { get { return s_params_GettingStarted; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_GettingStarted
+        {
+            public readonly string task = "task";
+        }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ViewsClass Views { get { return s_views; } }
@@ -91,13 +126,60 @@ namespace Glimpse.Site.Controllers
     {
         public T4MVC_HomeController() : base(Dummy.Instance) { }
 
+        [NonAction]
         partial void IndexOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
 
+        [NonAction]
         public override System.Web.Mvc.ActionResult Index()
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Index);
             IndexOverride(callInfo);
             return callInfo;
+        }
+
+        [NonAction]
+        partial void GettingStartedOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, string task);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult GettingStarted(string task)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.GettingStarted);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "task", task);
+            GettingStartedOverride(callInfo, task);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void TweetsLatestOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> TweetsLatest()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.TweetsLatest);
+            TweetsLatestOverride(callInfo);
+            return System.Threading.Tasks.Task.FromResult(callInfo as ActionResult);
+        }
+
+        [NonAction]
+        partial void BuildLatestOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> BuildLatest()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.BuildLatest);
+            BuildLatestOverride(callInfo);
+            return System.Threading.Tasks.Task.FromResult(callInfo as ActionResult);
+        }
+
+        [NonAction]
+        partial void BlogLatestOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> BlogLatest()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.BlogLatest);
+            BlogLatestOverride(callInfo);
+            return System.Threading.Tasks.Task.FromResult(callInfo as ActionResult);
         }
 
     }

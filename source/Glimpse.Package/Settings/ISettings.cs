@@ -9,20 +9,16 @@ namespace Glimpse.Package
     public interface ISettings
     {
         ISystemLoggerProvider LoggerProvider { get; }
-
-        bool Debug { get; set; }
-
+         
         bool LoggingEnabled { get; set; }
 
         bool LogEverything { get; set; }
 
         string LoggingPath { get; set; }
-
-        bool DisableAutoBuild { get; set; }
-
-        bool ServiceEnabled { get; set; }
-
+         
         int MinServiceTriggerInterval { get; set; }
+
+        bool UseOfflineData { get; set; }
 
         IRefreshReleaseRepositoryService RefreshReleaseRepositoryService { get; }
 

@@ -16,8 +16,8 @@ namespace Glimpse.Package.Test
             [Fact]
             public void ShouldBeAbleToFullyLoadConfig()
             {
-                var section = new ConfigSectionGlimpse();
-                section.Debug = true; 
+                var section = new ConfigSectionGlimpse(); 
+                section.UseOfflineData = true;
 
                 var logging = new ConfigElementLogging();
                 section.Logging = logging;
@@ -28,11 +28,7 @@ namespace Glimpse.Package.Test
                 var services = new ConfigElementServices();
                 section.Services = services; 
                 services.MinTriggerInterval = 10;
-
-                var dataSource = new ConfigElementDataSource();
-                section.DataSource = dataSource;
-                dataSource.DisabledAutoBuild = true;
-
+                 
                 var configProvider = new Mock<IConfigProvider>();
                 configProvider.Setup(x => x.GetSection<ConfigSectionGlimpse>("")).Returns(section);
 
@@ -43,12 +39,11 @@ namespace Glimpse.Package.Test
                 configProcessor.Process(settings);
 
                 Assert.True(settings.Debug);
+                Assert.True(settings.UseOfflineData);
                 Assert.True(settings.LoggingEnabled);
                 Assert.True(settings.LogEverything);
                 Assert.Equal("Test", settings.LoggingPath);
-                Assert.Equal(10, settings.MinServiceTriggerInterval);
-                Assert.True(settings.ServiceEnabled);
-                Assert.True(settings.DisableAutoBuild); 
+                Assert.Equal(10, settings.MinServiceTriggerInterval); 
             }
 
             [Fact]
@@ -71,14 +66,12 @@ namespace Glimpse.Package.Test
          
         public class TestSettings : ISettings
         { 
-            public ISystemLoggerProvider LoggerProvider { get; set; }
-            public bool Debug { get; set; }
+            public ISystemLoggerProvider LoggerProvider { get; set; } 
             public bool LoggingEnabled { get; set; }
             public bool LogEverything { get; set; }
-            public string LoggingPath { get; set; }
-            public bool DisableAutoBuild { get; set; }
-            public bool ServiceEnabled { get; set; }
-            public int MinServiceTriggerInterval { get; set; } 
+            public string LoggingPath { get; set; } 
+            public int MinServiceTriggerInterval { get; set; }
+            public bool UseOfflineData { get; set; }
             public IRefreshReleaseRepositoryService RefreshReleaseRepositoryService { get; private set; }
             public IReleaseQueryService ReleaseQueryService { get; private set; }
             public IRefreshReleaseService RefreshReleaseService { get; private set; }

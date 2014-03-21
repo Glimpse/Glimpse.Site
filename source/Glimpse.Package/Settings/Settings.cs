@@ -1,8 +1,11 @@
+using Glimpse.Package.Services;
+
 namespace Glimpse.Package
 {
     public class Settings : ISettings
     {
         private ISystemLogger _logger;
+        private bool? _useOfflineData;
 
         public Settings()
         {
@@ -13,21 +16,27 @@ namespace Glimpse.Package
         }
 
         public ISystemLoggerProvider LoggerProvider { get; private set; }
-
-        public bool Debug { get; set; }
-
+         
         public bool LoggingEnabled { get; set; }
 
         public bool LogEverything { get; set; }
 
         public string LoggingPath { get; set; }
-
-        public bool ServiceEnabled { get; set; }
-
+         
         public int MinServiceTriggerInterval { get; set; }
 
-        public bool DisableAutoBuild { get; set; }
+        public bool UseOfflineData
+        {
+            get
+            {
+                if (_useOfflineData.HasValue)
+                    return _useOfflineData.Value;
 
+                return (System.Web.HttpContext.Current != null && System.Web.HttpContext.Current.IsDebuggingEnabled);
+            }
+            set { _useOfflineData = value; }
+        }
+         
         public SettingsExtensionOptions Options { get; set; }
 
         public IRefreshReleaseRepositoryService RefreshReleaseRepositoryService { get; private set; }
@@ -58,8 +67,11 @@ namespace Glimpse.Package
             var persistencyProvider = new ReleasePersistencyProvider(sqlFactory);
  
             QueryProvider = new CacheReleaseQueryProvider();
-            ReleaseQueryService = new ReleaseQueryService(QueryProvider); 
-            RefreshReleaseRepositoryService = new RefreshReleaseRepositoryService(feedProvider, persistencyProvider);
+            ReleaseQueryService = new ReleaseQueryService(QueryProvider);
+            if (UseOfflineData)
+                RefreshReleaseRepositoryService = new RefreshReleaseRepositoryOfflineService(); 
+            else
+                RefreshReleaseRepositoryService = new RefreshReleaseRepositoryService(feedProvider, persistencyProvider);
             RefreshReleaseService = new RefreshReleaseService(this, RefreshReleaseRepositoryService, QueryProvider);
             ReleaseService = new ReleaseService(QueryProvider);
 

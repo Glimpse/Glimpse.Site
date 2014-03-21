@@ -1,104 +1,102 @@
-﻿@using Glimpse.Infrastructure
-@model Glimpse.Site.Models.IssuesIndexViewModel
-@{
-    ViewBag.Title = "Glimpse Status";
-    ViewBag.bodyClass = "status-page";
+﻿@{
+    ViewBag.Title = "Status - Glimpse - ";
 }
-@section header {
-    <h1>Status</h1>
-}
-@section subnav {
-    &nbsp;
-}
-@if (Model.CurrentMilestone.Title.ToLower().Equals("vnext"))
-{
-    <h1>Working on our next release</h1>
-}
-else
-{
-    <h1>We have just released @Model.CurrentMilestone.Title</h1>
-}
-    <ul id="packages" class="nav nav-tabs">
-@foreach (var packageCategory in Model.PackageCategories)
-{
-  <li class="lead"><a style="color: @(packageCategory.Packages.Any(p => p.Status == GlimpsePackageStatus.Red) ? "red" : "green");" href="#@packageCategory.Name" data-toggle="tab">@packageCategory.Name</a></li>
-}
-</ul>
 
-<div class="tab-content" style="border:1px solid #dddddd; border-top: none;">
-    @foreach (var packageCategory in Model.PackageCategories)
+@section scripts
     {
-        <div class="tab-pane fade in active" id="@packageCategory.Name" style="padding:15px;">
+    <script>
+        $('#packages a:first').tab('show')
+    </script>
+}
+
+<div class="important-container container">
+    @if (Model.CurrentMilestone.Title.ToLower().Equals("vnext"))
+    {
+        <h1>Working on our next release</h1>
+    }
+    else
+    {
+        <h1>We have just released @Model.CurrentMilestone.Title</h1>
+    }
+    <ul id="packages" class="nav nav-tabs">
+        @foreach (var packageCategory in Model.PackageCategories)
+        {
+            <li class="lead"><a style="color: @(packageCategory.Packages.Any(p => p.Status == GlimpsePackageStatus.Red) ? "red" : "green");" href="#@packageCategory.Name" data-toggle="tab">@packageCategory.Name</a></li>
+        }
+    </ul>
+
+    <div class="tab-content" style="border:1px solid #dddddd; border-top: none;">
+        @foreach (var packageCategory in Model.PackageCategories)
+        {
+            <div class="tab-pane fade in active" id="@packageCategory.Name" style="padding:15px;">
                 <div class="alert">
                     @foreach (var package in packageCategory.Packages)
                     {
-                        <span style="padding-right: 10px;"><img src="~/Content/@package.StatusImage" width="15"/> @package.Name</span>
+                        <span style="padding-right: 10px;"><img src="~/Content/@package.StatusImage" width="15" /> @package.Name</span>
                     }
                 </div>
-            <div id="packageNotes">
-                @foreach (var package in packageCategory.Packages)
-                {
-                    if (!string.IsNullOrEmpty(package.StatusDescription))
+                <div id="packageNotes">
+                    @foreach (var package in packageCategory.Packages)
                     {
-                        <span> <strong>@package.Name:</strong> @package.StatusDescription</span><br/>
+                        if (!string.IsNullOrEmpty(package.StatusDescription))
+                        {
+                            <span> <strong>@package.Name:</strong> @package.StatusDescription</span><br />
+                        }
                     }
-                } 
+                </div>
+                <hr class="clearer" />
+                @if (Model.CurrentMilestone.Title.ToLower().Equals("vnext"))
+                {
+                    <strong><em>Acknowledged and working on</em></strong>
+                    @Html.Partial("_Issues", packageCategory.AcknowledgedIssues, new ViewDataDictionary(this.ViewData) { { "emptyMessage", "No issues yet scheduled for release" } })
+
+                    <hr class="clearer" />
+
+                    <strong><em>Fixed and yet to be released</em></strong>
+                    @Html.Partial("_Issues", packageCategory.CompletedIssues, new ViewDataDictionary(this.ViewData) { { "emptyMessage", "No issues yet fixed. We are working on some as we speak" } })
+                }
+                else
+                {
+                    @Html.Partial("_Issues", packageCategory.CompletedIssues, new ViewDataDictionary(this.ViewData) { { "emptyMessage", "No issues for this package were released" } })
+                }
             </div>
-            <hr class="clearer"/>
-            @if (Model.CurrentMilestone.Title.ToLower().Equals("vnext"))
-            {
-                <strong><em>Acknowledged and working on</em></strong>
-                @Html.Partial("_Issues", packageCategory.AcknowledgedIssues, new ViewDataDictionary(this.ViewData) {{"emptyMessage", "No issues yet scheduled for release"}})
-
-                <hr class="clearer"/>
-
-                <strong><em>Fixed and yet to be released</em></strong>
-                @Html.Partial("_Issues", packageCategory.CompletedIssues, new ViewDataDictionary(this.ViewData) {{"emptyMessage", "No issues yet fixed. We are working on some as we speak"}})
-            }
-            else
-            {
-                 @Html.Partial("_Issues", packageCategory.CompletedIssues, new ViewDataDictionary(this.ViewData) {{"emptyMessage", "No issues for this package were released"}})
-            }
-        </div>
-    }
-</div>
-<hr class="clearer"/>
-<hr />
-<h1>Thanks to</h1>
-<p>A big thank you to all that have submitted Issues and contributed to our codebase. We value all contributions!</p>
-<div id="contributors">
-    <div id="issue-contributors" style="float:left; width: 30%; margin:10px; display: block;">
-        <h2>Thank you for reporting Issues:</h2>
-        @foreach (var reporter in Model.IssueReporters)
-        {
-            <a href="@reporter.Html_Url" data-toggle="tooltip" title="@reporter.Login" id="@(reporter.Login)Avatar"><img width="40" src="@reporter.Avatar_Url" alt="@reporter.Login"/></a>
         }
     </div>
-    <div id="package-contributors" style="float:left; width: 65%; margin: 10px; display: block;">
-        <h2>Thank you for contributing Pull Requests:</h2>
-        <table class="table table-condensed">
-            <tr>
-                <th>Contributor</th>
-                <th>Details</th>
-            </tr>
-            @foreach (var reporter in Model.PullRequestContributors)
+    <hr class="clearer" />
+    <hr />
+    <h1>Thanks to</h1>
+    <p>A big thank you to all that have submitted Issues and contributed to our codebase. We value all contributions!</p>
+    <div id="contributors">
+        <div id="issue-contributors" style="float:left; width: 30%; margin:10px; display: block;">
+            <h2>Thank you for reporting Issues:</h2>
+            @foreach (var reporter in Model.IssueReporters)
             {
-                <tr>
-                    <td class="text-center">
-                        <a href="@reporter.Item1.Html_Url" data-toggle="tooltip" title="@reporter.Item1.Login" id="@(reporter.Item1.Login)Avatar"><img width="40" src="@reporter.Item1.Avatar_Url" alt="@reporter.Item1.Login"/></a>
-                    </td>
-                    <td>
-                        @foreach (var pullRequest in reporter.Item2)
-                        {
-                            <a href="@pullRequest.Html_Url">#@pullRequest.Number</a> @(pullRequest.Title) <br />
-                        }
-                    </td>
-                </tr>
+                <a href="@reporter.Html_Url" data-toggle="tooltip" title="@reporter.Login" id="@(reporter.Login)Avatar"><img width="40" src="@reporter.Avatar_Url" alt="@reporter.Login" /></a>
             }
-        </table>
         </div>
+        <div id="package-contributors" style="float:left; width: 65%; margin: 10px; display: block;">
+            <h2>Thank you for contributing Pull Requests:</h2>
+            <table class="table table-condensed">
+                <tr>
+                    <th>Contributor</th>
+                    <th>Details</th>
+                </tr>
+                @foreach (var reporter in Model.PullRequestContributors)
+                {
+                    <tr>
+                        <td class="text-center">
+                            <a href="@reporter.Item1.Html_Url" data-toggle="tooltip" title="@reporter.Item1.Login" id="@(reporter.Item1.Login)Avatar"><img width="40" src="@reporter.Item1.Avatar_Url" alt="@reporter.Item1.Login" /></a>
+                        </td>
+                        <td>
+                            @foreach (var pullRequest in reporter.Item2)
+                            {
+                                <a href="@pullRequest.Html_Url">#@pullRequest.Number</a> @(pullRequest.Title) <br />
+                            }
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+    <hr class="clearer" />
 </div>
-<hr class="clearer" />
-<script>
-    $('#packages a:first').tab('show')
-</script>

@@ -1,0 +1,20 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using Glimpse.Site.Models;
+
+namespace Glimpse.Site.Controllers
+{
+    public partial class HelpController : Controller
+    {
+        public virtual ActionResult Index(string mdSlug, string controller = null)
+        {
+            if (string.IsNullOrEmpty(mdSlug))
+                mdSlug = "Getting-Started";
+
+            return View(new DocumentationViewModel(mdSlug, "Views/" + controller + "/Wiki/Content/"));
+        }
+	}
+}

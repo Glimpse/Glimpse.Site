@@ -1,117 +1,792 @@
-/* reset */
-html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:text-top;}sub{vertical-align:text-bottom;}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}input,textarea,select{*font-size:100%;}legend{color:#000;}
+﻿@font-face{font-family:'ArcitectsDaughter';src:url('../fonts/ArchitectsDaughter.ttf') format('truetype');font-weight:normal;font-style:normal;}
 
-/* general */
-body { text-align:center; font-family:Helvetica, Arial, sans-serif; font-size:0.8em; line-height:1.4em; }
-strong { font-weight:bold; } em { font-style:italic; }
-ul.plain, ol.plain { margin-bottom:1em; }
-ol.plain li { list-style-type:decimal; }
-ul.plain li { list-style-type:disc; }
-ul.plain li, ol.plain li { margin:0.5em 0 0.5em 1.5em ; }
-.content { position:absolute; left:50%; margin-left:-450px; text-align:left; width:900px; }
-.dark-grad-bg { border:1px solid #dcdcdc; background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #FCFCFC), color-stop(1, #dfdfdf) ); background:-moz-linear-gradient( center top, #FCFCFC 5%, #dfdfdf 100% ); filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#FCFCFC', endColorstr='#dfdfdf'); background-color: #FAFAFA; }
-.light-grad-bg { border: 1px solid #AAA;  background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #EBEBEB), color-stop(1, #FCFCFC) ); background: -moz-linear-gradient( center top, #EBEBEB 5%, #FCFCFC 100% ); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#EBEBEB', endColorstr='#FCFCFC'); background-color: #FCFCFC; }
-.navigation-back { border-top:0px; position:absolute; right: -10px; height: 80px; width: 720px; border-radius: 0px 0px 10px 10px; -moz-border-radius: 0px 0px 10px 10px; -webkit-border-bottom-right-radius: 10px; -webkit-border-bottom-left-radius: 10px; }
-.navigation { position:absolute; right:0; right:-50px; font-family:"avante garde", "Century Gothic", Serif; }
-.navigation li { float:left; width:185px; height:70px; position:relative; }
-.navigation li a { display:block; font-size:1.5em; color:#333; text-decoration:none; margin:1em 0 0.5em; }
-.nagigation li span { display:block; padding:40px 8px 0 12px; font-size:0.85em; }
-.download { margin-top:3em; }
-.download-abbrv { position:absolute; right:0; margin-top:-15px; }
-.footer { margin:3em 0; text-align:center; }
-.logo { font-family: "TitilliumMaps", helvetica, sans-serif; margin:100px 0 10px; position:relative; background: url(glimpseLogo.png) -10px -15px no-repeat; padding: 0 0 0 140px; }
-.logo h1 { color:transparent; font-size:0px; height:65px; }
-.logo div { font-size:1.5em; margin: 25px 0 0 -10px; }
-.logo blockquote { width:350px; position:absolute; right:0; top:10px; }
-.features { margin-top:20px; font-size:14px; }
-.features h3 { margin:20px 0 15px; } 
-.features tr { vertical-align:top; } 
-.features p { padding: 0.5em 0; }
-.features pre { font-family:Consolas, monospace, serif; font-size:11px; }
-.scroll-pane { overflow:hidden; outline:none; height:400px; width:820px; }
-h1, h2, h3, h4 { line-height:1.2em; font-family:"avante garde", "Century Gothic", Serif; } 
-h1 { font-size:4em; }
-h2 { font-size:2.5em; }
-h3 { font-size:2em; }
-h4 { font-size:1.4em;  margin-bottom:0.5em; }
-blockquote { font: 1.2em/1.6em "avante garde", "Century Gothic", Serif; width: 400px; background: url(/Content/close-quote.gif) no-repeat right bottom; padding-left: 18px; text-indent: -18px; }
-blockquote:first-letter { background: url(/Content/open-quote.gif) no-repeat left top; padding-left: 18px; font: italic 1.4em "avante garde", "Century Gothic", Serif; }
-.question {font-weight:bold; line-height:1.4em;}
-.myButton { -moz-box-shadow:inset 0px 1px 0px 0px #ffffff; -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff; box-shadow:inset 0px 1px 0px 0px #ffffff; background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) ); background:-moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% ); filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf'); background-color:#ededed; -moz-border-radius:6px; -webkit-border-radius:6px; border-radius:6px; border:1px solid #dcdcdc; display:inline-block; color:#777777; font-family:arial; font-size:24px; padding:10px 41px; text-decoration:none; text-shadow:1px 1px 0px #ffffff; }
-.myButton:hover { background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed) ); background:-moz-linear-gradient( center top, #dfdfdf 5%, #ededed 100% ); filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed'); background-color:#dfdfdf; }
-.myButton:active { position:relative; top:1px; }
-.questions li { padding:0.5em 0; line-height:1.4em; }
-pre { border: 1px dashed #777; background-color: #EEE; padding: 1em; }
-
-.header-number { font-size:1.4em; font-weight:normal; }
-
-.glimpse-scenario { padding-bottom:4em; }
-.glimpse-scenario-data { padding-top:0.5em; }
-
-.plugin-summary { padding:1em 0 0 0; }
-.plugin-video { padding-bottom:1em; text-align:center; }
-/* a bit to wide, any span becomes italic and bold!: */
-.plugin-layout ol span, .plugin ul span { font-style:italic; font-weight:bold; }
-.plugin-faq ol div { font-weight:bold; }
-.plugin-faq li { margin-bottom:2em; }
-.help-buttons { text-align:center; position:relative; }
-.help-links { display:none; border: 1px solid #AAA;-moz-border-radius:10px; -webkit-border-radius:10px; border-radius:10px; text-align: left; padding:0 2em 1em 2em; -moz-box-shadow: 0 0 5px 5px #888; -webkit-box-shadow: 0 0 5px 5px#888; box-shadow: 0 0 5px 5px #DDD; position: absolute; width:94%; bottom: 0; background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #EBEBEB), color-stop(1, #FCFCFC) ); background: -moz-linear-gradient( center top, #EBEBEB 5%, #FCFCFC 100% ); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#EBEBEB', endColorstr='#FCFCFC'); background-color: #FCFCFC; }
-
-.soon { font-weight:bold; font-size:1.2em; text-align:center; margin:3em 0; }
-
-.line { background:gainsboro; color:gainsboro; clear: both; float: none; width: 100%; height: 1px; margin: 2em 0; border: none; }
-
-.about .quotes .dark-grad-bg { padding:1em; font-size: 0.9em; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; height:100%; }
-.about .quotes .dark-grad-bg div { margin-top:1em; text-align:right; font-size:0.9em; }
-.about .button-holder { text-align:center; margin-top:1.5em; }
-.about .light-grad-bg, .help .light-grad-bg { border-left:0px; border-right:0px; padding-left:0.5em; }
-.about h2, .help h2 { margin-bottom:0.5em; }
-.about .light-grad-bg h2, .help .light-grad-bg h2 { margin-bottom:0.3em; }
-
-
-.sub-menu-holder { padding:1.5em 0 1.5em 0; border-top:1px solid #dcdcdc; border-bottom:1px solid #dcdcdc; margin-top:1em; font-family: "avante garde", "Century Gothic", Serif; }
-.sub-menu-holder h2 { margin-bottom:0.3em; }
-.sub-menu-holder h3 { margin:0 0 0.3em; }
-.sub-menu-holder li { display:inline-block; margin-right:1.5em; }
-
-
-/* classes for code formatting */
-.csharpcode, .csharpcode pre
-{
-	font-size: small;
-	color: black;
-	font-family: Consolas, "Courier New", Courier, Monospace;
-	background-color: #EEE;
-	margin-top:0.7em;
-	padding: 0.7em;
+body {
+    padding-top: 50px; 
+    padding-bottom: 0;
+    background: #323d42;
+}
+.body_container {
+    background-color: white; 
+    padding-bottom: 200px;
+    overflow-x: hidden;
+}
+.handwritten {
+    font-family:"ArcitectsDaughter",Arial,sans-serif;
+    text-rendering:optimizeLegibility;
+    -webkit-font-smoothing:antialiased;
+    font-smoothing:antialiased;
+}
+.important-container p, .important-container li {
+    font-size: 18px;
+    line-height: 145%;
+}
+.important-container h2 {
+    font-size: 45px;
+    line-height: 120%;
+    font-family: 'freight-sans-pro','Helvetica Neue',Arial,Helvetica,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-transform: uppercase;
+}
+.important-container h3 {
+    font-size: 30px;
+    line-height: 120%;
+    margin-top: 40px;
+}
+.important-container h3.normal {
+    margin-top: 20px;
+}
+.important-container h4 {
+    font-size: 24px;
+    line-height: 120%;
+    font-weight: bold;
 }
 
-/* to overwrite previous italic bold */
-.plugin-layout ul pre.csharpcode span
-{
-    font-style:normal;
-	font-weight:normal;
+.float_img {
+    width: 100%; 
+    top:0; 
+    position: absolute;
 }
-pre.csharpcode span
-{
-    font-style:normal;
-	font-weight:normal;
+
+.arrow, .sicon {
+    background-image: url("./pager-sprite.png");
+    background-repeat: no-repeat;
+}
+.arrow-down, .arrow-down-inverted {
+    height: 18px;
+    width: 14px;
+}
+.arrow-down {
+    background-position:-221px -143px
+}
+.arrow-down-inverted {
+    background-position:-222px -205px;
+}
+.arrow-left {
+    height: 14px;
+    width: 18px;
+    background-position:-221px -161px;
+}
+.arrow-large-right {
+    width: 29px;
+    height: 26px;
+    background-position:-239px -145px;
+}
+.sicon {
+    height: 20px;
+    width: 24px;
+    display: inline-block;
+    vertical-align: top;
+}
+.sicon-twitter {
+    background-position: 0px -199px;
+}
+.sicon-github {
+    background-position: 0px -180px;
 }
 
 
-.csharpcode pre { margin: 0em; }
-.csharpcode .rem { color: #008000; font-style:italic; }
-.csharpcode .kwrd { color: #0000ff; }
-.csharpcode .str { color: #006080; }
-.csharpcode .op { color: #0000c0; }
-.csharpcode .preproc { color: #cc6633; }
-.csharpcode .asp { background-color: #ffff00; }
-.csharpcode .html { color: #800000; }
-.csharpcode .attr { color: #ff0000; }
-.csharpcode .alt 
-{
-	background-color: #f4f4f4;
-	width: 100%;
-	margin: 0em;
+.navbar_home .glyphicon { 
+    margin: 0 0.5em;
+    vertical-align: sub;
+    font-size: 1.5em;
 }
-.csharpcode .lnum { color: #606060; }
+.navbar-brand {
+    padding: 10px 15px;
+}
+.navbar-brand img {
+    height: 41px;
+}
+.navbar .container {
+    position: relative;
+}
+.page_home .navbar-install {
+    opacity: 0;
+    -webkit-transition: opacity 500ms ease;
+    -moz-transition: opacity 500ms ease;
+    -ms-transition: opacity 500ms ease;
+    -o-transition: opacity 500ms ease;
+    transition: opacity 500ms ease;
+}
+.page_home .navbar-install-show {
+    opacity: 1;
+}
+.navbar-install {
+    position: absolute;
+    top: 7px;
+    right: 157px;
+}
+.navbar-install-menu a {
+    color: white !important;
+}
+
+.header {
+    background: #323d42;
+}
+
+
+.footer {
+    color: white;
+    margin: 100px 0 20px;
+
+}
+.footer .container {
+    position: relative;
+}
+.footer hr {
+    height: 2px;
+    background: #232a2d;
+    border-top: 1px solid #404c52;
+    border-bottom: 1px solid #404c52;
+}
+.footer_mountains{background:transparent url("./footer-mountains.png") bottom left no-repeat;position:absolute;width:307px;height:156px;top:-188px;}
+.footer_tower{background:transparent url("./footer-tower.png") top left no-repeat;position:absolute;width:90px;height:138px;top:-229px;right:0;}
+.footer_tower-build{background:transparent url("./footer-tower-build.png") top left no-repeat;position:absolute;width:73px;height:169px;top:-263px;right:88px;}
+.footer_tower-build.success{background-position:-73px 0;}
+.footer_tower-build.failure{background-position:-146px 0;}
+.footer .icon{float:left;width:32px;height:32px;margin-right:10px;background:transparent url("./pager-sprite.png") 0 -241px no-repeat;}
+.footer .icon.mail{background-position:0 -145px;}
+.footer .icon.google{background-position:-34px -145px;}
+.footer .icon.github{background-position:-71px -145px;}
+.footer .icon.twitter{background-position:-108px -145px;}
+.footer .icon.blog{background-position:-148px -148px;}
+.footer .redgate{margin-bottom: -9px;width: 87px;height: 27px;background:transparent url("./pager-sprite.png") -41px -178px no-repeat;display: inline-block;}
+.footer_last div{vertical-align: middle;}
+.footer_backing{text-align: center}
+.footer_copy{margin-top: 3px;}
+
+
+.build_details {
+    display: none; 
+}
+.build_info { 
+    position: absolute;
+    color: #666;
+    width: 200px;
+    top: 20px;
+    left: -220px;
+    transform: rotate(-4deg);
+    -ms-transform: rotate(-4deg);
+    -moz-transform: rotate(-4deg);
+    -webkit-transform: rotate(-4deg);
+    -o-transform: rotate(-4deg);
+}
+.build_arrow {
+    position: absolute;
+    top: 70px;
+    left: -40px;
+    transform: rotate(-12deg);
+    -ms-transform: rotate(-12deg);
+    -moz-transform: rotate(-12deg);
+    -webkit-transform: rotate(-12deg);
+    -o-transform: rotate(-12deg); 
+}
+
+
+.blog_container {
+    display: none;
+    padding-top: 3em;
+} 
+
+.media_tweet small {
+    color: #666;
+    font-size: 0.8em;
+    display: none;
+}
+
+.carousel-inverted .carousel-caption, .carousel-inverted .carousel-control {
+    color: #333333;
+    text-shadow: none;
+}
+.carousel-inverted .carousel-control.left, .carousel-inverted .carousel-control.right {
+    background-image: none;
+    filter: none;
+}
+.carousel-inverted .carousel-indicators li {
+    border-color: #333333;
+}
+.carousel-inverted .carousel-indicators .active {
+    background-color: #333333;
+}
+.carousel-summary .carousel-control .glyphicon-chevron-left, .carousel-summary .carousel-control .glyphicon-chevron-right {
+    top: 45%;
+}
+.carousel-summary .carousel-subject {
+    height: 160px;
+} 
+.carousel-screenshot-shots .target, .is-container .target {
+    -webkit-transition: bottom 400ms ease;
+    -moz-transition: bottom 400ms ease;
+    -ms-transition: bottom 400ms ease;
+    -o-transition: bottom 400ms ease;
+    transition: bottom 400ms ease;
+    bottom: -100%;
+}
+.carousel-screenshot-shots .target.active, .is-container .target.active { 
+    bottom: 0%;
+}
+
+.action_link {
+    white-space: nowrap;
+}
+.action_link .glyphicon {
+    margin-right: 5px;
+}
+
+.community_container {
+    padding-top: 3em;
+}
+.community_content {
+    padding-bottom: 1em;
+}
+.community_listing_outer {
+    overflow: hidden; 
+    height: 200px; 
+    position: relative;
+}
+.community_listing {
+    position: absolute; 
+    height: 200px; 
+    width: 2400px; 
+    margin-left: -1200px; 
+    left: 50%
+}
+.community_content_padding {
+    height: 240px;
+}
+.community_listing > div {
+    display: inline-block;
+    position: relative;
+    color: white;
+}
+.community_listing > div div, .community_listing > div ul {
+    -webkit-transition: opacity 400ms ease;
+    -moz-transition: opacity 400ms ease;
+    -ms-transition: opacity 400ms ease;
+    -o-transition: opacity 400ms ease;
+    transition: opacity 400ms ease;
+}
+.community_background {
+    background: #323d42;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+}
+.community_listing img {
+    opacity: 0.3;
+}
+.community_listing ul {
+    opacity: 0;
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+}
+.community_listing .handwritten {
+    padding-bottom: 10px;
+}
+.community_listing div:hover div {
+    opacity: 0.7;
+}
+.community_listing div:hover ul {
+    opacity: 1;
+}
+.community_guys {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.community_guys div {
+    position: absolute;
+}
+.community_osguy_label {
+    left: -85px;
+    top: -40px;
+    -ms-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    -webkit-transform: rotate(-10deg);
+    -o-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+}
+.community_osguy_label .arrow { 
+    right: -18px;
+    top: 28px;
+}
+.community_anthony_label { 
+    left: 165px;
+    top: -20px;
+    -ms-transform: rotate(-4deg);
+    -moz-transform: rotate(-4deg);
+    -webkit-transform: rotate(-4deg);
+    -o-transform: rotate(-4deg);
+    transform: rotate(-4deg);
+}
+.community_anthony_label .arrow { 
+    left: -17px;
+    top: 10px;
+}
+.community_nik_label { 
+    top: 50px;
+    left: 350px;
+    -ms-transform: rotate(10deg);
+    -moz-transform: rotate(10deg);
+    -webkit-transform: rotate(10deg);
+    -o-transform: rotate(10deg);
+    transform: rotate(10deg);
+}
+.community_nik_label .arrow { 
+    left: -12px;
+}
+ 
+.does-container-items .media, .is-container-items .media {
+    margin-top: 30px;
+}
+.does-container-items h3, .is-container-items h3 {
+    margin-top: -3px;
+}
+.does_timeline_img {
+    left: -5%;
+    width: 60%;
+}
+.does_data_img {
+    right: -5%;
+    width: 60%;
+}
+.is-container .glyphicon {
+    font-size: 45px;
+    margin-right: 30px;
+}
+.glyphicon-lock:before {
+  content: "\e033";
+}
+.screenshot-preview { 
+    width: 150px;
+    height: 150px;
+    margin-right: 30px !important;
+    border: 1px solid #101010;
+    background-repeat: no-repeat;
+    -webkit-background-size: 300px; 
+    -moz-background-size: 300px; 
+    -o-background-size: 300px; 
+    background-size: 300px;
+    -ms-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.screenshot-preview-does {
+    background-image: url(screenshot-preview.gif);
+}
+
+
+/*
+
+
+.whats-new-container {
+    padding-bottom: 40px;
+}
+.whats-new-container a {
+    color: white;
+    text-decoration: none;
+}
+.whats-new-track {
+    overflow: hidden; 
+    width: 100%; 
+    position: relative; 
+    height: 150px;
+} 
+.whats-new-track-inner {
+    width: 1000px; 
+    margin-left: -500px; 
+    left: 50%; 
+    position: absolute;
+    height: 144px;
+}
+.whats-new-track-inner img {
+    width: 200px;
+}
+
+    <div class="whats-new-container" style="background-color: #323d42;">
+        <div class="container text-center">
+            <a href="?">
+                <h3>What's New</h3>
+                <p>New Heads-Up-Display and First Class WebForms Support!</p>
+                <div class="whats-new-track">
+                    <div class="whats-new-track-inner">
+                        <img src="~/Content/whats-new-5.jpg" /><img src="~/Content/whats-new-3.jpg" /><img src="~/Content/whats-new-1.jpg" /><img src="~/Content/whats-new-4.jpg" /><img src="~/Content/whats-new-2.jpg" />
+                    </div>
+                </div>
+                <p>These are available today for you to use for free! It's open source too, so if you want to get involved, let us know.</p>
+            </a>
+        </div>
+    </div>
+*/
+
+
+/*
+.plugins_container {
+    padding-top: 3em;
+}
+.plugins_container .container {
+    position: relative;
+}
+.plugins_feature_img {
+    left: -55%; 
+}
+
+
+
+    <div class="plugins_container">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-6">
+                    <h2>Plugins</h2>
+                    <p>Glimpse's open platform allows you to download and use customized plugins built by the community so you can get visibility into your stack within our first-class UI and data visualizations.</p>
+                    <p>Don't see an app you want? Rapidly and easily create and deploy new plugins to optimize your complete app environment.</p>
+                    <h3>Ecosystem</h3>
+                    <p>
+                        There are over 50 plugins available. They range from everything from database diagnostics to insights into framework like MVC.
+                        Here is a taste of what we suport on .NET 3.5+:
+                        <ul>
+                            <li>ASP.NET MVC 3 - 5+</li>
+                            <li>Entity Framework 3 - 6+</li>
+                            <li>ADO.NET</li>
+                            <li>WebForms</li>
+                            <li><a href="#">plus many more...</a></li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+            <img src="~/Content/home-plugins.jpg" class="plugins_feature_img float_img float_md_img" />
+        </div>
+    </div>
+    */
+
+/*
+.features_container {
+    background-color: #F1F1F2; 
+    border-bottom: 1px solid #d2d2d2; 
+    padding-top: 3em; 
+    width: 100%; 
+    clear: both; 
+    overflow: hidden; 
+    position: relative;
+}
+.features_container .container {
+    position: relative;
+    z-index: 1;
+}
+.features_content_last {
+    padding-bottom: 3em;
+}
+.features_feature_img {
+    background-image: url(/Content/home-feature-guy.jpg); 
+    background-position: center bottom; 
+    -webkit-background-size: cover; 
+    -moz-background-size: cover; 
+    -o-background-size: cover; 
+    background-size: cover;
+    width: 100%; 
+    height: 710px; 
+    position: absolute; 
+    bottom: -14px; 
+    left: 0;
+}
+.features_feature_img_holder {
+    padding-top: 285px; 
+    position: relative; 
+    clear: both;
+}
+
+
+@media (max-width: 992px) { 
+    .features_feature_img_holder {
+        padding-top: 480px;
+    }
+}
+
+@media (max-width: 768px) { 
+    .features_feature_img_holder {
+        padding-top: 230px;
+    }
+    .features_feature_img {
+        height: 400px;
+    }
+}
+ 
+
+    <div class="features_container">
+        <div class="container"> 
+            <div class="row" style="padding-bottom: 5em;">
+                <div class="col-md-12"><h2>How it works</h2></div>
+                <div class="col-md-4">
+                    <h3>Request Happens</h3>
+                    <p>Once installed, Glimpse watches each requests as it happens. It does this by hooking into the various extension points and hooks within your system.</p>
+                    <img src="~/Content/how-request.png" style="width: 75%; margin: 3em auto 0; display: block; max-width: 220px;" />
+                </div>
+                <div class="col-md-4">
+                    <img src="~/Content/how-filter.png" style="width: 75%; margin: 2em auto 3em; display: block; max-width: 220px; " />
+                    <h3>Interpreate Data</h3>
+                    <p>Once the hooks are in place, Glimpse can collect the event data as it occurs. From that point, we store the most important data you care about.</p>
+                </div>
+                <div class="col-md-4">
+                    <h3>You View the Results</h3>
+                    <p>Instead of viewing the results in a log file or in a seperate/disconnected application, Glimpse shows you the information right in the bottom of your page.</p>
+                    <img src="~/Content/how-view.png" style="width: 75%; margin: 3em auto 0; display: block; max-width: 220px; " />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-5">
+                    <h2>Friendly Interface</h2>
+                    <p>Glimpse has specifically been designed to make it as simple as possible for your to understand what is happening within your application. A big part of this understanding comes from the simplicity of our interface and how we curate the data you see.</p>
+                    <h3>Request based insights</h3>
+                    <p>Glimpse runs in the background, listening to requests as they occur. This allows us to build a picture of a given request, based on the frameworks and libraries you are using.</p>
+                </div>
+                <div class="col-md-6 col-md-offset-1">
+                    <h3 class="normal">Gaphically stunning</h3>
+                    <p>We have put in huge amount of effort into ensuring Glimpse is a platform that is not only graphically stunning, but functionally useful as well and gets the job done.</p>
+                </div>
+            </div>
+        </div>
+        <div class="features_feature_img_holder">
+            <div class="features_feature_img">
+            </div>
+        </div>
+    </div>
+
+*/
+
+
+
+/* 
+.sub_navbar {
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+.sub_navbar li { 
+    width: 25%; 
+    height: 160px; 
+    position: relative;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    vertical-align:top;
+}
+.sub_navbar li:before {
+    content: '';
+    display: inline-block;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid;
+    position: absolute;
+    top: -10px;
+    -moz-transition: all linear .2s;
+    -o-transition: all linear .2s;
+    -webkit-transition: all linear .2s;
+    transition: all linear .2s;
+    -moz-transition-delay: .2s;
+    -o-transition-delay: .2s;
+    -webkit-transition-delay: .2s;
+    transition-delay: .2s;
+    left: 50%;
+    margin-left: -7px;
+    z-index: 8;
+} 
+.sub_navbar li:hover:before {
+  top: 0px;
+} 
+.sub_navbar .sub_navbar_main {
+    -moz-transition: top linear .2s;
+    -o-transition: top linear .2s;
+    -webkit-transition: top linear .2s;
+    transition: top linear .2s;
+    position: absolute; 
+    top: 30px;
+    margin: 0 5px;
+    color: white;
+    text-decoration: none;
+    display: block;
+    cursor: default;
+}  
+.sub_navbar .glyphicon {
+    margin: 10px 0 15px; 
+    opacity: 1;
+    font-size: 2em;   
+    -moz-transition: opacity linear .2s;
+    -o-transition: opacity linear .2s;
+    -webkit-transition: opacity linear .2s;
+    transition: opacity linear .2s;
+}
+.sub_navbar .title {
+    font-family: 'freight-sans-pro','Helvetica Neue',Arial,Helvetica,sans-serif;
+    font-size: 22px;   
+} 
+.sub_navbar .desc {
+    -moz-transition: opacity linear .4s;
+    -o-transition: opacity linear .4s;
+    -webkit-transition: opacity linear .4s;
+    transition: opacity linear .4s; 
+    opacity: 0; 
+} 
+.sub_navbar .btn {
+    -moz-transition: all linear .2s;
+    -o-transition: all linear .2s;
+    -webkit-transition: all linear .2s;
+    transition: all linear .2s;
+    -moz-transition-delay: .2s;
+    -o-transition-delay: .2s;
+    -webkit-transition-delay: .2s;
+    transition-delay: .2s;
+    opacity: 0;
+    cursor: pointer;
+}  
+.sub_navbar li:hover .glyphicon {
+    opacity: 0;
+} 
+.sub_navbar li:hover .btn, .sub_navbar li:hover .desc {
+    opacity: 1;
+} 
+.sub_navbar li:hover .sub_navbar_main {
+    top: -50px
+}
+ 
+.sub_navbar-primary li {
+  background-color: #428bca;
+}
+.sub_navbar-primary li:hover {
+  background-color: #5bc0de;
+}
+.sub_navbar-primary li:before {
+    border-top-color: #357ebd;
+} 
+     
+@media (max-width: 992px) { 
+    .sub_navbar li:hover .sub_navbar_main {
+        top: -89px;
+    }
+}
+
+@media (max-width: 550px) {
+    .sub_navbar li {
+        width: 50%;
+        float: left;
+    } 
+} 
+    
+    <div class="ideal_for_container">
+        <div style="background-color: #357ebd; text-align: center;">
+            <h3 style="color: white; margin: 0; padding: 0.5em 0;">Glimpse was made to help you...</h3>
+        </div>
+        <div style="background-color: #428bca;">
+            <div class="container">
+                <ul class="sub_navbar sub_navbar-primary list-unstyled list-inline">
+                    <li>
+                        <a href="?" class="sub_navbar_main">
+                            <span class="glyphicon glyphicon-credit-card"></span>
+                            <p class="title">Debugging</p>
+                            <p class="desc">Lets you collect log output on a page by page basis</p>
+                            <span href="?" class="btn btn-default">Learn More</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="?" class="sub_navbar_main">
+                            <span class="glyphicon glyphicon-check"></span>
+                            <p class="title">Diagnostics</p>
+                            <p class="desc">See how the frameworks you're using running</p>
+                            <span href="?" class="btn btn-default">Learn More</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="?" class="sub_navbar_main">
+                            <span class="glyphicon glyphicon-time"></span>
+                            <p class="title">Monitoring</p>
+                            <p class="desc">The key data you need on a page by page basis</p>
+                            <span href="?" class="btn btn-default">Learn More</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="?" class="sub_navbar_main">
+                            <span class="glyphicon glyphicon-search"></span>
+                            <p class="title">Insights</p>
+                            <p class="desc">See how you're app is running and operating</p>
+                            <span href="?" class="btn btn-default">Learn More</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+*/
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 768px) {
+    .navbar_home .glyphicon {
+        font-size: 2em;
+        display: block;
+        margin: 0 0 0.25em;
+    }
+    .navbar_home > ul > li {
+        text-align: center;
+    }
+    .navbar_home > ul > li > a {
+        padding-top: 2px;
+        padding-bottom: 4px;
+    }
+
+    #tweets {
+        margin-top: -47px;
+    }
+}
+
+@media (max-width: 992px) { 
+    .float_md_img {
+        position: relative;
+        left: -15px;
+        width: 100%;
+        width: calc(100% + 30px);
+    }
+}
+
+@media (max-width: 768px) {
+    .float_sm_img {
+        position: relative;
+        left: -15px;
+        width: 100%;
+        width: calc(100% + 30px);
+    }
+
+    .community_listing_outer { 
+        height: 100px;  
+    }
+    .community_listing { 
+        height: 100px; 
+        width: 1200px; 
+        margin-left: -600px;  
+    }
+    .community_listing img{
+        height: 100px;
+    }
+}
+ 
+@media (max-width: 435px) {
+    .carousel-summary .carousel-subject {
+        height: 230px;
+    } 
+}
+
+@media (min-width: 1200px) {
+    .carousel-container {
+        padding: 0 8.333333333333332%;
+    }
+}
