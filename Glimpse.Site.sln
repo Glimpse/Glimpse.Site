@@ -20,6 +20,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glimpse.Package.Test", "sou
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glimpse.Twitter", "source\Glimpse.Twitter\Glimpse.Twitter.csproj", "{5247C150-D7CF-4A2F-994C-447E25B66AF1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glimpse.Build", "source\Glimpse.Build\Glimpse.Build.csproj", "{7B5C79AC-FCCB-47DE-ACEE-78566A0CCBAB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,6 +52,10 @@ Global
 		{5247C150-D7CF-4A2F-994C-447E25B66AF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5247C150-D7CF-4A2F-994C-447E25B66AF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5247C150-D7CF-4A2F-994C-447E25B66AF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B5C79AC-FCCB-47DE-ACEE-78566A0CCBAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B5C79AC-FCCB-47DE-ACEE-78566A0CCBAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B5C79AC-FCCB-47DE-ACEE-78566A0CCBAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B5C79AC-FCCB-47DE-ACEE-78566A0CCBAB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

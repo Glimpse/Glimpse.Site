@@ -2,6 +2,7 @@
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using Glimpse.Build;
 using Glimpse.Package;
 using Glimpse.Twitter;
 
@@ -22,6 +23,7 @@ namespace Glimpse.Site
 
             PackageSettings.Settings.Initialize();
             TwitterSettings.Settings.Initialize();
+            BuildSettings.Settings.Initialize();
         }
     }
 }

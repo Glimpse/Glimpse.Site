@@ -21,31 +21,7 @@ namespace Glimpse.Site.Controllers
         public virtual ActionResult GettingStarted(string task)
         {
             return View(task);
-        } 
-
-        [OutputCache(Duration = 3600)] // Cache for 1 hour
-        public async virtual Task<ActionResult> BuildLatest()
-        {
-            var httpClient = new HttpClient();
-
-            var response = await httpClient.GetStringAsync("http://teamcity.codebetter.com/app/rest/builds/buildType:%28id:bt428%29?guest=1");
-            var xml = XElement.Parse(response);
-
-            DateTimeOffset date;
-            DateTimeOffset.TryParseExact(xml.Element("startDate").Value, "yyyyMMddTHHmmsszz00", CultureInfo.InvariantCulture, DateTimeStyles.None, out date);
-
-            return Json(
-                new
-                {
-                    id = xml.Attribute("id").Value,
-                    number = xml.Attribute("number").Value,
-                    status = xml.Attribute("status").Value.ToLower(),
-                    link = xml.Attribute("webUrl").Value + "&guest=1",
-                    date = date.DateTime.ToShortDateString(),
-                    time = date.DateTime.ToShortTimeString()
-                },
-                JsonRequestBehavior.AllowGet);
-        }
+        }  
 
         [OutputCache(Duration = 3600)] // Cache for 1 hour
         public async virtual Task<ActionResult> BlogLatest()

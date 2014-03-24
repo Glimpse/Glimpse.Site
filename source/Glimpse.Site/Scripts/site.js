@@ -37,7 +37,7 @@ var getTweetsLatest = function () {
     },
     getBuildLatest = function () {
         $.ajax({
-            url: '/home/buildlatest',
+            url: '/api/build/status',
             dataType: 'json',
             success: function(data, status) {
                 $('.build_details').show();

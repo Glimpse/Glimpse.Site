@@ -81,7 +81,6 @@ namespace Glimpse.Site.Controllers
         {
             public readonly string Index = "Index";
             public readonly string GettingStarted = "GettingStarted";
-            public readonly string BuildLatest = "BuildLatest";
             public readonly string BlogLatest = "BlogLatest";
         }
 
@@ -90,7 +89,6 @@ namespace Glimpse.Site.Controllers
         {
             public const string Index = "Index";
             public const string GettingStarted = "GettingStarted";
-            public const string BuildLatest = "BuildLatest";
             public const string BlogLatest = "BlogLatest";
         }
 
@@ -145,17 +143,6 @@ namespace Glimpse.Site.Controllers
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "task", task);
             GettingStartedOverride(callInfo, task);
             return callInfo;
-        }
-
-        [NonAction]
-        partial void BuildLatestOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
-
-        [NonAction]
-        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> BuildLatest()
-        {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.BuildLatest);
-            BuildLatestOverride(callInfo);
-            return System.Threading.Tasks.Task.FromResult(callInfo as ActionResult);
         }
 
         [NonAction]
