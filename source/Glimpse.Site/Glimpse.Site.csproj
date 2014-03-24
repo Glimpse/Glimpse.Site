@@ -130,7 +130,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\api\Models\" />
     <Folder Include="Areas\Version\Models\" />
     <Folder Include="Areas\Version\Views\Shared\" />
   </ItemGroup>
