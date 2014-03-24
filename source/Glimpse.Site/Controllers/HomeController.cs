@@ -17,10 +17,5 @@ namespace Glimpse.Site.Controllers
         {
             return View();
         }
-
-        public virtual ActionResult GettingStarted(string task)
-        {
-            return View(task);
-        } 
     }
 }

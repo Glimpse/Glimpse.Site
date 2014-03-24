@@ -57,12 +57,6 @@ namespace Glimpse.Site.Controllers
             return RedirectToActionPermanent(taskResult.Result);
         }
 
-        [NonAction]
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public virtual System.Web.Mvc.ActionResult GettingStarted()
-        {
-            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.GettingStarted);
-        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public HomeController Actions { get { return MVC.Home; } }
@@ -80,27 +74,15 @@ namespace Glimpse.Site.Controllers
         public class ActionNamesClass
         {
             public readonly string Index = "Index";
-            public readonly string GettingStarted = "GettingStarted";
-            public readonly string BlogLatest = "BlogLatest";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
             public const string Index = "Index";
-            public const string GettingStarted = "GettingStarted";
-            public const string BlogLatest = "BlogLatest";
         }
 
 
-        static readonly ActionParamsClass_GettingStarted s_params_GettingStarted = new ActionParamsClass_GettingStarted();
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public ActionParamsClass_GettingStarted GettingStartedParams { get { return s_params_GettingStarted; } }
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public class ActionParamsClass_GettingStarted
-        {
-            public readonly string task = "task";
-        }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ViewsClass Views { get { return s_views; } }
@@ -131,29 +113,6 @@ namespace Glimpse.Site.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Index);
             IndexOverride(callInfo);
             return callInfo;
-        }
-
-        [NonAction]
-        partial void GettingStartedOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, string task);
-
-        [NonAction]
-        public override System.Web.Mvc.ActionResult GettingStarted(string task)
-        {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.GettingStarted);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "task", task);
-            GettingStartedOverride(callInfo, task);
-            return callInfo;
-        }
-
-        [NonAction]
-        partial void BlogLatestOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
-
-        [NonAction]
-        public override System.Threading.Tasks.Task<System.Web.Mvc.ActionResult> BlogLatest()
-        {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.BlogLatest);
-            BlogLatestOverride(callInfo);
-            return System.Threading.Tasks.Task.FromResult(callInfo as ActionResult);
         }
 
     }
