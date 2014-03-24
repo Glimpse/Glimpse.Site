@@ -1,16 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Globalization;
 using System.Linq;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using System.Xml.Linq;
-using Newtonsoft.Json.Linq;
 
 namespace Glimpse.Site.Controllers
 {
@@ -25,39 +22,6 @@ namespace Glimpse.Site.Controllers
         {
             return View(task);
         } 
-
-        [OutputCache(Duration = 3600)] // Cache for 1 hour
-        public virtual async Task<ActionResult> TweetsLatest()
-        {
-            var key = ConfigurationManager.AppSettings["TwitterKey"];
-            var secret = ConfigurationManager.AppSettings["TwitterSecret"];
-            var bearerToken = GetBearerTokenCredentials(key, secret);
-
-            var httpClient = new HttpClient();
-
-            var accessTokenRequest = new HttpRequestMessage(HttpMethod.Post, "https://api.twitter.com/oauth2/token");
-            accessTokenRequest.Headers.Authorization = new AuthenticationHeaderValue("Basic", bearerToken);
-            accessTokenRequest.Headers.Accept.ParseAdd("application/x-www-form-urlencoded;charset=UTF-8");
-            accessTokenRequest.Content = new FormUrlEncodedContent(new Dictionary<string, string>
-                {
-                    { "grant_type", "client_credentials" }
-                });
-
-            var accessTokenResponse = await httpClient.SendAsync(accessTokenRequest);
-            accessTokenResponse.EnsureSuccessStatusCode();
-            var jsonString = await accessTokenResponse.Content.ReadAsStringAsync();
-            dynamic json = JObject.Parse(jsonString);
-            string accessToken = json.access_token;
-
-            var query = "from:@nikmd23 OR from:@anthony_vdh OR from:@CGijbels #glimpse";
-            var searchRequest = new HttpRequestMessage(HttpMethod.Get, "https://api.twitter.com/1.1/search/tweets.json?q=" + HttpUtility.UrlEncode(query));
-            searchRequest.Headers.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
-            var searchResponse = await httpClient.SendAsync(searchRequest);
-            searchResponse.EnsureSuccessStatusCode();
-            var result = await searchResponse.Content.ReadAsStringAsync();
-
-            return Content(result, "application/json");
-        }
 
         [OutputCache(Duration = 3600)] // Cache for 1 hour
         public async virtual Task<ActionResult> BuildLatest()

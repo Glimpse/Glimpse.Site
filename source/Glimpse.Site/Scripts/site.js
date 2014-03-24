@@ -14,7 +14,7 @@
 };
 
 var getTweetsLatest = function () {
-        $.getJSON("/home/tweetslatest", function(data) {
+        $.getJSON("/api/twitter/latest", function(data) {
             var limit = 2,
                 count = 0;
 

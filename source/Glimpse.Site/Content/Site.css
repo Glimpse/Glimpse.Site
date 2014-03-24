@@ -1,4 +1,4 @@
-﻿@font-face{font-family:'ArcitectsDaughter';src:url('../fonts/ArchitectsDaughter.ttf') format('truetype');font-weight:normal;font-style:normal;}
+﻿@font-face{font-family:'ArcitectsDaughter';src:url('./fonts/ArchitectsDaughter.ttf') format('truetype');font-weight:normal;font-style:normal;}
 
 body {
     padding-top: 50px; 

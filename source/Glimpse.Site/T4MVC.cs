@@ -37,6 +37,7 @@ public static partial class MVC
     public static Glimpse.Site.Controllers.HomeController Home = new Glimpse.Site.Controllers.T4MVC_HomeController();
     public static Glimpse.Site.Controllers.InstallController Install = new Glimpse.Site.Controllers.T4MVC_InstallController();
     public static Glimpse.Site.Controllers.StatusController Status = new Glimpse.Site.Controllers.T4MVC_StatusController();
+    public static T4MVC.DocsController Docs = new T4MVC.DocsController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();
 }
 

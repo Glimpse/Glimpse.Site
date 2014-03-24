@@ -3,6 +3,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using Glimpse.Package;
+using Glimpse.Twitter;
 
 namespace Glimpse.Site
 {
@@ -20,6 +21,7 @@ namespace Glimpse.Site
             FormatterConfig.RegisterFormatters(GlobalConfiguration.Configuration);
 
             PackageSettings.Settings.Initialize();
+            TwitterSettings.Settings.Initialize();
         }
     }
 }

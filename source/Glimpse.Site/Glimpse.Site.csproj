@@ -142,6 +142,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\api\Controllers\ContributorsController.cs" />
+    <Compile Include="Areas\api\Controllers\TwitterController.cs" />
     <Compile Include="Areas\Version\Controllers\AdminController.cs" />
     <Compile Include="Areas\Version\Controllers\CheckController.cs" />
     <Compile Include="Areas\Version\Controllers\InstallController.cs" />
@@ -293,6 +294,7 @@
     <Content Include="Scripts\site.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="sprite.png" />
+    <Content Include="secrets.config" />
     <None Include="T4MVC.tt.settings.xml" />
     <Content Include="Views\Help\Wiki\images\ajaxTab.png" />
     <Content Include="Views\Help\Wiki\images\channel9.png" />
@@ -421,6 +423,10 @@
     <ProjectReference Include="..\Glimpse.Package\Glimpse.Package.csproj">
       <Project>{a0efe764-bbde-4815-81a5-25a1fb204de7}</Project>
       <Name>Glimpse.Package</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Glimpse.Twitter\Glimpse.Twitter.csproj">
+      <Project>{5247c150-d7cf-4a2f-994c-447e25b66af1}</Project>
+      <Name>Glimpse.Twitter</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
