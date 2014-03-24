@@ -16,7 +16,7 @@ namespace Glimpse.Site.Areas.api.Controllers
         private const int CacheTimeSpan = 30 * 60;
 
         [CacheOutput(ClientTimeSpan = CacheTimeSpan, ServerTimeSpan = CacheTimeSpan)]
-        public async Task<HttpResponseMessage> GetLatest(string top = "")
+        public async Task<HttpResponseMessage> GetLatest()
         {
             var tweets = await TwitterSettings.Settings.TweetQueryProvider.LatestWithGlimpse();
 

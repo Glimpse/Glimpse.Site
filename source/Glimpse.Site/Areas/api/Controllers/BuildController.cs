@@ -10,7 +10,7 @@ namespace Glimpse.Site.Areas.api.Controllers
         private const int CacheTimeSpan = 30 * 60;
 
         [CacheOutput(ClientTimeSpan = CacheTimeSpan, ServerTimeSpan = CacheTimeSpan)]
-        public async Task<StatusResult> GetStatus(string top = "")
+        public async Task<StatusResult> GetStatus()
         {
             var status = await BuildSettings.Settings.StatusQueryProvider.CurrentStatus();
              
