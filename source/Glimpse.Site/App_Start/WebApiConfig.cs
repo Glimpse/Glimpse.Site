@@ -13,16 +13,10 @@ namespace Glimpse.Site
 
             config.Routes.MapHttpRoute(
                 "Version_ApiCheckWithDetails",
-                "Api/Version/Check/Details/",
-                new { controller = "CheckApi", action = "Index", withDetails = true }
+                "api/version/check/details/",
+                new { controller = "Version", action = "Index", withDetails = true }
             );
-
-            config.Routes.MapHttpRoute(
-                "Version_ApiCheck",
-                "Api/Version/Check",
-                new { controller = "CheckApi", action = "Index", withDetails = false }
-            );
-
+             
             config.Routes.MapHttpRoute(
                 "DefaultApi",
                 "api/{controller}/{id}",
