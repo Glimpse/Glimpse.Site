@@ -61,7 +61,7 @@ var getTweetsLatest = function () {
         var format = function(data) {
             return '<div class="col-md-6"><h3>' + data.title + '</h3><p>' + data.summary.replace('[&#8230;]', '<a href="' + data.link + '">[&#8230;]</a>') + '</p></div>';
         };
-        $.getJSON("/home/bloglatest", function (data) {
+        $.getJSON("/api/blog/latest", function (data) {
             var first = data[0],
                 second = data[1];
             $('.blog_container').show();
@@ -74,7 +74,6 @@ $(function() {
     getBuildLatest();
     getBlogLastest();
 
-
     $('#carousel-screenshot').on('slide.bs.carousel', function (test) {
         $('.carousel-screenshot-shots .target.active').removeClass('active');
         
@@ -82,7 +81,6 @@ $(function() {
         if (target) 
             $('.' + target).addClass('active'); 
     });
-
 
     var doesCarouselCall = function() {
             setTimeout(function() { doesCarousel(); }, 3000);
@@ -116,19 +114,14 @@ $(function() {
                     doesCarousel();
                 }
             }
-
-            //if (!navbarTriggered) {
-                var installNavbar = $('.navbar-install');
-                if ($(window).scrollTop() > 300) {
-                    navbarTriggered = true;
-                    installNavbar.addClass('navbar-install-show');
-                }
-                else 
-                    installNavbar.removeClass('navbar-install-show');
-            //}
-            
-            //if (carouselTriggered && navbarTriggered)
-            //    $(window).unbind('scroll', screenshotScroll);
+             
+            var installNavbar = $('.navbar-install');
+            if ($(window).scrollTop() > 300) {
+                navbarTriggered = true;
+                installNavbar.addClass('navbar-install-show');
+            }
+            else 
+                installNavbar.removeClass('navbar-install-show'); 
         };
     
     if ($('.page_home').length > 0)

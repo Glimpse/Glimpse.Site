@@ -21,38 +21,6 @@ namespace Glimpse.Site.Controllers
         public virtual ActionResult GettingStarted(string task)
         {
             return View(task);
-        }  
-
-        [OutputCache(Duration = 3600)] // Cache for 1 hour
-        public async virtual Task<ActionResult> BlogLatest()
-        {
-            var httpClient = new HttpClient();
-
-            var response = await httpClient.GetStringAsync("http://feeds.getglimpse.com/getglimpse");
-            var xml = XElement.Parse(response);
-            var result = new List<object>();
-
-            foreach (var item in xml.Descendants("item").Take(2))
-            {
-                result.Add(new
-                {
-                    title = item.Element("title").Value,
-                    summary = item.Element("description").Value,
-                    link = item.Element("link").Value
-                });
-            }
-
-            return Json(result, JsonRequestBehavior.AllowGet);
-        }
-
-        private static string GetBearerTokenCredentials(string key, string secret)
-        {
-            var encodedKey = HttpUtility.UrlEncode(key);
-            var encodedSecret = HttpUtility.UrlEncode(secret);
-
-            var concatenatedKeySecret = string.Format("{0}:{1}", encodedKey, encodedSecret);
-
-            return Convert.ToBase64String(Encoding.ASCII.GetBytes(concatenatedKeySecret));
-        }
+        } 
     }
 }

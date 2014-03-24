@@ -141,6 +141,7 @@
     <Compile Include="App_Start\FormatterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\api\Controllers\BlogController.cs" />
     <Compile Include="Areas\api\Controllers\BuildController.cs" />
     <Compile Include="Areas\api\Controllers\ContributorsController.cs" />
     <Compile Include="Areas\api\Controllers\TwitterController.cs" />
@@ -420,6 +421,10 @@
     <Content Include="Views\Shared\_Simple.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Glimpse.Blog\Glimpse.Blog.csproj">
+      <Project>{1F8DBDEA-FF54-44F7-8CE8-5B664E1A6EC2}</Project>
+      <Name>Glimpse.Blog</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Glimpse.Build\Glimpse.Build.csproj">
       <Project>{7b5c79ac-fccb-47de-acee-78566a0ccbab}</Project>
       <Name>Glimpse.Build</Name>
