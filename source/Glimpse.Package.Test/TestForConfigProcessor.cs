@@ -38,7 +38,6 @@ namespace Glimpse.Package.Test
                 var configProcessor = new ConfigProcessor(configProvider.Object);
                 configProcessor.Process(settings);
 
-                Assert.True(settings.Debug);
                 Assert.True(settings.UseOfflineData);
                 Assert.True(settings.LoggingEnabled);
                 Assert.True(settings.LogEverything);
