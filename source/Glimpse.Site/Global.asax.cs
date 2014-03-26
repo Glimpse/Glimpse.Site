@@ -5,6 +5,7 @@ using System.Web.Routing;
 using Glimpse.Blog;
 using Glimpse.Build;
 using Glimpse.Package;
+using Glimpse.Release;
 using Glimpse.Twitter;
 
 namespace Glimpse.Site
@@ -22,9 +23,15 @@ namespace Glimpse.Site
             BindingConfig.RegisterGlobalBindings(ModelBinders.Binders, GlobalConfiguration.Configuration);
             FormatterConfig.RegisterFormatters(GlobalConfiguration.Configuration);
 
+            ReleaseSettings.Settings.Options.PackageListingPath = Server.MapPath("~/Content/packages.json");
+            ReleaseSettings.Settings.Initialize();
+
             PackageSettings.Settings.Initialize();
+
             TwitterSettings.Settings.Initialize();
+
             BuildSettings.Settings.Initialize();
+
             BlogSettings.Settings.Initialize();
         }
     }

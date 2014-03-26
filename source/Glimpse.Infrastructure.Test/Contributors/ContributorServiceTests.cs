@@ -23,7 +23,7 @@ namespace Glimpse.Infrastructure.Test.Contributors
             _githubContributorService.Setup(g => g.GetContributors("glimpse/glimpse")).Returns(new[] {new GithubContributor() {Login = "GlimpseCoreContributorName"}});
             _githubContributorService.Setup(g => g.GetContributors("glimpse/glimpse.client")).Returns(new[] {new GithubContributor() {Login = "ClientContributor"}});
             string teamMemberJsonFile = Path.Combine(Environment.CurrentDirectory, "Contributors", "testTeamMembers.json");
-            _contributorService = new ContributorService(new GlimpseTeamMemberRepository(teamMemberJsonFile), _githubContributorService.Object);
+            _contributorService = new ContributorService(new ContributorRepository(teamMemberJsonFile), _githubContributorService.Object);
             _githubContributors = _contributorService.GetContributors().ToList();
         }
 

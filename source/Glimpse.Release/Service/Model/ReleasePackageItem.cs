@@ -1,8 +1,6 @@
-﻿using Glimpse.Infrastructure;
-
-namespace Glimpse.Site.Models
+﻿namespace Glimpse.Release
 {
-    public class PackageViewModel
+    public class ReleasePackageItem
     {
         public string Name { get; set; }
 

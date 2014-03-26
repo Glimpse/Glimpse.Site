@@ -242,11 +242,7 @@
     <Content Include="Content\Contributors\pic9.jpg" />
     <Content Include="Content\footer-tower-build.png" />
     <Content Include="Content\founders.png" />
-    <Content Include="Content\home-feature-guy.jpg" />
     <Content Include="Content\home-plugins.jpg" />
-    <Content Include="Content\how-filter.png" />
-    <Content Include="Content\how-request.png" />
-    <Content Include="Content\how-view.png" />
     <Content Include="Content\logo-long-white.png" />
     <Content Include="Content\footer-mountains.png" />
     <Content Include="Content\footer-tower.png" />
@@ -358,8 +354,6 @@
     <Content Include="Views\Error\404.cshtml" />
     <Content Include="Views\Error\500.cshtml" />
     <Content Include="Views\Extensions\Index.cshtml" />
-    <Content Include="Views\Status\Index.cshtml" />
-    <Content Include="Views\Status\_Issues.cshtml" />
     <Content Include="Views\Docs\Index.cshtml" />
     <Content Include="Scripts\jquery-2.1.0.min.map" />
     <Content Include="Views\Docs\Wiki\Content\About.md" />
@@ -419,6 +413,9 @@
     </None>
     <Content Include="Views\Install\Index.cshtml" />
     <Content Include="Views\Shared\_Simple.cshtml" />
+    <Content Include="Views\Community\Talks.cshtml" />
+    <Content Include="Views\Status\Index.cshtml" />
+    <Content Include="Views\Status\_Issues.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Glimpse.Blog\Glimpse.Blog.csproj">
@@ -436,6 +433,10 @@
     <ProjectReference Include="..\Glimpse.Package\Glimpse.Package.csproj">
       <Project>{a0efe764-bbde-4815-81a5-25a1fb204de7}</Project>
       <Name>Glimpse.Package</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Glimpse.Release\Glimpse.Release.csproj">
+      <Project>{334BB5D2-1E98-4A9D-BA0F-67C4CEED186B}</Project>
+      <Name>Glimpse.Release</Name>
     </ProjectReference>
     <ProjectReference Include="..\Glimpse.Twitter\Glimpse.Twitter.csproj">
       <Project>{5247c150-d7cf-4a2f-994c-447e25b66af1}</Project>

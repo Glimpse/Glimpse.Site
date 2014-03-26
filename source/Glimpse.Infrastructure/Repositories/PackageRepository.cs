@@ -16,7 +16,9 @@ namespace Glimpse.Infrastructure.Repositories
         public virtual IEnumerable<GlimpsePackage> GetAllPackages()
         {
             var packagesFile = File.ReadAllText(_jsonFile);
+
             var packages = JsonConvert.DeserializeObject<IEnumerable<GlimpsePackage>>(packagesFile);
+
             return packages;
         }
     }

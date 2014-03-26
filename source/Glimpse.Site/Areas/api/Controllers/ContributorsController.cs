@@ -1,11 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
-using System.Net.Http;
 using System.Web.Hosting;
 using System.Web.Http;
 using Glimpse.Infrastructure.GitHub;
-using Glimpse.Infrastructure.Http;
 using Glimpse.Infrastructure.Models;
 using Glimpse.Infrastructure.Repositories;
 using Glimpse.Infrastructure.Services;
@@ -21,11 +19,14 @@ namespace Glimpse.Site.Areas.api.Controllers
         [CacheOutput(ClientTimeSpan = CacheTimeSpan, ServerTimeSpan = CacheTimeSpan)]
         public IEnumerable<GlimpseContributor> Get(string top = "")
         {
-            string teamMemberJsonFile = HostingEnvironment.MapPath("~/Content/glimpseTeam.json");
-            string githubKey = ConfigurationManager.AppSettings.Get("GithubKey");
-            string githubSecret = ConfigurationManager.AppSettings.Get("GithubSecret");
+            var teamMemberJsonFile = HostingEnvironment.MapPath("~/Content/glimpseTeam.json");
+
+            var githubKey = ConfigurationManager.AppSettings.Get("GithubKey");
+            var githubSecret = ConfigurationManager.AppSettings.Get("GithubSecret");
+
             var httpClient = HttpClientHelper.CreateGithub(githubKey, githubSecret);
-            var contributorService = new ContributorService(new GlimpseTeamMemberRepository(teamMemberJsonFile),new GithubContributorService(httpClient));
+            var contributorService = new ContributorService(new ContributorRepository(teamMemberJsonFile),new GithubContributorService(httpClient));
+
             return contributorService.GetContributors().Take(string.IsNullOrEmpty(top) ? 11 : int.Parse(top));
         }
     }

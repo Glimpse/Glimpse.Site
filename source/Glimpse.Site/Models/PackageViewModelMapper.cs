@@ -13,8 +13,9 @@ namespace Glimpse.Site.Models
 
         public IssuesIndexViewModel ConvertToIndexViewModel(IEnumerable<GlimpsePackage> glimpsePackages)
         {
-            var issuesView = new IssuesIndexViewModel();
             SetupFields(glimpsePackages);
+
+            var issuesView = new IssuesIndexViewModel();
             foreach (var glimpsePackage in _glimpsePackages)
             {
                 var packageCategory = GetOrCreatePackageCategoryViewModel(issuesView, glimpsePackage);
@@ -28,6 +29,7 @@ namespace Glimpse.Site.Models
                 packageCategory.Packages.Add(packageView);
             }
             issuesView.IssueReporters = GetIssueReporters(_glimpsePackages);
+
             var pullRequestContributors = new Dictionary<string, Tuple<GithubUser,List<GithubIssue>>>();
             foreach (var package in _glimpsePackages)
             {
@@ -41,6 +43,7 @@ namespace Glimpse.Site.Models
                 }
             }
             issuesView.PullRequestContributors = pullRequestContributors.Values.ToList();
+
             return issuesView;
         }
 
@@ -66,7 +69,9 @@ namespace Glimpse.Site.Models
             _glimpsePackages = glimpsePackages.ToList();
             _packageTags = new List<string>();
             foreach (var tags in _glimpsePackages.Select(g => g.Tags))
+            {
                 _packageTags.AddRange(tags);
+            }
         }
 
         private void AddIssuesToViewModel(GlimpsePackage packageIssue, PackageCategoryViewModel packageCategory)
@@ -85,6 +90,7 @@ namespace Glimpse.Site.Models
                 packageCategory = new PackageCategoryViewModel { Name = packageIssue.Category };
                 issuesView.PackageCategories.Add(packageCategory);
             }
+
             return packageCategory;
         }
 
@@ -104,14 +110,17 @@ namespace Glimpse.Site.Models
             issueView.IssueId = openIssue.Id;
             issueView.Number = openIssue.Number;
             issueView.IssueLinkUrl = openIssue.Html_Url;
+
             foreach (var label in openIssue.Labels)
             {
                 if (!_packageTags.Contains(label.Name))
                     issueView.Category += label.Name + ",";
             }
+
             RemoveLastComma(issueView);
             issueView.Description = openIssue.Title;
             issueView.User = openIssue.User;
+
             return issueView;
         }
 

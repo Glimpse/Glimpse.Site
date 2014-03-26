@@ -5,6 +5,10 @@ body {
     padding-bottom: 0;
     background: #323d42;
 }
+a:not([href]) {
+    color: crimson;
+    cursor: pointer;
+}
 .body_container {
     background-color: white; 
     padding-bottom: 200px;
@@ -16,26 +20,33 @@ body {
     -webkit-font-smoothing:antialiased;
     font-smoothing:antialiased;
 }
-.important-container p, .important-container li {
+.content-normal {
+    padding-top: 2em;
+    font-size: 18px;
+}
+.content-normal h2 {
+    margin-top: 50px;
+}
+.content p, .content li {
     font-size: 18px;
     line-height: 145%;
 }
-.important-container h2 {
+.content-home h2 {
     font-size: 45px;
     line-height: 120%;
     font-family: 'freight-sans-pro','Helvetica Neue',Arial,Helvetica,sans-serif;
     -webkit-font-smoothing: antialiased;
     text-transform: uppercase;
 }
-.important-container h3 {
+.content-home h3 {
     font-size: 30px;
     line-height: 120%;
     margin-top: 40px;
 }
-.important-container h3.normal {
+.content-home h3.normal {
     margin-top: 20px;
 }
-.important-container h4 {
+.content-home h4 {
     font-size: 24px;
     line-height: 120%;
     font-weight: bold;

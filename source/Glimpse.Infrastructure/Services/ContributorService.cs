@@ -7,10 +7,10 @@ namespace Glimpse.Infrastructure.Services
 {
     public class ContributorService
     {
-        private readonly GlimpseTeamMemberRepository _teamMemberRepository;
+        private readonly ContributorRepository _teamMemberRepository;
         private readonly IGithubContributerService _githubContributerService;
 
-        public ContributorService(GlimpseTeamMemberRepository teamMemberRepository, IGithubContributerService githubContributerService)
+        public ContributorService(ContributorRepository teamMemberRepository, IGithubContributerService githubContributerService)
         {
             _teamMemberRepository = teamMemberRepository;
             _githubContributerService = githubContributerService;

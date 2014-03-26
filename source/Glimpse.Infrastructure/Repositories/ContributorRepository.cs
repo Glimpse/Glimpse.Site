@@ -5,11 +5,11 @@ using Newtonsoft.Json;
 
 namespace Glimpse.Infrastructure.Repositories
 {
-    public class GlimpseTeamMemberRepository
+    public class ContributorRepository : IContributorRepository
     {
         private string _teamMemberJsonFile;
 
-        public GlimpseTeamMemberRepository(string teamMemberJsonFile)
+        public ContributorRepository(string teamMemberJsonFile)
         {
             _teamMemberJsonFile = teamMemberJsonFile;
         }
@@ -18,6 +18,7 @@ namespace Glimpse.Infrastructure.Repositories
         {
             var teamFileContent = File.ReadAllText(_teamMemberJsonFile);
             var teamContributors = JsonConvert.DeserializeObject<IEnumerable<GlimpseContributor>>(teamFileContent);
+
             return teamContributors;
         }
     }

@@ -149,11 +149,7 @@ namespace Links
         public static readonly string footer_tower_png = Url("footer-tower.png");
         public static readonly string founders_png = Url("founders.png");
         public static readonly string glimpseTeam_json = Url("glimpseTeam.json");
-        public static readonly string home_feature_guy_jpg = Url("home-feature-guy.jpg");
         public static readonly string home_plugins_jpg = Url("home-plugins.jpg");
-        public static readonly string how_filter_png = Url("how-filter.png");
-        public static readonly string how_request_png = Url("how-request.png");
-        public static readonly string how_view_png = Url("how-view.png");
         public static readonly string logo_long_white_png = Url("logo-long-white.png");
         public static readonly string packages_json = Url("packages.json");
         public static readonly string pager_sprite_png = Url("pager-sprite.png");

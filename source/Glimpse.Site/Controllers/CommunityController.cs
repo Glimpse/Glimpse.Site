@@ -12,5 +12,10 @@ namespace Glimpse.Site.Controllers
         {
             return View();
         }
+
+        public virtual ActionResult Talks()
+        {
+            return View();
+        }
 	}
 }
