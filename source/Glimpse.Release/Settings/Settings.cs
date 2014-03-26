@@ -23,10 +23,8 @@ namespace Glimpse.Release
         public void Initialize()
         {
             var packageListingPath = Options.PackageListingPath;
-            var githubKey = ConfigurationManager.AppSettings.Get("GithubKey");
-            var githubSecret = ConfigurationManager.AppSettings.Get("GithubSecret");
 
-            var httpClient = HttpClientFactory.CreateGithub(githubKey, githubSecret);
+            var httpClient = HttpClientFactory.CreateGithub();
 
             MilestoneProvider = new MilestoneProvider(httpClient);
             IssueProvider = new IssueProvider(httpClient);

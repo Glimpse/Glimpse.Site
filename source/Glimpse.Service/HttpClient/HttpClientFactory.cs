@@ -1,15 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Configuration;
 
 namespace Glimpse.Service
 {
     public class HttpClientFactory
     {
-        public static IHttpClient CreateGithub(string githubKey, string githubSecret)
+        public static IHttpClient CreateGithub()
         {
+            var githubKey = ConfigurationManager.AppSettings.Get("GithubKey");
+            var githubSecret = ConfigurationManager.AppSettings.Get("GithubSecret");
+
             const string baseAddress = "https://api.github.com/";
             const string mediaType = "application/json";
 
