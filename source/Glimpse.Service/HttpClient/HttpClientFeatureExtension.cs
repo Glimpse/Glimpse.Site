@@ -5,7 +5,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 
-namespace Glimpse.Release.Support
+namespace Glimpse.Service
 {
     public static class HttpClientFeatureExtension
     {

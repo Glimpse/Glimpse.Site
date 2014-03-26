@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using Glimpse.Release.Support;
+using System.Collections.Generic; 
+using System.Linq; 
+using Glimpse.Service;
 
 namespace Glimpse.Release
 {

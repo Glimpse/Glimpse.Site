@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web;
 
-namespace Glimpse.Release.Support
+namespace Glimpse.Service
 {
     public static class UriExtensions
     {

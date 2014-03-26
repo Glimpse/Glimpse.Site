@@ -26,6 +26,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glimpse.Blog", "source\Glim
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glimpse.Release", "source\Glimpse.Release\Glimpse.Release.csproj", "{334BB5D2-1E98-4A9D-BA0F-67C4CEED186B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glimpse.Service", "source\Glimpse.Service\Glimpse.Service.csproj", "{C407E7C1-281A-4F66-A0C3-314C3313F51D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -68,6 +70,10 @@ Global
 		{334BB5D2-1E98-4A9D-BA0F-67C4CEED186B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{334BB5D2-1E98-4A9D-BA0F-67C4CEED186B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{334BB5D2-1E98-4A9D-BA0F-67C4CEED186B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C407E7C1-281A-4F66-A0C3-314C3313F51D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C407E7C1-281A-4F66-A0C3-314C3313F51D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C407E7C1-281A-4F66-A0C3-314C3313F51D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C407E7C1-281A-4F66-A0C3-314C3313F51D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

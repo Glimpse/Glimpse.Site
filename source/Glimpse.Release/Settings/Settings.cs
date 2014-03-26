@@ -1,5 +1,5 @@
 using System.Configuration;
-using Glimpse.Release.Support;
+using Glimpse.Service;
 
 namespace Glimpse.Release
 {

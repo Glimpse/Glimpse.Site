@@ -1,7 +1,7 @@
 ﻿using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace Glimpse.Release.Support
+namespace Glimpse.Service
 {
     public interface IHttpClient
     {

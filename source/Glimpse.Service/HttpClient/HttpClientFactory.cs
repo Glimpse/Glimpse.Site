@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Glimpse.Release.Support
+namespace Glimpse.Service
 {
     public class HttpClientFactory
     {
