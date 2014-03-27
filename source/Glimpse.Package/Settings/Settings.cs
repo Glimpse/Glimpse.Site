@@ -36,6 +36,8 @@ namespace Glimpse.Package
             }
             set { _useOfflineData = value; }
         }
+
+        public string NugetListingPath { get; set; }
          
         public SettingsExtensionOptions Options { get; set; }
 
@@ -69,7 +71,7 @@ namespace Glimpse.Package
             QueryProvider = new CacheReleaseQueryProvider();
             ReleaseQueryService = new ReleaseQueryService(QueryProvider);
             if (UseOfflineData)
-                RefreshReleaseRepositoryService = new RefreshReleaseRepositoryOfflineService(); 
+                RefreshReleaseRepositoryService = new RefreshReleaseRepositoryOfflineService(NugetListingPath); 
             else
                 RefreshReleaseRepositoryService = new RefreshReleaseRepositoryService(feedProvider, persistencyProvider);
             RefreshReleaseService = new RefreshReleaseService(this, RefreshReleaseRepositoryService, QueryProvider);

@@ -278,6 +278,7 @@
     <Content Include="Areas\Version\Views\Web.config" />
     <Content Include="Content\committers.json" />
     <Content Include="Content\packages.json" />
+    <Content Include="Content\nuget.json" />
     <None Include="Properties\PublishProfiles\glimpsesitenew.pubxml" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

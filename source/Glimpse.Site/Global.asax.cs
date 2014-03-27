@@ -27,6 +27,7 @@ namespace Glimpse.Site
             ReleaseSettings.Settings.Options.PackageListingPath = Server.MapPath("~/Content/packages.json");
             ReleaseSettings.Settings.Initialize();
 
+            PackageSettings.Settings.NugetListingPath = Server.MapPath("~/Content/nuget.json");
             PackageSettings.Settings.Initialize();
 
             TwitterSettings.Settings.Initialize();

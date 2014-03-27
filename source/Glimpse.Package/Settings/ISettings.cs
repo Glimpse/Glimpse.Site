@@ -20,6 +20,8 @@ namespace Glimpse.Package
 
         bool UseOfflineData { get; set; }
 
+        string NugetListingPath { get; set; }
+
         IRefreshReleaseRepositoryService RefreshReleaseRepositoryService { get; }
 
         IReleaseQueryService ReleaseQueryService { get; }
