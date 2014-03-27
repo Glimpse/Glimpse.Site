@@ -41,7 +41,7 @@ namespace Glimpse.Package
                         var repositoryResults = _refreshRepositoryService.Execute();
 
                         // Transform the data into a format that the cache is expecting
-                        var groupedResult = repositoryResults.Results.GroupBy(x => x.Name, StringComparer.OrdinalIgnoreCase).ToDictionary(g => g.Key, g => g.Select(x => new ReleaseQueryItem { Created = x.Created, IsAbsoluteLatestVersion = x.IsAbsoluteLatestVersion, IsLatestVersion = x.IsLatestVersion, IsPrerelease = x.IsPrerelease, Name = x.Name, ReleaseNotes = x.ReleaseNotes, Version = x.Version, Description = x.Description, IconUrl = x.IconUrl }), StringComparer.OrdinalIgnoreCase);
+                        var groupedResult = repositoryResults.Results.GroupBy(x => x.Name, StringComparer.OrdinalIgnoreCase).ToDictionary(g => g.Key, g => g.Select(x => new ReleaseQueryItem { Created = x.Created, IsAbsoluteLatestVersion = x.IsAbsoluteLatestVersion, IsLatestVersion = x.IsLatestVersion, IsPrerelease = x.IsPrerelease, Name = x.Name, ReleaseNotes = x.ReleaseNotes, Version = x.Version, Description = x.Description, IconUrl = x.IconUrl, Authors = x.Authors }), StringComparer.OrdinalIgnoreCase);
                         _queryProvider.UpdateCache(groupedResult);
 
                         // Setup when we can update again

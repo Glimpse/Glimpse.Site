@@ -47,7 +47,7 @@ namespace Glimpse.Package
             {
                 var query = (from p in context.Packages
                              where p.Dependencies.Contains("|" + id + ":") || p.Dependencies.StartsWith(id + ":") || p.Id == id
-                             select new ReleaseFeedItem { DownloadCount = p.DownloadCount, Name = p.Id, Version = p.Version, VersionDownloadCount = p.VersionDownloadCount, Created = p.Created, IsAbsoluteLatestVersion = p.IsAbsoluteLatestVersion, IsLatestVersion = p.IsLatestVersion, IsPrerelease = p.IsPrerelease, ReleaseNotes = p.ReleaseNotes, IconUrl = p.IconUrl, Description = p.Description })
+                             select new ReleaseFeedItem { DownloadCount = p.DownloadCount, Name = p.Id, Version = p.Version, VersionDownloadCount = p.VersionDownloadCount, Created = p.Created, IsAbsoluteLatestVersion = p.IsAbsoluteLatestVersion, IsLatestVersion = p.IsLatestVersion, IsPrerelease = p.IsPrerelease, ReleaseNotes = p.ReleaseNotes, IconUrl = p.IconUrl, Description = p.Description, Authors = p.Authors  })
                             .Skip(skip).Take(40).ToList();
                 skip += 40;
                 shouldCheck = query.Count == 40;
@@ -63,7 +63,7 @@ namespace Glimpse.Package
 
             var query = from p in context.Packages
                         where p.Id == id
-                        select new ReleaseFeedItem { DownloadCount = p.DownloadCount, Name = p.Id, Version = p.Version, VersionDownloadCount = p.VersionDownloadCount, Created = p.Created, IsAbsoluteLatestVersion = p.IsAbsoluteLatestVersion, IsLatestVersion = p.IsLatestVersion, IsPrerelease = p.IsPrerelease, ReleaseNotes = p.ReleaseNotes, IconUrl = p.IconUrl, Description = p.Description };
+                        select new ReleaseFeedItem { DownloadCount = p.DownloadCount, Name = p.Id, Version = p.Version, VersionDownloadCount = p.VersionDownloadCount, Created = p.Created, IsAbsoluteLatestVersion = p.IsAbsoluteLatestVersion, IsLatestVersion = p.IsLatestVersion, IsPrerelease = p.IsPrerelease, ReleaseNotes = p.ReleaseNotes, IconUrl = p.IconUrl, Description = p.Description, Authors = p.Authors };
             var result = query.ToList();
 
             return result;

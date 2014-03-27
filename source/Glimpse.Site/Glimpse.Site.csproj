@@ -142,7 +142,6 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\api\Controllers\BlogController.cs" />
     <Compile Include="Areas\api\Controllers\BuildController.cs" />
-    <Compile Include="Areas\api\Controllers\ContributorsController.cs" />
     <Compile Include="Areas\api\Controllers\TwitterController.cs" />
     <Compile Include="Areas\api\Controllers\VersionController.cs" />
     <Compile Include="Areas\Version\Controllers\AdminController.cs" />
@@ -171,7 +170,6 @@
     </Compile>
     <Compile Include="Extensions\HtmlHelperExtensions.cs" />
     <Compile Include="Framework\DictionaryKeysAreNotPropertyNamesJsonConverter.cs" />
-    <Compile Include="Framework\HttpClientHelper.cs" />
     <Compile Include="GettingStartedController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -184,11 +182,9 @@
     <Compile Include="InstallController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\PackageViewModelMapper.cs" />
     <Compile Include="Framework\HttpHeaderAttribute.cs" />
     <Compile Include="Framework\JsonpMediaTypeFormatter.cs" />
     <Compile Include="Framework\JsonpResult.cs" />
-    <Compile Include="Models\StatusViewModelMapper.cs" />
     <Compile Include="Framework\VersionCheckDetailsApiModelBinderProvider.cs" />
     <Compile Include="Framework\VersionCheckDetailsModelBinder.cs" />
     <Compile Include="Framework\WebPageBaseExtensions.cs" />
@@ -196,10 +192,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\DocumentationViewModel.cs" />
-    <Compile Include="Models\IssuesIndexViewModel.cs" />
-    <Compile Include="Models\IssueViewModel.cs" />
-    <Compile Include="Models\PackageCategoryViewModel.cs" />
-    <Compile Include="Models\PackageViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SharedController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
@@ -284,7 +276,7 @@
     <Content Include="Areas\Version\Views\Install\Thanks.cshtml" />
     <Content Include="Areas\Version\Views\Install\Update.cshtml" />
     <Content Include="Areas\Version\Views\Web.config" />
-    <Content Include="Content\glimpseTeam.json" />
+    <Content Include="Content\committers.json" />
     <Content Include="Content\packages.json" />
     <None Include="Properties\PublishProfiles\glimpsesitenew.pubxml" />
     <Content Include="Scripts\bootstrap.js" />
@@ -426,9 +418,9 @@
       <Project>{7b5c79ac-fccb-47de-acee-78566a0ccbab}</Project>
       <Name>Glimpse.Build</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Glimpse.Infrastructure\Glimpse.Infrastructure.csproj">
-      <Project>{5fe03002-28d6-4f7c-9c63-84bde2334070}</Project>
-      <Name>Glimpse.Infrastructure</Name>
+    <ProjectReference Include="..\Glimpse.Contributor\Glimpse.Contributor.csproj">
+      <Project>{7F60C0C0-AA0E-4102-A313-71E8A7EA8802}</Project>
+      <Name>Glimpse.Contributor</Name>
     </ProjectReference>
     <ProjectReference Include="..\Glimpse.Package\Glimpse.Package.csproj">
       <Project>{a0efe764-bbde-4815-81a5-25a1fb204de7}</Project>

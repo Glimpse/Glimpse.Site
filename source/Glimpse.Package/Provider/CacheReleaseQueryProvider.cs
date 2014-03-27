@@ -6,6 +6,7 @@ namespace Glimpse.Package
 {
     public class CacheReleaseQueryProvider : IReleaseQueryProvider
     {
+        private IDictionary<string, IList<string>> _packageAuthors;
         private IDictionary<string, IEnumerable<ReleaseQueryItem>> _releaseCache;
 
         public IDictionary<string, IEnumerable<ReleaseQueryItem>> SelectAllPackages()
@@ -13,6 +14,11 @@ namespace Glimpse.Package
             if (_releaseCache == null)
                 throw new NullReferenceException("Cache has not been defined");
             return _releaseCache;
+        }
+
+        public IDictionary<string, IList<string>> SelectAllPackageAuthors()
+        {
+            return _packageAuthors ?? (_packageAuthors = InnerSelectAllPackageAuthors());
         }
 
         public IEnumerable<ReleaseQueryItem> SelectPackage(string packageName)
@@ -63,6 +69,36 @@ namespace Glimpse.Package
             }
 
             _releaseCache = releaseCache;
+            _packageAuthors = null;
+        }
+
+        private IDictionary<string, IList<string>> InnerSelectAllPackageAuthors()
+        {
+            var data = new Dictionary<string, IList<string>>();
+
+            var packages = SelectAllPackages();
+            foreach (var packageVersions in packages)
+            {
+                var package = packageVersions.Value.FirstOrDefault();
+                if (package != null && !string.IsNullOrEmpty(package.Authors))
+                {
+                    var authors = package.Authors.Split(new [] {", "}, StringSplitOptions.None);
+                    foreach (var author in authors)
+                    {
+                        var key = author.Trim();
+                        var authorPackages = (IList<string>)null;
+
+                        if (data.TryGetValue(key, out authorPackages))
+                            authorPackages.Add(package.Name);
+                        else
+                            data.Add(key, new List<string> { package.Name }); 
+                    }
+                }
+            }
+
+            data = data.OrderByDescending(x => x.Value.Count).ToDictionary(x => x.Key, x => x.Value);
+
+            return data;
         }
     }
 }

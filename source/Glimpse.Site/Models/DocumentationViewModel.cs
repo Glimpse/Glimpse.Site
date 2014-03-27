@@ -9,13 +9,7 @@ namespace Glimpse.Site.Models
     {
         private FileInfo markdownFilePath;
         private IEnumerable<DocumentationViewModel> navigationDocuments;
-
-/*
-        public DocumentationViewModel(string markdownSlug, RouteData routeData) : this(markdownSlug, "Views/" + routeData.GetRequiredString("controller"))
-        {
-        }
-*/
-
+         
         public DocumentationViewModel(string markdownSlug, string viewsLocation) : this(markdownSlug, viewsLocation, true)
         {
         }

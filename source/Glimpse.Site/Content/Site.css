@@ -389,6 +389,13 @@ a:not([href]) {
     background-image: url(screenshot-preview.gif);
 }
 
+.community-listing .row > div {
+    margin-bottom: 25px;
+}
+.community-listing .thumbnail {
+    margin-bottom: 10px;
+}
+
 
 /*
 

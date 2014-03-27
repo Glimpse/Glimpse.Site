@@ -26,6 +26,8 @@ namespace Glimpse.Package
 
         public string Description { get; set; }
 
+        public string Authors { get; set; }
+
         public string GetKey()
         {
             return String.Format("{0}||{1}", Name, Version);

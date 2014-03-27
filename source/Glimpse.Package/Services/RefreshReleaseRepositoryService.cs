@@ -20,7 +20,7 @@ namespace Glimpse.Package
 
             var feedReleases = _releaseFeedProvider.GetAllCurrentReleases();
 
-            var updateList = feedReleases.Select(x => new ReleasePersistencyItem { Name = x.Name, Scrapped = DateTime.UtcNow, Version = x.Version, Created = x.Created, IsAbsoluteLatestVersion = x.IsAbsoluteLatestVersion, IsPrerelease = x.IsPrerelease, IsLatestVersion = x.IsLatestVersion, ReleaseNotes = x.ReleaseNotes, IconUrl = x.IconUrl, Description = x.Description });
+            var updateList = feedReleases.Select(x => new ReleasePersistencyItem { Name = x.Name, Scrapped = DateTime.UtcNow, Version = x.Version, Created = x.Created, IsAbsoluteLatestVersion = x.IsAbsoluteLatestVersion, IsPrerelease = x.IsPrerelease, IsLatestVersion = x.IsLatestVersion, ReleaseNotes = x.ReleaseNotes, IconUrl = x.IconUrl, Description = x.Description, Authors = x.Authors });
             var statisticsList = feedReleases.Select(x => new ReleasePersistencyStatisticsItem { DownloadCount = x.DownloadCount, Name = x.Name, Scrapped = DateTime.UtcNow, Version = x.Version, VersionDownloadCount = x.VersionDownloadCount });
 
             results.Results = updateList;

@@ -10,10 +10,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{352999
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glimpse.Infrastructure", "source\Glimpse.Infrastructure\Glimpse.Infrastructure.csproj", "{5FE03002-28D6-4F7C-9C63-84BDE2334070}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glimpse.Infrastructure.Test", "source\Glimpse.Infrastructure.Test\Glimpse.Infrastructure.Test.csproj", "{B8C4A194-D047-4776-9D28-D61F9E28E923}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glimpse.Package", "source\Glimpse.Package\Glimpse.Package.csproj", "{A0EFE764-BBDE-4815-81A5-25A1FB204DE7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glimpse.Package.Test", "source\Glimpse.Package.Test\Glimpse.Package.Test.csproj", "{FF9651A3-06B5-421A-9EF7-9124CCBDA921}"
@@ -28,6 +24,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glimpse.Release", "source\G
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glimpse.Service", "source\Glimpse.Service\Glimpse.Service.csproj", "{C407E7C1-281A-4F66-A0C3-314C3313F51D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glimpse.Contributor", "source\Glimpse.Contributor\Glimpse.Contributor.csproj", "{7F60C0C0-AA0E-4102-A313-71E8A7EA8802}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,14 +36,6 @@ Global
 		{0180A7C0-2BB9-4B4C-A74F-64D888B0A011}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0180A7C0-2BB9-4B4C-A74F-64D888B0A011}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0180A7C0-2BB9-4B4C-A74F-64D888B0A011}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5FE03002-28D6-4F7C-9C63-84BDE2334070}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5FE03002-28D6-4F7C-9C63-84BDE2334070}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5FE03002-28D6-4F7C-9C63-84BDE2334070}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5FE03002-28D6-4F7C-9C63-84BDE2334070}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B8C4A194-D047-4776-9D28-D61F9E28E923}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B8C4A194-D047-4776-9D28-D61F9E28E923}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B8C4A194-D047-4776-9D28-D61F9E28E923}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B8C4A194-D047-4776-9D28-D61F9E28E923}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A0EFE764-BBDE-4815-81A5-25A1FB204DE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A0EFE764-BBDE-4815-81A5-25A1FB204DE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A0EFE764-BBDE-4815-81A5-25A1FB204DE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -74,6 +64,10 @@ Global
 		{C407E7C1-281A-4F66-A0C3-314C3313F51D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C407E7C1-281A-4F66-A0C3-314C3313F51D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C407E7C1-281A-4F66-A0C3-314C3313F51D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F60C0C0-AA0E-4102-A313-71E8A7EA8802}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F60C0C0-AA0E-4102-A313-71E8A7EA8802}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F60C0C0-AA0E-4102-A313-71E8A7EA8802}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F60C0C0-AA0E-4102-A313-71E8A7EA8802}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

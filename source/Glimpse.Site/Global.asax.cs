@@ -4,6 +4,7 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using Glimpse.Blog;
 using Glimpse.Build;
+using Glimpse.Contributor;
 using Glimpse.Package;
 using Glimpse.Release;
 using Glimpse.Twitter;
@@ -33,6 +34,9 @@ namespace Glimpse.Site
             BuildSettings.Settings.Initialize();
 
             BlogSettings.Settings.Initialize();
+
+            ContributorSettings.Settings.Options.ContributorListingPath = Server.MapPath("~/Content/committers.json");
+            ContributorSettings.Settings.Initialize();
         }
     }
 }

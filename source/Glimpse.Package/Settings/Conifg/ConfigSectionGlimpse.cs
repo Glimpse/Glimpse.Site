@@ -7,7 +7,6 @@ namespace Glimpse.Package
 {
     public class ConfigSectionGlimpse : ConfigurationSection
     {   
-
         [ConfigurationProperty("useOfflineData", DefaultValue = null)]
         public bool? UseOfflineData
         {
