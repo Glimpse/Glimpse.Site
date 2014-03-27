@@ -97,7 +97,9 @@
                             <img src="@commiter.AvatarUrl" alt="@commiter.Name">
                         </a>
                         <strong class="trim">@commiter.Name</strong>
-                        <div class="text-muted small">@commiter.Contributions.ToString("N0", CultureInfo.InvariantCulture) commits</div>
+                        @if (commiter.Contributions > 0) {
+                            <div class="text-muted small">@commiter.Contributions.ToString("N0", CultureInfo.InvariantCulture) commits</div>
+                        }
                     </div>
                 }
             </div>

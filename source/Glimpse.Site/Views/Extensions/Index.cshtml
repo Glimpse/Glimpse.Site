@@ -39,7 +39,7 @@
             <p>Implementing a Glimpse Tab in your project will give a new tab in the Glimpse UI. Once the Tab has been created, assuming Glimpse has already been added to the project, we will automatically find the Tab and show its data.</p>
         </div>
     </div>
-
+    
     <h2>Available Extensions</h2>
     <div class="listing-data listing-data-community">
         <div class="row">
@@ -52,6 +52,9 @@
                     <strong class="trim" title="@item.Name">@item.Name</strong>
                     <div class="text-muted small trim" title="v @item.Version - @item.Created.ToString("yyyy-MM-dd")">v<span>@item.Version</span> - <span class="small">@item.Created.ToString("yyyy-MM-dd")</span></div>
                 </div>
+            }
+            @if (Model.Count == 0) {
+                <div class="text-muted text-center">Extension gallery is currently offline...</div>
             }
         </div>
     </div>

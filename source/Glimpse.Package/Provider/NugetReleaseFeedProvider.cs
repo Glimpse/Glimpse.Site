@@ -19,19 +19,26 @@ namespace Glimpse.Package
         {
             var results = new Dictionary<string, ReleaseFeedItem>();
 
-            // NOTE: I know that this marged this concept isn't the best but it means we can do all lookups in Parallel
-            Parallel.ForEach(options.GetMergedOptions(), x =>
+            try
+            {
+                // NOTE: I know that this marged this concept isn't the best but it means we can do all lookups in Parallel
+                Parallel.ForEach(options.GetMergedOptions(), x =>
                 {
                     IEnumerable<ReleaseFeedItem> found = null;
                     if (x.Type == ReleaseFeedOptions.ReleaseFeedOptionsMergedTypes.Specific)
                         found = GetAllReleasesForSpecific(x.Value);
                     else if (x.Type == ReleaseFeedOptions.ReleaseFeedOptionsMergedTypes.Depends)
                         found = GetAllReleasesForDepends(x.Value);
-                    else 
+                    else
                         throw new NotSupportedException("Type was out of range");
 
                     MergeResults(found, results);
                 }); 
+            }
+            catch (Exception e)
+            {
+                //Not doing anything because we want to try and recover from this
+            }
 
             return results.Values;
         }

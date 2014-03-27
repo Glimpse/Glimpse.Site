@@ -31,7 +31,7 @@ namespace Glimpse.Release
             return (from g in Milestones
                     where g.State == state && (g.Open_Issues > 0 || g.Closed_Issues > 0)
                     orderby g.Created_At descending
-                    select g).First();
+                    select g).FirstOrDefault();
         }
 
         public IList<GithubMilestone> GetAllMilestones()
@@ -48,12 +48,19 @@ namespace Glimpse.Release
         {
             var data = new List<GithubMilestone>();
 
-            Parallel.ForEach(new [] {"https://api.github.com/repos/glimpse/glimpse/milestones", "https://api.github.com/repos/glimpse/glimpse/milestones?state=closed"} , x =>
+            try
             {
-                var result = _httpClient.GetPagedDataAsync<GithubMilestone>(new Uri(x));
+                Parallel.ForEach(new[] { "https://api.github.com/repos/glimpse/glimpse/milestones", "https://api.github.com/repos/glimpse/glimpse/milestones?state=closed" }, x =>
+                {
+                    var result = _httpClient.GetPagedDataAsync<GithubMilestone>(new Uri(x));
 
-                data.AddRange(result);
-            });
+                    data.AddRange(result);
+                });
+            }
+            catch (Exception e)
+            {
+                //Not doing anything because we want to try and recover from this
+            }
 
             return data;
         }

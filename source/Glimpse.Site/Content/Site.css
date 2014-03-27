@@ -25,6 +25,9 @@ a:not([href]) {
 }
 .content-normal h2 {
     margin-top: 50px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 9px;
+    font-size: 40px;
 }
 .content-normal h2:first-child {
     margin-top: 20px;

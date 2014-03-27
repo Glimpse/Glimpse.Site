@@ -46,8 +46,19 @@ namespace Glimpse.Release
         }
 
         private IList<GithubIssue> InnerGetAllIssues()
-        { 
-            return _httpClient.GetPagedDataAsync<GithubIssue>(new Uri("https://api.github.com/repos/glimpse/glimpse/issues?state=all"));
+        {
+            var result = new List<GithubIssue>();
+
+            try
+            {
+                result = _httpClient.GetPagedDataAsync<GithubIssue>(new Uri("https://api.github.com/repos/glimpse/glimpse/issues?state=all"));
+            }
+            catch (Exception)
+            {
+                //Not doing anything because we want to try and recover from this
+            }
+
+            return result;
         }
     }
 }

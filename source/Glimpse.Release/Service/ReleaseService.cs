@@ -28,18 +28,19 @@ namespace Glimpse.Release
             if (string.IsNullOrEmpty(milestoneNumber) || milestoneNumber == NextMilestone)
             {
                 milestone = _milestoneProvider.GetMilestone(NextMilestone);
-                issues = _issueProvider.GetAllIssuesByMilestoneThatHasTag(milestone.Number, _packageProvider.GetAllPackagesTags());
+                issues = milestone != null ? _issueProvider.GetAllIssuesByMilestoneThatHasTag(milestone.Number, _packageProvider.GetAllPackagesTags()) : new List<GithubIssue>();
                 if (!issues.Any())
                 {
                     milestone = _milestoneProvider.GetLatestMilestoneWithIssues("closed");
-                    issues = _issueProvider.GetAllIssuesByMilestoneThatHasTag(milestone.Number, _packageProvider.GetAllPackagesTags());
+                    issues = milestone != null ? _issueProvider.GetAllIssuesByMilestoneThatHasTag(milestone.Number, _packageProvider.GetAllPackagesTags()) : new List<GithubIssue>();
                 }
             }
             else
             {
                 milestone = _milestoneProvider.GetMilestone(milestoneNumber);
-                issues = _issueProvider.GetAllIssuesByMilestoneThatHasTag(milestone.Number, _packageProvider.GetAllPackagesTags());
+                issues = milestone != null ? _issueProvider.GetAllIssuesByMilestoneThatHasTag(milestone.Number, _packageProvider.GetAllPackagesTags()) : new List<GithubIssue>();
             }
+
             var packageCategories = _packageProvider.GetAllPackagesGroupedByCategory();
             var packageTags = _packageProvider.GetAllPackagesTags();
             
@@ -53,6 +54,17 @@ namespace Glimpse.Release
             };
 
             return release;
+        }
+
+        private Tuple<GithubMilestone, IList<GithubIssue>> GetMilestoneAndIssues(string milestoneNumber)
+        {
+            var milestone = _milestoneProvider.GetMilestone(milestoneNumber);
+
+            var issues = (IList<GithubIssue>)null;
+            if (milestone != null)
+                issues = _issueProvider.GetAllIssuesByMilestoneThatHasTag(milestone.Number, _packageProvider.GetAllPackagesTags());
+
+            return new Tuple<GithubMilestone, IList<GithubIssue>>(milestone, issues);
         }
 
         private List<ReleasePackage> MapCategories(IDictionary<string, GlimpsePackageGroup> packageCategories, IList<string> packageTags, IList<GithubIssue> issues)
@@ -131,18 +143,21 @@ namespace Glimpse.Release
 
         private ReleaseMilestone MapMilestone(GithubMilestone milestone)
         {
-            return new ReleaseMilestone()
+            var result = new ReleaseMilestone();
+            if (milestone != null)
             {
-                ClosedIssues = milestone.Closed_Issues,
-                CreatedAt = milestone.Created_At,
-                Description = milestone.Description,
-                DueOn = milestone.Due_On,
-                Number = milestone.Number,
-                OpenIssues = milestone.Open_Issues,
-                State = milestone.State,
-                Title = milestone.Title,
-                Url = milestone.Url
-            };
+                result.ClosedIssues = milestone.Closed_Issues;
+                result.CreatedAt = milestone.Created_At;
+                result.Description = milestone.Description;
+                result.DueOn = milestone.Due_On;
+                result.Number = milestone.Number;
+                result.OpenIssues = milestone.Open_Issues;
+                result.State = milestone.State;
+                result.Title = milestone.Title;
+                result.Url = milestone.Url;
+            }
+
+            return result;
         }
     } 
 }

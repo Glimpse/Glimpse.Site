@@ -38,20 +38,27 @@ namespace Glimpse.Contributor
         {
             var data = new Dictionary<string, Contributor>();
 
-            Parallel.ForEach(new[] { "https://api.github.com/repos/glimpse/glimpse/contributors", "https://api.github.com/repos/glimpse/glimpse.client/contributors", "https://api.github.com/repos/glimpse/glimpse.site/contributors" }, x =>
+            try
             {
-                var result = _httpClient.GetPagedDataAsync<Contributor>(new Uri(x));
-                foreach (var contributor in result)
+                Parallel.ForEach(new[] { "https://api.github.com/repos/glimpse/glimpse/contributors", "https://api.github.com/repos/glimpse/glimpse.client/contributors", "https://api.github.com/repos/glimpse/glimpse.site/contributors" }, x =>
                 {
-                    var existing = (Contributor)null;
-                    if (data.TryGetValue(contributor.Login, out existing))
+                    var result = _httpClient.GetPagedDataAsync<Contributor>(new Uri(x));
+                    foreach (var contributor in result)
                     {
-                        existing.Contributions += contributor.Contributions;
+                        var existing = (Contributor)null;
+                        if (data.TryGetValue(contributor.Login, out existing))
+                        {
+                            existing.Contributions += contributor.Contributions;
+                        }
+                        else
+                            data.Add(contributor.Login, contributor);
                     }
-                    else
-                        data.Add(contributor.Login, contributor);
-                }
-            });
+                });
+            }
+            catch (Exception e)
+            {
+                //Not doing anything because we want to try and recover from this
+            }
 
             return data;
         }
