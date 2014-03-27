@@ -33,6 +33,12 @@ namespace Glimpse.Package
         [Write(false)]
         public string Authors { get; set; }
 
+        [Write(false)]
+        public int DownloadCount { get; set; }
+
+        [Write(false)]
+        public int VersionDownloadCount { get; set; }
+
         public override int GetHashCode()
         {
             unchecked // Overflow is fine, just wrap
@@ -48,7 +54,6 @@ namespace Glimpse.Package
                 hash = hash * 23 + (ReleaseNotes ?? "").GetHashCode();
                 hash = hash * 23 + (IconUrl ?? "").GetHashCode();
                 hash = hash * 23 + (Description ?? "").GetHashCode();
-                hash = hash * 23 + (Authors ?? "").GetHashCode();
                 
                 return hash;
             }

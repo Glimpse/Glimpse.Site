@@ -238,6 +238,7 @@
     <Content Include="Content\logo-long-white.png" />
     <Content Include="Content\footer-mountains.png" />
     <Content Include="Content\footer-tower.png" />
+    <Content Include="Content\logo-nuget.png" />
     <Content Include="Content\pager-sprite.png" />
     <Content Include="Content\screenshot-hud-ajax.gif" />
     <Content Include="Content\screenshot-hud-http.gif" />

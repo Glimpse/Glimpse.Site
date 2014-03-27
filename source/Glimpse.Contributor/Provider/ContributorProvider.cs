@@ -38,15 +38,10 @@ namespace Glimpse.Contributor
         {
             var data = new Dictionary<string, Contributor>();
 
-            var result1 = _httpClient.GetPagedDataAsync<Contributor>(new Uri("https://api.github.com/repos/glimpse/glimpse/contributors"));
-            var result2 = _httpClient.GetPagedDataAsync<Contributor>(new Uri("https://api.github.com/repos/glimpse/glimpse.site/contributors"));
-            var result3 = _httpClient.GetPagedDataAsync<Contributor>(new Uri("https://api.github.com/repos/glimpse/glimpse.client/contributors"));
-
-            // Merge together the datasets
-            var resultArray = new IList<Contributor>[] { result1, result2, result3 };
-            foreach (var contributors in resultArray)
+            Parallel.ForEach(new[] { "https://api.github.com/repos/glimpse/glimpse/contributors", "https://api.github.com/repos/glimpse/glimpse.client/contributors", "https://api.github.com/repos/glimpse/glimpse.site/contributors" }, x =>
             {
-                foreach (var contributor in contributors)
+                var result = _httpClient.GetPagedDataAsync<Contributor>(new Uri(x));
+                foreach (var contributor in result)
                 {
                     var existing = (Contributor)null;
                     if (data.TryGetValue(contributor.Login, out existing))
@@ -56,7 +51,7 @@ namespace Glimpse.Contributor
                     else
                         data.Add(contributor.Login, contributor);
                 }
-            }
+            });
 
             return data;
         }

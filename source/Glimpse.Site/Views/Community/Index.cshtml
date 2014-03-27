@@ -3,10 +3,15 @@
 @{
     ViewBag.Title = "Community - Glimpse - ";
 }
-<div class="container content content-normal">
-    <h1>Community</h1>
-    <p>Glimpse wouldn't be what it is today without the love and support of some awesome people from around the world. Thanks to everyone who has been involved in making this possible.</p>
 
+<div class="jumbotron">
+    <div class="container">
+        <h1>Community</h1>
+        <p>Glimpse wouldn't be what it is today without the love and support of some awesome people from around the world. Thanks to everyone who has been involved in making this possible.</p>
+    </div>
+</div>
+
+<div class="container content content-normal">
     <h2 id="getting-in-contact">Getting in Contact</h2>
     <div class="row">
         <div class="col-sm-4">
@@ -82,50 +87,44 @@
         <p>As you might have guessed it has taken quite a lot of people to make Glimpse what it is today. Here is everyone who has made Glimpse possible.</p>
     }
     
-    <div class="community-listing">
-        @if (Model.Committers.Count > 0)
-        {
+    <div class="listing-data">
+        @if (Model.Committers.Count > 0) {
             <h3>Commiters</h3>
-            <div class="row">
-                @foreach (var commiter in Model.Committers)
-                {
+            <div class="row listing-data-comitters">
+                @foreach (var commiter in Model.Committers) {
                     <div class="col-xs-4 col-md-3 text-center">
                         <a href="http://github.com/@commiter.GithubUsername" class="thumbnail">
                             <img src="@commiter.AvatarUrl" alt="@commiter.Name">
                         </a>
-                        <strong>@commiter.Name</strong>
+                        <strong class="trim">@commiter.Name</strong>
                         <div class="text-muted small">@commiter.Contributions.ToString("N0", CultureInfo.InvariantCulture) commits</div>
                     </div>
                 }
             </div>
         }
 
-        @if (Model.Contributors.Count > 0)
-        {
+        @if (Model.Contributors.Count > 0) {
             <h3>Contributors</h3>
-            <div class="row">
-                @foreach (var contributor in Model.Contributors)
-                {
+            <div class="row listing-data-cobtributors">
+                @foreach (var contributor in Model.Contributors) {
                     <div class="col-xs-3 col-md-2 text-center">
                         <a href="http://github.com/@contributor.Login" class="thumbnail">
                             <img src="@contributor.Avatar_Url" alt="@contributor.Login">
                         </a>
-                        <strong>@contributor.Login</strong>
+                        <strong class="trim">@contributor.Login</strong>
                         <div class="text-muted small">@contributor.Contributions.ToString("N0", CultureInfo.InvariantCulture) commits</div>
                     </div>
                 }
             </div>
         }
 
-        @if (Model.Authors.Count > 0)
-        {
+        @if (Model.Authors.Count > 0) {
             <h3>Extension Authors</h3>
-            <div class="row">
-                @foreach (var author in Model.Authors)
-                {
-                    <div class="col-md-3 text-center">
+            <div class="row listing-data-authors">
+                @foreach (var author in Model.Authors) {
+                    <div class="col-md-3 col-xs-4 text-center">
                         <a href="http://www.nuget.org/profiles/@author.Key">
-                            <strong style="width: 250px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: block">@author.Key</strong>
+                            <strong class="trim">@author.Key</strong>
                         </a>
                         <div class="text-muted small">@author.Value.Count packages</div>
                     </div>

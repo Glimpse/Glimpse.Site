@@ -1,44 +1,58 @@
-﻿
+﻿@model List<Glimpse.Package.ReleaseQueryItem>
 @{
     ViewBag.Title = "Extensions - Glimpse - ";
     var isOffline = Glimpse.Package.PackageSettings.Settings.UseOfflineData;
 }
 
-@if (isOffline) {
+@*@if (isOffline)
+{
     <h1>IS OFFLINE</h1>
-}
+}*@
 
-<div class="important-container container"> 
-    <section>
-        <div class="twoColumn column1">
-            <div class="innerColumn">
-                <h2>Our Ecosystem</h2>
-                <p>Glimpse has many different extensions and plugins. The Glimpse team works on general plugins for ASP.NET and ASP.NET MVC, but there's a good chance that additional extensions are available for other components you are using. The owners of frameworks or applications on top of ASP.NET may provide their own plugins to allow insight into the server.</p>
-                <p>Below is a list of all the different extensions that you have to choose from on NuGet. If you want something that isn't there, why not suggest it on the <a href="https://groups.google.com/forum/?fromgroups#!forum/getglimpse-dev" target="_blank">Google group</a>? </p>
-            </div>
+<div class="jumbotron">
+    <div class="container">
+        <h1>Extensions &amp; Plugins</h1>
+        <p>Glimpse has many different extensions and plugins. Together with the community, there are some truely amazing extensions and extras you can get your hands on.</p>
+    </div>
+</div>
+
+<div class="container content content-normal">
+    <h2>Ecosystem</h2>
+    <div class="row">
+        <div class="col-sm-6">
+            <h3>What's already there</h3>
+            <p>The Glimpse team works on general plugins for ASP.NET and ASP.NET MVC, but there's a good chance that additional extensions are available for other components you are using. The owners of frameworks or applications on top of ASP.NET may provide their own plugins to allow insight into the server.</p>
+            <ul>
+                <li><a>See all the offical packages provided by the Glimpse team</a></li>
+                <li><a>There are lots more plugins available on Nuget</a></li>
+            </ul>
+            <p>Below is a list of all the different extensions that you have to choose from on NuGet. If you want something that isn't there, why not suggest it on the <a href="https://groups.google.com/forum/?fromgroups#!forum/getglimpse-dev" target="_blank">Google group</a>? </p>
         </div>
-        <div class="twoColumn column1">
-            <div class="innerColumn">
-                <h2>Creating Plugins</h2>
-                <p>Many of our users get the best out of Glimpse by writing their own plugins, exposing data which is really only meaningful for their own applications.  One of the core tenets of Glimpse is that developers of any experience level should be able to make a custom extension simply and easily. </p>
-                <p>Implementing a Glimpse Tab in your project will give a new tab in the Glimpse UI. Once the Tab has been created, assuming Glimpse has already been added to the project, we will automatically find the Tab and show its data.</p>
-            </div>
+        <div class="col-sm-6">
+            <h3>Creating your own</h3>
+            <p>Many of our users get the best out of Glimpse by writing their own plugins, exposing data which is really only meaningful for their own applications. It's easy and anyone can do it, here are some places to start:</p>
+            <ul>
+                <li><a>Learn how to create a plugin withe basics</a></li>
+                <li><a>See an example of what you could write for your application</a></li>
+                <li><a>Creating a client side tab is easy, see how you can do it</a></li>
+            </ul>
+            <p>Implementing a Glimpse Tab in your project will give a new tab in the Glimpse UI. Once the Tab has been created, assuming Glimpse has already been added to the project, we will automatically find the Tab and show its data.</p>
         </div>
-        <hr class="clearer" />
-        <h2>Available Extensions</h2>
-        <div class="plugins">
-            @foreach (var item in Model)
-            {
+    </div>
+
+    <h2>Available Extensions</h2>
+    <div class="listing-data listing-data-community">
+        <div class="row">
+            @foreach (var item in Model) {
                 var image = string.IsNullOrEmpty(item.IconUrl) ? "/Content/_v2/logo-nuget.png" : item.IconUrl;
-                <dl class="stat">
-                    <dt>@item.Name</dt>
-                    <dd>
-                        <a href="http://nuget.org/packages/@item.Name" target="_blank"><img src="@image" width="50" height="50" onerror="this.src = '/Content/_v2/logo-nuget.png';" /></a>
-                    </dd>
-                    <dd>@item.Version | @item.Created.ToShortDateString()</dd>
-                </dl>
+                <div class="col-sm-3 col-xs-4 text-center">
+                    <a href="http://nuget.org/packages/@item.Name" class="thumbnail">
+                        <img src="@image" alt="@item.Name" width="50%" onerror="this.src = '/Content/logo-nuget.png';">
+                    </a>
+                    <strong class="trim" title="@item.Name">@item.Name</strong>
+                    <div class="text-muted small trim" title="v @item.Version - @item.Created.ToString("yyyy-MM-dd")">v<span>@item.Version</span> - <span class="small">@item.Created.ToString("yyyy-MM-dd")</span></div>
+                </div>
             }
-            <hr class="clearer" />
-        </div> 
-    </section> 
+        </div>
+    </div>
 </div>

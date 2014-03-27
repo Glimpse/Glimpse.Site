@@ -12,7 +12,7 @@ namespace Glimpse.Site.Controllers
         public virtual ActionResult Index()
         {
             var packages = PackageSettings.Settings.QueryProvider.SelectAllPackages();
-            var result = packages.Select(keyValue => keyValue.Value.FirstOrDefault(value => value.IsAbsoluteLatestVersion)).Where(x => x != null).OrderBy(x => x.Name).ToList();
+            var result = packages.Select(keyValue => keyValue.Value.FirstOrDefault(value => value.IsAbsoluteLatestVersion)).Where(x => x != null).OrderBy(x => x.Name).OrderByDescending(x => x.DownloadCount).ToList();
 
             return View(result);
         }

@@ -113,6 +113,7 @@ namespace Links
              
         public static readonly string bootstrap_css_map = Url("bootstrap.css.map");
         public static readonly string bootstrap_min_css = Url("bootstrap.min.css");
+        public static readonly string committers_json = Url("committers.json");
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public static class Contributors {
             private const string URLPATH = "~/Content/Contributors";
@@ -148,9 +149,10 @@ namespace Links
         public static readonly string footer_tower_build_png = Url("footer-tower-build.png");
         public static readonly string footer_tower_png = Url("footer-tower.png");
         public static readonly string founders_png = Url("founders.png");
-        public static readonly string glimpseTeam_json = Url("glimpseTeam.json");
         public static readonly string home_plugins_jpg = Url("home-plugins.jpg");
         public static readonly string logo_long_white_png = Url("logo-long-white.png");
+        public static readonly string logo_nuget_png = Url("logo-nuget.png");
+        public static readonly string nuget_json = Url("nuget.json");
         public static readonly string packages_json = Url("packages.json");
         public static readonly string pager_sprite_png = Url("pager-sprite.png");
         public static readonly string screenshot_hud_ajax_gif = Url("screenshot-hud-ajax.gif");

@@ -21,11 +21,13 @@ a:not([href]) {
     font-smoothing:antialiased;
 }
 .content-normal {
-    padding-top: 2em;
     font-size: 18px;
 }
 .content-normal h2 {
     margin-top: 50px;
+}
+.content-normal h2:first-child {
+    margin-top: 20px;
 }
 .content p, .content li {
     font-size: 18px;
@@ -52,6 +54,13 @@ a:not([href]) {
     font-weight: bold;
 }
 
+.trim {
+    width: 100%; 
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    display: block
+}
 .float_img {
     width: 100%; 
     top:0; 
@@ -389,11 +398,21 @@ a:not([href]) {
     background-image: url(screenshot-preview.gif);
 }
 
-.community-listing .row > div {
+.listing-data .row > div {
     margin-bottom: 25px;
 }
-.community-listing .thumbnail {
+.listing-data .thumbnail {
     margin-bottom: 10px;
+}
+
+.listing-data-community .col-xs-4 {
+    height: 160px
+}
+
+@media (min-width: 768px)  {
+    .listing-data-community .col-sm-3 {
+        height: 180px
+    }
 }
 
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic; 
-using System.Linq; 
+using System.Linq;
+using System.Threading.Tasks;
 using Glimpse.Service;
 
 namespace Glimpse.Release
@@ -47,13 +48,14 @@ namespace Glimpse.Release
         {
             var data = new List<GithubMilestone>();
 
-            var result1 = _httpClient.GetPagedDataAsync<GithubMilestone>(new Uri("https://api.github.com/repos/glimpse/glimpse/milestones"));
-            var result2 = _httpClient.GetPagedDataAsync<GithubMilestone>(new Uri("https://api.github.com/repos/glimpse/glimpse/milestones?state=closed"));
+            Parallel.ForEach(new [] {"https://api.github.com/repos/glimpse/glimpse/milestones", "https://api.github.com/repos/glimpse/glimpse/milestones?state=closed"} , x =>
+            {
+                var result = _httpClient.GetPagedDataAsync<GithubMilestone>(new Uri(x));
 
-            data.AddRange(result1);
-            data.AddRange(result2);
+                data.AddRange(result);
+            });
 
-            return result1;
+            return data;
         }
     }
 }

@@ -71,6 +71,7 @@ namespace Glimpse.Package.Test
             public string LoggingPath { get; set; } 
             public int MinServiceTriggerInterval { get; set; }
             public bool UseOfflineData { get; set; }
+            public string NugetListingPath { get; set; }
             public IRefreshReleaseRepositoryService RefreshReleaseRepositoryService { get; private set; }
             public IReleaseQueryService ReleaseQueryService { get; private set; }
             public IRefreshReleaseService RefreshReleaseService { get; private set; }
