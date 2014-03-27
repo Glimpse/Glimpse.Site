@@ -7,9 +7,11 @@ namespace Glimpse.Contributor
 {
     public class Settings : ISettings
     {
+        private bool? _useOfflineData;
+
         public Settings()
         {
-            Options = new SettingsExtensionOptions();
+            Options = new SettingsExtensionOptions(); 
         }
 
         public ICommitterProvider CommitterProvider { get; private set; }
@@ -28,8 +30,11 @@ namespace Glimpse.Contributor
 
             var httpClient = HttpClientFactory.CreateGithub();
 
-            CommitterProvider = new CommitterProvider(contributorListingPath);
-            ContributorProvider = new ContributorProvider(httpClient, CommitterProvider);
+            CommitterProvider = new CommitterProvider(contributorListingPath); 
+            if (PackageSettings.Settings.UseOfflineData)
+                ContributorProvider = new ContributorOfflineProvider(CommitterProvider);
+            else
+                ContributorProvider = new ContributorProvider(httpClient, CommitterProvider);  
             PackageAuthorProvider = new PackageAuthorProvider(PackageSettings.Settings.QueryProvider);
             CommunityService = new CommunityService(CommitterProvider, ContributorProvider, PackageAuthorProvider);
         }

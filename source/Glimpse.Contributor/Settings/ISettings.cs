@@ -3,7 +3,7 @@
 namespace Glimpse.Contributor
 {
     public interface ISettings
-    {
+    { 
         SettingsExtensionOptions Options { get; }
 
         ICommitterProvider CommitterProvider { get; }

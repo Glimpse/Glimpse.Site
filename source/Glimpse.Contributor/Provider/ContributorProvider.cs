@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Glimpse.Service;
+using Glimpse.Service; 
 
 namespace Glimpse.Contributor
 {
@@ -34,7 +34,7 @@ namespace Glimpse.Contributor
             _committers = null;
         }
 
-        private IList<Contributor> InnerGetAllContributors()
+        protected virtual Dictionary<string, Contributor> RawGetAllContributors()
         {
             var data = new Dictionary<string, Contributor>();
 
@@ -43,7 +43,7 @@ namespace Glimpse.Contributor
             var result3 = _httpClient.GetPagedDataAsync<Contributor>(new Uri("https://api.github.com/repos/glimpse/glimpse.client/contributors"));
 
             // Merge together the datasets
-            var resultArray = new IList<Contributor>[] {result1, result2, result3};
+            var resultArray = new IList<Contributor>[] { result1, result2, result3 };
             foreach (var contributors in resultArray)
             {
                 foreach (var contributor in contributors)
@@ -57,6 +57,13 @@ namespace Glimpse.Contributor
                         data.Add(contributor.Login, contributor);
                 }
             }
+
+            return data;
+        }
+
+        private IList<Contributor> InnerGetAllContributors()
+        {
+            var data = RawGetAllContributors();
 
             // Pull out the contributors
             var comitters = _committerProvider.GetAllMembers();
