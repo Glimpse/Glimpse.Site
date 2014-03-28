@@ -1,4 +1,5 @@
-﻿@model List<Glimpse.Package.ReleaseQueryItem>
+﻿@using System.Globalization
+@model List<Glimpse.Package.ReleaseQueryItem>
 @{
     ViewBag.Title = "Extensions - Glimpse - ";
     var isOffline = Glimpse.Package.PackageSettings.Settings.UseOfflineData;
@@ -51,6 +52,7 @@
                     </a>
                     <strong class="trim" title="@item.Name">@item.Name</strong>
                     <div class="text-muted small trim" title="v @item.Version - @item.Created.ToString("yyyy-MM-dd")">v<span>@item.Version</span> - <span class="small">@item.Created.ToString("yyyy-MM-dd")</span></div>
+                    <div class="text-muted small trim text-info" title="Installs">@item.DownloadCount.ToString("N0", CultureInfo.InvariantCulture) installs</div>
                 </div>
             }
             @if (Model.Count == 0) {
