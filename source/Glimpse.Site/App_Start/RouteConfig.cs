@@ -13,8 +13,8 @@ namespace Glimpse.Site
 
             routes.MapRoute(
                 name: "Documentation",
-                url: "Help/{mdSlug}",
-                defaults: new { controller = "Help", action = "Index", mdSlug = "" }
+                url: "Docs/{mdSlug}",
+                defaults: new { controller = "Docs", action = "Index", mdSlug = "" }
             );
 
             routes.MapRoute(

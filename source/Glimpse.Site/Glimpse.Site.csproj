@@ -152,7 +152,7 @@
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="Controllers\CommunityController.cs" />
-    <Compile Include="Controllers\HelpController.cs" />
+    <Compile Include="Controllers\DocsController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\ExtensionsController.cs" />
     <Compile Include="Controllers\GettingStartedController.cs" />
@@ -171,9 +171,6 @@
     <Compile Include="Extensions\HtmlHelperExtensions.cs" />
     <Compile Include="Framework\DictionaryKeysAreNotPropertyNamesJsonConverter.cs" />
     <Compile Include="GettingStartedController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
-    <Compile Include="HelpController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="HomeController.generated.cs">

@@ -30,14 +30,13 @@ public static partial class MVC
     static readonly VersionClass s_Version = new VersionClass();
     public static VersionClass Version { get { return s_Version; } }
     public static Glimpse.Site.Controllers.CommunityController Community = new Glimpse.Site.Controllers.T4MVC_CommunityController();
+    public static Glimpse.Site.Controllers.DocsController Docs = new Glimpse.Site.Controllers.T4MVC_DocsController();
     public static Glimpse.Site.Controllers.ErrorController Error = new Glimpse.Site.Controllers.T4MVC_ErrorController();
     public static Glimpse.Site.Controllers.ExtensionsController Extensions = new Glimpse.Site.Controllers.T4MVC_ExtensionsController();
     public static Glimpse.Site.Controllers.GettingStartedController GettingStarted = new Glimpse.Site.Controllers.T4MVC_GettingStartedController();
-    public static Glimpse.Site.Controllers.HelpController Help = new Glimpse.Site.Controllers.T4MVC_HelpController();
     public static Glimpse.Site.Controllers.HomeController Home = new Glimpse.Site.Controllers.T4MVC_HomeController();
     public static Glimpse.Site.Controllers.InstallController Install = new Glimpse.Site.Controllers.T4MVC_InstallController();
     public static Glimpse.Site.Controllers.StatusController Status = new Glimpse.Site.Controllers.T4MVC_StatusController();
-    public static T4MVC.DocsController Docs = new T4MVC.DocsController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();
 }
 

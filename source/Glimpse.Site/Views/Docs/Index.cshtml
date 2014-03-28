@@ -1,11 +1,19 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Documentation - Glimpse -";
 }
 
-<div style="margin: auto; background-color: lightyellow; border: 1px solid goldenrod; color: goldenrod; margin-bottom: 10px; padding: 10px 0; text-align: center;">
-    <strong>NOTE:</strong> Glimpse documentation is currently being improved. If you'd like to help the effort, please <a href="@Model.EditUri">edit this page</a> or contribute to our <a href="https://github.com/Glimpse/Glimpse/wiki">GitHub Wiki</a>
+<div class="jumbotron">
+    <div class="container">
+        <h1>Documentation</h1>
+        <p>Welcome to the Glimpse Documentation! Here we hope to introduce to the varioius tutorials, concepts and apis you might need when discovering and using Glimpse.</p>
+    </div>
 </div>
-<div>
-    @Html.RenderMarkdown(Model.MarkdownFile)
+
+<div class="container content content-normal">
+    <div class="bs-callout bs-callout-info">
+        <p><strong>NOTE:</strong> Glimpse documentation is currently being improved. If you'd like to help the effort, please <a href="@Model.EditUri">edit this page</a> or contribute to our <a href="https://github.com/Glimpse/Glimpse/wiki">GitHub Wiki</a></p>
+    </div>
+    <div>
+        @HtmlHelperExtensions.RenderMarkdown(Html, Model.MarkdownFile)
+    </div> 
 </div>

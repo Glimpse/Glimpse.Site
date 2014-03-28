@@ -7,7 +7,7 @@ using Glimpse.Site.Models;
 
 namespace Glimpse.Site.Controllers
 {
-    public partial class HelpController : Controller
+    public partial class DocsController : Controller
     {
         public virtual ActionResult Index(string mdSlug, string controller = null)
         {
