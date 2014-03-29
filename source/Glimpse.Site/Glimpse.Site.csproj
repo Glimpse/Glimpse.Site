@@ -159,6 +159,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InstallController.cs" />
     <Compile Include="Controllers\StatusController.cs" />
+    <Compile Include="Models\StatusViewModel.cs" />
     <Compile Include="DocsController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>

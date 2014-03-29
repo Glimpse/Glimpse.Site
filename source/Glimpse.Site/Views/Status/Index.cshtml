@@ -1,8 +1,10 @@
 ﻿@using Glimpse.Release
-@model Glimpse.Release.Release
+@model Glimpse.Site.Models.StatusViewModel
 
 @{
     ViewBag.Title = "Status - Glimpse - ";
+    var release = Model.Release;
+    var milestone = Model.Milestones;
 }
 
 @section scripts {
@@ -19,21 +21,21 @@
 </div>
 
 <div class="container content content-normal">
-    <h2>Releases</h2>
+    <h2>Releases <form method="get" style="font-size: 50%; display: inline">@Html.DropDownList("milestone", milestone, new { onchange = "this.form.submit()" })</form></h2>
     <h3>
-        @if (Model.Milestone.IsVNext) {
+        @if (release.Milestone.IsVNext) {
             <text>Issues currently being worked on:</text>
         } else {
-            <text>Issues we just relased in @Model.Milestone.Title:</text>
+            <text>Issues we just relased in @release.Milestone.Title:</text>
         }
     </h3>
     <ul id="packages" class="nav nav-tabs" style="margin-top: 35px;">
-        @foreach (var packageCategory in Model.PackageCategories) {
+        @foreach (var packageCategory in release.PackageCategories) {
             <li class="lead"><a style="color: @(packageCategory.PackageItem.Any(p => p.Status == GlimpsePackageStatus.Red) ? "red" : "green");" href="#@packageCategory.Name" data-toggle="tab">@packageCategory.Name</a></li>
         }
     </ul>
     <div class="tab-content" style="border:1px solid #dddddd; border-top: none; margin-bottom: 30px;">
-        @foreach (var packageCategory in Model.PackageCategories) {
+        @foreach (var packageCategory in release.PackageCategories) {
             <div class="tab-pane fade in active" id="@packageCategory.Name" style="padding:15px;">
                 <div class="alert">
                     @foreach (var package in packageCategory.PackageItem) {
@@ -47,7 +49,7 @@
                         }
                     }
                 </div> 
-                @if (Model.Milestone.IsVNext) {
+                @if (release.Milestone.IsVNext) {
                     <h4>Acknowledged and working on</h4>
                     @Html.Partial("_Issues", packageCategory.AcknowledgedIssues, new ViewDataDictionary(this.ViewData) { { "emptyMessage", "No issues yet scheduled for release" } })
                         
@@ -64,7 +66,7 @@
     <div class="row">
         <div class="col-md-5">
             <h4>Thank you for reporting Issues:</h4>
-            @foreach (var reporter in Model.IssueReporters) {
+            @foreach (var reporter in release.IssueReporters) {
                 <a href="@reporter.HtmlUrl" data-toggle="tooltip" title="@reporter.Login" id="@(reporter.Login)Avatar"><img width="40" src="@reporter.AvatarUrl" alt="@reporter.Login" /></a>
             }
         </div>
@@ -75,7 +77,7 @@
                     <th>Contributor</th>
                     <th>Details</th>
                 </tr>
-                @foreach (var reporter in Model.PullRequestContributors) {
+                @foreach (var reporter in release.PullRequestContributors) {
                     <tr>
                         <td>
                             <a href="@reporter.Item1.HtmlUrl" title="@reporter.Item1.Login" id="@(reporter.Item1.Login)Avatar"><img width="40" src="@reporter.Item1.AvatarUrl" alt="@reporter.Item1.Login" /> @reporter.Item1.Login</a>
