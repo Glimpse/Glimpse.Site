@@ -414,7 +414,7 @@ a:not([href]) {
 
 @media (min-width: 768px)  {
     .listing-data-community .col-sm-3 {
-        height: 180px
+        height: 200px
     }
 }
 

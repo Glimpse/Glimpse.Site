@@ -79,8 +79,8 @@
                 </tr>
                 @foreach (var reporter in release.PullRequestContributors) {
                     <tr>
-                        <td>
-                            <a href="@reporter.Item1.HtmlUrl" title="@reporter.Item1.Login" id="@(reporter.Item1.Login)Avatar"><img width="40" src="@reporter.Item1.AvatarUrl" alt="@reporter.Item1.Login" /> @reporter.Item1.Login</a>
+                        <td style="white-space: nowrap">
+                            <a href="@reporter.Item1.HtmlUrl" title="@reporter.Item1.Login" id="@(reporter.Item1.Login)Avatar"><img width="40" src="@reporter.Item1.AvatarUrl" alt="@reporter.Item1.Login" /></a> <a href="@reporter.Item1.HtmlUrl" title="@reporter.Item1.Login" id="@(reporter.Item1.Login)Avatar">@reporter.Item1.Login</a>
                         </td>
                         <td>
                             @foreach (var pullRequest in reporter.Item2) {

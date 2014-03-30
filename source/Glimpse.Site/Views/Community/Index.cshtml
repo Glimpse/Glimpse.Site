@@ -19,20 +19,34 @@
             <p>Think you might have found a bug or something acting weird, our <a href="https://github.com/glimpse/glimpse/issues">github issues list</a> is where you want to go.</p>
         </div>
         <div class="col-sm-4">
-            <h3>Stack Overflow</h3>
-            <p>Got general questions? Anything related to using, configuring or extending Glimpse can be sent through to here. View <a href="http://stackoverflow.com/questions/tagged/glimpse">already answered</a> Stack Overflow questions.</p>
-        </div>
-        <div class="col-sm-4">
-            <h3>Twitter</h3>
-            <p>Got something simple or basic, or need a quick response, reach us directly via twitter (<a href="https://twitter.com/anthony_vdh">@@anthony_vdh</a> &amp; <a href="https://twitter.com/nikmd23">@@nikmd23</a>).</p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-4 col-sm-offset-4">
             <h3>Mailing List</h3>
             <p>Any discussion for the community related to working on or extentending Glimpse can be sent to the mailing list. Bug reports or general usage should be directed to one of the above options.</p>
         </div>
+        <div class="col-sm-4">
+            <h3>Stack Overflow</h3>
+            <p>Got general questions? Anything related to using, configuring or extending Glimpse can be sent through to here. View <a href="http://stackoverflow.com/questions/tagged/glimpse">already answered</a> Stack Overflow questions.</p>
+        </div>
     </div>
+    
+    @if (Model.Committers.Count > 0) {
+        <div class="listing-data">
+            <h3>Commiters</h3>
+            <div class="row listing-data-comitters">
+                @foreach (var commiter in Model.Committers) {
+                    <div class="col-xs-4 col-md-3 text-center">
+                        <a href="http://github.com/@commiter.GithubUsername" class="thumbnail">
+                            <img src="@commiter.AvatarUrl" alt="@commiter.Name">
+                        </a>
+                        <strong class="trim">@commiter.Name</strong>
+                        @if (commiter.Contributions > 0) {
+                            <div class="text-muted small">@commiter.Contributions.ToString("N0", CultureInfo.InvariantCulture) commits</div>
+                        }
+                        <a href="https://twitter.com/@commiter.TwitterUsername">@@@commiter.TwitterUsername</a>
+                    </div>
+                }
+            </div>
+        </div>
+    }
 
     <h2>Getting Involved</h2>
     <p class="text-center">Would like to get involved? It turns out there are plenty of things that you can do to help! <br class="hidden-xs" />Open source projects benefit from the contributions of the developer community.</p>
@@ -81,30 +95,12 @@
     </div>
     <p class="text-center" style="padding: 15px; margin: 30px 0 50px;"><strong>No matter</strong> what your interest, please feel free to <strong>reach out</strong> to us on the <a href="http://groups.google.com/group/getglimpse-dev">mailing list</a> or via twitter (<a href="https://twitter.com/anthony_vdh">@@anthony_vdh</a> &amp; <a href="https://twitter.com/nikmd23">@@nikmd23</a>).</p>
 
-    @if (Model.Committers.Count > 0 || Model.Contributors.Count > 0 || Model.Authors.Count > 0)
-    {
+    @if (Model.Contributors.Count > 0 || Model.Authors.Count > 0) {
         <h2>Meet the Team</h2>
         <p>As you might have guessed it has taken quite a lot of people to make Glimpse what it is today. Here is everyone who has made Glimpse possible.</p>
     }
     
     <div class="listing-data">
-        @if (Model.Committers.Count > 0) {
-            <h3>Commiters</h3>
-            <div class="row listing-data-comitters">
-                @foreach (var commiter in Model.Committers) {
-                    <div class="col-xs-4 col-md-3 text-center">
-                        <a href="http://github.com/@commiter.GithubUsername" class="thumbnail">
-                            <img src="@commiter.AvatarUrl" alt="@commiter.Name">
-                        </a>
-                        <strong class="trim">@commiter.Name</strong>
-                        @if (commiter.Contributions > 0) {
-                            <div class="text-muted small">@commiter.Contributions.ToString("N0", CultureInfo.InvariantCulture) commits</div>
-                        }
-                    </div>
-                }
-            </div>
-        }
-
         @if (Model.Contributors.Count > 0) {
             <h3>Contributors</h3>
             <div class="row listing-data-cobtributors">
@@ -124,7 +120,7 @@
             <h3>Extension Authors</h3>
             <div class="row listing-data-authors">
                 @foreach (var author in Model.Authors) {
-                    <div class="col-md-3 col-xs-4 text-center">
+                    <div class="col-xs-3 col-md-2 text-center">
                         <a href="http://www.nuget.org/profiles/@author.Key">
                             <strong class="trim">@author.Key</strong>
                         </a>
