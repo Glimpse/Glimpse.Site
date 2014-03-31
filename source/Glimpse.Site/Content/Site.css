@@ -412,6 +412,15 @@ a:not([href]) {
     height: 160px
 }
 
+.dl-pull-requests dt {
+    width: 60px;
+    text-align: left;
+}
+.dl-pull-requests dd {
+    margin-left: 75px;
+    margin-bottom: 3px;
+}
+
 @media (min-width: 768px)  {
     .listing-data-community .col-sm-3 {
         height: 200px

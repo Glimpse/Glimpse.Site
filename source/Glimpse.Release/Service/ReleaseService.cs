@@ -10,6 +10,8 @@ namespace Glimpse.Release
         private readonly IMilestoneProvider _milestoneProvider;
         private readonly IIssueProvider _issueProvider;
         private readonly IPackageProvider _packageProvider;
+        private readonly object _releasesLock = new object();
+        private readonly IDictionary<string, Release> _releases = new Dictionary<string, Release>(); 
         private const string NextMilestone = "vNext";
 
         public ReleaseService(IMilestoneProvider milestoneProvider, IIssueProvider issueProvider, IPackageProvider packageProvider)
@@ -20,6 +22,34 @@ namespace Glimpse.Release
         }
 
         public Release GetRelease(string milestoneNumber)
+        {
+            if (string.IsNullOrEmpty(milestoneNumber) || milestoneNumber == NextMilestone)
+                milestoneNumber = NextMilestone;
+
+            var release = (Release)null;
+            if (!_releases.TryGetValue(milestoneNumber, out release))
+            {
+                lock (_releasesLock)
+                {
+                    if (!_releases.TryGetValue(milestoneNumber, out release))
+                    {
+                        release = BuildRelease(milestoneNumber);
+                        _releases.Add(milestoneNumber, release);
+                    }
+                }
+            }
+
+            return release;
+        }
+
+        public void Clear()
+        {
+            _releases.Clear();
+            _milestoneProvider.Clear();
+            _issueProvider.Clear();
+        }
+         
+        private Release BuildRelease(string milestoneNumber)
         {
             var milestone = (GithubMilestone)null;
             var issues = (IList<GithubIssue>)null;
@@ -43,7 +73,7 @@ namespace Glimpse.Release
 
             var packageCategories = _packageProvider.GetAllPackagesGroupedByCategory();
             var packageTags = _packageProvider.GetAllPackagesTags();
-            
+
             // Lets map it to the format we need
             var release = new Release
             {
@@ -96,10 +126,22 @@ namespace Glimpse.Release
 
         private List<Tuple<ReleaseUser, List<ReleaseIssue>>> MapPullRequestContributors(IList<GithubIssue> issues, IList<string> packageTags)
         { 
-            return issues.Where(x => x.Pull_Request.Diff_Url != null)
-                .GroupBy(x => x.User, x => x)
-                .ToDictionary(x => x.Key, x => x.ToList())
-                .Select(x => new Tuple<ReleaseUser, List<ReleaseIssue>>(MapUser(x.Key), MapIssues(x.Value, packageTags)))
+            var pullRequestContributors = new Dictionary<string, Tuple<GithubUser, List<GithubIssue>>>();
+            var pullRequests = issues.Where(x => x.Pull_Request.Diff_Url != null);
+            foreach (var pullRequest in pullRequests)
+            {
+                var record = (Tuple<GithubUser, List<GithubIssue>>)null;
+                if (!pullRequestContributors.TryGetValue(pullRequest.User.Id, out record))
+                {
+                    record = new Tuple<GithubUser, List<GithubIssue>>(pullRequest.User, new List<GithubIssue>{pullRequest});
+                    pullRequestContributors.Add(pullRequest.User.Id, record);
+                }
+                else
+                    record.Item2.Add(pullRequest);
+            }
+
+            return pullRequestContributors.Values
+                .Select(x => new Tuple<ReleaseUser, List<ReleaseIssue>>(MapUser(x.Item1), MapIssues(x.Item2, packageTags)))
                 .ToList();
         }
 

@@ -3,5 +3,7 @@
     public interface IReleaseService
     {
         Release GetRelease(string milestoneNumber);
+        
+        void Clear();
     }
 }

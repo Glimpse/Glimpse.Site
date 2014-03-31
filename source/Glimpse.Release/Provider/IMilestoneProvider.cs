@@ -10,6 +10,8 @@ namespace Glimpse.Release
 
         IList<GithubMilestone> GetAllMilestones();
 
+        IList<GithubMilestone> GetCurrentMilestones();
+
         void Clear();
     }
 }

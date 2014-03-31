@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 using Glimpse.Release;
 using Glimpse.Site.Models;
@@ -13,7 +14,7 @@ namespace Glimpse.Site.Controllers
             var model = new StatusViewModel
             {
                 Release = ReleaseSettings.Settings.ReleaseService.GetRelease(milestone),
-                Milestones = ReleaseSettings.Settings.MilestoneProvider.GetAllMilestones().Where(x => x.State == "closed" && x.Title != "vNext").OrderByDescending(x => x.Created_At).Select(x => new SelectListItem { Text = x.Title, Value = x.Title })
+                Milestones = ReleaseSettings.Settings.MilestoneProvider.GetCurrentMilestones().Select(x => new SelectListItem { Selected = x.Title == milestone, Text = x.Title, Value = x.Title })
             };
 
             return View(model);

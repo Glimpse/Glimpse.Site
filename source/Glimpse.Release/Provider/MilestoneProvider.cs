@@ -10,10 +10,22 @@ namespace Glimpse.Release
     {
         private readonly IHttpClient _httpClient;
         private IList<GithubMilestone> _milestones;
+        private IList<GithubMilestone> _currentMilestones;
+        private IDictionary<string, GithubMilestone> _indexedMilestones;
 
         protected IList<GithubMilestone> Milestones
         {
             get { return _milestones ?? (_milestones = InnerGetAllMilestones()); }
+        }
+
+        protected IList<GithubMilestone> CurrentMilestones
+        {
+            get { return _currentMilestones ?? (_currentMilestones = InnerGetStatusMilestones()); }
+        }
+
+        protected IDictionary<string, GithubMilestone> IndexedMilestones
+        {
+            get { return _indexedMilestones ?? (_indexedMilestones = InnerIndexMilestones()); }
         }
 
         public MilestoneProvider(IHttpClient httpClient)
@@ -23,7 +35,9 @@ namespace Glimpse.Release
 
         public GithubMilestone GetMilestone(string title)
         {
-            return Milestones.FirstOrDefault(g => g.Title.ToLower() == title.ToLower());
+            var milestone = (GithubMilestone)null;
+            IndexedMilestones.TryGetValue(title.ToLower(), out milestone);
+            return milestone;
         }
 
         public GithubMilestone GetLatestMilestoneWithIssues(string state)
@@ -39,9 +53,25 @@ namespace Glimpse.Release
             return Milestones;
         }
 
+        public IList<GithubMilestone> GetCurrentMilestones()
+        {
+            return CurrentMilestones;
+        }
+
         public void Clear()
         {
             _milestones = null;
+            _currentMilestones = null;
+        }
+
+        private IDictionary<string, GithubMilestone> InnerIndexMilestones()
+        {
+            return Milestones.ToDictionary(x => x.Title.ToLower(), x => x);
+        }
+
+        private IList<GithubMilestone> InnerGetStatusMilestones()
+        {
+            return Milestones.Where(x => (x.Number >= 10 && x.State == "closed") || x.Title != "vNext").OrderByDescending(x => x.Created_At).ToList();
         }
 
         private IList<GithubMilestone> InnerGetAllMilestones()
