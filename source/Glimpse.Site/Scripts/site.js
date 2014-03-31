@@ -67,65 +67,68 @@ var getTweetsLatest = function () {
             $('.blog_container').show();
             $('.blog_content').html(format(first) + format(second));
         });
+    },
+    setupCarousel = function() {
+        $('#carousel-screenshot').on('slide.bs.carousel', function (test) {
+            $('.carousel-screenshot-shots .target.active').removeClass('active');
+        
+            var target = $(test.relatedTarget).attr('data-target');
+            if (target) 
+                $('.' + target).addClass('active'); 
+        });
+         
+        var hudCarouselCall = function() {
+                setTimeout(function() { hudCarousel(); }, 3000);
+            },
+            hudCarousel = function() {
+                var container = $('.is-container'),
+                    current = container.find('.active').removeClass('active').attr('data-target') || '0';
+                if (current < 3) {
+                    setTimeout(function() {
+                        container.find(".target[data-target='" + (parseInt(current) + 1) + "']").addClass('active');
+                        hudCarouselCall();
+                    }, 1000);
+                }
+                else
+                    hudCarouselCall();
+            };
+
+        var carouselTriggered = false, 
+            carouselScrollWatch = function() {
+                if (!carouselTriggered) { 
+                    var min = 403, max = 685,
+                        position = ($('h1').offset().top - 100 - $(window).scrollTop()) * -1 * 2,
+                        height = (position < 0 ? min : (position > (max - min) ? max : position + min));
+
+                    $('.carousel-screenshot-shots').css('maxHeight', height);
+
+                    if (height == max) {
+                        carouselTriggered = true;
+                        $('#carousel-screenshot').carousel('cycle').carousel('next');
+                        hudCarousel();
+                    }
+                }
+             
+                var installNavbar = $('.navbar-install');
+                if ($(window).scrollTop() > 300) {
+                    navbarTriggered = true;
+                    installNavbar.addClass('navbar-install-show');
+                }
+                else 
+                    installNavbar.removeClass('navbar-install-show'); 
+            };
+    
+        $(window).scroll(carouselScrollWatch);
     };
 
 $(function() {
     getTweetsLatest();
     getBuildLatest();
-    getBlogLastest();
-
-    $('#carousel-screenshot').on('slide.bs.carousel', function (test) {
-        $('.carousel-screenshot-shots .target.active').removeClass('active');
-        
-        var target = $(test.relatedTarget).attr('data-target');
-        if (target) 
-            $('.' + target).addClass('active'); 
-    });
-
-    var doesCarouselCall = function() {
-            setTimeout(function() { doesCarousel(); }, 3000);
-        },
-        doesCarousel = function() {
-            var container = $('.is-container'),
-                current = container.find('.active').removeClass('active').attr('data-target') || '0';
-            if (current < 3) {
-                setTimeout(function() {
-                    container.find(".target[data-target='" + (parseInt(current) + 1) + "']").addClass('active');
-                    doesCarouselCall();
-                }, 1000);
-            }
-            else
-                doesCarouselCall();
-        };
-
-    var carouselTriggered = false,
-        navbarTriggered = false,
-        screenshotScroll = function() {
-            if (!carouselTriggered) { 
-                var min = 403, max = 685,
-                    position = ($('h1').offset().top - 100 - $(window).scrollTop()) * -1 * 2,
-                    height = (position < 0 ? min : (position > (max - min) ? max : position + min));
-
-                $('.carousel-screenshot-shots').css('maxHeight', height);
-
-                if (height == max) {
-                    carouselTriggered = true;
-                    $('#carousel-screenshot').carousel('cycle').carousel('next');
-                    doesCarousel();
-                }
-            }
-             
-            var installNavbar = $('.navbar-install');
-            if ($(window).scrollTop() > 300) {
-                navbarTriggered = true;
-                installNavbar.addClass('navbar-install-show');
-            }
-            else 
-                installNavbar.removeClass('navbar-install-show'); 
-        };
     
-    if ($('.page_home').length > 0)
-        $(window).scroll(screenshotScroll);
+    if ($('.page_home').length > 0) {
+        getBlogLastest();
+        setupCarousel();
+    }
 });
 
 var _gaq = _gaq || [];
