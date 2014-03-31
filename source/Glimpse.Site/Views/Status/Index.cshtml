@@ -2,7 +2,7 @@
 @model Glimpse.Site.Models.StatusViewModel
 
 @{
-    ViewBag.Title = "Status - Glimpse - ";
+    ViewBag.Title = "Status Board - Glimpse - ";
     var release = Model.Release;
     var milestone = Model.Milestones;
 }
@@ -15,7 +15,7 @@
 
 <div class="jumbotron">
     <div class="container">
-        <h1>Dashboard</h1>
+        <h1>Status Board</h1>
         <p>This is the live view of everything we are currently working on or looking at. Feel free to take a look around and get involved.</p>
     </div>
 </div>
@@ -24,9 +24,9 @@
     <h2>Releases <form method="get" style="font-size: 50%; display: inline">@Html.DropDownList("milestone", milestone, new { onchange = "this.form.submit()" })</form></h2>
     <h3>
         @if (release.Milestone.IsVNext) {
-            <text>Issues currently being worked on:</text>
+            <text>Issues currently being worked on in <a href="https://github.com/Glimpse/Glimpse/issues?milestone=@release.Milestone.Number&state=closed">@release.Milestone.Title</a>:</text>
         } else {
-            <text>Issues we relased in @release.Milestone.Title:</text>
+            <text>Issues we relased in <a href="https://github.com/Glimpse/Glimpse/issues?milestone=@release.Milestone.Number&state=closed">@release.Milestone.Title</a>:</text>
         }
     </h3>
     <ul id="packages" class="nav nav-tabs" style="margin-top: 35px;">

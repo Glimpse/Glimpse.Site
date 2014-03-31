@@ -70,8 +70,8 @@ namespace Glimpse.Release
         }
 
         private IList<GithubMilestone> InnerGetCurrentMilestones()
-        { 
-            return Milestones.Where(x => (x.Number >= 10 && x.State == "closed") || x.Title.ToLowerInvariant() == "vnext").OrderByDescending(x => x.Created_At).ToList();
+        {
+            return Milestones.Where(x => (x.Number >= 17 && x.State.ToLower() == "closed") || x.Title.ToLower() == "vnext").OrderByDescending(x => x.Created_At).ToList();
         }
 
         private IList<GithubMilestone> InnerGetAllMilestones()

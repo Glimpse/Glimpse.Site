@@ -160,7 +160,7 @@ namespace Glimpse.Release
         {
             return new ReleaseIssue
             {
-                Category = string.Join(", ", issue.Labels.Where(x => !packageTags.Contains(x.Name)).Select(y => y.Name).ToArray()),
+                Category = string.Join(", ", issue.Labels.Where(x => !packageTags.Contains(x.Name)).Select(y => FixTagName(y.Name)).ToArray()),
                 Title = issue.Title,
                 IssueId = issue.Id,
                 IssueLinkUrl = issue.Html_Url,
@@ -200,6 +200,12 @@ namespace Glimpse.Release
             }
 
             return result;
+        }
+
+        private string FixTagName(string tagName)
+        {
+            var split = tagName.Split(':');
+            return split.Length > 1 ? split[1].Trim() : split[0];
         }
     } 
 }

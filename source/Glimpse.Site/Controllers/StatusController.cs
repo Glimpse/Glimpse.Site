@@ -11,10 +11,12 @@ namespace Glimpse.Site.Controllers
         //[OutputCache(Duration = 30 * 60)]
         public virtual ActionResult Index(string milestone = null)
         {
+            var release = ReleaseSettings.Settings.ReleaseService.GetRelease(milestone);
+
             var model = new StatusViewModel
             {
-                Release = ReleaseSettings.Settings.ReleaseService.GetRelease(milestone),
-                Milestones = ReleaseSettings.Settings.MilestoneProvider.GetCurrentMilestones().Select(x => new SelectListItem { Selected = x.Title == milestone, Text = x.Title, Value = x.Title })
+                Release = release,
+                Milestones = ReleaseSettings.Settings.MilestoneProvider.GetCurrentMilestones().Select(x => new SelectListItem { Selected = release.Milestone != null && x.Title == release.Milestone.Title, Text = x.Title, Value = x.Title })
             };
 
             return View(model);
