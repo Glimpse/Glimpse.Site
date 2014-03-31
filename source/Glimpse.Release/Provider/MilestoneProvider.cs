@@ -20,7 +20,7 @@ namespace Glimpse.Release
 
         protected IList<GithubMilestone> CurrentMilestones
         {
-            get { return _currentMilestones ?? (_currentMilestones = InnerGetStatusMilestones()); }
+            get { return _currentMilestones ?? (_currentMilestones = InnerGetCurrentMilestones()); }
         }
 
         protected IDictionary<string, GithubMilestone> IndexedMilestones
@@ -69,9 +69,9 @@ namespace Glimpse.Release
             return Milestones.ToDictionary(x => x.Title.ToLower(), x => x);
         }
 
-        private IList<GithubMilestone> InnerGetStatusMilestones()
-        {
-            return Milestones.Where(x => (x.Number >= 10 && x.State == "closed") || x.Title != "vNext").OrderByDescending(x => x.Created_At).ToList();
+        private IList<GithubMilestone> InnerGetCurrentMilestones()
+        { 
+            return Milestones.Where(x => (x.Number >= 10 && x.State == "closed") || x.Title.ToLowerInvariant() == "vnext").OrderByDescending(x => x.Created_At).ToList();
         }
 
         private IList<GithubMilestone> InnerGetAllMilestones()
