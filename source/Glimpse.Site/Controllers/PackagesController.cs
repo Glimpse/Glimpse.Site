@@ -7,7 +7,7 @@ using Glimpse.Package;
 
 namespace Glimpse.Site.Controllers
 {
-    public partial class ExtensionsController : Controller
+    public partial class PackagesController : Controller
     {
         public virtual ActionResult Index()
         {

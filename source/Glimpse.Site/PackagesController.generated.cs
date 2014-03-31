@@ -23,13 +23,13 @@ using System.Web.Routing;
 using T4MVC;
 namespace Glimpse.Site.Controllers
 {
-    public partial class ExtensionsController
+    public partial class PackagesController
     {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public ExtensionsController() { }
+        public PackagesController() { }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        protected ExtensionsController(Dummy d) { }
+        protected PackagesController(Dummy d) { }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         protected RedirectToRouteResult RedirectToAction(ActionResult result)
@@ -59,13 +59,13 @@ namespace Glimpse.Site.Controllers
 
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public ExtensionsController Actions { get { return MVC.Extensions; } }
+        public PackagesController Actions { get { return MVC.Packages; } }
         [GeneratedCode("T4MVC", "2.0")]
         public readonly string Area = "";
         [GeneratedCode("T4MVC", "2.0")]
-        public readonly string Name = "Extensions";
+        public readonly string Name = "Packages";
         [GeneratedCode("T4MVC", "2.0")]
-        public const string NameConst = "Extensions";
+        public const string NameConst = "Packages";
 
         static readonly ActionNamesClass s_actions = new ActionNamesClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -95,14 +95,14 @@ namespace Glimpse.Site.Controllers
             {
                 public readonly string Index = "Index";
             }
-            public readonly string Index = "~/Views/Extensions/Index.cshtml";
+            public readonly string Index = "~/Views/Packages/Index.cshtml";
         }
     }
 
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-    public partial class T4MVC_ExtensionsController : Glimpse.Site.Controllers.ExtensionsController
+    public partial class T4MVC_PackagesController : Glimpse.Site.Controllers.PackagesController
     {
-        public T4MVC_ExtensionsController() : base(Dummy.Instance) { }
+        public T4MVC_PackagesController() : base(Dummy.Instance) { }
 
         [NonAction]
         partial void IndexOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
