@@ -33,7 +33,7 @@
             <p>Got general questions or just need a little support? Anything related to using, configuring or extending Glimpse can be asked at <a href="http://stackoverflow.com">StackOverflow</a>. View <a href="http://stackoverflow.com/questions/tagged/glimpse">already answered</a> questions for even faster support.</p>
         </div>
     </div>
-    
+
     <div class="row">
         <h2 id="stay-up-to-date">Stay Up to Date</h2>
         <div class="col-sm-4">
@@ -85,18 +85,13 @@
         </div>
     </div>
     <div class="row" style="margin-top: 30px; margin-bottom: 30px; ">
-        <div class="col-sm-12">
-            <h3>Documentation</h3>
-        </div>
         <div class="col-sm-6">
-            <p>Documentation is the one thing that helps separate good projects from the best projects. If you’re a first time OSS contributor or even a veteran, documentation is a great stepping stone to learn the process.</p>
-        </div>
-        <div class="col-sm-6">
-            <p>To make it as simple as possible, we're using Glimpse’s <a href="https://github.com/Glimpse/Glimpse/wiki">GitHub Wiki</a>, as the entry point for documentation. GitHub Wikis provide us with an online WYSIWYG interface for adding and editing documentation, completely in browser, using markdown syntax.</p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-6">
+            <h3>Share Glimpse</h3>
+            <p>If you love Glimpse, consider telling others about it. Tell your story at a company tech talk, present at your local user group, or submit a talk proposal about how you are using Glimpse or extensions you have written.</p>
+            <ul>
+                <li><a>Need inspiration? See some of our talks that we have given.</a></li>
+            </ul>
+            
             <h3>Extensions</h3>
             <p>If you'd rather start off on something more self-contained, why not write an extension for your favorite server- or client-side technology? There are plenty of Extensions <a href="@Url.Action(MVC.Packages.Index())">out there</a>, most of which are fully open source.</p>
             <ul>
@@ -104,25 +99,27 @@
             </ul>
         </div>
         <div class="col-sm-6">
-            <h3>Share Glimpse</h3>
-            <p>If you love Glimpse, consider telling others about it. Tell your story at a company tech talk, present at your local user group, or submit a talk proposal about how you are using Glimpse or extensions you have written.</p>
-            <ul>
-                <li><a>Need inspiration? See some of our talks that we have given.</a></li>
-            </ul>
+            <h3>Documentation</h3>
+            <p>Documentation is the one thing that helps separate good projects from the best projects. If you’re a first time OSS contributor or even a veteran, documentation is a great stepping stone to learn the process.</p>
+
+            <p>To make it as simple as possible, we're using Glimpse’s <a href="https://github.com/Glimpse/Glimpse/wiki">GitHub Wiki</a>, as the entry point for documentation. GitHub Wikis provide us with an online WYSIWYG interface for adding and editing documentation, completely in browser, using markdown syntax.</p>
         </div>
     </div>
     <p class="text-center" style="padding: 15px; margin: 30px 0 50px;"><strong>No matter</strong> what your interest, please feel free to <strong>reach out</strong> to us on the <a href="http://groups.google.com/group/getglimpse-dev">mailing list</a> or via twitter (<a href="https://twitter.com/anthony_vdh">@@anthony_vdh</a> &amp; <a href="https://twitter.com/nikmd23">@@nikmd23</a>).</p>
 
-    @if (Model.Contributors.Count > 0 || Model.Authors.Count > 0) {
+    @if (Model.Contributors.Count > 0 || Model.Authors.Count > 0)
+    {
         <h2>Meet the Team</h2>
         <p>As you might have guessed it has taken quite a lot of people to make Glimpse what it is today. Here is everyone who has made Glimpse possible.</p>
     }
-    
+
     <div class="listing-data">
-        @if (Model.Contributors.Count > 0) {
+        @if (Model.Contributors.Count > 0)
+        {
             <h3>Contributors</h3>
             <div class="row listing-data-cobtributors">
-                @foreach (var contributor in Model.Contributors) {
+                @foreach (var contributor in Model.Contributors)
+                {
                     <div class="col-xs-3 col-md-2 text-center">
                         <a href="http://github.com/@contributor.Login" class="thumbnail">
                             <img src="@contributor.Avatar_Url" alt="@contributor.Login">
@@ -134,10 +131,12 @@
             </div>
         }
 
-        @if (Model.Authors.Count > 0) {
+        @if (Model.Authors.Count > 0)
+        {
             <h3>Extension Authors</h3>
             <div class="row listing-data-authors">
-                @foreach (var author in Model.Authors) {
+                @foreach (var author in Model.Authors)
+                {
                     <div class="col-xs-3 col-md-2 text-center">
                         <a href="http://www.nuget.org/profiles/@author.Key">
                             <strong class="trim">@author.Key</strong>
