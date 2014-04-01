@@ -11,13 +11,13 @@
         </p>
         <div class="row">
             <div class="col-sm-3 col-sm-offset-1">
-                <a href="?" class="action_link btn btn-primary btn-lg"><span class="glyphicon glyphicon-play-circle"></span>Watch it in action</a>
+                <a class="action_link btn btn-default btn-lg"><span class="glyphicon glyphicon-play-circle"></span>Watch it in action</a>
             </div>
             <div class="col-sm-4">
-                <a href="?" class="action_link btn btn-default btn-lg"><span class="glyphicon glyphicon-play-circle"></span>Play with it</a>
+                <a href="http://glimpseplay.azurewebsites.net" target="_blank" class="action_link btn btn-default btn-lg"><span class="glyphicon glyphicon-log-in"></span>Play with it</a>
             </div>
             <div class="col-sm-3">
-                <a href="?" class="action_link action_link-install btn btn-default btn-lg"><span class="glyphicon glyphicon-download"></span>Install it today!</a>
+                <a class="action_link action_link-install btn btn-primary btn-lg"><span class="glyphicon glyphicon-download"></span>Install it today!</a>
             </div>
         </div>
         <p style="margin-top: 20px;">Glimpse is free, <a href="https://github.com/Glimpse/Glimpse/blob/master/license.txt">open source</a> and built by the community</p>
@@ -221,7 +221,7 @@
                 <div class="col-md-6 community_content">
                     <h2>Free &amp; open source</h2>
                     <p>
-                        Thanks to <a href="/Community">community</a> contributions, Glimpse is thriving and growing. Glimpse is free and available under the <a href="http://opensource.org/licenses/apache2.0">Apache 2.0</a> license. The source code is
+                        Thanks to <a href="@Url.Action(MVC.Community.Index())/">community</a> contributions, Glimpse is thriving and growing. Glimpse is free and available under the <a href="http://opensource.org/licenses/apache2.0">Apache 2.0</a> license. The source code is
                         availible, so feel free to <a href="http://github.com/glimpse/glimpse">jump in and contribute</a>!
                     </p>
                     <h3>Getting involved</h3>
@@ -233,7 +233,7 @@
                     <p>
                         If you would like to get involved, there are plenty of things that you can do. There are issues that are good
                         for first-timers ringfenced and tagged <a href="https://github.com/Glimpse/Glimpse/issues?labels=Jump+In&amp;milestone=&amp;page=1&amp;sort=updated&amp;state=open">Jump In</a>
-                        in GitHub. If you'd rather start off on something more self-contained, why not <a href="/Help/Extensibility">write an extension</a>?
+                        in GitHub. If you'd rather start off on something more self-contained, why not <a href="/Docs/Extensibility">write an extension</a>?
                     </p>
                 </div>
                 <div class="col-md-6 community_content_padding hidden-xs">
@@ -241,7 +241,7 @@
                 <div class="community_guys handwritten hidden-xs">
                     <div class="community_osguy_label">
                         <div class="arrow arrow-down"></div>
-                        You?<br> <a href="http://www.github.com/glimpse/glimpse">We're open source</a>
+                        You?<br> <a href="@Url.Action(MVC.Community.Index())/">We're open source</a>
                     </div>
                     <div class="community_anthony_label">
                         <div class="arrow arrow-down-inverted"></div>Anthony
