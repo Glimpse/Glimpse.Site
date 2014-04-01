@@ -41,6 +41,14 @@ namespace Glimpse.Site.Models
             }
         }
 
+        public FileInfo SideBarFile
+        {
+            get
+            {
+                return new FileInfo(Path.Combine(MarkdownFile.DirectoryName, "_SideBar.md"));
+            }
+        }
+
         public string Title 
         {
             get { return Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(MarkdownSlug.Replace('-', ' ').ToLower()); }

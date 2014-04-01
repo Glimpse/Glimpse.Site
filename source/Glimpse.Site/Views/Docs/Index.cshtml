@@ -1,4 +1,5 @@
-﻿@{
+﻿@model Glimpse.Site.Models.DocumentationViewModel
+@{
     ViewBag.Title = "Documentation - Glimpse -";
 }
 
@@ -13,7 +14,12 @@
     <div class="bs-callout bs-callout-info">
         <p><strong>NOTE:</strong> Glimpse documentation is currently being improved. If you'd like to help the effort, please <a href="@Model.EditUri">edit this page</a> or contribute to our <a href="https://github.com/Glimpse/Glimpse/wiki">GitHub Wiki</a></p>
     </div>
-    <div>
-        @HtmlHelperExtensions.RenderMarkdown(Html, Model.MarkdownFile)
-    </div> 
+    <div class="row">
+        <div class="col-xs-9">
+            @Html.RenderMarkdown(Model.MarkdownFile)
+        </div>
+        <div class="col-xs-3">
+            <div style="margin: 20px 0 0; background-color: #F0F7FD; padding: 20px 20px 10px 5px;">@Html.RenderMarkdown(Model.SideBarFile)</div>
+        </div>
+    </div>
 </div>
