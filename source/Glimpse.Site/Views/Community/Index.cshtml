@@ -6,47 +6,64 @@
 
 <div class="jumbotron">
     <div class="container">
+        <ul>
+            <li><mark>Let's add icons for the services we use: GitHub for Issue List, Mailing List & StackOverflow</mark></li>
+            <li><mark>The links to package authors seem broken if there is a space in their name</mark></li>
+            <li><mark>Might be good to add the Twitter bird in front of Twitter handles so people know what they are without needing to click</mark></li>
+        </ul>
         <h1>Community</h1>
-        <p>Glimpse wouldn't be what it is today without the love and support of some awesome people from around the world. Thanks to everyone who has been involved in making this possible.</p>
+        <p>Glimpse wouldn't be what it is without the love and support of some awesome people from around the world. Thanks to everyone who has been involved in making this possible.</p>
     </div>
 </div>
 
 <div class="container content content-normal">
-    <h2 id="getting-in-contact">Getting in Contact</h2>
+    <h2 id="reach-out">Reach Out</h2>
     <div class="row">
         <div class="col-sm-4">
-            <h3>Issues List</h3>
-            <p>Think you might have found a bug or something acting weird, our <a href="https://github.com/glimpse/glimpse/issues">github issues list</a> is where you want to go.</p>
+            <h3>Issue List</h3>
+            <p>Have you found a bug or something misbehaving? Tell us about it on our <a href="https://github.com/glimpse/glimpse/issues">GitHub issue list</a>.</p>
         </div>
         <div class="col-sm-4">
             <h3>Mailing List</h3>
-            <p>Any discussion for the community related to working on or extentending Glimpse can be sent to the mailing list. Bug reports or general usage should be directed to one of the above options.</p>
+            <p>Got questions about how to extend or work on Glimpse, or just want to discuss a new feature idea? Shoot it through to the <a href="">developers mailing list</a>.<mark>&lt;&mdash; add groups.google.com link</mark></p>
         </div>
         <div class="col-sm-4">
             <h3>Stack Overflow</h3>
-            <p>Got general questions? Anything related to using, configuring or extending Glimpse can be sent through to here. View <a href="http://stackoverflow.com/questions/tagged/glimpse">already answered</a> Stack Overflow questions.</p>
+            <p>Got general questions or just need a little support? Anything related to using, configuring or extending Glimpse can be asked at <a href="http://stackoverflow.com">StackOverflow</a>. View <a href="http://stackoverflow.com/questions/tagged/glimpse">already answered</a> questions for even faster support.</p>
         </div>
     </div>
     
-    @if (Model.Committers.Count > 0) {
-        <div class="listing-data">
-            <h3>Commiters</h3>
-            <div class="row listing-data-comitters">
-                @foreach (var commiter in Model.Committers) {
-                    <div class="col-xs-4 col-md-3 text-center">
-                        <a href="http://github.com/@commiter.GithubUsername" class="thumbnail">
-                            <img src="@commiter.AvatarUrl" alt="@commiter.Name">
-                        </a>
-                        <strong class="trim">@commiter.Name</strong>
-                        @if (commiter.Contributions > 0) {
-                            <div class="text-muted small">@commiter.Contributions.ToString("N0", CultureInfo.InvariantCulture) commits</div>
-                        }
-                        <a href="https://twitter.com/@commiter.TwitterUsername">@@@commiter.TwitterUsername</a>
-                    </div>
-                }
-            </div>
+    <div class="row">
+        <h2 id="stay-up-to-date">Stay Up to Date</h2>
+        <div class="col-sm-4">
+            <h3>Blog</h3>
+            <p>Follow along with the <a href="http://blog.getGlimpse.com">Glimpse blog</a> for important release notices, feature announcements and news.</p>
         </div>
-    }
+        <div class="col-sm-8">
+            <h3>Commiters on Twitter</h3>
+            @if (Model.Committers.Count > 0)
+            {
+                <div class="listing-data">
+                    <div class="row listing-data-comitters">
+                        @foreach (var commiter in Model.Committers)
+                        {
+                            <div class="col-xs-4 col-md-3 text-center">
+                                <a href="http://github.com/@commiter.GithubUsername" class="thumbnail">
+                                    <img src="@commiter.AvatarUrl" alt="@commiter.Name">
+                                </a>
+                                <strong class="trim">@commiter.Name</strong>
+                                @if (commiter.Contributions > 0)
+                                {
+                                    <div class="text-muted small">@commiter.Contributions.ToString("N0", CultureInfo.InvariantCulture) commits</div>
+                                }
+                                <a href="https://twitter.com/@commiter.TwitterUsername">@@@commiter.TwitterUsername</a>
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
 
     <h2>Getting Involved</h2>
     <p class="text-center">Would like to get involved? It turns out there are plenty of things that you can do to help! <br class="hidden-xs" />Open source projects benefit from the contributions of the developer community.</p>
@@ -60,7 +77,7 @@
         </div>
         <div class="col-sm-6">
             <h3>Code</h3>
-            <p>For those looking to get more deeply involved, our issue list is again the home of what you are looking for. Look for the Jump In issues that a bigger features or <a href="#getting-in-contact">ask us</a> where we need help.</p>
+            <p>For those looking to get more deeply involved, our issue list is again the home of what you are looking for. Look for the Jump In issues that a bigger features or <a href="#reach-out">ask us</a> where we need help.</p>
             <ul>
                 <li><a href="https://github.com/Glimpse/Glimpse/blob/master/contributing.md">Learn more about contributing to Glimpse core</a></li>
             </ul>
