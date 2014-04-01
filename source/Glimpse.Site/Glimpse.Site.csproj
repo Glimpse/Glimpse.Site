@@ -278,6 +278,7 @@
     <Content Include="Content\committers.json" />
     <Content Include="Content\packages.json" />
     <Content Include="Content\nuget.json" />
+    <Content Include="Areas\Version\Views\_ViewStart.cshtml" />
     <None Include="Properties\PublishProfiles\glimpsesitenew.pubxml" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -285,9 +286,11 @@
     <Content Include="Scripts\jquery-2.1.0.js" />
     <Content Include="Scripts\jquery-2.1.0.min.js" />
     <Content Include="Scripts\site.js" />
+    <Content Include="Scripts\site.version.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="sprite.png" />
     <Content Include="secrets.config" />
+    <Content Include="Scripts\json.format.js" />
     <None Include="T4MVC.tt.settings.xml" />
     <Content Include="Views\Docs\Wiki\images\ajaxTab.png" />
     <Content Include="Views\Docs\Wiki\images\channel9.png" />

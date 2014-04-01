@@ -11,8 +11,11 @@ namespace Glimpse.Site
             bundles.Add(new ScriptBundle("~/bundles/sitejs").Include(
                       "~/Scripts/jquery-{version}.js",
                       "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js",
                       "~/Scripts/site.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/versionjs").Include(
+                      "~/Scripts/json.format.js",
+                      "~/Scripts/site.version.js"));
              
             bundles.Add(new StyleBundle("~/content/sitecss").Include(
                       "~/Content/bootstrap.css",
