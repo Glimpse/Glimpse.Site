@@ -6,105 +6,116 @@
 
 <div class="jumbotron">
     <div class="container">
+        <ul>
+            <li><mark>Let's add icons for the services we use: GitHub for Issue List, Mailing List & StackOverflow</mark></li>
+            <li><mark>The links to package authors seem broken if there is a space in their name</mark></li>
+            <li><mark>Might be good to add the Twitter bird in front of Twitter handles so people know what they are without needing to click</mark></li>
+            <li><mark>Random thought: let's set up play.getGlimpse.com! No reason we should have the janky URL we do now.</mark></li>
+        </ul>
         <h1>Community</h1>
-        <p>Glimpse wouldn't be what it is today without the love and support of some awesome people from around the world. Thanks to everyone who has been involved in making this possible.</p>
+        <p>Glimpse wouldn't be what it is without the love and support of some awesome people from around the world. Thanks to everyone who has been involved in making this possible.</p>
     </div>
 </div>
 
 <div class="container content content-normal">
-    <h2 id="getting-in-contact">Getting in Contact</h2>
+    <h2 id="reach-out">Reach Out</h2>
     <div class="row">
         <div class="col-sm-4">
-            <h3>Issues List</h3>
-            <p>Think you might have found a bug or something acting weird, our <a href="https://github.com/glimpse/glimpse/issues">github issues list</a> is where you want to go.</p>
+            <h3>Issue List</h3>
+            <p>Have you found a bug or something misbehaving? Tell us about it on our <a href="https://github.com/glimpse/glimpse/issues">GitHub issue list</a>.</p>
         </div>
         <div class="col-sm-4">
             <h3>Mailing List</h3>
-            <p>Any discussion for the community related to working on or extentending Glimpse can be sent to the mailing list. Bug reports or general usage should be directed to one of the above options.</p>
+            <p>Got questions about how to extend or work on Glimpse, or just want to discuss a new feature idea? Shoot it through to the <a href="">developers mailing list</a>.<mark>&lt;&mdash; add groups.google.com link</mark></p>
         </div>
         <div class="col-sm-4">
             <h3>Stack Overflow</h3>
-            <p>Got general questions? Anything related to using, configuring or extending Glimpse can be sent through to here. View <a href="http://stackoverflow.com/questions/tagged/glimpse">already answered</a> Stack Overflow questions.</p>
+            <p>Got general questions or just need a little support? Anything related to using, configuring or extending Glimpse can be asked at <a href="http://stackoverflow.com">StackOverflow</a>. View <a href="http://stackoverflow.com/questions/tagged/glimpse">already answered</a> questions for even faster support.</p>
         </div>
     </div>
-    
-    @if (Model.Committers.Count > 0) {
-        <div class="listing-data">
-            <h3>Commiters</h3>
-            <div class="row listing-data-comitters">
-                @foreach (var commiter in Model.Committers) {
-                    <div class="col-xs-4 col-md-3 text-center">
-                        <a href="http://github.com/@commiter.GithubUsername" class="thumbnail">
-                            <img src="@commiter.AvatarUrl" alt="@commiter.Name">
-                        </a>
-                        <strong class="trim">@commiter.Name</strong>
-                        @if (commiter.Contributions > 0) {
-                            <div class="text-muted small">@commiter.Contributions.ToString("N0", CultureInfo.InvariantCulture) commits</div>
-                        }
-                        <a href="https://twitter.com/@commiter.TwitterUsername">@@@commiter.TwitterUsername</a>
-                    </div>
-                }
-            </div>
-        </div>
-    }
 
-    <h2>Getting Involved</h2>
-    <p class="text-center">Would like to get involved? It turns out there are plenty of things that you can do to help! <br class="hidden-xs" />Open source projects benefit from the contributions of the developer community.</p>
+    <div class="row">
+        <h2 id="stay-up-to-date">Stay Up to Date</h2>
+        <div class="col-sm-4">
+            <h3>Blog</h3>
+            <p>Follow along with the <a href="http://blog.getGlimpse.com">Glimpse blog</a> for important release notices, feature announcements and news.</p>
+        </div>
+        <div class="col-sm-8">
+            <h3>Commiters on Twitter</h3>
+            @if (Model.Committers.Count > 0)
+            {
+                <div class="listing-data">
+                    <div class="row listing-data-comitters">
+                        @foreach (var commiter in Model.Committers)
+                        {
+                            <div class="col-xs-4 col-md-3 text-center">
+                                <a href="http://github.com/@commiter.GithubUsername" class="thumbnail">
+                                    <img src="@commiter.AvatarUrl" alt="@commiter.Name">
+                                </a>
+                                <strong class="trim">@commiter.Name</strong>
+                                @if (commiter.Contributions > 0)
+                                {
+                                    <div class="text-muted small">@commiter.Contributions.ToString("N0", CultureInfo.InvariantCulture) commits</div>
+                                }
+                                <a href="https://twitter.com/@commiter.TwitterUsername">@@@commiter.TwitterUsername</a>
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+    <h2>Get Involved</h2>
+    <p class="text-center">Open source projects thrive on contributions from the developer community. <br class="hidden-xs" /> Would like to get involved? There is plenty that you can do to help! Here's a few:</p>
     <div class="row">
         <div class="col-sm-6">
             <h3>Issues</h3>
-            <p>There are issues that are good for first-timers ringfenced and tagged <a href="https://github.com/Glimpse/Glimpse/issues?labels=Jump+In&milestone=&page=1&sort=updated&state=open">Jump In</a> in GitHub. If you like one, feel free to let us know you want to take it on and if you need any help doing so.</p>
+            <p>Glimpse maintains several issues that are good for first-timers <a href="https://github.com/Glimpse/Glimpse/issues?labels=Jump+In&milestone=&page=1&sort=updated&state=open">tagged as Jump In on GitHub</a>. If one peaks your intrest, feel free to work on it and let us know if you need any help doing so.</p>
             <ul>
-                <li><a href="http://nikcodes.com/2013/05/10/new-contributor-jump-in/">Learn more about how "Jump In" works</a></li>
+                <li><a href="http://nikcodes.com/2013/05/10/new-contributor-jump-in/">Learn more about how "Jump In" issues work</a></li>
             </ul>
         </div>
         <div class="col-sm-6">
-            <h3>Code</h3>
-            <p>For those looking to get more deeply involved, our issue list is again the home of what you are looking for. Look for the Jump In issues that a bigger features or <a href="#getting-in-contact">ask us</a> where we need help.</p>
+            <h3>New Features</h3>
+            <p>For those looking to get more deeply involved, <a href="#reach-out">reach out</a> to find out about our current efforts and how you can help.</p>
             <ul>
                 <li><a href="https://github.com/Glimpse/Glimpse/blob/master/contributing.md">Learn more about contributing to Glimpse core</a></li>
             </ul>
         </div>
     </div>
     <div class="row" style="margin-top: 30px; margin-bottom: 30px; ">
-        <div class="col-sm-12">
-            <h3>Documentation</h3>
-        </div>
-        <div class="col-sm-6">
-            <p>Documentation is the one thing that helps separate good projects from the best projects. If you’re a first time OSS contributor or even a veteran, documentation is a great stepping stone to learn the process.</p>
-        </div>
-        <div class="col-sm-6">
-            <p>To make it as simple as possible, we're using Glimpse’s <a href="https://github.com/Glimpse/Glimpse/wiki">GitHub Wiki</a>, as the entry point for documentation. GitHub Wikis provide us with an online WYSIWYG interface for adding and editing documentation, completely in browser, using markdown syntax.</p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-6">
-            <h3>Extensions</h3>
-            <p>If you'd rather start off on something more self-contained, why not write an extension for your favorite server- or client-side technology? There are plenty of Extensions <a href="@Url.Action(MVC.Packages.Index())">out there</a>, most of which are fully open source.</p>
-            <ul>
-                <li><a>See about getting started on your first plugin</a></li>
-            </ul>
-        </div>
         <div class="col-sm-6">
             <h3>Share Glimpse</h3>
-            <p>If you love Glimpse, consider telling others about it. Tell your story at a company tech talk, present at your local user group, or submit a talk proposal about how you are using Glimpse or extensions you have written.</p>
+            <p>If you love Glimpse, tell others about it! Present Glimpse at a company tech talk, your local user group or submit a proposal to a conference about how you are using Glimpse or any extensions you may have written.</p>
             <ul>
-                <li><a>Need inspiration? See some of our talks that we have given.</a></li>
+                <li><a>Need inspiration? Watch some of the talks that we have given</a></li>
             </ul>
+            
+            <h3>Create an Extension</h3>
+            <p>Get the best out of Glimpse by writing your own extention to expose diagnostic data that is meaningful for your applications. Creating extensions is easy, check <a href="/Help/Extensibility">the docs</a> or refence an <a href="@Url.Action(MVC.Packages.Index())">open source extension</a> to get started.</p>
+        </div>
+        <div class="col-sm-6">
+            <h3>Documentation</h3>
+            <p>Documentation is a key differentiator between good projects and <em>great</em> ones. Whether you’re a first time OSS contributor or a veteran, documentation is a great stepping stone to learn our contribution process.</p>
+
+            <p>Contributing to Glimpse documentation is dead simple. To make it so easy, we're using Glimpse’s <a href="https://github.com/Glimpse/Glimpse/wiki">GitHub Wiki</a> as the entry point for documentation. GitHub Wikis provide an online <abbr title="What You See Is What You Get">WYSIWYG</abbr> interface for adding and editing the docs, completely in browser, using <a href="https://daringfireball.net/projects/markdown/">Markdown</a>.</p>
         </div>
     </div>
-    <p class="text-center" style="padding: 15px; margin: 30px 0 50px;"><strong>No matter</strong> what your interest, please feel free to <strong>reach out</strong> to us on the <a href="http://groups.google.com/group/getglimpse-dev">mailing list</a> or via twitter (<a href="https://twitter.com/anthony_vdh">@@anthony_vdh</a> &amp; <a href="https://twitter.com/nikmd23">@@nikmd23</a>).</p>
 
-    @if (Model.Contributors.Count > 0 || Model.Authors.Count > 0) {
+    @if (Model.Contributors.Count > 0 || Model.Authors.Count > 0)
+    {
         <h2>Meet the Team</h2>
-        <p>As you might have guessed it has taken quite a lot of people to make Glimpse what it is today. Here is everyone who has made Glimpse possible.</p>
+        <p>It takes a village to raise an open source project. Here's everyone who has helped to make Glimpse the best it can be:</p>
     }
-    
+
     <div class="listing-data">
-        @if (Model.Contributors.Count > 0) {
+        @if (Model.Contributors.Count > 0)
+        {
             <h3>Contributors</h3>
             <div class="row listing-data-cobtributors">
-                @foreach (var contributor in Model.Contributors) {
+                @foreach (var contributor in Model.Contributors)
+                {
                     <div class="col-xs-3 col-md-2 text-center">
                         <a href="http://github.com/@contributor.Login" class="thumbnail">
                             <img src="@contributor.Avatar_Url" alt="@contributor.Login">
@@ -116,10 +127,12 @@
             </div>
         }
 
-        @if (Model.Authors.Count > 0) {
+        @if (Model.Authors.Count > 0)
+        {
             <h3>Extension Authors</h3>
             <div class="row listing-data-authors">
-                @foreach (var author in Model.Authors) {
+                @foreach (var author in Model.Authors)
+                {
                     <div class="col-xs-3 col-md-2 text-center">
                         <a href="http://www.nuget.org/profiles/@author.Key">
                             <strong class="trim">@author.Key</strong>
