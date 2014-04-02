@@ -14,37 +14,50 @@
     <div class="row">
         <div class="col-xs-9">
             <h2>Overview</h2>
-            <p>Getting Glimpse up and running couldn't be easier:</p>
+            <p>Getting Glimpse up and running couldn't be easier:</p> 
             <div class="row" style="margin-bottom: 20px">
-                <div class="col-xs-4">
-                    <span class="h1">1.</span>
-                    <span class="h3">Download</span>
-                    <p>Use Visual Studio to get your desired packages</p>
-                    <div class="getting-started getting-started-dowload"></div>
+                <div class="col-md-4">
+                    <div class="thumbnail thumbnail-noborder">
+                        <div class="caption">
+                            <span class="h1">1.</span>
+                            <span class="h3">Download</span>
+                            <p>Use Visual Studio to get your desired packages</p>
+                        </div>
+                        <div class="getting-started getting-started-dowload img"></div>
+                    </div>
                 </div>
-                <div class="col-xs-4">
-                    <span class="h1">2.</span>
-                    <span class="h3">Enable</span>
-                    <p>Go to <code>/glimpse.axd</code> and enable Glimpse to run</p>
-                    <div class="getting-started getting-started-enable"></div>
+                <div class="col-md-4">
+                    <div class="thumbnail thumbnail-noborder">
+                        <div class="caption">
+                            <span class="h1">2.</span>
+                            <span class="h3">Enable</span>
+                            <p>Go to <code>/glimpse.axd</code> and enable Glimpse to run</p>
+                        </div>
+                        <div class="getting-started getting-started-enable img"></div>
+                    </div>
                 </div>
-                <div class="col-xs-4">
-                    <span class="h1">3.</span>
-                    <span class="h3">Explore</span>
-                    <p>Navigate around your site and start using Glimpse</p>
-                    <div class="getting-started getting-started-explore"></div>
+                <div class="col-md-4">
+                    <div class="thumbnail thumbnail-noborder">
+                        <div class="caption">
+                            <span class="h1">3.</span>
+                            <span class="h3">Explore</span>
+                            <p>Navigate around your site and start using Glimpse</p>
+                        </div>
+                        <div class="getting-started getting-started-explore img"></div>
+                    </div>
                 </div>
             </div>
+
             <h2>Download</h2>
             <div class="row" style="margin-bottom: 20px">
-                <div class="col-xs-8">
+                <div class="col-md-8">
                     <h3>Visual Studio &amp; Nuget</h3>
                     <p>The best way to download and install Glimpse is via Nuget. The quickest way to get up and running is by <a href="#packages">choosing from the below packages</a> and installing them via Visual Studio or Command Line.</p>
                     <ul>
                         <li><a href="/Docs/Installation">Step-by-step install guide for installing Glimpse</a></li>
                     </ul>
                 </div>
-                <div class="col-xs-4">
+                <div class="col-md-4">
                     <h3>Source Code</h3>
                     <p>Want to download the latest source for Glimpse?</p>
                     <a href="https://github.com/Glimpse/Glimpse/releases/latest" class="btn btn-default btn-lg">Latest source on Github</a>
@@ -105,13 +118,22 @@
 
 
             <h2>First run</h2>
-            <p>Glimpse is designed to be secure by default. This means that by default, you can <strong>only</strong> access Glimpse from <em>localhost</em>.</p>
+            <p>Glimpse is designed to be secure by default. This means that unless you tell Glimpse otherwise, you can <strong>only</strong> access Glimpse from <em>localhost</em>.</p>
             <blockquote><strong>Note</strong>, this means that you wont be able to access Glimpse remotely whilst policy is in place.</blockquote>
             <p>Additionally, Glimpse will <strong>only</strong> listen to requests that you indicate you want targeted. You indicate this by setting a <em>specific</em> cookie. This can easily be set in the <code>/glimpse.axd</code></p>
-            <h3>Glimpse.axd</h3>
-
-            <div class="text-right"><em class="text-right">More details can be found <a href="/Docs/First-Run">here</a></em></div>
-
+            <h3>Visit Glimpse.axd</h3>
+            <p>By installed Glimpse, this page is made available as an extensions your site. It becomes the point through which you can see how glimpse is setup and some helper buttons to work with the policies that are shipped out of the box.</p>
+            <div style="text-align: center; margin: 0 15% 20px">
+                <img src="~/Content/screenshot-glimpse-axd.jpg" class="img-responsive" />
+            </div>
+            <p>By triggering the "Turn Glimpse On" button, the page will confirm that Glimpse is now listening to requests.</p>
+            <h3>Returning Home</h3>
+            <p>Once "Turned on" you will now see glimpse appear in the botton right hand corder of your screen.</p>
+            <img src="~/Content/screenshot-hud-bar.jpg" class="img-responsive" style="margin: 10px 0 20px" />
+            <p>From this point, you can mouse over the various sections or open Glimpse up fully by clicking on the Glimpse icon.</p>
+            <ul>
+                <li><a href="/Docs/First-Run">More details on how to get Glimpse running</a></li>
+            </ul>
 
             <h2>Using Glimpse</h2>
 

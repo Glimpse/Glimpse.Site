@@ -9,6 +9,13 @@ a:not([href]) {
     color: crimson;
     cursor: pointer;
 }
+.thumbnail-noborder {
+    border-width: 0;
+}
+.thumbnail>.img {
+    margin-left: auto;
+    margin-right: auto;
+}
 .body_container {
     background-color: white; 
     padding-bottom: 200px;
@@ -427,8 +434,7 @@ a:not([href]) {
 
 .getting-started {
     width: 200px;
-    height: 150px;
-    border: 1px solid #101010;
+    height: 150px; 
     background-image: url(screenshot-getting-started.jpg);
     background-repeat: no-repeat;
     -webkit-background-size: 200px; 
