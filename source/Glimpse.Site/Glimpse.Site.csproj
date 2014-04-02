@@ -367,8 +367,6 @@
     <Content Include="Views\Docs\Wiki\Content\First-Run.md" />
     <Content Include="Views\Docs\Wiki\Content\Getting-Started.md" />
     <Content Include="Views\Docs\Wiki\Content\History-Tab.md" />
-    <Content Include="Views\Docs\Wiki\Content\Installation.md" />
-    <Content Include="Views\Docs\Wiki\Content\Manual-install.md" />
     <Content Include="Views\Docs\Wiki\Content\Metadata-Tab.md" />
     <Content Include="Views\Docs\Wiki\Content\Model-Binding-Tab.md" />
     <Content Include="Views\Docs\Wiki\Content\More-information.md" />
@@ -407,6 +405,8 @@
     <Content Include="Views\Status\Index.cshtml" />
     <Content Include="Views\Status\_Issues.cshtml" />
     <Content Include="Views\Docs\Details.cshtml" />
+    <Content Include="Views\Docs\Wiki\Content\Enabling-Glimpse.md" />
+    <Content Include="Views\Docs\Wiki\Content\Installing.md" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Glimpse.Blog\Glimpse.Blog.csproj">
