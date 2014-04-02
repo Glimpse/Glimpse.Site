@@ -12,35 +12,125 @@
 
 <div class="container content content-normal">
     <div class="row">
-        <div class="col-xs-9"> 
-            <h2>Installation</h2>
+        <div class="col-xs-9">
+            <h2>Overview</h2>
+            <p>Getting Glimpse up and running couldn't be easier:</p>
+            <div class="row" style="margin-bottom: 20px">
+                <div class="col-xs-4">
+                    <span class="h1">1.</span>
+                    <span class="h3">Download</span>
+                    <p>Use Visual Studio to get your desired packages</p>
+                    <div class="getting-started getting-started-dowload"></div>
+                </div>
+                <div class="col-xs-4">
+                    <span class="h1">2.</span>
+                    <span class="h3">Enable</span>
+                    <p>Go to <code>/glimpse.axd</code> and enable Glimpse to run</p>
+                    <div class="getting-started getting-started-enable"></div>
+                </div>
+                <div class="col-xs-4">
+                    <span class="h1">3.</span>
+                    <span class="h3">Explore</span>
+                    <p>Navigate around your site and start using Glimpse</p>
+                    <div class="getting-started getting-started-explore"></div>
+                </div>
+            </div>
+            <h2>Download</h2>
+            <div class="row" style="margin-bottom: 20px">
+                <div class="col-xs-8">
+                    <h3>Visual Studio &amp; Nuget</h3>
+                    <p>The best way to download and install Glimpse is via Nuget. The quickest way to get up and running is by <a href="#packages">choosing from the below packages</a> and installing them via Visual Studio or Command Line.</p>
+                    <ul>
+                        <li><a href="/Docs/Installation">Step-by-step install guide for installing Glimpse</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-4">
+                    <h3>Source Code</h3>
+                    <p>Want to download the latest source for Glimpse?</p>
+                    <a href="https://github.com/Glimpse/Glimpse/releases/latest" class="btn btn-default btn-lg">Latest source on Github</a>
+                </div>
+            </div>
+            <p id="packages">Once you've installed Glimpse, for your first run, you need to <a href="#first-run">enable</a> it on both the server and the client.</p>
 
-            <p>More details can be found <a href="/Docs/Installation">here</a></p>
- 
+            <h2>Packages</h2>
+            <p>Glimpse has many different extensions and plugins. Together with the community, there are some truely amazing extensions and extras you can get your hands on.</p>
+            <h3>Choose which packages to install</h3>
+            <p>Out of the box here is where you will probably want to get started:</p>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td width="20%"></td>
+                        <td width="70%" class="text-center"><h4><strong>Which web framework you using?</strong></h4></td>
+                        <td width="10%"></td>
+                    </tr>
+                    <tr>
+                        <td><a href="http://nuget.org/packages/Glimpse.WebForms">WebForms</a></td>
+                        <td><div class="code">PM&gt; Install-Package Glimpse.WebForms</div></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td class="text-center">or</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><a href="http://nuget.org/packages/Glimpse.mvc5">MVC</a></td>
+                        <td><div class="code">PM&gt; Install-Package Glimpse.MVC5</div></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td class="text-center"><h4 style="margin-top: 30px;"><strong>What about Data Access?</strong></h4></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><a href="http://nuget.org/packages/Glimpse.Ado">Raw ADO</a></td>
+                        <td><div class="code">PM&gt; Install-Package Glimpse.ADO</div></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td class="text-center">or</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><a href="http://nuget.org/packages/Glimpse.ef6">Entity Framework</a></td>
+                        <td><div class="code">PM&gt; Install-Package Glimpse.EF5</div></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="text-center" style="margin: 20px 0 10px 0; "><small>Note that if you are using a <em>different version</em> of MVC/EF, use that instead – e.g. MVC2, MVC3, MVC4, EF43, or EF6</small></p>
+            <p class="text-center" style="margin-bottom: 30px" id="first-run"><strong>...and many more can be found in the <a href="http://getglimpse.com/Packages">Glimpse Extension Gallery</a></strong></p>
+
 
             <h2>First run</h2>
+            <p>Glimpse is designed to be secure by default. This means that by default, you can <strong>only</strong> access Glimpse from <em>localhost</em>.</p>
+            <blockquote><strong>Note</strong>, this means that you wont be able to access Glimpse remotely whilst policy is in place.</blockquote>
+            <p>Additionally, Glimpse will <strong>only</strong> listen to requests that you indicate you want targeted. You indicate this by setting a <em>specific</em> cookie. This can easily be set in the <code>/glimpse.axd</code></p>
+            <h3>Glimpse.axd</h3>
 
-            <p>More details can be found <a href="/Docs/First-Run">here</a></p>
- 
+            <div class="text-right"><em class="text-right">More details can be found <a href="/Docs/First-Run">here</a></em></div>
+
 
             <h2>Using Glimpse</h2>
 
-            <p>More details can be found <a href="/Docs/Using-Glimpse">here</a></p>
- 
+            <div class="text-right"><em class="text-right">More details can be found <a href="/Docs/Using-Glimpse">here</a></em></div>
+
 
             <h2>Configuration</h2>
 
-            <p>More details can be found <a href="/Docs/Configuration">here</a></p>
- 
+            <div class="text-right"><em class="text-right">More details can be found <a href="/Docs/Configuration">here</a></em></div>
+
 
             <h2>Additional Help</h2>
 
-            <p>More details can be found <a href="/Docs/Additional-Help">here</a></p>
- 
+            <div class="text-right"><em class="text-right">More details can be found <a href="/Docs/Additional-Help">here</a></em></div>
+
 
             <h2>More Information</h2>
 
-            <p>More details can be found <a href="/Docs/More-Information">here</a></p>
+            <div class="text-right"><em class="text-right">More details can be found <a href="/Docs/More-Information">here</a></em></div>
         </div>
         <div class="col-xs-3">
             <div style="margin: 20px 0 0; background-color: #F0F7FD; padding: 20px 20px 10px 5px;">@Html.RenderMarkdown(Model.SideBarFile)</div>

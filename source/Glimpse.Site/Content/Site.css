@@ -69,6 +69,19 @@ a:not([href]) {
     top:0; 
     position: absolute;
 }
+.code {
+    margin: 0 auto;
+    background: #333;
+    padding: 10px;
+    color: #fff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 2px 3px 0 #000 inset;
+    font-family: courier new,serif;
+}
 
 .arrow, .sicon {
     background-image: url("./pager-sprite.png");
@@ -410,6 +423,24 @@ a:not([href]) {
 
 .listing-data-community .col-xs-4 {
     height: 160px
+}
+
+.getting-started {
+    width: 200px;
+    height: 150px;
+    border: 1px solid #101010;
+    background-image: url(screenshot-getting-started.jpg);
+    background-repeat: no-repeat;
+    -webkit-background-size: 200px; 
+    -moz-background-size: 200px; 
+    -o-background-size: 200px; 
+    background-size: 200px;
+}
+.getting-started-enable {
+    background-position: 0 -150px
+}
+.getting-started-explore {
+    background-position: 0 -300px
 }
 
 .dl-pull-requests dt {
