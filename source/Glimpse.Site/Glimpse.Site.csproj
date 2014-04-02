@@ -286,7 +286,6 @@
     <Content Include="Scripts\site.version.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="sprite.png" />
-    <Content Include="secrets.config" />
     <Content Include="Scripts\json.format.js" />
     <None Include="T4MVC.tt.settings.xml" />
     <Content Include="Views\Docs\Wiki\images\ajaxTab.png" />
