@@ -63,6 +63,12 @@ namespace Glimpse.Site.Controllers
         {
             return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Index);
         }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult Details()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Details);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public DocsController Actions { get { return MVC.Docs; } }
@@ -80,12 +86,14 @@ namespace Glimpse.Site.Controllers
         public class ActionNamesClass
         {
             public readonly string Index = "Index";
+            public readonly string Details = "Details";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
             public const string Index = "Index";
+            public const string Details = "Details";
         }
 
 
@@ -94,6 +102,14 @@ namespace Glimpse.Site.Controllers
         public ActionParamsClass_Index IndexParams { get { return s_params_Index; } }
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionParamsClass_Index
+        {
+            public readonly string controller = "controller";
+        }
+        static readonly ActionParamsClass_Details s_params_Details = new ActionParamsClass_Details();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_Details DetailsParams { get { return s_params_Details; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_Details
         {
             public readonly string mdSlug = "mdSlug";
             public readonly string controller = "controller";
@@ -108,8 +124,10 @@ namespace Glimpse.Site.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
+                public readonly string Details = "Details";
                 public readonly string Index = "Index";
             }
+            public readonly string Details = "~/Views/Docs/Details.cshtml";
             public readonly string Index = "~/Views/Docs/Index.cshtml";
             static readonly _WikiClass s_Wiki = new _WikiClass();
             public _WikiClass Wiki { get { return s_Wiki; } }
@@ -338,15 +356,27 @@ namespace Glimpse.Site.Controllers
         public T4MVC_DocsController() : base(Dummy.Instance) { }
 
         [NonAction]
-        partial void IndexOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, string mdSlug, string controller);
+        partial void IndexOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, string controller);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult Index(string mdSlug, string controller)
+        public override System.Web.Mvc.ActionResult Index(string controller)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Index);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "controller", controller);
+            IndexOverride(callInfo, controller);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void DetailsOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, string mdSlug, string controller);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult Details(string mdSlug, string controller)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Details);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "mdSlug", mdSlug);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "controller", controller);
-            IndexOverride(callInfo, mdSlug, controller);
+            DetailsOverride(callInfo, mdSlug, controller);
             return callInfo;
         }
 

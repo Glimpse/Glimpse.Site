@@ -32,7 +32,6 @@ public static partial class MVC
     public static Glimpse.Site.Controllers.CommunityController Community = new Glimpse.Site.Controllers.T4MVC_CommunityController();
     public static Glimpse.Site.Controllers.DocsController Docs = new Glimpse.Site.Controllers.T4MVC_DocsController();
     public static Glimpse.Site.Controllers.ErrorController Error = new Glimpse.Site.Controllers.T4MVC_ErrorController();
-    public static Glimpse.Site.Controllers.GettingStartedController GettingStarted = new Glimpse.Site.Controllers.T4MVC_GettingStartedController();
     public static Glimpse.Site.Controllers.HomeController Home = new Glimpse.Site.Controllers.T4MVC_HomeController();
     public static Glimpse.Site.Controllers.InstallController Install = new Glimpse.Site.Controllers.T4MVC_InstallController();
     public static Glimpse.Site.Controllers.PackagesController Packages = new Glimpse.Site.Controllers.T4MVC_PackagesController();
@@ -100,7 +99,9 @@ namespace Links
         public static readonly string jquery_2_1_0_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery-2.1.0.min.js") ? Url("jquery-2.1.0.min.js") : Url("jquery-2.1.0.js");
         public static readonly string jquery_2_1_0_min_js = Url("jquery-2.1.0.min.js");
         public static readonly string jquery_2_1_0_min_map = Url("jquery-2.1.0.min.map");
+        public static readonly string json_format_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/json.format.min.js") ? Url("json.format.min.js") : Url("json.format.js");
         public static readonly string site_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/site.min.js") ? Url("site.min.js") : Url("site.js");
+        public static readonly string site_version_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/site.version.min.js") ? Url("site.version.min.js") : Url("site.version.js");
     }
 
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]

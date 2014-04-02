@@ -9,12 +9,17 @@ namespace Glimpse.Site
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-
-
+             
             routes.MapRoute(
                 name: "Documentation",
+                url: "Docs/",
+                defaults: new { controller = "Docs", action = "Index" }
+            );
+
+            routes.MapRoute(
+                name: "DocumentationDetails",
                 url: "Docs/{mdSlug}",
-                defaults: new { controller = "Docs", action = "Index", mdSlug = "" }
+                defaults: new { controller = "Docs", action = "Details", mdSlug = "" }
             );
 
             routes.MapRoute(
