@@ -89,6 +89,7 @@ a:not([href]) {
     box-shadow: 0 2px 3px 0 #000 inset;
     font-family: courier new,serif;
 }
+h4 { font-weight: bold; }
 
 .arrow, .sicon {
     background-image: url("./pager-sprite.png");
@@ -114,6 +115,7 @@ a:not([href]) {
     height: 26px;
     background-position:-239px -145px;
 }
+
 .sicon {
     height: 20px;
     width: 24px;
@@ -161,6 +163,7 @@ a:not([href]) {
 .navbar-install-menu a {
     color: white !important;
 }
+
 
 .header {
     background: #323d42;
@@ -381,6 +384,7 @@ a:not([href]) {
 .community_nik_label .arrow { 
     left: -12px;
 }
+
  
 .does-container-items .media, .is-container-items .media {
     margin-top: 30px;
@@ -400,26 +404,7 @@ a:not([href]) {
     font-size: 45px;
     margin-right: 30px;
 }
-.glyphicon-lock:before {
-  content: "\e033";
-}
-.screenshot-preview { 
-    width: 150px;
-    height: 150px;
-    margin-right: 30px !important;
-    border: 1px solid #101010;
-    background-repeat: no-repeat;
-    -webkit-background-size: 300px; 
-    -moz-background-size: 300px; 
-    -o-background-size: 300px; 
-    background-size: 300px;
-    -ms-border-radius: 3px;
-    border-radius: 3px;
-}
-
-.screenshot-preview-does {
-    background-image: url(screenshot-preview.gif);
-}
+ 
 
 .listing-data .row > div {
     margin-bottom: 25px;
@@ -437,6 +422,22 @@ a:not([href]) {
 
 
 
+.screenshot-preview { 
+    width: 150px;
+    height: 150px;
+    margin-right: 30px !important;
+    border: 1px solid #101010;
+    background-repeat: no-repeat;
+    -webkit-background-size: 300px; 
+    -moz-background-size: 300px; 
+    -o-background-size: 300px; 
+    background-size: 300px;
+    -ms-border-radius: 3px;
+    border-radius: 3px;
+} 
+.screenshot-preview-does {
+    background-image: url(screenshot-preview.gif);
+}
 .getting-started {
     width: 200px;
     height: 150px; 
