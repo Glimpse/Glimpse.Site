@@ -14,7 +14,7 @@
     <div class="row">
         <div class="col-xs-9">
             <h2>Overview</h2>
-            <p>Getting Glimpse up and running couldn't be easier:</p> 
+            <p>Getting Glimpse up and running couldn't be easier:</p>
             <div class="row" style="margin-bottom: 20px">
                 <div class="col-md-4">
                     <div class="thumbnail thumbnail-noborder">
@@ -63,7 +63,8 @@
                     <a href="https://github.com/Glimpse/Glimpse/releases/latest" class="btn btn-default btn-lg">Latest source on Github</a>
                 </div>
             </div>
-            <p id="packages">Once you've installed Glimpse, for your first run, you need to <a href="#first-run">enable</a> it on both the server and the client.</p>
+            <p>Weather you use Nuget or manually install Glimpse, the DLL's Glimpse needs to run will be referenced by you project and added to your <code>bin</code> folder. <span id="packages"></span>From here, for your first run, all you need to <a href="#enable">enable</a> Glimpse and start using it.</p>
+
 
             <h2>Packages</h2>
             <p>Glimpse has many different extensions and plugins. Together with the community, there are some truely amazing extensions and extras you can get your hands on.</p>
@@ -77,7 +78,7 @@
                         <td width="10%"></td>
                     </tr>
                     <tr>
-                        <td><a href="http://nuget.org/packages/Glimpse.WebForms">WebForms</a></td>
+                        <td class="text-right"><a href="http://nuget.org/packages/Glimpse.WebForms">WebForms</a> &nbsp;</td>
                         <td><div class="code">PM&gt; Install-Package Glimpse.WebForms</div></td>
                         <td></td>
                     </tr>
@@ -87,7 +88,7 @@
                         <td></td>
                     </tr>
                     <tr>
-                        <td><a href="http://nuget.org/packages/Glimpse.mvc5">MVC</a></td>
+                        <td class="text-right"><a href="http://nuget.org/packages/Glimpse.mvc5">MVC</a> &nbsp;</td>
                         <td><div class="code">PM&gt; Install-Package Glimpse.MVC5</div></td>
                         <td></td>
                     </tr>
@@ -97,7 +98,7 @@
                         <td></td>
                     </tr>
                     <tr>
-                        <td><a href="http://nuget.org/packages/Glimpse.Ado">Raw ADO</a></td>
+                        <td class="text-right"><a href="http://nuget.org/packages/Glimpse.Ado">Raw ADO</a> &nbsp;</td>
                         <td><div class="code">PM&gt; Install-Package Glimpse.ADO</div></td>
                         <td></td>
                     </tr>
@@ -107,17 +108,17 @@
                         <td></td>
                     </tr>
                     <tr>
-                        <td><a href="http://nuget.org/packages/Glimpse.ef6">Entity Framework</a></td>
+                        <td class="text-right"><a href="http://nuget.org/packages/Glimpse.ef6">Entity Framework</a> &nbsp;</td>
                         <td><div class="code">PM&gt; Install-Package Glimpse.EF5</div></td>
                         <td></td>
                     </tr>
                 </tbody>
             </table>
             <p class="text-center" style="margin: 20px 0 10px 0; "><small>Note that if you are using a <em>different version</em> of MVC/EF, use that instead – e.g. MVC2, MVC3, MVC4, EF43, or EF6</small></p>
-            <p class="text-center" style="margin-bottom: 30px" id="first-run"><strong>...and many more can be found in the <a href="http://getglimpse.com/Packages">Glimpse Extension Gallery</a></strong></p>
+            <p class="text-center" style="margin-bottom: 30px" id="enable">...and many more can be found in the <a href="http://getglimpse.com/Packages">Glimpse Extension Gallery</a></p>
 
 
-            <h2>First run</h2>
+            <h2>Enable</h2>
             <p>Glimpse is designed to be secure by default. This means that unless you tell Glimpse otherwise, you can <strong>only</strong> access Glimpse from <em>localhost</em>.</p>
             <blockquote><strong>Note</strong>, this means that you wont be able to access Glimpse remotely whilst policy is in place.</blockquote>
             <p>Additionally, Glimpse will <strong>only</strong> listen to requests that you indicate you want targeted. You indicate this by setting a <em>specific</em> cookie. This can easily be set in the <code>/glimpse.axd</code></p>
@@ -136,18 +137,62 @@
             </ul>
 
             <h2>Using Glimpse</h2>
-
-            <div class="text-right"><em class="text-right">More details can be found <a href="/Docs/Using-Glimpse">here</a></em></div>
+            <p>Once you’ve <a href="#first-run">enabled Glimpse</a> on the server and the client, the Glimpse Heads-Up Display appears in the lower right corner of your web application.</p>
+            <div class="row" style="margin-bottom: 20px">
+                <div class="col-md-6">
+                    <h3>Heads-Up Display</h3>
+                    <p>HUD is a way in which Glimpse can show you the most important information, when you need it, without you needing to ask for it, and all right in the bottom of your page.</p>
+                    <p>It brings together information from both the client and server, to provide a complete picture of your request. This is something very few systems can provide, let along in your browser.</p>
+                    <ul>
+                        <li><a>Learn more about using HUD</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h3>Main Panel</h3>
+                    <p>From the HUD, you can dive down into another level of information by clicking on the "G" in the lower right courner. When the Mina Panel opens you will be presented with a series of tabs which offer a range of insights into your application.</p>
+                    <p>These tabs are easily selectable and your selected tab is remembered between redirects. Additional tabs will be added to your setup if and when you add <a href="@Url.Action(MVC.Packages.Index())/">additional packages</a></p>
+                    <ul>
+                        <li><a>See the break down of the main shell</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row" style="margin-bottom: 20px">
+                <div class="col-sm-6 col-md-3">
+                    <span class="h3">Observe</span>
+                    <p>HUD updates its data as you move from page to page</p>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <span class="h3">Detial</span>
+                    <p>Hover over any one of the sections for more details</p>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <span class="h3">Open</span>
+                    <p>Click on the "G" icon on the right to open the Main Panel</p>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <span class="h3">Switch</span>
+                    <p>Select the various tabs you are interested in at any time</p>
+                </div>
+            </div>
 
 
             <h2>Configuration</h2>
+            <p>When Glimpse is installed via Nuget, any configuration details are setup by default. What it does for you is adds a custom section called <code>&lt;glimpse&gt;</code> in your <code>web.config</code> file.</p>
+            <p>Most of the time you wont have to make many chances here, but if you are interested in black listing or removing Tab or various Security policices the Glimpse configuration system makes this easy:</p>
+            <ul>
+                <li><a href="Configuration">See all how you can confirgure the differnt aspects of Glimpse</a></li>
+            </ul>
 
-            <div class="text-right"><em class="text-right">More details can be found <a href="/Docs/Configuration">here</a></em></div>
 
-
-            <h2>Additional Help</h2>
-
-            <div class="text-right"><em class="text-right">More details can be found <a href="/Docs/Additional-Help">here</a></em></div>
+            <h2>Additional Help</h2> 
+            <p>If you need more help, try the following resources:</p> 
+            <ul>
+                <li><strong><a href="https://github.com/glimpse/glimpse/issues">Issue List</a></strong> Found a problem? Report it on the GitHub Issue Tracker.</li>
+                <li><strong><a href="https://groups.google.com/forum/?fromgroups#!forum/getglimpse-dev">Mailing List</a></strong> Creating a plugin or want to keep up with the latest Glimpse developments? Sign up for our Developers List.</li>
+                <li><strong><a href="http://stackoverflow.com/questions/tagged/glimpse">Stack Overflow</a></strong> Have a question? Ask away on StackOverflow, using the <code>glimpse</code> tag.</li>
+                <li><strong><a href="http://blog.getGlimpse.com">Blog</a></strong> Want to keep up on the latest Glimpse news? Check out the blog.</li>
+                <li><strong><a href="troubleshooting">Troubleshooting</a></strong> Having trouble? See if our troubleshooting page can help.</li>
+            </ul> 
 
 
             <h2>More Information</h2>
