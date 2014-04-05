@@ -290,6 +290,13 @@
     <Content Include="sprite.png" />
     <Content Include="Scripts\json.format.js" />
     <None Include="T4MVC.tt.settings.xml" />
+    <Content Include="Views\Docs\Wiki\Content\True\Custom-Tabs.html" />
+    <Content Include="Views\Docs\Wiki\Content\True\Data-Endpoint.html" />
+    <Content Include="Views\Docs\Wiki\Content\True\Extensibility.html" />
+    <Content Include="Views\Docs\Wiki\Content\True\Platform-Basic-Concepts.html" />
+    <Content Include="Views\Docs\Wiki\Content\True\Platform-specification.html" />
+    <Content Include="Views\Docs\Wiki\Content\True\Resource-Endpoints.html" />
+    <Content Include="Views\Docs\Wiki\Content\True\Server-Port.html" />
     <Content Include="Views\Docs\Wiki\images\ajaxTab.png" />
     <Content Include="Views\Docs\Wiki\images\channel9.png" />
     <Content Include="Views\Docs\Wiki\images\closeGlimpse.gif" />
@@ -358,7 +365,7 @@
     <Content Include="Views\Docs\Wiki\Content\Contributing.md" />
     <Content Include="Views\Docs\Wiki\Content\Custom-Runtime-Policy.md" />
     <Content Include="Views\Docs\Wiki\Content\Custom-Tabs.md" />
-    <Content Include="Views\Docs\Wiki\Content\Data-Endpoint.md" />
+    <Content Include="Views\Docs\Wiki\Content\Platform-Data-Specification.md" />
     <Content Include="Views\Docs\Wiki\Content\Debugging-with-SymbolSource.md" />
     <Content Include="Views\Docs\Wiki\Content\Default-Tabs.md" />
     <Content Include="Views\Docs\Wiki\Content\Documentation-Outline.md" />
@@ -366,24 +373,21 @@
     <Content Include="Views\Docs\Wiki\Content\Execution-Tab.md" />
     <Content Include="Views\Docs\Wiki\Content\Extensibility.md" />
     <Content Include="Views\Docs\Wiki\Content\Extensions-Gallery.md" />
-    <Content Include="Views\Docs\Wiki\Content\First-Run.md" />
     <Content Include="Views\Docs\Wiki\Content\Getting-Started.md" />
     <Content Include="Views\Docs\Wiki\Content\History-Tab.md" />
     <Content Include="Views\Docs\Wiki\Content\Metadata-Tab.md" />
     <Content Include="Views\Docs\Wiki\Content\Model-Binding-Tab.md" />
     <Content Include="Views\Docs\Wiki\Content\More-information.md" />
     <Content Include="Views\Docs\Wiki\Content\More-plugin-examples.md" />
-    <Content Include="Views\Docs\Wiki\Content\Platform-specification.md" />
-    <Content Include="Views\Docs\Wiki\Content\Platform-structure.md" />
+    <Content Include="Views\Docs\Wiki\Content\Platform-Concepts.md" />
     <Content Include="Views\Docs\Wiki\Content\Plugin-extensions.md" />
     <Content Include="Views\Docs\Wiki\Content\Replacing-infrastructure.md" />
     <Content Include="Views\Docs\Wiki\Content\Request-Tab.md" />
-    <Content Include="Views\Docs\Wiki\Content\Resource-Endpoints.md" />
+    <Content Include="Views\Docs\Wiki\Content\Platform-Resource-Specification.md" />
     <Content Include="Views\Docs\Wiki\Content\Routes-Tab.md" />
-    <Content Include="Views\Docs\Wiki\Content\Server-Port.md" />
+    <Content Include="Views\Docs\Wiki\Content\Platform-Basic-Port.md" />
     <Content Include="Views\Docs\Wiki\Content\Server-Tab.md" />
     <Content Include="Views\Docs\Wiki\Content\Session-Tab.md" />
-    <Content Include="Views\Docs\Wiki\Content\Specification.md" />
     <Content Include="Views\Docs\Wiki\Content\Sql-tab.md" />
     <Content Include="Views\Docs\Wiki\Content\Timeline-Tab.md" />
     <Content Include="Views\Docs\Wiki\Content\Trace-Tab.md" />
@@ -407,8 +411,8 @@
     <Content Include="Views\Status\Index.cshtml" />
     <Content Include="Views\Status\_Issues.cshtml" />
     <Content Include="Views\Docs\Details.cshtml" />
-    <Content Include="Views\Docs\Wiki\Content\Enabling-Glimpse.md" />
     <Content Include="Views\Docs\Wiki\Content\Installing.md" />
+    <Content Include="Views\Docs\Wiki\Content\Enabling.md" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Glimpse.Blog\Glimpse.Blog.csproj">
