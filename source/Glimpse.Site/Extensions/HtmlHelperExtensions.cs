@@ -11,7 +11,7 @@ namespace Glimpse.Site.Extensions
         private static readonly IDictionary<string, IHtmlString> cache = new Dictionary<string, IHtmlString>();
 
         public static IHtmlString RenderMarkdown(this HtmlHelper htmlHelper, FileInfo mdFile)
-        {
+        { 
             var cacheKey = mdFile.FullName.ToLower();
 
 #if !DEBUG
