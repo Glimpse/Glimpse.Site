@@ -63,6 +63,9 @@ a:not([href]), a[href=''] {
     line-height: 120%;
     font-weight: bold;
 }
+.content-docs h1 {
+    font-size: 55px;
+}
 
 .trim {
     width: 100%; 
