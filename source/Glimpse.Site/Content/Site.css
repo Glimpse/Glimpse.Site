@@ -5,7 +5,7 @@ body {
     padding-bottom: 0;
     background: #323d42;
 }
-a:not([href]) {
+a:not([href]), a[href=''] {
     color: crimson;
     cursor: pointer;
 }
