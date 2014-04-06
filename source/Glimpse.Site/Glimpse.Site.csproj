@@ -290,13 +290,6 @@
     <Content Include="sprite.png" />
     <Content Include="Scripts\json.format.js" />
     <None Include="T4MVC.tt.settings.xml" />
-    <Content Include="Views\Docs\Wiki\Content\True\Custom-Tabs.html" />
-    <Content Include="Views\Docs\Wiki\Content\True\Data-Endpoint.html" />
-    <Content Include="Views\Docs\Wiki\Content\True\Extensibility.html" />
-    <Content Include="Views\Docs\Wiki\Content\True\Platform-Basic-Concepts.html" />
-    <Content Include="Views\Docs\Wiki\Content\True\Platform-specification.html" />
-    <Content Include="Views\Docs\Wiki\Content\True\Resource-Endpoints.html" />
-    <Content Include="Views\Docs\Wiki\Content\True\Server-Port.html" />
     <Content Include="Views\Docs\Wiki\images\ajaxTab.png" />
     <Content Include="Views\Docs\Wiki\images\channel9.png" />
     <Content Include="Views\Docs\Wiki\images\closeGlimpse.gif" />
