@@ -97,6 +97,22 @@ a:not([href]), a[href=''] {
 }
 h4 { font-weight: bold; }
 
+.navbar-side {
+    padding: 20px 0 100px;
+    border-left: 1px solid #eee;
+}
+.navbar-side ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.navbar-side li {
+    padding: 7px 20px;
+}
+.navbar-side .active {
+    background-color: #eee;
+}
+
 .arrow, .sicon {
     background-image: url("./pager-sprite.png");
     background-repeat: no-repeat;
