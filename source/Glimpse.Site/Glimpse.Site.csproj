@@ -358,7 +358,7 @@
     <Content Include="Views\Docs\Wiki\Content\Custom-Tabs.md" />
     <Content Include="Views\Docs\Wiki\Content\Platform-Data-Specification.md" />
     <Content Include="Views\Docs\Wiki\Content\Debugging-with-SymbolSource.md" />
-    <Content Include="Views\Docs\Wiki\Content\Default-Tabs.md" />
+    <Content Include="Views\Docs\Wiki\Content\Tabs.md" />
     <Content Include="Views\Docs\Wiki\Content\Environment-Tab.md" />
     <Content Include="Views\Docs\Wiki\Content\Execution-Tab.md" />
     <Content Include="Views\Docs\Wiki\Content\Extensibility.md" />
