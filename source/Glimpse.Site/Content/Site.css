@@ -66,6 +66,9 @@ a:not([href]), a[href=''] {
 .content-docs h1 {
     font-size: 55px;
 }
+.content-docs img {
+    max-width: 100%;
+}
 
 .trim {
     width: 100%; 
