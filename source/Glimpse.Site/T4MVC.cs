@@ -32,9 +32,9 @@ public static partial class MVC
     public static Glimpse.Site.Controllers.CommunityController Community = new Glimpse.Site.Controllers.T4MVC_CommunityController();
     public static Glimpse.Site.Controllers.DocsController Docs = new Glimpse.Site.Controllers.T4MVC_DocsController();
     public static Glimpse.Site.Controllers.ErrorController Error = new Glimpse.Site.Controllers.T4MVC_ErrorController();
+    public static Glimpse.Site.Controllers.ExtensionsController Extensions = new Glimpse.Site.Controllers.T4MVC_ExtensionsController();
     public static Glimpse.Site.Controllers.HomeController Home = new Glimpse.Site.Controllers.T4MVC_HomeController();
     public static Glimpse.Site.Controllers.InstallController Install = new Glimpse.Site.Controllers.T4MVC_InstallController();
-    public static Glimpse.Site.Controllers.PackagesController Packages = new Glimpse.Site.Controllers.T4MVC_PackagesController();
     public static Glimpse.Site.Controllers.StatusController Status = new Glimpse.Site.Controllers.T4MVC_StatusController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();
 }
@@ -155,7 +155,10 @@ namespace Links
         public static readonly string nuget_json = Url("nuget.json");
         public static readonly string packages_json = Url("packages.json");
         public static readonly string pager_sprite_png = Url("pager-sprite.png");
+        public static readonly string screenshot_getting_started_jpg = Url("screenshot-getting-started.jpg");
+        public static readonly string screenshot_glimpse_axd_jpg = Url("screenshot-glimpse-axd.jpg");
         public static readonly string screenshot_hud_ajax_gif = Url("screenshot-hud-ajax.gif");
+        public static readonly string screenshot_hud_bar_jpg = Url("screenshot-hud-bar.jpg");
         public static readonly string screenshot_hud_http_gif = Url("screenshot-hud-http.gif");
         public static readonly string screenshot_hud_server_gif = Url("screenshot-hud-server.gif");
         public static readonly string screenshot_hud_gif = Url("screenshot-hud.gif");

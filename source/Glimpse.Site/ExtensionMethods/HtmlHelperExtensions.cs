@@ -4,7 +4,7 @@ using System.Web;
 using System.Web.Mvc;
 using MarkdownSharp;
 
-namespace Glimpse.Site.Extensions
+namespace Glimpse.Site.ExtensionMethods
 {
     public static class HtmlHelperExtensions
     {

@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
 using Glimpse.Package;
 
 namespace Glimpse.Site.Controllers
 {
-    public partial class PackagesController : Controller
+    public partial class ExtensionsController : Controller
     {
         public virtual ActionResult Index()
         {

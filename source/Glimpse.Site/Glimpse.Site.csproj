@@ -154,10 +154,13 @@
     <Compile Include="Controllers\CommunityController.cs" />
     <Compile Include="Controllers\DocsController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
-    <Compile Include="Controllers\PackagesController.cs" />
+    <Compile Include="Controllers\ExtensionsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InstallController.cs" />
     <Compile Include="Controllers\StatusController.cs" />
+    <Compile Include="ExtensionsController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\StatusViewModel.cs" />
     <Compile Include="DocsController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
@@ -165,7 +168,7 @@
     <Compile Include="ErrorController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
-    <Compile Include="Extensions\HtmlHelperExtensions.cs" />
+    <Compile Include="ExtensionMethods\HtmlHelperExtensions.cs" />
     <Compile Include="Framework\DictionaryKeysAreNotPropertyNamesJsonConverter.cs" />
     <Compile Include="HomeController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
@@ -183,9 +186,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\DocumentationViewModel.cs" />
-    <Compile Include="PackagesController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SharedController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
@@ -346,7 +346,7 @@
     <Content Include="Views\Error\401.cshtml" />
     <Content Include="Views\Error\404.cshtml" />
     <Content Include="Views\Error\500.cshtml" />
-    <Content Include="Views\Packages\Index.cshtml" />
+    <Content Include="Views\Extensions\Index.cshtml" />
     <Content Include="Views\Docs\Index.cshtml" />
     <Content Include="Scripts\jquery-2.1.0.min.map" />
     <Content Include="Views\Docs\Wiki\Content\Manual-ADO-Integration.md" />
