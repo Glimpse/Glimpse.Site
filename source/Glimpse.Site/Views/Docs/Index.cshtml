@@ -216,7 +216,13 @@
             </div>
         </div>
         <div class="col-xs-3">
-            <div style="margin: 20px 0 0; background-color: #F0F7FD; padding: 20px 20px 10px 5px;">@Html.RenderMarkdown(Model.SideBarFile)</div>
+            <div class="navbar-side">@Html.RenderMarkdown(Model.SideBarFile)</div>
         </div>
     </div>
 </div>
+
+@section Scripts {
+    <script>
+        $('.navbar-side a:contains("Getting Started")').parent().addClass('active');
+    </script>
+}
