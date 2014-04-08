@@ -399,6 +399,7 @@
     <Content Include="Views\Docs\Details.cshtml" />
     <Content Include="Views\Docs\Wiki\Content\Installing.md" />
     <Content Include="Views\Docs\Wiki\Content\Enabling.md" />
+    <Content Include="Views\Docs\Wiki\Content\Runtime-Policies.md" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Glimpse.Blog\Glimpse.Blog.csproj">
