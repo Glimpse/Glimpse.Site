@@ -1,7 +1,7 @@
 ﻿@using System.Globalization
 @model List<Glimpse.Package.ReleaseQueryItem>
 @{
-    ViewBag.Title = "Packages - Glimpse - ";
+    ViewBag.Title = "Extensions - Glimpse - ";
     var isOffline = Glimpse.Package.PackageSettings.Settings.UseOfflineData;
 }
 
@@ -12,37 +12,35 @@
 
 <div class="jumbotron">
     <div class="container">
-        <h1>Packages &amp; Plugins</h1>
-        <p>Glimpse has many different extensions and plugins. Together with the community, there are some truely amazing extensions and extras you can get your hands on.</p>
+        <h1>Extensions &amp; Plugins</h1>
+        <p>Glimpse has a large ecosystem of community maintained plugins and numerous extensibility points to enable building your own custom creations.</p>
     </div>
 </div>
 
 <div class="container content content-normal">
-    <h2>Ecosystem</h2>
     <div class="row">
         <div class="col-sm-6">
-            <h3>What's already there</h3>
-            <p>The Glimpse team works on general plugins for ASP.NET and ASP.NET MVC, but there's a good chance that additional extensions are available for other components you are using. The owners of frameworks or applications on top of ASP.NET may provide their own plugins to allow insight into the server.</p>
+            <h2>Existing Ecosystem</h2>
+            <p>With our large community contributed selection, there's a good chance that extensions are available for the components you are using in your application. The core Glimpse team maintains extensions for ASP.NET MVC, ASP.NET WebForms and Entity Framework, while the owners of other frameworks may provide their own extensions that provide insight into the server.</p>
             <ul>
-                <li><a>See all the offical packages provided by the Glimpse team</a></li>
+                <li><a>See all the official packages provided by the Glimpse team</a></li>
                 <li><a>There are lots more plugins available on Nuget</a></li>
             </ul>
-            <p>Below is a list of all the different extensions that you have to choose from on NuGet. If you want something that isn't there, why not suggest it on the <a href="https://groups.google.com/forum/?fromgroups#!forum/getglimpse-dev" target="_blank">Google group</a>? </p>
         </div>
         <div class="col-sm-6">
-            <h3>Creating your own</h3>
-            <p>Many of our users get the best out of Glimpse by writing their own plugins, exposing data which is really only meaningful for their own applications. It's easy and anyone can do it, here are some places to start:</p>
+            <h2>Create Your Own</h2>
+            <p>Our users get the most out of Glimpse when they write their own extensions that expose data which is meaningful for their applications. It's easy and anyone can do it, here are some places to start:</p>
             <ul>
-                <li><a>Learn how to create a plugin withe basics</a></li>
+                <li><a>Learn how to create a basic extension</a></li>
                 <li><a>See an example of what you could write for your application</a></li>
                 <li><a>Creating a client side tab is easy, see how you can do it</a></li>
             </ul>
-            <p>Implementing a Glimpse Tab in your project will give a new tab in the Glimpse UI. Once the Tab has been created, assuming Glimpse has already been added to the project, we will automatically find the Tab and show its data.</p>
         </div>
     </div>
     
-    <h2>Available Extensions</h2>
     <div class="listing-data listing-data-community">
+        <h2>Available Extensions</h2>
+        <p>Below is the list of the extensions available on NuGet. If you'd like something that isn't listed, suggest it on the <a href="https://groups.google.com/forum/?fromgroups#!forum/getglimpse-dev" target="_blank">developers list</a>.</p>
         <div class="row">
             @foreach (var item in Model) {
                 var image = string.IsNullOrEmpty(item.IconUrl) ? "/Content/_v2/logo-nuget.png" : item.IconUrl;
