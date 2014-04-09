@@ -23,26 +23,27 @@
             <h2>Existing Ecosystem</h2>
             <p>With our large community contributed selection, there's a good chance that extensions are available for the components you are using in your application. The core Glimpse team maintains extensions for ASP.NET MVC, ASP.NET WebForms and Entity Framework, while the owners of other frameworks may provide their own extensions that provide insight into the server.</p>
             <ul>
-                <li><a>See all the official packages provided by the Glimpse team</a></li>
-                <li><a>There are lots more plugins available on Nuget</a></li>
+                <li><a href="/Docs/Tabs">See all the official packages provided by the Glimpse team</a></li>
+                <li><a href="#nuget-packages">There are lots more plugins available on Nuget</a></li>
             </ul>
         </div>
         <div class="col-sm-6">
             <h2>Create Your Own</h2>
             <p>Our users get the most out of Glimpse when they write their own extensions that expose data which is meaningful for their applications. It's easy and anyone can do it, here are some places to start:</p>
             <ul>
-                <li><a>Learn how to create a basic extension</a></li>
-                <li><a>See an example of what you could write for your application</a></li>
+                <li><a href="/Docs/Custom-Tabs">Learn how to create a basic extension</a></li>
+                <li><a href="http://blog.getglimpse.com/2013/07/15/creating-a-simple-tab-your-code-your-plugins-part-1/">See an example of what you could write for your application</a></li>
                 <li><a>Creating a client side tab is easy, see how you can do it</a></li>
             </ul>
         </div>
     </div>
     
-    <div class="listing-data listing-data-community">
+    <div id="nuget-packages" class="listing-data listing-data-community">
         <h2>Available Extensions</h2>
         <p>Below is the list of the extensions available on NuGet. If you'd like something that isn't listed, suggest it on the <a href="https://groups.google.com/forum/?fromgroups#!forum/getglimpse-dev" target="_blank">developers list</a>.</p>
         <div class="row">
-            @foreach (var item in Model) {
+            @foreach (var item in Model)
+            {
                 var image = string.IsNullOrEmpty(item.IconUrl) ? "/Content/_v2/logo-nuget.png" : item.IconUrl;
                 <div class="col-sm-3 col-xs-4 text-center">
                     <a href="http://nuget.org/packages/@item.Name" class="thumbnail">
@@ -53,11 +54,13 @@
                     <div class="text-muted small trim text-info" title="Installs">@item.DownloadCount.ToString("N0", CultureInfo.InvariantCulture) installs</div>
                 </div>
             }
-            @if (Model.Count == 0) {
+            @if (Model.Count == 0)
+            {
                 <div class="text-muted text-center">Extension gallery is currently offline...</div>
-            } 
-        </div> 
-        @if (Model.Count > 0)  {
+            }
+        </div>
+        @if (Model.Count > 0)
+        {
             <div class="row text-center">
                 <strong>That's @Model.Count and counting!</strong>
             </div>
