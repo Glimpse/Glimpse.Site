@@ -6,23 +6,12 @@
     <title>@ViewBag.Title - the open source diagnostics platform of the web</title>
     @Styles.Render("~/content/sitecss")
 </head>
-<body class="@ViewBag.PageStyle">
-    <header class="header navbar navbar-inverse navbar-fixed-top" role="banner">
-        <div class="container">
-            <div class="navbar-header">
-                <a href="@Url.Action(MVC.Home.Index())" class="navbar-brand"><img src="~/Content/logo-long-white.png" /></a>
-            </div>
-        </div>
-    </header> 
+<body class="@ViewBag.PageStyle body-simple">
     <div class="body_container">
         @RenderBody()
     </div>   
-    <footer class="footer" role="contentinfo">
-        <div class="container">
-            <div class="footer_mountains"></div>
-            <div class="footer_tower"></div>
-            <div class="footer_tower-build"></div>
-            <hr />
+    <div class="footer" role="contentinfo">
+        <div class="container"> 
             <div class="row footer_last">
                 <div class="col-sm-3 footer_copy">&copy; @DateTime.Now.Year - Glimpse</div>
                 <div class="col-sm-6 footer_backing">
@@ -30,7 +19,7 @@
                 </div>
             </div>
         </div>
-    </footer>
+    </div>
 
     @Scripts.Render("~/bundles/sitejs") 
     @RenderSection("scripts", required: false)

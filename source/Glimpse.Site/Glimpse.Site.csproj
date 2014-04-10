@@ -229,6 +229,7 @@
     <Content Include="Content\Contributors\pic9.jpg" />
     <Content Include="Content\footer-tower-build.png" />
     <Content Include="Content\founders.png" />
+    <Content Include="Content\logo-triple.png" />
     <Content Include="Content\screenshot-getting-started.jpg" />
     <Content Include="Content\home-plugins.jpg" />
     <Content Include="Content\logo-long-white.png" />
@@ -243,6 +244,7 @@
     <Content Include="Content\screenshot-hud-server.gif" />
     <Content Include="Content\screenshot-hud.gif" />
     <Content Include="Content\screenshot-hud.png" />
+    <Content Include="Content\screenshot-launch.jpg" />
     <Content Include="Content\screenshot-preview.gif" />
     <Content Include="Content\screenshot-wing-data.gif" />
     <Content Include="Content\screenshot-wing-data.png" />
@@ -253,6 +255,7 @@
     <Content Include="Content\screenshot_main.jpg" />
     <Content Include="Content\screenshot_panel.gif" />
     <Content Include="Content\screenshot_popup.gif" />
+    <Content Include="Content\updatetick.png" />
     <Content Include="Content\whats-new-1.jpg" />
     <Content Include="Content\whats-new-2.jpg" />
     <Content Include="Content\whats-new-3.jpg" />

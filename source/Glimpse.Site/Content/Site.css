@@ -43,6 +43,9 @@ a:not([href]), a[href=''] {
     font-size: 18px;
     line-height: 145%;
 }
+.content .small {
+    font-size: 14px;
+}
 .content-home h2 {
     font-size: 45px;
     line-height: 120%;
@@ -191,7 +194,19 @@ h4 { font-weight: bold; }
     background: #323d42;
 }
 
-
+.body-simple {
+    padding-top: 0;
+}
+.body-simple .body_container {
+    padding-bottom: 40px;
+}
+.body-simple .footer {
+    margin-top: 20px;
+}
+.jumbotron-dark {
+    background: #323d42;
+    color: white;
+}
 .footer {
     color: white;
     margin: 100px 0 20px;
@@ -440,8 +455,28 @@ h4 { font-weight: bold; }
 }
 
 
+.bad {
+    color: #c66969;
+}
+.good {
+    color: #6fc669;    
+}
 
-
+.package-status {
+    margin-top: 80px;
+}
+.package-status:first-child {
+    margin-top: 20px;
+}
+.package-status .lead {
+    margin-bottom: 10px;
+}
+.package-status-detail {
+    margin-top: 20px;
+}
+.package-status-notes {
+    margin-top: 10px;
+}
 
 
 .screenshot-preview { 
@@ -477,10 +512,41 @@ h4 { font-weight: bold; }
     background-position: 0 -300px
 }
 
-
-
-
-
+.logo-triple {
+    float: right;
+}
+.tick-update {
+    margin-right: 20px;
+}
+.container-form-stay-update {
+    position: relative;
+}
+.jumbotron-dark .form-stay-update {
+    background-color: #323d42;
+}
+.form-stay-update {
+    bottom: -100px;
+    position: absolute;
+    padding: 0 2em 1em;
+    right: 0;
+}
+.form-stay-update label {
+    display: block
+}
+.form-stay-update .email {
+    border: 1px solid #999;
+    width: 400px;
+    font-size: 1.1em;
+    padding: 0 0.5em;
+    height: 33px;
+    color: #333;
+}
+.form-stay-update .btn {
+    margin-top: -2px;
+}
+.form-stay-update h2 {
+    margin-top: 0;
+}
 
 
 

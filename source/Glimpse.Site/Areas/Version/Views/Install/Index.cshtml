@@ -1,120 +1,163 @@
 ﻿@model Glimpse.Package.ReleaseQueryInfo
 @{
-    ViewBag.Title = "Glimpse - Readme";
-    ViewBag.pageCss = "/Content/_v2/website-assets/css/firstRun.css";
+    ViewBag.Title = "Readme - Glimpse"; 
     
     var hasMVC = Model.Details.Any(x => x.Key.IndexOf("Glimpse.MVC", StringComparison.OrdinalIgnoreCase) >= 0);
     var hasEF = Model.Details.Any(x => x.Key.IndexOf("Glimpse.EF", StringComparison.OrdinalIgnoreCase) >= 0);
 }
 
-@section header {
-    <h1><img src="/Content/_v2/img/updatetick.png" alt="tick" id="updateTick" />Thanks for installing Glimpse!</h1>
-    <p>providing a previously hidden layer of information into your web app. To get the most out of the tool please keep reading...</p>
-}
+<div class="jumbotron jumbotron-dark">
+    <div class="container container-form-stay-update">
+        <img src="/Content/logo-triple.png" class="logo-triple" />
+        <h1><img src="/Content/updatetick.png" class="tick-update" />Thanks for installing Glimpse!</h1>
+        <p>Providing a previously hidden layer of information into your web app. To get the most out of the tool please keep reading...</p>
 
-<form action="http://getglimpse.us7.list-manage.com/subscribe/post?u=1e0ad87b92a992ad5856dcac3&amp;id=e2c440d6cb" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-	<label for="mce-EMAIL">Stay up-to-date!</label>
-	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
-	<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
-</form> 
-<br /><br />
-
-@if (!hasMVC || !hasEF) {
-<h2>Quick Question...</h2>
-<div class="package-question">
-    Did you know we have a whole package ecosystem? Why not try adding:
-    <div class="package-question-suggestion"> 
-        <table class="package-question-option">
-            <tr>
-                @if (!hasMVC) { <td><div class="package-question-heading">Doing MVC development?</div><div class="package-question-command">PM&gt; Install-Package Glimpse.MVC4</div></td> }
-                @if (!hasEF) { <td><div class="package-question-heading">What about EF?</div><div class="package-question-command">PM&gt; Install-Package Glimpse.EF5</div></td> }
-            </tr>
-        </table>
-        <div class="package-question-note">Note that if you are using a <em>different version</em> of MVC/EF, use that instead – e.g. MVC2, MVC3, EF43, or EF6</div>
-        <div class="package-question-more">...and many more can be found in the <a href="http://getglimpse.com/Extensions">Glimpse Extension Gallery</a></div>
+        <form action="http://getglimpse.us7.list-manage.com/subscribe/post?u=1e0ad87b92a992ad5856dcac3&amp;id=e2c440d6cb" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="form-stay-update" target="_blank" novalidate>
+            <label for="mce-EMAIL"><h2>Stay up-to-date!</h2></label>
+            <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+            <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary">
+        </form>
     </div>
 </div>
-}
 
-<h2>Release Notes</h2>
-<div class="package-holder">
-    @foreach (var detail in Model.Details) {
-        var image = string.IsNullOrEmpty(detail.Value.PackageIconUrl) ? "/Content/_v2/img/logo-nuget.png" : detail.Value.PackageIconUrl;
-        var updated = detail.Value.HasResult && !detail.Value.HasNewer ? "good" : (detail.Value.HasResult ? "bad" : "bad"); //latest = updated, old = still on old version, not-found = no package avail.
-        <div class="package @updated">
-            <div class="side-status @updated"></div>
-            <div class="package-icon"><img height="54" src="@image" onerror="this.src = '/Content/_v2/logo-nuget.png';"/></div>
-            <div class="package-details">
-                <h3>@detail.Key</h3>
-                <div class="package-status">
-                    @if (detail.Value.HasResult) {
-                        <text>
-                            <div class="package-status-verison">
-                                Installed version: <strong class="installed-version @updated">@detail.Value.Version</strong> 
-                                Latest version: <strong class="installed-version">@if (detail.Value.HasNewer) { @detail.Value.Summary[detail.Value.Channel].LatestVersion } else { @detail.Value.Version }</strong>
-                            </div>
-                            <div class="package-status-message">
-                                @if (!detail.Value.HasNewer) { <text>Congratulations, you are up to date :D</text> } 
-                                else { <text>Sorry, it looks like you are currently out of date :(</text> }
-                            </div>
-                        </text>
-                    } else {
-                        <div class="package-status-message">Could not find release.</div>
-                    }
-                </div>
-                @if (detail.Value.Release != null) { 
-                    <div class="release-notes"> 
-                        <div class="release-notes-title">This release contained</div>
-                        <div class="release-item-detail">
-                                <div class="release-item-detail-header">
-                                    <span class="release-item-detail-title">@detail.Value.Version</span> -
-                                    <span class="release-item-detail-date">@detail.Value.Release.Created.ToString("dd MMM yyyy")</span> 
-                                </div>
-                            <div class="release-item-detail-notes">
-                                @if (!string.IsNullOrEmpty(@detail.Value.Release.ReleaseNotes)) { @Html.HtmlEncode(detail.Value.Release.ReleaseNotes, true) } 
-                                else { <i>No notes avaiable for this release.</i> }
-                            </div>
-                        </div> 
-                    </div> 
-                }
+
+<div class="container content content-normal">
+    @if (!hasMVC || !hasEF)
+    {
+        <h2>Quick Question...</h2>
+        <div>
+            <p>Did you know we have a whole package ecosystem? Why not try adding:</p>
+            <div class="text-center">
+                <table width="85%" align="center">
+                    <tr>
+                        @if (!hasMVC)
+                        {
+                            <td><h3>Doing MVC development?</h3><div class="code" style="margin: 0 30px">PM&gt; Install-Package Glimpse.MVC4</div></td>
+                        }
+                        @if (!hasEF)
+                        {
+                            <td><h3>What about EF?</h3><div class="code" style="margin: 0 30px">PM&gt; Install-Package Glimpse.EF5</div></td>
+                        }
+                    </tr>
+                </table>
+                <p class="small" style="margin-top: 15px">Note that if you are using a <em>different version</em> of MVC/EF, use that instead – e.g. MVC2, MVC3, EF43, or EF6</p>
+                <p>...and many more can be found in the <a href="http://getglimpse.com/Extensions">Glimpse Extension Gallery</a></p>
             </div>
-            <hr class="clearer" />
         </div>
     }
-</div>
 
-<h2>Getting started</h2>
-<div class="twoColumn column1">
-    <div class="innerColumn">
-        <h3>The basics</h3>
-        <p>You've successfully installed glimpse, so now what? Browse to <code><span class="lowlight">http://your-application-url</span>/Glimpse.axd</code> and click the "Turn Glimpse On" button.</p>
-        <p>Then, simply run your application. If Glimpse doesn't automatically open, click on the logo that will be in the bottom right and that is all there is to it!</p>
-        <p class="align-center">        
-            <img src="~/Content/_v2//img/glimpse-minimised.png" />
-        </p>
+    <h2>Release Notes</h2>
+    <div class="package-holder">
+        @foreach (var detail in Model.Details)
+        {
+            var image = string.IsNullOrEmpty(detail.Value.PackageIconUrl) ? "/Content/logo-nuget.png" : detail.Value.PackageIconUrl;
+            var updated = detail.Value.HasResult && !detail.Value.HasNewer ? "good" : (detail.Value.HasResult ? "bad" : "bad"); //latest = updated, old = still on old version, not-found = no package avail.
+
+
+            <div class="media package-status">
+                <div class="pull-left">
+                    <img height="54" src="@image" onerror="this.src = '/Content/logo-nuget.png';" />
+                </div>
+                <div class="media-body">
+                    <h3 class="media-heading">@detail.Key</h3>
+                    <div class="text-center">
+                        @if (detail.Value.HasResult) {
+                            <text>
+                                <div class="lead">
+                                    Installed version: <strong class="@updated">@detail.Value.Version</strong>
+                                    Latest version: <strong>
+                                        @if (detail.Value.HasNewer) {
+                                            @detail.Value.Summary[detail.Value.Channel].LatestVersion
+                                        }
+                                        else {
+                                            @detail.Value.Version
+                                        }
+                                    </strong>
+                                </div>
+                                @if (!detail.Value.HasNewer) {
+                                    <p>Congratulations, you are up to date :D</p>
+                                }
+                                else {
+                                    <p>
+                                        <span class="@updated">Sorry, it looks like you are currently <strong>out of date</strong> :(</span><br />
+                                        No worries though, it's easy to fix!
+                                    </p>
+                                    <div style="margin:10px 0 35px;"> 
+                                        <table align="center" width="80%">
+                                            <tr>
+                                                <td width="40%"><div class="code">PM&gt; Update-Package @detail.Key</div></td>
+                                                <td width="10%">or</td>
+                                                <td width="40%">Update via VS <a href="https://docs.nuget.org/docs/start-here/managing-nuget-packages-using-the-dialog">Package Management</a> window.</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                }
+                            </text>
+                        }
+                        else {
+                            <div class="package-status-message">Could not find release.</div>
+                        }
+                    </div>
+
+                    @if (detail.Value.Release != null) {
+                        <div class="release-notes">
+                            <h4>
+                                @if (!detail.Value.HasNewer) {
+                                    <text>This release contained:</text>
+                                }
+                                else {
+                                    <text>That said, this release contained:</text>
+                                } 
+                            </h4>
+                            <div class="package-status-detail">
+                                <div>
+                                    <strong>@detail.Value.Version</strong> -
+                                    <em>@detail.Value.Release.Created.ToString("dd MMM yyyy")</em>
+                                </div>
+                                <p class="package-status-notes">
+                                    @if (!string.IsNullOrEmpty(@detail.Value.Release.ReleaseNotes)) {
+                                        @Html.HtmlEncode(detail.Value.Release.ReleaseNotes, true)
+                                    }
+                                    else {
+                                        <em>No notes available for this release.</em>
+                                    }
+                                </p>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        }
     </div>
-</div>
-<div class="twoColumn column2">
-    <div class="innerColumn">
-        <h3>A little bit more</h3> 
-        <p>
-            If you prefer, you can create bookmarklets to turn Glimpse on and off: 
-            <ul>
-                <li>In Firefox just drag the button onto your bookmarks toolbar or choose 'Bookmark This Link' in the context menu when you right click the button.</li>
-                <li>In Chrome just drag the button onto your bookmarks toolbar.</li>
-                <li>In Internet Explorer 9 just drag the button onto your bookmarks toolbar or choose 'Add to favorites' in the context menu when you right click the button. Set the 'Create in' drop down to 'Favorites Bar'.</li>
-            </ul>
-        </p>
-    </div>
-</div>
 
-<hr class="clearer" />
-
-<h2 class="fixed-padding-2">Configuring Glimpse</h2>
-<p>NuGet has taken care of everything you need to do to get you up and running with Glimpse, however there are some advanced settings that you may want to change in your <code>web.config</code> file.</p>
-<p>Glimpse is configured via the <code>&lt;glimpse&gt;</code> element which exists within the root <code>&lt;configuration&gt;</code> element. By default there is only one setting which turns Glimpse on:</p>
+    <h2>Getting started</h2>
+    <table>
+        <tr valign="top">
+            <td width="50%">
+                <h3>The basics</h3>
+                <p>You've successfully installed glimpse, so now what? Browse to <code><span class="lowlight">http://your-application-url</span>/Glimpse.axd</code> and click the "Turn Glimpse On" button.</p>
+                <p>Then, simply run your application. When you page reloads, you will see Glimpse at the bottom right of you page. To launch the full panel, simply click on the logo that will be in the bottom right!</p>
+                <p class="text-center">
+                    <img src="/Content/screenshot-launch.jpg" width="50%" />
+                </p>
+            </td>
+            <td width="50%" style="padding-left: 10px;">
+                <h3>A little bit more</h3>
+                <p>If you prefer, you can create bookmarklets to turn Glimpse on and off:</p>
+                <ul>
+                    <li>In Firefox just drag the button onto your bookmarks toolbar or choose 'Bookmark This Link' in the context menu when you right click the button.</li>
+                    <li>In Chrome just drag the button onto your bookmarks toolbar.</li>
+                    <li>In Internet Explorer 9 just drag the button onto your bookmarks toolbar or choose 'Add to favorites' in the context menu when you right click the button. Set the 'Create in' drop down to 'Favorites Bar'.</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+     
+    <h2 class="fixed-padding-2">Configuring Glimpse</h2>
+    <p>NuGet has taken care of everything you need to do to get you up and running with Glimpse, however there are some advanced settings that you may want to change in your <code>web.config</code> file.</p>
+    <p>Glimpse is configured via the <code>&lt;glimpse&gt;</code> element which exists within the root <code>&lt;configuration&gt;</code> element. By default there is only one setting which turns Glimpse on:</p>
 <pre>&lt;glimpse defaultRuntimePolicy="On" endpointBaseUri="~/Glimpse.axd"/&gt;</pre>
-<p>You can turn off Glimpse by setting <code>defaultRuntimePolicy="Off"</code>. By default Glimpse is configured to only work for requests coming from the local machine, soften Glimpse to work remotly by ignoring the <code>LocalPolicy</code>:</p>
+    <p>You can turn off Glimpse by setting <code>defaultRuntimePolicy="Off"</code>. By default Glimpse is configured to only work for requests coming from the local machine, soften Glimpse to work remotly by ignoring the <code>LocalPolicy</code>:</p>
 <pre>&lt;glimpse defaultRuntimePolicy="On" endpointBaseUri="~/Glimpse.axd"/&gt;
     &lt;runtimePolicies&gt;
         &lt;ignoredTypes&gt;
@@ -123,31 +166,26 @@
     &lt;/runtimePolicies&gt;
 &lt;/glimpse&gt;</pre>
 
-<div class="statement">
-    <p>To find out more about this and all the other possible configuration options please visit our docs&#133;</p>
-    <img id="kipTooltip" src="~/Content/_v2/img/kipTooltip.png" />
-    <a href="http://www.getglimpse.com/Help" target="_blank" class="button">Documentation &rarr;</a>
-</div> 
+    <div class="text-center">
+        <p>To find out more about this and all the other possible configuration options please visit our docs:</p>
+        <a href="http://getglimpse.com/Docs/" target="_blank" class="btn btn-primary btn-lg">Documentation</a>
+    </div>
 
-<dl class="threeColumn column1">
-    <div class="innerColumn">
-    <dt><img src="~/Content/_v2/img/ideas.png" alt="Issues or Suggestions" /></dt>
-    <dd>If you have found an issue or have an idea, let us know on our <a href="https://github.com/glimpse/glimpse/issues" target="_blank">issues list</a>.
-    </dd>
-    </div>
-</dl>
-<dl class="threeColumn column2">
-    <div class="innerColumn">
-    <dt><img src="~/Content/_v2/img/google.png" alt="developer list" /></dt>
-    <dd>Get answers to questions and find out what is next for Glimpse on our <a href="https://groups.google.com/forum/?fromgroups#!forum/getglimpse-dev" target="_blank">community user group</a>.
-    </dd>
-    </div>
-</dl>
-<dl class="threeColumn column3">
-    <div class="innerColumn">
-    <dt><img src="~/Content/_v2/twitterIcon.png" alt="twitter contacts" /></dt>
-    <dd>Feel free to get in touch with us on Twitter: <a href="http://www.twitter.com/anthony_vdh" target="_blank">@@anthony_vdh</a> or <a href="http://www.twitter.com/nikmd23" target="_blank">@@nikmd23</a>.
-    </dd>
-    </div>
-</dl>
- 
+    <h2>Reach Out</h2> 
+    <table width="100%">
+        <tr valign="top">
+            <td width="33%">
+                <h3>Issue List</h3>
+                <p>Have you found a bug or something misbehaving? Tell us about it on our <a href="https://github.com/glimpse/glimpse/issues">GitHub issue list</a> and someone will help you as soon as possible.</p>
+            </td>
+            <td width="34%" style="padding: 0 10px">
+                <h3>Stack Overflow</h3>
+                <p>Got general questions or just need a little support? Anything related to using, configuring or extending Glimpse can be asked at <a href="http://stackoverflow.com">StackOverflow</a>. View <a href="http://stackoverflow.com/questions/tagged/glimpse">already answered</a> questions for even faster support.</p>
+            </td>
+            <td width="33%" style="padding: 0 10px">
+                <h3>Mailing List</h3>
+                <p>Got questions about how to extend or work on Glimpse, or just want to discuss a new feature idea? Shoot it through to the <a href="https://groups.google.com/forum/#!forum/getglimpse-dev">developers mailing list</a>.</p>
+            </td>
+        </tr>
+    </table>
+</div>
