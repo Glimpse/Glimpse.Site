@@ -6,11 +6,6 @@
 
 <div class="jumbotron">
     <div class="container">
-        <ul>
-            <li><mark>Let's add icons for the services we use: GitHub for Issue List, Mailing List & StackOverflow</mark></li>
-            <li><mark>The links to package authors seem broken if there is a space in their name</mark></li>
-            <li><mark>Might be good to add the Twitter bird in front of Twitter handles so people know what they are without needing to click</mark></li>
-        </ul>
         <h1>Community</h1>
         <p>Glimpse wouldn't be what it is without the love and support of some awesome people from around the world. Thanks to everyone who has been involved in making this possible.</p>
     </div>
@@ -132,9 +127,7 @@
                 @foreach (var author in Model.Authors)
                 {
                     <div class="col-xs-3 col-md-2 text-center">
-                        <a href="http://www.nuget.org/profiles/@author.Key">
-                            <strong class="trim">@author.Key</strong>
-                        </a>
+                        <strong class="trim">@author.Key</strong> 
                         <div class="text-muted small">@author.Value.Count packages</div>
                     </div>
                 }
