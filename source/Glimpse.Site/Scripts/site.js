@@ -119,6 +119,14 @@ var getTweetsLatest = function () {
             };
     
         $(window).scroll(carouselScrollWatch);
+    },
+    videoSetup = function() { 
+        $('.action-video').click(function() {
+            $('body').prepend('<div class="overlay"></div><div class="overlay-modal"><div class="overlay-close">x</div><iframe width="560" height="315" src="//www.youtube.com/embed/ybIxZ6TTm_E" frameborder="0" allowfullscreen></iframe></div>');
+            $('.overlay-close').click(function() {
+                $('.overlay, .overlay-modal').remove();
+            });            
+        });
     };
 
 $(function() {
@@ -128,6 +136,7 @@ $(function() {
     if ($('.page_home').length > 0) {
         getBlogLastest();
         setupCarousel();
+        videoSetup();
     }
 });
 

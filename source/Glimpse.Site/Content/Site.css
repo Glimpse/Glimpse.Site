@@ -4,6 +4,7 @@ body {
     padding-top: 50px; 
     padding-bottom: 0;
     background: #323d42;
+    position: relative;
 }
 a:not([href]), a[href=''] {
     color: crimson;
@@ -511,6 +512,51 @@ h4 { font-weight: bold; }
 .form-stay-update h2 {
     margin-top: 0;
 }
+
+
+
+ 
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255,255,255,0.5);
+    z-index: 2000;
+}
+.overlay-modal {
+    width: 600px;
+    height: 355px;
+    position: fixed;
+    top: 50%; 
+    left: 50%;
+    margin-top: -177px;
+    margin-left: -300px;
+    background-color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    z-index: 2010; /* 1px higher than the overlay layer */
+    padding: 20px;
+    -moz-box-shadow: 0 0 10px #000000;
+    -webkit-box-shadow: 0 0 10px #000000;
+    box-shadow: 0 0 10px #000000;
+}
+.overlay-close {
+    border-radius: 16px;
+    color: #ffffff;
+    background-color: #323d42;
+    font-weight: bold;
+    position: absolute;
+    right: -15px;
+    top: -15px;
+    width: 30px;
+    height: 30px; 
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
 
 
 
