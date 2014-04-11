@@ -13,6 +13,7 @@ using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Hosting;
 using System.Web.Mvc;
@@ -38,10 +39,22 @@ namespace Glimpse.Site.Areas.Version.Controllers
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        protected RedirectToRouteResult RedirectToAction(Task<ActionResult> taskResult)
+        {
+            return RedirectToAction(taskResult.Result);
+        }
+
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         protected RedirectToRouteResult RedirectToActionPermanent(ActionResult result)
         {
             var callInfo = result.GetT4MVCResult();
             return RedirectToRoutePermanent(callInfo.RouteValueDictionary);
+        }
+
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        protected RedirectToRouteResult RedirectToActionPermanent(Task<ActionResult> taskResult)
+        {
+            return RedirectToActionPermanent(taskResult.Result);
         }
 
         [NonAction]
@@ -74,6 +87,7 @@ namespace Glimpse.Site.Areas.Version.Controllers
         {
             public readonly string Index = "Index";
             public readonly string Update = "Update";
+            public readonly string Thanks = "Thanks";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -81,6 +95,7 @@ namespace Glimpse.Site.Areas.Version.Controllers
         {
             public const string Index = "Index";
             public const string Update = "Update";
+            public const string Thanks = "Thanks";
         }
 
 
@@ -112,9 +127,11 @@ namespace Glimpse.Site.Areas.Version.Controllers
             public class _ViewNamesClass
             {
                 public readonly string Index = "Index";
+                public readonly string Thanks = "Thanks";
                 public readonly string Update = "Update";
             }
             public readonly string Index = "~/Areas/Version/Views/Install/Index.cshtml";
+            public readonly string Thanks = "~/Areas/Version/Views/Install/Thanks.cshtml";
             public readonly string Update = "~/Areas/Version/Views/Install/Update.cshtml";
         }
     }
@@ -124,8 +141,10 @@ namespace Glimpse.Site.Areas.Version.Controllers
     {
         public T4MVC_InstallController() : base(Dummy.Instance) { }
 
+        [NonAction]
         partial void IndexOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Glimpse.Package.VersionCheckDetails details);
 
+        [NonAction]
         public override System.Web.Mvc.ActionResult Index(Glimpse.Package.VersionCheckDetails details)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Index);
@@ -134,14 +153,27 @@ namespace Glimpse.Site.Areas.Version.Controllers
             return callInfo;
         }
 
+        [NonAction]
         partial void UpdateOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Glimpse.Package.VersionCheckDetails details, bool? withDetails);
 
+        [NonAction]
         public override System.Web.Mvc.ActionResult Update(Glimpse.Package.VersionCheckDetails details, bool? withDetails)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Update);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "details", details);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "withDetails", withDetails);
             UpdateOverride(callInfo, details, withDetails);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void ThanksOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult Thanks()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Thanks);
+            ThanksOverride(callInfo);
             return callInfo;
         }
 

@@ -16,6 +16,8 @@ namespace Glimpse.Package
 
         IEnumerable<ReleaseQueryItem> FindReleasesAfter(string packageName, string version);
 
+        IDictionary<string, IList<string>> SelectAllPackageAuthors();
+
         void UpdateCache(IDictionary<string, IEnumerable<ReleaseQueryItem>> releaseCache);
     }
 }

@@ -1,85 +1,90 @@
 ﻿@model Glimpse.Package.RefreshReleaseResults
 
 @{
-    ViewBag.Title = "Service Updater";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Service Updater - Glimpse"; 
 }
 
-@section header {
-    <section>
+
+<div class="jumbotron">
+    <div class="container">
         <h1>Package repository</h1>
-        <div class="gamma">update the system with latest packages</div>
-    </section>
-}
-
-<h2>Service Updater</h2>
-
-<div>
-    <h3>Check Status</h3> 
-    @if(Model.UpdateOccured) {
-        <strong style="color:green">Update Occured</strong>
-    } else {
-        <span>No Update Occured</span>
-    }
-</div> 
-
-@if(Model.LastRefresh != null) {
-    <div>
-        <h3>Next Update Details</h3> 
-        <table>
-            <tr>
-                <th>Next Update Will Occur:</th>
-                <td>@Model.LastRefresh.NextUpdateCanOccur</td>
-            </tr>
-        </table>
-
-        <h3>Last Update Details</h3> 
-        <table>
-            <tr>
-                <th>Time Occured:</th>
-                <td>@Model.LastRefresh.TimeOccured</td>
-            </tr>
-            <tr>
-                <th>Was Update Foced:</th>
-                <td>@Model.LastRefresh.UpdateWasForced</td>
-            </tr>
-            <tr>
-                <th>Release Details:</th>
-                <td>
-                    <table border="1">
-                        <tr>
-                            <th>Existing Records Found</th>
-                            <th>Records Affected</th>
-                            <th>Records Added</th>
-                            <th>Records Updated</th>
-                        </tr>
-                        <tr>
-                            <td>@Model.LastRefresh.ReleaseDetails.ExistingRecordsFound</td>
-                            <td>@Model.LastRefresh.ReleaseDetails.RecordsAffected</td>
-                            <td>@Model.LastRefresh.ReleaseDetails.RecordsAdded</td>
-                            <td>@Model.LastRefresh.ReleaseDetails.RecordsUpdated</td>
-                        </tr>
-                    </table>
-
-                </td>
-            </tr>
-            <tr>
-                <th>Statistic Release Details:</th>
-                <td>
-                    <table border="1">
-                        <tr>
-                            <th>Existing Records Found</th>
-                            <th>Records Affected</th>
-                            <th>Records Added</th> 
-                        </tr>
-                        <tr>
-                            <td>@Model.LastRefresh.StatisticReleaseDetails.ExistingRecordsFound</td>
-                            <td>@Model.LastRefresh.StatisticReleaseDetails.RecordsAffected</td>
-                            <td>@Model.LastRefresh.StatisticReleaseDetails.RecordsAdded</td> 
-                        </tr>
-                    </table> 
-                </td>
-            </tr>
-        </table>
+        <p>Update the system with latest packages.</p>
     </div>
-}
+</div>
+ 
+<div class="container content content-normal">
+    <h2>Service Updater</h2>
+    <div>
+        <h3>Check Status</h3>
+        @if (Model.UpdateOccured)
+        {
+            <strong style="color:green">Update Occured</strong>
+        }
+        else
+        {
+            <span>No Update Occured</span>
+        }
+    </div>
+
+    @if (Model.LastRefresh != null)
+    {
+        <div>
+            <h3>Next Update Details</h3>
+            <table>
+                <tr>
+                    <th>Next Update Will Occur:</th>
+                    <td>@Model.LastRefresh.NextUpdateCanOccur</td>
+                </tr>
+            </table>
+
+            <h3>Last Update Details</h3>
+            <table>
+                <tr>
+                    <th>Time Occured:</th>
+                    <td>@Model.LastRefresh.TimeOccured</td>
+                </tr>
+                <tr>
+                    <th>Was Update Foced:</th>
+                    <td>@Model.LastRefresh.UpdateWasForced</td>
+                </tr>
+                <tr>
+                    <th>Release Details:</th>
+                    <td>
+                        <table class="table table-condensed">
+                            <tr>
+                                <th>Existing Records Found</th>
+                                <th>Records Affected</th>
+                                <th>Records Added</th>
+                                <th>Records Updated</th>
+                            </tr>
+                            <tr>
+                                <td>@Model.LastRefresh.ReleaseDetails.ExistingRecordsFound</td>
+                                <td>@Model.LastRefresh.ReleaseDetails.RecordsAffected</td>
+                                <td>@Model.LastRefresh.ReleaseDetails.RecordsAdded</td>
+                                <td>@Model.LastRefresh.ReleaseDetails.RecordsUpdated</td>
+                            </tr>
+                        </table>
+
+                    </td>
+                </tr>
+                <tr>
+                    <th>Statistic Release Details:</th>
+                    <td>
+                        <table class="table table-condensed">
+                            <tr>
+                                <th>Existing Records Found</th>
+                                <th>Records Affected</th>
+                                <th>Records Added</th>
+                            </tr>
+                            <tr>
+                                <td>@Model.LastRefresh.StatisticReleaseDetails.ExistingRecordsFound</td>
+                                <td>@Model.LastRefresh.StatisticReleaseDetails.RecordsAffected</td>
+                                <td>@Model.LastRefresh.StatisticReleaseDetails.RecordsAdded</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    }
+</div>

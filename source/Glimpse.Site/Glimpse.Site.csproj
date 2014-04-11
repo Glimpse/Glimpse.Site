@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -7,8 +7,8 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{608B42EB-9163-4AA6-92FC-B40F05D7C27E}</ProjectGuid>
-    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <ProjectGuid>{0180A7C0-2BB9-4B4C-A74F-64D888B0A011}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Glimpse.Site</RootNamespace>
@@ -20,8 +20,6 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
-    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
-    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,7 +28,7 @@
     <OutputPath>bin\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>0</WarningLevel>
+    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -41,25 +39,25 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Antlr3.Runtime">
-      <HintPath>..\..\packages\WebGrease.1.3.0\lib\Antlr3.Runtime.dll</HintPath>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="MarkdownSharp">
       <HintPath>..\..\packages\MarkdownSharp.1.13.0.0\lib\35\MarkdownSharp.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="PerfMatters.Flush, Version=0.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\PerfMatters.Flush.0.2.0-alpha\lib\net45\PerfMatters.Flush.dll</HintPath>
+      <HintPath>..\..\packages\Newtonsoft.Json.6.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Client.5.1.1\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -67,12 +65,38 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Core.4.0.30506.0\lib\net40\System.Web.Http.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
-      <HintPath>..\..\packages\Microsoft.AspNet.Razor.2.0.20715.0\lib\net40\System.Web.Razor.dll</HintPath>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.1.1\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Core.5.1.1\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.WebHost.5.1.1\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.Mvc.5.1.1\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.Razor.3.1.1\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.1.1\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.1.1\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.1.1\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
@@ -89,56 +113,37 @@
     </Reference>
     <Reference Include="System.Net.Http">
     </Reference>
-    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
-    </Reference>
     <Reference Include="System.Net.Http.WebRequest">
     </Reference>
-    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Optimization">
-      <HintPath>..\..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
-    </Reference>
     <Reference Include="T4MVCExtensions">
-      <HintPath>..\..\packages\T4MVCExtensions.3.5.0\lib\net40\T4MVCExtensions.dll</HintPath>
-    </Reference>
-    <Reference Include="WebAPI.OutputCache">
-      <HintPath>..\..\packages\Strathweb.CacheOutput.0.5\lib\net40\WebAPI.OutputCache.dll</HintPath>
+      <HintPath>..\..\packages\T4MVCExtensions.3.8.2\lib\net40\T4MVCExtensions.dll</HintPath>
     </Reference>
     <Reference Include="WebApi.OutputCache.Core">
-      <HintPath>..\..\packages\Strathweb.CacheOutput.0.5\lib\net40\WebApi.OutputCache.Core.dll</HintPath>
+      <HintPath>..\..\packages\Strathweb.CacheOutput.WebApi2.0.5\lib\net45\WebApi.OutputCache.Core.dll</HintPath>
     </Reference>
-    <Reference Include="WebGrease">
-      <HintPath>..\..\packages\WebGrease.1.3.0\lib\WebGrease.dll</HintPath>
+    <Reference Include="WebApi.OutputCache.V2">
+      <HintPath>..\..\packages\Strathweb.CacheOutput.WebApi2.0.5\lib\net45\WebApi.OutputCache.V2.dll</HintPath>
     </Reference>
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Version\Models\" />
+    <Folder Include="Areas\Version\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BindingConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
-    <Compile Include="App_Start\FormatterConfig.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="App_Start\FormatterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Areas\api\Controllers\ContributorsController.cs" />
+    <Compile Include="Areas\api\Controllers\BlogController.cs" />
+    <Compile Include="Areas\api\Controllers\BuildController.cs" />
+    <Compile Include="Areas\api\Controllers\TwitterController.cs" />
+    <Compile Include="Areas\api\Controllers\VersionController.cs" />
     <Compile Include="Areas\Version\Controllers\AdminController.cs" />
     <Compile Include="Areas\Version\Controllers\CheckController.cs" />
     <Compile Include="Areas\Version\Controllers\InstallController.cs" />
@@ -146,67 +151,51 @@
     <Compile Include="CommunityController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\CheckApiController.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Controllers\CommunityController.cs" />
-    <Compile Include="Controllers\ErrorController.cs" />
-    <Compile Include="Controllers\HttpClientFactory.cs" />
-    <Compile Include="Controllers\StatusController.cs" />
-    <Compile Include="Controllers\ProtocolController.cs" />
-    <Compile Include="Controllers\StatusDashboardProvider.cs" />
-    <Compile Include="Controllers\SupportController.cs" />
     <Compile Include="Controllers\DocsController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\ExtensionsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\TalkController.cs" />
+    <Compile Include="Controllers\InstallController.cs" />
+    <Compile Include="Controllers\StatusController.cs" />
+    <Compile Include="ExtensionsController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StatusViewModel.cs" />
     <Compile Include="DocsController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
-    <Compile Include="Extensions\HtmlHelperExtensions.cs" />
-    <Compile Include="Controllers\PackagesController.cs" />
-    <Compile Include="Controllers\VersionsController.cs" />
+    <Compile Include="ErrorController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExtensionMethods\HtmlHelperExtensions.cs" />
     <Compile Include="Framework\DictionaryKeysAreNotPropertyNamesJsonConverter.cs" />
-    <Compile Include="Framework\GlimpsePackageViewModelMapper.cs" />
+    <Compile Include="HomeController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InstallController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="Framework\HttpHeaderAttribute.cs" />
-    <Compile Include="Framework\JsonpMediaTypeFormatter.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Framework\JsonpMediaTypeFormatter.cs" />
     <Compile Include="Framework\JsonpResult.cs" />
-    <Compile Include="Framework\VersionCheckDetailsApiModelBinderProvider.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Framework\VersionCheckDetailsApiModelBinderProvider.cs" />
     <Compile Include="Framework\VersionCheckDetailsModelBinder.cs" />
     <Compile Include="Framework\WebPageBaseExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="HomeController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\DocumentationViewModel.cs" />
-    <Compile Include="Models\IssuesIndexViewModel.cs" />
-    <Compile Include="Models\IssueViewModel.cs" />
-    <Compile Include="Models\PackageCategoryViewModel.cs" />
-    <Compile Include="Models\PackageViewModel.cs" />
-    <Compile Include="PackagesController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ProtocolController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
     <Compile Include="SharedController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
-    <Compile Include="SupportController.generated.cs">
+    <Compile Include="StatusController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="T4MVC.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TalkController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="Version.AdminController.generated.cs">
@@ -221,239 +210,129 @@
     <Compile Include="Version.SharedController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
-    <Compile Include="VersionsController.generated.cs">
-      <DependentUpon>T4MVC.tt</DependentUpon>
-    </Compile>
+    <Content Include="Views\Docs\Wiki\Content\Heads-up-Display.md" />
+    <Content Include="Views\Docs\Wiki\Content\Governance-Model.md" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\Glimpse_ReadOnly.mdf" />
-    <Content Include="App_Data\Glimpse_ReadOnly_log.ldf">
-      <DependentUpon>Glimpse_ReadOnly.mdf</DependentUpon>
-    </Content>
-    <Content Include="Areas\Version\Views\Web.config" />
-    <Content Include="Areas\Version\Views\Check\Index.cshtml" />
-    <Content Include="Areas\Version\Views\Check\Release.cshtml" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Contributors\pic1.jpg" />
+    <Content Include="Content\Contributors\pic10.jpg" />
+    <Content Include="Content\Contributors\pic11.jpg" />
+    <Content Include="Content\Contributors\pic12.jpg" />
+    <Content Include="Content\Contributors\pic2.jpg" />
+    <Content Include="Content\Contributors\pic3.jpg" />
+    <Content Include="Content\Contributors\pic4.jpg" />
+    <Content Include="Content\Contributors\pic5.jpg" />
+    <Content Include="Content\Contributors\pic6.jpg" />
+    <Content Include="Content\Contributors\pic7.jpg" />
+    <Content Include="Content\Contributors\pic8.jpg" />
+    <Content Include="Content\Contributors\pic9.jpg" />
+    <Content Include="Content\footer-tower-build.png" />
+    <Content Include="Content\founders.png" />
+    <Content Include="Content\logo-triple.png" />
+    <Content Include="Content\screenshot-getting-started.jpg" />
+    <Content Include="Content\home-plugins.jpg" />
+    <Content Include="Content\logo-long-white.png" />
+    <Content Include="Content\footer-mountains.png" />
+    <Content Include="Content\footer-tower.png" />
+    <Content Include="Content\logo-nuget.png" />
+    <Content Include="Content\pager-sprite.png" />
+    <Content Include="Content\screenshot-glimpse-axd.jpg" />
+    <Content Include="Content\screenshot-hud-ajax.gif" />
+    <Content Include="Content\screenshot-hud-bar.jpg" />
+    <Content Include="Content\screenshot-hud-http.gif" />
+    <Content Include="Content\screenshot-hud-server.gif" />
+    <Content Include="Content\screenshot-hud.gif" />
+    <Content Include="Content\screenshot-hud.png" />
+    <Content Include="Content\screenshot-launch.jpg" />
+    <Content Include="Content\screenshot-preview.gif" />
+    <Content Include="Content\screenshot-wing-data.gif" />
+    <Content Include="Content\screenshot-wing-data.png" />
+    <Content Include="Content\screenshot-wing-timeline.gif" />
+    <Content Include="Content\screenshot-wing-timeline.png" />
+    <Content Include="Content\screenshot.jpg" />
+    <Content Include="Content\screenshot_bar.gif" />
+    <Content Include="Content\screenshot_main.jpg" />
+    <Content Include="Content\screenshot_panel.gif" />
+    <Content Include="Content\screenshot_popup.gif" />
+    <Content Include="Content\updatetick.png" />
+    <Content Include="Content\whats-new-1.jpg" />
+    <Content Include="Content\whats-new-2.jpg" />
+    <Content Include="Content\whats-new-3.jpg" />
+    <Content Include="Content\whats-new-4.jpg" />
+    <Content Include="Content\whats-new-5.jpg" />
+    <Content Include="favicon.ico" />
+    <Content Include="Content\Fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\Fonts\ArchitectsDaughter.ttf" />
+    <Content Include="Content\Fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\Fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\Fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.css.map" />
     <Content Include="Areas\Version\Views\Admin\Index.cshtml" />
     <Content Include="Areas\Version\Views\Admin\Process.cshtml" />
-    <Content Include="Content\_v1\app-config-favicon.png" />
-    <Content Include="Content\_v1\app-config-logo.png" />
-    <Content Include="Content\_v1\app-sprite-new.png" />
-    <Content Include="Content\_v1\app-sprite.png" />
-    <Content Include="Content\_v1\Contributors\pic1.jpg" />
-    <Content Include="Content\_v1\Contributors\pic10.jpg" />
-    <Content Include="Content\_v1\Contributors\pic2.jpg" />
-    <Content Include="Content\_v1\Contributors\pic3.jpg" />
-    <Content Include="Content\_v1\Contributors\pic4.jpg" />
-    <Content Include="Content\_v1\Contributors\pic5.jpg" />
-    <Content Include="Content\_v1\Contributors\pic6.jpg" />
-    <Content Include="Content\_v1\Contributors\pic7.jpg" />
-    <Content Include="Content\_v1\Contributors\pic8.jpg" />
-    <Content Include="Content\_v1\Contributors\pic9.jpg" />
-    <Content Include="Content\_v1\Firefox Setup 20.0.exe" />
-    <Content Include="Content\_v1\glimpseGallery.xml" />
-    <Content Include="Content\_v1\inuit.css" />
-    <Content Include="Content\_v1\inuit.min.css" />
-    <Content Include="Content\_v1\screen.css" />
-    <Content Include="Content\_v1\screen.min.css" />
-    <Content Include="Content\_v1\site-console-execution.png" />
-    <Content Include="Content\_v1\site-console-zoom.png" />
-    <Content Include="Content\_v1\site-favicon.ico" />
-    <Content Include="Content\_v1\site-favicon.png" />
-    <Content Include="Content\_v1\site-first-install-minimized.png" />
-    <Content Include="Content\_v1\site-home-logo.png" />
-    <Content Include="Content\_v1\site-icon-action.png" />
-    <Content Include="Content\_v1\site-icon.png" />
-    <Content Include="Content\_v1\site-main-logo-medium.png" />
-    <Content Include="Content\_v1\site-nuget-logo.png" />
-    <Content Include="Content\_v1\site-redgate-logo.png" />
-    <Content Include="Content\_v1\site-twitter-icon.png" />
-    <Content Include="Content\_v1\_site-redgate-logo.png" />
-    <Content Include="Content\_v2\Contributors\chris.jpg" />
-    <Content Include="Content\_v2\Contributors\pic1.jpg" />
-    <Content Include="Content\_v2\Contributors\pic10.jpg" />
-    <Content Include="Content\_v2\Contributors\pic2.jpg" />
-    <Content Include="Content\_v2\Contributors\pic3.jpg" />
-    <Content Include="Content\_v2\Contributors\pic4.jpg" />
-    <Content Include="Content\_v2\Contributors\pic5.jpg" />
-    <Content Include="Content\_v2\Contributors\pic6.jpg" />
-    <Content Include="Content\_v2\Contributors\pic7.jpg" />
-    <Content Include="Content\_v2\Contributors\pic8.jpg" />
-    <Content Include="Content\_v2\Contributors\pic9.jpg" />
-    <Content Include="Content\_v2\favicon.ico" />
-    <Content Include="Content\_v2\favicon.png" />
-    <Content Include="Content\_v2\first-install-minimized.png" />
-    <Content Include="Content\_v2\glimpseGallery.xml" />
-    <Content Include="Content\_v2\img\emailIcon.png" />
-    <Content Include="Content\_v2\img\glimpse-minimised.png" />
-    <Content Include="Content\_v2\img\glimpseInBrowser.png" />
-    <Content Include="Content\_v2\img\google.png" />
-    <Content Include="Content\_v2\img\googleGroupIcon.png" />
-    <Content Include="Content\_v2\img\ideas.png" />
-    <Content Include="Content\_v2\img\kipTooltip.png" />
-    <Content Include="Content\_v2\img\logo-nuget.png" />
-    <Content Include="Content\_v2\img\logo.png" />
-    <Content Include="Content\_v2\img\redgate.png" />
-    <Content Include="Content\_v2\img\small-cross.png" />
-    <Content Include="Content\_v2\img\small-tick.png" />
-    <Content Include="Content\_v2\img\twitter.png" />
-    <Content Include="Content\_v2\img\twitterIcon.png" />
-    <Content Include="Content\_v2\img\updateTick.png" />
-    <Content Include="Content\_v2\img\warning.png" />
-    <Content Include="Content\_v2\inuit.css" />
-    <Content Include="Content\_v2\inuit.min.css" />
-    <Content Include="Content\_v2\logo-long.png" />
-    <Content Include="Content\_v2\logo-medium.png" />
-    <Content Include="Content\_v2\logo-nuget.png" />
-    <Content Include="Content\_v2\logo-redgate.png" />
-    <Content Include="Content\_v2\logo.png" />
-    <Content Include="Content\_v2\old_images\first-install-minimized.png" />
-    <Content Include="Content\_v2\old_images\logo-medium.png" />
-    <Content Include="Content\_v2\old_images\logo-nuget.png" />
-    <Content Include="Content\_v2\old_images\logo-redgate.png" />
-    <Content Include="Content\_v2\old_images\logo.png" />
-    <Content Include="Content\_v2\old_images\options-root.png" />
-    <Content Include="Content\_v2\old_images\twitterIcon.png" />
-    <Content Include="Content\_v2\options-root.png" />
-    <Content Include="Content\_v2\screen.css" />
-    <Content Include="Content\_v2\screen.min.css" />
-    <Content Include="Content\_v2\twitterIcon.png" />
-    <Content Include="Content\_v2\website-assets\css\bootstrap.min.css" />
-    <Content Include="Content\_v2\website-assets\css\firstRun.css" />
-    <Content Include="Content\_v2\website-assets\css\global.css" />
-    <Content Include="Content\_v2\website-assets\css\tipsy.css" />
-    <Content Include="Content\_v2\website-assets\img\anthony.png" />
-    <Content Include="Content\_v2\website-assets\img\backup-loader.gif" />
-    <Content Include="Content\_v2\website-assets\img\bad-update-repeater.png" />
-    <Content Include="Content\_v2\website-assets\img\bad-update.png" />
-    <Content Include="Content\_v2\website-assets\img\build-tower.png" />
-    <Content Include="Content\_v2\website-assets\img\console-view-screenshot.png" />
-    <Content Include="Content\_v2\website-assets\img\contributors\chris.jpg" />
-    <Content Include="Content\_v2\website-assets\img\contributors\pic1.jpg" />
-    <Content Include="Content\_v2\website-assets\img\contributors\pic10.jpg" />
-    <Content Include="Content\_v2\website-assets\img\contributors\pic2.jpg" />
-    <Content Include="Content\_v2\website-assets\img\contributors\pic3.jpg" />
-    <Content Include="Content\_v2\website-assets\img\contributors\pic4.jpg" />
-    <Content Include="Content\_v2\website-assets\img\contributors\pic5.jpg" />
-    <Content Include="Content\_v2\website-assets\img\contributors\pic6.jpg" />
-    <Content Include="Content\_v2\website-assets\img\contributors\pic7.jpg" />
-    <Content Include="Content\_v2\website-assets\img\contributors\pic8.jpg" />
-    <Content Include="Content\_v2\website-assets\img\contributors\pic9.jpg" />
-    <Content Include="Content\_v2\website-assets\img\demo-bg.png" />
-    <Content Include="Content\_v2\website-assets\img\enter-command.png" />
-    <Content Include="Content\_v2\website-assets\img\getglimpse-sprite.png" />
-    <Content Include="Content\_v2\website-assets\img\GitHub-Mark-120px-plus.png" />
-    <Content Include="Content\_v2\website-assets\img\glimpse-tool.png" />
-    <Content Include="Content\_v2\website-assets\img\good-update-repeater.png" />
-    <Content Include="Content\_v2\website-assets\img\good-update.png" />
-    <Content Include="Content\_v2\website-assets\img\in-monitor-screen.png" />
-    <Content Include="Content\_v2\website-assets\img\intro-bg.png" />
-    <Content Include="Content\_v2\website-assets\img\monitor.png" />
-    <Content Include="Content\_v2\website-assets\img\more-arrow.png" />
-    <Content Include="Content\_v2\website-assets\img\mountains.png" />
-    <Content Include="Content\_v2\website-assets\img\nik.png" />
-    <Content Include="Content\_v2\website-assets\img\osguy.png" />
-    <Content Include="Content\_v2\website-assets\img\package-manager-screenshot.png" />
-    <Content Include="Content\_v2\website-assets\img\play-project.png" />
-    <Content Include="Content\_v2\website-assets\img\redgate.png" />
-    <Content Include="Content\_v2\website-assets\img\towers.png" />
-    <Content Include="Content\_v2\website-assets\img\vslogo-white.png" />
-    <Content Include="Content\_v2\website-assets\scripts\bootstrap.min.js" />
-    <Content Include="Content\_v2\website-assets\scripts\global-ck.js" />
-    <Content Include="Content\_v2\website-assets\scripts\global.js" />
-    <Content Include="Content\_v2\website-assets\scripts\home-ck.js" />
-    <Content Include="Content\_v2\website-assets\scripts\home.js" />
-    <Content Include="Content\_v2\website-assets\scripts\jquery-1.9.1.js" />
-    <Content Include="Content\_v2\website-assets\scripts\jquery-1.9.1.min.js" />
-    <Content Include="Content\_v2\website-assets\scripts\jquery.scrollTo.js" />
-    <Content Include="Content\_v2\website-assets\scripts\jquery.scrollTo.min.js" />
-    <Content Include="Content\_v2\website-assets\scripts\jquery.tipsy.js" />
-    <Content Include="Scripts\mustache.js" />
-    <Content Include="Views\Support\Index.cshtml" />
-    <Content Include="Views\Talk\Index.cshtml" />
-    <Content Include="Views\Protocol\Index.cshtml" />
-    <Content Include="Views\Shared\_Simple.cshtml" />
-    <Content Include="Content\close-quote.gif" />
-    <Content Include="Content\cs_leftImg.png" />
-    <Content Include="Content\cs_rightImg.png" />
-    <Content Include="Content\favicon.gif" />
-    <Content Include="Content\github.gif" />
-    <Content Include="Content\glimpse100 - Copy.png" />
-    <Content Include="Content\glimpse100.png" />
-    <Content Include="Content\glimpse128.png" />
-    <Content Include="Content\glimpse150.png" />
-    <Content Include="Content\glimpse256.png" />
-    <Content Include="Content\glimpse32.png" />
-    <Content Include="Content\glimpse512.png" />
-    <Content Include="Content\glimpse64 - Copy.png" />
-    <Content Include="Content\glimpse64.png" />
-    <Content Include="Content\glimpseLogo.png" />
-    <Content Include="Content\glimpseLogoWhite.png" />
-    <Content Include="Content\glimpseMedium.png" />
-    <Content Include="Content\GlimpseStackAd.png" />
-    <Content Include="Content\greenIcon.png" />
-    <Content Include="Content\redIcon.png" />
-    <Content Include="Content\Help\FilesPlugin.jpg" />
-    <Content Include="Content\Help\HelloWorldPlugin.jpg" />
-    <Content Include="Content\jquery.contentslider.css" />
-    <Content Include="Content\jquery.jscrollpane.css" />
-    <Content Include="Content\nugetlogo.png" />
-    <Content Include="Content\open-quote.gif" />
-    <Content Include="Content\Plugin\Ajax.jpg" />
-    <Content Include="Content\Plugin\Binding.jpg" />
-    <Content Include="Content\Plugin\Config.jpg" />
-    <Content Include="Content\Plugin\enviro.png" />
-    <Content Include="Content\Plugin\Environment.jpg" />
-    <Content Include="Content\Plugin\Execution.jpg" />
-    <Content Include="Content\Plugin\Metadata.jpg" />
-    <Content Include="Content\Plugin\Remote.jpg" />
-    <Content Include="Content\Plugin\Request.jpg" />
-    <Content Include="Content\Plugin\Routes.jpg" />
-    <Content Include="Content\Plugin\Server.jpg" />
-    <Content Include="Content\Plugin\Session.jpg" />
-    <Content Include="Content\Plugin\switchServers.png" />
-    <Content Include="Content\Plugin\Timeline.jpg" />
-    <Content Include="Content\Plugin\TimelineAlt.jpg" />
-    <Content Include="Content\Plugin\Trace.jpg" />
-    <Content Include="Content\Plugin\TraceIcons.png" />
-    <Content Include="Content\Plugin\View.jpg" />
-    <Content Include="Content\rss_icon.gif" />
-    <Content Include="Content\Site.css" />
-    <Content Include="Content\Support\GlimpseCredits.jpg" />
-    <Content Include="Content\Support\GlimpseDetails.jpg" />
-    <Content Include="Content\Support\GlimpseOverview.jpg" />
-    <Content Include="Content\Support\GlimpsePlatform.jpg" />
-    <Content Include="Content\Support\GlimpseQuickStart.jpg" />
-    <Content Include="Content\Support\GlimpseSupport.jpg" />
-    <Content Include="Content\Support\GlimpseTalk.jpg" />
-    <Content Include="Content\Support\WhatIsGlimpse.jpg" />
-    <Content Include="Content\twitter.png" />
-    <Content Include="Content\uservoice-icon.png" />
-    <Content Include="sprite.png" />
-    <Content Include="Global.asax" />
-    <Content Include="Content\_v2\inuit.less" />
-    <Content Include="Content\_v2\screen.less" />
-    <Content Include="Content\_v2\website-assets\css\global.less" />
-    <Content Include="Content\_v2\website-assets\css\pages.less" />
-    <Content Include="Content\_v2\website-assets\fonts\ArchitectsDaughter.ttf" />
-    <Content Include="Content\_v1\inuit.less" />
-    <Content Include="Content\_v1\screen.less" />
-    <Content Include="Content\packages.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Areas\Version\Views\Check\Index.cshtml" />
+    <Content Include="Areas\Version\Views\Check\Release.cshtml" />
+    <Content Include="Areas\Version\Views\Install\Index.cshtml" />
     <Content Include="Areas\Version\Views\Install\Thanks.cshtml" />
-    <Content Include="Areas\api\Views\Web.config" />
-    <Content Include="Content\glimpseTeam.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
-    <Content Include="Scripts\glimpse.js" />
-    <Content Include="Scripts\glimpse.protocol.js" />
-    <Content Include="Scripts\jquery-1.9.1.js" />
-    <Content Include="Scripts\jquery-1.9.1.min.js" />
-    <Content Include="Scripts\json.format.js" />
-    <Content Include="Scripts\site.google.js" />
+    <Content Include="Areas\Version\Views\Install\Update.cshtml" />
+    <Content Include="Areas\Version\Views\Web.config" />
+    <Content Include="Content\committers.json" />
+    <Content Include="Content\packages.json" />
+    <Content Include="Content\nuget.json" />
+    <Content Include="Areas\Version\Views\_ViewStart.cshtml" />
+    <None Include="Properties\PublishProfiles\glimpsesitenew.pubxml" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Scripts\jquery-2.1.0.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.0.js" />
+    <Content Include="Scripts\jquery-2.1.0.min.js" />
+    <Content Include="Scripts\site.js" />
+    <Content Include="Scripts\site.version.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="T4MVC.tt.settings.xml" />
+    <Content Include="sprite.png" />
+    <Content Include="Scripts\json.format.js" />
+    <None Include="T4MVC.tt.settings.xml" />
+    <Content Include="Views\Docs\Wiki\images\ajaxTab.png" />
+    <Content Include="Views\Docs\Wiki\images\channel9.png" />
+    <Content Include="Views\Docs\Wiki\images\closeGlimpse.gif" />
+    <Content Include="Views\Docs\Wiki\images\configurationTab.png" />
+    <Content Include="Views\Docs\Wiki\images\dnr.jpg" />
+    <Content Include="Views\Docs\Wiki\images\environmentTab.png" />
+    <Content Include="Views\Docs\Wiki\images\executionTab.png" />
+    <Content Include="Views\Docs\Wiki\images\Glimpse128.png" />
+    <Content Include="Views\Docs\Wiki\images\Glimpse256.png" />
+    <Content Include="Views\Docs\Wiki\images\Glimpse32.png" />
+    <Content Include="Views\Docs\Wiki\images\Glimpse512.png" />
+    <Content Include="Views\Docs\Wiki\images\Glimpse64.png" />
+    <Content Include="Views\Docs\Wiki\images\glimpseExtensionGallery.png" />
+    <Content Include="Views\Docs\Wiki\images\glimpseLogo.png" />
+    <Content Include="Views\Docs\Wiki\images\glimpseStatusBar.png" />
+    <Content Include="Views\Docs\Wiki\images\hanselminutes.jpg" />
+    <Content Include="Views\Docs\Wiki\images\help.png" />
+    <Content Include="Views\Docs\Wiki\images\herdingCode.jpg" />
+    <Content Include="Views\Docs\Wiki\images\historyTab.png" />
+    <Content Include="Views\Docs\Wiki\images\manageNuGetPackages.png" />
+    <Content Include="Views\Docs\Wiki\images\metadataTab.png" />
+    <Content Include="Views\Docs\Wiki\images\modelBindingTab.png" />
+    <Content Include="Views\Docs\Wiki\images\openGlimpse.gif" />
+    <Content Include="Views\Docs\Wiki\images\requestTab.png" />
+    <Content Include="Views\Docs\Wiki\images\resizeGlimpse.gif" />
+    <Content Include="Views\Docs\Wiki\images\routesTab.png" />
+    <Content Include="Views\Docs\Wiki\images\seriouslyOpen.jpg" />
+    <Content Include="Views\Docs\Wiki\images\serverTab.png" />
+    <Content Include="Views\Docs\Wiki\images\sessionTab.png" />
+    <Content Include="Views\Docs\Wiki\images\sqlTab.png" />
+    <Content Include="Views\Docs\Wiki\images\sqlTabError.png" />
+    <Content Include="Views\Docs\Wiki\images\sqlTabTimeline.png" />
+    <Content Include="Views\Docs\Wiki\images\sqlTabTransactions.png" />
+    <Content Include="Views\Docs\Wiki\images\timelineTab.png" />
+    <Content Include="Views\Docs\Wiki\images\timelineTabAlt.jpg" />
+    <Content Include="Views\Docs\Wiki\images\traceTab.png" />
+    <Content Include="Views\Docs\Wiki\images\updateAvailable.png" />
+    <Content Include="Views\Docs\Wiki\images\viewsTab.png" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -467,56 +346,97 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="T4MVC.tt.hooks.t4" />
-    <Content Include="T4MVC.tt">
+    <Content Include="Views\Community\Index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Error\401.cshtml" />
+    <Content Include="Views\Error\404.cshtml" />
+    <Content Include="Views\Error\500.cshtml" />
+    <Content Include="Views\Extensions\Index.cshtml" />
+    <Content Include="Views\Docs\Index.cshtml" />
+    <Content Include="Scripts\jquery-2.1.0.min.map" />
+    <Content Include="Views\Docs\Wiki\Content\Manual-ADO-Integration.md" />
+    <Content Include="Views\Docs\Wiki\Content\Ajax-Tab.md" />
+    <Content Include="Views\Docs\Wiki\Content\Configuration-Tab.md" />
+    <Content Include="Views\Docs\Wiki\Content\Configuration.md" />
+    <Content Include="Views\Docs\Wiki\Content\Contributing.md" />
+    <Content Include="Views\Docs\Wiki\Content\Custom-Runtime-Policy.md" />
+    <Content Include="Views\Docs\Wiki\Content\Custom-Tabs.md" />
+    <Content Include="Views\Docs\Wiki\Content\Platform-Data-Specification.md" />
+    <Content Include="Views\Docs\Wiki\Content\Debugging-with-SymbolSource.md" />
+    <Content Include="Views\Docs\Wiki\Content\Tabs.md" />
+    <Content Include="Views\Docs\Wiki\Content\Environment-Tab.md" />
+    <Content Include="Views\Docs\Wiki\Content\Execution-Tab.md" />
+    <Content Include="Views\Docs\Wiki\Content\Extensibility.md" />
+    <Content Include="Views\Docs\Wiki\Content\Extensions-Gallery.md" />
+    <Content Include="Views\Docs\Wiki\Content\History-Tab.md" />
+    <Content Include="Views\Docs\Wiki\Content\Metadata-Tab.md" />
+    <Content Include="Views\Docs\Wiki\Content\Model-Binding-Tab.md" />
+    <Content Include="Views\Docs\Wiki\Content\More-information.md" />
+    <Content Include="Views\Docs\Wiki\Content\More-plugin-examples.md" />
+    <Content Include="Views\Docs\Wiki\Content\Platform-Concepts.md" />
+    <Content Include="Views\Docs\Wiki\Content\Request-Tab.md" />
+    <Content Include="Views\Docs\Wiki\Content\Platform-Resource-Specification.md" />
+    <Content Include="Views\Docs\Wiki\Content\Routes-Tab.md" />
+    <Content Include="Views\Docs\Wiki\Content\Platform-Basic-Port.md" />
+    <Content Include="Views\Docs\Wiki\Content\Server-Tab.md" />
+    <Content Include="Views\Docs\Wiki\Content\Session-Tab.md" />
+    <Content Include="Views\Docs\Wiki\Content\Sql-tab.md" />
+    <Content Include="Views\Docs\Wiki\Content\Timeline-Tab.md" />
+    <Content Include="Views\Docs\Wiki\Content\Trace-Tab.md" />
+    <Content Include="Views\Docs\Wiki\Content\Troubleshooting.md" />
+    <Content Include="Views\Docs\Wiki\Content\Views-Tab.md" />
+    <Content Include="Views\Docs\Wiki\Content\_Sidebar.md" />
+    <Content Include="Views\Docs\Wiki\Home.md" />
+    <Content Include="Views\Docs\Wiki\Sandbox\Gollum.md" />
+    <Content Include="Views\Docs\Wiki\Sandbox\_Footer.md" />
+    <Content Include="Views\Docs\Wiki\Sandbox\_Header.md" />
+    <Content Include="Views\Docs\Wiki\Sandbox\_Sidebar.md" />
+    <None Include="T4MVC.tt.hooks.t4" />
+    <None Include="T4MVC.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>T4MVC.cs</LastGenOutput>
-    </Content>
-    <Content Include="Views\Community\Index.cshtml" />
-    <Content Include="Areas\Version\Views\Install\Index.cshtml" />
-    <Content Include="Areas\Version\Views\Install\Update.cshtml" />
-    <Content Include="Views\Packages\Index.cshtml" />
-    <Content Include="Views\Docs\Index.cshtml" />
-    <Content Include="Scripts\jquery-1.9.1.min.map" />
-    <Content Include="Views\Docs\Wiki\**\*.*" />
+    </None>
+    <Content Include="Views\Install\Index.cshtml" />
+    <Content Include="Views\Shared\_Simple.cshtml" />
+    <Content Include="Views\Community\Talks.cshtml" />
     <Content Include="Views\Status\Index.cshtml" />
     <Content Include="Views\Status\_Issues.cshtml" />
-    <Content Include="Views\Error\_ErrorLayout.cshtml" />
-    <Content Include="Views\Error\_ViewStart.cshtml" />
-    <Content Include="Views\Error\500.cshtml" />
-    <Content Include="Views\Error\404.cshtml" />
-    <Content Include="Views\Error\401.cshtml" />
-    <Content Include="Views\Shared\_Head.cshtml" />
+    <Content Include="Views\Docs\Details.cshtml" />
+    <Content Include="Views\Docs\Wiki\Content\Installing.md" />
+    <Content Include="Views\Docs\Wiki\Content\Enabling.md" />
+    <Content Include="Views\Docs\Wiki\Content\Runtime-Policies.md" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Areas\api\Models\" />
-    <Folder Include="Areas\api\Views\Shared\" />
-    <Folder Include="Areas\Version\Models\" />
-    <Folder Include="Areas\Version\Views\Shared\" />
+    <ProjectReference Include="..\Glimpse.Blog\Glimpse.Blog.csproj">
+      <Project>{1F8DBDEA-FF54-44F7-8CE8-5B664E1A6EC2}</Project>
+      <Name>Glimpse.Blog</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Glimpse.Build\Glimpse.Build.csproj">
+      <Project>{7b5c79ac-fccb-47de-acee-78566a0ccbab}</Project>
+      <Name>Glimpse.Build</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Glimpse.Contributor\Glimpse.Contributor.csproj">
+      <Project>{7F60C0C0-AA0E-4102-A313-71E8A7EA8802}</Project>
+      <Name>Glimpse.Contributor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Glimpse.Package\Glimpse.Package.csproj">
+      <Project>{a0efe764-bbde-4815-81a5-25a1fb204de7}</Project>
+      <Name>Glimpse.Package</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Glimpse.Release\Glimpse.Release.csproj">
+      <Project>{334BB5D2-1E98-4A9D-BA0F-67C4CEED186B}</Project>
+      <Name>Glimpse.Release</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Glimpse.Twitter\Glimpse.Twitter.csproj">
+      <Project>{5247c150-d7cf-4a2f-994c-447e25b66af1}</Project>
+      <Name>Glimpse.Twitter</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Shared\_Home.cshtml">
-      <SubType>Code</SubType>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Glimpse.Issues\Glimpse.Infrastructure.csproj">
-      <Project>{5fe03002-28d6-4f7c-9c63-84bde2334070}</Project>
-      <Name>Glimpse.Infrastructure</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Glimpse.Package\Glimpse.Package.csproj">
-      <Project>{A0EFE764-BBDE-4815-81A5-25A1FB204DE7}</Project>
-      <Name>Glimpse.Package</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -534,9 +454,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>6912</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:61158/</IISUrl>
+          <IISUrl>http://localhost:6876/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
@@ -546,16 +466,7 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
-  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
-  <PropertyGroup>
-    <PostBuildEvent>cd $(ProjectDir)App_Data\
-
-if not exist Glimpse.mdf (
-copy Glimpse_ReadOnly.mdf Glimpse.mdf
-attrib -r Glimpse.mdf
-)</PostBuildEvent>
-  </PropertyGroup>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>

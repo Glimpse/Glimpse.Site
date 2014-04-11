@@ -1,39 +1,34 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" /> 
-    <link rel="apple-touch-icon" href="~/Content/_v2/favicon.png">
-    <link rel="icon" href="~/Content/_v2/favicon.png">
-    <!--[if IE]><link rel="shortcut icon" href="~/Content/_v2/favicon.ico"><![endif]--> 
-    <meta name="msapplication-TileColor" content="#FFFFFF">
-    <meta name="msapplication-TileImage" content="~/Content/_v2/favicon.png"> 
-    <meta name="viewport" content="width=device-width" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>@ViewBag.Title</title>
-    @Styles.Render("~/Content/css")
-    <link type="text/css" href="@ViewBag.pageCss" media="screen" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - the open source diagnostics platform of the web</title>
+    @Styles.Render("~/content/sitecss")
 </head>
-<body class="inVS">
-    <div class="header">
-        <div class="header-inner"> 
-            <a href="@Url.Action(MVC.Home.Index())" class="glimpse-logo"><img src="~/Content/_v2/img/logo.png" alt="logo" /></a> 
-            @RenderSection("header")
+<body class="@ViewBag.PageStyle body-simple">
+    <div class="body_container">
+        @RenderBody()
+    </div>   
+    <div class="footer" role="contentinfo">
+        <div class="container"> 
+            <div class="row footer_last">
+                <table width="100%">
+                    <tr>
+                        <td width="25%">
+                            &copy; @DateTime.Now.Year - Glimpse
+                        </td>
+                        <td width="50%" class="text-center">
+                            Proudly backed by <a class="redgate" href="http://www.red-gate.com/"></a> <a href="http://www.github.com/glimpse/glimpse">and you!</a>
+                        </td>
+                        <td width="25%"></td>
+                    </tr>
+                </table>
+            </div>
         </div>
-        <div id="header-shadow"></div>
     </div>
-    <div class="content-container">
-        <div class="content"> 
-            @RenderBody()
-        </div>
-        <hr class="clearer" />
-    </div>
-    <div class="section-container" id="footer-container">
-        <hr class="footer-split" />
-        <div class="redgate-footer"> 
-            Proudly backed by <a href="http://www.red-gate.com/"><img src="/Content/_v2/website-assets/img/redgate.png" id="redgate-logo"></a> <a href="http://www.github.com/glimpse/glimpse">and you!</a>
-        </div>
-    </div>
-    @Scripts.Render("~/Script/simple")
-    @RenderSection("scripts", false)
+
+    @Scripts.Render("~/bundles/sitejs") 
+    @RenderSection("scripts", required: false)
 </body>
 </html>

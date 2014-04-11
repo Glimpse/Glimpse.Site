@@ -6,12 +6,12 @@ using System.Text;
 namespace Glimpse.Package
 {
     public class ConfigSectionGlimpse : ConfigurationSection
-    {  
-        [ConfigurationProperty("debug", DefaultValue = false)]
-        public bool? Debug
+    {   
+        [ConfigurationProperty("useOfflineData", DefaultValue = null)]
+        public bool? UseOfflineData
         {
-            get { return (bool?)base["debug"]; }
-            set { base["debug"] = value; }
+            get { return (bool?)base["useOfflineData"]; }
+            set { base["useOfflineData"] = value; }
         }
 
         [ConfigurationProperty("logging")]
@@ -26,13 +26,6 @@ namespace Glimpse.Package
         {
             get { return (ConfigElementServices)base["services"]; }
             set { base["services"] = value; }
-        }
-
-        [ConfigurationProperty("dataSource")]
-        public ConfigElementDataSource DataSource
-        {
-            get { return (ConfigElementDataSource)base["dataSource"]; }
-            set { base["dataSource"] = value; }
-        }
+        } 
     }
 }

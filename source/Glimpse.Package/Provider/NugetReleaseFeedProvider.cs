@@ -19,19 +19,26 @@ namespace Glimpse.Package
         {
             var results = new Dictionary<string, ReleaseFeedItem>();
 
-            // NOTE: I know that this marged this concept isn't the best but it means we can do all lookups in Parallel
-            Parallel.ForEach(options.GetMergedOptions(), x =>
+            try
+            {
+                // NOTE: I know that this marged this concept isn't the best but it means we can do all lookups in Parallel
+                Parallel.ForEach(options.GetMergedOptions(), x =>
                 {
                     IEnumerable<ReleaseFeedItem> found = null;
                     if (x.Type == ReleaseFeedOptions.ReleaseFeedOptionsMergedTypes.Specific)
                         found = GetAllReleasesForSpecific(x.Value);
                     else if (x.Type == ReleaseFeedOptions.ReleaseFeedOptionsMergedTypes.Depends)
                         found = GetAllReleasesForDepends(x.Value);
-                    else 
+                    else
                         throw new NotSupportedException("Type was out of range");
 
                     MergeResults(found, results);
                 }); 
+            }
+            catch (Exception e)
+            {
+                //Not doing anything because we want to try and recover from this
+            }
 
             return results.Values;
         }
@@ -47,7 +54,7 @@ namespace Glimpse.Package
             {
                 var query = (from p in context.Packages
                              where p.Dependencies.Contains("|" + id + ":") || p.Dependencies.StartsWith(id + ":") || p.Id == id
-                             select new ReleaseFeedItem { DownloadCount = p.DownloadCount, Name = p.Id, Version = p.Version, VersionDownloadCount = p.VersionDownloadCount, Created = p.Created, IsAbsoluteLatestVersion = p.IsAbsoluteLatestVersion, IsLatestVersion = p.IsLatestVersion, IsPrerelease = p.IsPrerelease, ReleaseNotes = p.ReleaseNotes, IconUrl = p.IconUrl, Description = p.Description })
+                             select new ReleaseFeedItem { DownloadCount = p.DownloadCount, Name = p.Id, Version = p.Version, VersionDownloadCount = p.VersionDownloadCount, Created = p.Created, IsAbsoluteLatestVersion = p.IsAbsoluteLatestVersion, IsLatestVersion = p.IsLatestVersion, IsPrerelease = p.IsPrerelease, ReleaseNotes = p.ReleaseNotes, IconUrl = p.IconUrl, Description = p.Description, Authors = p.Authors  })
                             .Skip(skip).Take(40).ToList();
                 skip += 40;
                 shouldCheck = query.Count == 40;
@@ -63,7 +70,7 @@ namespace Glimpse.Package
 
             var query = from p in context.Packages
                         where p.Id == id
-                        select new ReleaseFeedItem { DownloadCount = p.DownloadCount, Name = p.Id, Version = p.Version, VersionDownloadCount = p.VersionDownloadCount, Created = p.Created, IsAbsoluteLatestVersion = p.IsAbsoluteLatestVersion, IsLatestVersion = p.IsLatestVersion, IsPrerelease = p.IsPrerelease, ReleaseNotes = p.ReleaseNotes, IconUrl = p.IconUrl, Description = p.Description };
+                        select new ReleaseFeedItem { DownloadCount = p.DownloadCount, Name = p.Id, Version = p.Version, VersionDownloadCount = p.VersionDownloadCount, Created = p.Created, IsAbsoluteLatestVersion = p.IsAbsoluteLatestVersion, IsLatestVersion = p.IsLatestVersion, IsPrerelease = p.IsPrerelease, ReleaseNotes = p.ReleaseNotes, IconUrl = p.IconUrl, Description = p.Description, Authors = p.Authors };
             var result = query.ToList();
 
             return result;

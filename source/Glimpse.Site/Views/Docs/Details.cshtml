@@ -1,0 +1,32 @@
+﻿@model Glimpse.Site.Models.DocumentationViewModel
+@{
+    ViewBag.Title = "Documentation - Glimpse -";
+}
+
+<div class="jumbotron">
+    <div class="container">
+        <h1>Documentation</h1>
+        <p>Welcome to the Glimpse Documentation! Here we hope to introduce you to the various tutorials, concepts and APIs you might need when discovering and using Glimpse.</p>
+    </div>
+</div>
+
+<div class="container content content-normal content-docs">
+    <div class="bs-callout bs-callout-info">
+        <p><strong>NOTE:</strong> Glimpse docs are currently being improved. If you'd like to help out, just <a href="@Model.EditUri">edit this page</a> or contribute to our <a href="https://github.com/Glimpse/Glimpse/wiki">GitHub Wiki</a></p>
+    </div>
+    <div class="row">
+        <div class="col-xs-9">
+            <h1>@Model.Title</h1>
+            @Html.RenderMarkdown(Model.MarkdownFile)
+        </div>
+        <div class="col-xs-3">
+            <div class="navbar-side">@Html.RenderMarkdown(Model.SideBarFile)</div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $('.navbar-side a:contains("' + $('.content-docs h1').text() + '")').parent().addClass('active');
+    </script>
+}

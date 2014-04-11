@@ -1,147 +1,137 @@
-﻿@{
-    ViewBag.Title = "Glimpse - Community - Who's involved & how you can help";
-    ViewBag.bodyClass = "community-page";
+﻿@using System.Globalization
+@model Glimpse.Contributor.Community
+@{
+    ViewBag.Title = "Community - Glimpse - ";
 }
 
-@section header {
-    <h1>Community</h1>
-}
-@section subnav {
-    &nbsp;
-}
-<div class="twoColumn column1">
-        <div class="innerColumn">
-            <h2>Working together</h2>
-            <p>Glimpse wouldn't be what it is today without the love and support of some awesome people from around the world. Thanks to everyone who has been involved in making this possible.</p>
-            <p>If you would like to get involved, there are plenty of things that you can do. There are issues that are good for first-timers ringfenced and tagged <a href="https://github.com/Glimpse/Glimpse/issues?labels=Jump+In&milestone=&page=1&sort=updated&state=open">Jump In</a> in GitHub. If you'd rather start off 
-            on something more self-contained, why not <a href="/Help/Extensibility">write an extension</a> for your favorite server- or client-side technology?</p>
-            <p>No matter what your interest, please feel free to reach out to us on the <a href="http://groups.google.com/group/getglimpse-dev">mailing list</a> or via twitter (<a href="https://twitter.com/anthony_vdh">@@anthony_vdh</a> &amp; <a href="https://twitter.com/nikmd23">@@nikmd23</a>).</p>
+<div class="jumbotron">
+    <div class="container">
+        <h1>Community</h1>
+        <p>Glimpse wouldn't be what it is without the love and support of some awesome people from around the world. Thanks to everyone who has been involved in making this possible.</p>
+    </div>
+</div>
+
+<div class="container content content-normal">
+    <h2 id="reach-out">Reach Out</h2>
+    <div class="row">
+        <div class="col-sm-4">
+            <h3>Issue List</h3>
+            <p>Have you found a bug or something misbehaving? Tell us about it on our <a href="https://github.com/glimpse/glimpse/issues">GitHub issue list</a> and someone will help you as soon as possible.</p>
+        </div>
+        <div class="col-sm-4">
+            <h3>Stack Overflow</h3>
+            <p>Got general questions or just need a little support? Anything related to using, configuring or extending Glimpse can be asked at <a href="http://stackoverflow.com">StackOverflow</a>. View <a href="http://stackoverflow.com/questions/tagged/glimpse">already answered</a> questions for even faster support.</p>
+        </div>
+        <div class="col-sm-4">
+            <h3>Mailing List</h3>
+            <p>Got questions about how to extend or work on Glimpse, or just want to discuss a new feature idea? Shoot it through to the <a href="https://groups.google.com/forum/#!forum/getglimpse-dev">developers mailing list</a>.</p>
         </div>
     </div>
-    <div class="twoColumn column2">
-        <div class="innerColumn">
-            <h2>Completing the story</h2> 
-            <p>Documentation is the one thing that helps separate good projects from the best projects. If you’re a first time OSS contributor, documentation is a great stepping stone to learn the process. If you’re an OSS veteran, you’ll understand the need for constant documentation updates. The Glimpse team is always grateful for any helping hands.</p>
-            <p>In an effort to make documentation contribution as simple as possible, we're using Glimpse’s <a href="https://github.com/Glimpse/Glimpse/wiki">GitHub Wiki</a>, a standard Git repository under the covers, as the entry point for documentation. GitHub Wikis provide us with an online WYSIWYG interface for adding and editing documentation, completely in browser, with the simple markdown syntax.</p>
-            <p>We need people to help with the Glimpse website, documenting the Glimpse APIs, "Getting Started" guides for new users, and so on. Even posting about Glimpse to your own blog is a useful contribution.</p>
-            <p>Whatever your experience level, we can support you and provide you with the guidance you need. </p>
-    
+
+    <div class="row">
+        <h2 id="stay-up-to-date">Stay Up to Date</h2>
+        <div class="col-sm-4">
+            <h3>Blog</h3>
+            <p>Follow along with the <a href="http://blog.getGlimpse.com">Glimpse blog</a> for important release notices, feature announcements and news.</p>
+        </div>
+        <div class="col-sm-8">
+            <h3>Commiters on Twitter</h3>
+            @if (Model.Committers.Count > 0)
+            {
+                <div class="listing-data">
+                    <div class="row listing-data-comitters">
+                        @foreach (var commiter in Model.Committers)
+                        {
+                            <div class="col-xs-4 col-md-3 text-center">
+                                <a href="http://github.com/@commiter.GithubUsername" class="thumbnail">
+                                    <img src="@commiter.AvatarUrl" alt="@commiter.Name">
+                                </a>
+                                <strong class="trim">@commiter.Name</strong>
+                                @if (commiter.Contributions > 0)
+                                {
+                                    <div class="text-muted small">@commiter.Contributions.ToString("N0", CultureInfo.InvariantCulture) commits</div>
+                                }
+                                <a href="https://twitter.com/@commiter.TwitterUsername">@@@commiter.TwitterUsername</a>
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
         </div>
     </div>
-    <div class="comm-page-contriubutors">
-        <h2>Committers</h2>
-        <div class="stat-group stats-contributors">
-            <dl class="stat">
-                <dt class="stat__title delta">Anthony van der Hoorn</dt> 
-                <dd class="stat__value">
-                    <img height="100" src="~/Content/_v2/Contributors/pic1.jpg" width="100">
-                </dd>  
-                <dd class="stat__value hide--palm"><a href="https://twitter.com/anthony_vdh">@@anthony_vdh</a> | <a href="https://github.com/avanderhoorn">github</a></dd>
-            </dl>
-            <dl class="stat">
-                <dt class="stat__title delta">Nik Molnar</dt> 
-                <dd class="stat__value">
-                    <img height="100" src="~/Content/_v2/Contributors/pic2.jpg" width="100">
-                </dd>  
-                <dd class="stat__value hide--palm"><a href="https://twitter.com/nikmd23">@@nikmd23</a> | <a href="https://github.com/nikmd23">github</a></dd>
-            </dl>
-            <dl class="stat">
-                <dt class="stat__title delta">Chris Gijbels</dt> 
-                <dd class="stat__value">
-                    <img height="100" src="~/Content/_v2/Contributors/chris.jpg" width="100">
-                </dd>  
-                <dd class="stat__value hide--palm"><a href="https://twitter.com/CGijbels">@@CGijbels</a> | <a href="https://github.com/CGijbels">github</a></dd>
-            </dl>
+
+    <h2>Get Involved</h2>
+    <p class="text-center">Open source projects thrive on contributions from the developer community. <br class="hidden-xs" /> Would like to get involved? There is plenty that you can do to help! Here's a few:</p>
+    <div class="row">
+        <div class="col-sm-6">
+            <h3>Issues</h3>
+            <p>Glimpse maintains several issues that are good for first-timers <a href="https://github.com/Glimpse/Glimpse/issues?labels=Jump+In&milestone=&page=1&sort=updated&state=open">tagged as Jump In on GitHub</a>. If one peaks your intrest, feel free to work on it and let us know if you need any help doing so.</p>
+            <ul>
+                <li><a href="http://nikcodes.com/2013/05/10/new-contributor-jump-in/">Learn more about how "Jump In" issues work</a></li>
+            </ul>
         </div>
-        <h2>Contributors</h2>
-        <div class="stat-group stats-contributors">
-            <dl class="stat">
-                <dt class="stat__title delta">Kristoffer Ahl</dt> 
-                <dd class="stat__value">
-                    <img height="100" src="~/Content/_v2/Contributors/pic3.jpg" width="100">
-                </dd> 
-                <dd class="stat__value hide--palm"><a href="https://twitter.com/kristofferahl">@@kristofferahl</a> | <a href="https://github.com/kristofferahl">github</a></dd>
-            </dl>
-            <dl class="stat">
-                <dt class="stat__title delta">Steven Lauwers</dt> 
-                <dd class="stat__value">
-                    <img height="100" src="~/Content/_v2/Contributors/pic4.jpg" width="100">
-                </dd> 
-                <dd class="stat__value hide--palm"><a href="https://twitter.com/steven_lauwers">@@steven_lauwers</a> | <a href="https://github.com/stevenlauwers22">github</a></dd>
-            </dl>
-            <dl class="stat">
-                <dt class="stat__title delta">Richard van der Hoff</dt> 
-                <dd class="stat__value">
-                    <img height="100" src="~/Content/_v2/Contributors/pic5.jpg" width="100">
-                </dd> 
-                <dd class="stat__value hide--palm"><a href="https://twitter.com/richvdh">@@richvdh</a> | <a href="https://github.com/richvdh">github</a></dd>
-            </dl>
-            <dl class="stat">
-                <dt class="stat__title delta">Richard Oliver</dt> 
-                <dd class="stat__value">
-                    <img height="100" src="~/Content/_v2/Contributors/pic6.jpg" width="100">
-                </dd> 
-                <dd class="stat__value hide--palm"><a href="https://github.com/rho24">github</a></dd>
-            </dl>
-            <dl class="stat">
-                <dt class="stat__title delta">Adam Schroder</dt>
-                <dt class="stat__title"></dt>
-                <dd class="stat__value">
-                    <img height="100" src="~/Content/_v2/Contributors/pic7.jpg" width="100">
-                </dd> 
-                <dd class="stat__value hide--palm"><a href="https://twitter.com/schotime">@@schotime</a> | <a href="https://github.com/schotime">github</a></dd>
-            </dl>
-            <dl class="stat">
-                <dt class="stat__title delta">Maarten Balliauw</dt>
-                <dt class="stat__title"></dt>
-                <dd class="stat__value">
-                    <div class="contributor-img"><img height="100" src="~/Content/_v2/Contributors/pic10.jpg" width="100"></div>
-                </dd> 
-                <dd class="stat__value hide--palm"><a href="https://twitter.com/maartenballiauw">@@maartenballiauw</a> | <a href="https://github.com/maartenba">github</a></dd>
-            </dl>
-            <dl class="stat">
-                <dt class="stat__title delta">&nbsp; &nbsp; Pete Hotchkin &nbsp; &nbsp;</dt> 
-                <dd class="stat__value">
-                    <img height="100" src="~/Content/_v2/Contributors/pic8.jpg" width="100">
-                </dd> 
-                <dd class="stat__value hide--palm"><a href="https://twitter.com/headloose">@@headloose</a> | <a href="http://headloose.com/">blog</a></dd>
-            </dl>
-            <dl class="stat">
-                <dt class="stat__title delta">Elizabeth Ayer</dt> 
-                <dd class="stat__value">
-                    <img height="100" src="~/Content/_v2/Contributors/pic9.jpg" width="100">
-                </dd> 
-                <dd class="stat__value hide--palm"><a href="https://twitter.com/elizayer">@@elizayer</a></dd>
-            </dl>
+        <div class="col-sm-6">
+            <h3>New Features</h3>
+            <p>For those looking to get more deeply involved, <a href="#reach-out">reach out</a> to find out about our current efforts and how you can help.</p>
+            <ul>
+                <li><a href="/Docs/Contributing">Learn more about contributing to Glimpse core</a></li>
+            </ul>
         </div>
-        <h2>Special Thanks</h2>
-            <dl class="stat">
-                <dt class="stat__title delta">Jeffrey Burn</dt> 
-                <dd class="stat__value hide--palm"><a href="https://twitter.com/jetburn">@@jetburn</a> | <a href="https://github.com/kristofferahl">github</a></dd>
-            </dl>
-            <dl class="stat">
-                <dt class="stat__title delta">Josh Perry</dt> 
-                <dd class="stat__value hide--palm"><a href="https://twitter.com/joshperry">@@joshperry</a> | <a href="https://github.com/joshperry">github</a></dd>
-            </dl>
-            <dl class="stat">
-                <dt class="stat__title delta">Jason Clark</dt> 
-                <dd class="stat__value hide--palm"><a href="https://twitter.com/jasonrclark">@@jasonrclark</a> | <a href="https://github.com/jasonrclark">github</a></dd>
-            </dl>
-            <dl class="stat">
-                <dt class="stat__title delta">Brendan Forster</dt> 
-                <dd class="stat__value hide--palm"><a href="https://twitter.com/shiftkey">@@shiftkey</a> | <a href="https://github.com/shiftkey">github</a></dd>
-            </dl>
-            <dl class="stat">
-                <dt class="stat__title delta">Peter Hahndorf</dt> 
-                <dd class="stat__value hide--palm"><a href="https://twitter.com/hahndorf">@@hahndorf</a> | <a href="https://github.com/hahndorf">github</a></dd>
-            </dl>
-            <dl class="stat">
-                <dt class="stat__title delta">Scott Hanselman</dt> 
-                <dd class="stat__value hide--palm"><a href="https://twitter.com/shanselman">@@shanselman</a> | <a href="https://github.com/shanselman">github</a></dd>
-            </dl>
-            <dl class="stat">
-                <dt class="stat__title delta">Aaron Powell</dt> 
-                <dd class="stat__value hide--palm"><a href="https://twitter.com/slace">@@slace</a> | <a href="https://github.com/aaronpowell">github</a></dd>
-            </dl>
-        <hr class="clearer" />
+    </div>
+    <div class="row" style="margin-bottom: 30px; ">
+        <div class="col-sm-6">
+            <h3>Share Glimpse</h3>
+            <p>If you love Glimpse, tell others about it! Present Glimpse at a company tech talk, your local user group or submit a proposal to a conference about how you are using Glimpse or any extensions you may have written.</p>
+            <ul>
+                <li><a href="/Docs/More-information">Need inspiration? Watch some of the talks that we have given</a></li>
+            </ul>
+            
+            <h3>Create an Extension</h3>
+            <p>Get the best out of Glimpse by writing your own extension to expose diagnostic data that is meaningful for your applications. Creating extensions is easy, check <a href="/Docs/Custom-Tabs">the docs</a> or reference an <a href="@Url.Action(MVC.Extensions.Index())">open source extension</a> to get started.</p>
         </div>
+        <div class="col-sm-6">
+            <h3>Documentation</h3>
+            <p>Documentation is a key differentiator between good projects and <em>great</em> ones. Whether you’re a first time OSS contributor or a veteran, documentation is a great stepping stone to learn our contribution process.</p>
+            <p>Contributing to Glimpse documentation is dead simple. To make it so easy, we're using Glimpse’s <a href="https://github.com/Glimpse/Glimpse/wiki">GitHub Wiki</a> as the entry point for documentation - each page within the docs section of the site has a link to take you straight to the page where you can make changes directly. GitHub Wikis provide an online <abbr title="What You See Is What You Get">WYSIWYG</abbr> interface for adding and editing the docs, completely in browser, using <a href="https://daringfireball.net/projects/markdown/">Markdown</a>.</p>
+        </div>
+    </div>
+
+    @if (Model.Contributors.Count > 0 || Model.Authors.Count > 0)
+    {
+        <h2>Meet the Team</h2>
+        <p>It takes a village to raise an open source project. Here's everyone who has helped to make Glimpse the best it can be:</p>
+    }
+
+    <div class="listing-data">
+        @if (Model.Contributors.Count > 0)
+        {
+            <h3>Contributors</h3>
+            <div class="row listing-data-cobtributors">
+                @foreach (var contributor in Model.Contributors)
+                {
+                    <div class="col-xs-3 col-md-2 text-center">
+                        <a href="http://github.com/@contributor.Login" class="thumbnail">
+                            <img src="@contributor.Avatar_Url" alt="@contributor.Login">
+                        </a>
+                        <strong class="trim">@contributor.Login</strong>
+                        <div class="text-muted small">@contributor.Contributions.ToString("N0", CultureInfo.InvariantCulture) commits</div>
+                    </div>
+                }
+            </div>
+        }
+
+        @if (Model.Authors.Count > 0)
+        {
+            <h3>Extension Authors</h3>
+            <div class="row listing-data-authors">
+                @foreach (var author in Model.Authors)
+                {
+                    <div class="col-xs-3 col-md-2 text-center">
+                        <strong class="trim">@author.Key</strong> 
+                        <div class="text-muted small">@author.Value.Count packages</div>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+</div>

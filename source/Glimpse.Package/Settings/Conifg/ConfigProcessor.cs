@@ -15,10 +15,7 @@ namespace Glimpse.Package
         {
             var config = RetrieveConfig();
             if (config != null)
-            { 
-                if (config.Debug.HasValue)
-                    settings.Debug = config.Debug.GetValueOrDefault();
-
+            {  
                 var logging = config.Logging;
                 if (logging != null)
                 {
@@ -40,12 +37,8 @@ namespace Glimpse.Package
                         settings.MinServiceTriggerInterval = services.MinTriggerInterval.GetValueOrDefault(); 
                 }
 
-                var dataSource = config.DataSource;
-                if (dataSource != null)
-                {
-                    if (dataSource.DisabledAutoBuild.HasValue)
-                        settings.DisableAutoBuild = dataSource.DisabledAutoBuild.GetValueOrDefault();
-                }
+                if (config.UseOfflineData.HasValue)
+                    settings.UseOfflineData = config.UseOfflineData.Value;
             }
         }
 

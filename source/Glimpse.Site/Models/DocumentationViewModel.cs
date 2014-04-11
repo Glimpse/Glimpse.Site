@@ -9,13 +9,7 @@ namespace Glimpse.Site.Models
     {
         private FileInfo markdownFilePath;
         private IEnumerable<DocumentationViewModel> navigationDocuments;
-
-/*
-        public DocumentationViewModel(string markdownSlug, RouteData routeData) : this(markdownSlug, "Views/" + routeData.GetRequiredString("controller"))
-        {
-        }
-*/
-
+         
         public DocumentationViewModel(string markdownSlug, string viewsLocation) : this(markdownSlug, viewsLocation, true)
         {
         }
@@ -44,6 +38,14 @@ namespace Glimpse.Site.Models
             get
             {
                 return markdownFilePath ?? (markdownFilePath = new FileInfo(Path.Combine(ViewsLocation, MarkdownSlug + ".md")));
+            }
+        }
+
+        public FileInfo SideBarFile
+        {
+            get
+            {
+                return new FileInfo(Path.Combine(MarkdownFile.DirectoryName, "_SideBar.md"));
             }
         }
 

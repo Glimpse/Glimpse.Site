@@ -21,5 +21,11 @@ namespace Glimpse.Package
         public string IconUrl { get; set; }
 
         public string Description { get; set; }
+
+        public string Authors { get; set; }
+
+        public int DownloadCount { get; set; }
+
+        public int VersionDownloadCount { get; set; }
     }
 }

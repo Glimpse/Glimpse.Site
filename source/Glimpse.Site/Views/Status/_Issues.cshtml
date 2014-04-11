@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Glimpse.Site.Models.IssueViewModel>
+﻿@model IEnumerable<Glimpse.Release.ReleaseIssue>
 
 @if (Model.Any())
 {
@@ -8,18 +8,19 @@
             <th style="width:15%">Category</th>
             <th style="width:60%;">Description</th>
             <th style="width: 15%;">User</th>
-         </tr>
+        </tr>
         @foreach (var issue in Model)
         {
-            <tr><td><a href="@issue.IssueLinkUrl">#@issue.Number</a></td> 
+            <tr>
+                <td><a href="@issue.IssueLinkUrl">#@issue.Number</a></td>
                 <td>@issue.Category</td>
-                <td>@issue.Description</td>
-                <td><a href="@issue.User.Html_Url">@issue.User.Login</a></td>
+                <td>@issue.Title</td>
+                <td><a href="@issue.User.HtmlUrl">@issue.User.Login</a></td>
             </tr>
         }
     </table>
 }
 else
 {
-    <p style="color:grey; font-size: 90%">@ViewData["emptyMessage"]</p>
+    <p class="text-muted text-center" style="padding: 15px">@ViewData["emptyMessage"]</p>
 }

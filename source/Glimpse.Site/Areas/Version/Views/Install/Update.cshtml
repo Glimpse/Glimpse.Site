@@ -1,87 +1,119 @@
 ﻿@model Glimpse.Package.ReleaseQueryInfo
 @{
-    ViewBag.Title = "Glimpse - Readme";
-    ViewBag.pageCss = "/Content/_v2/website-assets/css/firstRun.css";
+    ViewBag.Title = "Readme - Glimpse"; 
 }
+ 
+<div class="jumbotron jumbotron-dark">
+    <div class="container container-form-stay-update">
+        <img src="/Content/logo-triple.png" class="logo-triple" />
+        <h1><img src="/Content/updatetick.png" class="tick-update" />Thanks for updating Glimpse!</h1>
+        <p>Thanks for updating your packages. To see what improvements have been made be sure to take a look below.</p>
 
-@section header {
-    <h1><img src="/Content/_v2/img/updatetick.png" alt="tick" id="updateTick" />Thanks for updating Glimpse!</h1>
-    <p>Thanks for updating your packages. To see what improvements have been made be sure to take a look below.</p>
-}
+        <form action="http://getglimpse.us7.list-manage.com/subscribe/post?u=1e0ad87b92a992ad5856dcac3&amp;id=e2c440d6cb" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="form-stay-update" target="_blank" novalidate>
+            <label for="mce-EMAIL"><h2>Stay up-to-date!</h2></label>
+            <table>
+                <tr>
+                    <td><input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required></td>
+                    <td><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary"></td>
+                </tr>
+            </table> 
+        </form>
+    </div>
+</div>
 
-<form action="http://getglimpse.us7.list-manage.com/subscribe/post?u=1e0ad87b92a992ad5856dcac3&amp;id=e2c440d6cb" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-	<label for="mce-EMAIL">Stay up-to-date!</label>
-	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
-	<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
-</form>
+<div class="container content content-normal">
+    <h2>Release Notes</h2>
+    <div>
+        @foreach (var detail in Model.Details) {
+            var image = string.IsNullOrEmpty(detail.Value.PackageIconUrl) ? "/Content/logo-nuget.png" : detail.Value.PackageIconUrl;
+            var updated = detail.Value.HasResult && !detail.Value.HasNewer ? "good" : (detail.Value.HasResult ? "bad" : "bad"); //latest = updated, old = still on old version, not-found = no package avail.
 
-<h2>Release Notes</h2>
-<div class="package-holder">
-    @foreach (var detail in Model.Details) {
-        var image = string.IsNullOrEmpty(detail.Value.PackageIconUrl) ? "/Content/_v2/img/logo-nuget.png" : detail.Value.PackageIconUrl;
-        var updated = detail.Value.HasResult && !detail.Value.HasNewer ? "good" : (detail.Value.HasResult ? "bad" : "bad"); //latest = updated, old = still on old version, not-found = no package avail.
-        <div class="package @updated">
-            <div class="side-status @updated"></div>
-            <div class="package-icon"><img height="54" src="@image" onerror="this.src = '/Content/_v2/logo-nuget.png';"/></div>
-            <div class="package-details">
-                <h3>@detail.Key</h3>
-                <div class="package-status">
-                    @if (detail.Value.HasResult) {
-                        <text>
-                            <div class="package-status-verison">
-                                Installed version: <strong class="installed-version @updated">@detail.Value.Version</strong> 
-                                Latest version: <strong class="installed-version">@if (detail.Value.HasNewer) { @detail.Value.Summary[detail.Value.Channel].LatestVersion } else { @detail.Value.Version }</strong>
-                            </div>
-                            <div class="package-status-message">
-                                @if (!detail.Value.HasNewer) { <text>Congratulations, you are up to date :D</text> } 
-                                else { <text>Sorry, it looks like you are currently out of date :(</text> }
-                            </div>
-                        </text>
-                    } else {
-                        <div class="package-status-message">Could not find release.</div>
+            <div class="media package-status">
+                <div class="pull-left">
+                    <img height="54" src="@image" onerror="this.src = '/Content/logo-nuget.png';" />
+                </div>
+                <div class="media-body">
+                    <h3 class="media-heading">@detail.Key</h3>
+                    <div class="text-center">
+                        @if (detail.Value.HasResult) {
+                            <text>
+                                <div class="lead">
+                                    Installed version: <strong class="@updated">@detail.Value.Version</strong>
+                                    Latest version: <strong>
+                                        @if (detail.Value.HasNewer) {
+                                            @detail.Value.Summary[detail.Value.Channel].LatestVersion
+                                        }
+                                        else {
+                                            @detail.Value.Version
+                                        }
+                                    </strong>
+                                </div>
+                                @if (!detail.Value.HasNewer) {
+                                    <p>Congratulations, you are up to date :D</p>
+                                }
+                                else {
+                                    <p>
+                                        <span class="@updated">Sorry, it looks like you are still currently <strong>out of date</strong> :(</span><br />
+                                        No worries though, it's easy to fix!
+                                    </p>
+                                    <div style="margin:10px 0 35px;">
+                                        <table align="center" width="80%">
+                                            <tr>
+                                                <td width="40%"><div class="code">PM&gt; Update-Package @detail.Key</div></td>
+                                                <td width="10%">or</td>
+                                                <td width="40%">Update via VS <a href="https://docs.nuget.org/docs/start-here/managing-nuget-packages-using-the-dialog">Package Management</a> window.</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                }
+                            </text>
+                        }
+                        else {
+                            <em>Could not find release.</em>
+                        }
+                    </div>
+                    
+                    @if (detail.Value.AvailableReleases != null) {
+                        <div class="release-notes">
+                            <h4>This is what you just got!</h4>
+                            @foreach (var release in detail.Value.RequestedReleases) { 
+                                <div class="package-status-detail">
+                                    <div>
+                                        <strong>@release.Key</strong> -
+                                        <em>@release.Value.Created.ToString("dd MMM yyyy")</em>
+                                    </div>
+                                    <p class="package-status-notes">
+                                        @if (!string.IsNullOrEmpty(release.Value.ReleaseNotes)) {
+                                            @Html.HtmlEncode(release.Value.ReleaseNotes, true)
+                                        }
+                                        else {
+                                            <em>No notes available for this release.</em>
+                                        }
+                                    </p>
+                                </div>
+                            }
+                        </div>
                     }
                 </div>
-                @if (detail.Value.AvailableReleases != null) {
-                    <div class="release-notes">
-                        <div class="release-notes-title">This is what you just got!</div>
-                        @foreach (var release in detail.Value.RequestedReleases) {
-                            <div class="release-item-detail">
-                                <div class="release-item-detail-header">
-                                    <span class="release-item-detail-title">@release.Key</span> -
-                                    <span class="release-item-detail-date">@release.Value.Created.ToString("dd MMM yyyy")</span> 
-                                </div>
-                                <div class="release-item-detail-notes">
-                                    @if (!string.IsNullOrEmpty(@release.Value.ReleaseNotes)) { @Html.HtmlEncode(release.Value.ReleaseNotes, true) } 
-                                    else { <i>No notes avaiable for this release.</i> }
-                                </div>
-                            </div>
-                        }  
-                    </div> 
-                }
             </div>
-            <hr class="clearer" />
-        </div>
-    }
-</div>    
-
-<dl class="threeColumn column1">
-    <div class="innerColumn">
-    <dt><img src="~/Content/_v2/img/ideas.png" alt="Issues or Suggestions" /></dt>
-    <dd>If you have found an issue or have a idea, let us know on our <a href="https://github.com/glimpse/glimpse/issues" target="_blank">issues list</a>.
-    </dd>
+        }
     </div>
-</dl>
-<dl class="threeColumn column2">
-    <div class="innerColumn">
-    <dt><img src="~/Content/_v2/img/google.png" alt="developer list" /></dt>
-    <dd>Get answers to questions and find out what is next for Glimpse on our <a href="https://groups.google.com/forum/?fromgroups#!forum/getglimpse-dev" target="_blank">community user group</a>.
-    </dd>
-    </div>
-</dl>
-<dl class="threeColumn column3">
-    <div class="innerColumn">
-    <dt><img src="~/Content/_v2/img/twitter.png" alt="twitter contacts" /></dt>
-    <dd>Feel free to get in touch with the us on Twitter: <a href="http://www.twitter.com/anthony_vdh" target="_blank">@@anthony_vdh</a> or <a href="http://www.twitter.com/nikmd23" target="_blank">@@nikmd23</a>.
-    </dd>
-    </div>
-</dl>
+    
+    <h2>Reach Out</h2>
+    <table width="100%">
+        <tr valign="top">
+            <td width="33%">
+                <h3>Issue List</h3>
+                <p>Have you found a bug or something misbehaving? Tell us about it on our <a href="https://github.com/glimpse/glimpse/issues">GitHub issue list</a> and someone will help you as soon as possible.</p>
+            </td>
+            <td width="34%" style="padding: 0 10px">
+                <h3>Stack Overflow</h3>
+                <p>Got general questions or just need a little support? Anything related to using, configuring or extending Glimpse can be asked at <a href="http://stackoverflow.com">StackOverflow</a>. View <a href="http://stackoverflow.com/questions/tagged/glimpse">already answered</a> questions for even faster support.</p>
+            </td>
+            <td width="33%" style="padding: 0 10px">
+                <h3>Mailing List</h3>
+                <p>Got questions about how to extend or work on Glimpse, or just want to discuss a new feature idea? Shoot it through to the <a href="https://groups.google.com/forum/#!forum/getglimpse-dev">developers mailing list</a>.</p>
+            </td>
+        </tr>
+    </table>
+</div>

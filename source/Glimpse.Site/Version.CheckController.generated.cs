@@ -13,6 +13,7 @@ using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Hosting;
 using System.Web.Mvc;
@@ -38,10 +39,22 @@ namespace Glimpse.Site.Areas.Version.Controllers
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        protected RedirectToRouteResult RedirectToAction(Task<ActionResult> taskResult)
+        {
+            return RedirectToAction(taskResult.Result);
+        }
+
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         protected RedirectToRouteResult RedirectToActionPermanent(ActionResult result)
         {
             var callInfo = result.GetT4MVCResult();
             return RedirectToRoutePermanent(callInfo.RouteValueDictionary);
+        }
+
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        protected RedirectToRouteResult RedirectToActionPermanent(Task<ActionResult> taskResult)
+        {
+            return RedirectToActionPermanent(taskResult.Result);
         }
 
         [NonAction]
@@ -126,8 +139,10 @@ namespace Glimpse.Site.Areas.Version.Controllers
     {
         public T4MVC_CheckController() : base(Dummy.Instance) { }
 
+        [NonAction]
         partial void IndexOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, Glimpse.Package.VersionCheckDetails details, bool withDetails);
 
+        [NonAction]
         public override System.Web.Mvc.ActionResult Index(Glimpse.Package.VersionCheckDetails details, bool withDetails)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Index);
@@ -137,8 +152,10 @@ namespace Glimpse.Site.Areas.Version.Controllers
             return callInfo;
         }
 
+        [NonAction]
         partial void ReleaseOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, string package, string version, string stamp);
 
+        [NonAction]
         public override System.Web.Mvc.ActionResult Release(string package, string version, string stamp)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Release);

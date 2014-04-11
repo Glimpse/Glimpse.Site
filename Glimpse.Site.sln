@@ -1,22 +1,37 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{35299946-422F-443B-A199-21100FCB91AF}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\NuGet.Config = .nuget\NuGet.Config
-		.nuget\NuGet.exe = .nuget\NuGet.exe
-		.nuget\NuGet.targets = .nuget\NuGet.targets
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30110.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glimpse.Site", "source\Glimpse.Site\Glimpse.Site.csproj", "{0180A7C0-2BB9-4B4C-A74F-64D888B0A011}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5247C150-D7CF-4A2F-994C-447E25B66AF1} = {5247C150-D7CF-4A2F-994C-447E25B66AF1}
+		{7B5C79AC-FCCB-47DE-ACEE-78566A0CCBAB} = {7B5C79AC-FCCB-47DE-ACEE-78566A0CCBAB}
+		{7F60C0C0-AA0E-4102-A313-71E8A7EA8802} = {7F60C0C0-AA0E-4102-A313-71E8A7EA8802}
+		{334BB5D2-1E98-4A9D-BA0F-67C4CEED186B} = {334BB5D2-1E98-4A9D-BA0F-67C4CEED186B}
+		{1F8DBDEA-FF54-44F7-8CE8-5B664E1A6EC2} = {1F8DBDEA-FF54-44F7-8CE8-5B664E1A6EC2}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glimpse.Site", "source\Glimpse.Site\Glimpse.Site.csproj", "{608B42EB-9163-4AA6-92FC-B40F05D7C27E}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{35299946-422F-443B-A199-21100FCB91AF}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glimpse.Package", "source\Glimpse.Package\Glimpse.Package.csproj", "{A0EFE764-BBDE-4815-81A5-25A1FB204DE7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glimpse.Package.Test", "source\Glimpse.Package.Test\Glimpse.Package.Test.csproj", "{FF9651A3-06B5-421A-9EF7-9124CCBDA921}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glimpse.Infrastructure.Test", "source\Glimpse.Issues.Test\Glimpse.Infrastructure.Test.csproj", "{B8C4A194-D047-4776-9D28-D61F9E28E923}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glimpse.Twitter", "source\Glimpse.Twitter\Glimpse.Twitter.csproj", "{5247C150-D7CF-4A2F-994C-447E25B66AF1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glimpse.Infrastructure", "source\Glimpse.Issues\Glimpse.Infrastructure.csproj", "{5FE03002-28D6-4F7C-9C63-84BDE2334070}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glimpse.Build", "source\Glimpse.Build\Glimpse.Build.csproj", "{7B5C79AC-FCCB-47DE-ACEE-78566A0CCBAB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glimpse.Blog", "source\Glimpse.Blog\Glimpse.Blog.csproj", "{1F8DBDEA-FF54-44F7-8CE8-5B664E1A6EC2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glimpse.Release", "source\Glimpse.Release\Glimpse.Release.csproj", "{334BB5D2-1E98-4A9D-BA0F-67C4CEED186B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glimpse.Service", "source\Glimpse.Service\Glimpse.Service.csproj", "{C407E7C1-281A-4F66-A0C3-314C3313F51D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glimpse.Contributor", "source\Glimpse.Contributor\Glimpse.Contributor.csproj", "{7F60C0C0-AA0E-4102-A313-71E8A7EA8802}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,10 +39,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{608B42EB-9163-4AA6-92FC-B40F05D7C27E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{608B42EB-9163-4AA6-92FC-B40F05D7C27E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{608B42EB-9163-4AA6-92FC-B40F05D7C27E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{608B42EB-9163-4AA6-92FC-B40F05D7C27E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0180A7C0-2BB9-4B4C-A74F-64D888B0A011}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0180A7C0-2BB9-4B4C-A74F-64D888B0A011}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0180A7C0-2BB9-4B4C-A74F-64D888B0A011}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0180A7C0-2BB9-4B4C-A74F-64D888B0A011}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A0EFE764-BBDE-4815-81A5-25A1FB204DE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A0EFE764-BBDE-4815-81A5-25A1FB204DE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A0EFE764-BBDE-4815-81A5-25A1FB204DE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -36,14 +51,30 @@ Global
 		{FF9651A3-06B5-421A-9EF7-9124CCBDA921}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF9651A3-06B5-421A-9EF7-9124CCBDA921}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF9651A3-06B5-421A-9EF7-9124CCBDA921}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B8C4A194-D047-4776-9D28-D61F9E28E923}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B8C4A194-D047-4776-9D28-D61F9E28E923}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B8C4A194-D047-4776-9D28-D61F9E28E923}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B8C4A194-D047-4776-9D28-D61F9E28E923}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5FE03002-28D6-4F7C-9C63-84BDE2334070}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5FE03002-28D6-4F7C-9C63-84BDE2334070}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5FE03002-28D6-4F7C-9C63-84BDE2334070}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5FE03002-28D6-4F7C-9C63-84BDE2334070}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5247C150-D7CF-4A2F-994C-447E25B66AF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5247C150-D7CF-4A2F-994C-447E25B66AF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5247C150-D7CF-4A2F-994C-447E25B66AF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5247C150-D7CF-4A2F-994C-447E25B66AF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B5C79AC-FCCB-47DE-ACEE-78566A0CCBAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B5C79AC-FCCB-47DE-ACEE-78566A0CCBAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B5C79AC-FCCB-47DE-ACEE-78566A0CCBAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B5C79AC-FCCB-47DE-ACEE-78566A0CCBAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F8DBDEA-FF54-44F7-8CE8-5B664E1A6EC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F8DBDEA-FF54-44F7-8CE8-5B664E1A6EC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F8DBDEA-FF54-44F7-8CE8-5B664E1A6EC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F8DBDEA-FF54-44F7-8CE8-5B664E1A6EC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{334BB5D2-1E98-4A9D-BA0F-67C4CEED186B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{334BB5D2-1E98-4A9D-BA0F-67C4CEED186B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{334BB5D2-1E98-4A9D-BA0F-67C4CEED186B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{334BB5D2-1E98-4A9D-BA0F-67C4CEED186B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C407E7C1-281A-4F66-A0C3-314C3313F51D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C407E7C1-281A-4F66-A0C3-314C3313F51D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C407E7C1-281A-4F66-A0C3-314C3313F51D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C407E7C1-281A-4F66-A0C3-314C3313F51D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F60C0C0-AA0E-4102-A313-71E8A7EA8802}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F60C0C0-AA0E-4102-A313-71E8A7EA8802}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F60C0C0-AA0E-4102-A313-71E8A7EA8802}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F60C0C0-AA0E-4102-A313-71E8A7EA8802}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

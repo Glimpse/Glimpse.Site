@@ -1,30 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Web;
+﻿using System.Net; 
 using System.Web.Mvc;
 
-namespace Glimpse.Package.Provider
+namespace Glimpse.Site.Controllers
 {
-    public class ErrorController : Controller
+    public partial class ErrorController : Controller
     {
         //
         // GET: /Error/
 
-        public ActionResult ServerError()
+        public virtual ActionResult ServerError()
         {
             SetStatusHeaders(HttpStatusCode.InternalServerError, "Internal Server Error");
             return View("500");
         }
 
-        public ActionResult NotFound()
+        public virtual ActionResult NotFound()
         {
             SetStatusHeaders(HttpStatusCode.NotFound, "Not Found");
             return View("404");
         }
 
-        public ActionResult Unauthorized()
+        public virtual ActionResult Unauthorized()
         {
             SetStatusHeaders(HttpStatusCode.Unauthorized, "Unauthorized");
             return View("401");
@@ -32,7 +28,7 @@ namespace Glimpse.Package.Provider
 
         private void SetStatusHeaders(HttpStatusCode statusCode, string statusDescription)
         {
-            Response.StatusCode = (int) statusCode;
+            Response.StatusCode = (int)statusCode;
             Response.StatusDescription = statusDescription;
         }
     }

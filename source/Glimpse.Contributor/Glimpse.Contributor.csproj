@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7F60C0C0-AA0E-4102-A313-71E8A7EA8802}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Glimpse.Contributor</RootNamespace>
+    <AssemblyName>Glimpse.Contributor</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\packages\Newtonsoft.Json.6.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ContributorSettings.cs" />
+    <Compile Include="Provider\ContributorOfflineProvider.cs" />
+    <Compile Include="Provider\ContributorProvider.cs" />
+    <Compile Include="Provider\CommitterProvider.cs" />
+    <Compile Include="Provider\IContributorProvider.cs" />
+    <Compile Include="Provider\ICommitterProvider.cs" />
+    <Compile Include="Provider\IPackageAuthorProvider.cs" />
+    <Compile Include="Provider\Model\Committer.cs" />
+    <Compile Include="Provider\Model\Contributor.cs" />
+    <Compile Include="Provider\PackageAuthorProvider.cs" />
+    <Compile Include="Services\ICommunityService.cs" />
+    <Compile Include="Services\Model\Community.cs" />
+    <Compile Include="Services\CommunityService.cs" />
+    <Compile Include="Settings\ISettings.cs" />
+    <Compile Include="Settings\Settings.cs" />
+    <Compile Include="Settings\SettingsExtensionOptions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Glimpse.Package\Glimpse.Package.csproj">
+      <Project>{A0EFE764-BBDE-4815-81A5-25A1FB204DE7}</Project>
+      <Name>Glimpse.Package</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Glimpse.Service\Glimpse.Service.csproj">
+      <Project>{c407e7c1-281a-4f66-a0c3-314c3313f51d}</Project>
+      <Name>Glimpse.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
