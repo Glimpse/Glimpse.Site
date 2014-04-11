@@ -210,6 +210,7 @@
     <Compile Include="Version.SharedController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
+    <None Include="Views\Docs\Wiki\Content\Heads-up-Display.md" />
     <None Include="Views\Docs\Wiki\Content\Governance-Model.md" />
   </ItemGroup>
   <ItemGroup>
