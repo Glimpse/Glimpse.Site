@@ -506,10 +506,8 @@ h4 { font-weight: bold; }
     padding: 0 0.5em;
     height: 33px;
     color: #333;
-}
-.form-stay-update .btn {
-    margin-top: -2px;
-}
+    margin-right: 10px
+} 
 .form-stay-update h2 {
     margin-top: 0;
 }

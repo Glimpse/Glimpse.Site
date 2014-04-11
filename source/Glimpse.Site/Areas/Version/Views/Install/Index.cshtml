@@ -13,17 +13,20 @@
         <p>Providing a previously hidden layer of information into your web app. To get the most out of the tool please keep reading...</p>
 
         <form action="http://getglimpse.us7.list-manage.com/subscribe/post?u=1e0ad87b92a992ad5856dcac3&amp;id=e2c440d6cb" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="form-stay-update" target="_blank" novalidate>
-            <label for="mce-EMAIL"><h2>Stay up-to-date!</h2></label>
-            <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
-            <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary">
+            <label for="mce-EMAIL"><h2>Stay up-to-date!</h2></label> 
+            <table>
+                <tr>
+                    <td><input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required></td>
+                    <td><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary"></td>
+                </tr>
+            </table> 
         </form>
     </div>
 </div>
 
 
 <div class="container content content-normal">
-    @if (!hasMVC || !hasEF)
-    {
+    @if (!hasMVC || !hasEF) {
         <h2>Quick Question...</h2>
         <div>
             <p>Did you know we have a whole package ecosystem? Why not try adding:</p>
@@ -47,13 +50,11 @@
     }
 
     <h2>Release Notes</h2>
-    <div class="package-holder">
-        @foreach (var detail in Model.Details)
-        {
+    <div>
+        @foreach (var detail in Model.Details) {
             var image = string.IsNullOrEmpty(detail.Value.PackageIconUrl) ? "/Content/logo-nuget.png" : detail.Value.PackageIconUrl;
             var updated = detail.Value.HasResult && !detail.Value.HasNewer ? "good" : (detail.Value.HasResult ? "bad" : "bad"); //latest = updated, old = still on old version, not-found = no package avail.
-
-
+             
             <div class="media package-status">
                 <div class="pull-left">
                     <img height="54" src="@image" onerror="this.src = '/Content/logo-nuget.png';" />
@@ -95,7 +96,7 @@
                             </text>
                         }
                         else {
-                            <div class="package-status-message">Could not find release.</div>
+                            <em>Could not find release.</em>
                         }
                     </div>
 
