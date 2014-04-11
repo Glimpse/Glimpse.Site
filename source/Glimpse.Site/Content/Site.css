@@ -340,41 +340,7 @@ h4 { font-weight: bold; }
     display: inline-block;
     position: relative;
     color: white;
-}
-.community_listing > div div, .community_listing > div ul {
-    -webkit-transition: opacity 400ms ease;
-    -moz-transition: opacity 400ms ease;
-    -ms-transition: opacity 400ms ease;
-    -o-transition: opacity 400ms ease;
-    transition: opacity 400ms ease;
-}
-.community_background {
-    background: #323d42;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-}
-.community_listing img {
-    opacity: 0.3;
-}
-.community_listing ul {
-    opacity: 0;
-    position: absolute;
-    bottom: 5px;
-    left: 10px;
-}
-.community_listing .handwritten {
-    padding-bottom: 10px;
-}
-.community_listing div:hover div {
-    opacity: 0.7;
-}
-.community_listing div:hover ul {
-    opacity: 1;
-}
+} 
 .community_guys {
     position: absolute;
     bottom: 0;
