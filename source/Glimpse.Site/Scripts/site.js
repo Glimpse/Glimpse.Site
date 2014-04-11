@@ -122,6 +122,7 @@ var getTweetsLatest = function () {
     },
     videoSetup = function() { 
         $('.action-video').click(function() {
+            _gaq.push(["_trackEvent", "Video", "Play", "Glimpse Introduction"]);
             $('body').prepend('<div class="overlay"></div><div class="overlay-modal"><div class="overlay-close">x</div><iframe width="560" height="315" src="//www.youtube.com/embed/ybIxZ6TTm_E" frameborder="0" allowfullscreen></iframe></div>');
             $('.overlay-close').click(function() {
                 $('.overlay, .overlay-modal').remove();
