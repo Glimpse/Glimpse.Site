@@ -23,12 +23,6 @@ namespace Glimpse.Site
             );
 
             routes.MapRoute(
-                name: "GettingStarted",
-                url: "getting-started",
-                defaults: new { controller = "GettingStarted", action = "Index" }
-            );
-
-            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
