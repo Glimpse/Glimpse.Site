@@ -109,6 +109,15 @@ namespace Links
         private const string URLPATH = "~/Content";
         public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
         public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public static class _v1 {
+            private const string URLPATH = "~/Content/_v1";
+            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+            public static readonly string app_sprite_new_png = Url("app-sprite-new.png");
+            public static readonly string app_sprite_png = Url("app-sprite.png");
+        }
+    
         public static readonly string bootstrap_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bootstrap.min.css") ? Url("bootstrap.min.css") : Url("bootstrap.css");
              
         public static readonly string bootstrap_css_map = Url("bootstrap.css.map");
@@ -133,6 +142,8 @@ namespace Links
             public static readonly string pic9_jpg = Url("pic9.jpg");
         }
     
+        public static readonly string favicon_ico = Url("favicon.ico");
+        public static readonly string favicon_png = Url("favicon.png");
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public static class Fonts {
             private const string URLPATH = "~/Content/Fonts";
@@ -149,9 +160,11 @@ namespace Links
         public static readonly string footer_tower_build_png = Url("footer-tower-build.png");
         public static readonly string footer_tower_png = Url("footer-tower.png");
         public static readonly string founders_png = Url("founders.png");
+        public static readonly string glimpse100_png = Url("glimpse100.png");
         public static readonly string home_plugins_jpg = Url("home-plugins.jpg");
         public static readonly string logo_long_white_png = Url("logo-long-white.png");
         public static readonly string logo_nuget_png = Url("logo-nuget.png");
+        public static readonly string logo_triple_png = Url("logo-triple.png");
         public static readonly string nuget_json = Url("nuget.json");
         public static readonly string packages_json = Url("packages.json");
         public static readonly string pager_sprite_png = Url("pager-sprite.png");
@@ -163,6 +176,7 @@ namespace Links
         public static readonly string screenshot_hud_server_gif = Url("screenshot-hud-server.gif");
         public static readonly string screenshot_hud_gif = Url("screenshot-hud.gif");
         public static readonly string screenshot_hud_png = Url("screenshot-hud.png");
+        public static readonly string screenshot_launch_jpg = Url("screenshot-launch.jpg");
         public static readonly string screenshot_preview_gif = Url("screenshot-preview.gif");
         public static readonly string screenshot_wing_data_gif = Url("screenshot-wing-data.gif");
         public static readonly string screenshot_wing_data_png = Url("screenshot-wing-data.png");
@@ -175,6 +189,7 @@ namespace Links
         public static readonly string screenshot_popup_gif = Url("screenshot_popup.gif");
         public static readonly string Site_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Site.min.css") ? Url("Site.min.css") : Url("Site.css");
              
+        public static readonly string updatetick_png = Url("updatetick.png");
         public static readonly string whats_new_1_jpg = Url("whats-new-1.jpg");
         public static readonly string whats_new_2_jpg = Url("whats-new-2.jpg");
         public static readonly string whats_new_3_jpg = Url("whats-new-3.jpg");

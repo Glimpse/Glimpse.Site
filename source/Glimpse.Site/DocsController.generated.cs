@@ -155,7 +155,7 @@ namespace Glimpse.Site.Controllers
                         public readonly string Configuration_Tab = "Configuration-Tab";
                         public readonly string Configuration = "Configuration";
                         public readonly string Contributing = "Contributing";
-                        public readonly string Custom_Runtime_Policy = "Custom-Runtime-Policy";
+                        public readonly string Custom_Rumtime_Policies = "Custom-Rumtime-Policies";
                         public readonly string Custom_Tabs = "Custom-Tabs";
                         public readonly string Debugging_with_SymbolSource = "Debugging-with-SymbolSource";
                         public readonly string Enabling = "Enabling";
@@ -163,6 +163,8 @@ namespace Glimpse.Site.Controllers
                         public readonly string Execution_Tab = "Execution-Tab";
                         public readonly string Extensibility = "Extensibility";
                         public readonly string Extensions_Gallery = "Extensions-Gallery";
+                        public readonly string Governance_Model = "Governance-Model";
+                        public readonly string Heads_up_Display = "Heads-up-Display";
                         public readonly string History_Tab = "History-Tab";
                         public readonly string Installing = "Installing";
                         public readonly string Manual_ADO_Integration = "Manual-ADO-Integration";
@@ -191,7 +193,7 @@ namespace Glimpse.Site.Controllers
                     public readonly string Configuration_Tab = "~/Views/Docs/Wiki/Content/Configuration-Tab.md";
                     public readonly string Configuration = "~/Views/Docs/Wiki/Content/Configuration.md";
                     public readonly string Contributing = "~/Views/Docs/Wiki/Content/Contributing.md";
-                    public readonly string Custom_Runtime_Policy = "~/Views/Docs/Wiki/Content/Custom-Runtime-Policy.md";
+                    public readonly string Custom_Rumtime_Policies = "~/Views/Docs/Wiki/Content/Custom-Rumtime-Policies.md";
                     public readonly string Custom_Tabs = "~/Views/Docs/Wiki/Content/Custom-Tabs.md";
                     public readonly string Debugging_with_SymbolSource = "~/Views/Docs/Wiki/Content/Debugging-with-SymbolSource.md";
                     public readonly string Enabling = "~/Views/Docs/Wiki/Content/Enabling.md";
@@ -199,6 +201,8 @@ namespace Glimpse.Site.Controllers
                     public readonly string Execution_Tab = "~/Views/Docs/Wiki/Content/Execution-Tab.md";
                     public readonly string Extensibility = "~/Views/Docs/Wiki/Content/Extensibility.md";
                     public readonly string Extensions_Gallery = "~/Views/Docs/Wiki/Content/Extensions-Gallery.md";
+                    public readonly string Governance_Model = "~/Views/Docs/Wiki/Content/Governance-Model.md";
+                    public readonly string Heads_up_Display = "~/Views/Docs/Wiki/Content/Heads-up-Display.md";
                     public readonly string History_Tab = "~/Views/Docs/Wiki/Content/History-Tab.md";
                     public readonly string Installing = "~/Views/Docs/Wiki/Content/Installing.md";
                     public readonly string Manual_ADO_Integration = "~/Views/Docs/Wiki/Content/Manual-ADO-Integration.md";

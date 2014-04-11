@@ -364,7 +364,7 @@
     <Content Include="Views\Docs\Wiki\Content\Configuration-Tab.md" />
     <Content Include="Views\Docs\Wiki\Content\Configuration.md" />
     <Content Include="Views\Docs\Wiki\Content\Contributing.md" />
-    <Content Include="Views\Docs\Wiki\Content\Custom-Runtime-Policy.md" />
+    <Content Include="Views\Docs\Wiki\Content\Custom-Rumtime-Policies.md" />
     <Content Include="Views\Docs\Wiki\Content\Custom-Tabs.md" />
     <Content Include="Views\Docs\Wiki\Content\Platform-Data-Specification.md" />
     <Content Include="Views\Docs\Wiki\Content\Debugging-with-SymbolSource.md" />
