@@ -9,12 +9,13 @@ namespace Glimpse.Site.Controllers
     public partial class StatusController : AsyncController
     {
         //[OutputCache(Duration = 30 * 60)]
-        public virtual ActionResult Index(string milestone = null)
+        public virtual ActionResult Index(string milestone = "vNext")
         {
             var release = ReleaseSettings.Settings.ReleaseService.GetRelease(milestone);
 
             var model = new StatusViewModel
             {
+                SelectedMilestone = milestone,
                 Release = release,
                 Milestones = ReleaseSettings.Settings.MilestoneProvider.GetCurrentMilestones().Select(x => new SelectListItem { Selected = release.Milestone != null && x.Title == release.Milestone.Title, Text = x.Title, Value = x.Title })
             };

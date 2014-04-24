@@ -8,5 +8,7 @@ namespace Glimpse.Site.Models
         public Release.Release Release { get; set; }
 
         public IEnumerable<SelectListItem> Milestones { get; set; }
+
+        public string SelectedMilestone { get; set; }
     }
 }

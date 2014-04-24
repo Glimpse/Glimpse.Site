@@ -22,6 +22,12 @@
 
 <div class="container content content-normal">
     <h2>Releases <form method="get" style="font-size: 50%; display: inline">@Html.DropDownList("milestone", milestone, new { onchange = "this.form.submit()" })</form></h2>
+    @if (Model.SelectedMilestone != Model.Release.Milestone.Title)
+    {
+        <div class="bs-callout bs-callout-info">
+            <p><strong>NOTE:</strong> vNext has started but we don't have anything to show just yet. Check back soon!</p>
+        </div>
+    }
     <h3>
         @if (release.Milestone.IsVNext) {
             <text>Issues currently being worked on in <a href="https://github.com/Glimpse/Glimpse/issues?milestone=@release.Milestone.Number&state=closed">@release.Milestone.Title</a>:</text>
