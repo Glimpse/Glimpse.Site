@@ -127,7 +127,7 @@ namespace Glimpse.Release
         private List<Tuple<ReleaseUser, List<ReleaseIssue>>> MapPullRequestContributors(IList<GithubIssue> issues, IList<string> packageTags)
         { 
             var pullRequestContributors = new Dictionary<string, Tuple<GithubUser, List<GithubIssue>>>();
-            var pullRequests = issues.Where(x => x.Pull_Request.Diff_Url != null);
+            var pullRequests = issues.Where(x => x.Pull_Request != null);
             foreach (var pullRequest in pullRequests)
             {
                 var record = (Tuple<GithubUser, List<GithubIssue>>)null;
