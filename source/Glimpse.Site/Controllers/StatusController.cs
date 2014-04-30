@@ -9,8 +9,11 @@ namespace Glimpse.Site.Controllers
     public partial class StatusController : AsyncController
     {
         //[OutputCache(Duration = 30 * 60)]
-        public virtual ActionResult Index(string milestone = "vNext")
+        public virtual ActionResult Index(string milestone = null)
         {
+            if (string.IsNullOrEmpty(milestone))
+                milestone = "vNext";
+
             var release = ReleaseSettings.Settings.ReleaseService.GetRelease(milestone);
 
             var model = new StatusViewModel
