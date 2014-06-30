@@ -213,6 +213,7 @@
     <Content Include="Content\favicon.ico" />
     <Content Include="Content\favicon.png" />
     <Content Include="Content\glimpse100.png" />
+    <Content Include="Content\responsive.css" />
     <Content Include="Content\_v1\app-sprite-new.png" />
     <Content Include="Content\_v1\app-sprite.png" />
     <Content Include="Views\Docs\Wiki\Content\Heads-up-Display.md" />
