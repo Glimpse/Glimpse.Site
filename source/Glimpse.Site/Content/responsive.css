@@ -1,10 +1,25 @@
-﻿@media (min-width: 768px)  {
-    .listing-data-community .col-sm-3 {
-        height: 200px
+﻿@media only screen and (min-width: 480px) {
+    .carousel-summary .carousel-subject {
+        height: 230px;
+    } 
+
+    .screenshot-preview {
+        display: none;
     }
 }
 
-@media (min-width: 768px) {
+@media only screen and (min-width: 600px) {
+    .screenshot-preview {
+        display: block;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+    .listing-data-community .col-sm-3 {
+        height: 200px
+    }
+
     .navbar_home .glyphicon {
         font-size: 2em;
         display: block;
@@ -21,18 +36,7 @@
     #tweets {
         margin-top: -47px;
     }
-}
 
-@media (max-width: 992px) { 
-    .float_md_img {
-        position: relative;
-        left: -15px;
-        width: 100%;
-        width: calc(100% + 30px);
-    }
-}
-
-@media (max-width: 768px) {
     .float_sm_img {
         position: relative;
         left: -15px;
@@ -52,15 +56,28 @@
         height: 100px;
     }
 }
- 
-@media (max-width: 435px) {
-    .carousel-summary .carousel-subject {
-        height: 230px;
-    } 
+
+@media only screen and (min-width: 992px) {
+
+    .float_md_img {
+        position: relative;
+        left: -15px;
+        width: 100%;
+        width: calc(100% + 30px);
+    }
 }
 
-@media (min-width: 1200px) {
+@media only screen and (min-width: 1382px) {
+
     .carousel-container {
         padding: 0 8.333333333333332%;
     }
 }
+
+@media only screen and 
+        (-webkit-min-device-pixel-ratio: 1.5), only screen and 
+        (-o-min-device-pixel-ratio: 3/2), only screen and 
+        (min-device-pixel-ratio: 1.5) {
+
+}
+

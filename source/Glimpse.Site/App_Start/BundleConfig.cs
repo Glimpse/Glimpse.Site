@@ -19,7 +19,7 @@ namespace Glimpse.Site
              
             bundles.Add(new StyleBundle("~/content/sitecss").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/reponsive.css",
+                      "~/Content/responsive.css",
                       "~/Content/site.css"));
         }
     }
