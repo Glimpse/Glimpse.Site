@@ -1,4 +1,4 @@
-﻿@model Glimpse.Site.Models.DocumentationViewModel
+@model Glimpse.Site.Models.DocumentationViewModel
 @{
     ViewBag.Title = "Getting Started - Glimpse -";
 }
@@ -6,7 +6,6 @@
 <div class="jumbotron">
     <div class="container">
         <h1>Getting Started</h1>
-        <p>To get up and running with Glimpse is pretty simple. Together we are going to have a look at getting this up and running for you.</p>
     </div>
 </div>
 
@@ -16,15 +15,15 @@
     </div>
     <div class="row">
         <div class="col-xs-9">
-            <h2>Overview</h2>
-            <p>Getting Glimpse up and running couldn't be easier:</p>
             <div class="row" style="margin-bottom: 20px">
                 <div class="col-md-4">
                     <div class="thumbnail thumbnail-noborder">
                         <div class="caption">
                             <span class="h1">1.</span>
                             <span class="h3"><a href="#download">Download</a></span>
-                            <p>Use Visual Studio to get your desired packages</p>
+                            <p>Use NuGet from Visual Studio to install your 
+							desired Glimpse packages. For ASP.NET MVC 5, install
+							<strong>Glimpse Mvc5</strong>.</p>
                         </div>
                         <div class="getting-started getting-started-dowload img"></div>
                     </div>
@@ -34,7 +33,8 @@
                         <div class="caption">
                             <span class="h1">2.</span>
                             <span class="h3"><a href="#enable">Enable</a></span>
-                            <p>Go to <code>/glimpse.axd</code> and enable Glimpse to run</p>
+                            <p>Run the app, navigate to <code>/glimpse.axd</code> 
+							and click <strong>Turn Glimpse On</strong>.</p>
                         </div>
                         <div class="getting-started getting-started-enable img"></div>
                     </div>
@@ -44,7 +44,7 @@
                         <div class="caption">
                             <span class="h1">3.</span>
                             <span class="h3"><a href="#using">Using</a></span>
-                            <p>Navigate around your site and start using Glimpse</p>
+                            <p>Navigate around your site and start using Glimpse.</p>
                         </div>
                         <div class="getting-started getting-started-explore img"></div>
                     </div>
@@ -55,22 +55,15 @@
             <div class="row" style="margin-bottom: 20px">
                 <div class="col-md-8">
                     <h3>Visual Studio &amp; NuGet</h3>
-                    <p>The best way to download and install Glimpse is via NuGet. The quickest way to get up and running is by <a href="#packages">choosing from the below packages</a> and installing them via Visual Studio or Command Line.</p>
-                    <ul>
-                        <li><a href="/Docs/Installing">Step-by-step install guide for installing Glimpse</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h3>Source Code</h3>
-                    <p>Want to download the latest source for Glimpse?</p>
-                    <a href="https://github.com/Glimpse/Glimpse/releases/latest" class="btn btn-default btn-lg">Latest source on GitHub</a>
-                </div>
+                    <p>Select from the Glimpse NuGet packages listed below. For 
+					detailed instructions see 
+					<a href="/Docs/Installing">Step-by-step install guide for installing Glimpse</a>.</div>
             </div>
-            <p>Whether you use NuGet or manually install Glimpse, the DLL's Glimpse needs to run will be referenced by your project and added to your <code>bin</code> folder. <span id="packages"></span>From here, for your first run, all you need is to <a href="#enable">enable</a> Glimpse and start using it.</p>
             <h3>Packages</h3>
-            <p>Glimpse has many different extensions and plugins. Together with the community, there are some truly amazing extensions and extras you can get your hands on.</p>
-            <h4>Choose which packages to install</h4>
-            <p>Out of the box here is where you will probably want to get started:</p>
+            <p>Glimpse has many different extensions and plugins. Together with 
+			the community, there are some truly amazing extensions and extras 
+			you can install to analyze your app.</p>
+            <h4>Select the packages to install</h4>
             <table width="100%">
                 <tbody>
                     <tr>
@@ -85,7 +78,7 @@
                     </tr>
                     <tr>
                         <td></td>
-                        <td class="text-center">or</td>
+                        <td class="text-center">&nbsp;</td>
                         <td></td>
                     </tr>
                     <tr>
@@ -105,85 +98,103 @@
                     </tr>
                     <tr>
                         <td></td>
-                        <td class="text-center">or</td>
+                        <td class="text-center">&nbsp;</td>
                         <td></td>
                     </tr>
                     <tr>
                         <td class="text-right"><a href="http://nuget.org/packages/Glimpse.ef6">Entity Framework</a> &nbsp;</td>
-                        <td><div class="code">PM&gt; Install-Package Glimpse.EF5</div></td>
+                        <td><div class="code">PM&gt; Install-Package Glimpse.EF6</div></td>
                         <td></td>
                     </tr>
                 </tbody>
             </table>
-            <p class="text-center" style="margin: 20px 0 10px 0; "><small>Note that if you are using a <em>different version</em> of MVC/EF, use that instead – e.g. MVC2, MVC3, MVC4, EF43, or EF6</small></p>
-            <p class="text-center" style="margin-bottom: 30px">...and many more can be found in the <a href="@Url.Action(MVC.Extensions.Index())/">Glimpse Extension Gallery</a></p>
+            <p class="text-center" style="margin: 20px 0 10px 0; "><small>Note that if you are using a <em>different version</em> 
+			of MVC/EF, use that instead – that is, MVC2, MVC3, MVC4, EF43, or 
+			EF5. M</small>any more packages can be found in the <a href="@Url.Action(MVC.Extensions.Index())/">Glimpse Extension Gallery</a>, 
+			and new packages are frequently added.</p>
 
 
             <h2 id="enable">Enable</h2>
             <p>Glimpse is designed to be secure by default. This means that unless you tell Glimpse otherwise, you can <strong>only</strong> access Glimpse from <em>localhost</em>.</p>
-            <blockquote><strong>Note</strong>, this means that you wont be able to access Glimpse remotely whilst policy is in place.</blockquote>
-            <h3>Visit Glimpse.axd</h3>
-            <p>By installed Glimpse, this page is made available as an extensions your site. It becomes the point through which you can see how glimpse is setup and some helper buttons to work with the policies that are shipped out of the box.</p>
+            <blockquote><strong>Note</strong>, this means that you won't be able 
+				to access Glimpse remotely with the default runtime policy. See 
+				<a href="/Docs/Configuration#configuring-runtime-policy">Configuring runtime policy</a> 
+				to enable Glimpse for remote access.
+				
+				</blockquote>
+            <h3>Navigate to /Glimpse.axd</h3>
+            <p>Once Glimpse is installed, /Glimpse.axd (for example <strong>
+			http://localhost:1234/glimpse.axd </strong>) is exposed as an extension 
+			to your site. It becomes the point through which you can see how glimpse is 
+			configured and 
+			provides some helper buttons to work with Glimpse policies.</p>
             <div style="text-align: center; margin: 0 15% 20px">
                 <img src="~/Content/screenshot-glimpse-axd.jpg" class="img-responsive" />
             </div>
-            <p>By triggering the "Turn Glimpse On" button, the page will confirm that Glimpse is now listening to requests.</p>
+            <p>By clicking the "Turn Glimpse On" button, the page will confirm that Glimpse is now listening to requests.</p>
             <h3>Returning Home</h3>
-            <p>Once "Turned on" you will now see glimpse appear in the bottom right hand corner of your screen.</p>
+            <p>Once "Turned on" you will see glimpse appear in the bottom right hand corner of your screen.</p>
             <img src="~/Content/screenshot-hud-bar.jpg" class="img-responsive" style="margin: 10px 0 20px" />
-            <p>From this point, you can mouse over the various sections or open Glimpse up fully by clicking on the Glimpse icon.</p>
-            <ul>
-                <li><a href="/Docs/Enabling">More details on how to get Glimpse running</a></li>
-            </ul>
-
+            <p>From this point, you can mouse over the various sections or open Glimpse up fully by clicking on the Glimpse icon. 
+			For more information, see 
+			<a href="/Docs/Enabling">Enabling Glimpse </a>.
             <h2 id="using">Using Glimpse</h2>
-            <p>Once you’ve <a href="#enable">enabled Glimpse</a> on the server and the client, the Glimpse Heads-Up Display appears in the lower right corner of your web application.</p>
+            <p>Once you’ve <a href="#enable">enabled Glimpse</a>, the Glimpse Heads-Up Display 
+			(HUD) appears in the lower right corner of your web application.</p>
             <div class="row" style="margin-bottom: 20px">
                 <div class="col-md-6">
-                    <h3>Heads-Up Display</h3>
-                    <p>HUD is how Glimpse shows you the most important information, when you need it, without you needing to ask for it; all right in the bottom of your page.</p>
-                    <p>It brings together information from both the client and server, to provide a complete picture of your request. This is something very few systems can provide, let alone in your browser.</p>
-                    <ul>
-                        <li><a>Learn more about using HUD</a></li>
-                    </ul>
+                    <h3>Heads-Up Display (HUD)</h3>
+                    <p>The HUD is how Glimpse exposes information on every 
+					request, every page. This information is displayed at the bottom of your page.</p>
+                    <p>It brings together information from both the client and server, to provide a complete picture of your request. 
+					This rich information can't be provided by browser tools. 
+					See <a href="/Docs/Heads-up-Display">Heads Up Display</a> 
+					for more information.</p>
                 </div>
                 <div class="col-md-6">
                     <h3>Main Panel</h3>
                     <p>From the HUD, you can dive down into another level of information by clicking on the "G" in the lower right corner. When the Main Panel opens you will be presented with a series of tabs which offer a range of insights into your application.</p>
-                    <p>These tabs are easily selectable and your selected tab is remembered between redirects. Additional tabs will be added to your setup if and when you add <a href="@Url.Action(MVC.Extensions.Index())/">additional packages</a></p>
-                    <ul>
-                        <li><a>See the break down of the main shell</a></li>
-                    </ul>
+                    <p>These tabs are easily selectable and your selected tab is remembered between redirects. Additional tabs will be added to your setup when you add <a href="@Url.Action(MVC.Extensions.Index())/">additional packages</a>. 
+					For more information see <a href="/Docs/Tabs">Tabs</a>.</p>
                 </div>
             </div>
             <div class="row" style="margin-bottom: 20px">
                 <div class="col-sm-6 col-md-3">
                     <span class="h3">Observe</span>
-                    <p>HUD updates its data as you move from page to page</p>
+                    <p>HUD updates its data as you move from page to page.</p>
                 </div>
                 <div class="col-sm-6 col-md-3">
                     <span class="h3">Detail</span>
-                    <p>Hover over any one of the sections for more details</p>
+                    <p>Hover over any one of the sections for more details.</p>
                 </div>
                 <div class="col-sm-6 col-md-3">
                     <span class="h3">Open</span>
-                    <p>Click on the "G" icon on the right to open the Main Panel</p>
+                    <p>Click on the "G" icon on the right to open the Main Panel.</p>
                 </div>
                 <div class="col-sm-6 col-md-3">
                     <span class="h3">Switch</span>
-                    <p>Select the various tabs you are interested in at any time</p>
+                    <p>Select the various tabs you are interested in at any time.</p>
                 </div>
             </div>
 
 
             <h2>Configuration</h2>
-            <p>When Glimpse is installed via NuGet, any configuration details are setup by default. What it does for you is adds a custom section called <code>&lt;glimpse&gt;</code> in your <code>web.config</code> file.</p>
-            <p>Most of the time you wont have to make many chances here, but if you are interested in black listing or removing Tab or various Security policies the Glimpse configuration system makes this easy:</p>
-            <ul>
-                <li><a href="Configuration">See all how you can configure the different aspects of Glimpse</a></li>
-            </ul>
+            <p>When Glimpse is installed via NuGet, a default configuration is 
+			added to a custom <code>&lt;glimpse&gt; </code> section&nbsp; in the 
+			root <em>web.config</em> file. The default configuration works for 
+			many apps and you can modify the <code>&lt;glimpse&gt; </code> section 
+			to do things like black listing, removing tabs, changing security 
+			policy and more. For more information see 
+			<a href="Configuration">Configuration</a>.
 
-
+            <div class="row" style="margin-bottom: 20px">
+                <div class="col-md-4">
+                    <h3>Source Code</h3>
+                    <p>Want to download the latest source for Glimpse?</p>
+                    <a href="https://github.com/Glimpse/Glimpse/releases/latest" class="btn btn-default btn-lg">Latest source on GitHub</a>
+                </div>
+            </div>
+            <p>Whether you use NuGet or manually install Glimpse, the DLL's Glimpse needs to run will be referenced by your project and added to your <code>bin</code> folder. <span id="packages"></span>From here, for your first run, all you need is to <a href="#enable">enable</a> Glimpse and start using it.</p>
             <h2>Additional Help</h2>
             <p>If you need more help, try the following resources:</p>
             <ul>
