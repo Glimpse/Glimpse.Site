@@ -318,6 +318,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Properties\PublishProfiles\glimpsesitenew.pubxml" />
+    <Content Include="Scripts\ApplicationInsightsSnippet.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-2.1.0.intellisense.js" />

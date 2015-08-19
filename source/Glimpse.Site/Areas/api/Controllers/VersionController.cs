@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Web.Http;
 using System.Collections.Generic;
+using System.Web.Http;
 using Glimpse.Package;
 using Glimpse.Site.Framework;
 using Microsoft.ApplicationInsights;
-
 
 namespace Glimpse.Site.Areas.api.Controllers
 {
@@ -12,6 +11,7 @@ namespace Glimpse.Site.Areas.api.Controllers
     public class VersionController : ApiController
     {
         private TelemetryClient telemetry = new TelemetryClient();
+
         [HttpGet]
         public ReleaseQueryInfo Index([System.Web.Http.ModelBinding.ModelBinder(typeof(VersionCheckDetailsApiModelBinderProvider))] VersionCheckDetails details, bool withDetails = false)
         {
