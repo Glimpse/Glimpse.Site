@@ -13,6 +13,10 @@
 
     <title>@ViewBag.Title - the open source diagnostics platform of the web</title>
     @Styles.Render("~/content/sitecss")
+    <script language="javascript">
+        window.instrumentationKey = "@Microsoft.ApplicationInsights.Extensibility.TelemetryConfiguration.Active.InstrumentationKey";
+    </script>
+    @Scripts.Render("~/bundles/headsitejs")
 </head>
 <body class="@ViewBag.PageStyle">
     <header class="header navbar navbar-inverse navbar-fixed-top" role="banner">
