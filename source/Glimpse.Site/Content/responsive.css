@@ -1,0 +1,83 @@
+﻿@media only screen and (min-width: 480px) {
+    .carousel-summary .carousel-subject {
+        height: 230px;
+    } 
+
+    .screenshot-preview {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .screenshot-preview {
+        display: block;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+    .listing-data-community .col-sm-3 {
+        height: 200px
+    }
+
+    .navbar_home .glyphicon {
+        font-size: 2em;
+        display: block;
+        margin: 0 0 0.25em;
+    }
+    .navbar_home > ul > li {
+        text-align: center;
+    }
+    .navbar_home > ul > li > a {
+        padding-top: 2px;
+        padding-bottom: 4px;
+    }
+
+    #tweets {
+        margin-top: -47px;
+    }
+
+    .float_sm_img {
+        position: relative;
+        left: -15px;
+        width: 100%;
+        width: calc(100% + 30px);
+    }
+
+    .community_listing_outer { 
+        height: 100px;  
+    }
+    .community_listing { 
+        height: 100px; 
+        width: 1200px; 
+        margin-left: -600px;  
+    }
+    .community_listing img{
+        height: 100px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+
+    .float_md_img {
+        position: relative;
+        left: -15px;
+        width: 100%;
+        width: calc(100% + 30px);
+    }
+}
+
+@media only screen and (min-width: 1382px) {
+
+    .carousel-container {
+        padding: 0 8.333333333333332%;
+    }
+}
+
+@media only screen and 
+        (-webkit-min-device-pixel-ratio: 1.5), only screen and 
+        (-o-min-device-pixel-ratio: 3/2), only screen and 
+        (min-device-pixel-ratio: 1.5) {
+
+}
+
