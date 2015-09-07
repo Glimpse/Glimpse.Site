@@ -233,7 +233,7 @@ h4 { font-weight: bold; }
 .footer .icon.github{background-position:-71px -145px;}
 .footer .icon.twitter{background-position:-108px -145px;}
 .footer .icon.blog{background-position:-148px -148px;}
-.footer .redgate{margin-bottom: -9px;width: 87px;height: 27px;background:transparent url("./pager-sprite.png") -41px -178px no-repeat;display: inline-block;}
+.footer .microsoft{margin-top:-8px;}
 .footer_last div{vertical-align: middle;}
 .footer_backing{text-align: center}
 .footer_copy{margin-top: 3px;}
