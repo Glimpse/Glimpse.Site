@@ -228,6 +228,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
+    <Compile Include="Telemetry\ApplicationInsightsErrorAttribute.cs" />
     <Compile Include="Version.AdminController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>

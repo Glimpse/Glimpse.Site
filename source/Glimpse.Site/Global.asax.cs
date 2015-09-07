@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
@@ -9,6 +10,8 @@ using Glimpse.Contributor;
 using Glimpse.Package;
 using Glimpse.Release;
 using Glimpse.Twitter;
+using Microsoft.ApplicationInsights;
+using Microsoft.ApplicationInsights.DataContracts;
 using Microsoft.ApplicationInsights.Extensibility;
 
 namespace Glimpse.Site
@@ -25,29 +28,46 @@ namespace Glimpse.Site
                 TelemetryConfiguration.Active.InstrumentationKey = ikeyValue;
             }
 
-            AreaRegistration.RegisterAllAreas();
+            try
+            {
 
-            GlobalConfiguration.Configure(WebApiConfig.Register);
-            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-            RouteConfig.RegisterRoutes(RouteTable.Routes);
-            BundleConfig.RegisterBundles(BundleTable.Bundles);
-            BindingConfig.RegisterGlobalBindings(ModelBinders.Binders, GlobalConfiguration.Configuration);
-            FormatterConfig.RegisterFormatters(GlobalConfiguration.Configuration);
+                AreaRegistration.RegisterAllAreas();
 
-            ReleaseSettings.Settings.Options.PackageListingPath = Server.MapPath("~/Content/packages.json");
-            ReleaseSettings.Settings.Initialize();
+                GlobalConfiguration.Configure(WebApiConfig.Register);
+                FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+                RouteConfig.RegisterRoutes(RouteTable.Routes);
+                BundleConfig.RegisterBundles(BundleTable.Bundles);
+                BindingConfig.RegisterGlobalBindings(ModelBinders.Binders, GlobalConfiguration.Configuration);
+                FormatterConfig.RegisterFormatters(GlobalConfiguration.Configuration);
 
-            PackageSettings.Settings.NugetListingPath = Server.MapPath("~/Content/nuget.json");
-            PackageSettings.Settings.Initialize();
+                ReleaseSettings.Settings.Options.PackageListingPath = Server.MapPath("~/Content/packages.json");
+                ReleaseSettings.Settings.Initialize();
 
-            TwitterSettings.Settings.Initialize();
+                PackageSettings.Settings.NugetListingPath = Server.MapPath("~/Content/nuget.json");
+                PackageSettings.Settings.Initialize();
 
-            BuildSettings.Settings.Initialize();
+                TwitterSettings.Settings.Initialize();
 
-            BlogSettings.Settings.Initialize();
+                BuildSettings.Settings.Initialize();
 
-            ContributorSettings.Settings.Options.ContributorListingPath = Server.MapPath("~/Content/committers.json");
-            ContributorSettings.Settings.Initialize();
+                BlogSettings.Settings.Initialize();
+
+                ContributorSettings.Settings.Options.ContributorListingPath = Server.MapPath("~/Content/committers.json");
+                ContributorSettings.Settings.Initialize();
+            }
+            catch (Exception ex)
+            {
+                TelemetryClient client = new TelemetryClient();
+                ExceptionTelemetry excTelemetry = new ExceptionTelemetry(ex);
+                excTelemetry.HandledAt = ExceptionHandledAt.Unhandled;
+                client.TrackException(excTelemetry);
+
+                // this exception will terminate the process. Let's wait till telemetry will be delivered
+                client.Flush();
+                Thread.Sleep(1000);
+
+                throw;
+            }
         }
     }
 }
