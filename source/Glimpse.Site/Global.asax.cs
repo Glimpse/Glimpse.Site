@@ -1,4 +1,5 @@
-﻿using System.Web.Http;
+﻿using System;
+using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
@@ -8,6 +9,7 @@ using Glimpse.Contributor;
 using Glimpse.Package;
 using Glimpse.Release;
 using Glimpse.Twitter;
+using Microsoft.ApplicationInsights.Extensibility;
 
 namespace Glimpse.Site
 {
@@ -15,6 +17,14 @@ namespace Glimpse.Site
     {
         protected void Application_Start()
         { 
+            // Read instrumentation key from azure web app settings
+            string ikeyValue = Environment.GetEnvironmentVariable("APPINSIGHTS_INSTRUMENTATIONKEY");
+
+            if (!string.IsNullOrEmpty(ikeyValue))
+            {
+                TelemetryConfiguration.Active.InstrumentationKey = ikeyValue;
+            }
+
             AreaRegistration.RegisterAllAreas();
 
             GlobalConfiguration.Configure(WebApiConfig.Register);
