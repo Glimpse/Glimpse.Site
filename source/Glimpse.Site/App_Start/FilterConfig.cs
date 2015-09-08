@@ -1,5 +1,5 @@
-﻿using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
+using Glimpse.Site.Telemetry;
 
 namespace Glimpse.Site
 {
@@ -7,7 +7,7 @@ namespace Glimpse.Site
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
-            filters.Add(new HandleErrorAttribute());
+            filters.Add(new ApplicationInsightsErrorAttribute());
         }
     }
 }
