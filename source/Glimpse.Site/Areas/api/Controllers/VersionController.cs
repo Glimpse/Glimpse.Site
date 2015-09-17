@@ -15,12 +15,37 @@ namespace Glimpse.Site.Areas.api.Controllers
         [HttpGet]
         public ReleaseQueryInfo Index([System.Web.Http.ModelBinding.ModelBinder(typeof(VersionCheckDetailsApiModelBinderProvider))] VersionCheckDetails details, bool withDetails = false)
         {
-            foreach (var package in details.Packages)
+            string userId = null;
+
+            if (HttpContext.Current.Request.Cookies["ai_user"] == null)
             {
-                var properties = new Dictionary<string, string> { { "Package", package.Name }, { "Version", package.Version } };
-                telemetry.TrackEvent("Check " + package.Name, properties);
+                userId = Guid.NewGuid().ToString();
+                var c = new HttpCookie("ai_user", userId + "|" + DateTime.Now.ToString("G"));
+                c.Expires = DateTime.MaxValue;
+                c.Path = "/";
+
+                HttpContext.Current.Response.Cookies.Set(c);
             }
 
+            foreach (var package in details.Packages)
+            {
+                EventTelemetry evt = new EventTelemetry();
+                evt.Name = "Check " + package.Name;
+
+                if (!string.IsNullOrEmpty(userId))
+                {
+                    evt.Context.User.Id = userId;
+                }
+
+                evt.Properties.Add("Package", package.Name);
+                evt.Properties.Add ("Version", package.Version);
+
+                if (HttpContext.Current.Request.UrlReferrer != null)
+                {
+                    evt.Properties.Add("urlReferrer", HttpContext.Current.Request.UrlReferrer.ToString());
+                }
+                telemetry.TrackEvent(evt);
+            }
             var service = PackageSettings.Settings.ReleaseQueryService;
             var result = service.GetReleaseInfo(details, withDetails);
 
