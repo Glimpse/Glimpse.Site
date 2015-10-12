@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Web;
 using System.Web.Http;
 using Glimpse.Package;
 using Glimpse.Site.Framework;
 using Microsoft.ApplicationInsights;
+using Microsoft.ApplicationInsights.DataContracts;
 
 namespace Glimpse.Site.Areas.api.Controllers
 {
