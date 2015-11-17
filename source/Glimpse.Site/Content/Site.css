@@ -208,6 +208,125 @@ h4 { font-weight: bold; }
     background: #323d42;
     color: white;
 }
+.jumbotron-title {
+    margin-bottom: 0;
+}
+
+
+.jumbotron-banner {
+    height: 300px;
+    background-color:#323d42;
+    position: relative;
+    padding: 1px 0 0 0;
+    color: #fff;
+}
+.banner-content, .banner-background, .banner-buttons {
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.banner-content {
+    position: absolute;
+    height: 300px; width: 100%;
+    top: 0px;
+}
+.banner-content h2, .banner-content .btn, .banner-text {
+    text-shadow: 0 0 0.4em #323d42;
+}
+.banner-content h2 {
+    font-size: 3em;
+}
+.banner-background {
+    position: absolute;
+    height: 300px; width: 100%;
+    top: 120px;
+    background:url("./screenshot-banner-v2.jpg") top center no-repeat;
+    -ms-background-size: contain;
+    background-size: contain;
+}
+.banner-text {
+    font-size: 1.5em;
+}
+.banner-buttons {
+    margin-top: 20px;
+    opacity: 0;
+}
+.banner-buttons .btn-hollow {
+    background-color: transparent;
+    border-color: #fff;
+    color: #fff;  
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -ms-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    transition: all .2s ease;
+}
+.banner-buttons .btn-hollow:hover,
+.banner-buttons .btn-hollow:focus,
+.banner-buttons .btn-hollow:active {  
+    background-color: #ebebeb;
+    border-color: #adadad;
+    color: #323d42;
+    text-shadow: initial;
+}
+.banner-buttons .btn-link{ 
+    color: #fff;
+}
+.banner-buttons .btn-link:hover,
+.banner-buttons .btn-link:focus,
+.banner-buttons .btn-link:active { 
+    color: #adadad;
+}
+.jumbotron-banner-run .banner-background {
+    top: 10px;
+    opacity: 0.25;
+}
+.jumbotron-banner-run .banner-content {
+    top: 45px;
+}
+.jumbotron-banner-run .banner-buttons {
+    opacity: 1;
+}
+.banner-container {
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+}
+.ribbon {
+  position: absolute;
+  left: -5px; top: -5px;
+  z-index: 1;
+  overflow: hidden;
+  width: 105px; height: 100px;
+  text-align: right;
+}
+.ribbon span {
+  font-size: 13px;
+  color: #FFF;
+  text-align: center;
+  line-height: 30px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  width: 135px;
+  display: block;
+  background: #71B2D1;
+  box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+  position: absolute;
+  top: 23px; left: -26px;
+}
+.ribbon span::after {
+  content: "";
+  position: absolute; right: 0px; top: 100%;
+  z-index: -1;
+  border-left: 3px solid transparent;
+  border-right: 3px solid #306680;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid #306680;
+}
+
+
 .footer {
     color: white;
     margin: 100px 0 20px;

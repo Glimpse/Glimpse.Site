@@ -128,6 +128,13 @@ var getTweetsLatest = function () {
                 $('.overlay, .overlay-modal').remove();
             });            
         });
+    },
+    vnextBanner = function() {
+        var bannerScrollWatch = function() {
+            $('.jumbotron-banner').addClass('jumbotron-banner-run');
+            $(window).off("scroll", bannerScrollWatch);
+        };
+        $(window).scroll(bannerScrollWatch);
     };
 
 $(function() {
@@ -138,6 +145,7 @@ $(function() {
         getBlogLastest();
         setupCarousel();
         videoSetup();
+        vnextBanner();
     }
 });
 
