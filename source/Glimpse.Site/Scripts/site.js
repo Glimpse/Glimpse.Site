@@ -122,8 +122,11 @@ var getTweetsLatest = function () {
     },
     videoSetup = function() { 
         $('.action-video').click(function() {
-            _gaq.push(["_trackEvent", "Video", "Play", "Glimpse Introduction"]);
-            $('body').prepend('<div class="overlay"></div><div class="overlay-modal"><div class="overlay-close">x</div><iframe width="560" height="315" src="//www.youtube.com/embed/ybIxZ6TTm_E" frameborder="0" allowfullscreen></iframe></div>');
+            var url = jQuery(this).attr("data-videoUrl"),
+                title = jQuery(this).attr("data-videoTitle");
+            appInsights.trackEvent("Video", { action: "Play", title: title });
+            _gaq.push(["_trackEvent", "Video", "Play", title]);
+            $('body').prepend('<div class="overlay"></div><div class="overlay-modal"><div class="overlay-close">x</div><iframe width="100%" height="100%" src="' + url + '" frameborder="0" allowfullscreen></iframe></div>');
             $('.overlay-close').click(function() {
                 $('.overlay, .overlay-modal').remove();
             });            
