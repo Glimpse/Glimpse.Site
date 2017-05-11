@@ -215,10 +215,10 @@ h4 { font-weight: bold; }
 
 .jumbotron-banner {
     height: 300px;
-    background-color:#323d42;
+    background-color: #383838;
     position: relative;
     padding: 1px 0 0 0;
-    color: #fff;
+    color: #f7f7f7;
 }
 .banner-content, .banner-background, .banner-buttons, .banner-instructions {
     -webkit-transition: all 1s ease;
@@ -233,7 +233,7 @@ h4 { font-weight: bold; }
     top: 0px;
 }
 .banner-content h2, .banner-content .btn, .banner-text, .banner-instructions {
-    text-shadow: 0 0 0.4em #323d42;
+    text-shadow: 0 0 0.4em #7b7b7b;
 }
 .banner-content h2 {
     font-size: 3em;
@@ -242,7 +242,7 @@ h4 { font-weight: bold; }
     position: absolute;
     height: 300px; width: 100%;
     top: 120px;
-    background:url("./screenshot-banner-v2.jpg") top center no-repeat;
+    background:url("./ProjectGlimpseNodeEdition.png") top center no-repeat;
     -ms-background-size: contain;
     background-size: contain;
 }
@@ -258,7 +258,7 @@ h4 { font-weight: bold; }
     opacity: 0;
 }
 .banner-buttons .btn-hollow {
-    background-color: transparent;
+    background-color: rgba(50, 50, 50, 0.9);
     border-color: #fff;
     color: #fff;  
     -webkit-transition: all .2s ease;
@@ -286,7 +286,7 @@ h4 { font-weight: bold; }
 }
 .jumbotron-banner-run .banner-background {
     top: 10px;
-    opacity: 0.25;
+    opacity: 0.45;
 }
 .jumbotron-banner-run .banner-content {
     top: 30px;
@@ -316,7 +316,7 @@ h4 { font-weight: bold; }
   -webkit-transform: rotate(-45deg);
   width: 135px;
   display: block;
-  background: #71B2D1;
+  background: #43853d;
   box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
   position: absolute;
   top: 23px; left: -26px;

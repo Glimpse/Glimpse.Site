@@ -245,6 +245,7 @@
     <Content Include="Content\favicon.png" />
     <Content Include="Content\glimpse100.png" />
     <Content Include="Content\microsoft.png" />
+    <Content Include="Content\ProjectGlimpseNodeEdition.png" />
     <Content Include="Content\screenshot-banner-v2.jpg" />
     <Content Include="Content\_v1\app-sprite-new.png" />
     <Content Include="Content\_v1\app-sprite.png" />
