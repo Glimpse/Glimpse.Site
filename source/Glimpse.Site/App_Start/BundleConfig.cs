@@ -8,8 +8,8 @@ namespace Glimpse.Site
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/bundles/headsitejs").Include(
-                "~/Scripts/ApplicationInsightsSnippet.js"));
+            //bundles.Add(new ScriptBundle("~/bundles/headsitejs").Include(
+                //"~/Scripts/ApplicationInsightsSnippet.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/sitejs").Include(
                       "~/Scripts/jquery-{version}.js",

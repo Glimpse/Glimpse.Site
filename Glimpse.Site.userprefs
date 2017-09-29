@@ -1,0 +1,21 @@
+﻿<Properties StartupConfiguration="{0180A7C0-2BB9-4B4C-A74F-64D888B0A011}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="source/Glimpse.Site/Scripts/site.js">
+    <Files>
+      <File FileName="source/Glimpse.Site/ApplicationInsights.config" Line="29" Column="11" />
+      <File FileName="source/Glimpse.Site/Web.config" Line="122" Column="39" />
+      <File FileName="source/Glimpse.Site/Views/Shared/_Layout.cshtml" Line="101" Column="14" />
+      <File FileName="source/Glimpse.Site/App_Start/BundleConfig.cs" Line="17" Column="39" />
+      <File FileName="source/Glimpse.Site/Scripts/site.js" Line="17" Column="37" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="../smartformat/smart-format-console/Program.cs" line="35" offsetX="559" offsetY="510" expression="options" liveUpdate="False" />
+    <Watch file="../smartformat/smart-format-console/Program.cs" line="39" offsetX="573" offsetY="570" expression="optionSet" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Glimpse.Site PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>

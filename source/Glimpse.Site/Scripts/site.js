@@ -124,8 +124,8 @@ var getTweetsLatest = function () {
         $('.action-video').click(function() {
             var url = jQuery(this).attr("data-videoUrl"),
                 title = jQuery(this).attr("data-videoTitle");
-            appInsights.trackEvent("Video", { action: "Play", title: title });
-            _gaq.push(["_trackEvent", "Video", "Play", title]);
+            // appInsights.trackEvent("Video", { action: "Play", title: title });
+            // _gaq.push(["_trackEvent", "Video", "Play", title]);
             $('body').prepend('<div class="overlay"></div><div class="overlay-modal"><div class="overlay-close">x</div><iframe width="100%" height="100%" src="' + url + '" frameborder="0" allowfullscreen></iframe></div>');
             $('.overlay-close').click(function() {
                 $('.overlay, .overlay-modal').remove();
@@ -152,6 +152,7 @@ $(function() {
     }
 });
 
+/*
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-22715154-1']);
 _gaq.push(['_trackPageview']);
@@ -161,3 +162,4 @@ _gaq.push(['_trackPageview']);
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 })();
+*/
